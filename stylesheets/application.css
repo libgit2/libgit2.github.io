@@ -13,6 +13,16 @@
   line-height: 125%;
 }
 
+a {
+	color: #4e9326;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	color: #6ecf36;
+}
+
 /* line 39 */
 html {
   width: 100%;
@@ -202,6 +212,7 @@ ul.bullet a:last-child {
   margin-right: 0;
 }
 
+
 /* line 141 */
 .bullet {
   width: 100%;
@@ -224,9 +235,11 @@ ul.bullet a:last-child {
   color: #003333;
   line-height: 24px;
   margin-bottom: 8px;
+  margin-top: 8px;
 }
 /* line 154 */
-.bullet a {
+.button {
+  font-weight: normal;
   padding-top: 8px;
   padding-bottom: 5px;
   text-decoration: none;
@@ -244,8 +257,10 @@ ul.bullet a:last-child {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
+
 /* line 166 */
-.bullet a:hover {
+.button:hover {
+  color: white;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #4e9326), color-stop(100%, #35641a));
   background-image: -moz-linear-gradient(top, #4e9326 0%, #35641a 100%);
 }

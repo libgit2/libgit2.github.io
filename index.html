@@ -1,174 +1,171 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head>
-    <title>libgit2: a linkable library for Git</title>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-    <link href="/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/><link href="/stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
-  </head>
-  <body>
-    <div id="body">
-      <div id="contents">
-        <div id="header">
-          <a href="/">
-            <img alt="a linkable library for Git" src="logo.png" width="725"/>
-          </a>
-        </div>
-        <div id="intro">
-          libgit2 is a portable, pure C implementation of the Git core methods provided as a
-          re-entrant linkable library with a solid API, allowing you to write native
-          speed custom Git applications in any language with bindings.
-        </div>
-        <h2>I am interested in</h2>
-        <div class="contents">
-          <ul class="bullet">
-            <a href="#why">Why We Need It</a>
-            <a href="#cando">What It Can Do</a>
-            <a href="#install">How to Install It</a>
-            <a href="#bindings">Language Bindings</a>
-          </ul>
-        </div>
+	<head>
+		<title>libgit2: a linkable library for Git</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+		<link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+	</head>
 
-        <h2 id="why">Why We Need It</h2>
-        <div class="contents">
-          <div class="bullet">
-            <div class="description">
-              <p>In the current Git project, though a libgit.a file is produced it is
-              not re-entrant (it will call <code>die()</code> on basically any error)
-              and it has no stable or well-designed public API.  As there is no good
-              way to link to this effectively, a new library was needed that fulfilled
-              these requirements.  Thus libgit2.</p>
-              
-              <p>Though it would be nice to use the same library that Git itself uses, 
-              Git actually has a pretty simple storage format and just having native
-              access to that is pretty useful.  Eventually we would like to have most
-              of the functionality of the core Git tools or even get the library
-              integrated into Git itself, but in the meantime having a cleanly designed
-              and maintained linkable Git library with a public API will likely be helpful
-              to lots of people.</p>
-            </div>
-          </div>
-        </div>
+	<body>
+		<div id="body"><div id="contents">
+			<div id="header">
+				<a href="/"><img alt="a linkable library for Git" src="logo.png" width="725"/></a>
+			</div>
+			<div id="intro">
+				libgit2 is a portable, pure C implementation of the Git core methods provided as a
+				re-entrant linkable library with a solid API, allowing you to write native
+				speed custom Git applications in any language which supports C bindings.
+			</div>
+			<div class="contents">
+				<ul class="bullet">
+					<a class="button" href="#why">Getting started</a>
+					<a class="button" href="#cando">What it can do</a>
+					<a class="button" href="#install">Compiling the library</a>
+					<a class="button" href="#bindings">Language bindings</a>
+				</ul>
+			</div>
 
-        <h2 id="cando">What It Can Do</h2>
-        <div class="contents">
-          <div class="bullet">
-            <div class="description">
-              libgit2 is already very usable.
-              <ul>
-                <li>raw <-> hex SHA conversions</li>
-                <li>raw object reading (loose and packed)</li>
-                <li>raw object writing (loose)</li>
-                <li>revlist walker</li>
-                <li>commit, tag and tree object parsing and write-back</li>
-                <li>tree traversal</li>
-                <li>basic index file (staging area) operations</li>
-              </ul>
-              
-            <!--
-              To-Do list:
-              <ul>
-                <li>rev-parse</li>
-                <li>diff-tree</li>
 
-                <li>branch (list, create, delete, safe_delete, move)</li>
-                <li>notes</li>
+			<h2 id="started">Getting started</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+					  <p>In the current Git project, though a libgit.a file is produced it is
+					  not re-entrant (it will call <code>die()</code> on basically any error)
+					  and it has no stable or well-designed public API.  As there is no good
+					  way to link to this effectively, a new library was needed that fulfilled
+					  these requirements.  Thus libgit2.</p>
 
-                <li>index (read-tree, write-tree, update, read, write)</li>
-                <li>name-rev, describe</li>
-                <li>reflog (read, write)</li>
+					<h3>libgit2 is...</h3>
+					<ul>
+						<li><b>faster</b> than any other Git library</li>
+						<li>written in standards compilant <b>C99</b></li>
+						<li>completely <b>multi-platform</b>: Windows, Linux, Mac OS X, xBSD</li>
+						<li>compiled <b>natively</b> under all platforms (yes, even MSVC on Windows)</li>
+						<li><b>re-entrant</b>, with sane error handling</li>
+						<li>designed with a solid and <b>consistent API</b></li>
+						<li>available as bindings for <b>all major scripting languages</b></li>
+						<li>compiled with <b>minimal external dependencies</b> (currently only zlib)</li>
+						<li>licensed under the <b>GPLv2 with a linking exception</b>, so you can use it everywhere</li>
+					</ul>
+				</div> 
+				
+				<div class="bullet"><div class="description">
+					<p>libgit2 is still in early development, and although it's already <a href="#cando">quite feature complete</a>, there are no official binary releases available yet. Interested early adopters must <a href="#install" class="link">compile the library</a> by hand -- which is easy enough to do.</p>
+					<a class="button" href="http://github.com/libgit2/libgit2">Get the code at GitHub</a>
+				</div>
 
-                <li>fetch (http, git)</li>
-                <li>push (http, git, ssh)</li>
+			</div></div>
 
-                <li>diff</li>
-                <li>merge</li>
 
-                <li>fsck</li>
-              -->
-              </ul>
-            </div>
-          </div>
-        </div>
 
-        <h2 id="install">How To Install It</h2>
-        <div class="contents">
-          <div class="bullet">
-            <div class="description">
-              Currently it has to be compiled by hand, but it shouldn't be too difficult.
-            </div>
-              
-            <pre class="sunburst">$ git clone git://github.com/libgit2/libgit2.git
-$ cd libgit2
-$ make
-$ make install</pre>
+			<h2 id="cando">What it can do</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+					libgit2 is already very usable:
+					<ul>
+						<li>SHA conversions and formatting</li>
+						<li>object reading (loose and packed)</li>
+						<li>object writing (loose)</li>
+						<li>revision walking</li>
+						<li>commit, tag, tree and blob parsing and write-back</li>
+						<li>tree traversal</li>
+						<li>index file (staging area) manipulation</li>
+						<li>...and much more</li>
+					</ul>
+				</div>
+			</div></div>
 
-            <div class="description">
-              <br/>
-              Once that is done, you should be able to link the library to your program
-              with a normal <code>-lgit2</code>.
-            </div>
 
-      
-          </div>
-        </div>
+		  
+			<h2 id="install">Building the library</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+					libgit2 uses <a href="http://code.google.com/p/waf/">waf</a> as its buildsystem, 
+					and hence requires <a href="http://www.python.org">Python 2.4 or better</a> to 
+					configure the build. The library can be built under the following platforms: 
+					<b>Linux</b>, <b>Mac OS X</b>, <b>xBSD</b>, <b>Windows (MSVC)</b> and <b>Windows (MinGW)</b>.
+				</div>
 
-        <h2 id="bindings">Language Bindings</h2>
-        <div class="contents">
+				<div id="build_unix">
+					<div class="description">Start by configuring the build system by running:</div>
+					<pre class="sunburst">$ ./waf configure</pre>
+					<div class="description">Then build the library, either in its shared or static form</div>
+					<pre class="sunburst">$ ./waf build-static
+$ ./waf build-shared</pre>
+					<div class="description">You can then test the library with:</div>
+					<pre class="sunburst">$ ./waf test</pre>
+					<div class="description">And finally you can install it with (you may need to sudo):</div>
+					<pre class="sunburst">$ ./waf install</pre>
+					<div class="description">
+						Once that is done, you should be able to link the library to your program
+						with a normal <code>-lgit2</code>.</div>
+				</div>
+				
+				<div class="description">
+					Detailed build instructions for different platforms can be found in libgit2's 
+					<a href="https://github.com/libgit2/libgit2/blob/master/README.md">readme file</a>.
+				</div>
+			</div></div>
 
-          <div class="bullet">
-            <div class="description">
-              There are already a number of language bindings in the works, so you can
-              use Git at native speed from your favorite programming language.
-            </div>
-          </div>
+		  
+		  
+			<h2 id="bindings">Language bindings</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+					There are already a number of language bindings in the works, so you can
+					use Git at native speed from your favorite programming language.
+				</div>
+			</div>
 
-          <div class="bullet">
-            <div class="description">
-              <h3>Rugged (Ruby bindings)</h3>
-              <p>
-              Rugged (previously known as Ribbit) is the reference bindings for libgit2, used to make sure the 
-              source C API is sane and functional. They are always in sync with the libgit2 master branch.
-              </p>
-              <a href="http://github.com/libgit2/rugged">Get Rugged</a>
-            </div>
-          </div>
+		  <div class="bullet">
+			  <div class="description">
+				  <h3>Rugged (Ruby bindings)</h3>
+				  <p>
+				  Rugged (previously known as Ribbit) is the reference bindings for libgit2, used to make sure the 
+				  source C API is sane and functional. They are always in sync with the libgit2 master branch.
+				  </p>
+				  <a class="button" href="http://github.com/libgit2/rugged">Get Rugged</a>
+			  </div>
+		  </div>
 
-          <div class="bullet">
-            <div class="description">
-              <h3>pygit2 (Python bindings)</h3>
-			  <p>pygit2 are the Python 2.6+ bindings for libgit2 mantained by David Borowitz.
-			  They should be (mostly) up to date with the library changes.</p>
-            </div>
-             <a href="http://github.com/libgit2/pygit2">Get pygit2</a>
-          </div>
+		  <div class="bullet">
+			  <div class="description">
+				  <h3>pygit2 (Python bindings)</h3>
+				  <p>pygit2 are the Python 2.6+ bindings for libgit2 mantained by David Borowitz.
+				  They should be (mostly) up to date with the library changes.</p>
+			  </div>
+			  <a class="button" href="http://github.com/libgit2/pygit2">Get pygit2</a>
+		  </div>
 
-          <div class="bullet">
-            <div class="description">
-              <h3>Objective-C</h3>
-              <p><em>Coming Soon...</em></p>
-            </div>
-          </div>
+		  <div class="bullet">
+			  <div class="description">
+				  <h3>Objective-C</h3>
+				  <p><em>Coming Soon...</em></p>
+			  </div>
+		  </div>
 
-          <div class="bullet">
-            <div class="description">
-              <h3>Geef (Erlang bindings)</h3>
-              <p>
-                Geef is an example of an Erlang NIF binding to libgit2.  A bit out of 
-                date, but can be made to mostly work.
-              </p>
-              <a href="http://github.com/schacon/geef">Get Geef</a>
-            </div>
-          </div>
+		  <div class="bullet">
+			  <div class="description">
+				  <h3>Geef (Erlang bindings)</h3>
+				  <p>
+				  Geef is an example of an Erlang NIF binding to libgit2.  A bit out of 
+				  date, but can be made to mostly work.
+				  </p>
+				  <a class="button" href="http://github.com/schacon/geef">Get Geef</a>
+			  </div>
+		  </div>
+	  </div>
 
-        </div>
 
-      </div>
-    </div>
-    <div id="credits">
-      <p>Thanks to the <a href="http://gembundler.com">Bundler team</a> for letting me steal all their website codez.</p>
-    </div>
-    <a href="http://github.com/libgit2/libgit2" id="github">
-      <img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" />
-    </a>
-  </body>
+	</div></div>
+
+	<div id="credits">
+		<p>Thanks to the folks at <a href="http://gembundler.com">Bundler</a> for letting us steal their awesome CSS</p>
+	</div>
+	<a href="http://github.com/libgit2/libgit2" id="github">
+		<img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" />
+	</a>
+</body>
 </html>
