@@ -235,7 +235,6 @@ ul.bullet a:last-child {
   color: #003333;
   line-height: 24px;
   margin-bottom: 8px;
-  margin-top: 8px;
 }
 /* line 154 */
 .button {
@@ -303,6 +302,8 @@ ul.bullet a:last-child {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   margin: 0;
+  margin-top: 10px; 
+  margin-bottom: 10px; 
 }
 /* line 193 */
 .bullet code {
