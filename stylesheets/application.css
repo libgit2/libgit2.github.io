@@ -379,3 +379,10 @@ pre {
 #versions a.current {
   font-weight: bold;
 }
+
+.shtitle {
+  background: #595;
+  color: #cec;
+  padding: 8px;
+  float: right;
+}

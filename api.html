@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>libgit2 API</title>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+		<link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/sh_main.min.js"></script>
+		<script type="text/javascript" src="js/sh_lang/sh_c.min.js"></script>
+		<script type="text/javascript" src="js/sh_lang/sh_ruby.min.js"></script>
+		<link type="text/css" href="stylesheets/sh_libgit.css" rel="stylesheet" >
+	</head>
+
+	<body onload="sh_highlightDocument();">
+		<div id="body"><div id="contents">
+			<div id="header">
+        <h1>LibGit2 API Usage Guide</h1>
+			</div>
+
+			<h2 id="started">Getting started</h2>
+
+			<div class="contents"><div class="bullet">
+				<div class="description">
+					<p>This is the usage guide for the libgit2 API.  The machine generated
+						documentation for the C API can be found <a href="http://libgit2.github.com/libgit2/modules.html">here</a>;
+						this page is to show some examples and usage of libgit2 and the Ruby
+						bindings, <a href="https://github.com/libgit2/rugged">Rugged</a>.
+					</p>
+
+					<p>To get started, you need to initialize the <code>Repository</code>
+					object.  This is the starting point for most of what you will do with
+					the libgit2 API.
+					</p>
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+#include &lt;git.h&gt;
+git_repository *repo;
+git_repository_open(&repo, "/path/to/repo.git");
+git_repository_free(repo);
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+require 'rugged'
+repo = Rugged::Repository.new(@path)
+</pre>
+
+			</div>
+			</div></div>
+
+
+
+			<h2 id="sha">SHA1 Conversion and Formatting</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+
+			<h3>Hex to Raw</h3>
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+char hex[] = "599955586da1c3ad514f3e65f1081d2012ec862d";
+git_oid oid;
+git_oid_mkstr(&oid, hex);
+printf("Raw 20 bytes: [%s]\n", (&oid)->id);
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+raw = Rugged::hex_to_raw("ce08fe4884650f067bd5703b6a59a8b3b3c99a09")
+puts "Raw 20 bytes: #{raw}"
+</pre>
+
+			<h3>Raw to Hex</h3>
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+git_oid oid;
+char out[40];
+
+git_oid_mkraw(&oid, raw);
+git_oid_fmt(out, &oid);
+printf("SHA hex string: %s\n", out);$
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+hex = Rugged::raw_to_hex(Base64.decode64("FqASNFZ4mrze9Ld1ITwjqL109eA="))
+puts "SHA hex string: #{hex}"
+</pre>
+
+				</div>
+			</div></div>
+
+			<h2 id="sha">Raw Data Reading and Writing</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+					loose and packed
+				</div>
+			</div></div>
+
+			<h2 id="sha">Object Parsing and Writing</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+					commit, tag, tree and blob parsing and write-back
+					tree traversal
+				</div>
+			</div></div>
+
+			<h2 id="sha">Revision Walking</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+				</div>
+			</div></div>
+
+			<h2 id="sha">Index Manipulation</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+				</div>
+			</div></div>
+
+	<a href="http://github.com/libgit2/libgit2" id="github">
+		<img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" />
+	</a>
+</body>
+</html>
