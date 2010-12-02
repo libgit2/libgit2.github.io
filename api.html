@@ -46,7 +46,7 @@ git_repository_free(repo);
 <span class="shtitle">Ruby</span>
 <pre class="sh_ruby">
 require 'rugged'
-repo = Rugged::Repository.new(@path)
+@repo = Rugged::Repository.new(@path)
 </pre>
 
 			</div>
@@ -57,6 +57,15 @@ repo = Rugged::Repository.new(@path)
 			<h2 id="sha">SHA1 Conversion and Formatting</h2>
 			<div class="contents"><div class="bullet">
 				<div class="description">
+
+				<p>The Git object database is basically a key-value store wher
+				the key for each object is the SHA1 checksum of the contents of
+				the object it is storing. This means that working with these SHA1
+				values is pretty important.  The SHA1 algorithm returns a 20-byte
+				raw value for any content given to it, but in order to be readable
+				by people or to even accurately represent it in ASCII, you have to
+				convert the value to 40 hex characters.  libgit2 provides helper
+				functions to easily do this conversion.</p>
 
 			<h3>Hex to Raw</h3>
 
@@ -102,7 +111,83 @@ puts "SHA hex string: #{hex}"
 			<h2 id="sha">Raw Data Reading and Writing</h2>
 			<div class="contents"><div class="bullet">
 				<div class="description">
-					loose and packed
+
+				<p>This is the lowest layer of Git access, raw read and write
+				access to the object database. With libgit2 you can read the raw
+				data of any object out of the database by providing the SHA1 hash
+				of that object.  It will pull from loose or packed objects
+				transparently.
+				</p>
+
+			<h3>Reading Data</h3>
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+git_odb *odb;
+git_rawobj obj;
+git_oid oid;
+
+unsigned char *data;
+const char *str_type;
+int error;
+
+odb = git_repository_database(repo);
+git_oid_mkstr(&oid, "599955586da1c3ad514f3e65f1081d2012ec862d");
+error = git_odb_read(&obj, odb, oid);
+
+data = obj.data;  // raw object data
+str_type = git_obj_type_to_string(obj.type); // human readable object type
+printf("object length and type: %d, %s\n", (int)obj.len, str_type)
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+sha = "599955586da1c3ad514f3e65f1081d2012ec862d"
+if @repo.exists(sha)
+  data, length, type = @repo.read(sha)
+end
+</pre>
+
+			<p>We also provide access to write arbitrary content back into
+			the object database.  For writing blob contents, this is fine,
+			but remember that other types such as commits and trees have very
+			specific formats. It would be easy to introduce corrupt objects
+			this way.</p>
+
+			<h3>Writing Data</h3>
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+git_odb *odb;
+git_rawobj obj;
+git_oid oid;
+int error;
+char out[40];
+
+odb = git_repository_database(repo);
+
+(&obj)->data = "any ol content will do";
+(&obj)->len  = 22;
+(&obj)->type = git_obj_string_to_type("blob");
+
+git_obj_hash(&oid, &obj);
+git_oid_fmt(out, &oid);
+printf("SHA hex string: %s\n", out);
+
+error = git_odb_write(&oid, odb, &obj);  // actually write to the db
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+content = "any ol content will do"
+sha = @repo.hash(content, "blob")  # just gives you the SHA hash
+sha = @repo.write(content, "blob") # actually writes to the odb
+</pre>
+
 				</div>
 			</div></div>
 
@@ -111,18 +196,51 @@ puts "SHA hex string: #{hex}"
 				<div class="description">
 					commit, tag, tree and blob parsing and write-back
 					tree traversal
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+</pre>
+
 				</div>
 			</div></div>
 
 			<h2 id="sha">Revision Walking</h2>
 			<div class="contents"><div class="bullet">
 				<div class="description">
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+</pre>
+
 				</div>
 			</div></div>
 
 			<h2 id="sha">Index Manipulation</h2>
 			<div class="contents"><div class="bullet">
 				<div class="description">
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+</pre>
+
 				</div>
 			</div></div>
 
