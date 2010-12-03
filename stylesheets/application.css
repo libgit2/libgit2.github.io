@@ -386,3 +386,12 @@ pre {
   padding: 8px;
   float: right;
 }
+.apilink {
+  float:right;
+}
+a.apilink {
+  color: #e33 !important;
+  background: #fcc;
+  padding: 5px;
+  margin: 5px;
+}

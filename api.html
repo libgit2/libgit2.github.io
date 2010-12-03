@@ -18,6 +18,21 @@
         <h1>LibGit2 API Usage Guide</h1>
 			</div>
 
+			<h2 id="content">Contents</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
+					<ul>
+						<li><a href="api.html#sha">SHA conversions and formatting</a></li>
+						<li><a href="api.html#rawread">object reading (loose and packed)</a></li>
+						<li><a href="api.html#rawwrite">object writing (loose)</a></li>
+						<li><a href="api.html#parsing">commit, tag, tree and blob parsing and write-back</a></li>
+						<li><a href="api.html#trees">tree traversal</a></li>
+						<li><a href="api.html#revwalk">revision walking</a></li>
+						<li><a href="api.html#index">index file (staging area) manipulation</a></li>
+					</ul>
+				</div>
+			</div></div>
+
 			<h2 id="started">Getting started</h2>
 
 			<div class="contents"><div class="bullet">
@@ -108,7 +123,7 @@ puts "SHA hex string: #{hex}"
 				</div>
 			</div></div>
 
-			<h2 id="sha">Raw Data Reading and Writing</h2>
+			<h2 id="rawread">Raw Data Reading and Writing</h2>
 			<div class="contents"><div class="bullet">
 				<div class="description">
 
@@ -150,7 +165,7 @@ if @repo.exists(sha)
 end
 </pre>
 
-			<p>We also provide access to write arbitrary content back into
+			<p id="rawwrite">We also provide access to write arbitrary content back into
 			the object database.  For writing blob contents, this is fine,
 			but remember that other types such as commits and trees have very
 			specific formats. It would be easy to introduce corrupt objects
@@ -191,11 +206,232 @@ sha = @repo.write(content, "blob") # actually writes to the odb
 				</div>
 			</div></div>
 
-			<h2 id="sha">Object Parsing and Writing</h2>
+			<h2 id="parsing">Object Parsing and Writing</h2>
 			<div class="contents"><div class="bullet">
 				<div class="description">
-					commit, tag, tree and blob parsing and write-back
-					tree traversal
+				<p>
+					The different Git object types other than blobs have very specific
+					formats they need to be in.  libgit2 is capable of properly parsing
+					commits, tags, and trees for you. It can also construct the proper
+					format given the raw data to for easy write-back capability.
+				</p>
+
+			<a class="apilink" href="http://libgit2.github.com/libgit2/group__git__commit.html">Commit API</a>
+			<h3 id="commits">Commits</h3>
+
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+git_commit *commit;
+git_oid oid, tid;
+int error;
+
+git_oid_mkstr(&oid, "599955586da1c3ad514f3e65f1081d2012ec862d");
+
+error = git_repository_lookup(&commit, repo, &oid, OBJ_COMMIT);
+
+const git_person *author, *cmtter;
+const char *message, *message_short;
+time_t ctime;
+unsigned int parents, p;
+
+msg      = git_commit_message(commit);
+msg      = git_commit_message_short(commit);
+author   = git_commit_author(commit);
+cmtter   = git_commit_committer(commit);
+ctime    = git_commit_time(commit);
+
+printf("Author: %s (%s)\n", author->name, author->email);
+
+parents  = git_commit_parentcount(commit);
+for (p = 0;p < parents;p++) {
+  parent = git_commit_parent(commit, p);
+}
+
+/* And write a new object back, based on the original one */
+
+git_tree *tree;
+git_oid_mkstr(&tid, "07b3b552c4e879a21eb81d048fa729df65a49051");
+git_tree_lookup(&tree, repo, &id);
+git_commit_set_tree(commit, tree); // set tree to a different tree
+
+// change the author, committer and message
+git_commit_set_author(commit, "OP Chacon", "op@gmail.com", 987654321);
+git_commit_set_committer(commit, "Orange Peel Chacon", "op@gmail.com", 123456789);
+git_commit_set_message(commit, "the new commit message");
+
+// write the object to disk
+git_object_write((git_object *)commit);
+</pre>
+
+	<p>Notice that you can get objects from the database either via the 
+	<code>git_[object]_lookup(&obj, repo, &id)</code> method or the more
+	general <code>git_repository_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
+	call.  I will use them interchangably through these examples.</p>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+sha = "599955586da1c3ad514f3e65f1081d2012ec862d"
+obj = @repo.lookup(sha)
+
+obj.sha
+obj.type
+obj.message
+obj.message_short
+obj.time
+
+c = obj.committer
+c.name       # "Scott Chacon"
+c.time.to_i  # 1273360386
+c.email      # "schacon@gmail.com"
+
+obj.tree.sha # "181037049a54a1eb5fab404658a3a250b44335d7"
+obj.parents.each do |parent|
+  pp parent
+end
+
+tree = @repo.lookup("07b3b552c4e879a21eb81d048fa729df65a49051")
+obj.tree = tree
+
+c.name = "Orange Peel Chacon"
+c.email = "op@gmail.com"
+
+obj.author = c
+obj.committer = c
+obj.message = "the new commit message"
+obj.write  # write back to the database
+</pre>
+
+			<a class="apilink" href="http://libgit2.github.com/libgit2/group__git__tag.html">Tag API</a>
+			<h3 id="tags">Tags</h3>
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+git_tag *tag;
+git_commit *commit;
+git_oid oid;
+int error;
+
+git_oid_mkstr(&oid, "0c37a5391bbff43c37f0d0371823a5509eed5b1d");
+
+error = git_repository_lookup(&tag, repo, &oid, OBJ_TAG);
+
+git_tag_name(tag)    // "test"
+git_tag_type(tag)    // GIT_OBJ_TAG
+git_tag_message(tag) // "tag message\n"
+commit = (git_commit *)git_tag_target(tag);
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+sha = "0c37a5391bbff43c37f0d0371823a5509eed5b1d"
+obj = @repo.lookup(sha)
+
+obj.sha
+obj.type        # "tag"
+obj.message     # "test tag message\n"
+obj.name        # "v1.0"
+obj.target.sha  # "5b5b025afb0b4c913b4c338a42934a3863bf3644"
+obj.target_type # "commit"
+
+c = obj.tagger
+c.name      # "Scott Chacon"
+c.time.to_i # 1288114383
+c.email     # "schacon@gmail.com"
+</pre>
+
+
+			<a class="apilink" href="http://libgit2.github.com/libgit2/group__git__tree.html">Tree API</a>
+			<h3 id="trees">Trees</h3>
+
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+git_oid id;
+git_tree *tree;
+git_tree_entry *entry;
+git_object *obj;
+
+git_oid_mkstr(&id, "1810dff58d8a660512d4832e740f692884338ccd");
+
+git_tree_lookup(&tree, repo, &id);
+
+git_tree_entrycount(tree); // 3
+
+entry = git_tree_entry_byname(tree, "README");
+git_tree_entry_name(entry); // "README"
+
+entry = git_tree_entry_byindex(tree, 0)
+git_tree_entry_name(entry); // "README"
+
+git_tree_entry_2object(&obj, entry); // blob
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+tree = @repo.lookup("1385f264afb75a56a5bec74243be9b367ba4ca08")
+tree.sha
+tree.type         # "tree"
+tree.entry_count  # 3
+tree.each do |entry|
+  puts entry.name
+  puts entry.to_object.sha
+  puts entry.attributes
+end
+
+enumdir = tree.sort { |a, b| a.sha <=> b.sha }.map { |e| e.name }.join(':')
+puts enumdir # "README:subdir:new.txt"
+</pre>
+
+			<a class="apilink" href="http://libgit2.github.com/libgit2/group__git__blob.html">Blob API</a>
+			<h3 id="blobs">Blobs</h3>
+
+<p>Since blobs are basically unstructured, there isn't a lot the blob routines
+provide over the raw access calls, but there are some interesting methods to help
+read in contents from disk.</p>
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+git_oid id;
+git_blob *blob;
+git_object *obj;
+
+git_oid_mkstr(&id, "1810dff58d8a660512d4832e740f692884338ccd");
+
+git_blob_lookup(&blob, repo, &id);
+git_blob_rawsize(blob);    // 8
+git_blob_rawcontent(blob); // "content"
+
+git_blob_set_rawcontent(blob, "my new content");
+git_blob_set_rawcontent_fromfile(blob, "README.txt");
+</pre>
+
+<br/>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+sha = "fa49b077972391ad58037050f2a75f74e3671e92"
+blob = @repo.lookup(sha)
+blob.size    # 9
+blob.content # "new file\n"
+blob.type    # "blob"
+
+blob.content = "new blob content"
+blob.write
+</pre>
+
+				</div>
+			</div></div>
+
+			<h2 id="revwalk">Revision Walking</h2>
+			<div class="contents"><div class="bullet">
+				<div class="description">
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
@@ -210,24 +446,7 @@ sha = @repo.write(content, "blob") # actually writes to the odb
 				</div>
 			</div></div>
 
-			<h2 id="sha">Revision Walking</h2>
-			<div class="contents"><div class="bullet">
-				<div class="description">
-
-<span class="shtitle">C</span>
-<pre class="sh_c">
-</pre>
-
-<br/>
-
-<span class="shtitle">Ruby</span>
-<pre class="sh_ruby">
-</pre>
-
-				</div>
-			</div></div>
-
-			<h2 id="sha">Index Manipulation</h2>
+			<h2 id="index">Index Manipulation</h2>
 			<div class="contents"><div class="bullet">
 				<div class="description">
 
