@@ -433,14 +433,49 @@ blob.write
 			<div class="contents"><div class="bullet">
 				<div class="description">
 
+				<p>libgit2 also has a revision walking API that gives you access to the
+				mechanics of the 'log' command.  Instead of just running 'git log', you
+				start a graph walker, tell it where to start and just begin asking it
+				for the next commit in the list.</p>
+
+				<p>You can technically write your own walker by starting with any commit
+				and continuously putting it's parents in a queue and then taking the 
+				next commit off that queue, but the built in walker is faster and has a
+				few different walking strategies built in.</p>
+
 <span class="shtitle">C</span>
 <pre class="sh_c">
+git_oid id;
+git_revwalk *walk;
+git_commit *head, *commit;
+
+git_oid_mkstr(&id, "d6c2306fcbf0d346b9129b303c3babae58f619f7");
+git_commit_lookup(&head, repo, &id);
+
+git_revwalk_new(&walk, repo);
+git_revwalk_sorting(walk, GIT_SORT_TOPOLOGICAL | GIT_SORT_REVERSE);
+git_revwalk_push(walk, head);
+
+while ((commit = git_revwalk_next(walk)) != NULL) {
+  msg      = git_commit_message_short(commit);
+  author   = git_commit_author(commit);
+  printf("%s (%s)\n", msg, author->email);
+}
+
+git_revwalk_free(walk);
 </pre>
 
 <br/>
 
 <span class="shtitle">Ruby</span>
 <pre class="sh_ruby">
+walker = Rugged::Walker.new(@repo)
+walker.push("d6c2306fcbf0d346b9129b303c3babae58f619f7")
+while commit = walker.next
+  msg   = commit.message
+  email = commit.author.email
+  puts "#{msg} (#{email})"
+end
 </pre>
 
 				</div>
