@@ -1,56 +1,62 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-	<head>
-		<title>libgit2 API</title>
-		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-		<link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
-		<link href="stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
-		<script type="text/javascript" src="js/sh_main.min.js"></script>
-		<script type="text/javascript" src="js/sh_lang/sh_c.min.js"></script>
-		<script type="text/javascript" src="js/sh_lang/sh_ruby.min.js"></script>
-		<link type="text/css" href="stylesheets/sh_libgit.css" rel="stylesheet" >
-	</head>
+  <head>
+    <title>libgit2 API</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <link href="stylesheets/application.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/sh_main.min.js"></script>
+    <script type="text/javascript" src="js/sh_lang/sh_c.min.js"></script>
+    <script type="text/javascript" src="js/sh_lang/sh_ruby.min.js"></script>
+    <link type="text/css" href="stylesheets/sh_libgit.css" rel="stylesheet" >
+  </head>
 
-	<body onload="sh_highlightDocument();">
-		<div id="body"><div id="contents">
-			<div id="header">
+  <body onload="sh_highlightDocument();">
+    <div id="body"><div id="contents">
+      <div id="header">
         <h1>LibGit2 API Usage Guide</h1>
-			</div>
+      </div>
 
-			<h2 id="content">Contents</h2>
-			<div class="contents"><div class="bullet">
-				<div class="description">
-					<ul>
-						<li><a href="api.html#sha">SHA conversions and formatting</a></li>
-						<li><a href="api.html#rawread">object reading (loose and packed)</a></li>
-						<li><a href="api.html#rawwrite">object writing (loose)</a></li>
-						<li><a href="api.html#parsing">commit, tag, tree and blob parsing and write-back</a></li>
-						<li><a href="api.html#trees">tree traversal</a></li>
-						<li><a href="api.html#revwalk">revision walking</a></li>
-						<li><a href="api.html#index">index file (staging area) manipulation</a></li>
-					</ul>
-				</div>
-			</div></div>
+      <h2 id="content">Contents</h2>
+      <div class="contents"><div class="bullet">
+        <div class="description">
+          <ul>
+            <li><a href="api.html#sha">SHA conversions and formatting</a></li>
+            <li><a href="api.html#rawread">object reading (loose and packed)</a></li>
+            <li><a href="api.html#rawwrite">object writing (loose)</a></li>
+            <li><a href="api.html#parsing">commit, tag, tree and blob parsing and write-back</a></li>
+            <li><a href="api.html#trees">tree traversal</a></li>
+            <li><a href="api.html#revwalk">revision walking</a></li>
+            <li><a href="api.html#index">index file (staging area) manipulation</a></li>
+          </ul>
+        </div>
+      </div></div>
 
-			<h2 id="started">Getting started</h2>
+      <h2 id="started">Getting started</h2>
 
-			<div class="contents"><div class="bullet">
-				<div class="description">
-					<p>This is the usage guide for the libgit2 API.  The machine generated
-						documentation for the C API can be found <a href="http://libgit2.github.com/libgit2/modules.html">here</a>;
-						this page is to show some examples and usage of libgit2 and the Ruby
-						bindings, <a href="https://github.com/libgit2/rugged">Rugged</a>.
-					</p>
+      <div class="contents"><div class="bullet">
+        <div class="description">
+          <p>This is the usage guide for the libgit2 API.  The machine generated
+            documentation for the C API can be found <a href="http://libgit2.github.com/libgit2/modules.html">here</a>;
+            this page is to show some examples and usage of libgit2 and the Ruby
+            bindings, <a href="https://github.com/libgit2/rugged">Rugged</a>.
+          </p>
 
-					<p>To get started, you need to initialize the <code>Repository</code>
-					object.  This is the starting point for most of what you will do with
-					the libgit2 API.
-					</p>
+          <p>To get started, you need to initialize the <code>Repository</code>
+          object.  This is the starting point for most of what you will do with
+          the libgit2 API.
+          </p>
+
+          <p>You will have to include both <code>git2.h</code> for the main 
+          libgit2 functionality, plus a backend, which generally is going to
+          be <code>odb_backend.h</code>. This is the on-disk normal Git data
+          store.</p>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
-#include &lt;git.h&gt;
+#include &lt;git2.h&gt;
+#include &lt;git2/odb_backend.h&gt;
 git_repository *repo;
 git_repository_open(&repo, "/path/to/repo.git");
 git_repository_free(repo);
@@ -64,25 +70,25 @@ require 'rugged'
 @repo = Rugged::Repository.new(@path)
 </pre>
 
-			</div>
-			</div></div>
+      </div>
+      </div></div>
 
 
 
-			<h2 id="sha">SHA1 Conversion and Formatting</h2>
-			<div class="contents"><div class="bullet">
-				<div class="description">
+      <h2 id="sha">SHA1 Conversion and Formatting</h2>
+      <div class="contents"><div class="bullet">
+        <div class="description">
 
-				<p>The Git object database is basically a key-value store wher
-				the key for each object is the SHA1 checksum of the contents of
-				the object it is storing. This means that working with these SHA1
-				values is pretty important.  The SHA1 algorithm returns a 20-byte
-				raw value for any content given to it, but in order to be readable
-				by people or to even accurately represent it in ASCII, you have to
-				convert the value to 40 hex characters.  libgit2 provides helper
-				functions to easily do this conversion.</p>
+        <p>The Git object database is basically a key-value store wher
+        the key for each object is the SHA1 checksum of the contents of
+        the object it is storing. This means that working with these SHA1
+        values is pretty important.  The SHA1 algorithm returns a 20-byte
+        raw value for any content given to it, but in order to be readable
+        by people or to even accurately represent it in ASCII, you have to
+        convert the value to 40 hex characters.  libgit2 provides helper
+        functions to easily do this conversion.</p>
 
-			<h3>Hex to Raw</h3>
+      <h3>Hex to Raw</h3>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
@@ -100,7 +106,7 @@ raw = Rugged::hex_to_raw("ce08fe4884650f067bd5703b6a59a8b3b3c99a09")
 puts "Raw 20 bytes: #{raw}"
 </pre>
 
-			<h3>Raw to Hex</h3>
+      <h3>Raw to Hex</h3>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
@@ -120,21 +126,21 @@ hex = Rugged::raw_to_hex(Base64.decode64("FqASNFZ4mrze9Ld1ITwjqL109eA="))
 puts "SHA hex string: #{hex}"
 </pre>
 
-				</div>
-			</div></div>
+        </div>
+      </div></div>
 
-			<h2 id="rawread">Raw Data Reading and Writing</h2>
-			<div class="contents"><div class="bullet">
-				<div class="description">
+      <h2 id="rawread">Raw Data Reading and Writing</h2>
+      <div class="contents"><div class="bullet">
+        <div class="description">
 
-				<p>This is the lowest layer of Git access, raw read and write
-				access to the object database. With libgit2 you can read the raw
-				data of any object out of the database by providing the SHA1 hash
-				of that object.  It will pull from loose or packed objects
-				transparently.
-				</p>
+        <p>This is the lowest layer of Git access, raw read and write
+        access to the object database. With libgit2 you can read the raw
+        data of any object out of the database by providing the SHA1 hash
+        of that object.  It will pull from loose or packed objects
+        transparently.
+        </p>
 
-			<h3>Reading Data</h3>
+      <h3>Reading Data</h3>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
@@ -165,13 +171,13 @@ if @repo.exists(sha)
 end
 </pre>
 
-			<p id="rawwrite">We also provide access to write arbitrary content back into
-			the object database.  For writing blob contents, this is fine,
-			but remember that other types such as commits and trees have very
-			specific formats. It would be easy to introduce corrupt objects
-			this way.</p>
+      <p id="rawwrite">We also provide access to write arbitrary content back into
+      the object database.  For writing blob contents, this is fine,
+      but remember that other types such as commits and trees have very
+      specific formats. It would be easy to introduce corrupt objects
+      this way.</p>
 
-			<h3>Writing Data</h3>
+      <h3>Writing Data</h3>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
@@ -203,21 +209,21 @@ sha = @repo.hash(content, "blob")  # just gives you the SHA hash
 sha = @repo.write(content, "blob") # actually writes to the odb
 </pre>
 
-				</div>
-			</div></div>
+        </div>
+      </div></div>
 
-			<h2 id="parsing">Object Parsing and Writing</h2>
-			<div class="contents"><div class="bullet">
-				<div class="description">
-				<p>
-					The different Git object types other than blobs have very specific
-					formats they need to be in.  libgit2 is capable of properly parsing
-					commits, tags, and trees for you. It can also construct the proper
-					format given the raw data to for easy write-back capability.
-				</p>
+      <h2 id="parsing">Object Parsing and Writing</h2>
+      <div class="contents"><div class="bullet">
+        <div class="description">
+        <p>
+          The different Git object types other than blobs have very specific
+          formats they need to be in.  libgit2 is capable of properly parsing
+          commits, tags, and trees for you. It can also construct the proper
+          format given the raw data to for easy write-back capability.
+        </p>
 
-			<a class="apilink" href="http://libgit2.github.com/libgit2/group__git__commit.html">Commit API</a>
-			<h3 id="commits">Commits</h3>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__commit.html">Commit API</a>
+      <h3 id="commits">Commits</h3>
 
 
 <span class="shtitle">C</span>
@@ -264,10 +270,10 @@ git_commit_set_message(commit, "the new commit message");
 git_object_write((git_object *)commit);
 </pre>
 
-	<p>Notice that you can get objects from the database either via the 
-	<code>git_[object]_lookup(&obj, repo, &id)</code> method or the more
-	general <code>git_repository_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
-	call.  I will use them interchangably through these examples.</p>
+  <p>Notice that you can get objects from the database either via the 
+  <code>git_[object]_lookup(&obj, repo, &id)</code> method or the more
+  general <code>git_repository_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
+  call.  I will use them interchangably through these examples.</p>
 
 <br/>
 
@@ -304,8 +310,8 @@ obj.message = "the new commit message"
 obj.write  # write back to the database
 </pre>
 
-			<a class="apilink" href="http://libgit2.github.com/libgit2/group__git__tag.html">Tag API</a>
-			<h3 id="tags">Tags</h3>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__tag.html">Tag API</a>
+      <h3 id="tags">Tags</h3>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
@@ -345,8 +351,8 @@ c.email     # "schacon@gmail.com"
 </pre>
 
 
-			<a class="apilink" href="http://libgit2.github.com/libgit2/group__git__tree.html">Tree API</a>
-			<h3 id="trees">Trees</h3>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__tree.html">Tree API</a>
+      <h3 id="trees">Trees</h3>
 
 
 <span class="shtitle">C</span>
@@ -389,8 +395,8 @@ enumdir = tree.sort { |a, b| a.sha <=> b.sha }.map { |e| e.name }.join(':')
 puts enumdir # "README:subdir:new.txt"
 </pre>
 
-			<a class="apilink" href="http://libgit2.github.com/libgit2/group__git__blob.html">Blob API</a>
-			<h3 id="blobs">Blobs</h3>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__blob.html">Blob API</a>
+      <h3 id="blobs">Blobs</h3>
 
 <p>Since blobs are basically unstructured, there isn't a lot the blob routines
 provide over the raw access calls, but there are some interesting methods to help
@@ -426,22 +432,22 @@ blob.content = "new blob content"
 blob.write
 </pre>
 
-				</div>
-			</div></div>
+        </div>
+      </div></div>
 
-			<h2 id="revwalk">Revision Walking</h2>
-			<div class="contents"><div class="bullet">
-				<div class="description">
+      <h2 id="revwalk">Revision Walking</h2>
+      <div class="contents"><div class="bullet">
+        <div class="description">
 
-				<p>libgit2 also has a revision walking API that gives you access to the
-				mechanics of the 'log' command.  Instead of just running 'git log', you
-				start a graph walker, tell it where to start and just begin asking it
-				for the next commit in the list.</p>
+        <p>libgit2 also has a revision walking API that gives you access to the
+        mechanics of the 'log' command.  Instead of just running 'git log', you
+        start a graph walker, tell it where to start and just begin asking it
+        for the next commit in the list.</p>
 
-				<p>You can technically write your own walker by starting with any commit
-				and continuously putting it's parents in a queue and then taking the 
-				next commit off that queue, but the built in walker is faster and has a
-				few different walking strategies built in.</p>
+        <p>You can technically write your own walker by starting with any commit
+        and continuously putting it's parents in a queue and then taking the 
+        next commit off that queue, but the built in walker is faster and has a
+        few different walking strategies built in.</p>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
@@ -478,28 +484,81 @@ while commit = walker.next
 end
 </pre>
 
-				</div>
-			</div></div>
+        </div>
+      </div></div>
 
-			<h2 id="index">Index Manipulation</h2>
-			<div class="contents"><div class="bullet">
-				<div class="description">
+      <h2 id="index">Index Manipulation</h2>
+
+      <div class="contents"><div class="bullet">
+        <div class="description">
+        <p>libgit2 also has a set of index (cachefile) manipulation methods.
+        These cover being able to read and write the Git index file - stage and
+        unstage files, that sort of thing.</p>
+
+      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__index.html">Index API</a>
+      <h3 id="indexread">Reading Index Files</h3>
+
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
+git_index *index;
+unsigned int i, e;
+git_index_entry **entries;
+
+git_index_open_inrepo(&index, repo);
+if (index->on_disk) {
+  git_index_read(index);
+  ecount = git_index_entrycount(index)
+  entries = (git_index_entry **)index->entries.contents;
+  for (i = 0; i < ecount; ++i) {
+    git_index_entry *e = entries[i];
+
+    printf("path: %s\n", e->path);
+    printf("mtime: %d\n", e->mtime.seconds);
+    printf("fs: %d\n", e->file_size);
+  }
+
+  git_index_free(index);
+}
 </pre>
 
 <br/>
 
 <span class="shtitle">Ruby</span>
 <pre class="sh_ruby">
+index = Rugged::Index.new(path)
+index.refresh
+puts index.entry_count # 2
+
+e = index.get_entry(0)
+puts e.path  # 'README'
+puts e.sha   # '1385f264afb75a56a5bec74243be9b367ba4ca08'
+puts e.mtime.to_i # 1273360380
+puts e.ctime.to_i # 1273360380
+puts e.file_size  # 4
+# also e.dev, e.ino, e.mode, e.uid, e.gid, e.flags, e.valid?, e.stage
+
+index.each do |entry|
+  puts entry.name # file name of each entry
+end
 </pre>
 
-				</div>
-			</div></div>
+        </div>
+    </div></div>
 
-	<a href="http://github.com/libgit2/libgit2" id="github">
-		<img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" />
-	</a>
+      <h2 id="index">Overview</h2>
+
+      <div class="contents"><div class="bullet">
+        <div class="description">
+          <p>That is the basic usage of the libgit2 library.  For more detailed 
+          information, please see the API documentation for the C library or the
+          Rugged Ruby library.
+          </p>
+        </div>
+      </div></div>
+
+  <a href="http://github.com/libgit2/libgit2" id="github">
+    <img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" />
+  </a>
 </body>
 </html>
