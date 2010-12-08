@@ -476,8 +476,9 @@ git_revwalk_free(walk);
 <span class="shtitle">Ruby</span>
 <pre class="sh_ruby">
 walker = Rugged::Walker.new(@repo)
-walker.push("d6c2306fcbf0d346b9129b303c3babae58f619f7")
-while commit = walker.next
+walker.push("d6c2306fcbf0d346b9129b303c3babae58f619f7") # find commits reachable from this
+walker.hide("42b551c353a29d29f6f0dc4137a40706b128a8d3") # but not from this
+walker.each do |commit|
   msg   = commit.message
   email = commit.author.email
   puts "#{msg} (#{email})"
