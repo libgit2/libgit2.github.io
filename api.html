@@ -673,6 +673,17 @@ sqlite_backend *create_backend(const char *path_do_db)
 	it to an existing object database using the <code>git_odb_add_backend(backend)</code> method.
 	A single backend instance can only be active in one ODB at the same time</p>
 
+	<p>The <code>priority</code> field is used to when sorting the backends for their usage:
+	for instance, a <code>read</code> call on the ODB will first check the backend with the
+	highest priority and attempt to read the object from it; if the backend returns an error
+	code, it will fallback silently to the following backend, until the object has been read
+	or there are no more backends left.</p>
+
+	<p>It it not necessary to specify all the backend methods on a custom backend: unspecified
+	methods will be skipped silently on their respective backend calls. If no <code>free</code>
+	method is specified for a given backend, the library will automatically try to free the backend using
+	a plain <code>free()</code> call.</p>
+
 <span class="shtitle">Ruby</span>
 <pre class="sh_ruby">
 class TestBackend &lt; Rugged::Backend
@@ -701,6 +712,20 @@ end
 backend = TestBackend.new(5) # high priority
 @repo.add_backend(backend)
 </pre>
+
+      <h3 id="indexread">A world of possibilities</h3>
+
+<p>The options when implementing custom backends are endless. Here are just a few examples:</p>
+
+	<ul>
+		<li>in-memory object storage (useful for config storage)</li>
+		<li>in-memory cache for fast lookups (make sure you write the objects back to disk before flushing the cache!)</li>
+		<li>a transparent backend acting as a logger for all the ODB reads and writes</li>
+		<li>SQLite backend writing and reading objects from a compact database</li>
+		<li>Cassandra backend (or your favourite NoSQL flavour!)</li>
+		<li>Network backend (store the objects remotely, directly)</li>
+		<li>...Oh my god, so many cool ideas!</li>
+	</ul>
 
         </div>
     </div></div>
