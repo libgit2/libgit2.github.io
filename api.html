@@ -29,6 +29,7 @@
             <li><a href="api.html#trees">tree traversal</a></li>
             <li><a href="api.html#revwalk">revision walking</a></li>
             <li><a href="api.html#index">index file (staging area) manipulation</a></li>
+            <li><a href="api.html#backends">custom ODB backends</a></li>
           </ul>
         </div>
       </div></div>
@@ -48,17 +49,17 @@
           the libgit2 API.
           </p>
 
-          <p>You will have to include both <code>git2.h</code> for the main 
-          libgit2 functionality, plus a backend, which generally is going to
-          be <code>odb_backend.h</code>. This is the on-disk normal Git data
-          store.</p>
+          <p>You will have to include both <code>git2.h</code> to access the main 
+          libgit2 functionality.</p>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
 #include &lt;git2.h&gt;
-#include &lt;git2/odb_backend.h&gt;
 git_repository *repo;
 git_repository_open(&repo, "/path/to/repo.git");
+
+/* do stuff with the repository */
+
 git_repository_free(repo);
 </pre>
 
@@ -136,9 +137,13 @@ puts "SHA hex string: #{hex}"
         <p>This is the lowest layer of Git access, raw read and write
         access to the object database. With libgit2 you can read the raw
         data of any object out of the database by providing the SHA1 hash
-        of that object.  It will pull from loose or packed objects
-        transparently.
-        </p>
+		of that object.</p>
+
+		<p>The object database is split in several layers, called backends.
+		By default, it is instantiated with two backends, just like the original
+		git.git: object requests will first be looked up in the loose object storage,
+		and if not found, a lookup will be attempted on the packfile storage. On top
+		of that, libgit2 also supports <a href="api.html#backends">custom backends</a>.</p>
 
       <h3>Reading Data</h3>
 
@@ -158,7 +163,9 @@ error = git_odb_read(&obj, odb, oid);
 
 data = obj.data;  // raw object data
 str_type = git_obj_type_to_string(obj.type); // human readable object type
-printf("object length and type: %d, %s\n", (int)obj.len, str_type)
+printf("object length and type: %d, %s\n", (int)obj.len, str_type);
+
+git_obj_close(&obj); // close the object when you are done with it
 </pre>
 
 <br/>
@@ -167,7 +174,11 @@ printf("object length and type: %d, %s\n", (int)obj.len, str_type)
 <pre class="sh_ruby">
 sha = "599955586da1c3ad514f3e65f1081d2012ec862d"
 if @repo.exists(sha)
-  data, length, type = @repo.read(sha)
+  raw_objct = @repo.read(sha)
+
+  pp raw_object.data
+  pp raw_object.type
+  pp raw_object.len
 end
 </pre>
 
@@ -189,15 +200,14 @@ char out[40];
 
 odb = git_repository_database(repo);
 
-(&obj)->data = "any ol content will do";
-(&obj)->len  = 22;
-(&obj)->type = git_obj_string_to_type("blob");
+obj.data = "any ol content will do";
+obj.len  = 22;
+obj.type = git_obj_string_to_type("blob");
 
-git_obj_hash(&oid, &obj);
+error = git_odb_write(&oid, odb, &obj);  // actually write to the db, update oid
+
 git_oid_fmt(out, &oid);
-printf("SHA hex string: %s\n", out);
-
-error = git_odb_write(&oid, odb, &obj);  // actually write to the db
+printf("The new OID is: %s\n", out);
 </pre>
 
 <br/>
@@ -221,6 +231,18 @@ sha = @repo.write(content, "blob") # actually writes to the odb
           commits, tags, and trees for you. It can also construct the proper
           format given the raw data to for easy write-back capability.
         </p>
+
+		<p>You can get objects from the database either via the 
+		  <code>git_[object]_lookup(&obj, repo, &id)</code> method or the more
+		  general <code>git_repository_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
+		  call.  I will use them interchangably through these examples.</p>
+
+		<p>Note that any object references returned by these two methods are owned by
+		the Repository object, and shall not be <code>free</code>'d manually. The repository
+		has an internal object cache, and will take care of freeing all the loaded
+		objects after the repository itself is <code>free</code>'d. However, if you
+		are sure that an object won't be needed again, you can manually free it
+		using the <code>git_object_free(obj)</code> method.</p>
 
       <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__commit.html">Commit API</a>
       <h3 id="commits">Commits</h3>
@@ -270,10 +292,6 @@ git_commit_set_message(commit, "the new commit message");
 git_object_write((git_object *)commit);
 </pre>
 
-  <p>Notice that you can get objects from the database either via the 
-  <code>git_[object]_lookup(&obj, repo, &id)</code> method or the more
-  general <code>git_repository_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
-  call.  I will use them interchangably through these examples.</p>
 
 <br/>
 
@@ -476,8 +494,10 @@ git_revwalk_free(walk);
 <span class="shtitle">Ruby</span>
 <pre class="sh_ruby">
 walker = Rugged::Walker.new(@repo)
-walker.push("d6c2306fcbf0d346b9129b303c3babae58f619f7") # find commits reachable from this
-walker.hide("42b551c353a29d29f6f0dc4137a40706b128a8d3") # but not from this
+# find commits reachable from this
+walker.push("d6c2306fcbf0d346b9129b303c3babae58f619f7") 
+# but not from this
+walker.hide("42b551c353a29d29f6f0dc4137a40706b128a8d3") 
 walker.each do |commit|
   msg   = commit.message
   email = commit.author.email
@@ -546,6 +566,148 @@ end
 
         </div>
     </div></div>
+
+      <h2 id="backends">Custom backends</h2>
+
+      <div class="contents"><div class="bullet">
+        <div class="description">
+		<p>libgit2 decouples the Object Database logic from the actual storage of
+		the objects. This means that you can actually extend the library with
+		custom backends that steer away from the default "loose object and packfiles"
+		storage model that Git uses.</p>
+
+		<p>Before extending the library with a custom backend in C, the special header
+		<code>git2/odb_backend.h</code> must be included<p>
+
+      <h3 id="indexread">Implementing a custom backend</h3>
+
+
+<span class="shtitle">C</span>
+<pre class="sh_c">
+typedef struct {
+	git_odb_backend parent;
+
+	/* custom data for your backend */
+	const char *sqlite_db;
+} sqlite_backend;
+
+int sqlb_read(git_rawobj *out, git_odb_backend *back, const git_oid *oid)
+{
+	sqlite_backend *b = (sqlite_backend *)back;
+
+	/* read the object identified by 'oid' and write its contents 
+	to 'out'. Return 'GIT_SUCCESS' if the read was succesful, 
+	or an error code otherwise. */
+
+	return GIT_SUCCESS;
+}
+
+int sqlb_read_header(git_rawobj *out, git_odb_backend *back, const git_oid *oid)
+{
+	sqlite_backend *b = (sqlite_backend *)backend;
+
+	/* read the header of the object identified by 'oid' and fill 
+	the 'out-&gt;type' and 'out-&gt;len' fields without actually 
+	loading the whole object in memory. Return 'GIT_SUCCESS' if 
+	the read was succesful, or an error code otherwise. */
+
+	return GIT_SUCCESS;
+}
+
+int sqlb_exists(git_odb_backend *back, const git_oid *oid)
+{
+	sqlite_backend *b = (sqlite_backend *)back;
+
+	/* check whether the object identified by 'oid' exists in the backend.
+	Return 1 or 0. */
+
+	return 1;
+}
+
+int sqlb_write(git_oid *out, git_odb_backend *back, git_rawobj *obj)
+{
+	sqlite_backend *b = (sqlite_backend *)back;
+
+	/* write the object in 'obj' to the storage, and fill the 'out' oid
+	with the SHA1 identifier of the written object. Return 'GIT_SUCCESS' 
+	if the write was successful, error code otherwise */
+
+	return GIT_SUCCESS;
+}
+
+void sqlb_free(git_odb_backend *backend)
+{
+	sqlite_backend *b = (sqlite_backend *)back;
+
+	/* completely free the backend instance */
+
+	free(b-&gt;sqlite_db);
+	free(b);
+}
+
+sqlite_backend *create_backend(const char *path_do_db)
+{
+	sqlite_backend *backend;
+
+	/* create a new instance of the backend */
+	backend = calloc(1, sizeof(sqlite_backend));
+
+	/* fill the instance with pointers to the backend methods */
+	backend-&gt;parent.read = &sqlb_read;
+	backend-&gt;parent.read_header = &sqlb_read_header;
+	backend-&gt;parent.write = &sqlb_write;
+	backend-&gt;parent.exists = &sqlb_exists;
+	backend-&gt;parent.free = &sqlb_free;
+
+	/* set the priority of the backend */
+	backend-&gt;parent.priority = 3; 
+
+	/* fill the custom data fields, if needed */
+	backend-&gt;sqlite_db = strdup(path_to_db);
+
+	return backend;
+}
+</pre>
+
+	<p>Once you have created a new backend instance, you can add
+	it to an existing object database using the <code>git_odb_add_backend(backend)</code> method.
+	A single backend instance can only be active in one ODB at the same time</p>
+
+<span class="shtitle">Ruby</span>
+<pre class="sh_ruby">
+class TestBackend &lt; Rugged::Backend
+  def read(oid)
+    # return a raw object with the read contents
+    Rugged::RawObject.new(type, contents)
+  end
+
+  def read_header(oid)
+    # return a raw object with the read header (type and length)
+    Rugged::RawObject.new(type, nil, len)
+  end
+
+  def exists(oid)
+    # return whether the object exists in the backend
+    true
+  end
+
+  def write(raw_object)
+    # write the object and return a SHA1 id
+    sha1
+  end
+end
+
+# add the backend to our repository
+backend = TestBackend.new(5) # high priority
+@repo.add_backend(backend)
+</pre>
+
+        </div>
+    </div></div>
+
+
+
+
 
       <h2 id="index">Overview</h2>
 
