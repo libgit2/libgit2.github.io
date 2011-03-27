@@ -49,7 +49,7 @@
           the libgit2 API.
           </p>
 
-          <p>You will have to include both <code>git2.h</code> to access the main 
+          <p>You will have to include <code>git2.h</code> to access the main 
           libgit2 functionality.</p>
 
 <span class="shtitle">C</span>
@@ -150,22 +150,24 @@ puts "SHA hex string: #{hex}"
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_odb *odb;
-git_rawobj obj;
-git_oid oid;
+git_odb_object *obj;
+git_otype otype;
 
 unsigned char *data;
 const char *str_type;
 int error;
 
 odb = git_repository_database(repo);
-git_oid_mkstr(&oid, "599955586da1c3ad514f3e65f1081d2012ec862d");
-error = git_odb_read(&obj, odb, oid);
 
-data = obj.data;  // raw object data
-str_type = git_obj_type_to_string(obj.type); // human readable object type
-printf("object length and type: %d, %s\n", (int)obj.len, str_type);
+error = git_odb_read(&obj, odb, &oid);
 
-git_obj_close(&obj); // close the object when you are done with it
+data = (char*)git_odb_object_data(obj);
+otype = git_odb_object_type(obj);
+
+str_type = git_object_type2string(otype);
+printf("object length and type: %d, %s\n", (int)git_odb_object_size(obj), str_type);
+
+git_odb_object_close(obj); // close the object when you are done with it
 </pre>
 
 <br/>
@@ -192,22 +194,10 @@ end
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
-git_odb *odb;
-git_rawobj obj;
-git_oid oid;
-int error;
-char out[40];
-
-odb = git_repository_database(repo);
-
-obj.data = "any ol content will do";
-obj.len  = 22;
-obj.type = git_obj_string_to_type("blob");
-
-error = git_odb_write(&oid, odb, &obj);  // actually write to the db, update oid
-
-git_oid_fmt(out, &oid);
-printf("The new OID is: %s\n", out);
+git_oid oid2;
+git_odb_write(&oid2, odb, "test data", 9, GIT_OBJ_BLOB);
+git_oid_fmt(out, &oid2);
+printf("Written Object: %s\n", out);
 </pre>
 
 <br/>
@@ -251,20 +241,19 @@ sha = @repo.write(content, "blob") # actually writes to the odb
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_commit *commit;
-git_oid oid, tid;
-int error;
+git_oid oid3;
 
-git_oid_mkstr(&oid, "599955586da1c3ad514f3e65f1081d2012ec862d");
+git_oid_mkstr(&oid3, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
-error = git_repository_lookup(&commit, repo, &oid, OBJ_COMMIT);
+error = git_commit_lookup(&commit, repo, &oid3);
 
-const git_person *author, *cmtter;
+const git_signature *author, *cmtter;
 const char *message, *message_short;
 time_t ctime;
 unsigned int parents, p;
 
-msg      = git_commit_message(commit);
-msg      = git_commit_message_short(commit);
+message  = git_commit_message(commit);
+message_short = git_commit_message_short(commit);
 author   = git_commit_author(commit);
 cmtter   = git_commit_committer(commit);
 ctime    = git_commit_time(commit);
@@ -273,25 +262,40 @@ printf("Author: %s (%s)\n", author->name, author->email);
 
 parents  = git_commit_parentcount(commit);
 for (p = 0;p < parents;p++) {
-  parent = git_commit_parent(commit, p);
+  git_commit *parent;
+  git_commit_parent(&parent, commit, p);
+  git_oid_fmt(out, git_commit_id(parent));
+  printf("Parent: %s\n", out);
+  git_commit_close(parent);
 }
 
-/* And write a new object back, based on the original one */
+git_commit_close(commit);
 
-git_tree *tree;
-git_oid_mkstr(&tid, "07b3b552c4e879a21eb81d048fa729df65a49051");
-git_tree_lookup(&tree, repo, &id);
-git_commit_set_tree(commit, tree); // set tree to a different tree
+/* and writing a commit object */
 
-// change the author, committer and message
-git_commit_set_author(commit, "OP Chacon", "op@gmail.com", 987654321);
-git_commit_set_committer(commit, "Orange Peel Chacon", "op@gmail.com", 123456789);
-git_commit_set_message(commit, "the new commit message");
+git_oid tree_id, parent_id, commit_id;
 
-// write the object to disk
-git_object_write((git_object *)commit);
+/* create signatures */
+author = git_signature_new("Scott Chacon", "schacon@gmail.com", 123456789, 60);
+cmtter = git_signature_new("Scott A Chacon", "scott@github.com", 987654321, 90);
+
+git_oid_mkstr(&tree_id, "28873d96b4e8f4e33ea30f4c682fd325f7ba56ac");
+git_oid_mkstr(&parent_id, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+
+git_commit_create_v(
+  &commit_id, /* out id */
+  repo,
+  NULL, /* do not update the HEAD */
+  author,
+  cmtter,
+  "example commit",
+  &tree_id,
+  1, &parent_id);
+
+git_oid_fmt(out, &commit_id);
+printf("New Commit: %s\n", out);
+
 </pre>
-
 
 <br/>
 
@@ -334,18 +338,17 @@ obj.write  # write back to the database
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_tag *tag;
-git_commit *commit;
-git_oid oid;
-int error;
+const char *tmessage;
 
-git_oid_mkstr(&oid, "0c37a5391bbff43c37f0d0371823a5509eed5b1d");
+git_oid_mkstr(&oid, "bc422d45275aca289c51d79830b45cecebff7c3a");
 
-error = git_repository_lookup(&tag, repo, &oid, OBJ_TAG);
+error = git_tag_lookup(&tag, repo, &oid);
 
-git_tag_name(tag)    // "test"
-git_tag_type(tag)    // GIT_OBJ_TAG
-git_tag_message(tag) // "tag message\n"
-commit = (git_commit *)git_tag_target(tag);
+git_tag_target((git_object **)&commit, tag);
+git_tag_name(tag);    // "test"
+git_tag_type(tag);    // GIT_OBJ_TAG
+tmessage = git_tag_message(tag); // "tag message\n"
+printf("Tag Message: %s\n", tmessage);
 </pre>
 
 <br/>
@@ -375,24 +378,24 @@ c.email     # "schacon@gmail.com"
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
-git_oid id;
 git_tree *tree;
 git_tree_entry *entry;
-git_object *obj;
+git_object *objt;
 
-git_oid_mkstr(&id, "1810dff58d8a660512d4832e740f692884338ccd");
+git_oid_mkstr(&oid, "2a741c18ac5ff082a7caaec6e74db3075a1906b5");
 
-git_tree_lookup(&tree, repo, &id);
+git_tree_lookup(&tree, repo, &oid);
 
-git_tree_entrycount(tree); // 3
+int cnt = git_tree_entrycount(tree); // 3
+printf("tree entries: %d\n", cnt);
 
-entry = git_tree_entry_byname(tree, "README");
+entry = git_tree_entry_byname(tree, "hello.c");
 git_tree_entry_name(entry); // "README"
 
-entry = git_tree_entry_byindex(tree, 0)
-git_tree_entry_name(entry); // "README"
+entry = git_tree_entry_byindex(tree, 0);
+printf("Entry name: %s\n", git_tree_entry_name(entry)); // "README"
 
-git_tree_entry_2object(&obj, entry); // blob
+git_tree_entry_2object(&objt, repo, entry); // blob
 </pre>
 
 <br/>
@@ -422,18 +425,13 @@ read in contents from disk.</p>
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
-git_oid id;
 git_blob *blob;
-git_object *obj;
 
-git_oid_mkstr(&id, "1810dff58d8a660512d4832e740f692884338ccd");
+git_oid_mkstr(&oid, "af7574ea73f7b166f869ef1a39be126d9a186ae0");
 
-git_blob_lookup(&blob, repo, &id);
-git_blob_rawsize(blob);    // 8
+git_blob_lookup(&blob, repo, &oid);
+printf("Blob Size: %d\n", git_blob_rawsize(blob)); // 8
 git_blob_rawcontent(blob); // "content"
-
-git_blob_set_rawcontent(blob, "my new content");
-git_blob_set_rawcontent_fromfile(blob, "README.txt");
 </pre>
 
 <br/>
@@ -469,21 +467,23 @@ blob.write
 
 <span class="shtitle">C</span>
 <pre class="sh_c">
-git_oid id;
 git_revwalk *walk;
-git_commit *head, *commit;
+git_commit *wcommit;
 
-git_oid_mkstr(&id, "d6c2306fcbf0d346b9129b303c3babae58f619f7");
-git_commit_lookup(&head, repo, &id);
+git_oid_mkstr(&oid, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 git_revwalk_new(&walk, repo);
 git_revwalk_sorting(walk, GIT_SORT_TOPOLOGICAL | GIT_SORT_REVERSE);
-git_revwalk_push(walk, head);
+git_revwalk_push(walk, &oid);
 
-while ((commit = git_revwalk_next(walk)) != NULL) {
-  msg      = git_commit_message_short(commit);
-  author   = git_commit_author(commit);
-  printf("%s (%s)\n", msg, author->email);
+const git_signature *cauth;
+const char *cmsg;
+
+while ((git_revwalk_next(&oid, walk)) == GIT_SUCCESS) {
+  error = git_commit_lookup(&wcommit, repo, &oid);
+  cmsg  = git_commit_message_short(wcommit);
+  cauth = git_commit_author(wcommit);
+  printf("%s (%s)\n", cmsg, cauth->email);
 }
 
 git_revwalk_free(walk);
