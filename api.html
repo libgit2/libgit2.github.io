@@ -45,7 +45,7 @@
           </p>
 
           <p>You can also see heavily documented, compilable example C files
-          using libgit2 <a href="http://schacon.github.com/libgit2-examples/">here</a></p>
+          using libgit2 <a href="http://libgit2.github.com/libgit2/ex/HEAD/libgit.html">here</a></p>
 
           <p>To get started, you need to initialize the <code>Repository</code>
           object.  This is the starting point for most of what you will do with
@@ -237,7 +237,7 @@ sha = @repo.write(content, "blob") # actually writes to the odb
     are sure that an object won't be needed again, you can manually free it
     using the <code>git_object_free(obj)</code> method.</p>
 
-      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__commit.html">Commit API</a>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/#HEAD/group/commit">Commit API</a>
       <h3 id="commits">Commits</h3>
 
 
@@ -335,7 +335,7 @@ obj.message = "the new commit message"
 obj.write  # write back to the database
 </pre>
 
-      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__tag.html">Tag API</a>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/#HEAD/group/tag">Tag API</a>
       <h3 id="tags">Tags</h3>
 
 <span class="shtitle">C</span>
@@ -375,7 +375,7 @@ c.email     # "schacon@gmail.com"
 </pre>
 
 
-      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__tree.html">Tree API</a>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/#HEAD/group/tree">Tree API</a>
       <h3 id="trees">Trees</h3>
 
 
@@ -419,7 +419,7 @@ enumdir = tree.sort { |a, b| a.sha <=> b.sha }.map { |e| e.name }.join(':')
 puts enumdir # "README:subdir:new.txt"
 </pre>
 
-      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__blob.html">Blob API</a>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/#HEAD/group/blob">Blob API</a>
       <h3 id="blobs">Blobs</h3>
 
 <p>Since blobs are basically unstructured, there isn't a lot the blob routines
@@ -519,7 +519,7 @@ end
         These cover being able to read and write the Git index file - stage and
         unstage files, that sort of thing.</p>
 
-      <a class="apilink" href="http://libgit2.github.com/libgit2/group__git__index.html">Index API</a>
+      <a class="apilink" href="http://libgit2.github.com/libgit2/#HEAD/group/index">Index API</a>
       <h3 id="indexread">Reading Index Files</h3>
 
 
