@@ -96,14 +96,14 @@
 
         <div id="build_unix">
           <div class="description">Start by configuring the build system by running:</div>
-          <pre class="sunburst">$ ./waf configure</pre>
-          <div class="description">Then build the library, either in its shared or static form</div>
-          <pre class="sunburst">$ ./waf build-static
-$ ./waf build-shared</pre>
+          <pre class="sunburst">$ mdkir build && cd build
+$ cmake .. </pre>
+          <div class="description">Then build the library</div>
+          <pre class="sunburst">$ make</pre>
           <div class="description">You can then test the library with:</div>
-          <pre class="sunburst">$ ./waf test</pre>
+          <pre class="sunburst">$ make test test</pre>
           <div class="description">And finally you can install it with (you may need to sudo):</div>
-          <pre class="sunburst">$ ./waf install</pre>
+          <pre class="sunburst">$ make install</pre>
           <div class="description">
             Once that is done, you should be able to link the library to your program
             with a normal <code>-lgit2</code>.</div>
