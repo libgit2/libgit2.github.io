@@ -99,11 +99,15 @@
           <pre class="sunburst">$ mdkir build && cd build
 $ cmake .. </pre>
           <div class="description">Then build the library</div>
-          <pre class="sunburst">$ make</pre>
+          <pre class="sunburst">$ cmake --build .</pre>
           <div class="description">You can then test the library with:</div>
-          <pre class="sunburst">$ make test test</pre>
+          <pre class="sunburst">$ cmake --build . --target test</pre>
           <div class="description">And finally you can install it with (you may need to sudo):</div>
-          <pre class="sunburst">$ make install</pre>
+          <pre class="sunburst">$ cmake --build . --target install</pre>
+	  <div class="description">
+	    CMake creates Makefiles as well, so you can also
+	    run <tt>make && make test && make install</tt>.
+	  </div>
           <div class="description">
             Once that is done, you should be able to link the library to your program
             with a normal <code>-lgit2</code>.</div>
