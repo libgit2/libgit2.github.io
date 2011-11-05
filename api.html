@@ -98,7 +98,7 @@ require 'rugged'
 <pre class="sh_c">
 char hex[] = "599955586da1c3ad514f3e65f1081d2012ec862d";
 git_oid oid;
-git_oid_mkstr(&oid, hex);
+git_oid_fromstr(&oid, hex);
 printf("Raw 20 bytes: [%s]\n", (&oid)->id);
 </pre>
 
@@ -117,7 +117,7 @@ puts "Raw 20 bytes: #{raw}"
 git_oid oid;
 char out[40];
 
-git_oid_mkraw(&oid, raw);
+git_oid_fromraw(&oid, raw);
 git_oid_fmt(out, &oid);
 printf("SHA hex string: %s\n", out);
 </pre>
@@ -227,7 +227,7 @@ sha = @repo.write(content, "blob") # actually writes to the odb
 
     <p>You can get objects from the database either via the 
       <code>git_[object]_lookup(&obj, repo, &id)</code> method or the more
-      general <code>git_repository_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
+      general <code>git_object_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
       call.  I will use them interchangably through these examples.</p>
 
     <p>Note that any object references returned by these two methods are owned by
@@ -246,7 +246,7 @@ sha = @repo.write(content, "blob") # actually writes to the odb
 git_commit *commit;
 git_oid oid3;
 
-git_oid_mkstr(&oid3, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&oid3, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 error = git_commit_lookup(&commit, repo, &oid3);
 
@@ -282,8 +282,8 @@ git_oid tree_id, parent_id, commit_id;
 author = git_signature_new("Scott Chacon", "schacon@gmail.com", 123456789, 60);
 cmtter = git_signature_new("Scott A Chacon", "scott@github.com", 987654321, 90);
 
-git_oid_mkstr(&tree_id, "28873d96b4e8f4e33ea30f4c682fd325f7ba56ac");
-git_oid_mkstr(&parent_id, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&tree_id, "28873d96b4e8f4e33ea30f4c682fd325f7ba56ac");
+git_oid_fromstr(&parent_id, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 git_commit_create_v(
   &commit_id, /* out id */
@@ -343,7 +343,7 @@ obj.write  # write back to the database
 git_tag *tag;
 const char *tmessage;
 
-git_oid_mkstr(&oid, "bc422d45275aca289c51d79830b45cecebff7c3a");
+git_oid_fromstr(&oid, "bc422d45275aca289c51d79830b45cecebff7c3a");
 
 error = git_tag_lookup(&tag, repo, &oid);
 
@@ -385,7 +385,7 @@ git_tree *tree;
 git_tree_entry *entry;
 git_object *objt;
 
-git_oid_mkstr(&oid, "2a741c18ac5ff082a7caaec6e74db3075a1906b5");
+git_oid_fromstr(&oid, "2a741c18ac5ff082a7caaec6e74db3075a1906b5");
 
 git_tree_lookup(&tree, repo, &oid);
 
@@ -430,7 +430,7 @@ read in contents from disk.</p>
 <pre class="sh_c">
 git_blob *blob;
 
-git_oid_mkstr(&oid, "af7574ea73f7b166f869ef1a39be126d9a186ae0");
+git_oid_fromstr(&oid, "af7574ea73f7b166f869ef1a39be126d9a186ae0");
 
 git_blob_lookup(&blob, repo, &oid);
 printf("Blob Size: %d\n", git_blob_rawsize(blob)); // 8
@@ -473,7 +473,7 @@ blob.write
 git_revwalk *walk;
 git_commit *wcommit;
 
-git_oid_mkstr(&oid, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&oid, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 git_revwalk_new(&walk, repo);
 git_revwalk_sorting(walk, GIT_SORT_TOPOLOGICAL | GIT_SORT_REVERSE);
@@ -529,7 +529,7 @@ git_index *index;
 unsigned int i, e;
 git_index_entry **entries;
 
-git_index_open_inrepo(&index, repo);
+git_repository_index(&index, repo);
 if (index->on_disk) {
   git_index_read(index);
   ecount = git_index_entrycount(index)
