@@ -231,11 +231,15 @@ sha = @repo.write(content, "blob") # actually writes to the odb
       call.  I will use them interchangably through these examples.</p>
 
     <p>Note that any object references returned by these two methods are owned by
-    the Repository object, and shall not be <code>free</code>'d manually. The repository
-    has an internal object cache, and will take care of freeing all the loaded
-    objects after the repository itself is <code>free</code>'d. However, if you
-    are sure that an object won't be needed again, you can manually free it
-    using the <code>git_object_free(obj)</code> method.</p>
+    the Repository object, and should not be <code>free</code>'d manually. The repository
+    has an internal object cache, and performs reference counting for objects.
+    Once an object is no longer needed, <code>git_object_close(obj)</code>
+    may be called to decrement the reference counter.  Once an object is no
+    longer referenced, it will be <code>free</code>'d, or otherwise it will be
+    <code>free</code>'d when the repository itself is <code>free</code>'d.  It
+    is recommended to close, as soon as possible, the biggest objects (e.g.
+    blobs) to prevent wasting memory.
+    </p>
 
       <a class="apilink" href="http://libgit2.github.com/libgit2/#HEAD/group/commit">Commit API</a>
       <h3 id="commits">Commits</h3>
