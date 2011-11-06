@@ -255,12 +255,11 @@ git_oid_fromstr(&oid3, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 error = git_commit_lookup(&commit, repo, &oid3);
 
 const git_signature *author, *cmtter;
-const char *message, *message_short;
+const char *message;
 time_t ctime;
 unsigned int parents, p;
 
 message  = git_commit_message(commit);
-message_short = git_commit_message_short(commit);
 author   = git_commit_author(commit);
 cmtter   = git_commit_committer(commit);
 ctime    = git_commit_time(commit);
@@ -314,7 +313,6 @@ obj = @repo.lookup(sha)
 obj.sha
 obj.type
 obj.message
-obj.message_short
 obj.time
 
 c = obj.committer
@@ -487,10 +485,13 @@ const git_signature *cauth;
 const char *cmsg;
 
 while ((git_revwalk_next(&oid, walk)) == GIT_SUCCESS) {
+  const char *newline;
   error = git_commit_lookup(&wcommit, repo, &oid);
-  cmsg  = git_commit_message_short(wcommit);
+  cmsg  = git_commit_message(wcommit);
+  if (!(newline = strchr(cmsg, '\n')))
+    newline = cmsg + strlen(cmsg);
   cauth = git_commit_author(wcommit);
-  printf("%s (%s)\n", cmsg, cauth->email);
+  printf("%.*s (%s)\n", newline - cmsg, cmsg, cauth->email);
 }
 
 git_revwalk_free(walk);
