@@ -88,9 +88,9 @@
       <h2 id="install">Building the library</h2>
       <div class="contents"><div class="bullet">
         <div class="description">
-          libgit2 uses <a href="http://code.google.com/p/waf/">waf</a> as its buildsystem, 
-          and hence requires <a href="http://www.python.org">Python 2.4 or better</a> to 
-          configure the build. The library can be built under the following platforms: 
+          libgit2 uses <a href="http://cmake.org">cmake</a> as its buildsystem. In order to build
+          the <a href="http://github.com/tanoku/clar">clar</a> testsuite, it requires <a href="http://www.python.org">Python 2.4 or better</a>.
+          The library can be built under the following platforms:
           <b>Linux</b>, <b>Mac OS X</b>, <b>xBSD</b>, <b>Windows (MSVC)</b> and <b>Windows (MinGW)</b>.
         </div>
 
@@ -99,11 +99,15 @@
           <pre class="sunburst">$ mkdir build && cd build
 $ cmake .. </pre>
           <div class="description">Then build the library</div>
-          <pre class="sunburst">$ make</pre>
+          <pre class="sunburst">$ cmake --build .</pre>
           <div class="description">You can then test the library with:</div>
-          <pre class="sunburst">$ make test test</pre>
+          <pre class="sunburst">$ cmake --build . --target test</pre>
           <div class="description">And finally you can install it with (you may need to sudo):</div>
-          <pre class="sunburst">$ make install</pre>
+          <pre class="sunburst">$ cmake --build . --target install</pre>
+	  <div class="description">
+	    CMake creates Makefiles as well, so you can also
+	    run <tt>make && make test && make install</tt>.
+	  </div>
           <div class="description">
             Once that is done, you should be able to link the library to your program
             with a normal <code>-lgit2</code>.</div>
