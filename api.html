@@ -115,9 +115,9 @@ puts "Raw 20 bytes: #{raw}"
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_oid oid;
-char out[40];
+char out[41];
+out[40] = '\0';
 
-git_oid_mkraw(&oid, raw);
 git_oid_fmt(out, &oid);
 printf("SHA hex string: %s\n", out);
 </pre>
@@ -160,17 +160,17 @@ unsigned char *data;
 const char *str_type;
 int error;
 
-odb = git_repository_database(repo);
+odb = git_repository_odb(&odb, repo);
 
 error = git_odb_read(&obj, odb, &oid);
 
-data = (char*)git_odb_object_data(obj);
+data = (const unsigned char*)git_odb_object_data(obj);
 otype = git_odb_object_type(obj);
 
 str_type = git_object_type2string(otype);
 printf("object length and type: %d, %s\n", (int)git_odb_object_size(obj), str_type);
 
-git_odb_object_close(obj); // close the object when you are done with it
+git_odb_object_free(obj); // close the object when you are done with it
 </pre>
 
 <br/>
@@ -198,7 +198,7 @@ end
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_oid oid2;
-git_odb_write(&oid2, odb, "test data", 9, GIT_OBJ_BLOB);
+git_odb_write(&oid2, odb, "test data", sizeof("test data") - 1, GIT_OBJ_BLOB);
 git_oid_fmt(out, &oid2);
 printf("Written Object: %s\n", out);
 </pre>
@@ -256,7 +256,6 @@ time_t ctime;
 unsigned int parents, p;
 
 message  = git_commit_message(commit);
-message_short = git_commit_message_short(commit);
 author   = git_commit_author(commit);
 cmtter   = git_commit_committer(commit);
 ctime    = git_commit_time(commit);
