@@ -83,7 +83,7 @@ require 'rugged'
       <div class="contents"><div class="bullet">
         <div class="description">
 
-        <p>The Git object database is basically a key-value store wher
+        <p>The Git object database is basically a key-value store where
         the key for each object is the SHA1 checksum of the contents of
         the object it is storing. This means that working with these SHA1
         values is pretty important.  The SHA1 algorithm returns a 20-byte
@@ -98,7 +98,7 @@ require 'rugged'
 <pre class="sh_c">
 char hex[] = "599955586da1c3ad514f3e65f1081d2012ec862d";
 git_oid oid;
-git_oid_mkstr(&oid, hex);
+git_oid_fromstr(&oid, hex);
 printf("Raw 20 bytes: [%s]\n", (&oid)->id);
 </pre>
 
@@ -117,7 +117,7 @@ puts "Raw 20 bytes: #{raw}"
 git_oid oid;
 char out[40];
 
-git_oid_mkraw(&oid, raw);
+git_oid_fromraw(&oid, raw);
 git_oid_fmt(out, &oid);
 printf("SHA hex string: %s\n", out);
 </pre>
@@ -227,15 +227,19 @@ sha = @repo.write(content, "blob") # actually writes to the odb
 
     <p>You can get objects from the database either via the 
       <code>git_[object]_lookup(&obj, repo, &id)</code> method or the more
-      general <code>git_repository_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
+      general <code>git_object_lookup(&obj, repo, &oid, OBJ_TYPE)</code>
       call.  I will use them interchangably through these examples.</p>
 
     <p>Note that any object references returned by these two methods are owned by
-    the Repository object, and shall not be <code>free</code>'d manually. The repository
-    has an internal object cache, and will take care of freeing all the loaded
-    objects after the repository itself is <code>free</code>'d. However, if you
-    are sure that an object won't be needed again, you can manually free it
-    using the <code>git_object_free(obj)</code> method.</p>
+    the Repository object, and should not be <code>free</code>'d manually. The repository
+    has an internal object cache, and performs reference counting for objects.
+    Once an object is no longer needed, <code>git_object_close(obj)</code>
+    may be called to decrement the reference counter.  Once an object is no
+    longer referenced, it will be <code>free</code>'d, or otherwise it will be
+    <code>free</code>'d when the repository itself is <code>free</code>'d.  It
+    is recommended to close, as soon as possible, the biggest objects (e.g.
+    blobs) to prevent wasting memory.
+    </p>
 
       <a class="apilink" href="http://libgit2.github.com/libgit2/#HEAD/group/commit">Commit API</a>
       <h3 id="commits">Commits</h3>
@@ -246,17 +250,16 @@ sha = @repo.write(content, "blob") # actually writes to the odb
 git_commit *commit;
 git_oid oid3;
 
-git_oid_mkstr(&oid3, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&oid3, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 error = git_commit_lookup(&commit, repo, &oid3);
 
 const git_signature *author, *cmtter;
-const char *message, *message_short;
+const char *message;
 time_t ctime;
 unsigned int parents, p;
 
 message  = git_commit_message(commit);
-message_short = git_commit_message_short(commit);
 author   = git_commit_author(commit);
 cmtter   = git_commit_committer(commit);
 ctime    = git_commit_time(commit);
@@ -282,8 +285,8 @@ git_oid tree_id, parent_id, commit_id;
 author = git_signature_new("Scott Chacon", "schacon@gmail.com", 123456789, 60);
 cmtter = git_signature_new("Scott A Chacon", "scott@github.com", 987654321, 90);
 
-git_oid_mkstr(&tree_id, "28873d96b4e8f4e33ea30f4c682fd325f7ba56ac");
-git_oid_mkstr(&parent_id, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&tree_id, "28873d96b4e8f4e33ea30f4c682fd325f7ba56ac");
+git_oid_fromstr(&parent_id, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 git_commit_create_v(
   &commit_id, /* out id */
@@ -310,7 +313,6 @@ obj = @repo.lookup(sha)
 obj.sha
 obj.type
 obj.message
-obj.message_short
 obj.time
 
 c = obj.committer
@@ -343,7 +345,7 @@ obj.write  # write back to the database
 git_tag *tag;
 const char *tmessage;
 
-git_oid_mkstr(&oid, "bc422d45275aca289c51d79830b45cecebff7c3a");
+git_oid_fromstr(&oid, "bc422d45275aca289c51d79830b45cecebff7c3a");
 
 error = git_tag_lookup(&tag, repo, &oid);
 
@@ -385,7 +387,7 @@ git_tree *tree;
 git_tree_entry *entry;
 git_object *objt;
 
-git_oid_mkstr(&oid, "2a741c18ac5ff082a7caaec6e74db3075a1906b5");
+git_oid_fromstr(&oid, "2a741c18ac5ff082a7caaec6e74db3075a1906b5");
 
 git_tree_lookup(&tree, repo, &oid);
 
@@ -430,7 +432,7 @@ read in contents from disk.</p>
 <pre class="sh_c">
 git_blob *blob;
 
-git_oid_mkstr(&oid, "af7574ea73f7b166f869ef1a39be126d9a186ae0");
+git_oid_fromstr(&oid, "af7574ea73f7b166f869ef1a39be126d9a186ae0");
 
 git_blob_lookup(&blob, repo, &oid);
 printf("Blob Size: %d\n", git_blob_rawsize(blob)); // 8
@@ -473,7 +475,7 @@ blob.write
 git_revwalk *walk;
 git_commit *wcommit;
 
-git_oid_mkstr(&oid, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&oid, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 git_revwalk_new(&walk, repo);
 git_revwalk_sorting(walk, GIT_SORT_TOPOLOGICAL | GIT_SORT_REVERSE);
@@ -483,10 +485,13 @@ const git_signature *cauth;
 const char *cmsg;
 
 while ((git_revwalk_next(&oid, walk)) == GIT_SUCCESS) {
+  const char *newline;
   error = git_commit_lookup(&wcommit, repo, &oid);
-  cmsg  = git_commit_message_short(wcommit);
+  cmsg  = git_commit_message(wcommit);
+  if (!(newline = strchr(cmsg, '\n')))
+    newline = cmsg + strlen(cmsg);
   cauth = git_commit_author(wcommit);
-  printf("%s (%s)\n", cmsg, cauth->email);
+  printf("%.*s (%s)\n", newline - cmsg, cmsg, cauth->email);
 }
 
 git_revwalk_free(walk);
@@ -529,7 +534,7 @@ git_index *index;
 unsigned int i, e;
 git_index_entry **entries;
 
-git_index_open_inrepo(&index, repo);
+git_repository_index(&index, repo);
 if (index->on_disk) {
   git_index_read(index);
   ecount = git_index_entrycount(index)
