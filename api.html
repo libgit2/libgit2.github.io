@@ -486,7 +486,7 @@ git_revwalk_push(walk, &oid);
 const git_signature *cauth;
 const char *cmsg;
 
-while ((git_revwalk_next(&oid, walk)) == GIT_SUCCESS) {
+while ((git_revwalk_next(&oid, walk)) == 0) {
   error = git_commit_lookup(&wcommit, repo, &oid);
   cmsg  = git_commit_message_short(wcommit);
   cauth = git_commit_author(wcommit);
@@ -600,10 +600,10 @@ int sqlb_read(git_rawobj *out, git_odb_backend *back, const git_oid *oid)
   sqlite_backend *b = (sqlite_backend *)back;
 
   /* read the object identified by 'oid' and write its contents 
-  to 'out'. Return 'GIT_SUCCESS' if the read was succesful, 
+  to 'out'. Return 0 if the read was succesful,
   or an error code otherwise. */
 
-  return GIT_SUCCESS;
+  return 0;
 }
 
 int sqlb_read_header(git_rawobj *out, git_odb_backend *back, const git_oid *oid)
@@ -612,10 +612,10 @@ int sqlb_read_header(git_rawobj *out, git_odb_backend *back, const git_oid *oid)
 
   /* read the header of the object identified by 'oid' and fill 
   the 'out-&gt;type' and 'out-&gt;len' fields without actually 
-  loading the whole object in memory. Return 'GIT_SUCCESS' if 
+  loading the whole object in memory. Return 0 if
   the read was succesful, or an error code otherwise. */
 
-  return GIT_SUCCESS;
+  return 0;
 }
 
 int sqlb_exists(git_odb_backend *back, const git_oid *oid)
@@ -633,10 +633,10 @@ int sqlb_write(git_oid *out, git_odb_backend *back, git_rawobj *obj)
   sqlite_backend *b = (sqlite_backend *)back;
 
   /* write the object in 'obj' to the storage, and fill the 'out' oid
-  with the SHA1 identifier of the written object. Return 'GIT_SUCCESS' 
+  with the SHA1 identifier of the written object. Return 0
   if the write was successful, error code otherwise */
 
-  return GIT_SUCCESS;
+  return 0;
 }
 
 void sqlb_free(git_odb_backend *backend)
