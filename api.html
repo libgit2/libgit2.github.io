@@ -98,7 +98,7 @@ require 'rugged'
 <pre class="sh_c">
 char hex[] = "599955586da1c3ad514f3e65f1081d2012ec862d";
 git_oid oid;
-git_oid_mkstr(&oid, hex);
+git_oid_fromstr(&oid, hex);
 printf("Raw 20 bytes: [%s]\n", (&oid)->id);
 </pre>
 
@@ -115,9 +115,9 @@ puts "Raw 20 bytes: #{raw}"
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_oid oid;
-char out[40];
+char out[41];
+out[40] = '\0';
 
-git_oid_mkraw(&oid, raw);
 git_oid_fmt(out, &oid);
 printf("SHA hex string: %s\n", out);
 </pre>
@@ -160,17 +160,17 @@ unsigned char *data;
 const char *str_type;
 int error;
 
-odb = git_repository_database(repo);
+odb = git_repository_odb(&odb, repo);
 
 error = git_odb_read(&obj, odb, &oid);
 
-data = (char*)git_odb_object_data(obj);
+data = (const unsigned char*)git_odb_object_data(obj);
 otype = git_odb_object_type(obj);
 
 str_type = git_object_type2string(otype);
 printf("object length and type: %d, %s\n", (int)git_odb_object_size(obj), str_type);
 
-git_odb_object_close(obj); // close the object when you are done with it
+git_odb_object_free(obj); // close the object when you are done with it
 </pre>
 
 <br/>
@@ -198,7 +198,7 @@ end
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_oid oid2;
-git_odb_write(&oid2, odb, "test data", 9, GIT_OBJ_BLOB);
+git_odb_write(&oid2, odb, "test data", sizeof("test data") - 1, GIT_OBJ_BLOB);
 git_oid_fmt(out, &oid2);
 printf("Written Object: %s\n", out);
 </pre>
@@ -246,7 +246,7 @@ sha = @repo.write(content, "blob") # actually writes to the odb
 git_commit *commit;
 git_oid oid3;
 
-git_oid_mkstr(&oid3, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&oid3, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 error = git_commit_lookup(&commit, repo, &oid3);
 
@@ -256,7 +256,6 @@ time_t ctime;
 unsigned int parents, p;
 
 message  = git_commit_message(commit);
-message_short = git_commit_message_short(commit);
 author   = git_commit_author(commit);
 cmtter   = git_commit_committer(commit);
 ctime    = git_commit_time(commit);
@@ -269,21 +268,25 @@ for (p = 0;p < parents;p++) {
   git_commit_parent(&parent, commit, p);
   git_oid_fmt(out, git_commit_id(parent));
   printf("Parent: %s\n", out);
-  git_commit_close(parent);
+  git_commit_free(parent);
 }
 
-git_commit_close(commit);
+git_commit_free(commit);
 
 /* and writing a commit object */
 
 git_oid tree_id, parent_id, commit_id;
+git_tree *tree;
+git_commit *parent;
 
 /* create signatures */
 author = git_signature_new("Scott Chacon", "schacon@gmail.com", 123456789, 60);
 cmtter = git_signature_new("Scott A Chacon", "scott@github.com", 987654321, 90);
 
-git_oid_mkstr(&tree_id, "28873d96b4e8f4e33ea30f4c682fd325f7ba56ac");
-git_oid_mkstr(&parent_id, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&tree_id, "28873d96b4e8f4e33ea30f4c682fd325f7ba56ac");
+git_tree_lookup(&tree, repo, &tree_id);
+git_oid_fromstr(&parent_id, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_commit_lookup(&parent, repo, &parent_id);
 
 git_commit_create_v(
   &commit_id, /* out id */
@@ -291,13 +294,13 @@ git_commit_create_v(
   NULL, /* do not update the HEAD */
   author,
   cmtter,
+  NULL, /* use default message encoding */
   "example commit",
-  &tree_id,
-  1, &parent_id);
+  tree,
+  1, parent);
 
 git_oid_fmt(out, &commit_id);
 printf("New Commit: %s\n", out);
-
 </pre>
 
 <br/>
@@ -341,15 +344,16 @@ obj.write  # write back to the database
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_tag *tag;
-const char *tmessage;
+const char *tmessage, *tname;
+git_otype ttype;
 
-git_oid_mkstr(&oid, "bc422d45275aca289c51d79830b45cecebff7c3a");
+git_oid_fromstr(&oid, "bc422d45275aca289c51d79830b45cecebff7c3a");
 
 error = git_tag_lookup(&tag, repo, &oid);
 
 git_tag_target((git_object **)&commit, tag);
-git_tag_name(tag);    // "test"
-git_tag_type(tag);    // GIT_OBJ_TAG
+tname = git_tag_name(tag);    // "test"
+ttype = git_tag_type(tag);    // GIT_OBJ_COMMIT (otype enum)
 tmessage = git_tag_message(tag); // "tag message\n"
 printf("Tag Message: %s\n", tmessage);
 </pre>
@@ -385,7 +389,7 @@ git_tree *tree;
 git_tree_entry *entry;
 git_object *objt;
 
-git_oid_mkstr(&oid, "2a741c18ac5ff082a7caaec6e74db3075a1906b5");
+git_oid_fromstr(&oid, "2a741c18ac5ff082a7caaec6e74db3075a1906b5");
 
 git_tree_lookup(&tree, repo, &oid);
 
@@ -393,7 +397,7 @@ int cnt = git_tree_entrycount(tree); // 3
 printf("tree entries: %d\n", cnt);
 
 entry = git_tree_entry_byname(tree, "hello.c");
-git_tree_entry_name(entry); // "README"
+git_tree_entry_name(entry); // "hello.c"
 
 entry = git_tree_entry_byindex(tree, 0);
 printf("Entry name: %s\n", git_tree_entry_name(entry)); // "README"
@@ -430,7 +434,7 @@ read in contents from disk.</p>
 <pre class="sh_c">
 git_blob *blob;
 
-git_oid_mkstr(&oid, "af7574ea73f7b166f869ef1a39be126d9a186ae0");
+git_oid_fromstr(&oid, "af7574ea73f7b166f869ef1a39be126d9a186ae0");
 
 git_blob_lookup(&blob, repo, &oid);
 printf("Blob Size: %d\n", git_blob_rawsize(blob)); // 8
@@ -473,7 +477,7 @@ blob.write
 git_revwalk *walk;
 git_commit *wcommit;
 
-git_oid_mkstr(&oid, "f0877d0b841d75172ec404fc9370173dfffc20d1");
+git_oid_fromstr(&oid, "f0877d0b841d75172ec404fc9370173dfffc20d1");
 
 git_revwalk_new(&walk, repo);
 git_revwalk_sorting(walk, GIT_SORT_TOPOLOGICAL | GIT_SORT_REVERSE);
@@ -487,6 +491,7 @@ while ((git_revwalk_next(&oid, walk)) == GIT_SUCCESS) {
   cmsg  = git_commit_message_short(wcommit);
   cauth = git_commit_author(wcommit);
   printf("%s (%s)\n", cmsg, cauth->email);
+  git_commit_free(wcommit);
 }
 
 git_revwalk_free(walk);
@@ -526,24 +531,20 @@ end
 <span class="shtitle">C</span>
 <pre class="sh_c">
 git_index *index;
-unsigned int i, e;
-git_index_entry **entries;
+unsigned int i, ecount;
 
-git_index_open_inrepo(&index, repo);
-if (index->on_disk) {
-  git_index_read(index);
-  ecount = git_index_entrycount(index)
-  entries = (git_index_entry **)index->entries.contents;
-  for (i = 0; i < ecount; ++i) {
-    git_index_entry *e = entries[i];
+git_repository_index(&index, repo);
 
-    printf("path: %s\n", e->path);
-    printf("mtime: %d\n", e->mtime.seconds);
-    printf("fs: %d\n", e->file_size);
-  }
+ecount = git_index_entrycount(index);
+for (i = 0; i < ecount; ++i) {
+  git_index_entry *e = git_index_get(index, i);
 
-  git_index_free(index);
+  printf("path: %s\n", e->path);
+  printf("mtime: %d\n", (int)e->mtime.seconds);
+  printf("fs: %d\n", (int)e->file_size);
 }
+  
+git_index_free(index);
 </pre>
 
 <br/>
