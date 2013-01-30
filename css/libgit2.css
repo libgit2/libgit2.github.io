@@ -1907,3 +1907,11 @@ ul.library-group-functions p {
   padding: 2px;
   font-family: Courier, monospace !important;
 }
+
+#github img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  z-index: 100;
+}
