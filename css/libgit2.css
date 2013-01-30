@@ -406,7 +406,7 @@ footer a:hover {
 }
 
 footer .site-source {
-  background: transparent url(/images/icons/code.png) 0 2px no-repeat;
+  background: transparent url(../images/icons/code.png) 0 2px no-repeat;
   padding-left: 46px;
 }
 
