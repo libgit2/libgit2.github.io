@@ -406,16 +406,11 @@ footer a:hover {
 }
 
 footer .site-source {
-  float: left;
+  float: right;
   background: transparent url(/images/icons/code.png) 0 2px no-repeat;
   padding-left: 46px;
-}
-
-footer .sfc-member {
-  float: right;
   text-align: right;
 }
-
 
 table.benchmarks {
   width: 100%;
