@@ -394,7 +394,7 @@ footer {
   padding: 20px 0 40px 0;
   color: #9a9994;
   font-size: 12px;
-  line-height: 15.4px;
+  line-height: 30px;
 }
 
 footer a {
@@ -406,10 +406,8 @@ footer a:hover {
 }
 
 footer .site-source {
-  float: right;
   background: transparent url(/images/icons/code.png) 0 2px no-repeat;
   padding-left: 46px;
-  text-align: right;
 }
 
 table.benchmarks {
@@ -1536,16 +1534,16 @@ header a.button h3 {
 
 
 #front-main {
+  border-right: dotted 1px #bdbdb6;
   float: left;
   width: 600px;
   background-color: transparent;
-  border: none;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
-  padding: 0;
+  padding: 0 20px 0 0;
 }
 
 #front-main p {
@@ -1554,9 +1552,7 @@ header a.button h3 {
 
 
 #sidebar {
-  border-left: dotted 1px #bdbdb6;
   float: right;
-  padding-left: 20px;
   width: 300px;
 }
 
@@ -1730,7 +1726,7 @@ ul.additional-languages li {
   *zoom: 1;
   display: block;
   padding-left: 40px;
-  padding-bottom: 18px;
+  padding-bottom: 24px;
 }
 
 ul.additional-languages li img {
