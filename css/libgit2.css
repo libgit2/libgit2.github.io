@@ -1488,6 +1488,7 @@ header a.button {
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
+  background-color: #186368;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #1c868c), color-stop(100%, #186368));
   background-image: -webkit-linear-gradient(#1c868c, #186368);
   background-image: -moz-linear-gradient(#1c868c, #186368);
