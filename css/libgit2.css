@@ -1478,10 +1478,10 @@ header a.button {
   border-bottom: solid 1px #134143;
   color: #fff;
   font-size: 16px;
-  width: 238px;
+  width: 178px;
   padding: 16px 0 6px 55px;
   position: absolute;
-  right: 0;
+  right: 250px;
   top: 0;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1508,6 +1508,10 @@ header a.button {
   -ms-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
+}
+
+header a.button2 {
+  right: 0;
 }
 
 header a.button:hover {
