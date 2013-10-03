@@ -195,6 +195,27 @@ header #tagline em {
   letter-spacing: 1px;
 }
 
+.navigation ul {
+  list-style-type: none;
+  float: right;
+  margin-top: 28px;
+}
+
+.navigation li {
+  display: inline;
+  margin-left: 24px;
+}
+
+.navigation a {
+  color: #4e443c;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navigation a:hover {
+  color: #f14e32;
+}
+
 aside nav ul {
   list-style: none;
   font-size: 16px;
