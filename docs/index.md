@@ -2,6 +2,10 @@
 layout: default
 ---
 
-## Tutorials
+# Libgit2 Guides
 
-* Hello, world!
+* [Fundamentals](fundamentals)
+
+# Annotated Examples
+
+* The [general example](general-example) that ships with the [source](https://github.com/libgit2/libgit2/blob/development/examples/general.c).
