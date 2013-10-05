@@ -726,8 +726,11 @@ blockquote.pull-right small {
   text-align: right;
 }
 
+code, pre {
+  font-family: Courier, monospace !important;
+}
 
-code {
+pre {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -739,7 +742,6 @@ code {
   background-color: #fff;
   border: solid 1px #efeee6;
   color: #f14e32;
-  font-family: Courier, monospace !important;
   line-height: 18px;
 }
 
@@ -877,7 +879,6 @@ div.more {
 
 
 .highlight {
-  background-color: #eee0b5;
   padding: 2px;
 }
 
