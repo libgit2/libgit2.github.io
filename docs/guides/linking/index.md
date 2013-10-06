@@ -23,15 +23,74 @@ Here are some of the most useful:
   This defaults to `ON`; set to `OFF` for a faster build.
 * `THREADSAFE` – Selects whether libgit2 tries to be threadsafe.
   This defaults to `OFF`, but unless you **know** your application will only be single-threaded, it's recommended you turn it `ON`.
+* `LIBGIT2_FILENAME` – Sets the basename of the output binary.
+  For example, if this is set to `foo`, the output will be something like `foo.dll` or `foo.so`.
+  This option is useful to know what version of libgit2 was built, if your build system doesn't embed information like that into the binary.
+* `STDCALL` – (MSVC Only) The CLR and Win32 APIs expect the `stdcall` calling convention, but libgit2 by default uses the `cdecl` convention.
+  Set this to `ON` if you're working with Win32 or the CLR.
+* `STATIC_CRT` – (MSVC Only) By default, libgit2 will link to a DLL version of the C runtime.
+  Set this to `ON` if you want the runtime functions linked statically.
 
 ## Makefile Projects
 
 CMake can generate makefiles for GCC, Clang, MinGW, and many other environments.
 
-
 ### Building from Source
 
+First, create a directory for your build files to live:
+
+```bash
+$ mkdir build
+$ cd build
+```
+
+Next, use CMake to generate the makefiles.
+Check out the [CMake](#toc_1) section above for some of the flags and options available.
+
+```bash
+$ cmake -G 'Unix Makefiles' ..
+-- The C compiler identification is Clang 5.0.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Found OpenSSL: /usr/lib/libssl.dylib;/usr/lib/libcrypto.dylib (found version "0.9.8y")
+http-parser was not found or is too old; using bundled 3rd-party sources.
+-- Found zlib: /usr/lib/libz.dylib
+-- Found PythonInterp: /opt/boxen/homebrew/bin/python (found version "2.7.3")
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/libgit2/build
+```
+
+Next up is to build the binaries.
+You can have CMake do this:
+
+```bash
+$ cmake --build .
+```
+
+…or do it yourself:
+
+```bash
+$ make
+```
+
+Either way, the binaries will end up in the `build` directory (or wherever the Makefile was generated).
+
 ### Using Built Binaries
+
+The binaries that are output from this process are dependent on the build system you're using.
+On posix-type systems, the output is typically a `libgit2.so` (or `libgit2.a` if you built statically).
+
+Using these files is dependent on your application's project system.
+For a Makefile-based build, this is what you'll need:
+
+```
+CFLAGS += -I/path/to/libgit2/include
+LDFLAGS += -L/path/to/libgit2/binaries
+LIBRARIES += -lgit2
+```
 
 ## Visual Studio
 
@@ -112,7 +171,5 @@ If libgit2 is built as a static library, just link in the `git2.lib` file.
 
 ## Xcode
 
-### Building from Source
-
-### Using Built Binaries
+***TODO***
 
