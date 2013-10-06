@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# How to Link Libgit2
+# How to Build and Link Libgit2
 
 There is no One True Way™ to use an open-source C library.
 This article provides some guidance on how to use libgit2 with various build/project tools.
