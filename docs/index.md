@@ -8,7 +8,7 @@ This is the place for information on how to get started, best practices, and in-
 
 ## In-Depth Guides
 
-*TODO*
+* [Complete guide to linking](guides/linking) on various platforms.
 
 ## Annotated Examples
 
