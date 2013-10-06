@@ -6,15 +6,23 @@ layout: default
 
 There is no One True Way™ to use an open-source C library.
 This article provides some guidance on how to use libgit2 with various build/project tools.
-Here's what you'll need:
 
-* If you want to run the unit tests, you'll need a Python interpreter in your path.
-  Check the [Clar](https://github.com/vmg/clar#how-does-clar-work) documentation for more on this requirement.
-* If you're building from source, you'll need [CMake](http://www.cmake.org/) installed.
 
 ## CMake Options
 
-**IMPORTANT:** It's recommended you use the `-DTHREADSAFE=ON` CMake flag for any situation where you don't *know* your application is single-threaded.
+If you're building from source, you'll need [CMake](http://www.cmake.org/) installed.
+The CMake build system provides lots of options to configure the libgit2 build for your particular needs.
+These are set by passing `-D<variable name>=<new value>` to CMake during the project-file generation step.
+Here are some of the most useful:
+
+* `BUILD_SHARED_LIBS` – This defaults to `ON`, which produces dynamic libraries (DLLs on Windows).
+  Set it to `OFF` if you want the build to generate static libraries.
+* `CMAKE_BUILD_TYPE` – This selects the build configuration; available options are `Debug` (the default), `Release`, and `RelWithDebInfo`.
+  In the case of Visual Studio and other multi-configuration project systems, this selects the default build configuration.
+* `BUILD_CLAR` – Selects whether the unit-test suite is built.
+  This defaults to `ON`; set to `OFF` for a faster build.
+* `THREADSAFE` – Selects whether libgit2 tries to be threadsafe.
+  This defaults to `OFF`, but unless you **know** your application will only be single-threaded, it's recommended you turn it `ON`.
 
 ## Makefile Projects
 
@@ -27,7 +35,7 @@ CMake can generate makefiles for GCC, Clang, MinGW, and many other environments.
 
 ## Visual Studio
 
-This is the way most Windows developers will go.
+If your application is a Visual Studio project, this is probably the route you'll want to go.
 
 ### Building from Source
 
