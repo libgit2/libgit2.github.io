@@ -1583,6 +1583,10 @@ header a.button h3 {
 
 p {
   color: #6b5d52;
+  margin-bottom: 15px;
+}
+
+#front-main p {
   margin-bottom: 30px;
 }
 
