@@ -728,6 +728,8 @@ blockquote.pull-right small {
 
 code, pre {
   font-family: Courier, monospace !important;
+  background-color: #FFF;
+  padding: 1px 2px;
 }
 
 pre {
@@ -738,10 +740,9 @@ pre {
   border-radius: 3px;
   display: block;
   padding: 10px 15px 13px 15px;
-  margin-bottom: 1em;
+  margin: 0 3em 1em 3em;
   background-color: #fff;
   border: solid 1px #efeee6;
-  color: #f14e32;
   line-height: 18px;
 }
 
@@ -877,10 +878,6 @@ div.more {
   display: none;
 }
 
-
-.highlight {
-  padding: 2px;
-}
 
 
 .fixed {
