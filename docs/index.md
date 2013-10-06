@@ -2,10 +2,14 @@
 layout: default
 ---
 
-# Libgit2 Guides
+# Learning Center
 
-* [Fundamentals](fundamentals)
+This is the place for information on how to get started, best practices, and in-depth information.
 
-# Annotated Examples
+## In-Depth Guides
 
-* The [general example](general-example) that ships with the [source](https://github.com/libgit2/libgit2/blob/development/examples/general.c).
+*TODO*
+
+## Annotated Examples
+
+* [Repository Initialization](examples/init) that works a lot like `git init`.
