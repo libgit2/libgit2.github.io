@@ -1955,3 +1955,21 @@ pre code .k, pre code .kt {
 pre code .s, pre code .se {
   opacity: .75;
 }
+
+table {
+  margin: 1em 3em;
+  border-spacing: 0 5px;
+}
+
+thead {
+  border-bottom: 1px solid black;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+th, td {
+  padding: .5em 1em;
+}
