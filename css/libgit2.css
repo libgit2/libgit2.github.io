@@ -1969,6 +1969,9 @@ tbody tr {
   border-bottom: 1px solid #ddd;
   padding-bottom: 15px;
 }
+tbody tr:last-child {
+  border: none;
+}
 
 th, td {
   padding: .5em 1em;
