@@ -131,7 +131,7 @@ In the same vein, using GNU Autotools, pkg-config can help you there
 ```
 PKG_CHECK_MODULES([libgit2], [libgit2])
 AC_SUBST([libgit2_LIBS])
-AC_SUBST([libgit2_FLAGS])
+AC_SUBST([libgit2_CFLAGS])
 ```
 
 If none of these options are available, then you can do it by hand with
