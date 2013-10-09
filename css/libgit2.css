@@ -1976,3 +1976,7 @@ tbody tr:last-child {
 th, td {
   padding: .5em 1em;
 }
+
+img {
+  max-width: 100%;
+}
