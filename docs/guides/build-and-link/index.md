@@ -66,12 +66,32 @@ You'll need to include `git2.h`, and link to the binaries you built previously.
 
 ## Visual Studio
 
-If you built libgit2 as a DLL (the default), you can bundle the produced DLL with your project, and use the `git2.dll` import library to have the linker load the DLL for you.
-Or you can write your own calls to `LoadLibrary`.
+Your Visual Studio project will need to know where to find the libgit2 headers and link libraries.
+Open up the project settings by clicking on the project in the Solution Explorer, and selecting `Properties`.
 
-***TODO: Screenshots (add include path, library path, .lib)***
+[![Visual Studio Screenshot](vs-0.png)](vs-0.png)
 
-If libgit2 is built as a static library, just link in the `git2.lib` file.
+Make sure you're configuring the proper build configuration:
+
+[![Visual Studio Screenshot](vs-1.png)](vs-1.png)
+
+Add `C:\path\to\libgit2\include` to "Additional Include Directories" under "C/C++ > General".
+
+[![Visual Studio Screenshot](vs-2.png)](vs-2.png)
+
+The linker will need to know where to find the `git2.lib` file.
+Add `C:\path\to\libgit2\build\Debug` to "Linker > General > Additional Library Directories".
+You may want to configure this path differently for a Release build.
+
+[![Visual Studio Screenshot](vs-3.png)](vs-3.png)
+
+Finally, add `git2.lib` to the list of libraries to link in:
+
+[![Visual Studio Screenshot](vs-4.png)](vs-4.png)
+
+If you built libgit2 as a static library, you're done!
+If it's a DLL, you'll have to make sure that `git2.dll` gets into the same directory as your output EXE file.
+You can do this with a post-build script (check "Build Events"), or by including the `git2.vcxproj` file in your solution, and changing its output directory to match where the rest of your binaries go.
 
 ## XCode
 
