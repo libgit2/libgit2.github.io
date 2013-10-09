@@ -117,16 +117,18 @@ Browse to the location where the libgit2 binaries are located (if you're working
 
 ## Makefiles, Autotools
 
-The binaries that are output from the build are dependent on the build system you're using. On posix-type systems, the output is typically a `libgit2.so` (`.dylib` on MacOS, `libgit2.a` if you built statically).
+The binaries that are output from the build are dependent on the build system you're using.
+On posix-type systems, the output is typically a `libgit2.so` (`.dylib` on MacOS, `libgit2.a` if you built statically).
 
-Using these files is dependent on your application's project system. If you installed the library to a standard system location, you can use `pkg-config` to get the right flags to pass to the compiler.
+Using these files is dependent on your application's project system.
+If you installed the library to a standard system location, you can use `pkg-config` to get the right flags to pass to the compiler.
 
 ```
 LDFLAGS = $(shell pkg-config --libs libgit2)
 CFLAGS = $(shell pkg-config --cflags libgit2)
 ```
 
-In the same vein, using GNU Autotools, pkg-config can help you there
+In the same vein, using GNU Autotools, pkg-config can help you there.
 
 ```
 PKG_CHECK_MODULES([libgit2], [libgit2])
@@ -134,7 +136,7 @@ AC_SUBST([libgit2_LIBS])
 AC_SUBST([libgit2_CFLAGS])
 ```
 
-If none of these options are available, then you can do it by hand with
+If none of these options are available, then you can do it by hand:
 
 ```
 CFLAGS += -I/path/to/libgit2/include
