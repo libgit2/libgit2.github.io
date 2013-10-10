@@ -95,6 +95,9 @@ You can do this with a post-build script (check "Build Events"), or by including
 
 ## XCode
 
+**NOTE:** It's recommended that you build libgit2 as a static library for Xcode projects.
+This simplifies distribution significantly.
+
 Your search paths will need to be modified to include the location of the libgit2 headers and binaries.
 In Xcode 5, open the project node, open the `Build Settings` tab, make sure all settings are shown, and look for `Header Search Paths`:
 
@@ -113,6 +116,15 @@ Then select "Add Other…":
 [![Xcode Screenshot](xcode-link2.png)](xcode-link2.png)
 
 Browse to the location where the libgit2 binaries are located (if you're working from source, this is `/path/to/libgit2/build`), select the `libgit2.dylib` file, and click OK.
+
+If you built libgit2 as a static library, you'll need to also add all of these libraries to the list.
+They should all be available with the system, and easy to find with the search interface.
+
+* `libiconv.dylib`
+* `libSystem.dylib`
+* `libcrypto.dylib`
+* `libssl.dylib`
+* `libz.dylib`
 
 
 ## Makefiles, Autotools
