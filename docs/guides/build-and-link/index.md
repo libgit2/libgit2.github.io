@@ -95,15 +95,15 @@ You can do this with a post-build script (check "Build Events"), or by including
 
 ## XCode
 
-**NOTE:** It's recommended that you build libgit2 as a static library for Xcode projects.
-This simplifies distribution significantly.
+**NOTE:** It's *highly* recommended that you build libgit2 as a static library for Xcode projects.
+This simplifies distribution significantly, as the resolution of dynamic libraries at runtime can be extremely problematic.
 
-Your search paths will need to be modified to include the location of the libgit2 headers and binaries.
+Your search paths will need to be modified to include the location of the libgit2 headers.
 In Xcode 5, open the project node, open the `Build Settings` tab, make sure all settings are shown, and look for `Header Search Paths`:
 
 [![Xcode Screenshot](xcode-headers.png)](xcode-headers.png)
 
-If you're working from a source distribution, the include path to add is `/path/to/libgit2/include`, and the library path is `/path/to/libgit2/build`.
+If you're working from a source distribution, the include path to add is `/path/to/libgit2/include`.
 You can add this to the target or the entire project.
 
 Next you'll have to link to the right binary library.
@@ -115,9 +115,9 @@ Then select "Add Other…":
 
 [![Xcode Screenshot](xcode-link2.png)](xcode-link2.png)
 
-Browse to the location where the libgit2 binaries are located (if you're working from source, this is `/path/to/libgit2/build`), select the `libgit2.dylib` file, and click OK.
+Browse to the location where the libgit2 binaries are located (if you're working from source, this is `/path/to/libgit2/build`), select the `libgit2.a` file (or `libgit2.dylib` if you built a dynamic library), and click OK.
 
-If you built libgit2 as a static library, you'll need to also add all of these libraries to the list.
+If you built libgit2 as a static library (again, this is *highly* recommended), you'll need to also add all of these libraries to the list.
 They should all be available with the system, and easy to find with the search interface.
 
 * `libiconv.dylib`
