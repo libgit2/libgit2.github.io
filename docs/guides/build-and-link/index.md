@@ -129,8 +129,8 @@ They should all be available with the system, and easy to find with the search i
 
 ## Makefiles, Autotools
 
-The binaries that are output from the build are dependent on the build system you're using.
-On posix-type systems, the output is typically a `libgit2.so` (`.dylib` on MacOS, `libgit2.a` if you built statically).
+If you're building statically, the output is typically a `libgit2.a` file.
+Dynamically-linked outputs are usually `libgit2.so` on posix, or `libgit2.dylib` on OS X.
 
 Using these files is dependent on your application's project system.
 If you installed the library to a standard system location, you can use `pkg-config` to get the right flags to pass to the compiler.
