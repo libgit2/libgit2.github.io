@@ -248,7 +248,11 @@ Since the repo was *just* initialized, the index has an empty tree.
   git_index_free(index);
 ```
 
-Now we have the empty tree's SHA-1 hash, but we need an actual `git_tree` object to create a commit.
+It's worth noting that this doesn't actually write the index to disk.
+There's a separate call for that: [`git_index_write`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_write).
+All this code does is use the empty index to get the SHA-1 hash of the empty tree.
+
+Okay, now we have the empty tree's SHA-1 hash, but we need an actual `git_tree` object to create a commit.
 
 ```c
   if (git_tree_lookup(&tree, repo, &tree_id) < 0)
