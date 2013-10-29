@@ -40,6 +40,7 @@ If you want to change either of these defaults, you have to specify a "generator
 | Visual Studio 2012 (amd64) | `cmake -G "Visual Studio 11 Win64" ..` |
 
 Visual Studio 2013 isn't supported yet, but it probably will be in the next release of CMake.
+However, VS 2013 can work with project files generated for VS 2012.
 
 ## Advanced Build
 
