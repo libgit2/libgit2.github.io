@@ -1952,7 +1952,7 @@ ul.library-group-functions p {
 pre code .k, pre code .kt {
   font-weight: bold;
 }
-pre code .s, pre code .se {
+pre code .s, pre code .se, pre code .cm {
   opacity: .75;
 }
 
