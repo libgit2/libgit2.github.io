@@ -38,9 +38,8 @@ If you want to change either of these defaults, you have to specify a "generator
 | Visual Studio 2010 (amd64) | `cmake -G "Visual Studio 10 Win64" ..` |
 | Visual Studio 2012 (x86) | `cmake -G "Visual Studio 11" ..` |
 | Visual Studio 2012 (amd64) | `cmake -G "Visual Studio 11 Win64" ..` |
-
-Visual Studio 2013 isn't supported yet, but it probably will be in the next release of CMake.
-However, VS 2013 can work with project files generated for VS 2012.
+| Visual Studio 2013 (x86) | `cmake -G "Visual Studio 12" ..` |
+| Visual Studio 2013 (amd64) | `cmake -G "Visual Studio 12 Win64" ..` |
 
 ## Advanced Build
 
