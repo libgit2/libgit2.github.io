@@ -1,198 +1,155 @@
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <title>libgit2</title>
-    <meta charset='utf-8'>
-    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
-    <link href="css/libgit2.css?body=1" media="screen" rel="stylesheet" type="text/css" />
-    <script src="js/modernizr.js?body=1" type="text/javascript"></script>
-    <script src="js/modernizr-tests.js?body=1" type="text/javascript"></script>
-    <!--[if (gte IE 6)&(lte IE 8)]>
-      <script src='/javascripts/selectivizr-min.js' type='text/javascript'></script>
-    <![endif]-->
-    <script src="http://use.typekit.com/jsq2fql.js" type="text/javascript"></script>
-    <script>
-      //<![CDATA[
-        try{Typekit.load();}catch(e){}
-      //]]>
-    </script>
-  </head>
-  <body id='home'>
-    <a href="https://github.com/libgit2/libgit2" id="github">
-      <img alt="Fork me on GitHub" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" />
-    </a>
-    <div class='inner'>
-      <header>
-        <a href="index.html"><img src="images/libgit2/logo@2x.png" width="269" height="66" alt="libgit2" /></a>
-        <a href="http://libgit2.github.com/libgit2/" class="button">
-        <img src="images/libgit2/icon-book@2x.png" width="21" height="30" />
-        <h3>libgit2 API Reference</h3>
-        </a>
-      </header>
-    </div>
-    <div class='inner'>
-      <div id='front-main'>
-        <section id='intro'>
-          <p>
-            libgit2 is a <strong>portable</strong>, <strong>pure C implementation</strong> of the Git core methods provided as a re-entrant linkable library with a solid API, allowing you to write native speed custom Git applications in any language which supports C bindings.
-          </p>
-        </section>
-        <section id='features'>
-          <ul>
-            <li id='cross-platform'>
-              <img src="images/libgit2/icon-cross-platform@2x.png" />
-              <h3>100% Cross-Platform</h3>
-              <p>Linux, FreeBSD, OpenBSD, Mac OS X, iOS, Amiga, MinGW and fully native Windows.</p>
-            </li>
-            <li id='zero-dependencies'>
-              <img src="images/libgit2/icon-zero-dependencies@2x.png" />
-              <h3>Zero Dependencies</h3>
-              <p>Builds out of the box with no dependencies. Works in embedded devices and iOS.</p>
-            </li>
-            <li id='c89'>
-              <img src="images/libgit2/icon-c89@2x.png" />
-              <h3>C89</h3>
-              <p>Written with portability in mind. Builds in GCC, Clang and MSVC.</p>
-            </li>
-            <li id='permissive-licensiing'>
-              <img src="images/libgit2/icon-permissive-licensing@2x.png" />
-              <h3>Permissive Licensing</h3>
-              <p>GPLv2 with Linking Exception. Link with open and proprietary software, no strings attached.</p>
-            </li>
-          </ul>
-        </section>
-        <section id='production-usage'>
-          <h5>Trusted and used in production by</h5>
-          <img src="images/libgit2/logo-github@2x.png" width="83" height="38" />
-          <img src="images/libgit2/logo-microsoft@2x.png" width="150" height="32" />
-          <img src="images/libgit2/logo-plastic@2x.png" width="139" height="29" />
-        </section>
-      </div>
-      <aside id='sidebar'>
-        <h5>Language Bindings</h5>
-        <ul id='primary-languages'>
-          <li id='rugged'>
-            <img src="images/libgit2/logo-ruby@2x.png" width="40" height="40" />
-            <h6>Ruby</h6>
-            <h5>
-              <a href="https://github.com/libgit2/rugged">Rugged</a>
-            </h5>
-          </li>
-          <li id='libgit2sharp'>
-            <img src="images/libgit2/logo-net-mono@2x.png" width="94" height="39" />
-            <h6>.Net &amp; Mono</h6>
-            <h5>
-              <a href="https://github.com/libgit2/libgit2sharp">LibGit2Sharp</a>
-            </h5>
-          </li>
-          <li id='objective-c'>
-            <img src="images/libgit2/logo-apple@2x.png" width="46" height="51" />
-            <h6>Objective-C</h6>
-            <h5>
-              <a href="https://github.com/libgit2/objective-git">objective-git</a>
-            </h5>
-          </li>
-        </ul>
-        <ul class='additional-languages'>
-          <li>
-            <img src="images/libgit2/logo-python@2x.png" />
-            <h6>Python</h6>
-            <h5>
-              <a href="http://www.pygit2.org/">pygit2</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-perl@2x.png" />
-            <h6>Perl</h6>
-            <h5>
-              <a href="https://github.com/ghedo/p5-Git-Raw">Git::Raw</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-nodejs@2x.png" />
-            <h6>Node.js</h6>
-            <h5>
-              <a href="https://github.com/libgit2/node-gitteh">node-gitteh</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-go@2x.png" />
-            <h6>Go</h6>
-            <h5>
-              <a href="https://github.com/libgit2/git2go">git2go</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-erlang@2x.png" />
-            <h6>Erlang</h6>
-            <h5>
-              <a href="https://github.com/carlosmn/geef">Geef</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-gnome@2x.png" />
-            <h6>GObject</h6>
-            <h5>
-              <a href="http://git.gnome.org/browse/libgit2-glib">libgit2-glib</a>
-            </h5>
-          </li>
-        </ul>
-        <ul class='additional-languages'>
-          <li>
-            <img src="images/libgit2/logo-lua@2x.png" />
-            <h6>Lua</h6>
-            <h5>
-              <a href="https://github.com/libgit2/luagit2">luagit2</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-parrot-vm@2x.png" />
-            <h6>Parrot VM</h6>
-            <h5>
-              <a href="https://github.com/letolabs/parrot-libgit2">parrot-libgit2</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-qt@2x.png" />
-            <h6>C++ Qt</h6>
-            <h5>
-              <a href="https://projects.kde.org/projects/playground/libs/libqgit2/">libqgit2</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-php@2x.png" />
-            <h6>PHP</h6>
-            <h5>
-              <a href="https://github.com/libgit2/php-git">php-git</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-chicken-scheme@2x.png" />
-            <h6>Chicken Scheme</h6>
-            <h5>
-              <a href="https://wiki.call-cc.org/egg/git">chicken-git</a>
-            </h5>
-          </li>
-          <li>
-            <img src="images/libgit2/logo-d@2x.png" />
-            <h6>D</h6>
-            <h5>
-              <a href="https://github.com/AndrejMitrovic/dlibgit">dlibgit</a>
-            </h5>
-          </li>
-        </ul>
-      </aside>
-      <footer>
-        <div class='site-source'>
-          This open sourced site is <a href="https://github.com/libgit2/libgit2.github.com">hosted on GitHub.</a>
-          Patches, suggestions, and comments are welcome.
-        </div>
-      </footer>
-      <script src="js/jquery-1.7.1.min.js?body=1" type="text/javascript"></script>
-      <script src="js/jquery-ui-1.8.18.custom.min.js?body=1" type="text/javascript"></script>
-      <script src="js/jquery.defaultvalue.js?body=1" type="text/javascript"></script>
-      <script src="js/session.min.js?body=1" type="text/javascript"></script>
-      <script src="js/site.js?body=1" type="text/javascript"></script>
-    </div>
-  </body>
-</html>
+---
+layout: default
+---
+
+<div id='front-main'>
+	<section id='intro'>
+		<p>
+		libgit2 is a <strong>portable</strong>, <strong>pure C implementation</strong> of the Git core methods provided as a re-entrant linkable library with a solid API, allowing you to write native speed custom Git applications in any language which supports C bindings.
+		</p>
+	</section>
+	<section id='features'>
+		<ul>
+			<li id='cross-platform'>
+			<img src="images/libgit2/icon-cross-platform@2x.png" />
+			<h3>100% Cross-Platform</h3>
+			<p>Linux, FreeBSD, OpenBSD, Mac OS X, iOS, Amiga, MinGW and fully native Windows.</p>
+			</li>
+			<li id='zero-dependencies'>
+			<img src="images/libgit2/icon-zero-dependencies@2x.png" />
+			<h3>Zero Dependencies</h3>
+			<p>Builds out of the box with no dependencies. Works in embedded devices and iOS.</p>
+			</li>
+			<li id='c89'>
+			<img src="images/libgit2/icon-c89@2x.png" />
+			<h3>C89</h3>
+			<p>Written with portability in mind. Builds in GCC, Clang and MSVC.</p>
+			</li>
+			<li id='permissive-licensiing'>
+			<img src="images/libgit2/icon-permissive-licensing@2x.png" />
+			<h3>Permissive Licensing</h3>
+			<p>GPLv2 with Linking Exception. Link with open and proprietary software, no strings attached.</p>
+			</li>
+		</ul>
+	</section>
+	<section id='production-usage'>
+		<h5>Trusted and used in production by</h5>
+		<img src="images/libgit2/logo-github@2x.png" width="83" height="38" />
+		<img src="images/libgit2/logo-microsoft@2x.png" width="150" height="32" />
+		<img src="images/libgit2/logo-plastic@2x.png" width="139" height="29" />
+	</section>
+</div>
+<aside id='sidebar'>
+	<h5>Language Bindings</h5>
+	<ul id='primary-languages'>
+		<li id='rugged'>
+		<img src="images/libgit2/logo-ruby@2x.png" width="40" height="40" />
+		<h6>Ruby</h6>
+		<h5>
+			<a href="https://github.com/libgit2/rugged">Rugged</a>
+		</h5>
+		</li>
+		<li id='libgit2sharp'>
+		<img src="images/libgit2/logo-net-mono@2x.png" width="94" height="39" />
+		<h6>.Net &amp; Mono</h6>
+		<h5>
+			<a href="https://github.com/libgit2/libgit2sharp">LibGit2Sharp</a>
+		</h5>
+		</li>
+		<li id='objective-c'>
+		<img src="images/libgit2/logo-apple@2x.png" width="46" height="51" />
+		<h6>Objective-C</h6>
+		<h5>
+			<a href="https://github.com/libgit2/objective-git">objective-git</a>
+		</h5>
+		</li>
+	</ul>
+	<ul class='additional-languages'>
+		<li>
+		<img src="images/libgit2/logo-python@2x.png" />
+		<h6>Python</h6>
+		<h5>
+			<a href="http://www.pygit2.org/">pygit2</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-perl@2x.png" />
+		<h6>Perl</h6>
+		<h5>
+			<a href="https://github.com/ghedo/p5-Git-Raw">Git::Raw</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-nodejs@2x.png" />
+		<h6>Node.js</h6>
+		<h5>
+			<a href="https://github.com/libgit2/node-gitteh">node-gitteh</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-go@2x.png" />
+		<h6>Go</h6>
+		<h5>
+			<a href="https://github.com/libgit2/git2go">git2go</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-erlang@2x.png" />
+		<h6>Erlang</h6>
+		<h5>
+			<a href="https://github.com/carlosmn/geef">Geef</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-gnome@2x.png" />
+		<h6>GObject</h6>
+		<h5>
+			<a href="http://git.gnome.org/browse/libgit2-glib">libgit2-glib</a>
+		</h5>
+		</li>
+	</ul>
+	<ul class='additional-languages'>
+		<li>
+		<img src="images/libgit2/logo-lua@2x.png" />
+		<h6>Lua</h6>
+		<h5>
+			<a href="https://github.com/libgit2/luagit2">luagit2</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-parrot-vm@2x.png" />
+		<h6>Parrot VM</h6>
+		<h5>
+			<a href="https://github.com/letolabs/parrot-libgit2">parrot-libgit2</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-qt@2x.png" />
+		<h6>C++ Qt</h6>
+		<h5>
+			<a href="https://projects.kde.org/projects/playground/libs/libqgit2/">libqgit2</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-php@2x.png" />
+		<h6>PHP</h6>
+		<h5>
+			<a href="https://github.com/libgit2/php-git">php-git</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-chicken-scheme@2x.png" />
+		<h6>Chicken Scheme</h6>
+		<h5>
+			<a href="https://wiki.call-cc.org/egg/git">chicken-git</a>
+		</h5>
+		</li>
+		<li>
+		<img src="images/libgit2/logo-d@2x.png" />
+		<h6>D</h6>
+		<h5>
+			<a href="https://github.com/AndrejMitrovic/dlibgit">dlibgit</a>
+		</h5>
+		</li>
+	</ul>
+</aside>

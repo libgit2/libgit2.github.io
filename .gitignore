@@ -1,1 +1,3 @@
 .ruby-version
+_site
+Gemfile.lock

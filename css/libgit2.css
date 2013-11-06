@@ -195,6 +195,27 @@ header #tagline em {
   letter-spacing: 1px;
 }
 
+.navigation ul {
+  list-style-type: none;
+  float: right;
+  margin-top: 32px;
+}
+
+.navigation li {
+  display: inline;
+  margin-left: 24px;
+}
+
+.navigation a {
+  color: #4e443c;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navigation a:hover {
+  color: #f14e32;
+}
+
 aside nav ul {
   list-style: none;
   font-size: 16px;
@@ -705,8 +726,17 @@ blockquote.pull-right small {
   text-align: right;
 }
 
+code, pre {
+  font-family: Courier, monospace !important;
+  background-color: #FFF;
+  padding: 1px 2px;
+}
 
-code {
+pre code {
+	padding: 0;
+}
+
+pre {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
@@ -714,11 +744,9 @@ code {
   border-radius: 3px;
   display: block;
   padding: 10px 15px 13px 15px;
-  margin-bottom: 1em;
+  margin: 0 3em 1em 3em;
   background-color: #fff;
   border: solid 1px #efeee6;
-  color: #f14e32;
-  font-family: Courier, monospace !important;
   line-height: 18px;
 }
 
@@ -854,11 +882,6 @@ div.more {
   display: none;
 }
 
-
-.highlight {
-  background-color: #eee0b5;
-  padding: 2px;
-}
 
 
 .fixed {
@@ -1478,10 +1501,10 @@ header a.button {
   border-bottom: solid 1px #134143;
   color: #fff;
   font-size: 16px;
-  width: 238px;
+  width: 178px;
   padding: 16px 0 6px 55px;
   position: absolute;
-  right: 0;
+  right: 250px;
   top: 0;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1508,6 +1531,10 @@ header a.button {
   -ms-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
+}
+
+header a.button2 {
+  right: 0;
 }
 
 header a.button:hover {
@@ -1560,6 +1587,10 @@ header a.button h3 {
 
 p {
   color: #6b5d52;
+  margin-bottom: 15px;
+}
+
+#front-main p {
   margin-bottom: 30px;
 }
 
@@ -1915,4 +1946,37 @@ ul.library-group-functions p {
   right: 0;
   border: 0;
   z-index: 100;
+}
+
+
+pre code .k, pre code .kt {
+  font-weight: bold;
+}
+pre code .s, pre code .se, pre code .cm {
+  opacity: .75;
+}
+
+table {
+  margin: 1em 3em;
+  border-spacing: 0 5px;
+}
+
+thead {
+  border-bottom: 1px solid black;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+tbody tr:last-child {
+  border: none;
+}
+
+th, td {
+  padding: .5em 1em;
+}
+
+img {
+  max-width: 100%;
 }
