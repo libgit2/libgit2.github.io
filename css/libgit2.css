@@ -1682,7 +1682,7 @@ p {
   border-top: dotted 1px #bdbdb6;
   color: #847d75;
   font-weight: bold;
-  padding: 1.3em 0;
+  padding: 1.5em 0;
   text-align: center;
 }
 
@@ -1690,12 +1690,18 @@ p {
   color: #847d75;
   font-size: 14px;
   font-weight: bold;
-  margin-bottom: 0.6em;
+  margin-bottom: 0.75em;
 }
 
 #production-usage img {
   vertical-align: middle;
-  margin: 0 1em;
+  margin: 0 .9em;
+}
+#production-usage img[src*='logo-plastic'] {
+  margin-bottom: -12px;
+}
+#production-usage img[src*='logo-beanstalk'] {
+  margin-top: -13px;
 }
 
 
