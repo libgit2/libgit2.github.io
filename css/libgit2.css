@@ -1986,3 +1986,20 @@ th, td {
 img {
   max-width: 100%;
 }
+
+/* Table of contents */
+
+#primary {
+  width: 750px;
+}
+
+#toc {
+  width: 190px;
+  float: right;
+  background-color: #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
