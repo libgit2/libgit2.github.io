@@ -1990,7 +1990,7 @@ img {
 /* Table of contents */
 
 #primary {
-  width: 750px;
+  width: 700px;
 }
 
 #toc {
@@ -1998,8 +1998,26 @@ img {
   float: right;
   background-color: #fff;
   -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+     -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+.toc-h1 {
+  margin: 10px 0;
+  font-size: 150%;
+}
+.toc-h2 {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 120%;
+}
+.toc-h3 {
+  margin-left: 20px;
+}
+.toc-h4 {
+  margin-left: 30px;
 }
