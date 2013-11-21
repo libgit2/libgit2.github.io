@@ -2014,6 +2014,7 @@ img {
   margin-left: 10px;
   margin-top: 10px;
   font-size: 120%;
+  border-bottom: 1px solid #e2e0d8;
 }
 .toc-h3 {
   margin-left: 20px;
