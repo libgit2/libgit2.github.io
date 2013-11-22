@@ -4,15 +4,6 @@ $(function () {
     return;
   }
 
-  // Keep the TOC in view
-  $(window).scroll(function(){
-    $("#toc")
-      .stop()
-      .animate({"marginTop": ($(window).scrollTop()) + "px",
-                "marginLeft":($(window).scrollLeft()) + "px"},
-               "fast");
-  });
-
   // Generate the TOC contents
   var current_level = 0;
   $('#primary :header[id]').each(function(i, el) {

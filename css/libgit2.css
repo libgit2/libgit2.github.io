@@ -1991,11 +1991,12 @@ img {
 
 #primary {
   width: 700px;
+  margin-left: 240px;
 }
 
 #toc {
   width: 190px;
-  float: right;
+  float: left;
   background-color: #fff;
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
@@ -2003,7 +2004,7 @@ img {
        -o-border-radius: 3px;
           border-radius: 3px;
   padding: 10px;
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 .toc-h1 {
