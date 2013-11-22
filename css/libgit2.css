@@ -2023,3 +2023,11 @@ img {
 .toc-h4 {
   margin-left: 30px;
 }
+
+.toc-h1,
+.toc-h2,
+.toc-h3,
+.toc-h4 {
+  padding-left: 2em;
+  text-indent: -2em;
+}

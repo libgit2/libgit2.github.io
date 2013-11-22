@@ -151,19 +151,136 @@ int error = git_repository_open_ext(&repo, "/tmp/…",
 
 ## Diff
 
-### Worktree to Index
+### Index to Workdir
+
+Like `git diff`.
 
 ```c
-
+git_diff *diff;
+int error = git_diff_index_to_workdir(&diff, repo, NULL, NULL);
 ```
+
+([`git_diff_index_to_workdir`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_index_to_workdir))
 
 ### HEAD to Index
 
-```c
+Like `git diff --cached`.
 
+```c
+git_object *obj;
+int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
+
+git_tree *tree;
+error = git_tree_lookup(&tree, repo, git_object_id(obj));
+
+git_diff *diff;
+error = git_diff_tree_to_index(&diff, repo, tree, NULL, NULL);
 ```
 
+([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_diff_tree_to_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_index))
+
+### HEAD to Workdir
+
+Like `git diff HEAD`.
+
+```c
+git_object *obj;
+int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
+
+git_tree *tree;
+error = git_tree_lookup(&tree, repo, git_object_id(obj));
+
+git_diff *diff;
+error = git_diff_tree_to_workdir_with_index(&diff, repo, tree, NULL);
+```
+
+([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_diff_tree_to_workdir_with_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_workdir_with_index))
+
 ### Commit to Its Parent
+
+Like `git show <commit>`.
+
+```c
+git_object *obj;
+int error = git_revparse_single(&obj, repo, "committish");
+
+git_commit *commit;
+error = git_commit_lookup(&commit, repo, git_object_id(obj));
+
+git_commit *parent;
+error = git_commit_parent(&parent, commit, 0);
+
+git_tree *commit_tree, *parent_tree;
+error = git_commit_tree(&commit_tree, commit);
+error = git_commit_tree(&parent_tree, parent);
+
+git_diff *diff;
+error = git_diff_tree_to_tree(
+          &diff, repo, commit_tree, parent_tree, NULL);
+```
+
+([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup),
+[`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
+[`git_commit_tree`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree),
+[`git_diff_tree_to_tree`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_tree))
+
+
+### Rename detection
+
+```c
+git_diff_find_options opts = GIT_DIFF_FIND_OPTIONS_INIT;
+opts.flags = GIT_DIFF_FIND_RENAMES |
+             GIT_DIFF_FIND_COPIES |
+             GIT_DIFF_FIND_FOR_UNTRACKED;
+
+int error = git_diff_find_similar(diff, &opts);
+```
+
+([`git_diff_find_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_find_options),
+[`git_diff_find_similar`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_find_similar))
+
+### Iterating Deltas
+
+```c
+int each_file_cb(const git_diff_delta *delta,
+                 float progress,
+                 void *payload)
+{
+  /* … */
+}
+
+int each_hunk_cb(const git_diff_delta *delta,
+                 const git_diff_hunk *hunk,
+                 void *payload)
+{
+  /* … */
+}
+
+int each_line_cb(const git_diff_delta *delta,
+                 const git_diff_hunk *hunk,
+                 const git_diff_line *line,
+                 void *payload)
+{
+  /* … */
+}
+
+int error = git_diff_foreach(diff,
+                             each_file_cb,
+                             each_hunk_cb,
+                             each_line_cb,
+                             NULL);
+```
+
+([`git_diff_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_foreach),
+[`git_diff_file_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_file_cb),
+[`git_diff_hunk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_hunk_cb))
+
+### Generating a Patch
 
 ```c
 
