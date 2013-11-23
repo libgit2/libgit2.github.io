@@ -282,12 +282,84 @@ int error = git_diff_foreach(diff,
 
 ### Generating a Patch
 
-```c
-
-```
-
-### Diffstat
+A patch represents the text diff of two blobs.
 
 ```c
-
+git_patch *patch = NULL;
+int error = git_patch_from_diff(&patch, diff, 0);
 ```
+
+([`git_patch_from_diff`](http://libgit2.github.com/libgit2/#HEAD/group/patch/git_patch_from_diff))
+
+
+## Status
+
+### Querying
+
+```c
+git_status_list *status = NULL;
+git_status_options opts = GIT_STATUS_OPTIONS_INIT;
+int error = git_status_list_new(&status, &opts);
+```
+
+([`git_status_list_new`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_new))
+
+### Iterating (Simple)
+
+```c
+int status_cb(const char *path,
+              unsigned int status_flags,
+              void *payload)
+{
+  status_data *d = (status_data*)payload;
+  /* … */
+}
+
+status_data d = {0};
+int error = git_status_foreach(repo, status_cb, &d);
+```
+
+([`git_status_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach),
+[`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
+
+### Iterating (Options)
+
+```c
+int status_cb(const char *path,
+              unsigned int status_flags,
+              void *payload)
+{
+  status_data *d = (status_data*)payload;
+  /* … */
+}
+
+git_status_options opts = GIT_STATUS_OPTIONS_INIT;
+status_data d = {0};
+int error = git_status_foreach_ext(repo, &opts, status_cb, &d);
+```
+
+([`git_status_foreach_ext`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach_ext),
+[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
+[`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
+
+
+### Iterating (Manual)
+
+```c
+git_status_options opts = GIT_STATUS_OPTIONS_INIT;
+git_status_list *statuses = NULL;
+int error = git_status_list_new(&statuses, repo, &opts);
+
+size_t count = git_status_list_entrycount(statuses);
+for (size_t i=0; i<count; ++i) {
+  const git_status_entry *entry = git_status_byindex(statuses, i);
+  /* … */
+}
+```
+
+([`git_status_list_new`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_new),
+[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
+[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
+[`git_status_list_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_entrycount),
+[`git_status_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_byindex),
+[`git_status_entry`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_entry))
