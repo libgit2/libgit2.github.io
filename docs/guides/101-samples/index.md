@@ -299,16 +299,6 @@ int error = git_patch_from_diff(&patch, diff, 0);
 
 ## Status
 
-### Querying
-
-```c
-git_status_list *status = NULL;
-git_status_options opts = GIT_STATUS_OPTIONS_INIT;
-int error = git_status_list_new(&status, &opts);
-```
-
-([`git_status_list_new`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_new))
-
 ### Iterating (Simple)
 
 ```c
