@@ -26,7 +26,7 @@ if (error < 0) {
 Anytime libgit2 fills in a non-`const` pointer for you, you should be using a `_free` call to release the resource.
 
 ```c
-git_repository *repo;
+git_repository *repo = NULL;
 git_repository_init(&repo, "/tmp/…", false);
 /* … */
 git_repository_free(repo);
@@ -40,7 +40,7 @@ git_repository_free(repo);
 ### Init (Simple)
 
 ```c
-git_repository *repo;
+git_repository *repo = NULL;
 /* With working directory: */
 int error = git_repository_init(&repo, "/tmp/…", false);
 /* …or bare: */
@@ -54,7 +54,7 @@ int error = git_repository_init(&repo, "/tmp/…", true);
 ```c
 git_repository_init_options opts = GIT_REPOSITORY_INIT_OPTIONS_INIT;
 /* Customize options */
-git_repository *repo;
+git_repository *repo = NULL;
 int error = git_repository_init_ext(&repo, "/tmp/…", &opts);
 ```
 
@@ -64,7 +64,7 @@ int error = git_repository_init_ext(&repo, "/tmp/…", &opts);
 ### Clone (Simple)
 
 ```c
-git_repository *repo;
+git_repository *repo = NULL;
 const char *url = "http://…";
 const char *path = "/tmp/…";
 int error = git_clone(&repo, url, path, NULL);
@@ -102,6 +102,7 @@ checkout_opts.progress_cb = checkout_progress;
 clone_opts.checkout_opts = checkout_opts;
 clone_opts.remote_callbacks.transfer_progress = &fetch_progress;
 
+git_repository *repo = NULL;
 int error = git_clone(&repo, url, path, &opts);
 ```
 
@@ -112,11 +113,11 @@ int error = git_clone(&repo, url, path, &opts);
 ### Clone (Repo)
 
 ```c
-git_repository *repo;
+git_repository *repo = NULL;
 error = git_repository_init(&repo, "/tmp/…", false);
 /* Customize the repo */
 
-git_remote *origin;
+git_remote *origin = NULL;
 error = git_remote_create(&origin, repo, "origin", "http://…");
 /* Customize the remote, set callbacks, etc. */
 
@@ -130,7 +131,7 @@ error = git_clone_into(repo, origin, &co_opts, "master");
 ### Opening (Simple)
 
 ```c
-git_repository *repo;
+git_repository *repo = NULL;
 int error = git_repository_open(&repo, "/tmp/…");
 ```
 
@@ -139,7 +140,7 @@ int error = git_repository_open(&repo, "/tmp/…");
 ### Opening (Options)
 
 ```c
-git_repository *repo;
+git_repository *repo = NULL;
 int error = git_repository_open_ext(&repo, "/tmp/…",
   GIT_REPOSITORY_OPEN_NO_SEARCH, NULL);
 ```
@@ -156,7 +157,7 @@ int error = git_repository_open_ext(&repo, "/tmp/…",
 Like `git diff`.
 
 ```c
-git_diff *diff;
+git_diff *diff = NULL;
 int error = git_diff_index_to_workdir(&diff, repo, NULL, NULL);
 ```
 
@@ -167,13 +168,13 @@ int error = git_diff_index_to_workdir(&diff, repo, NULL, NULL);
 Like `git diff --cached`.
 
 ```c
-git_object *obj;
+git_object *obj = NULL;
 int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
 
-git_tree *tree;
+git_tree *tree = NULL;
 error = git_tree_lookup(&tree, repo, git_object_id(obj));
 
-git_diff *diff;
+git_diff *diff = NULL;
 error = git_diff_tree_to_index(&diff, repo, tree, NULL, NULL);
 ```
 
@@ -186,13 +187,13 @@ error = git_diff_tree_to_index(&diff, repo, tree, NULL, NULL);
 Like `git diff HEAD`.
 
 ```c
-git_object *obj;
+git_object *obj = NULL;
 int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
 
-git_tree *tree;
+git_tree *tree = NULL;
 error = git_tree_lookup(&tree, repo, git_object_id(obj));
 
-git_diff *diff;
+git_diff *diff = NULL;
 error = git_diff_tree_to_workdir_with_index(&diff, repo, tree, NULL);
 ```
 
@@ -205,20 +206,20 @@ error = git_diff_tree_to_workdir_with_index(&diff, repo, tree, NULL);
 Like `git show <commit>`.
 
 ```c
-git_object *obj;
+git_object *obj = NULL;
 int error = git_revparse_single(&obj, repo, "committish");
 
-git_commit *commit;
+git_commit *commit = NULL;
 error = git_commit_lookup(&commit, repo, git_object_id(obj));
 
-git_commit *parent;
+git_commit *parent = NULL;
 error = git_commit_parent(&parent, commit, 0);
 
-git_tree *commit_tree, *parent_tree;
+git_tree *commit_tree = NULL, *parent_tree = NULL;
 error = git_commit_tree(&commit_tree, commit);
 error = git_commit_tree(&parent_tree, parent);
 
-git_diff *diff;
+git_diff *diff = NULL;
 error = git_diff_tree_to_tree(
           &diff, repo, commit_tree, parent_tree, NULL);
 ```
@@ -251,6 +252,7 @@ int each_file_cb(const git_diff_delta *delta,
                  float progress,
                  void *payload)
 {
+  diff_data *d = (diff_data*)payload;
   /* … */
 }
 
@@ -258,6 +260,7 @@ int each_hunk_cb(const git_diff_delta *delta,
                  const git_diff_hunk *hunk,
                  void *payload)
 {
+  diff_data *d = (diff_data*)payload;
   /* … */
 }
 
@@ -266,14 +269,16 @@ int each_line_cb(const git_diff_delta *delta,
                  const git_diff_line *line,
                  void *payload)
 {
+  diff_data *d = (diff_data*)payload;
   /* … */
 }
 
+diff_data d = {0};
 int error = git_diff_foreach(diff,
                              each_file_cb,
                              each_hunk_cb,
                              each_line_cb,
-                             NULL);
+                             &d);
 ```
 
 ([`git_diff_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_foreach),
