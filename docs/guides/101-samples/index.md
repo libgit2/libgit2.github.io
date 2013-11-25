@@ -150,6 +150,78 @@ int error = git_repository_open_ext(&repo, "/tmp/…",
 
 
 
+## Objects
+
+### SHAs and OIDs
+
+SHA-1 hashes are usually written as 40 characters of hexadecimal.
+These are converted to a binary representation internally, called `git_oid`, and there are routines for converting back and forth.
+
+```c
+/* Convert a SHA to an OID */
+const char *sha = "4a202b346bb0fb0db7eff3cffeb3c70babbd2045";
+git_oid oid = {{0}};
+int error = git_oid_fromstr(&oid, sha);
+
+/* Make a shortened printable string from an OID */
+char shortsha[10] = {0};
+git_oid_tostr(shortsha, 9, &oid);
+
+/* Or libgit2 can allocate a buffer for you */
+char *newsha = git_oid_allocfmt(&oid);
+/* … */
+free(newsha);
+```
+
+([`git_oid_fromstr`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_fromstr),
+[`git_oid_tostr`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_tostr),
+[`git_oid_allocfmt`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_allocfmt))
+
+
+### Lookups
+
+There are four kinds of objects in a Git repository – commits, trees, blobs, and tag annotations.
+Each type of object has an API for doing lookups.
+
+```c
+git_commit *commit;
+int error = git_commit_lookup(&commit, repo, &oid);
+
+git_tree *tree;
+error = git_tree_lookup(&tree, repo, &oid);
+
+git_blob *blob;
+error = git_blob_lookup(&blob, repo, &oid);
+
+git_tag tag;
+error = git_tag_lookup(&tag, repo, &oid);
+```
+
+([`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup),
+[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_blob_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_lookup),
+[`git_tag_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_lookup))
+
+
+### Casting
+
+`git_object` acts like a "base class" for all of these types.
+
+```c
+git_object *obj;
+int error = git_object_lookup(&obj, repo, &oid, GIT_OBJ_ANY);
+if (git_object_type(obj) == GIT_OBJ_COMMIT) {
+  /* This is relatively safe */
+  git_commit *commit = (git_commit*)obj;
+}
+/* etc. */
+```
+
+([`git_object_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_lookup),
+[`git_object_type`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_type),
+[`git_otype`](http://libgit2.github.com/libgit2/#HEAD/type/git_otype))
+
+
 ## Diff
 
 ### Index to Workdir

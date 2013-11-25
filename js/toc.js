@@ -14,7 +14,7 @@ $(function () {
       .addClass('toc-' + el.nodeName.toLowerCase());
     div.append($('<a></a>')
       .attr('href', '#' + del.attr('id'))
-      .text(del.text()));
+      .html(del.html()));
     toc.append(div);
   });
 });
