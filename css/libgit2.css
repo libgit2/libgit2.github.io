@@ -1986,3 +1986,48 @@ th, td {
 img {
   max-width: 100%;
 }
+
+/* Table of contents */
+
+#primary {
+  width: 700px;
+  margin-left: 240px;
+}
+
+#toc {
+  width: 190px;
+  float: left;
+  background-color: #fff;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  padding: 10px;
+  margin-top: 45px;
+}
+
+.toc-h1 {
+  margin: 10px 0;
+  font-size: 150%;
+}
+.toc-h2 {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 120%;
+  border-bottom: 1px solid #e2e0d8;
+}
+.toc-h3 {
+  margin-left: 20px;
+}
+.toc-h4 {
+  margin-left: 30px;
+}
+
+.toc-h1,
+.toc-h2,
+.toc-h3,
+.toc-h4 {
+  padding-left: 2em;
+  text-indent: -2em;
+}
