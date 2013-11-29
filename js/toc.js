@@ -5,7 +5,6 @@ $(function () {
   }
 
   // Generate the TOC contents
-  var current_level = 0;
   $('#primary :header[id]').each(function(i, el) {
     var del = $(el);
     console.log(el);

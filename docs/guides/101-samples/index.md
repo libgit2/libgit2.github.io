@@ -75,6 +75,7 @@ int error = git_clone(&repo, url, path, NULL);
 ### Clone (Progress)
 
 ```c
+typedef struct { /* … */ } progress_data;
 int fetch_progress(
             const git_transfer_progress *stats,
             void *payload)
@@ -94,13 +95,16 @@ void checkout_progress(
 }
 
 /* … */
+progress_data d = {0};
 git_clone_options opts = GIT_CLONE_OPTIONS_INIT;
 git_checkout_opts checkout_opts = GIT_CHECKOUT_OPTS_INIT;
 
 checkout_opts.checkout_strategy = GIT_CHECKOUT_SAFE_CREATE;
 checkout_opts.progress_cb = checkout_progress;
+checkout_opts.progress_payload = &d;
 clone_opts.checkout_opts = checkout_opts;
 clone_opts.remote_callbacks.transfer_progress = &fetch_progress;
+clone_opts.remote_callbacks.payload = &d;
 
 git_repository *repo = NULL;
 int error = git_clone(&repo, url, path, &opts);
@@ -320,6 +324,8 @@ int error = git_diff_find_similar(diff, &opts);
 ### Iterating Deltas
 
 ```c
+typedef struct { /* … */ } diff_data;
+
 int each_file_cb(const git_diff_delta *delta,
                  float progress,
                  void *payload)
@@ -374,6 +380,8 @@ int error = git_patch_from_diff(&patch, diff, 0);
 ### Iterating (Simple)
 
 ```c
+typedef struct { /* … */ } status_data;
+
 int status_cb(const char *path,
               unsigned int status_flags,
               void *payload)
@@ -392,6 +400,8 @@ int error = git_status_foreach(repo, status_cb, &d);
 ### Iterating (Options)
 
 ```c
+typedef struct { /* … */ } status_data;
+
 int status_cb(const char *path,
               unsigned int status_flags,
               void *payload)
