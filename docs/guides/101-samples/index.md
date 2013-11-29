@@ -430,3 +430,124 @@ for (size_t i=0; i<count; ++i) {
 [`git_status_list_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_entrycount),
 [`git_status_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_byindex),
 [`git_status_entry`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_entry))
+
+
+## Trees
+
+### Lookups
+
+Each commit has a tree:
+
+```c
+git_tree *tree;
+int error = git_commit_tree(&tree, commit);
+```
+
+You can look them up by OID:
+
+```c
+git_tree *tree;
+int error = git_tree_lookup(&tree, repo, &oid);
+```
+
+Trees can contain trees:
+
+```c
+const git_tree_entry *entry = git_tree_entry_byindex(tree, 0);
+if (git_tree_entry_type(entry) == GIT_OBJ_TREE) {
+  git_tree *subtree = NULL;
+  int error = git_tree_lookup(&subtree, repo, git_tree_entry_id(entry));
+}
+```
+
+([`git_commit_tree`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree),
+[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
+[`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type))
+
+### Tree Entries
+
+```c
+git_object *obj = NULL;
+int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
+git_tree *tree = (git_tree *)obj;
+
+size_t count = git_tree_entrycount(tree);
+git_tree_entry *entry = git_tree_entry_byindex(tree, 0);
+
+const char *name = git_tree_entry_name(entry); /* filename */
+git_otype objtype = git_tree_entry_type(entry); /* blob or tree */
+git_filemode_t mode = git_tree_entry_filemode(entry); /* *NIX filemode */
+
+git_tree_entry *entry2 = NULL;
+error = git_tree_entry_bypath(&entry2, tree, "a/b/c.txt");
+git_tree_entry_free(entry2); /* caller has to free this one */
+```
+
+([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_tree_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entrycount),
+[`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
+[`git_tree_entry_name`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_name),
+[`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type),
+[`git_tree_entry_filemode`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_filemode),
+[`git_tree_entry_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_bypath),
+[`git_tree_entry_free`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_free))
+
+### Walking
+
+```c
+typedef struct { /* … */ } walk_data;
+
+int walk_cb(const char *root,
+            const git_tree_entry *entry,
+            void *payload)
+{
+  walk_data *d = (walk_data*)payload;
+  /* … */
+}
+
+git_object *obj = NULL;
+int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
+git_tree *tree = (git_tree *)obj;
+
+walk_data d = {0};
+error = git_tree_walk(tree, GIT_TREEWALK_PRE, walk_cb, &d);
+```
+
+([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_tree_walk`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_walk),
+[`git_treewalk_mode`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_mode),
+[`git_treewalk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_cb))
+
+### Treebuilder
+
+```c
+git_treebuilder *bld = NULL;
+int error = git_treebuilder_create(&bld, NULL);
+
+/* Add some entries */
+git_object *obj = NULL;
+error = git_revparse_single(&obj, repo, "HEAD:README.md");
+error = git_treebuilder_insert(NULL, bld,
+                               "README.md",        /* filename */
+                               git_object_id(obj), /* OID */
+                               0100644);           /* mode */
+git_object_free(obj);
+error = git_revparse_single(&obj, repo, "v0.1.0:foo/bar/baz.c");
+error = git_treebuilder_insert(NULL, bld,
+                               "a/b/d.c",
+                               git_object_id(obj),
+                               0100644);
+git_object_free(obj);
+
+git_oid oid = {{0}};
+error = git_treebuilder_write(&oid, repo, bld);
+git_treebuilder_free(bld);
+```
+
+([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_object_free`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_free),
+[`git_treebuilder_create`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_create),
+[`git_treebuilder_insert`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_insert),
+[`git_treebuilder_write`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_write),
+[`git_treebuilder_free`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
