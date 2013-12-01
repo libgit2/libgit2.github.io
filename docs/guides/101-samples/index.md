@@ -131,6 +131,25 @@ error = git_clone_into(repo, origin, &co_opts, "master");
 
 ([`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
 
+### Clone (Mirror)
+
+```c
+git_repository *repo = NUL
+error = git_repository_init(&repo, "/tmp/…", true);
+/* Customize the repo */
+
+/* Create an 'origin' remote with the mirror fetch refspec */
+git_remote *origin = NULL;
+error = git_remote_create_with_fetchspec(&origin, repo, "origin",
+                                         "http://…", "+refs/*:refs/*");
+/* Customize the remote, set callbacks, etc. */
+
+error = git_clone_into(repo, origin, NULL, NULL);
+/* Set remote.origin.mirror = true for compatibility with git-core */
+```
+
+([`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec),
+ [`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into)))
 
 ### Opening (Simple)
 
