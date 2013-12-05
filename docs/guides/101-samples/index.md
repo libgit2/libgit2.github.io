@@ -442,6 +442,137 @@ for (size_t i=0; i<count; ++i) {
 [`git_status_entry`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_entry))
 
 
+
+## References
+
+### Lookups (full name)
+
+```c
+git_reference *ref = NULL;
+int error = git_reference_lookup(&ref, repo, "refs/heads/master");
+```
+
+### Lookups (short name)
+
+```c
+git_reference *ref = NULL;
+int error = git_reference_dwim(&ref, repo, "master");
+```
+
+### Lookups (resolved)
+
+Get the object pointed to by a symbolic reference (or a chain of them).
+
+```c
+git_oid oid = {{0}};
+int error = git_reference_name_to_id(&oid, repo, "HEAD");
+```
+
+### Listing
+
+```c
+git_strarray refs = {0};
+int error = git_reference_list(&refs, repo);
+```
+
+### Foreach (refs)
+
+```c
+typedef struct { /* … */ } ref_data;
+
+int each_ref_cb(git_reference *ref, void *payload)
+{
+  ref_data *d = (ref_data*)payload;
+  /* … */
+}
+
+ref_data d = {0};
+int error = git_reference_foreach(repo, each_ref_cb, &d);
+```
+
+### Foreach (names)
+
+```c
+typedef struct { /* … */ } ref_data;
+
+int each_name_cb(const char *name, void *payload)
+{
+  ref_data *d = (ref_data*)payload;
+  /* … */
+}
+
+ref_data d = {0};
+int error = git_reference_foreach_name(repo, each_name_cb, &d);
+```
+
+### Foreach (glob)
+
+```c
+typedef struct { /* … */ } ref_data;
+
+int each_name_cb(const char *name, void *payload)
+{
+  ref_data *d = (ref_data*)payload;
+  /* … */
+}
+
+ref_data d = {0};
+int error = git_reference_foreach_glob(repo, "refs/remotes/*", each_name_cb, &d);
+```
+
+### Iterator (all)
+
+```c
+git_reference_iterator *iter = NULL;
+int error = git_reference_iterator_new(&iter, repo);
+
+git_reference *ref = NULL;
+while (!(error = git_reference_next(&ref, iter))) {
+  /* … */
+}
+
+if (error != GIT_ITEROVER) {
+  /* error */
+}
+```
+
+### Iterator (glob)
+
+```c
+git_reference_iterator *iter = NULL;
+int error = git_reference_iterator_glob_new(&iter, repo, "refs/heads/*");
+
+const char *name = NULL;
+while (!(error = git_reference_next_name(&name, iter))) {
+  /* … */
+}
+
+if (error != GIT_ITEROVER) {
+  /* error */
+}
+```
+
+### Create (direct)
+
+```c
+git_reference *ref = NULL;
+int error = git_reference_create(&ref, repo,
+      "refs/heads/direct",       /* name */
+      &oid,                      /* target */
+      true);                     /* force? */
+```
+
+### Create (symbolic)
+
+```c
+git_reference *ref = NULL;
+int error = git_reference_symbolic_create(&ref, repo,
+      "refs/heads/symbolic",     /* name */
+      "refs/heads/master",       /* target */
+      true);                     /* force? */
+```
+
+
 ## Trees
 
 ### Lookups
@@ -449,14 +580,14 @@ for (size_t i=0; i<count; ++i) {
 Each commit has a tree:
 
 ```c
-git_tree *tree;
+git_tree *tree = NULL;
 int error = git_commit_tree(&tree, commit);
 ```
 
 You can look them up by OID:
 
 ```c
-git_tree *tree;
+git_tree *tree = NULL;
 int error = git_tree_lookup(&tree, repo, &oid);
 ```
 
