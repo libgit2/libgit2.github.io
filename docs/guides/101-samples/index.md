@@ -131,6 +131,30 @@ error = git_clone_into(repo, origin, &co_opts, "master");
 
 ([`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
 
+### Clone (Mirror)
+
+```c
+git_repository *repo = NULL;
+error = git_repository_init(&repo, "/tmp/…", true);
+
+/* Create an 'origin' remote with the mirror fetch refspec */
+git_remote *origin = NULL;
+error = git_remote_create_with_fetchspec(&origin, repo, "origin",
+                                         "http://…", "+refs/*:refs/*");
+
+/* Set remote.origin.mirror = true for compatibility with git-core */
+git_config *cfg = NULL;
+error = git_repository_config(&cfg, repo);
+error = git_config_set_bool(cfg, "remote.origin.mirror", true);
+
+error = git_clone_into(repo, origin, NULL, NULL);
+```
+
+([`git_repository_init`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_init),
+[`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec),
+[`git_repository_config`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_config),
+[`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
+[`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
 
 ### Opening (Simple)
 
