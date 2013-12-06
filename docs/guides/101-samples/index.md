@@ -476,12 +476,16 @@ git_reference *ref = NULL;
 int error = git_reference_lookup(&ref, repo, "refs/heads/master");
 ```
 
+([`git_reference_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_lookup))
+
 ### Lookups (short name)
 
 ```c
 git_reference *ref = NULL;
 int error = git_reference_dwim(&ref, repo, "master");
 ```
+
+([`git_reference_dwim`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_dwim))
 
 ### Lookups (resolved)
 
@@ -492,12 +496,16 @@ git_oid oid = {{0}};
 int error = git_reference_name_to_id(&oid, repo, "HEAD");
 ```
 
+([`git_reference_name_to_id`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_name_to_id))
+
 ### Listing
 
 ```c
 git_strarray refs = {0};
 int error = git_reference_list(&refs, repo);
 ```
+
+([`git_reference_list`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_list))
 
 ### Foreach (refs)
 
@@ -514,6 +522,8 @@ ref_data d = {0};
 int error = git_reference_foreach(repo, each_ref_cb, &d);
 ```
 
+([`git_reference_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach))
+
 ### Foreach (names)
 
 ```c
@@ -529,6 +539,8 @@ ref_data d = {0};
 int error = git_reference_foreach_name(repo, each_name_cb, &d);
 ```
 
+([`git_reference_foreach_name`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach_name))
+
 ### Foreach (glob)
 
 ```c
@@ -543,6 +555,8 @@ int each_name_cb(const char *name, void *payload)
 ref_data d = {0};
 int error = git_reference_foreach_glob(repo, "refs/remotes/*", each_name_cb, &d);
 ```
+
+([`git_reference_foreach_glob`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach_glob))
 
 ### Iterator (all)
 
@@ -560,6 +574,11 @@ if (error != GIT_ITEROVER) {
 }
 ```
 
+(
+  [`git_reference_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_iterator_new),
+  [`git_reference_next`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_next)
+)
+
 ### Iterator (glob)
 
 ```c
@@ -576,6 +595,11 @@ if (error != GIT_ITEROVER) {
 }
 ```
 
+(
+  [`git_reference_iterator_glob_new`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_iterator_glob_new),
+  [`git_reference_next_name`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_next_name)
+)
+
 ### Create (direct)
 
 ```c
@@ -586,6 +610,8 @@ int error = git_reference_create(&ref, repo,
       true);                     /* force? */
 ```
 
+([`git_reference_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_create))
+
 ### Create (symbolic)
 
 ```c
@@ -595,6 +621,8 @@ int error = git_reference_symbolic_create(&ref, repo,
       "refs/heads/master",       /* target */
       true);                     /* force? */
 ```
+
+([`git_reference_symbolic_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_symbolic_create))
 
 
 ## Tags
