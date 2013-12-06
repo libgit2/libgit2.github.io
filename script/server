@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+script/branding
+
+echo "Starting server…"
+bundle exec jekyll serve --watch
+
+echo "Cleaning up…"
+rm -Rf _site

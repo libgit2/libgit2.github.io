@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+script/branding
+
+echo "Installing bundle"
+bundle install
