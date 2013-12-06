@@ -597,6 +597,130 @@ int error = git_reference_symbolic_create(&ref, repo,
 ```
 
 
+## Tags
+
+### Lookups (annotations)
+
+```c
+git_tag *tag = NULL;
+int error = git_tag_lookup(&tag, repo, &oid);
+```
+
+([`git_tag_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_lookup))
+
+### Listing (all)
+
+```c
+git_strarray tags = {0};
+int error = git_tag_list(&tags, repo);
+```
+
+([`git_tag_list`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_list))
+
+### Listing (glob)
+
+```c
+git_strarray tags = {0};
+int error = git_tag_list_match(&tags, "v0.*", repo);
+```
+
+([`git_tag_list_match`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_list_match))
+
+### Foreach
+
+```c
+typedef struct { /* … */ } tag_data;
+
+int each_tag(const char *name, git_oid *oid, void *payload)
+{
+  tag_data *d = (tag_data*)payload;
+  /* … */
+}
+
+tag_data d = {0};
+int error = git_tag_foreach(repo, each_tag, &d);
+```
+
+([`git_tag_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_foreach))
+
+### Annotation Properties
+
+```c
+const git_oid *target_id = git_tag_target_id(tag);
+git_otype target_type = git_tag_target_type(tag);
+const char *tag_name = git_tag_name(tag);
+const git_signature *tagger = git_tag_tagger(tag);
+const char *message = git_tag_message(tag);
+```
+
+(
+  [`git_tag_target_id`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_target_id),
+  [`git_tag_target_type`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_target_type),
+  [`git_tag_name`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_name),
+  [`git_tag_tagger`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_tagger),
+  [`git_tag_message`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_message)
+)
+
+### Create (lightweight)
+
+```c
+git_oid oid = {{0}};
+git_object *target = NULL;
+
+int error = git_revparse_single(&target, repo, "HEAD^{commit}");
+error = git_tag_create_lightweight(
+      &oid,       /* target ID (see docs) */
+      repo,       /* repository */
+      "v2.3.4",   /* name */
+      target,     /* target */
+      false);     /* force? */
+```
+
+(
+  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+  [`git_tag_create_lightweight`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_create_lightweight)
+)
+
+### Create (annotated)
+
+```c
+git_oid oid = {{0}};
+git_object *target = NULL;
+git_signature *tagger = NULL;
+
+int error = git_revparse_single(&target, repo, "HEAD^{commit}");
+error = git_signature_now(
+      &tagger,            /* output */
+      "Ben Straub",       /* name */
+      "bs@github.com");   /* email */
+error = git_tag_create(
+      &oid,               /* new object id */
+      repo,               /* repo */
+      "v2.3.4",           /* name */
+      target,             /* target */
+      tagger,             /* name/email/timestamp */
+      "Released 10/5/11", /* message */
+      false);             /* force? */
+```
+
+(
+  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+  [`git_signature_now`](http://libgit2.github.com/libgit2/#HEAD/group/signature/git_signature_now),
+  [`git_tag_create`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_create)
+)
+
+### Peeling
+
+```c
+git_object *dereferenced_target = NULL;
+int error = git_tag_peel(&dereferenced_target, tag);
+```
+
+(
+  [`git_tag_peel`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_peel)
+)
+
+
 ## Trees
 
 ### Lookups
