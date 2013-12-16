@@ -868,3 +868,61 @@ git_treebuilder_free(bld);
 [`git_treebuilder_insert`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_insert),
 [`git_treebuilder_write`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_write),
 [`git_treebuilder_free`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
+
+
+## Revwalk
+
+### Simple
+
+```c
+git_revwalk *walker;
+int error = git_revwalk_new(&walker, repo);
+error = git_revwalk_push_range(walker, "HEAD~20..HEAD");
+
+git_oid oid;
+while (!git_revwalk_next(&oid, walker)) {
+  /* … */
+}
+```
+
+(
+  [`git_revwalk_new`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_new),
+  [`git_revwalk_push_range`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_push_range),
+  [`git_revwalk_next`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_next)
+)
+
+### Pushing and Hiding
+
+```c
+/* Pushing marks starting points */
+error = git_revwalk_push_head(walker);
+error = git_revawlk_push_ref(walker, "HEAD");
+error = git_revawlk_push_glob(walker, "tags/*");
+
+/* Hiding marks stopping points */
+error = git_revwalk_hide(walker, &oid);
+error = git_revwalk_hide_glob(walker, "tags/v0.*");
+```
+
+(
+  [`git_revwalk_push_head`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_push_head),
+  [`git_revwalk_push_ref`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_push_ref),
+  [`git_revwalk_push_glob`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_push_glob),
+  [`git_revwalk_hide`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_hide),
+  [`git_revwalk_hide_glob`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_hide_glob)
+)
+
+### With Options
+
+```c
+/* Set sorting mode */
+git_revwalk_sorting(walker, GIT_SORT_TIME | GIT_SORT_REVERSE);
+
+/* Only walk the first-parent path */
+git_revwalk_simplify_first_parent(walker);
+```
+
+(
+  [`git_revwalk_sorting`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_sorting),
+  [`git_revwalk_simplify_first_parent`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_simplify_first_parent)
+)
