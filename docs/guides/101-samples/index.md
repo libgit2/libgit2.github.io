@@ -2,11 +2,11 @@
 layout: toc
 ---
 
-# 101 Libgit2 Samples
+<h1>101 Libgit2 Samples</h1>
 
-## Best Practices
+<h2 id="best_practices">Best Practices</h2>
 
-### Errors
+<h3 id="best_practices_errors">Errors</h3>
 
 Return codes from public APIs indicate general failure category.
 For extended information, libgit2 keeps some data in thread-local storage:
@@ -21,7 +21,7 @@ if (error < 0) {
 ```
 ([`giterr_last`](http://libgit2.github.com/libgit2/#HEAD/group/giterr/giterr_last))
 
-### Freeing
+<h3 id="best_practices_freeing">Freeing</h3>
 
 Anytime libgit2 fills in a non-`const` pointer for you, you should be using a `_free` call to release the resource.
 
@@ -35,9 +35,9 @@ git_repository_free(repo);
 ([`_free` APIs](http://libgit2.github.com/libgit2/#HEAD/search/_free))
 
 
-## Repositories
+<h2 id="repositories">Repositories</h2>
 
-### Init (Simple)
+<h3 id="repositories_init_simple">Init (Simple)</h3>
 
 ```c
 git_repository *repo = NULL;
@@ -49,7 +49,7 @@ int error = git_repository_init(&repo, "/tmp/…", true);
 
 ([`git_repository_init`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_init))
 
-### Init (Options)
+<h3 id="repositories_init_options">Init (Options)</h3>
 
 ```c
 git_repository_init_options opts = GIT_REPOSITORY_INIT_OPTIONS_INIT;
@@ -61,7 +61,7 @@ int error = git_repository_init_ext(&repo, "/tmp/…", &opts);
 ([`git_repository_init_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_init_ext),
 [`git_repository_init_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_repository_init_options))
 
-### Clone (Simple)
+<h3 id="repositories_clone_simple">Clone (Simple)</h3>
 
 ```c
 git_repository *repo = NULL;
@@ -72,7 +72,7 @@ int error = git_clone(&repo, url, path, NULL);
 
 ([`git_clone`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone))
 
-### Clone (Progress)
+<h3 id="repositories_clone_progress">Clone (Progress)</h3>
 
 ```c
 typedef struct { /* … */ } progress_data;
@@ -114,7 +114,7 @@ int error = git_clone(&repo, url, path, &opts);
 [`git_clone_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_clone_options))
 
 
-### Clone (Repo)
+<h3 id="repositories_clone_repo">Clone (Repo)</h3>
 
 ```c
 git_repository *repo = NULL;
@@ -131,7 +131,7 @@ error = git_clone_into(repo, origin, &co_opts, "master");
 
 ([`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
 
-### Clone (Mirror)
+<h3 id="repositories_clone_mirror">Clone (Mirror)</h3>
 
 ```c
 git_repository *repo = NULL;
@@ -156,7 +156,7 @@ error = git_clone_into(repo, origin, NULL, NULL);
 [`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
 [`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
 
-### Opening (Simple)
+<h3 id="repositories_opening_simple">Opening (Simple)</h3>
 
 ```c
 git_repository *repo = NULL;
@@ -165,7 +165,7 @@ int error = git_repository_open(&repo, "/tmp/…");
 
 ([`git_repository_open`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open))
 
-### Opening (Options)
+<h3 id="repositories_opening_options">Opening (Options)</h3>
 
 ```c
 git_repository *repo = NULL;
@@ -178,9 +178,9 @@ int error = git_repository_open_ext(&repo, "/tmp/…",
 
 
 
-## Objects
+<h2 id="objects">Objects</h2>
 
-### SHAs and OIDs
+<h3 id="repositories_shas_and_oids">SHAs and OIDs</h3>
 
 SHA-1 hashes are usually written as 40 characters of hexadecimal.
 These are converted to a binary representation internally, called `git_oid`, and there are routines for converting back and forth.
@@ -206,7 +206,7 @@ free(newsha);
 [`git_oid_allocfmt`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_allocfmt))
 
 
-### Lookups
+<h3 id="repositories_lookups">Lookups</h3>
 
 There are four kinds of objects in a Git repository – commits, trees, blobs, and tag annotations.
 Each type of object has an API for doing lookups.
@@ -231,7 +231,7 @@ error = git_tag_lookup(&tag, repo, &oid);
 [`git_tag_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_lookup))
 
 
-### Casting
+<h3 id="repositories_casting">Casting</h3>
 
 `git_object` acts like a "base class" for all of these types.
 
@@ -250,9 +250,9 @@ if (git_object_type(obj) == GIT_OBJ_COMMIT) {
 [`git_otype`](http://libgit2.github.com/libgit2/#HEAD/type/git_otype))
 
 
-## Diff
+<h2 id="diff">Diff</h2>
 
-### Index to Workdir
+<h3 id="diff_index_to_workdir">Index to Workdir</h3>
 
 Like `git diff`.
 
@@ -263,7 +263,7 @@ int error = git_diff_index_to_workdir(&diff, repo, NULL, NULL);
 
 ([`git_diff_index_to_workdir`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_index_to_workdir))
 
-### HEAD to Index
+<h3 id="diff_head_to_index">HEAD to Index</h3>
 
 Like `git diff --cached`.
 
@@ -282,7 +282,7 @@ error = git_diff_tree_to_index(&diff, repo, tree, NULL, NULL);
 [`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
 [`git_diff_tree_to_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_index))
 
-### HEAD to Workdir
+<h3 id="diff_head_to_workdir">HEAD to Workdir</h3>
 
 Like `git diff HEAD`.
 
@@ -301,7 +301,7 @@ error = git_diff_tree_to_workdir_with_index(&diff, repo, tree, NULL);
 [`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
 [`git_diff_tree_to_workdir_with_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_workdir_with_index))
 
-### Commit to Its Parent
+<h3 id="diff_commit_to_its_parent">Commit to Its Parent</h3>
 
 Like `git show <commit>`.
 
@@ -331,7 +331,7 @@ error = git_diff_tree_to_tree(
 [`git_diff_tree_to_tree`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_tree))
 
 
-### Rename detection
+<h3 id="diff_rename_detection">Rename detection</h3>
 
 ```c
 git_diff_find_options opts = GIT_DIFF_FIND_OPTIONS_INIT;
@@ -345,7 +345,7 @@ int error = git_diff_find_similar(diff, &opts);
 ([`git_diff_find_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_find_options),
 [`git_diff_find_similar`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_find_similar))
 
-### Iterating Deltas
+<h3 id="diff_iterating_deltas">Iterating Deltas</h3>
 
 ```c
 typedef struct { /* … */ } diff_data;
@@ -387,7 +387,7 @@ int error = git_diff_foreach(diff,
 [`git_diff_file_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_file_cb),
 [`git_diff_hunk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_hunk_cb))
 
-### Generating a Patch
+<h3 id="diff_generating_a_patch">Generating a Patch</h3>
 
 A patch represents the text diff of two blobs.
 
@@ -399,9 +399,9 @@ int error = git_patch_from_diff(&patch, diff, 0);
 ([`git_patch_from_diff`](http://libgit2.github.com/libgit2/#HEAD/group/patch/git_patch_from_diff))
 
 
-## Status
+<h2 id="status">Status</h2>
 
-### Iterating (Simple)
+<h3 id="status_iterating_simple">Iterating (Simple)</h3>
 
 ```c
 typedef struct { /* … */ } status_data;
@@ -421,7 +421,7 @@ int error = git_status_foreach(repo, status_cb, &d);
 ([`git_status_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach),
 [`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
 
-### Iterating (Options)
+<h3 id="status_iterating_options">Iterating (Options)</h3>
 
 ```c
 typedef struct { /* … */ } status_data;
@@ -444,7 +444,7 @@ int error = git_status_foreach_ext(repo, &opts, status_cb, &d);
 [`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
 
 
-### Iterating (Manual)
+<h3 id="status_iterating_manual">Iterating (Manual)</h3>
 
 ```c
 git_status_options opts = GIT_STATUS_OPTIONS_INIT;
@@ -467,9 +467,9 @@ for (size_t i=0; i<count; ++i) {
 
 
 
-## References
+<h2 id="references">References</h2>
 
-### Lookups (full name)
+<h3 id="references_lookups_full_name">Lookups (full name)</h3>
 
 ```c
 git_reference *ref = NULL;
@@ -478,7 +478,7 @@ int error = git_reference_lookup(&ref, repo, "refs/heads/master");
 
 ([`git_reference_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_lookup))
 
-### Lookups (short name)
+<h3 id="references_lookups_short_name">Lookups (short name)</h3>
 
 ```c
 git_reference *ref = NULL;
@@ -487,7 +487,7 @@ int error = git_reference_dwim(&ref, repo, "master");
 
 ([`git_reference_dwim`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_dwim))
 
-### Lookups (resolved)
+<h3 id="references_lookups_resolved">Lookups (resolved)</h3>
 
 Get the object pointed to by a symbolic reference (or a chain of them).
 
@@ -498,7 +498,7 @@ int error = git_reference_name_to_id(&oid, repo, "HEAD");
 
 ([`git_reference_name_to_id`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_name_to_id))
 
-### Listing
+<h3 id="references_listing">Listing</h3>
 
 ```c
 git_strarray refs = {0};
@@ -507,7 +507,7 @@ int error = git_reference_list(&refs, repo);
 
 ([`git_reference_list`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_list))
 
-### Foreach (refs)
+<h3 id="references_foreach_refs">Foreach (refs)</h3>
 
 ```c
 typedef struct { /* … */ } ref_data;
@@ -524,7 +524,7 @@ int error = git_reference_foreach(repo, each_ref_cb, &d);
 
 ([`git_reference_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach))
 
-### Foreach (names)
+<h3 id="references_foreach_names">Foreach (names)</h3>
 
 ```c
 typedef struct { /* … */ } ref_data;
@@ -541,7 +541,7 @@ int error = git_reference_foreach_name(repo, each_name_cb, &d);
 
 ([`git_reference_foreach_name`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach_name))
 
-### Foreach (glob)
+<h3 id="references_foreach_glob">Foreach (glob)</h3>
 
 ```c
 typedef struct { /* … */ } ref_data;
@@ -558,7 +558,7 @@ int error = git_reference_foreach_glob(repo, "refs/remotes/*", each_name_cb, &d)
 
 ([`git_reference_foreach_glob`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach_glob))
 
-### Iterator (all)
+<h3 id="references_iterator_all">Iterator (all)</h3>
 
 ```c
 git_reference_iterator *iter = NULL;
@@ -579,7 +579,7 @@ if (error != GIT_ITEROVER) {
   [`git_reference_next`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_next)
 )
 
-### Iterator (glob)
+<h3 id="references_iterator_glob">Iterator (glob)</h3>
 
 ```c
 git_reference_iterator *iter = NULL;
@@ -600,7 +600,7 @@ if (error != GIT_ITEROVER) {
   [`git_reference_next_name`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_next_name)
 )
 
-### Create (direct)
+<h3 id="references_create_direct">Create (direct)</h3>
 
 ```c
 git_reference *ref = NULL;
@@ -612,7 +612,7 @@ int error = git_reference_create(&ref, repo,
 
 ([`git_reference_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_create))
 
-### Create (symbolic)
+<h3 id="references_create_symbolic">Create (symbolic)</h3>
 
 ```c
 git_reference *ref = NULL;
@@ -625,9 +625,9 @@ int error = git_reference_symbolic_create(&ref, repo,
 ([`git_reference_symbolic_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_symbolic_create))
 
 
-## Tags
+<h2 id="tags">Tags</h2>
 
-### Lookups (annotations)
+<h3 id="tags_lookups_annotations">Lookups (annotations)</h3>
 
 ```c
 git_tag *tag = NULL;
@@ -636,7 +636,7 @@ int error = git_tag_lookup(&tag, repo, &oid);
 
 ([`git_tag_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_lookup))
 
-### Listing (all)
+<h3 id="tags_listing_all">Listing (all)</h3>
 
 ```c
 git_strarray tags = {0};
@@ -645,7 +645,7 @@ int error = git_tag_list(&tags, repo);
 
 ([`git_tag_list`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_list))
 
-### Listing (glob)
+<h3 id="tags_listing_glob">Listing (glob)</h3>
 
 ```c
 git_strarray tags = {0};
@@ -654,7 +654,7 @@ int error = git_tag_list_match(&tags, "v0.*", repo);
 
 ([`git_tag_list_match`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_list_match))
 
-### Foreach
+<h3 id="tags_foreach">Foreach</h3>
 
 ```c
 typedef struct { /* … */ } tag_data;
@@ -671,7 +671,7 @@ int error = git_tag_foreach(repo, each_tag, &d);
 
 ([`git_tag_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_foreach))
 
-### Annotation Properties
+<h3 id="tags_annotation_properties">Annotation Properties</h3>
 
 ```c
 const git_oid *target_id = git_tag_target_id(tag);
@@ -689,7 +689,7 @@ const char *message = git_tag_message(tag);
   [`git_tag_message`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_message)
 )
 
-### Create (lightweight)
+<h3 id="tags_create_lightweight">Create (lightweight)</h3>
 
 ```c
 git_oid oid = {{0}};
@@ -709,7 +709,7 @@ error = git_tag_create_lightweight(
   [`git_tag_create_lightweight`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_create_lightweight)
 )
 
-### Create (annotated)
+<h3 id="tags_create_annotated">Create (annotated)</h3>
 
 ```c
 git_oid oid = {{0}};
@@ -737,7 +737,7 @@ error = git_tag_create(
   [`git_tag_create`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_create)
 )
 
-### Peeling
+<h3 id="tags_peeling">Peeling</h3>
 
 ```c
 git_object *dereferenced_target = NULL;
@@ -749,9 +749,9 @@ int error = git_tag_peel(&dereferenced_target, tag);
 )
 
 
-## Trees
+<h2 id="trees">Trees</h2>
 
-### Lookups
+<h3 id="trees_lookups">Lookups</h3>
 
 Each commit has a tree:
 
@@ -782,7 +782,7 @@ if (git_tree_entry_type(entry) == GIT_OBJ_TREE) {
 [`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
 [`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type))
 
-### Tree Entries
+<h3 id="trees_tree_entries">Tree Entries</h3>
 
 ```c
 git_object *obj = NULL;
@@ -810,7 +810,7 @@ git_tree_entry_free(entry2); /* caller has to free this one */
 [`git_tree_entry_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_bypath),
 [`git_tree_entry_free`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_free))
 
-### Walking
+<h3 id="trees_walking">Walking</h3>
 
 ```c
 typedef struct { /* … */ } walk_data;
@@ -836,7 +836,7 @@ error = git_tree_walk(tree, GIT_TREEWALK_PRE, walk_cb, &d);
 [`git_treewalk_mode`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_mode),
 [`git_treewalk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_cb))
 
-### Treebuilder
+<h3 id="trees_treebuilder">Treebuilder</h3>
 
 ```c
 git_treebuilder *bld = NULL;
@@ -870,9 +870,9 @@ git_treebuilder_free(bld);
 [`git_treebuilder_free`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
 
 
-## Revwalk
+<h2 id="revwalk">Revwalk</h2>
 
-### Simple
+<h3 id="revwalk_simple">Simple</h3>
 
 ```c
 git_revwalk *walker;
@@ -891,7 +891,7 @@ while (!git_revwalk_next(&oid, walker)) {
   [`git_revwalk_next`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_next)
 )
 
-### Pushing and Hiding
+<h3 id="revwalk_pushing_and_hiding">Pushing and Hiding</h3>
 
 ```c
 /* Pushing marks starting points */
@@ -912,7 +912,7 @@ error = git_revwalk_hide_glob(walker, "tags/v0.*");
   [`git_revwalk_hide_glob`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_hide_glob)
 )
 
-### With Options
+<h3 id="revwalk_with_options">With Options</h3>
 
 ```c
 /* Set sorting mode */
