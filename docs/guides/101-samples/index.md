@@ -774,6 +774,7 @@ int error = git_blob_filtered_content(
   blob,                 /* blob */
   "README.md",          /* path (for attribute-based filtering) */
   true);                /* check if binary? */
+git_buf_free(&filtered_content);
 ```
 
 (
