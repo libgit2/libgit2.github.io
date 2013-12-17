@@ -749,98 +749,6 @@ int error = git_tag_peel(&dereferenced_target, tag);
 )
 
 
-<h2 id="commits">Commits</h2>
-
-<h3 id="commits_lookups">Lookups</h3>
-
-```c
-git_commit *commit;
-int error = git_commit_lookup(&commit, repo, &oid);
-```
-
-(
-  [`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup)
-)
-
-<h3 id="commits_properties">Properties</h3>
-
-```c
-const git_oid *oid             = git_commit_id(commit);
-const char *encoding           = git_commit_message_encoding(commit);
-const char *message            = git_commit_message(commit);
-const char *summmary           = git_commit_summary(commit);
-git_time_t time                = git_commit_time(commit);
-int offset_in_min              = git_commit_time_offset(commit);
-const git_signature *committer = git_commit_committer(commit);
-const git_signature *author    = git_commit_author(commit);
-const char *header             = git_commit_raw_header(commit);
-const git_oid *tree_id         = git_commit_tree_id(commit);
-```
-
-(
-  [`git_commit_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_id),
-  [`git_commit_message_encoding`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message_encoding),
-  [`git_commit_message`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message),
-  [`git_commit_summary`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_summary),
-  [`git_commit_time`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time),
-  [`git_commit_time_offset`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time_offset),
-  [`git_commit_committer`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_committer),
-  [`git_commit_author`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_author),
-  [`git_commit_raw_header`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_raw_header),
-  [`git_commit_tree_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree_id)
-)
-
-<h3 id="commits_parents">Parents</h3>
-
-```c
-unsigned int count = git_commit_parentcount(commit);
-for (unsigned int i=0; i<count; i++) {
-  git_oid *nth_parent_id = git_commit_parent_id(commit);
-
-  git_commit *nth_parent = NULL;
-  int error = git_commit_parent(&nth_parent, commit, i);
-  /* … */
-}
-
-git_commit *nth_ancestor = NULL;
-int error = git_commit_nth_gen_ancestor(&nth_ancestor, commit, 7);
-```
-
-(
-  [`git_commit_parentcount`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parentcount),
-  [`git_commit_parent_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent_id),
-  [`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
-  [`git_commit_nth_gen_ancestor`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_nth_gen_ancestor)
-)
-
-<h3 id="commits_create">Create</h3>
-
-```c
-git_signature *me = NULL
-int error = git_signature_now(&me, "Me", "me@example.com");
-
-const git_commit *parents[] = {parent1, parent2};
-
-git_oid new_commit_id = {{0}};
-error = git_commit_create(
-  &new_commit_id,
-  repo,
-  "HEAD",                      /* name of ref to update */
-  me,                          /* author */
-  me,                          /* committer */
-  "UTF-8",                     /* message encoding */
-  "Flooberhaul the whatnots",  /* message */
-  tree,                        /* root tree */
-  2,                           /* parent count */
-  parents);                    /* parents */
-```
-
-(
-  [`git_signature_now`](http://libgit2.github.com/libgit2/#HEAD/group/signature/git_signature_now),
-  [`git_commit_create`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_create)
-)
-
-
 <h2 id="trees">Trees</h2>
 
 <h3 id="trees_lookups">Lookups</h3>
@@ -960,6 +868,98 @@ git_treebuilder_free(bld);
 [`git_treebuilder_insert`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_insert),
 [`git_treebuilder_write`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_write),
 [`git_treebuilder_free`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
+
+
+<h2 id="commits">Commits</h2>
+
+<h3 id="commits_lookups">Lookups</h3>
+
+```c
+git_commit *commit;
+int error = git_commit_lookup(&commit, repo, &oid);
+```
+
+(
+  [`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup)
+)
+
+<h3 id="commits_properties">Properties</h3>
+
+```c
+const git_oid *oid             = git_commit_id(commit);
+const char *encoding           = git_commit_message_encoding(commit);
+const char *message            = git_commit_message(commit);
+const char *summmary           = git_commit_summary(commit);
+git_time_t time                = git_commit_time(commit);
+int offset_in_min              = git_commit_time_offset(commit);
+const git_signature *committer = git_commit_committer(commit);
+const git_signature *author    = git_commit_author(commit);
+const char *header             = git_commit_raw_header(commit);
+const git_oid *tree_id         = git_commit_tree_id(commit);
+```
+
+(
+  [`git_commit_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_id),
+  [`git_commit_message_encoding`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message_encoding),
+  [`git_commit_message`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message),
+  [`git_commit_summary`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_summary),
+  [`git_commit_time`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time),
+  [`git_commit_time_offset`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time_offset),
+  [`git_commit_committer`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_committer),
+  [`git_commit_author`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_author),
+  [`git_commit_raw_header`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_raw_header),
+  [`git_commit_tree_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree_id)
+)
+
+<h3 id="commits_parents">Parents</h3>
+
+```c
+unsigned int count = git_commit_parentcount(commit);
+for (unsigned int i=0; i<count; i++) {
+  git_oid *nth_parent_id = git_commit_parent_id(commit);
+
+  git_commit *nth_parent = NULL;
+  int error = git_commit_parent(&nth_parent, commit, i);
+  /* … */
+}
+
+git_commit *nth_ancestor = NULL;
+int error = git_commit_nth_gen_ancestor(&nth_ancestor, commit, 7);
+```
+
+(
+  [`git_commit_parentcount`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parentcount),
+  [`git_commit_parent_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent_id),
+  [`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
+  [`git_commit_nth_gen_ancestor`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_nth_gen_ancestor)
+)
+
+<h3 id="commits_create">Create</h3>
+
+```c
+git_signature *me = NULL
+int error = git_signature_now(&me, "Me", "me@example.com");
+
+const git_commit *parents[] = {parent1, parent2};
+
+git_oid new_commit_id = {{0}};
+error = git_commit_create(
+  &new_commit_id,
+  repo,
+  "HEAD",                      /* name of ref to update */
+  me,                          /* author */
+  me,                          /* committer */
+  "UTF-8",                     /* message encoding */
+  "Flooberhaul the whatnots",  /* message */
+  tree,                        /* root tree */
+  2,                           /* parent count */
+  parents);                    /* parents */
+```
+
+(
+  [`git_signature_now`](http://libgit2.github.com/libgit2/#HEAD/group/signature/git_signature_now),
+  [`git_commit_create`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_create)
+)
 
 
 <h2 id="revwalk">Revwalk</h2>
