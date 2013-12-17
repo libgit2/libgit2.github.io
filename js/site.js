@@ -20,7 +20,7 @@ $(document).ready(function() {
     t.type  = 'text/javascript';
     t.async = true;
     t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '4f919d1df5a1f504b3000026');
+    t.setAttribute('data-site-id', '52b0cd7deddd5b7cc1001c50');
     t.src = '//secure.gaug.es/track.js';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(t, s);
