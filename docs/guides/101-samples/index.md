@@ -749,6 +749,57 @@ int error = git_tag_peel(&dereferenced_target, tag);
 )
 
 
+<h2 id="blobs">Blobs</h2>
+
+<h3 id="blobs_lookups">Lookups</h3>
+
+```c
+git_blob *blob = NULL;
+int error = git_blob_lookup(&blob, repo, &oid);
+```
+
+(
+  [`git_blob_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_lookup)
+)
+
+<h3 id="blobs_content">Content</h3>
+
+```c
+git_off_t rawsize = git_blob_rawsize(blob);
+const void *rawcontent = git_blob_rawcontent(blob);
+
+git_buf filtered_content = GIT_BUF_INIT;
+int error = git_blob_filtered_content(
+  &filtered_content,    /* output buffer */
+  blob,                 /* blob */
+  "README.md",          /* path (for attribute-based filtering) */
+  true);                /* check if binary? */
+```
+
+(
+  [`git_blob_rawsize`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_rawsize),
+  [`git_blob_rawcontent`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_rawcontent),
+  [`git_blob_filtered_content`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_filtered_content)
+)
+
+<h3 id="blobs_create">Create</h3>
+
+```c
+git_oid oid = {{0}};
+int error = git_blob_create_fromworkdir(&oid, repo, "README.md");
+error = git_blob_create_fromdisk(&oid, repo, "/etc/hosts");
+
+const char str[] = "# Hello there!";
+error = git_blob_create_frombuffer(&oid, repo, str, strlen(str));
+```
+
+(
+  [`git_blob_create_fromworkdir`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_fromworkdir),
+  [`git_blob_create_fromdisk`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_fromdisk),
+  [`git_blob_create_frombuffer`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_frombuffer)
+)
+
+
 <h2 id="trees">Trees</h2>
 
 <h3 id="trees_lookups">Lookups</h3>
