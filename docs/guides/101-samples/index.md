@@ -180,7 +180,7 @@ int error = git_repository_open_ext(&repo, "/tmp/…",
 
 <h2 id="objects">Objects</h2>
 
-<h3 id="repositories_shas_and_oids">SHAs and OIDs</h3>
+<h3 id="objects_shas_and_oids">SHAs and OIDs</h3>
 
 SHA-1 hashes are usually written as 40 characters of hexadecimal.
 These are converted to a binary representation internally, called `git_oid`, and there are routines for converting back and forth.
@@ -206,7 +206,7 @@ free(newsha);
 [`git_oid_allocfmt`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_allocfmt))
 
 
-<h3 id="repositories_lookups">Lookups</h3>
+<h3 id="objects_lookups">Lookups</h3>
 
 There are four kinds of objects in a Git repository – commits, trees, blobs, and tag annotations.
 Each type of object has an API for doing lookups.
@@ -231,7 +231,7 @@ error = git_tag_lookup(&tag, repo, &oid);
 [`git_tag_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_lookup))
 
 
-<h3 id="repositories_casting">Casting</h3>
+<h3 id="objects_casting">Casting</h3>
 
 `git_object` acts like a "base class" for all of these types.
 
