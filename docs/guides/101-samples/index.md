@@ -1014,6 +1014,160 @@ int error = git_patch_from_diff(&patch, diff, 0);
 ([`git_patch_from_diff`](http://libgit2.github.com/libgit2/#HEAD/group/patch/git_patch_from_diff))
 
 
+<h2 id="config">Config</h2>
+
+<h3 id="config_files">Files</h3>
+
+```c
+char path[1024] = {0};
+int error = git_config_find_global(path, 1024);
+error = git_config_find_xdg(path, 1024);
+error = git_config_find_system(path, 1024);
+```
+
+(
+  [`git_config_find_global`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_global),
+  [`git_config_find_xdg`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_xdg),
+  [`git_config_find_system`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_system)
+)
+
+<h3 id="config_opening">Opening</h3>
+
+```c
+git_config *cfg = NULL;
+int error = git_config_open_default(&cfg);
+/* or */
+error = git_repository_config(&cfg, repo);
+```
+
+Once you have a config instance, you can specify which of its levels to operate at:
+
+```c
+git_config *sys_cfg = NULL;
+int error = git_config_open_level(&sys_cfg, cfg, GIT_CONFIG_LEVEL_SYSTEM);
+```
+
+(
+  [`git_config_open_default`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_open_default),
+  [`git_repository_config`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_config),
+  [`git_config_open_level`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_open_level)
+)
+
+<h3 id="config_values_simple">Values (Simple)</h3>
+
+Raw entries are available:
+
+```c
+const git_config_entry *entry = NULL;
+int error = git_config_get_entry(&entry, cfg, "diff.renames");
+```
+
+Or you can let libgit2 do the parsing:
+
+```c
+int32_t i32val;
+int64_t i64val;
+int boolval;
+const char *strval;
+error = git_config_get_int32(&i32val, cfg, "foo.bar");
+error = git_config_get_int64(&i64val, cfg, "foo.bar");
+error = git_config_get_bool(&boolval, cfg, "foo.bar");
+error = git_config_get_string(&strval, cfg, "foo.bar");
+```
+
+Setting values is fairly straightforward.
+This operates at the most specific config level; if you want to set a global or system-level value, use `git_config_open_level`.
+
+```c
+error = git_config_set_int32(cfg, "foo.bar", 3);
+error = git_config_set_int64(cfg, "foo.bar", 3);
+error = git_config_set_bool(cfg, "foo.bar", true);
+error = git_config_set_string(cfg, "foo.bar", "baz");
+```
+
+(
+  [`git_config_get_entry`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_entry),
+  [`git_config_get_int32`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_int32),
+  [`git_config_get_int64`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_int64),
+  [`git_config_get_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_bool),
+  [`git_config_get_string`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_string),
+  [`git_config_set_int32`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_int32),
+  [`git_config_set_int64`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_int64),
+  [`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
+  [`git_config_set_string`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_string)
+)
+
+<h3 id="config_values_multi">Values (Multi)</h3>
+
+Some configuration entries can have multiple values, like `core.gitProxy`.
+
+```c
+/* replace values by regex, perhaps many of them */
+int error = git_config_set_multivar(cfg,
+    "core.gitProxy",           /* config entry name */
+    ".*example\.com.*",        /* regex to match */
+    "'cat' for example.com");  /* new value */
+
+/* adding a value means replacing one that doesn't exist */
+int error = git_config_set_multivar(cfg, "core.gitProxy",
+    "doesntexist", "'foo bar' for example.com");
+```
+
+Multivars are read either with a foreach loop:
+
+```c
+typedef struct { /* … */ } multivar_data;
+
+int foreach_cb(const git_config_entry *entry, void *payload)
+{
+  multivar_data *d = (multivar_data*)payload;
+  /* … */
+}
+
+multivar_data d = {0};
+int error = git_config_get_multivar_foreach(cfg, "core.gitProxy",
+    NULL, foreach_cb, &d);
+```
+
+Or an iterator:
+
+```c
+git_config_iterator *iter;
+git_config_entry *entry;
+
+int error = git_config_multivar_iterator_new(&iter, cfg,
+    "core.gitProxy", "regex.*");
+while (git_config_next(&entry, iter) == 0) {
+  /* … */
+}
+git_config_iterator_free(iter);
+```
+
+(
+  [`git_config_set_multivar`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_multivar),
+  [`git_config_get_multivar`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_multivar),
+  [`git_config_multivar_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_multivar_iterator_new),
+  [`git_config_next`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_next),
+  [`git_config_free`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_free)
+)
+
+<h3 id="config_iterating">Iterating</h3>
+
+```c
+git_config_iterator *iter;
+git_config_entry *entry;
+int error = git_config_iterator_new(&iter, cfg);
+while (git_config_next(&entry, iter) == 0) {
+  /* … */
+}
+```
+
+(
+  [`git_config_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_iterator_new),
+  [`git_config_next`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_next),
+)
+
+
 <h2 id="revwalk">Revwalk</h2>
 
 <h3 id="revwalk_simple">Simple</h3>
