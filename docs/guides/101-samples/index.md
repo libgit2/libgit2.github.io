@@ -180,7 +180,7 @@ int error = git_repository_open_ext(&repo, "/tmp/…",
 
 <h2 id="objects">Objects</h2>
 
-<h3 id="repositories_shas_and_oids">SHAs and OIDs</h3>
+<h3 id="objects_shas_and_oids">SHAs and OIDs</h3>
 
 SHA-1 hashes are usually written as 40 characters of hexadecimal.
 These are converted to a binary representation internally, called `git_oid`, and there are routines for converting back and forth.
@@ -206,7 +206,7 @@ free(newsha);
 [`git_oid_allocfmt`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_allocfmt))
 
 
-<h3 id="repositories_lookups">Lookups</h3>
+<h3 id="objects_lookups">Lookups</h3>
 
 There are four kinds of objects in a Git repository – commits, trees, blobs, and tag annotations.
 Each type of object has an API for doing lookups.
@@ -231,7 +231,7 @@ error = git_tag_lookup(&tag, repo, &oid);
 [`git_tag_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_lookup))
 
 
-<h3 id="repositories_casting">Casting</h3>
+<h3 id="objects_casting">Casting</h3>
 
 `git_object` acts like a "base class" for all of these types.
 
@@ -250,221 +250,269 @@ if (git_object_type(obj) == GIT_OBJ_COMMIT) {
 [`git_otype`](http://libgit2.github.com/libgit2/#HEAD/type/git_otype))
 
 
-<h2 id="diff">Diff</h2>
+<h2 id="blobs">Blobs</h2>
 
-<h3 id="diff_index_to_workdir">Index to Workdir</h3>
-
-Like `git diff`.
+<h3 id="blobs_lookups">Lookups</h3>
 
 ```c
-git_diff *diff = NULL;
-int error = git_diff_index_to_workdir(&diff, repo, NULL, NULL);
+git_blob *blob = NULL;
+int error = git_blob_lookup(&blob, repo, &oid);
 ```
 
-([`git_diff_index_to_workdir`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_index_to_workdir))
+(
+  [`git_blob_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_lookup)
+)
 
-<h3 id="diff_head_to_index">HEAD to Index</h3>
+<h3 id="blobs_content">Content</h3>
 
-Like `git diff --cached`.
+```c
+git_off_t rawsize = git_blob_rawsize(blob);
+const void *rawcontent = git_blob_rawcontent(blob);
+
+git_buf filtered_content = GIT_BUF_INIT;
+int error = git_blob_filtered_content(
+  &filtered_content,    /* output buffer */
+  blob,                 /* blob */
+  "README.md",          /* path (for attribute-based filtering) */
+  true);                /* check if binary? */
+git_buf_free(&filtered_content);
+```
+
+(
+  [`git_blob_rawsize`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_rawsize),
+  [`git_blob_rawcontent`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_rawcontent),
+  [`git_blob_filtered_content`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_filtered_content)
+)
+
+<h3 id="blobs_create">Create</h3>
+
+```c
+git_oid oid = {{0}};
+int error = git_blob_create_fromworkdir(&oid, repo, "README.md");
+error = git_blob_create_fromdisk(&oid, repo, "/etc/hosts");
+
+const char str[] = "# Hello there!";
+error = git_blob_create_frombuffer(&oid, repo, str, strlen(str));
+```
+
+(
+  [`git_blob_create_fromworkdir`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_fromworkdir),
+  [`git_blob_create_fromdisk`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_fromdisk),
+  [`git_blob_create_frombuffer`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_frombuffer)
+)
+
+
+<h2 id="trees">Trees</h2>
+
+<h3 id="trees_lookups">Lookups</h3>
+
+Each commit has a tree:
+
+```c
+git_tree *tree = NULL;
+int error = git_commit_tree(&tree, commit);
+```
+
+You can look them up by OID:
+
+```c
+git_tree *tree = NULL;
+int error = git_tree_lookup(&tree, repo, &oid);
+```
+
+Trees can contain trees:
+
+```c
+const git_tree_entry *entry = git_tree_entry_byindex(tree, 0);
+if (git_tree_entry_type(entry) == GIT_OBJ_TREE) {
+  git_tree *subtree = NULL;
+  int error = git_tree_lookup(&subtree, repo, git_tree_entry_id(entry));
+}
+```
+
+([`git_commit_tree`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree),
+[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
+[`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type))
+
+<h3 id="trees_tree_entries">Tree Entries</h3>
 
 ```c
 git_object *obj = NULL;
 int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
+git_tree *tree = (git_tree *)obj;
 
-git_tree *tree = NULL;
-error = git_tree_lookup(&tree, repo, git_object_id(obj));
+size_t count = git_tree_entrycount(tree);
+git_tree_entry *entry = git_tree_entry_byindex(tree, 0);
 
-git_diff *diff = NULL;
-error = git_diff_tree_to_index(&diff, repo, tree, NULL, NULL);
+const char *name = git_tree_entry_name(entry); /* filename */
+git_otype objtype = git_tree_entry_type(entry); /* blob or tree */
+git_filemode_t mode = git_tree_entry_filemode(entry); /* *NIX filemode */
+
+git_tree_entry *entry2 = NULL;
+error = git_tree_entry_bypath(&entry2, tree, "a/b/c.txt");
+git_tree_entry_free(entry2); /* caller has to free this one */
 ```
 
 ([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
-[`git_diff_tree_to_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_index))
+[`git_tree_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entrycount),
+[`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
+[`git_tree_entry_name`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_name),
+[`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type),
+[`git_tree_entry_filemode`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_filemode),
+[`git_tree_entry_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_bypath),
+[`git_tree_entry_free`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_free))
 
-<h3 id="diff_head_to_workdir">HEAD to Workdir</h3>
-
-Like `git diff HEAD`.
+<h3 id="trees_walking">Walking</h3>
 
 ```c
+typedef struct { /* … */ } walk_data;
+
+int walk_cb(const char *root,
+            const git_tree_entry *entry,
+            void *payload)
+{
+  walk_data *d = (walk_data*)payload;
+  /* … */
+}
+
 git_object *obj = NULL;
 int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
+git_tree *tree = (git_tree *)obj;
 
-git_tree *tree = NULL;
-error = git_tree_lookup(&tree, repo, git_object_id(obj));
-
-git_diff *diff = NULL;
-error = git_diff_tree_to_workdir_with_index(&diff, repo, tree, NULL);
+walk_data d = {0};
+error = git_tree_walk(tree, GIT_TREEWALK_PRE, walk_cb, &d);
 ```
 
 ([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
-[`git_diff_tree_to_workdir_with_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_workdir_with_index))
+[`git_tree_walk`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_walk),
+[`git_treewalk_mode`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_mode),
+[`git_treewalk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_cb))
 
-<h3 id="diff_commit_to_its_parent">Commit to Its Parent</h3>
-
-Like `git show <commit>`.
+<h3 id="trees_treebuilder">Treebuilder</h3>
 
 ```c
+git_treebuilder *bld = NULL;
+int error = git_treebuilder_create(&bld, NULL);
+
+/* Add some entries */
 git_object *obj = NULL;
-int error = git_revparse_single(&obj, repo, "committish");
+error = git_revparse_single(&obj, repo, "HEAD:README.md");
+error = git_treebuilder_insert(NULL, bld,
+                               "README.md",        /* filename */
+                               git_object_id(obj), /* OID */
+                               0100644);           /* mode */
+git_object_free(obj);
+error = git_revparse_single(&obj, repo, "v0.1.0:foo/bar/baz.c");
+error = git_treebuilder_insert(NULL, bld,
+                               "a/b/d.c",
+                               git_object_id(obj),
+                               0100644);
+git_object_free(obj);
 
-git_commit *commit = NULL;
-error = git_commit_lookup(&commit, repo, git_object_id(obj));
-
-git_commit *parent = NULL;
-error = git_commit_parent(&parent, commit, 0);
-
-git_tree *commit_tree = NULL, *parent_tree = NULL;
-error = git_commit_tree(&commit_tree, commit);
-error = git_commit_tree(&parent_tree, parent);
-
-git_diff *diff = NULL;
-error = git_diff_tree_to_tree(
-          &diff, repo, commit_tree, parent_tree, NULL);
+git_oid oid = {{0}};
+error = git_treebuilder_write(&oid, repo, bld);
+git_treebuilder_free(bld);
 ```
 
 ([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup),
-[`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
-[`git_commit_tree`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree),
-[`git_diff_tree_to_tree`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_tree))
+[`git_object_free`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_free),
+[`git_treebuilder_create`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_create),
+[`git_treebuilder_insert`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_insert),
+[`git_treebuilder_write`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_write),
+[`git_treebuilder_free`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
 
 
-<h3 id="diff_rename_detection">Rename detection</h3>
+<h2 id="commits">Commits</h2>
+
+<h3 id="commits_lookups">Lookups</h3>
 
 ```c
-git_diff_find_options opts = GIT_DIFF_FIND_OPTIONS_INIT;
-opts.flags = GIT_DIFF_FIND_RENAMES |
-             GIT_DIFF_FIND_COPIES |
-             GIT_DIFF_FIND_FOR_UNTRACKED;
-
-int error = git_diff_find_similar(diff, &opts);
+git_commit *commit;
+int error = git_commit_lookup(&commit, repo, &oid);
 ```
 
-([`git_diff_find_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_find_options),
-[`git_diff_find_similar`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_find_similar))
+(
+  [`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup)
+)
 
-<h3 id="diff_iterating_deltas">Iterating Deltas</h3>
+<h3 id="commits_properties">Properties</h3>
 
 ```c
-typedef struct { /* … */ } diff_data;
+const git_oid *oid             = git_commit_id(commit);
+const char *encoding           = git_commit_message_encoding(commit);
+const char *message            = git_commit_message(commit);
+const char *summmary           = git_commit_summary(commit);
+git_time_t time                = git_commit_time(commit);
+int offset_in_min              = git_commit_time_offset(commit);
+const git_signature *committer = git_commit_committer(commit);
+const git_signature *author    = git_commit_author(commit);
+const char *header             = git_commit_raw_header(commit);
+const git_oid *tree_id         = git_commit_tree_id(commit);
+```
 
-int each_file_cb(const git_diff_delta *delta,
-                 float progress,
-                 void *payload)
-{
-  diff_data *d = (diff_data*)payload;
+(
+  [`git_commit_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_id),
+  [`git_commit_message_encoding`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message_encoding),
+  [`git_commit_message`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message),
+  [`git_commit_summary`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_summary),
+  [`git_commit_time`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time),
+  [`git_commit_time_offset`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time_offset),
+  [`git_commit_committer`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_committer),
+  [`git_commit_author`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_author),
+  [`git_commit_raw_header`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_raw_header),
+  [`git_commit_tree_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree_id)
+)
+
+<h3 id="commits_parents">Parents</h3>
+
+```c
+unsigned int count = git_commit_parentcount(commit);
+for (unsigned int i=0; i<count; i++) {
+  git_oid *nth_parent_id = git_commit_parent_id(commit);
+
+  git_commit *nth_parent = NULL;
+  int error = git_commit_parent(&nth_parent, commit, i);
   /* … */
 }
 
-int each_hunk_cb(const git_diff_delta *delta,
-                 const git_diff_hunk *hunk,
-                 void *payload)
-{
-  diff_data *d = (diff_data*)payload;
-  /* … */
-}
-
-int each_line_cb(const git_diff_delta *delta,
-                 const git_diff_hunk *hunk,
-                 const git_diff_line *line,
-                 void *payload)
-{
-  diff_data *d = (diff_data*)payload;
-  /* … */
-}
-
-diff_data d = {0};
-int error = git_diff_foreach(diff,
-                             each_file_cb,
-                             each_hunk_cb,
-                             each_line_cb,
-                             &d);
+git_commit *nth_ancestor = NULL;
+int error = git_commit_nth_gen_ancestor(&nth_ancestor, commit, 7);
 ```
 
-([`git_diff_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_foreach),
-[`git_diff_file_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_file_cb),
-[`git_diff_hunk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_hunk_cb))
+(
+  [`git_commit_parentcount`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parentcount),
+  [`git_commit_parent_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent_id),
+  [`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
+  [`git_commit_nth_gen_ancestor`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_nth_gen_ancestor)
+)
 
-<h3 id="diff_generating_a_patch">Generating a Patch</h3>
-
-A patch represents the text diff of two blobs.
+<h3 id="commits_create">Create</h3>
 
 ```c
-git_patch *patch = NULL;
-int error = git_patch_from_diff(&patch, diff, 0);
+git_signature *me = NULL
+int error = git_signature_now(&me, "Me", "me@example.com");
+
+const git_commit *parents[] = {parent1, parent2};
+
+git_oid new_commit_id = {{0}};
+error = git_commit_create(
+  &new_commit_id,
+  repo,
+  "HEAD",                      /* name of ref to update */
+  me,                          /* author */
+  me,                          /* committer */
+  "UTF-8",                     /* message encoding */
+  "Flooberhaul the whatnots",  /* message */
+  tree,                        /* root tree */
+  2,                           /* parent count */
+  parents);                    /* parents */
 ```
 
-([`git_patch_from_diff`](http://libgit2.github.com/libgit2/#HEAD/group/patch/git_patch_from_diff))
-
-
-<h2 id="status">Status</h2>
-
-<h3 id="status_iterating_simple">Iterating (Simple)</h3>
-
-```c
-typedef struct { /* … */ } status_data;
-
-int status_cb(const char *path,
-              unsigned int status_flags,
-              void *payload)
-{
-  status_data *d = (status_data*)payload;
-  /* … */
-}
-
-status_data d = {0};
-int error = git_status_foreach(repo, status_cb, &d);
-```
-
-([`git_status_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach),
-[`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
-
-<h3 id="status_iterating_options">Iterating (Options)</h3>
-
-```c
-typedef struct { /* … */ } status_data;
-
-int status_cb(const char *path,
-              unsigned int status_flags,
-              void *payload)
-{
-  status_data *d = (status_data*)payload;
-  /* … */
-}
-
-git_status_options opts = GIT_STATUS_OPTIONS_INIT;
-status_data d = {0};
-int error = git_status_foreach_ext(repo, &opts, status_cb, &d);
-```
-
-([`git_status_foreach_ext`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach_ext),
-[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
-[`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
-
-
-<h3 id="status_iterating_manual">Iterating (Manual)</h3>
-
-```c
-git_status_options opts = GIT_STATUS_OPTIONS_INIT;
-git_status_list *statuses = NULL;
-int error = git_status_list_new(&statuses, repo, &opts);
-
-size_t count = git_status_list_entrycount(statuses);
-for (size_t i=0; i<count; ++i) {
-  const git_status_entry *entry = git_status_byindex(statuses, i);
-  /* … */
-}
-```
-
-([`git_status_list_new`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_new),
-[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
-[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
-[`git_status_list_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_entrycount),
-[`git_status_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_byindex),
-[`git_status_entry`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_entry))
-
+(
+  [`git_signature_now`](http://libgit2.github.com/libgit2/#HEAD/group/signature/git_signature_now),
+  [`git_commit_create`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_create)
+)
 
 
 <h2 id="references">References</h2>
@@ -749,268 +797,374 @@ int error = git_tag_peel(&dereferenced_target, tag);
 )
 
 
-<h2 id="blobs">Blobs</h2>
+<h2 id="status">Status</h2>
 
-<h3 id="blobs_lookups">Lookups</h3>
-
-```c
-git_blob *blob = NULL;
-int error = git_blob_lookup(&blob, repo, &oid);
-```
-
-(
-  [`git_blob_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_lookup)
-)
-
-<h3 id="blobs_content">Content</h3>
+<h3 id="status_iterating_simple">Iterating (Simple)</h3>
 
 ```c
-git_off_t rawsize = git_blob_rawsize(blob);
-const void *rawcontent = git_blob_rawcontent(blob);
+typedef struct { /* … */ } status_data;
 
-git_buf filtered_content = GIT_BUF_INIT;
-int error = git_blob_filtered_content(
-  &filtered_content,    /* output buffer */
-  blob,                 /* blob */
-  "README.md",          /* path (for attribute-based filtering) */
-  true);                /* check if binary? */
-git_buf_free(&filtered_content);
-```
-
-(
-  [`git_blob_rawsize`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_rawsize),
-  [`git_blob_rawcontent`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_rawcontent),
-  [`git_blob_filtered_content`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_filtered_content)
-)
-
-<h3 id="blobs_create">Create</h3>
-
-```c
-git_oid oid = {{0}};
-int error = git_blob_create_fromworkdir(&oid, repo, "README.md");
-error = git_blob_create_fromdisk(&oid, repo, "/etc/hosts");
-
-const char str[] = "# Hello there!";
-error = git_blob_create_frombuffer(&oid, repo, str, strlen(str));
-```
-
-(
-  [`git_blob_create_fromworkdir`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_fromworkdir),
-  [`git_blob_create_fromdisk`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_fromdisk),
-  [`git_blob_create_frombuffer`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_frombuffer)
-)
-
-
-<h2 id="trees">Trees</h2>
-
-<h3 id="trees_lookups">Lookups</h3>
-
-Each commit has a tree:
-
-```c
-git_tree *tree = NULL;
-int error = git_commit_tree(&tree, commit);
-```
-
-You can look them up by OID:
-
-```c
-git_tree *tree = NULL;
-int error = git_tree_lookup(&tree, repo, &oid);
-```
-
-Trees can contain trees:
-
-```c
-const git_tree_entry *entry = git_tree_entry_byindex(tree, 0);
-if (git_tree_entry_type(entry) == GIT_OBJ_TREE) {
-  git_tree *subtree = NULL;
-  int error = git_tree_lookup(&subtree, repo, git_tree_entry_id(entry));
-}
-```
-
-([`git_commit_tree`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree),
-[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
-[`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
-[`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type))
-
-<h3 id="trees_tree_entries">Tree Entries</h3>
-
-```c
-git_object *obj = NULL;
-int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
-git_tree *tree = (git_tree *)obj;
-
-size_t count = git_tree_entrycount(tree);
-git_tree_entry *entry = git_tree_entry_byindex(tree, 0);
-
-const char *name = git_tree_entry_name(entry); /* filename */
-git_otype objtype = git_tree_entry_type(entry); /* blob or tree */
-git_filemode_t mode = git_tree_entry_filemode(entry); /* *NIX filemode */
-
-git_tree_entry *entry2 = NULL;
-error = git_tree_entry_bypath(&entry2, tree, "a/b/c.txt");
-git_tree_entry_free(entry2); /* caller has to free this one */
-```
-
-([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_tree_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entrycount),
-[`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
-[`git_tree_entry_name`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_name),
-[`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type),
-[`git_tree_entry_filemode`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_filemode),
-[`git_tree_entry_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_bypath),
-[`git_tree_entry_free`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_free))
-
-<h3 id="trees_walking">Walking</h3>
-
-```c
-typedef struct { /* … */ } walk_data;
-
-int walk_cb(const char *root,
-            const git_tree_entry *entry,
-            void *payload)
+int status_cb(const char *path,
+              unsigned int status_flags,
+              void *payload)
 {
-  walk_data *d = (walk_data*)payload;
+  status_data *d = (status_data*)payload;
   /* … */
 }
 
+status_data d = {0};
+int error = git_status_foreach(repo, status_cb, &d);
+```
+
+([`git_status_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach),
+[`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
+
+<h3 id="status_iterating_options">Iterating (Options)</h3>
+
+```c
+typedef struct { /* … */ } status_data;
+
+int status_cb(const char *path,
+              unsigned int status_flags,
+              void *payload)
+{
+  status_data *d = (status_data*)payload;
+  /* … */
+}
+
+git_status_options opts = GIT_STATUS_OPTIONS_INIT;
+status_data d = {0};
+int error = git_status_foreach_ext(repo, &opts, status_cb, &d);
+```
+
+([`git_status_foreach_ext`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach_ext),
+[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
+[`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
+
+
+<h3 id="status_iterating_manual">Iterating (Manual)</h3>
+
+```c
+git_status_options opts = GIT_STATUS_OPTIONS_INIT;
+git_status_list *statuses = NULL;
+int error = git_status_list_new(&statuses, repo, &opts);
+
+size_t count = git_status_list_entrycount(statuses);
+for (size_t i=0; i<count; ++i) {
+  const git_status_entry *entry = git_status_byindex(statuses, i);
+  /* … */
+}
+```
+
+([`git_status_list_new`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_new),
+[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
+[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
+[`git_status_list_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_entrycount),
+[`git_status_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_byindex),
+[`git_status_entry`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_entry))
+
+
+
+<h2 id="diff">Diff</h2>
+
+<h3 id="diff_index_to_workdir">Index to Workdir</h3>
+
+Like `git diff`.
+
+```c
+git_diff *diff = NULL;
+int error = git_diff_index_to_workdir(&diff, repo, NULL, NULL);
+```
+
+([`git_diff_index_to_workdir`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_index_to_workdir))
+
+<h3 id="diff_head_to_index">HEAD to Index</h3>
+
+Like `git diff --cached`.
+
+```c
 git_object *obj = NULL;
 int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
-git_tree *tree = (git_tree *)obj;
 
-walk_data d = {0};
-error = git_tree_walk(tree, GIT_TREEWALK_PRE, walk_cb, &d);
+git_tree *tree = NULL;
+error = git_tree_lookup(&tree, repo, git_object_id(obj));
+
+git_diff *diff = NULL;
+error = git_diff_tree_to_index(&diff, repo, tree, NULL, NULL);
 ```
 
 ([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_tree_walk`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_walk),
-[`git_treewalk_mode`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_mode),
-[`git_treewalk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_cb))
+[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_diff_tree_to_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_index))
 
-<h3 id="trees_treebuilder">Treebuilder</h3>
+<h3 id="diff_head_to_workdir">HEAD to Workdir</h3>
+
+Like `git diff HEAD`.
 
 ```c
-git_treebuilder *bld = NULL;
-int error = git_treebuilder_create(&bld, NULL);
-
-/* Add some entries */
 git_object *obj = NULL;
-error = git_revparse_single(&obj, repo, "HEAD:README.md");
-error = git_treebuilder_insert(NULL, bld,
-                               "README.md",        /* filename */
-                               git_object_id(obj), /* OID */
-                               0100644);           /* mode */
-git_object_free(obj);
-error = git_revparse_single(&obj, repo, "v0.1.0:foo/bar/baz.c");
-error = git_treebuilder_insert(NULL, bld,
-                               "a/b/d.c",
-                               git_object_id(obj),
-                               0100644);
-git_object_free(obj);
+int error = git_revparse_single(&obj, repo, "HEAD^{tree}");
 
-git_oid oid = {{0}};
-error = git_treebuilder_write(&oid, repo, bld);
-git_treebuilder_free(bld);
+git_tree *tree = NULL;
+error = git_tree_lookup(&tree, repo, git_object_id(obj));
+
+git_diff *diff = NULL;
+error = git_diff_tree_to_workdir_with_index(&diff, repo, tree, NULL);
 ```
 
 ([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_object_free`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_free),
-[`git_treebuilder_create`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_create),
-[`git_treebuilder_insert`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_insert),
-[`git_treebuilder_write`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_write),
-[`git_treebuilder_free`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
+[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_diff_tree_to_workdir_with_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_workdir_with_index))
 
+<h3 id="diff_commit_to_its_parent">Commit to Its Parent</h3>
 
-<h2 id="commits">Commits</h2>
-
-<h3 id="commits_lookups">Lookups</h3>
+Like `git show <commit>`.
 
 ```c
-git_commit *commit;
-int error = git_commit_lookup(&commit, repo, &oid);
+git_object *obj = NULL;
+int error = git_revparse_single(&obj, repo, "committish");
+
+git_commit *commit = NULL;
+error = git_commit_lookup(&commit, repo, git_object_id(obj));
+
+git_commit *parent = NULL;
+error = git_commit_parent(&parent, commit, 0);
+
+git_tree *commit_tree = NULL, *parent_tree = NULL;
+error = git_commit_tree(&commit_tree, commit);
+error = git_commit_tree(&parent_tree, parent);
+
+git_diff *diff = NULL;
+error = git_diff_tree_to_tree(
+          &diff, repo, commit_tree, parent_tree, NULL);
 ```
 
-(
-  [`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup)
-)
+([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup),
+[`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
+[`git_commit_tree`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree),
+[`git_diff_tree_to_tree`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_tree))
 
-<h3 id="commits_properties">Properties</h3>
+
+<h3 id="diff_rename_detection">Rename detection</h3>
 
 ```c
-const git_oid *oid             = git_commit_id(commit);
-const char *encoding           = git_commit_message_encoding(commit);
-const char *message            = git_commit_message(commit);
-const char *summmary           = git_commit_summary(commit);
-git_time_t time                = git_commit_time(commit);
-int offset_in_min              = git_commit_time_offset(commit);
-const git_signature *committer = git_commit_committer(commit);
-const git_signature *author    = git_commit_author(commit);
-const char *header             = git_commit_raw_header(commit);
-const git_oid *tree_id         = git_commit_tree_id(commit);
+git_diff_find_options opts = GIT_DIFF_FIND_OPTIONS_INIT;
+opts.flags = GIT_DIFF_FIND_RENAMES |
+             GIT_DIFF_FIND_COPIES |
+             GIT_DIFF_FIND_FOR_UNTRACKED;
+
+int error = git_diff_find_similar(diff, &opts);
 ```
 
-(
-  [`git_commit_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_id),
-  [`git_commit_message_encoding`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message_encoding),
-  [`git_commit_message`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message),
-  [`git_commit_summary`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_summary),
-  [`git_commit_time`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time),
-  [`git_commit_time_offset`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time_offset),
-  [`git_commit_committer`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_committer),
-  [`git_commit_author`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_author),
-  [`git_commit_raw_header`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_raw_header),
-  [`git_commit_tree_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree_id)
-)
+([`git_diff_find_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_find_options),
+[`git_diff_find_similar`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_find_similar))
 
-<h3 id="commits_parents">Parents</h3>
+<h3 id="diff_iterating_deltas">Iterating Deltas</h3>
 
 ```c
-unsigned int count = git_commit_parentcount(commit);
-for (unsigned int i=0; i<count; i++) {
-  git_oid *nth_parent_id = git_commit_parent_id(commit);
+typedef struct { /* … */ } diff_data;
 
-  git_commit *nth_parent = NULL;
-  int error = git_commit_parent(&nth_parent, commit, i);
+int each_file_cb(const git_diff_delta *delta,
+                 float progress,
+                 void *payload)
+{
+  diff_data *d = (diff_data*)payload;
   /* … */
 }
 
-git_commit *nth_ancestor = NULL;
-int error = git_commit_nth_gen_ancestor(&nth_ancestor, commit, 7);
+int each_hunk_cb(const git_diff_delta *delta,
+                 const git_diff_hunk *hunk,
+                 void *payload)
+{
+  diff_data *d = (diff_data*)payload;
+  /* … */
+}
+
+int each_line_cb(const git_diff_delta *delta,
+                 const git_diff_hunk *hunk,
+                 const git_diff_line *line,
+                 void *payload)
+{
+  diff_data *d = (diff_data*)payload;
+  /* … */
+}
+
+diff_data d = {0};
+int error = git_diff_foreach(diff,
+                             each_file_cb,
+                             each_hunk_cb,
+                             each_line_cb,
+                             &d);
 ```
 
-(
-  [`git_commit_parentcount`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parentcount),
-  [`git_commit_parent_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent_id),
-  [`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
-  [`git_commit_nth_gen_ancestor`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_nth_gen_ancestor)
-)
+([`git_diff_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_foreach),
+[`git_diff_file_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_file_cb),
+[`git_diff_hunk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_hunk_cb))
 
-<h3 id="commits_create">Create</h3>
+<h3 id="diff_generating_a_patch">Generating a Patch</h3>
+
+A patch represents the text diff of two blobs.
 
 ```c
-git_signature *me = NULL
-int error = git_signature_now(&me, "Me", "me@example.com");
+git_patch *patch = NULL;
+int error = git_patch_from_diff(&patch, diff, 0);
+```
 
-const git_commit *parents[] = {parent1, parent2};
+([`git_patch_from_diff`](http://libgit2.github.com/libgit2/#HEAD/group/patch/git_patch_from_diff))
 
-git_oid new_commit_id = {{0}};
-error = git_commit_create(
-  &new_commit_id,
-  repo,
-  "HEAD",                      /* name of ref to update */
-  me,                          /* author */
-  me,                          /* committer */
-  "UTF-8",                     /* message encoding */
-  "Flooberhaul the whatnots",  /* message */
-  tree,                        /* root tree */
-  2,                           /* parent count */
-  parents);                    /* parents */
+
+<h2 id="config">Config</h2>
+
+<h3 id="config_files">Files</h3>
+
+```c
+char path[1024] = {0};
+int error = git_config_find_global(path, 1024);
+error = git_config_find_xdg(path, 1024);
+error = git_config_find_system(path, 1024);
 ```
 
 (
-  [`git_signature_now`](http://libgit2.github.com/libgit2/#HEAD/group/signature/git_signature_now),
-  [`git_commit_create`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_create)
+  [`git_config_find_global`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_global),
+  [`git_config_find_xdg`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_xdg),
+  [`git_config_find_system`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_system)
+)
+
+<h3 id="config_opening">Opening</h3>
+
+```c
+git_config *cfg = NULL;
+int error = git_config_open_default(&cfg);
+/* or */
+error = git_repository_config(&cfg, repo);
+```
+
+Once you have a config instance, you can specify which of its levels to operate at:
+
+```c
+git_config *sys_cfg = NULL;
+int error = git_config_open_level(&sys_cfg, cfg, GIT_CONFIG_LEVEL_SYSTEM);
+```
+
+(
+  [`git_config_open_default`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_open_default),
+  [`git_repository_config`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_config),
+  [`git_config_open_level`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_open_level)
+)
+
+<h3 id="config_values_simple">Values (Simple)</h3>
+
+Raw entries are available:
+
+```c
+const git_config_entry *entry = NULL;
+int error = git_config_get_entry(&entry, cfg, "diff.renames");
+```
+
+Or you can let libgit2 do the parsing:
+
+```c
+int32_t i32val;
+int64_t i64val;
+int boolval;
+const char *strval;
+error = git_config_get_int32(&i32val, cfg, "foo.bar");
+error = git_config_get_int64(&i64val, cfg, "foo.bar");
+error = git_config_get_bool(&boolval, cfg, "foo.bar");
+error = git_config_get_string(&strval, cfg, "foo.bar");
+```
+
+Setting values is fairly straightforward.
+This operates at the most specific config level; if you want to set a global or system-level value, use `git_config_open_level`.
+
+```c
+error = git_config_set_int32(cfg, "foo.bar", 3);
+error = git_config_set_int64(cfg, "foo.bar", 3);
+error = git_config_set_bool(cfg, "foo.bar", true);
+error = git_config_set_string(cfg, "foo.bar", "baz");
+```
+
+(
+  [`git_config_get_entry`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_entry),
+  [`git_config_get_int32`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_int32),
+  [`git_config_get_int64`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_int64),
+  [`git_config_get_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_bool),
+  [`git_config_get_string`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_string),
+  [`git_config_set_int32`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_int32),
+  [`git_config_set_int64`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_int64),
+  [`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
+  [`git_config_set_string`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_string)
+)
+
+<h3 id="config_values_multi">Values (Multi)</h3>
+
+Some configuration entries can have multiple values, like `core.gitProxy`.
+
+```c
+/* replace values by regex, perhaps many of them */
+int error = git_config_set_multivar(cfg,
+    "core.gitProxy",           /* config entry name */
+    ".*example\.com.*",        /* regex to match */
+    "'cat' for example.com");  /* new value */
+
+/* adding a value means replacing one that doesn't exist */
+int error = git_config_set_multivar(cfg, "core.gitProxy",
+    "doesntexist", "'foo bar' for example.com");
+```
+
+Multivars are read either with a foreach loop:
+
+```c
+typedef struct { /* … */ } multivar_data;
+
+int foreach_cb(const git_config_entry *entry, void *payload)
+{
+  multivar_data *d = (multivar_data*)payload;
+  /* … */
+}
+
+multivar_data d = {0};
+int error = git_config_get_multivar_foreach(cfg, "core.gitProxy",
+    NULL, foreach_cb, &d);
+```
+
+Or an iterator:
+
+```c
+git_config_iterator *iter;
+git_config_entry *entry;
+
+int error = git_config_multivar_iterator_new(&iter, cfg,
+    "core.gitProxy", "regex.*");
+while (git_config_next(&entry, iter) == 0) {
+  /* … */
+}
+git_config_iterator_free(iter);
+```
+
+(
+  [`git_config_set_multivar`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_multivar),
+  [`git_config_get_multivar`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_multivar),
+  [`git_config_multivar_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_multivar_iterator_new),
+  [`git_config_next`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_next),
+  [`git_config_free`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_free)
+)
+
+<h3 id="config_iterating">Iterating</h3>
+
+```c
+git_config_iterator *iter;
+git_config_entry *entry;
+int error = git_config_iterator_new(&iter, cfg);
+while (git_config_next(&entry, iter) == 0) {
+  /* … */
+}
+```
+
+(
+  [`git_config_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_iterator_new),
+  [`git_config_next`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_next),
 )
 
 
