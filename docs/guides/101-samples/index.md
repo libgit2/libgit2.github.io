@@ -1224,3 +1224,66 @@ git_revwalk_simplify_first_parent(walker);
   [`git_revwalk_sorting`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_sorting),
   [`git_revwalk_simplify_first_parent`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_simplify_first_parent)
 )
+
+
+<h2 id="checkout">Checkout</h2>
+
+<h3 id="checkout_strategies">Strategies</h3>
+
+`git_checkout_options` isn't actually very optional.
+The defaults won't be useful outside of a small number of cases.
+The best example of this is `checkout_strategy`; the default value does nothing to the work tree.
+So if you want your checkout to check files out, choose an appropriate strategy.
+
+```c
+git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+
+/* This is kind of like the command-line default */
+opts.checkout_strategy = GIT_CHECKOUT_SAFE_CREATE;
+/* This is kind of like the -f flag */
+opts.checkout_strategy = GIT_CHECKOUT_FORCE;
+```
+
+(
+  [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
+  [checkout header](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/checkout.h#files)
+)
+
+<h3 id="checkout_simple">Simple</h3>
+
+```c
+/* Checkout from HEAD, something like `git checkout HEAD` */
+int error = git_checkout_head(repo, &opts);
+
+/* Checkout from the index */
+error = git_checkout_index(repo, &opts);
+
+/* Checkout a different tree */
+git_object *treeish = NULL;
+error = git_revparse_single(&treeish, repo, "feature_branch1");
+error = git_checkout_tree(repo, treeish, &opts);
+```
+
+(
+  [`git_checkout_head`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_head),
+  [`git_checkout_index`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_index),
+  [`git_checkout_tree`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_tree),
+  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single)
+)
+
+<h3 id="checkout_paths">Paths</h3>
+
+This limits the checkout operation to only certain paths, kind of like `git checkout … -- path/to/a path/to/b`.
+
+```c
+char *paths[] = { "path/to/a.txt", "path/to/b.txt" };
+opts.paths.strings = paths;
+opts.paths.count = 2;
+int error = git_checkout_head(repo, &opts);
+```
+
+([`git_strarray`](http://libgit2.github.com/libgit2/#HEAD/type/git_strarray))
+
+<h3 id="checkout_progress">Progress</h3>
+
+<h3 id="checkout_notify">Notify</h3>
