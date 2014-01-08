@@ -1235,19 +1235,14 @@ The defaults won't be useful outside of a small number of cases.
 The best example of this is `checkout_strategy`; the default value does nothing to the work tree.
 So if you want your checkout to check files out, choose an appropriate strategy.
 
-```c
-git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+* `NONE` is the equivalent of a dry run; no files will be checked out.
+* `SAFE` is similar to `git checkout`; unmodified files are updated, and modified files are left alone.
+  If a file was present in the old HEAD but is missing, it's considered deleted, and won't be created.
+* `SAFE_CREATE` is similar to `git checkout-index`, or what happens after a clone.
+  Unmodified files are updated, and missing files are created, but files with modifications are left alone.
+* `FORCE` is similar to `git checkout --force`; all modifications are overwritten, and all missing files are created.
 
-/* This is kind of like the command-line default */
-opts.checkout_strategy = GIT_CHECKOUT_SAFE_CREATE;
-/* This is kind of like the -f flag */
-opts.checkout_strategy = GIT_CHECKOUT_FORCE;
-```
-
-(
-  [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
-  [checkout header](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/checkout.h#files)
-)
+Take a look at the [checkout header](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/checkout.h#files) for extensive explanation of the checkout flags.
 
 <h3 id="checkout_simple">Simple</h3>
 
