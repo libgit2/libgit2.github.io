@@ -1281,4 +1281,61 @@ int error = git_checkout_head(repo, &opts);
 
 <h3 id="checkout_progress">Progress</h3>
 
+```c
+typedef struct { /* … */ } progress_data;
+void checkout_progress(
+            const char *path,
+            size_t completed_steps,
+            size_t total_steps,
+            void *payload)
+{
+  progress_data *pd = (progress_data*)payload;
+  int checkout_percent = total_steps > 0
+      ? (100 * completed_steps) / total_steps
+      : 0;
+  /* Do something with checkout progress */
+}
+
+/* … */
+progress_data d = {0};
+git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+opts.progress_cb = checkout_progress;
+opts.progress_payload = &d;
+
+int error = git_checkout_head(repo, &opts);
+```
+
+(
+  [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
+  [`git_checkout_progress_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_progress_cb)
+)
+
 <h3 id="checkout_notify">Notify</h3>
+
+```c
+typedef struct { /* … */ } notify_data;
+static int checkout_notify(
+          git_checkout_notify_t why,
+          const char *path,
+          const git_diff_file *baseline,
+          const git_diff_file *target,
+          const git_diff_file *workdir,
+          void *payload)
+{
+  notify_data *d = (notify_data*)payload;
+  /* … */
+}
+
+/* … */
+notify_data d = {0};
+git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+opts.notify_cb = checkout_notify;
+opts.notify_payload = &d;
+
+int error = git_checkout_head(repo, &opts);
+```
+
+(
+  [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
+  [`git_checkout_notify_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_notify_t)
+)
