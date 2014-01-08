@@ -1224,3 +1224,118 @@ git_revwalk_simplify_first_parent(walker);
   [`git_revwalk_sorting`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_sorting),
   [`git_revwalk_simplify_first_parent`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_simplify_first_parent)
 )
+
+
+<h2 id="checkout">Checkout</h2>
+
+<h3 id="checkout_strategies">Strategies</h3>
+
+`git_checkout_options` isn't actually very optional.
+The defaults won't be useful outside of a small number of cases.
+The best example of this is `checkout_strategy`; the default value does nothing to the work tree.
+So if you want your checkout to check files out, choose an appropriate strategy.
+
+* `NONE` is the equivalent of a dry run; no files will be checked out.
+* `SAFE` is similar to `git checkout`; unmodified files are updated, and modified files are left alone.
+  If a file was present in the old HEAD but is missing, it's considered deleted, and won't be created.
+* `SAFE_CREATE` is similar to `git checkout-index`, or what happens after a clone.
+  Unmodified files are updated, and missing files are created, but files with modifications are left alone.
+* `FORCE` is similar to `git checkout --force`; all modifications are overwritten, and all missing files are created.
+
+Take a look at the [checkout header](https://github.com/libgit2/libgit2/blob/HEAD/include/git2/checkout.h#files) for extensive explanation of the checkout flags.
+
+<h3 id="checkout_simple">Simple</h3>
+
+```c
+/* Checkout from HEAD, something like `git checkout HEAD` */
+int error = git_checkout_head(repo, &opts);
+
+/* Checkout from the index */
+error = git_checkout_index(repo, &opts);
+
+/* Checkout a different tree */
+git_object *treeish = NULL;
+error = git_revparse_single(&treeish, repo, "feature_branch1");
+error = git_checkout_tree(repo, treeish, &opts);
+```
+
+(
+  [`git_checkout_head`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_head),
+  [`git_checkout_index`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_index),
+  [`git_checkout_tree`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_tree),
+  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single)
+)
+
+<h3 id="checkout_paths">Paths</h3>
+
+This limits the checkout operation to only certain paths, kind of like `git checkout … -- path/to/a path/to/b`.
+
+```c
+char *paths[] = { "path/to/a.txt", "path/to/b.txt" };
+opts.paths.strings = paths;
+opts.paths.count = 2;
+int error = git_checkout_head(repo, &opts);
+```
+
+([`git_strarray`](http://libgit2.github.com/libgit2/#HEAD/type/git_strarray))
+
+<h3 id="checkout_progress">Progress</h3>
+
+```c
+typedef struct { /* … */ } progress_data;
+void checkout_progress(
+            const char *path,
+            size_t completed_steps,
+            size_t total_steps,
+            void *payload)
+{
+  progress_data *pd = (progress_data*)payload;
+  int checkout_percent = total_steps > 0
+      ? (100 * completed_steps) / total_steps
+      : 0;
+  /* Do something with checkout progress */
+}
+
+/* … */
+progress_data d = {0};
+git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+opts.progress_cb = checkout_progress;
+opts.progress_payload = &d;
+
+int error = git_checkout_head(repo, &opts);
+```
+
+(
+  [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
+  [`git_checkout_progress_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_progress_cb)
+)
+
+<h3 id="checkout_notify">Notify</h3>
+
+```c
+typedef struct { /* … */ } notify_data;
+static int checkout_notify(
+          git_checkout_notify_t why,
+          const char *path,
+          const git_diff_file *baseline,
+          const git_diff_file *target,
+          const git_diff_file *workdir,
+          void *payload)
+{
+  notify_data *d = (notify_data*)payload;
+  /* … */
+}
+
+/* … */
+notify_data d = {0};
+git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+opts.notify_cb = checkout_notify;
+opts.notify_payload = &d;
+
+int error = git_checkout_head(repo, &opts);
+```
+
+(
+  [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
+  [`git_checkout_notify_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_notify_t)
+)
