@@ -1339,3 +1339,89 @@ int error = git_checkout_head(repo, &opts);
   [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
   [`git_checkout_notify_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_notify_t)
 )
+
+<h2 id="remotes">Remotes</h2>
+
+<h3 id="remotes_list">Listing</h3>
+
+```c
+git_strarray remotes = {0};
+int error = git_remote_list(&remotes, repo);
+```
+(
+  [`git_remote_list`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_list)
+)
+
+<h3 id="remotes_load">Loading</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_create">Creating</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_in_memory">Creating (in-memory)</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_rename">Renaming</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_properties">Properties</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_refspecs">Refspecs</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_modify">Modifying</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_network">Network</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_fetch">Fetch</h3>
+
+```c
+```
+(
+  [``](),
+)
+
+<h3 id="remotes_callbacks">Callbacks</h3>
