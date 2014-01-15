@@ -1355,25 +1355,47 @@ int error = git_remote_list(&remotes, repo);
 <h3 id="remotes_load">Loading</h3>
 
 ```c
+git_remote *remote = NULL;
+int error = git_remote_load(&remote, repo, "origin");
 ```
 (
-  [``](),
+  [`git_remote_load`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_load)
 )
 
 <h3 id="remotes_create">Creating</h3>
 
+Both of these methods save the remote configuration to disk before returning.
+
 ```c
+/* Creates an empty remote */
+git_remote *newremote = NULL;
+int error = git_remote_create(&newremote, repo, "upstream",
+      "https://github.com/libgit2/libgit2");
+
+/* Pre-populates a new remote with a fetchspec */
+git_remote *newremote2 = NULL;
+error = git_remote_create(&newremote2, repo, "upstream2",
+      "https://github.com/libgit2/libgit2",    /* URL */
+      "+refs/heads/*:refs/custom/namespace/*"); /* fetchspec */
 ```
 (
-  [``](),
+  [`git_remote_create`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create),
+  [`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec)
 )
 
 <h3 id="remotes_in_memory">Creating (in-memory)</h3>
 
+This method creates a remote that cannot be saved.
+This is useful for one-time fetches.
+
 ```c
+git_remote *remote;
+int error = git_remote_create_inmemory(&remote, repo,)
+      "+refs/heads/*:refs/custom/namespace/*", /* fetchspec */
+      "https://github.com/libgit2/libgit2");   /* URL */
 ```
 (
-  [``](),
+  [`git_remote_create_inmemory`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_inmemory)
 )
 
 <h3 id="remotes_rename">Renaming</h3>
