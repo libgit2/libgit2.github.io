@@ -1372,7 +1372,7 @@ git_remote *newremote = NULL;
 int error = git_remote_create(&newremote, repo, "upstream",
       "https://github.com/libgit2/libgit2");
 
-/* Pre-populates a new remote with a fetchspec */
+/* Pre-populates a new remote with a custom fetchspec */
 git_remote *newremote2 = NULL;
 error = git_remote_create(&newremote2, repo, "upstream2",
       "https://github.com/libgit2/libgit2",    /* URL */
