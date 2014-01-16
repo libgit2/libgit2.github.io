@@ -797,6 +797,90 @@ int error = git_tag_peel(&dereferenced_target, tag);
 )
 
 
+<h2 id="index">Index</h2>
+
+<h3 id="index_loading">Loading</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+<h3 id="index_creating">Creating</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+<h3 id="index_capabilities">Capabilities</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+<h3 id="index_disk">Disk</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+<h3 id="index_trees">Trees</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+<h3 id="index_entries">Entries</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+<h3 id="index_conflicts">Conflicts</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+<h3 id="index_add">Add</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+<h3 id="index_remove">Remove</h3>
+
+```c
+```
+
+(
+  [``](),
+)
+
+
 <h2 id="status">Status</h2>
 
 <h3 id="status_iterating_simple">Iterating (Simple)</h3>
