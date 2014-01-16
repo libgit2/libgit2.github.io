@@ -7,7 +7,6 @@ $(function () {
   // Generate the TOC contents
   $('#primary :header[id]').each(function(i, el) {
     var del = $(el);
-    console.log(el);
 
     var div = $('<div></div>')
       .addClass('toc-' + el.nodeName.toLowerCase());

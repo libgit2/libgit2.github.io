@@ -1339,3 +1339,205 @@ int error = git_checkout_head(repo, &opts);
   [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
   [`git_checkout_notify_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_notify_t)
 )
+
+<h2 id="remotes">Remotes</h2>
+
+<h3 id="remotes_list">Listing</h3>
+
+```c
+git_strarray remotes = {0};
+int error = git_remote_list(&remotes, repo);
+```
+(
+  [`git_remote_list`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_list)
+)
+
+<h3 id="remotes_load">Loading</h3>
+
+```c
+git_remote *remote = NULL;
+int error = git_remote_load(&remote, repo, "origin");
+```
+(
+  [`git_remote_load`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_load)
+)
+
+<h3 id="remotes_create">Creating</h3>
+
+Both of these methods save the remote configuration to disk before returning.
+
+```c
+/* Creates an empty remote */
+git_remote *newremote = NULL;
+int error = git_remote_create(&newremote, repo, "upstream",
+      "https://github.com/libgit2/libgit2");
+
+/* Pre-populates a new remote with a custom fetchspec */
+git_remote *newremote2 = NULL;
+error = git_remote_create(&newremote2, repo, "upstream2",
+      "https://github.com/libgit2/libgit2",    /* URL */
+      "+refs/heads/*:refs/custom/namespace/*"); /* fetchspec */
+```
+(
+  [`git_remote_create`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create),
+  [`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec)
+)
+
+<h3 id="remotes_in_memory">Creating (in-memory)</h3>
+
+This method creates a remote that cannot be saved.
+This is useful for one-time fetches.
+
+```c
+git_remote *remote;
+int error = git_remote_create_inmemory(&remote, repo,)
+      "+refs/heads/*:refs/custom/namespace/*", /* fetchspec */
+      "https://github.com/libgit2/libgit2");   /* URL */
+```
+(
+  [`git_remote_create_inmemory`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_inmemory)
+)
+
+<h3 id="remotes_rename">Renaming</h3>
+
+```c
+typedef struct { /* … */ } rename_data;
+int problem_cb(const char *problem, void *payload)
+{
+  rename_data *d = (rename_data*)payload;
+  /* Called when there's a problem renaming the remote. */
+}
+
+rename_data d = {0};
+int error = git_remote_rename(remote, "old_origin", problem_cb, &d);
+```
+(
+  [`git_remote_rename`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_rename)
+)
+
+<h3 id="remotes_properties">Properties</h3>
+
+```c
+const char *name = git_remote_name(remote);
+const char *url  = git_remote_url(remote);
+const char *pushurl = git_remote_pushurl(remote);
+
+/* URLs are mutable, but make sure you save */
+int error = git_remote_set_url(remote, "https://…");
+error = git_remote_set_pushurl(remote, "https://…");
+```
+(
+  [`git_remote_name`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_name),
+  [`git_remote_url`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_url),
+  [`git_remote_pushurl`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_pushurl),
+  [`git_remote_set_url`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_url),
+  [`git_remote_set_pushurl`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_pushurl),
+)
+
+<h3 id="remotes_refspecs">Refspecs</h3>
+
+```c
+/* refspecs are available en masse */
+git_strarray fetch_refspecs = {0};
+int error = git_remote_get_fetch_refspecs(&fetch_refspecs, remote);
+git_strarray push_refspecs = {0};
+error = git_remote_get_push_refspecs(&fetch_refspecs, remote);
+
+/* … or individually */
+size_t count = git_remote_refspec_count(remote);
+const git_refspec *rs = git_remote_get_refspec(remote, 0);
+
+/* You can add one spec at a time */
+error = git_remote_add_fetch(remote, "…");
+error = git_remote_add_push(remote, "…");
+
+/* … or swap out the entire set */
+error = git_remote_set_fetch_refspecs(remote, fetch_refspecs);
+error = git_remote_set_push_refspecs(remote, push_refspecs);
+```
+(
+  [`git_remote_get_fetch_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_get_fetch_refspecs),
+  [`git_remote_get_push_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_get_push_refspecs),
+  [`git_remote_refspec_count`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_refspec_count),
+  [`git_remote_get_refspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_get_refspec),
+  [`git_remote_add_fetch`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_add_fetch),
+  [`git_remote_add_push`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_add_push),
+  [`git_remote_set_fetch_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_fetch_refspecs),
+  [`git_remote_set_push_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_push_refspecs),
+)
+
+<h3 id="remotes_fetching">Fetching</h3>
+
+```c
+/* Open a connection for reading. */
+int error = git_remote_connect(remote, GIT_DIRECTION_FETCH);
+int connected = git_remote_connected(remote);
+
+/* List the heads on the remote */
+const git_remote_head **remote_heads = NULL;
+size_t count = 0;
+error = git_remote_ls(&remote_heads, &count, remote);
+for (size_t i=0; i<count; ++i) {
+  git_remote_head *head = remote_heads[i];
+  /* … */
+}
+
+/* Negotiate and download objects */
+error = git_remote_download(remote);
+
+/* Update remote refs */
+error = git_remote_update_tips(remote);
+
+/* All of the above in one step */
+error = git_remote_fetch(remote);
+```
+(
+  [`git_remote_connect`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_connect),
+  [`git_remote_connected`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_connected),
+  [`git_remote_ls`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_ls),
+  [`git_remote_download`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_download),
+  [`git_remote_update_tips`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_update_tips),
+  [`git_remote_fetch`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_fetch)
+)
+
+<h3 id="remotes_callbacks">Callbacks</h3>
+
+The network code uses callbacks for reporting progress and getting credentials (when necessary).
+Note that inside a callback is the only place where `git_remote_stop` has any effect.
+
+```c
+/* Progress callback */
+typedef struct { /* … */ } remote_data;
+int progress_cb(const git_transfer_progress *stats, void *payload)
+{
+  remote_data *d = (remote_data*)payload;
+  /* … */
+}
+
+/* Credential callback */
+int credential_cb(git_cred **out,
+                  const char *url,
+                  const char *username_from_url,
+                  unsigned int allowed_types,
+                  void *payload)
+{
+  remote_data *d = (remote_data*)payload;
+  /* … */
+}
+
+remote_data d = {0};
+git_remote_callbacks callbacks = GIT_REMOTE_CALLBACKS_INIT;
+callbacks.progress = progress_cb;
+callbacks.credentials = credential_cb;
+callbacks.payload = &d;
+int error = git_remote_set_callbacks(remote, &callbacks);
+```
+
+For an example of the credentials callback in action, check out [the network example](https://github.com/libgit2/libgit2/blob/development/examples/network/common.c),
+or the built-in [credential helpers](https://github.com/libgit2/libgit2/blob/development/src/transports/cred_helpers.c).
+
+(
+  [`git_remote_stop`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_stop),
+  [`git_remote_callbacks`](http://libgit2.github.com/libgit2/#HEAD/type/git_remote_callbacks),
+  [`git_remote_set_callbacks`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_callbacks)
+)
