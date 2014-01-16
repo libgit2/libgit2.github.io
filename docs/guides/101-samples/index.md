@@ -1537,7 +1537,7 @@ For an example of the credentials callback in action, check out [the network exa
 or the built-in [credential helpers](https://github.com/libgit2/libgit2/blob/development/src/transports/cred_helpers.c).
 
 (
-  [`git_remote_stop`](http://libgit2.github.com/libgit2/#HEAD/type/git_remote_stop),
+  [`git_remote_stop`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_stop),
   [`git_remote_callbacks`](http://libgit2.github.com/libgit2/#HEAD/type/git_remote_callbacks),
   [`git_remote_set_callbacks`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_callbacks)
 )
