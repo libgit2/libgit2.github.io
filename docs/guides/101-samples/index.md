@@ -802,83 +802,186 @@ int error = git_tag_peel(&dereferenced_target, tag);
 <h3 id="index_loading">Loading</h3>
 
 ```c
+/* Each repository owns an index */
+git_index *idx = NULL;
+int error = git_repository_index(&idx, repo);
+
+/* Or you can open it by path */
+error = git_index_open(&idx, "/path/to/repo/.git/index");
 ```
 
 (
-  [``](),
+  [`git_repository_index`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_index),
+  [`git_index_open`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_open)
 )
 
-<h3 id="index_creating">Creating</h3>
+<h3 id="index_creating">Creating (in-memory)</h3>
+
+In-memory indexes cannot be saved to disk, but can be useful for creating trees.
 
 ```c
+git_index *idx = NULL;
+int error = git_index_new(&idx);
 ```
 
 (
-  [``](),
+  [`git_index_new`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_new)
 )
 
 <h3 id="index_capabilities">Capabilities</h3>
 
+An index has certain properties, indicated by capability flags.
+
 ```c
+unsigned int caps = git_index_caps(idx);
+
+/* These are settable as well */
+caps |= GIT_INDEXCAP_NO_SYMLINKS;
+int error = git_index_set_caps(idx, caps);
 ```
 
 (
-  [``](),
+  [`git_index_caps`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_caps),
+  [`git_indexcap_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_indexcap_t)
 )
 
 <h3 id="index_disk">Disk</h3>
 
 ```c
+/* Make the in-memory index match what's on disk */
+int error = git_index_read(idx, true);
+
+/* Write the in-memory index to disk */
+error = git_index_write(idx);
 ```
 
 (
-  [``](),
+  [`git_index_read`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_read),
+  [`git_index_write`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_write)
 )
 
 <h3 id="index_trees">Trees</h3>
 
 ```c
+/* Overwrite the index contents with those of a tree */
+git_tree *tree = NULL;
+int error = git_revparse_single((git_object**)&tree,
+                                repo, "HEAD~^{tree}");
+error = git_index_read_tree(idx, tree);
+
+/* Write the index contents to the ODB as a tree */
+git_oid new_tree_id = {{0}};
+error = git_index_write_tree(&new_tree_id, idx);
+
+/* In-memory indexes can write trees to any repo */
+error = git_index_write_tree_to(&new_tree_id, idx, other_repo);
 ```
 
 (
-  [``](),
+  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
+  [`git_index_read_tree`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_read_tree),
+  [`git_index_write_tree`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_write_tree),
+  [`git_index_write_tree_to`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_write_tree_to)
 )
 
 <h3 id="index_entries">Entries</h3>
 
 ```c
+/* Access by index */
+size_t count = git_index_entrycount(idx);
+for (size_t i=0; i<count; i++) {
+  const git_index_entry *entry = git_index_get_byindex(idx, i);
+  /* … */
+}
+
+/* Access by path */
+const git_index_entry *entry = git_index_get_bypath(
+        idx,                /* index */
+        "path/to/file.rb",  /* path */
+        0);                 /* stage */
 ```
 
 (
-  [``](),
+  [`git_index_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_entrycount),
+  [`git_index_get_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_get_byindex),
+  [`git_index_get_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_get_bypath),
+  [`git_index_entry`](http://libgit2.github.com/libgit2/#HEAD/type/git_index_entry)
 )
 
 <h3 id="index_conflicts">Conflicts</h3>
 
 ```c
+if (git_index_has_conflicts(idx)) {
+  /* If you know the path of a conflicted file */
+  const git_index_entry *ancestor = NULL,
+                        *ours = NULL,
+                        *theirs = NULL;
+  int error = git_index_conflict_get(&ancestor, &ours, &theirs
+                                     idx, "path/to/file.cs");
+  
+  /* Or, iterate through all conflicts */
+  git_index_conflict_iterator *iter = NULL;
+  error = git_index_conflict_iterator_new(&iter, idx);
+  while (git_index_conflict_next(&ancestor, &ours, &theirs, iter)
+              != GIT_ITEROVER) {
+    /* Mark this conflict as resolved */
+    error = git_index_conflict_remove(idx, ours->path);
+  }
+  git_index_conflict_iterator_free(iter);
+}
 ```
 
 (
-  [``](),
+  [`git_index_has_conflicts`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_has_conflicts),
+  [`git_index_conflict_get`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_get),
+  [`git_index_conflict_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_iterator_new),
+  [`git_index_conflict_next`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_next),
+  [`git_index_conflict_iterator_free`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_iterator_free),
+  [`git_index_conflict_remove`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_remove)
 )
 
-<h3 id="index_add">Add</h3>
+<h3 id="index_add">Add & Remove</h3>
 
 ```c
+typedef struct { /* … */ } match_data;
+int match_cb(const char *path, const char *spec, void *payload)
+{
+  match_data *d = (match_data*)payload;
+  /*
+   * return 0 to add/remove this path,
+   * a positive number to skip this path,
+   * or a negative number to abort the operation.
+   */
+}
+
+const char *paths[] = {"src/*", "test/*"};
+git_strarray arr = {paths, 2};
+
+/* Add matching files; this skips ignored files */
+match_data d = {0};
+int error = git_index_add_all(idx, &arr, GIT_INDEX_ADD_DEFAULT,
+                              match_cb, &d);
+/* … or remove them */
+error = git_index_remove_all(idx, &arr, match_cb, &d);
+
+/* Something like 'git add .' */
+error = git_index_update_all(idx, &arr, match_cb, &d);
+
+/* Force a single file to be added (even if it is ignored) */
+error = git_index_add_bypath(idx, "path/to/file.py");
+/* …or removed */
+error = git_index_remove_bypath(idx, "path/to/file.py");
 ```
 
 (
-  [``](),
+  [`git_strarray`](http://libgit2.github.com/libgit2/#HEAD/type/git_strarray),
+  [`git_index_add_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_add_all),
+  [`git_index_remove_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_remove_all),
+  [`git_index_update_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_update_all),
+  [`git_index_add_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_add_bypath),
+  [`git_index_remove_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_remove_bypath)
 )
 
-<h3 id="index_remove">Remove</h3>
-
-```c
-```
-
-(
-  [``](),
-)
 
 
 <h2 id="status">Status</h2>
