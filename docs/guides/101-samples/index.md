@@ -845,6 +845,9 @@ error = git_index_write(idx);
 
 <h3 id="index_trees">Trees</h3>
 
+Note that all tree operations work recursively.
+For example, `git_index_read_tree` will replace not only the root directory, but all subdirectory contents as well.
+
 ```c
 /* Overwrite the index contents with those of a tree */
 git_tree *tree = NULL;
