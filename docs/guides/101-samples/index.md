@@ -828,23 +828,6 @@ int error = git_index_new(&idx);
   [`git_index_new`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_new)
 )
 
-<h3 id="index_capabilities">Capabilities</h3>
-
-An index has certain properties, indicated by capability flags.
-
-```c
-unsigned int caps = git_index_caps(idx);
-
-/* These are settable as well */
-caps |= GIT_INDEXCAP_NO_SYMLINKS;
-int error = git_index_set_caps(idx, caps);
-```
-
-(
-  [`git_index_caps`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_caps),
-  [`git_indexcap_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_indexcap_t)
-)
-
 <h3 id="index_disk">Disk</h3>
 
 ```c
