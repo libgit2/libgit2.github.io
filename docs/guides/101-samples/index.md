@@ -929,6 +929,11 @@ if (git_index_has_conflicts(idx)) {
 <h3 id="index_add">Add & Remove</h3>
 
 ```c
+/* Force a single file to be added (even if it is ignored) */
+error = git_index_add_bypath(idx, "path/to/file.py");
+/* … or removed */
+error = git_index_remove_bypath(idx, "path/to/file.py");
+
 typedef struct { /* … */ } match_data;
 int match_cb(const char *path, const char *spec, void *payload)
 {
@@ -943,7 +948,7 @@ int match_cb(const char *path, const char *spec, void *payload)
 const char *paths[] = {"src/*", "test/*"};
 git_strarray arr = {paths, 2};
 
-/* Add matching files; this skips ignored files */
+/* Add matching files (this skips ignored files) */
 match_data d = {0};
 int error = git_index_add_all(idx, &arr, GIT_INDEX_ADD_DEFAULT,
                               match_cb, &d);
@@ -952,20 +957,15 @@ error = git_index_remove_all(idx, &arr, match_cb, &d);
 
 /* Something like 'git add .' */
 error = git_index_update_all(idx, &arr, match_cb, &d);
-
-/* Force a single file to be added (even if it is ignored) */
-error = git_index_add_bypath(idx, "path/to/file.py");
-/* …or removed */
-error = git_index_remove_bypath(idx, "path/to/file.py");
 ```
 
 (
+  [`git_index_add_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_add_bypath),
+  [`git_index_remove_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_remove_bypath),
   [`git_strarray`](http://libgit2.github.com/libgit2/#HEAD/type/git_strarray),
   [`git_index_add_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_add_all),
   [`git_index_remove_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_remove_all),
-  [`git_index_update_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_update_all),
-  [`git_index_add_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_add_bypath),
-  [`git_index_remove_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_remove_bypath)
+  [`git_index_update_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_update_all)
 )
 
 
