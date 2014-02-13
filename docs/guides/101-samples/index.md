@@ -304,6 +304,9 @@ error = git_blob_create_frombuffer(&oid, repo, str, strlen(str));
 
 <h2 id="trees">Trees</h2>
 
+A tree object in libgit2 is more like a directory. It can represent a directory
+tree by containing references to other trees.
+
 <h3 id="trees_lookups">Lookups</h3>
 
 Each commit has a tree:
@@ -391,6 +394,10 @@ error = git_tree_walk(tree, GIT_TREEWALK_PRE, walk_cb, &d);
 
 <h3 id="trees_treebuilder">Treebuilder</h3>
 
+Since trees in git are immutable we need a mechanism to build them. This method
+in libgit2 is the treebuilder. Just like the tree object, the treebuilder object
+represents a single directory containing other objects.
+
 ```c
 git_treebuilder *bld = NULL;
 int error = git_treebuilder_create(&bld, NULL);
@@ -405,7 +412,7 @@ error = git_treebuilder_insert(NULL, bld,
 git_object_free(obj);
 error = git_revparse_single(&obj, repo, "v0.1.0:foo/bar/baz.c");
 error = git_treebuilder_insert(NULL, bld,
-                               "a/b/d.c",
+                               "d.c",
                                git_object_id(obj),
                                0100644);
 git_object_free(obj);
