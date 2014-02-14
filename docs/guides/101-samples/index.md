@@ -126,7 +126,7 @@ error = git_remote_create(&origin, repo, "origin", "http://…");
 /* Customize the remote, set callbacks, etc. */
 
 git_checkout_opts co_opts = GIT_CHECKOUT_OPTS_INIT;
-error = git_clone_into(repo, origin, &co_opts, "master");
+error = git_clone_into(repo, origin, &co_opts, "master", NULL);
 ```
 
 ([`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
@@ -662,7 +662,8 @@ git_reference *ref = NULL;
 int error = git_reference_create(&ref, repo,
       "refs/heads/direct",       /* name */
       &oid,                      /* target */
-      true);                     /* force? */
+      true,                      /* force? */
+      NULL, NULL);               /* use defaults for reflog */
 ```
 
 ([`git_reference_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_create))
@@ -674,7 +675,8 @@ git_reference *ref = NULL;
 int error = git_reference_symbolic_create(&ref, repo,
       "refs/heads/symbolic",     /* name */
       "refs/heads/master",       /* target */
-      true);                     /* force? */
+      true,                      /* force? */
+      NULL, NULL);               /* use defaults for reflog */
 ```
 
 ([`git_reference_symbolic_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_symbolic_create))
@@ -1666,10 +1668,10 @@ for (size_t i=0; i<count; ++i) {
 error = git_remote_download(remote);
 
 /* Update remote refs */
-error = git_remote_update_tips(remote);
+error = git_remote_update_tips(remote, NULL, NULL);
 
 /* All of the above in one step */
-error = git_remote_fetch(remote);
+error = git_remote_fetch(remote, NULL, NULL);
 ```
 (
   [`git_remote_connect`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_connect),
