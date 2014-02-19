@@ -1374,8 +1374,8 @@ while (!git_revwalk_next(&oid, walker)) {
 ```c
 /* Pushing marks starting points */
 error = git_revwalk_push_head(walker);
-error = git_revawlk_push_ref(walker, "HEAD");
-error = git_revawlk_push_glob(walker, "tags/*");
+error = git_revwalk_push_ref(walker, "HEAD");
+error = git_revwalk_push_glob(walker, "tags/*");
 
 /* Hiding marks stopping points */
 error = git_revwalk_hide(walker, &oid);
