@@ -52,10 +52,15 @@ int error = git_repository_init(&repo, "/tmp/…", true);
 <h3 id="repositories_init_options">Init (Options)</h3>
 
 ```c
-git_repository_init_options opts = GIT_REPOSITORY_INIT_OPTIONS_INIT;
-/* Customize options */
+int error;
 git_repository *repo = NULL;
-int error = git_repository_init_ext(&repo, "/tmp/…", &opts);
+git_repository_init_options opts = GIT_REPOSITORY_INIT_OPTIONS_INIT;
+
+/* Customize options */
+opts.flags |= GIT_REPOSITORY_INIT_MKPATH; /* mkdir as needed to create repo */
+opts.description = "My repository has a custom description";
+
+error = git_repository_init_ext(&repo, "/tmp/…", &opts);
 ```
 
 ([`git_repository_init_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_init_ext),
@@ -139,8 +144,8 @@ error = git_repository_init(&repo, "/tmp/…", true);
 
 /* Create an 'origin' remote with the mirror fetch refspec */
 git_remote *origin = NULL;
-error = git_remote_create_with_fetchspec(&origin, repo, "origin",
-                                         "http://…", "+refs/*:refs/*");
+error = git_remote_create_with_fetchspec(
+    &origin, repo, "origin", "http://…", "+refs/*:refs/*");
 
 /* Set remote.origin.mirror = true for compatibility with git-core */
 git_config *cfg = NULL;
@@ -156,7 +161,7 @@ error = git_clone_into(repo, origin, NULL, NULL);
 [`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
 [`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
 
-<h3 id="repositories_opening_simple">Opening (Simple)</h3>
+<h3 id="repositories_open_simple">Open (Simple)</h3>
 
 ```c
 git_repository *repo = NULL;
@@ -165,12 +170,60 @@ int error = git_repository_open(&repo, "/tmp/…");
 
 ([`git_repository_open`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open))
 
-<h3 id="repositories_opening_options">Opening (Options)</h3>
+<h3 id="repositories_open_options">Open (Options)</h3>
+
+```c
+int error;
+git_repository *repo = NULL;
+
+/* Open repository, walking up from given directory to find root */
+error = git_repository_open_ext(&repo, "/tmp/…", 0, NULL);
+
+/* Open repository in given directory (or fail if not a repository) */
+error = git_repository_open_ext(
+    &repo, "/tmp/…", GIT_REPOSITORY_OPEN_NO_SEARCH, NULL);
+
+/* Open repository with "ceiling" directories list to limit walking up */
+error = git_repository_open_ext(
+    &repo, "/home/acct/…, GIT_REPOSITORY_OPEN_CROSS_FS, "/tmp:/usr:/home");
+```
+
+([`git_repository_open_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_ext),
+[`git_repository_open_flag_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_repository_open_flag_t))
+
+<h3 id="repositories_open_bare">Open (Bare)</h3>
+
+A fast way of opening a bare repository when the exact path is known.
 
 ```c
 git_repository *repo = NULL;
-int error = git_repository_open_ext(&repo, "/tmp/…",
-  GIT_REPOSITORY_OPEN_NO_SEARCH, NULL);
+int error = git_repository_open_bare(&repo, "/var/data/…/repo.git");
+```
+
+([`git_repository_open_bare`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_bare))
+
+<h3 id="repositories_discover">Find Repository</h3>
+
+Check if a given path is inside a repository and return the repository
+root directory if found.
+
+```c
+git_buf root = {0};
+int error = git_repository_discover(&root, "/tmp/…", 0, NULL);
+…
+git_buf_free(&root); /* returned path data must be freed after use */
+```
+
+([`git_repository_discover`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_discover))
+
+<h3 id="repositories_openable">Check If Repository</h3>
+
+```c
+/* Pass NULL for the output parameter to check for but not open the repo */
+if (git_repository_open_ext(
+        NULL, "/tmp/…", GIT_REPOSITORY_OPEN_NO_SEARCH, NULL) == 0) {
+    /* directory looks like an openable repository */;
+}
 ```
 
 ([`git_repository_open_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_ext),
