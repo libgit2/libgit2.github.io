@@ -161,7 +161,7 @@ error = git_clone_into(repo, origin, NULL, NULL);
 [`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
 [`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
 
-<h3 id="repositories_opening_simple">Opening (Simple)</h3>
+<h3 id="repositories_open_simple">Open (Simple)</h3>
 
 ```c
 git_repository *repo = NULL;
@@ -170,7 +170,7 @@ int error = git_repository_open(&repo, "/tmp/…");
 
 ([`git_repository_open`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open))
 
-<h3 id="repositories_opening_options">Opening (Options)</h3>
+<h3 id="repositories_open_options">Open (Options)</h3>
 
 ```c
 int error;
@@ -191,7 +191,7 @@ error = git_repository_open_ext(
 ([`git_repository_open_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_ext),
 [`git_repository_open_flag_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_repository_open_flag_t))
 
-<h3 id="repositories_open_bare">Opening (Bare)</h3>
+<h3 id="repositories_open_bare">Open (Bare)</h3>
 
 A fast way of opening a bare repository when the exact path is known.
 
@@ -202,20 +202,7 @@ int error = git_repository_open_bare(&repo, "/var/data/…/repo.git");
 
 ([`git_repository_open_bare`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_bare))
 
-<h3 id="repositories_openable">Is Directory A Repository?</h3>
-
-```c
-/* Pass NULL for the output parameter to check for but not open the repo */
-if (git_repository_open_ext(
-        NULL, "/tmp/…", GIT_REPOSITORY_OPEN_NO_SEARCH, NULL) == 0) {
-    /* directory looks like an openable repository */;
-}
-```
-
-([`git_repository_open_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_ext),
-[`git_repository_open_flag_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_repository_open_flag_t))
-
-<h3 id="repositories_discover">Find Repository Root</h3>
+<h3 id="repositories_discover">Find Repository</h3>
 
 Check if a given path is inside a repository and return the repository
 root directory if found.
@@ -228,6 +215,19 @@ git_buf_free(&root); /* returned path data must be freed after use */
 ```
 
 ([`git_repository_discover`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_discover))
+
+<h3 id="repositories_openable">Check If Repository</h3>
+
+```c
+/* Pass NULL for the output parameter to check for but not open the repo */
+if (git_repository_open_ext(
+        NULL, "/tmp/…", GIT_REPOSITORY_OPEN_NO_SEARCH, NULL) == 0) {
+    /* directory looks like an openable repository */;
+}
+```
+
+([`git_repository_open_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_ext),
+[`git_repository_open_flag_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_repository_open_flag_t))
 
 
 
