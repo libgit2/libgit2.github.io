@@ -205,9 +205,11 @@ int error = git_repository_open_bare(&repo, "/var/data/…/repo.git");
 <h3 id="repositories_openable">Is Directory A Repository?</h3>
 
 ```c
-/* Pass NULL for the output parameter to not open the repo immediately */
-int error = git_repository_open_ext(
-    NULL, "/tmp/…", GIT_REPOSITORY_OPEN_NO_SEARCH, NULL);
+/* Pass NULL for the output parameter to check for but not open the repo */
+if (git_repository_open_ext(
+        NULL, "/tmp/…", GIT_REPOSITORY_OPEN_NO_SEARCH, NULL) == 0) {
+    /* directory looks like an openable repository */;
+}
 ```
 
 ([`git_repository_open_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_ext),
