@@ -247,11 +247,6 @@ int error = git_oid_fromstr(&oid, sha);
 /* Make a shortened printable string from an OID */
 char shortsha[10] = {0};
 git_oid_tostr(shortsha, 9, &oid);
-
-/* Or libgit2 can allocate a buffer for you */
-char *newsha = git_oid_allocfmt(&oid);
-/* … */
-free(newsha);
 ```
 
 ([`git_oid_fromstr`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_fromstr),
