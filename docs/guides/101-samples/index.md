@@ -550,7 +550,7 @@ int error = git_commit_nth_gen_ancestor(&nth_ancestor, commit, 7);
 <h3 id="commits_create">Create</h3>
 
 ```c
-git_signature *me = NULL
+git_signature *me = NULL;
 int error = git_signature_now(&me, "Me", "me@example.com");
 
 const git_commit *parents[] = {parent1, parent2};
