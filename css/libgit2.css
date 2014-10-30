@@ -1701,7 +1701,10 @@ p {
   margin-bottom: -12px;
 }
 #production-usage img[src*='logo-beanstalk'] {
-  margin-top: -13px;
+  margin-top: -5px;
+}
+#production-usage img[src*='logo-striata'] {
+  margin-bottom: -7px;
 }
 
 
