@@ -102,7 +102,7 @@ void checkout_progress(
 /* … */
 progress_data d = {0};
 git_clone_options opts = GIT_CLONE_OPTIONS_INIT;
-git_checkout_opts checkout_opts = GIT_CHECKOUT_OPTS_INIT;
+git_checkout_options checkout_opts = GIT_CHECKOUT_OPTIONS_INIT;
 
 checkout_opts.checkout_strategy = GIT_CHECKOUT_SAFE_CREATE;
 checkout_opts.progress_cb = checkout_progress;
@@ -130,7 +130,7 @@ git_remote *origin = NULL;
 error = git_remote_create(&origin, repo, "origin", "http://…");
 /* Customize the remote, set callbacks, etc. */
 
-git_checkout_opts co_opts = GIT_CHECKOUT_OPTS_INIT;
+git_checkout_options co_opts = GIT_CHECKOUT_OPTIONS_INIT;
 error = git_clone_into(repo, origin, &co_opts, "master", NULL);
 ```
 
@@ -1528,7 +1528,7 @@ void checkout_progress(
 
 /* … */
 progress_data d = {0};
-git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+git_checkout_options opts = GIT_CHECKOUT_OPTIONS_INIT;
 opts.progress_cb = checkout_progress;
 opts.progress_payload = &d;
 
@@ -1536,7 +1536,7 @@ int error = git_checkout_head(repo, &opts);
 ```
 
 (
-  [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
+  [`git_checkout_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_options),
   [`git_checkout_progress_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_progress_cb)
 )
 
@@ -1558,7 +1558,7 @@ static int checkout_notify(
 
 /* … */
 notify_data d = {0};
-git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;
+git_checkout_options opts = GIT_CHECKOUT_OPTIONS_INIT;
 opts.notify_cb = checkout_notify;
 opts.notify_payload = &d;
 
@@ -1566,7 +1566,7 @@ int error = git_checkout_head(repo, &opts);
 ```
 
 (
-  [`git_checkout_opts`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_opts),
+  [`git_checkout_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_options),
   [`git_checkout_notify_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_notify_t)
 )
 
