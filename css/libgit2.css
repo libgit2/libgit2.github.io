@@ -1707,6 +1707,10 @@ p {
   margin-bottom: -7px;
 }
 
+#production-usage img[src*='logo-xamarin'] {
+  margin-bottom: -7px;
+}
+
 
 ul#primary-languages {
   overflow: hidden;
