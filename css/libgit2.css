@@ -1698,17 +1698,21 @@ p {
   margin: 0 .9em;
 }
 #production-usage img[src*='logo-plastic'] {
-  margin-bottom: -12px;
+  margin-bottom: -8px;
 }
 #production-usage img[src*='logo-beanstalk'] {
   margin-top: -5px;
 }
 #production-usage img[src*='logo-striata'] {
-  margin-bottom: -7px;
+  margin-bottom: -14px;
 }
 
 #production-usage img[src*='logo-xamarin'] {
-  margin-bottom: -7px;
+  margin-bottom: -20px;
+}
+
+#production-usage img[src*='logo-canonical'] {
+    margin-bottom: -18px;
 }
 
 
