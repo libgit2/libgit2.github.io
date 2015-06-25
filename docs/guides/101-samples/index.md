@@ -101,37 +101,66 @@ void checkout_progress(
 
 /* … */
 progress_data d = {0};
-git_clone_options opts = GIT_CLONE_OPTIONS_INIT;
-git_checkout_options checkout_opts = GIT_CHECKOUT_OPTIONS_INIT;
+git_clone_options clone_opts = GIT_CLONE_OPTIONS_INIT;
 
-checkout_opts.checkout_strategy = GIT_CHECKOUT_SAFE_CREATE;
-checkout_opts.progress_cb = checkout_progress;
-checkout_opts.progress_payload = &d;
+clone_opts.checkout_opts.checkout_strategy = GIT_CHECKOUT_SAFE;
+clone_opts.checkout_opts.progress_cb = checkout_progress;
+clone_opts.checkout_opts.progress_payload = &d;
 clone_opts.checkout_opts = checkout_opts;
-clone_opts.remote_callbacks.transfer_progress = &fetch_progress;
-clone_opts.remote_callbacks.payload = &d;
+clone_opts.fetch_opts.callbacks.transfer_progress = fetch_progress;
+clone_opts.fetch_opts.callbacks.payload = &d;
 
 git_repository *repo = NULL;
-int error = git_clone(&repo, url, path, &opts);
+int error = git_clone(&repo, url, path, &clone_opts);
 ```
 
 ([`git_clone`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone),
 [`git_clone_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_clone_options))
 
 
-<h3 id="repositories_clone_repo">Clone (Repo)</h3>
+<h3 id="repositories_clone_repo">Clone (Custom repo and remote)</h3>
 
 ```c
-git_repository *repo = NULL;
-error = git_repository_init(&repo, "/tmp/…", false);
-/* Customize the repo */
+int create_repsitory(git_repository **out, const char *path, int bare, void *payload)
+{
+    int error;
 
-git_remote *origin = NULL;
-error = git_remote_create(&origin, repo, "origin", "http://…");
-/* Customize the remote, set callbacks, etc. */
+    /*
+     * We create the repository ourselves, libgit2 gives us the parameters it would
+     * have used to create the repository. In this case we ignore the path passed
+	 * to git_clone() and put it under /tmp/
+     */
+    if ((error = git_repository_init(out, "/tmp/...", bare)) < 0)
+        return error;
 
-git_checkout_options co_opts = GIT_CHECKOUT_OPTIONS_INIT;
-error = git_clone_into(repo, origin, &co_opts, "master", NULL);
+    /* Further customisation of the repository goes here */
+
+    return 0;
+}
+
+int create_remote(git_remote **out, git_repository *repo, const char *name, const char *url, void *payload)
+{
+    int error;
+
+    /*
+     * Like above, we create the repository based on what libgit2 would have used
+     * (which is what was passed to git_clone. We could use a different refspec
+     * or name.
+     */
+    if ((error = git_remote_create(out, repo, name, url)) < 0)
+	    return error;
+
+    /* Further customisation of the remote goes here */
+
+    return 0;
+}
+
+git_repository *repo;
+git_clone_options clone_opts = GIT_CLONE_OPTIONS_INIT;
+clone_opts.repository_cb = create_repository;
+clone_opts.remote_cb     = create_remote;
+
+error = git_clone(&repo, url, path, &clone_opts);
 ```
 
 ([`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
@@ -139,27 +168,45 @@ error = git_clone_into(repo, origin, &co_opts, "master", NULL);
 <h3 id="repositories_clone_mirror">Clone (Mirror)</h3>
 
 ```c
+int create_remote_mirror(git_remote **out, git_repository *repo, const char *name, const char *url, void *payload)
+{
+    int error;
+    git_remote *remote;
+    git_config *cfg;
+    char *mirror_config;
+
+    /* Create the repository with a mirror refspec */
+    if ((error = git_remote_create_with_fetchspec(&remote, repo, name, url, "+refs/*:refs/*")) < 0)
+        return error;
+
+	/* Set the mirror setting to true on this remote  */
+    if ((error = git_repository_config(&cfg, repo)) < 0)
+        return error;
+
+    if (asprintf(&mirror_config, "remote.%s.mirror", name) == -1) {
+        giterr_set(GITERR_OS, "asprintf failed");
+        git_config_free(cfg);
+        return -1;
+    }
+
+    error = git_repository_set_bool(cfg, mirror_config, true);
+
+    free(mirror_config);
+    git_config_free(cfg);
+
+    return error;
+}
+
 git_repository *repo = NULL;
-error = git_repository_init(&repo, "/tmp/…", true);
+git_clone_options clone_opts = GIT_CLONE_OPTIONS_INIT;
 
-/* Create an 'origin' remote with the mirror fetch refspec */
-git_remote *origin = NULL;
-error = git_remote_create_with_fetchspec(
-    &origin, repo, "origin", "http://…", "+refs/*:refs/*");
-
-/* Set remote.origin.mirror = true for compatibility with git-core */
-git_config *cfg = NULL;
-error = git_repository_config(&cfg, repo);
-error = git_config_set_bool(cfg, "remote.origin.mirror", true);
-
-error = git_clone_into(repo, origin, NULL, NULL);
+error = git_clone(&repo, url, path, &clone_opts);
 ```
 
-([`git_repository_init`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_init),
-[`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec),
+([`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec),
 [`git_repository_config`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_config),
 [`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
-[`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
+[`git_clone`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone))
 
 <h3 id="repositories_open_simple">Open (Simple)</h3>
 
@@ -456,16 +503,16 @@ error = git_revparse_single(&obj, repo, "HEAD:README.md");
 error = git_treebuilder_insert(NULL, bld,
                                "README.md",        /* filename */
                                git_object_id(obj), /* OID */
-                               0100644);           /* mode */
+                               GIT_FILEMODE_BLOB); /* mode */
 git_object_free(obj);
 error = git_revparse_single(&obj, repo, "v0.1.0:foo/bar/baz.c");
 error = git_treebuilder_insert(NULL, bld,
                                "d.c",
                                git_object_id(obj),
-                               0100644);
+                               GIT_FILEMODE_BLOB);
 git_object_free(obj);
 
-git_oid oid = {{0}};
+git_oid oid = {{ 0 }};
 error = git_treebuilder_write(&oid, repo, bld);
 git_treebuilder_free(bld);
 ```
@@ -711,7 +758,7 @@ int error = git_reference_create(&ref, repo,
       "refs/heads/direct",       /* name */
       &oid,                      /* target */
       true,                      /* force? */
-      NULL, NULL);               /* use defaults for reflog */
+      NULL);                     /* the message for the reflog */
 ```
 
 ([`git_reference_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_create))
@@ -724,7 +771,7 @@ int error = git_reference_symbolic_create(&ref, repo,
       "refs/heads/symbolic",     /* name */
       "refs/heads/master",       /* target */
       true,                      /* force? */
-      NULL, NULL);               /* use defaults for reflog */
+      NULL);                     /* the message for the reflog */
 ```
 
 ([`git_reference_symbolic_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_symbolic_create))
@@ -1270,7 +1317,8 @@ int error = git_config_open_default(&cfg);
 error = git_repository_config(&cfg, repo);
 ```
 
-Once you have a config instance, you can specify which of its levels to operate at:
+Once you have a config instance, you can specify which of its levels
+to operate at (if you want something other than repository's):
 
 ```c
 git_config *sys_cfg = NULL;
@@ -1290,6 +1338,8 @@ Raw entries are available:
 ```c
 const git_config_entry *entry = NULL;
 int error = git_config_get_entry(&entry, cfg, "diff.renames");
+/* work with it */
+git_config_entry_free(entry);
 ```
 
 Or you can let libgit2 do the parsing:
@@ -1298,11 +1348,11 @@ Or you can let libgit2 do the parsing:
 int32_t i32val;
 int64_t i64val;
 int boolval;
-const char *strval;
+git_buf strval = GIT_BUF_INIT;
 error = git_config_get_int32(&i32val, cfg, "foo.bar");
 error = git_config_get_int64(&i64val, cfg, "foo.bar");
 error = git_config_get_bool(&boolval, cfg, "foo.bar");
-error = git_config_get_string(&strval, cfg, "foo.bar");
+error = git_config_get_string_buf(&strval, cfg, "foo.bar");
 ```
 
 Setting values is fairly straightforward.
@@ -1468,7 +1518,7 @@ So if you want your checkout to check files out, choose an appropriate strategy.
 * `NONE` is the equivalent of a dry run; no files will be checked out.
 * `SAFE` is similar to `git checkout`; unmodified files are updated, and modified files are left alone.
   If a file was present in the old HEAD but is missing, it's considered deleted, and won't be created.
-* `SAFE_CREATE` is similar to `git checkout-index`, or what happens after a clone.
+* `RECREATE_MISSING` is similar to `git checkout-index`, or what happens after a clone.
   Unmodified files are updated, and missing files are created, but files with modifications are left alone.
 * `FORCE` is similar to `git checkout --force`; all modifications are overwritten, and all missing files are created.
 
@@ -1582,14 +1632,14 @@ int error = git_remote_list(&remotes, repo);
   [`git_remote_list`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_list)
 )
 
-<h3 id="remotes_load">Loading</h3>
+<h3 id="remotes_load">Looking up</h3>
 
 ```c
 git_remote *remote = NULL;
-int error = git_remote_load(&remote, repo, "origin");
+int error = git_remote_lookup(&remote, repo, "origin");
 ```
 (
-  [`git_remote_load`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_load)
+  [`git_remote_load`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_lookup)
 )
 
 <h3 id="remotes_create">Creating</h3>
@@ -1613,33 +1663,29 @@ error = git_remote_create(&newremote2, repo, "upstream2",
   [`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec)
 )
 
-<h3 id="remotes_in_memory">Creating (in-memory)</h3>
+<h3 id="remotes_in_memory">Creating (anonymous)</h3>
 
-This method creates a remote that cannot be saved.
-This is useful for one-time fetches.
+This method creates a remote that cannot be saved. This is the kind of
+remote to use when you have a URL instead of a remote's name.
+
 
 ```c
 git_remote *remote;
-int error = git_remote_create_inmemory(&remote, repo,)
-      "+refs/heads/*:refs/custom/namespace/*", /* fetchspec */
+int error = git_remote_create_anonymous(&remote, repo,
       "https://github.com/libgit2/libgit2");   /* URL */
 ```
 (
-  [`git_remote_create_inmemory`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_inmemory)
+  [`git_remote_create_anonymous`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_anonymous)
 )
 
 <h3 id="remotes_rename">Renaming</h3>
 
 ```c
-typedef struct { /* … */ } rename_data;
-int problem_cb(const char *problem, void *payload)
-{
-  rename_data *d = (rename_data*)payload;
-  /* Called when there's a problem renaming the remote. */
-}
+git_strarray problems;
 
-rename_data d = {0};
-int error = git_remote_rename(remote, "old_origin", problem_cb, &d);
+int error = git_remote_rename(&problems, repo, "origin", "old_origin");
+/* warn the user about the refspecs which couldn't be adjusted */
+git_strarray_free(&problems);
 ```
 (
   [`git_remote_rename`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_rename)
@@ -1677,13 +1723,10 @@ error = git_remote_get_push_refspecs(&fetch_refspecs, remote);
 size_t count = git_remote_refspec_count(remote);
 const git_refspec *rs = git_remote_get_refspec(remote, 0);
 
-/* You can add one spec at a time */
-error = git_remote_add_fetch(remote, "…");
-error = git_remote_add_push(remote, "…");
+/* You can add refspecs to the configuration */
+error = git_remote_add_fetch(repo, "origin", "…");
+error = git_remote_add_push(repo, "origin", "…");
 
-/* … or swap out the entire set */
-error = git_remote_set_fetch_refspecs(remote, fetch_refspecs);
-error = git_remote_set_push_refspecs(remote, push_refspecs);
 ```
 (
   [`git_remote_get_fetch_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_get_fetch_refspecs),
@@ -1692,41 +1735,22 @@ error = git_remote_set_push_refspecs(remote, push_refspecs);
   [`git_remote_get_refspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_get_refspec),
   [`git_remote_add_fetch`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_add_fetch),
   [`git_remote_add_push`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_add_push),
-  [`git_remote_set_fetch_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_fetch_refspecs),
-  [`git_remote_set_push_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_push_refspecs),
 )
 
 <h3 id="remotes_fetching">Fetching</h3>
 
 ```c
-/* Open a connection for reading. */
-int error = git_remote_connect(remote, GIT_DIRECTION_FETCH);
-int connected = git_remote_connected(remote);
+int error;
+git_remote *remote;
 
-/* List the heads on the remote */
-const git_remote_head **remote_heads = NULL;
-size_t count = 0;
-error = git_remote_ls(&remote_heads, &count, remote);
-for (size_t i=0; i<count; ++i) {
-  git_remote_head *head = remote_heads[i];
-  /* … */
-}
-
-/* Negotiate and download objects */
-error = git_remote_download(remote);
-
-/* Update remote refs */
-error = git_remote_update_tips(remote, NULL, NULL);
-
-/* All of the above in one step */
-error = git_remote_fetch(remote, NULL, NULL);
+/* lookup the remote */
+error = git_remote_lookup(&remote, repo, "origin");
+error = git_remote_fetch(remote,
+                         NULL, /* refspecs, NULL to use the configured ones */
+                         NULL, /* options, empty for defaults */
+                         NULL); /* reflog mesage, usually "fetch" or "pull", you can leave it NULL for "fetch" */
 ```
 (
-  [`git_remote_connect`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_connect),
-  [`git_remote_connected`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_connected),
-  [`git_remote_ls`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_ls),
-  [`git_remote_download`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_download),
-  [`git_remote_update_tips`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_update_tips),
   [`git_remote_fetch`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_fetch)
 )
 
@@ -1757,10 +1781,11 @@ int credential_cb(git_cred **out,
 
 remote_data d = {0};
 git_remote_callbacks callbacks = GIT_REMOTE_CALLBACKS_INIT;
-callbacks.progress = progress_cb;
-callbacks.credentials = credential_cb;
-callbacks.payload = &d;
-int error = git_remote_set_callbacks(remote, &callbacks);
+git_fetch_options fetch_opts = GIT_FETCH_OPTIONS_INIT;
+fetch_opts.callbacks.progress = progress_cb;
+fetch_opts.callbacks.credentials = credential_cb;
+fetch_opts.callbacks.payload = &d;
+int error = git_remote_fetch(remote, NULL, &fetch_opts, NULL);
 ```
 
 For an example of the credentials callback in action, check out [the network example](https://github.com/libgit2/libgit2/blob/development/examples/network/common.c),
@@ -1769,5 +1794,4 @@ or the built-in [credential helpers](https://github.com/libgit2/libgit2/blob/dev
 (
   [`git_remote_stop`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_stop),
   [`git_remote_callbacks`](http://libgit2.github.com/libgit2/#HEAD/type/git_remote_callbacks),
-  [`git_remote_set_callbacks`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_callbacks)
 )
