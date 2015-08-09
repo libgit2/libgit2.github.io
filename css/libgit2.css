@@ -1697,6 +1697,9 @@ p {
   vertical-align: middle;
   margin: 0 .9em;
 }
+#production-usage img[src*='logo-bitbucket'] {
+  margin-top: -13px;
+}
 #production-usage img[src*='logo-plastic'] {
   margin-bottom: -8px;
 }
