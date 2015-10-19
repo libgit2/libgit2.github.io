@@ -6,6 +6,28 @@ layout: toc
 
 <h2 id="best_practices">Best Practices</h2>
 
+<h3 id="best_practices_init">Initialize the library</h3>
+
+The library needs to keep some global state and initialize its
+dependencies. You must therefore initialize the library before working
+with it
+
+```C
+git_libgit2_init();
+```
+
+Usually you don't need to call the shutdown function as the operating
+system will take care of reclaiming resources, but if your application
+uses libgit2 in some areas which are not usually active, you can use
+
+```C
+git_libgit2_shutdown();
+```
+
+to ask the library to clean up the global state. The cleanup will be
+performed once there have been the same number of calls to
+`git_libgit2_shutdown()` as there were for `git_libgit2_init()`.
+
 <h3 id="best_practices_errors">Errors</h3>
 
 Return codes from public APIs indicate general failure category.
