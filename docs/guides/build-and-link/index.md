@@ -13,12 +13,12 @@ Libgit2 is developed with [CMake](http://www.cmake.org/), and this will be the e
 Once you have CMake installed, performing a libgit2 build is fairly simple.
 In a shell session with the libgit2 root directory as the cwd, simply do this:
 
-```bash
+~~~bash
 $ mkdir build
 $ cd build
 $ cmake ..
 $ cmake --build .
-```
+~~~
 
 On posix-type systems, the output is typically `./libgit2.so`; on Windows, it's usually `Debug\git2.dll`.
 

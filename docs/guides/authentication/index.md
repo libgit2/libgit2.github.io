@@ -62,7 +62,7 @@ information and then chain the return code to one of the credential
 object's constructors. For example, if an application is only
 interested in supporting user/password authentication, it can do something like:
 
-```C
+~~~C
 int credentials_cb(git_cred **out, const char *url, const char *username_from_url,
                    unsigned int allowed_types, void *payload)
 {
@@ -81,4 +81,4 @@ int credentials_cb(git_cred **out, const char *url, const char *username_from_ur
 
 	return git_cred_plaintext_new(out, user, pass);
 }
-```
+~~~
