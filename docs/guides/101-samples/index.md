@@ -593,7 +593,7 @@ const git_oid *tree_id         = git_commit_tree_id(commit);
 ~~~c
 unsigned int count = git_commit_parentcount(commit);
 for (unsigned int i=0; i<count; i++) {
-  git_oid *nth_parent_id = git_commit_parent_id(commit);
+  git_oid *nth_parent_id = git_commit_parent_id(commit, i);
 
   git_commit *nth_parent = NULL;
   int error = git_commit_parent(&nth_parent, commit, i);
