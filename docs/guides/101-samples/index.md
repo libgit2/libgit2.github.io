@@ -1215,7 +1215,7 @@ error = git_diff_tree_to_workdir_with_index(&diff, repo, tree, NULL);
 [`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
 [`git_diff_tree_to_workdir_with_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_workdir_with_index))
 
-<h3 id="diff_commit_to_its_parent">Commit to Its Parent</h3>
+<h3 id="diff_commit_to_its_parent">Commit to its Parent</h3>
 
 Like `git show <commit>`.
 
@@ -1235,7 +1235,7 @@ error = git_commit_tree(&parent_tree, parent);
 
 git_diff *diff = NULL;
 error = git_diff_tree_to_tree(
-          &diff, repo, commit_tree, parent_tree, NULL);
+          &diff, repo, parent_tree, commit_tree, NULL);
 ~~~
 
 ([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
