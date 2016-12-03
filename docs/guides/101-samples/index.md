@@ -211,7 +211,7 @@ int create_remote_mirror(git_remote **out, git_repository *repo, const char *nam
         return -1;
     }
 
-    error = git_repository_set_bool(cfg, mirror_config, true);
+    error = git_config_set_bool(cfg, mirror_config, true);
 
     free(mirror_config);
     git_config_free(cfg);
