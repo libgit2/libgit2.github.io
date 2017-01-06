@@ -1,2 +1,3 @@
 markdown: kramdown
 exclude: ['Readme.md']
+exclude: [vendor]
