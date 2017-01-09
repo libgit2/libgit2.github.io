@@ -10,13 +10,11 @@ provide resolution.
 * **[libgit2 v0.24.6](https://github.com/libgit2/libgit2/releases/tag/v0.24.6)** and **[libgit2 v0.25.1](https://github.com/libgit2/libgit2/releases/tag/v0.25.1)**, January 9th, 2017  
 Includes two fixes, one performs extra sanitization for some edge cases in
 the Git Smart Protocol which can lead to attempting to parse outside of the
-buffer.  
-  
+buffer.<br><br>
 The second fix affects the certificate check callback. It provides a `valid`
 parameter to indicate whether the native cryptographic library considered the
 certificate to be correct. This parameter is always `1`/`true` before these
-releases leading to a possible MITM.  
-  
+releases leading to a possible MITM.<br><br>
 This does not affect you if you do not use the custom certificate callback
 or if you do not take this value into account. This does affect you if
 you use pygit2 or git2go regardless of whether you specify a certificate
