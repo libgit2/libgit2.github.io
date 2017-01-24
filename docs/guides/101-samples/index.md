@@ -338,7 +338,7 @@ error = git_tree_lookup(&tree, repo, &oid);
 git_blob *blob;
 error = git_blob_lookup(&blob, repo, &oid);
 
-git_tag tag;
+git_tag *tag;
 error = git_tag_lookup(&tag, repo, &oid);
 ~~~
 
