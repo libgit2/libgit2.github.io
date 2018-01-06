@@ -517,7 +517,7 @@ represents a single directory containing other objects.
 
 ~~~c
 git_treebuilder *bld = NULL;
-int error = git_treebuilder_create(&bld, NULL);
+int error = git_treebuilder_new(&bld, repo, NULL);
 
 /* Add some entries */
 git_object *obj = NULL;
@@ -541,7 +541,7 @@ git_treebuilder_free(bld);
 
 ([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
 [`git_object_free`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_free),
-[`git_treebuilder_create`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_create),
+[`git_treebuilder_new`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_new),
 [`git_treebuilder_insert`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_insert),
 [`git_treebuilder_write`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_write),
 [`git_treebuilder_free`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
