@@ -7,6 +7,10 @@ layout: default
 Information about security advisories affecting libgit2 and the releases that
 provide resolution.
 
+In case you think to have found a security issue with libgit2, please do not
+open a public issue. Instead, you can report the issue to the private mailing
+list [security@libgit2.org](mailto:security@libgit2.org).
+
  * **[libgit2 v0.26.2](https://github.com/libgit2/libgit2/releases/tag/v0.26.2)**, March 8th, 2018  
 Fixes memory handling issues when reading crafted repository index files. The
 issues allow for possible denial of service due to allocation of large memory
