@@ -1579,7 +1579,7 @@ header a.button h3 {
 }
 
 
-#sidebar {
+.sidebar {
   float: right;
   width: 300px;
 }
