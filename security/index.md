@@ -11,6 +11,17 @@ In case you think to have found a security issue with libgit2, please do not
 open a public issue. Instead, you can report the issue to the private mailing
 list [security@libgit2.org](mailto:security@libgit2.org).
 
+ * **[libgit2 v0.27.1](https://github.com/libgit2/libgit2/releases/tag/v0.27.1)**, May 29th, 2018)  
+
+Ignores submodule configuration entries with names which attempt to perform path
+traversal and can be exploited to write to an arbitrary path or for remote code
+execution. `libgit2` itself is not vulnerable to RCE but tool implementations
+which execute hooks after fetching might be. This is CVE-2018-11235.
+
+It is forbidden for a `.gitmodules` file to be a symlink which could cause a Git
+implementation to write outside of the repository and and bypass the fsck checks
+for CVE-2018-11235.
+
  * **[libgit2 v0.26.2](https://github.com/libgit2/libgit2/releases/tag/v0.26.2)**, March 8th, 2018  
 Fixes memory handling issues when reading crafted repository index files. The
 issues allow for possible denial of service due to allocation of large memory
