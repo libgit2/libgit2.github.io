@@ -908,6 +908,13 @@ aside.sidebar p {
   line-height: 16.5px;
 }
 
+aside.sidebar h4 {
+  color: #847d75;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+}
+
 aside.sidebar .callout, aside.sidebar .bottom-nav, aside.sidebar #logo-license {
   background-color: #ebe9e1;
   background-color: rgba(223, 221, 213, 0.33);
@@ -1579,7 +1586,7 @@ header a.button h3 {
 }
 
 
-#sidebar {
+.sidebar {
   float: right;
   width: 300px;
 }
