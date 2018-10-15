@@ -73,8 +73,7 @@ Etienne Stalmans) same as v0.27.1.
 Ignores submodule configuration entries with names which attempt to perform path
 traversal and can be exploited to write to an arbitrary path or for remote code
 execution. `libgit2` itself is not vulnerable to RCE but tool implementations
-which execute hooks after fetching might be. This is CVE-2018-11235.
-
+which execute hooks after fetching might be. This is CVE-2018-11235.<br/><br/>
  It is forbidden for a `.gitmodules` file to be a symlink which could cause a Git
 implementation to write outside of the repository and and bypass the fsck checks
 for CVE-2018-11235.
@@ -82,15 +81,13 @@ for CVE-2018-11235.
  * **[libgit2 v0.26.2](https://github.com/libgit2/libgit2/releases/tag/v0.26.2)**, March 8th, 2018  
 Fixes memory handling issues when reading crafted repository index files. The
 issues allow for possible denial of service due to allocation of large memory
-and out-of-bound reads.
-
+and out-of-bound reads.<br/><br/>
  As the index is never transferred via the network, exploitation requires an
 attacker to have access to the local repository.
 
  * **[libgit2 v0.26.1](https://github.com/libgit2/libgit2/releases/tag/v0.26.1)**, March 7th, 2018  
 Updates the bundled zlib to 1.2.11. Users who build the bundled zlib are
-vulnerable to security issues in the prior version.
-
+vulnerable to security issues in the prior version.<br/><br/>
  This does not affect you if you rely on a system-installed version of zlib. All
 users of v0.26.0 who use the bundled zlib should upgrade to this release.
 
