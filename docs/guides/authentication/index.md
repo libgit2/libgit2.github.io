@@ -79,6 +79,6 @@ int credentials_cb(git_cred **out, const char *url, const char *username_from_ur
         return GIT_EUSER;
     }
 
-	return git_cred_plaintext_new(out, user, pass);
+	return git_cred_userpass_plaintext_new(out, user, pass);
 }
 ~~~
