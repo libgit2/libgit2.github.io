@@ -193,15 +193,14 @@ error = git_clone(&repo, url, path, &clone_opts);
 int create_remote_mirror(git_remote **out, git_repository *repo, const char *name, const char *url, void *payload)
 {
     int error;
-    git_remote *remote;
     git_config *cfg;
     char *mirror_config;
 
     /* Create the repository with a mirror refspec */
-    if ((error = git_remote_create_with_fetchspec(&remote, repo, name, url, "+refs/*:refs/*")) < 0)
+    if ((error = git_remote_create_with_fetchspec(out, repo, name, url, "+refs/*:refs/*")) < 0)
         return error;
 
-	/* Set the mirror setting to true on this remote  */
+    /* Set the mirror setting to true on this remote  */
     if ((error = git_repository_config(&cfg, repo)) < 0)
         return error;
 
@@ -211,7 +210,7 @@ int create_remote_mirror(git_remote **out, git_repository *repo, const char *nam
         return -1;
     }
 
-    error = git_repository_set_bool(cfg, mirror_config, true);
+    error = git_config_set_bool(cfg, mirror_config, true);
 
     free(mirror_config);
     git_config_free(cfg);
