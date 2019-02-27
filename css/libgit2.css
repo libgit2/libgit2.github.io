@@ -1708,6 +1708,10 @@ p {
     margin-top: 28px;
 }
 
+#production-usage > .row:nth-of-type(4){
+    margin-top: 16px;
+}
+
 #production-usage img {
   vertical-align: middle;
   margin: 0 .9em;
