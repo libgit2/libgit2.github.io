@@ -205,7 +205,7 @@ int create_remote_mirror(git_remote **out, git_repository *repo, const char *nam
         return error;
 
     if (asprintf(&mirror_config, "remote.%s.mirror", name) == -1) {
-        git_error_set_str(GITERR_OS, "asprintf failed");
+        git_error_set_str(GIT_ERROR_OS, "asprintf failed");
         git_config_free(cfg);
         return -1;
     }
