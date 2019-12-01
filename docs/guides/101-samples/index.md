@@ -36,12 +36,12 @@ For extended information, libgit2 keeps some data in thread-local storage:
 ~~~c
 int error = git_repository_open(/*...*/);
 if (error < 0) {
-  const git_error *e = giterr_last();
+  const git_error *e = git_error_last();
   printf("Error %d/%d: %s\n", error, e->klass, e->message);
   exit(error);
 }
 ~~~
-([`giterr_last`](http://libgit2.github.com/libgit2/#HEAD/group/giterr/giterr_last))
+([`git_error_last`](https://libgit2.org/libgit2/#HEAD/group/error/git_error_last))
 
 <h3 id="best_practices_freeing">Freeing</h3>
 
@@ -205,7 +205,7 @@ int create_remote_mirror(git_remote **out, git_repository *repo, const char *nam
         return error;
 
     if (asprintf(&mirror_config, "remote.%s.mirror", name) == -1) {
-        giterr_set(GITERR_OS, "asprintf failed");
+        git_error_set_str(GITERR_OS, "asprintf failed");
         git_config_free(cfg);
         return -1;
     }
