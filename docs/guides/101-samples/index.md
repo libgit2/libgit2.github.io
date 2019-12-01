@@ -353,8 +353,8 @@ error = git_tag_lookup(&tag, repo, &oid);
 
 ~~~c
 git_object *obj;
-int error = git_object_lookup(&obj, repo, &oid, GIT_OBJ_ANY);
-if (git_object_type(obj) == GIT_OBJ_COMMIT) {
+int error = git_object_lookup(&obj, repo, &oid, GIT_OBJECT_ANY);
+if (git_object_type(obj) == GIT_OBJECT_COMMIT) {
   /* This is relatively safe */
   git_commit *commit = (git_commit*)obj;
 }
@@ -443,7 +443,7 @@ Trees can contain trees:
 
 ~~~c
 const git_tree_entry *entry = git_tree_entry_byindex(tree, 0);
-if (git_tree_entry_type(entry) == GIT_OBJ_TREE) {
+if (git_tree_entry_type(entry) == GIT_OBJECT_TREE) {
   git_tree *subtree = NULL;
   int error = git_tree_lookup(&subtree, repo, git_tree_entry_id(entry));
 }
