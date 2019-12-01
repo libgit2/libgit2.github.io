@@ -41,7 +41,7 @@ if (error < 0) {
   exit(error);
 }
 ~~~
-([`git_error_last`](https://libgit2.org/libgit2/#HEAD/group/error/git_error_last))
+([`git_error_last`](http://libgit2.github.com/libgit2/#HEAD/group/error/git_error_last))
 
 <h3 id="best_practices_freeing">Freeing</h3>
 
