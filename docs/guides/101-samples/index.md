@@ -36,12 +36,12 @@ For extended information, libgit2 keeps some data in thread-local storage:
 ~~~c
 int error = git_repository_open(/*...*/);
 if (error < 0) {
-  const git_error *e = giterr_last();
+  const git_error *e = git_error_last();
   printf("Error %d/%d: %s\n", error, e->klass, e->message);
   exit(error);
 }
 ~~~
-([`giterr_last`](http://libgit2.github.com/libgit2/#HEAD/group/giterr/giterr_last))
+([`git_error_last`](http://libgit2.github.com/libgit2/#HEAD/group/error/git_error_last))
 
 <h3 id="best_practices_freeing">Freeing</h3>
 
@@ -204,7 +204,7 @@ int create_remote_mirror(git_remote **out, git_repository *repo, const char *nam
         return error;
 
     if (asprintf(&mirror_config, "remote.%s.mirror", name) == -1) {
-        giterr_set(GITERR_OS, "asprintf failed");
+        git_error_set_str(GIT_ERROR_OS, "asprintf failed");
         git_config_free(cfg);
         return -1;
     }
@@ -352,8 +352,8 @@ error = git_tag_lookup(&tag, repo, &oid);
 
 ~~~c
 git_object *obj;
-int error = git_object_lookup(&obj, repo, &oid, GIT_OBJ_ANY);
-if (git_object_type(obj) == GIT_OBJ_COMMIT) {
+int error = git_object_lookup(&obj, repo, &oid, GIT_OBJECT_ANY);
+if (git_object_type(obj) == GIT_OBJECT_COMMIT) {
   /* This is relatively safe */
   git_commit *commit = (git_commit*)obj;
 }
@@ -442,7 +442,7 @@ Trees can contain trees:
 
 ~~~c
 const git_tree_entry *entry = git_tree_entry_byindex(tree, 0);
-if (git_tree_entry_type(entry) == GIT_OBJ_TREE) {
+if (git_tree_entry_type(entry) == GIT_OBJECT_TREE) {
   git_tree *subtree = NULL;
   int error = git_tree_lookup(&subtree, repo, git_tree_entry_id(entry));
 }
