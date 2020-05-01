@@ -23,7 +23,7 @@ code when it needs to find out about the user's credentials.
 
 The callback is provided via the `credentials` field in the
 `git_remote_callbacks` structure. This structure is embedded in both
-`git_fetch_options` and `git_push_options` so you can specify it
+`git_fetch_options` and `git_push_options` so you can specify it to
 both operations.
 
 When libgit2 connects to the server, it may ask for the user's
