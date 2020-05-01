@@ -4,7 +4,7 @@ layout: default
 
 # Authenticating against a server
 
-One of the big issues you have to deal with when working with with
+One of the big issues you have to deal with when working with
 other people using Git is authenticating to the server you want to
 fetch from or push to. In this post we'll explore how libgit2 deals
 with presenting the different authentication possibilities across
@@ -13,7 +13,7 @@ transport and platforms.
 The first place where you can specify the username and password to use
 is in the URL. This can be useful in cases where these are always
 known, e.g. in specialised scripts which perform some very specific
-task. For most uses, however, you do want the ability to specify the
+task. For most uses, however, you do want the ability to specify
 the username and password (or keypair) during the request. An
 application might want to even go and ask the human sitting at the
 computer for the credentials to the server or it might retrieve the
@@ -23,7 +23,7 @@ code when it needs to find out about the user's credentials.
 
 The callback is provided via the `credentials` field in the
 `git_remote_callbacks` structure. This structure is embedded in both
-`git_fetch_options` and `git_push_options` so you can specify it both
+`git_fetch_options` and `git_push_options` so you can specify it
 both operations.
 
 When libgit2 connects to the server, it may ask for the user's
@@ -62,7 +62,7 @@ information and then chain the return code to one of the credential
 object's constructors. For example, if an application is only
 interested in supporting user/password authentication, it can do something like:
 
-~~~C
+```C
 int credentials_cb(git_cred **out, const char *url, const char *username_from_url,
                    unsigned int allowed_types, void *payload)
 {
@@ -81,4 +81,4 @@ int credentials_cb(git_cred **out, const char *url, const char *username_from_ur
 
 	return git_cred_userpass_plaintext_new(out, user, pass);
 }
-~~~
+```
