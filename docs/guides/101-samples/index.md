@@ -1808,7 +1808,7 @@ fetch_opts.callbacks.payload = &d;
 int error = git_remote_fetch(remote, NULL, &fetch_opts, NULL);
 ~~~
 
-For a credentials example, check out [the fetch example](https://github.com/libgit2/libgit2/blob/master/examples/fetch.c#L78), which uses an [interactive credential callback](https://github.com/libgit2/libgit2/blob/master/examples/common.c#L354). See also the built-in [credential helpers](https://github.com/libgit2/libgit2/blob/master/src/transports/cred_helpers.c).
+For a credentials example, check out [the fetch example](https://github.com/libgit2/libgit2/blob/master/examples/fetch.c#L78), which uses an [interactive credential callback](https://github.com/libgit2/libgit2/blob/master/examples/common.c#L354). See also the built-in [credential helpers](https://github.com/libgit2/libgit2/blob/master/src/transports/credential_helpers.c).
 
 (
   [`git_remote_stop`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_stop),
