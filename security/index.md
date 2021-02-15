@@ -11,6 +11,77 @@ In case you think to have found a security issue with libgit2, please do not
 open a public issue. Instead, you can report the issue to the private mailing
 list [security@libgit2.org](mailto:security@libgit2.org).
 
+Previous security releases:
+
+* **[libgit2 v0.28.4](https://github.com/libgit2/libgit2/releases/tag/v0.28.4)** and **[libgit2 v0.27.10](https://github.com/libgit2/libgit2/releases/tag/v0.27.10)**, Dec 10, 2019
+
+   - CVE-2019-1348: the fast-import stream command "feature
+     export-marks=path" allows writing to arbitrary file paths. As
+     libgit2 does not offer any interface for fast-import, it is not
+     susceptible to this vulnerability.
+
+   - CVE-2019-1349: by using NTFS 8.3 short names, backslashes or
+     alternate filesystreams, it is possible to cause submodules to
+     be written into pre-existing directories during a recursive
+     clone using git. As libgit2 rejects cloning into non-empty
+     directories by default, it is not susceptible to this
+     vulnerability.
+
+   - CVE-2019-1350: recursive clones may lead to arbitrary remote
+     code executing due to improper quoting of command line
+     arguments. As libgit2 uses libssh2, which does not require us
+     to perform command line parsing, it is not susceptible to this
+     vulnerability.
+
+   - CVE-2019-1351: Windows provides the ability to substitute
+     drive letters with arbitrary letters, including multi-byte
+     Unicode letters. To fix any potential issues arising from
+     interpreting such paths as relative paths, we have extended
+     detection of DOS drive prefixes to accomodate for such cases.
+
+   - CVE-2019-1352: by using NTFS-style alternative file streams for
+     the ".git" directory, it is possible to overwrite parts of the
+     repository. While this has been fixed in the past for Windows,
+     the same vulnerability may also exist on other systems that
+     write to NTFS filesystems. We now reject any paths starting
+     with ".git:" on all systems.
+
+   - CVE-2019-1353: by using NTFS-style 8.3 short names, it was
+     possible to write to the ".git" directory and thus overwrite
+     parts of the repository, leading to possible remote code
+     execution. While this problem was already fixed in the past for
+     Windows, other systems accessing NTFS filesystems are
+     vulnerable to this issue too. We now enable NTFS protecions by
+     default on all systems to fix this attack vector.
+
+   - CVE-2019-1354: on Windows, backslashes are not a valid part of
+     a filename but are instead interpreted as directory separators.
+     As other platforms allowed to use such paths, it was possible
+     to write such invalid entries into a Git repository and was
+     thus an attack vector to write into the ".git" dierctory. We
+     now reject any entries starting with ".git" on all systems.
+
+   - CVE-2019-1387: it is possible to let a submodule's git
+     directory point into a sibling's submodule directory, which may
+     result in overwriting parts of the Git repository and thus lead
+     to arbitrary command execution. As libgit2 doesn't provide any
+     way to do submodule clones natively, it is not susceptible to
+     this vulnerability. Users of libgit2 that have implemented
+     recursive submodule clones manually are encouraged to review
+     their implementation for this vulnerability.
+
+* **[libgit2 v0.28.3](https://github.com/libgit2/libgit2/releases/tag/v0.28.3)** and **[libgit2 v0.27.9](https://github.com/libgit2/libgit2/releases/tag/v0.27.9)**, Aug 13, 2019
+
+  - A carefully constructed commit object with a very large number
+    of parents may lead to potential out-of-bounds writes or
+    potential denial of service.
+
+  - The ProgramData configuration file is always read for compatibility
+    with Git for Windows and Portable Git installations. The ProgramData
+    location is not necessarily writable only by administrators, so we
+    now ensure that the configuration file is owned by the administrator
+    or the current user.
+
 * **[libgit2 v0.26.7](https://github.com/libgit2/libgit2/releases/tag/v0.26.7)** and **[libgit2 v0.27.5](https://github.com/libgit2/libgit2/releases/tag/v0.27.5)**, October 5th, 2018  
 
   - Submodule URLs and paths with a leading "-" are now ignored. This is due to
