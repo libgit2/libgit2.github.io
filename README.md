@@ -1,4 +1,4 @@
-# [Libgit2's web site](http://libgit2.github.com/)
+# [Libgit2's web site](http://libgit2.org/)
 
 ```bash
 bundle install

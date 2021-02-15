@@ -41,7 +41,7 @@ if (error < 0) {
   exit(error);
 }
 ~~~
-([`git_error_last`](http://libgit2.github.com/libgit2/#HEAD/group/error/git_error_last))
+([`git_error_last`](http://libgit2.org/libgit2/#HEAD/group/error/git_error_last))
 
 <h3 id="best_practices_freeing">Freeing</h3>
 
@@ -54,7 +54,7 @@ git_repository_init(&repo, "/tmp/…", false);
 git_repository_free(repo);
 ~~~
 
-([`_free` APIs](http://libgit2.github.com/libgit2/#HEAD/search/_free))
+([`_free` APIs](http://libgit2.org/libgit2/#HEAD/search/_free))
 
 
 <h2 id="repositories">Repositories</h2>
@@ -69,7 +69,7 @@ int error = git_repository_init(&repo, "/tmp/…", false);
 int error = git_repository_init(&repo, "/tmp/…", true);
 ~~~
 
-([`git_repository_init`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_init))
+([`git_repository_init`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_init))
 
 <h3 id="repositories_init_options">Init (Options)</h3>
 
@@ -85,8 +85,8 @@ opts.description = "My repository has a custom description";
 error = git_repository_init_ext(&repo, "/tmp/…", &opts);
 ~~~
 
-([`git_repository_init_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_init_ext),
-[`git_repository_init_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_repository_init_options))
+([`git_repository_init_ext`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_init_ext),
+[`git_repository_init_options`](http://libgit2.org/libgit2/#HEAD/type/git_repository_init_options))
 
 <h3 id="repositories_clone_simple">Clone (Simple)</h3>
 
@@ -97,7 +97,7 @@ const char *path = "/tmp/…";
 int error = git_clone(&repo, url, path, NULL);
 ~~~
 
-([`git_clone`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone))
+([`git_clone`](http://libgit2.org/libgit2/#HEAD/group/clone/git_clone))
 
 <h3 id="repositories_clone_progress">Clone (Progress)</h3>
 
@@ -135,8 +135,8 @@ git_repository *repo = NULL;
 int error = git_clone(&repo, url, path, &clone_opts);
 ~~~
 
-([`git_clone`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone),
-[`git_clone_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_clone_options))
+([`git_clone`](http://libgit2.org/libgit2/#HEAD/group/clone/git_clone),
+[`git_clone_options`](http://libgit2.org/libgit2/#HEAD/type/git_clone_options))
 
 
 <h3 id="repositories_clone_repo">Clone (Custom repo and remote)</h3>
@@ -184,7 +184,7 @@ clone_opts.remote_cb     = create_remote;
 error = git_clone(&repo, url, path, &clone_opts);
 ~~~
 
-([`git_clone_into`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone_into))
+([`git_clone_into`](http://libgit2.org/libgit2/#HEAD/group/clone/git_clone_into))
 
 <h3 id="repositories_clone_mirror">Clone (Mirror)</h3>
 
@@ -223,10 +223,10 @@ git_clone_options clone_opts = GIT_CLONE_OPTIONS_INIT;
 error = git_clone(&repo, url, path, &clone_opts);
 ~~~
 
-([`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec),
-[`git_repository_config`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_config),
-[`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
-[`git_clone`](http://libgit2.github.com/libgit2/#HEAD/group/clone/git_clone))
+([`git_remote_create_with_fetchspec`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec),
+[`git_repository_config`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_config),
+[`git_config_set_bool`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_set_bool),
+[`git_clone`](http://libgit2.org/libgit2/#HEAD/group/clone/git_clone))
 
 <h3 id="repositories_open_simple">Open (Simple)</h3>
 
@@ -235,7 +235,7 @@ git_repository *repo = NULL;
 int error = git_repository_open(&repo, "/tmp/…");
 ~~~
 
-([`git_repository_open`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open))
+([`git_repository_open`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_open))
 
 <h3 id="repositories_open_options">Open (Options)</h3>
 
@@ -255,8 +255,8 @@ error = git_repository_open_ext(
     &repo, "/home/acct/…, GIT_REPOSITORY_OPEN_CROSS_FS, "/tmp:/usr:/home");
 ~~~
 
-([`git_repository_open_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_ext),
-[`git_repository_open_flag_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_repository_open_flag_t))
+([`git_repository_open_ext`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_open_ext),
+[`git_repository_open_flag_t`](http://libgit2.org/libgit2/#HEAD/type/git_repository_open_flag_t))
 
 <h3 id="repositories_open_bare">Open (Bare)</h3>
 
@@ -267,7 +267,7 @@ git_repository *repo = NULL;
 int error = git_repository_open_bare(&repo, "/var/data/…/repo.git");
 ~~~
 
-([`git_repository_open_bare`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_bare))
+([`git_repository_open_bare`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_open_bare))
 
 <h3 id="repositories_discover">Find Repository</h3>
 
@@ -281,7 +281,7 @@ int error = git_repository_discover(&root, "/tmp/…", 0, NULL);
 git_buf_free(&root); /* returned path data must be freed after use */
 ~~~
 
-([`git_repository_discover`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_discover))
+([`git_repository_discover`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_discover))
 
 <h3 id="repositories_openable">Check If Repository</h3>
 
@@ -293,8 +293,8 @@ if (git_repository_open_ext(
 }
 ~~~
 
-([`git_repository_open_ext`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_open_ext),
-[`git_repository_open_flag_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_repository_open_flag_t))
+([`git_repository_open_ext`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_open_ext),
+[`git_repository_open_flag_t`](http://libgit2.org/libgit2/#HEAD/type/git_repository_open_flag_t))
 
 
 
@@ -316,9 +316,9 @@ char shortsha[10] = {0};
 git_oid_tostr(shortsha, 9, &oid);
 ~~~
 
-([`git_oid_fromstr`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_fromstr),
-[`git_oid_tostr`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_tostr),
-[`git_oid_allocfmt`](http://libgit2.github.com/libgit2/#HEAD/group/oid/git_oid_allocfmt))
+([`git_oid_fromstr`](http://libgit2.org/libgit2/#HEAD/group/oid/git_oid_fromstr),
+[`git_oid_tostr`](http://libgit2.org/libgit2/#HEAD/group/oid/git_oid_tostr),
+[`git_oid_allocfmt`](http://libgit2.org/libgit2/#HEAD/group/oid/git_oid_allocfmt))
 
 
 <h3 id="objects_lookups">Lookups</h3>
@@ -340,10 +340,10 @@ git_tag *tag;
 error = git_tag_lookup(&tag, repo, &oid);
 ~~~
 
-([`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup),
-[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
-[`git_blob_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_lookup),
-[`git_tag_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_lookup))
+([`git_commit_lookup`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_lookup),
+[`git_tree_lookup`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_blob_lookup`](http://libgit2.org/libgit2/#HEAD/group/blob/git_blob_lookup),
+[`git_tag_lookup`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_lookup))
 
 
 <h3 id="objects_casting">Casting</h3>
@@ -360,9 +360,9 @@ if (git_object_type(obj) == GIT_OBJECT_COMMIT) {
 /* etc. */
 ~~~
 
-([`git_object_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_lookup),
-[`git_object_type`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_type),
-[`git_otype`](http://libgit2.github.com/libgit2/#HEAD/type/git_otype))
+([`git_object_lookup`](http://libgit2.org/libgit2/#HEAD/group/object/git_object_lookup),
+[`git_object_type`](http://libgit2.org/libgit2/#HEAD/group/object/git_object_type),
+[`git_otype`](http://libgit2.org/libgit2/#HEAD/type/git_otype))
 
 
 <h2 id="blobs">Blobs</h2>
@@ -375,7 +375,7 @@ int error = git_blob_lookup(&blob, repo, &oid);
 ~~~
 
 (
-  [`git_blob_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_lookup)
+  [`git_blob_lookup`](http://libgit2.org/libgit2/#HEAD/group/blob/git_blob_lookup)
 )
 
 <h3 id="blobs_content">Content</h3>
@@ -394,9 +394,9 @@ git_buf_free(&filtered_content);
 ~~~
 
 (
-  [`git_blob_rawsize`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_rawsize),
-  [`git_blob_rawcontent`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_rawcontent),
-  [`git_blob_filtered_content`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_filtered_content)
+  [`git_blob_rawsize`](http://libgit2.org/libgit2/#HEAD/group/blob/git_blob_rawsize),
+  [`git_blob_rawcontent`](http://libgit2.org/libgit2/#HEAD/group/blob/git_blob_rawcontent),
+  [`git_blob_filtered_content`](http://libgit2.org/libgit2/#HEAD/group/blob/git_blob_filtered_content)
 )
 
 <h3 id="blobs_create">Create</h3>
@@ -411,9 +411,9 @@ error = git_blob_create_frombuffer(&oid, repo, str, strlen(str));
 ~~~
 
 (
-  [`git_blob_create_fromworkdir`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_fromworkdir),
-  [`git_blob_create_fromdisk`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_fromdisk),
-  [`git_blob_create_frombuffer`](http://libgit2.github.com/libgit2/#HEAD/group/blob/git_blob_create_frombuffer)
+  [`git_blob_create_fromworkdir`](http://libgit2.org/libgit2/#HEAD/group/blob/git_blob_create_fromworkdir),
+  [`git_blob_create_fromdisk`](http://libgit2.org/libgit2/#HEAD/group/blob/git_blob_create_fromdisk),
+  [`git_blob_create_frombuffer`](http://libgit2.org/libgit2/#HEAD/group/blob/git_blob_create_frombuffer)
 )
 
 
@@ -448,10 +448,10 @@ if (git_tree_entry_type(entry) == GIT_OBJECT_TREE) {
 }
 ~~~
 
-([`git_commit_tree`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree),
-[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
-[`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
-[`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type))
+([`git_commit_tree`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_tree),
+[`git_tree_lookup`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_tree_entry_byindex`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
+[`git_tree_entry_type`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entry_type))
 
 <h3 id="trees_tree_entries">Tree Entries</h3>
 
@@ -472,14 +472,14 @@ error = git_tree_entry_bypath(&entry2, tree, "a/b/c.txt");
 git_tree_entry_free(entry2); /* caller has to free this one */
 ~~~
 
-([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_tree_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entrycount),
-[`git_tree_entry_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
-[`git_tree_entry_name`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_name),
-[`git_tree_entry_type`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_type),
-[`git_tree_entry_filemode`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_filemode),
-[`git_tree_entry_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_bypath),
-[`git_tree_entry_free`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_entry_free))
+([`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_tree_entrycount`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entrycount),
+[`git_tree_entry_byindex`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entry_byindex),
+[`git_tree_entry_name`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entry_name),
+[`git_tree_entry_type`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entry_type),
+[`git_tree_entry_filemode`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entry_filemode),
+[`git_tree_entry_bypath`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entry_bypath),
+[`git_tree_entry_free`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_entry_free))
 
 <h3 id="trees_walking">Walking</h3>
 
@@ -502,10 +502,10 @@ walk_data d = {0};
 error = git_tree_walk(tree, GIT_TREEWALK_PRE, walk_cb, &d);
 ~~~
 
-([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_tree_walk`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_walk),
-[`git_treewalk_mode`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_mode),
-[`git_treewalk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_treewalk_cb))
+([`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_tree_walk`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_walk),
+[`git_treewalk_mode`](http://libgit2.org/libgit2/#HEAD/type/git_treewalk_mode),
+[`git_treewalk_cb`](http://libgit2.org/libgit2/#HEAD/type/git_treewalk_cb))
 
 <h3 id="trees_treebuilder">Treebuilder</h3>
 
@@ -537,12 +537,12 @@ error = git_treebuilder_write(&oid, repo, bld);
 git_treebuilder_free(bld);
 ~~~
 
-([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_object_free`](http://libgit2.github.com/libgit2/#HEAD/group/object/git_object_free),
-[`git_treebuilder_new`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_new),
-[`git_treebuilder_insert`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_insert),
-[`git_treebuilder_write`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_write),
-[`git_treebuilder_free`](http://libgit2.github.com/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
+([`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_object_free`](http://libgit2.org/libgit2/#HEAD/group/object/git_object_free),
+[`git_treebuilder_new`](http://libgit2.org/libgit2/#HEAD/group/treebuilder/git_treebuilder_new),
+[`git_treebuilder_insert`](http://libgit2.org/libgit2/#HEAD/group/treebuilder/git_treebuilder_insert),
+[`git_treebuilder_write`](http://libgit2.org/libgit2/#HEAD/group/treebuilder/git_treebuilder_write),
+[`git_treebuilder_free`](http://libgit2.org/libgit2/#HEAD/group/treebuilder/git_treebuilder_free))
 
 
 <h2 id="commits">Commits</h2>
@@ -555,7 +555,7 @@ int error = git_commit_lookup(&commit, repo, &oid);
 ~~~
 
 (
-  [`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup)
+  [`git_commit_lookup`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_lookup)
 )
 
 <h3 id="commits_properties">Properties</h3>
@@ -574,16 +574,16 @@ const git_oid *tree_id         = git_commit_tree_id(commit);
 ~~~
 
 (
-  [`git_commit_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_id),
-  [`git_commit_message_encoding`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message_encoding),
-  [`git_commit_message`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_message),
-  [`git_commit_summary`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_summary),
-  [`git_commit_time`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time),
-  [`git_commit_time_offset`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_time_offset),
-  [`git_commit_committer`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_committer),
-  [`git_commit_author`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_author),
-  [`git_commit_raw_header`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_raw_header),
-  [`git_commit_tree_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree_id)
+  [`git_commit_id`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_id),
+  [`git_commit_message_encoding`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_message_encoding),
+  [`git_commit_message`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_message),
+  [`git_commit_summary`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_summary),
+  [`git_commit_time`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_time),
+  [`git_commit_time_offset`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_time_offset),
+  [`git_commit_committer`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_committer),
+  [`git_commit_author`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_author),
+  [`git_commit_raw_header`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_raw_header),
+  [`git_commit_tree_id`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_tree_id)
 )
 
 <h3 id="commits_parents">Parents</h3>
@@ -603,10 +603,10 @@ int error = git_commit_nth_gen_ancestor(&nth_ancestor, commit, 7);
 ~~~
 
 (
-  [`git_commit_parentcount`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parentcount),
-  [`git_commit_parent_id`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent_id),
-  [`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
-  [`git_commit_nth_gen_ancestor`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_nth_gen_ancestor)
+  [`git_commit_parentcount`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_parentcount),
+  [`git_commit_parent_id`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_parent_id),
+  [`git_commit_parent`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_parent),
+  [`git_commit_nth_gen_ancestor`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_nth_gen_ancestor)
 )
 
 <h3 id="commits_create">Create</h3>
@@ -632,8 +632,8 @@ error = git_commit_create(
 ~~~
 
 (
-  [`git_signature_now`](http://libgit2.github.com/libgit2/#HEAD/group/signature/git_signature_now),
-  [`git_commit_create`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_create)
+  [`git_signature_now`](http://libgit2.org/libgit2/#HEAD/group/signature/git_signature_now),
+  [`git_commit_create`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_create)
 )
 
 
@@ -646,7 +646,7 @@ git_reference *ref = NULL;
 int error = git_reference_lookup(&ref, repo, "refs/heads/master");
 ~~~
 
-([`git_reference_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_lookup))
+([`git_reference_lookup`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_lookup))
 
 <h3 id="references_lookups_short_name">Lookups (short name)</h3>
 
@@ -655,7 +655,7 @@ git_reference *ref = NULL;
 int error = git_reference_dwim(&ref, repo, "master");
 ~~~
 
-([`git_reference_dwim`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_dwim))
+([`git_reference_dwim`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_dwim))
 
 <h3 id="references_lookups_resolved">Lookups (resolved)</h3>
 
@@ -666,7 +666,7 @@ git_oid oid = {{0}};
 int error = git_reference_name_to_id(&oid, repo, "HEAD");
 ~~~
 
-([`git_reference_name_to_id`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_name_to_id))
+([`git_reference_name_to_id`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_name_to_id))
 
 <h3 id="references_listing">Listing</h3>
 
@@ -675,7 +675,7 @@ git_strarray refs = {0};
 int error = git_reference_list(&refs, repo);
 ~~~
 
-([`git_reference_list`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_list))
+([`git_reference_list`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_list))
 
 <h3 id="references_foreach_refs">Foreach (refs)</h3>
 
@@ -692,7 +692,7 @@ ref_data d = {0};
 int error = git_reference_foreach(repo, each_ref_cb, &d);
 ~~~
 
-([`git_reference_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach))
+([`git_reference_foreach`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_foreach))
 
 <h3 id="references_foreach_names">Foreach (names)</h3>
 
@@ -709,7 +709,7 @@ ref_data d = {0};
 int error = git_reference_foreach_name(repo, each_name_cb, &d);
 ~~~
 
-([`git_reference_foreach_name`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach_name))
+([`git_reference_foreach_name`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_foreach_name))
 
 <h3 id="references_foreach_glob">Foreach (glob)</h3>
 
@@ -726,7 +726,7 @@ ref_data d = {0};
 int error = git_reference_foreach_glob(repo, "refs/remotes/*", each_name_cb, &d);
 ~~~
 
-([`git_reference_foreach_glob`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_foreach_glob))
+([`git_reference_foreach_glob`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_foreach_glob))
 
 <h3 id="references_iterator_all">Iterator (all)</h3>
 
@@ -745,8 +745,8 @@ if (error != GIT_ITEROVER) {
 ~~~
 
 (
-  [`git_reference_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_iterator_new),
-  [`git_reference_next`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_next)
+  [`git_reference_iterator_new`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_iterator_new),
+  [`git_reference_next`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_next)
 )
 
 <h3 id="references_iterator_glob">Iterator (glob)</h3>
@@ -766,8 +766,8 @@ if (error != GIT_ITEROVER) {
 ~~~
 
 (
-  [`git_reference_iterator_glob_new`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_iterator_glob_new),
-  [`git_reference_next_name`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_next_name)
+  [`git_reference_iterator_glob_new`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_iterator_glob_new),
+  [`git_reference_next_name`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_next_name)
 )
 
 <h3 id="references_create_direct">Create (direct)</h3>
@@ -781,7 +781,7 @@ int error = git_reference_create(&ref, repo,
       NULL);                     /* the message for the reflog */
 ~~~
 
-([`git_reference_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_create))
+([`git_reference_create`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_create))
 
 <h3 id="references_create_symbolic">Create (symbolic)</h3>
 
@@ -794,7 +794,7 @@ int error = git_reference_symbolic_create(&ref, repo,
       NULL);                     /* the message for the reflog */
 ~~~
 
-([`git_reference_symbolic_create`](http://libgit2.github.com/libgit2/#HEAD/group/reference/git_reference_symbolic_create))
+([`git_reference_symbolic_create`](http://libgit2.org/libgit2/#HEAD/group/reference/git_reference_symbolic_create))
 
 
 <h2 id="tags">Tags</h2>
@@ -806,7 +806,7 @@ git_tag *tag = NULL;
 int error = git_tag_lookup(&tag, repo, &oid);
 ~~~
 
-([`git_tag_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_lookup))
+([`git_tag_lookup`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_lookup))
 
 <h3 id="tags_listing_all">Listing (all)</h3>
 
@@ -815,7 +815,7 @@ git_strarray tags = {0};
 int error = git_tag_list(&tags, repo);
 ~~~
 
-([`git_tag_list`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_list))
+([`git_tag_list`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_list))
 
 <h3 id="tags_listing_glob">Listing (glob)</h3>
 
@@ -824,7 +824,7 @@ git_strarray tags = {0};
 int error = git_tag_list_match(&tags, "v0.*", repo);
 ~~~
 
-([`git_tag_list_match`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_list_match))
+([`git_tag_list_match`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_list_match))
 
 <h3 id="tags_foreach">Foreach</h3>
 
@@ -841,7 +841,7 @@ tag_data d = {0};
 int error = git_tag_foreach(repo, each_tag, &d);
 ~~~
 
-([`git_tag_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_foreach))
+([`git_tag_foreach`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_foreach))
 
 <h3 id="tags_annotation_properties">Annotation Properties</h3>
 
@@ -854,11 +854,11 @@ const char *message = git_tag_message(tag);
 ~~~
 
 (
-  [`git_tag_target_id`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_target_id),
-  [`git_tag_target_type`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_target_type),
-  [`git_tag_name`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_name),
-  [`git_tag_tagger`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_tagger),
-  [`git_tag_message`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_message)
+  [`git_tag_target_id`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_target_id),
+  [`git_tag_target_type`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_target_type),
+  [`git_tag_name`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_name),
+  [`git_tag_tagger`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_tagger),
+  [`git_tag_message`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_message)
 )
 
 <h3 id="tags_create_lightweight">Create (lightweight)</h3>
@@ -877,8 +877,8 @@ error = git_tag_create_lightweight(
 ~~~
 
 (
-  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-  [`git_tag_create_lightweight`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_create_lightweight)
+  [`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+  [`git_tag_create_lightweight`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_create_lightweight)
 )
 
 <h3 id="tags_create_annotated">Create (annotated)</h3>
@@ -904,9 +904,9 @@ error = git_tag_create(
 ~~~
 
 (
-  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-  [`git_signature_now`](http://libgit2.github.com/libgit2/#HEAD/group/signature/git_signature_now),
-  [`git_tag_create`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_create)
+  [`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+  [`git_signature_now`](http://libgit2.org/libgit2/#HEAD/group/signature/git_signature_now),
+  [`git_tag_create`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_create)
 )
 
 <h3 id="tags_peeling">Peeling</h3>
@@ -917,7 +917,7 @@ int error = git_tag_peel(&dereferenced_target, tag);
 ~~~
 
 (
-  [`git_tag_peel`](http://libgit2.github.com/libgit2/#HEAD/group/tag/git_tag_peel)
+  [`git_tag_peel`](http://libgit2.org/libgit2/#HEAD/group/tag/git_tag_peel)
 )
 
 
@@ -935,8 +935,8 @@ error = git_index_open(&idx, "/path/to/repo/.git/index");
 ~~~
 
 (
-  [`git_repository_index`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_index),
-  [`git_index_open`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_open)
+  [`git_repository_index`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_index),
+  [`git_index_open`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_open)
 )
 
 <h3 id="index_creating">Creating (in-memory)</h3>
@@ -949,7 +949,7 @@ int error = git_index_new(&idx);
 ~~~
 
 (
-  [`git_index_new`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_new)
+  [`git_index_new`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_new)
 )
 
 <h3 id="index_disk">Disk</h3>
@@ -963,8 +963,8 @@ error = git_index_write(idx);
 ~~~
 
 (
-  [`git_index_read`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_read),
-  [`git_index_write`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_write)
+  [`git_index_read`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_read),
+  [`git_index_write`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_write)
 )
 
 <h3 id="index_trees">Trees</h3>
@@ -988,10 +988,10 @@ error = git_index_write_tree_to(&new_tree_id, idx, other_repo);
 ~~~
 
 (
-  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-  [`git_index_read_tree`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_read_tree),
-  [`git_index_write_tree`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_write_tree),
-  [`git_index_write_tree_to`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_write_tree_to)
+  [`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+  [`git_index_read_tree`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_read_tree),
+  [`git_index_write_tree`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_write_tree),
+  [`git_index_write_tree_to`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_write_tree_to)
 )
 
 <h3 id="index_entries">Entries</h3>
@@ -1012,10 +1012,10 @@ const git_index_entry *entry = git_index_get_bypath(
 ~~~
 
 (
-  [`git_index_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_entrycount),
-  [`git_index_get_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_get_byindex),
-  [`git_index_get_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_get_bypath),
-  [`git_index_entry`](http://libgit2.github.com/libgit2/#HEAD/type/git_index_entry)
+  [`git_index_entrycount`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_entrycount),
+  [`git_index_get_byindex`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_get_byindex),
+  [`git_index_get_bypath`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_get_bypath),
+  [`git_index_entry`](http://libgit2.org/libgit2/#HEAD/type/git_index_entry)
 )
 
 <h3 id="index_conflicts">Conflicts</h3>
@@ -1042,12 +1042,12 @@ if (git_index_has_conflicts(idx)) {
 ~~~
 
 (
-  [`git_index_has_conflicts`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_has_conflicts),
-  [`git_index_conflict_get`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_get),
-  [`git_index_conflict_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_iterator_new),
-  [`git_index_conflict_next`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_next),
-  [`git_index_conflict_iterator_free`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_iterator_free),
-  [`git_index_conflict_remove`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_conflict_remove)
+  [`git_index_has_conflicts`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_has_conflicts),
+  [`git_index_conflict_get`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_conflict_get),
+  [`git_index_conflict_iterator_new`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_conflict_iterator_new),
+  [`git_index_conflict_next`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_conflict_next),
+  [`git_index_conflict_iterator_free`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_conflict_iterator_free),
+  [`git_index_conflict_remove`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_conflict_remove)
 )
 
 <h3 id="index_add">Add & Remove</h3>
@@ -1084,12 +1084,12 @@ error = git_index_update_all(idx, &arr, match_cb, &d);
 ~~~
 
 (
-  [`git_index_add_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_add_bypath),
-  [`git_index_remove_bypath`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_remove_bypath),
-  [`git_strarray`](http://libgit2.github.com/libgit2/#HEAD/type/git_strarray),
-  [`git_index_add_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_add_all),
-  [`git_index_remove_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_remove_all),
-  [`git_index_update_all`](http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_update_all)
+  [`git_index_add_bypath`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_add_bypath),
+  [`git_index_remove_bypath`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_remove_bypath),
+  [`git_strarray`](http://libgit2.org/libgit2/#HEAD/type/git_strarray),
+  [`git_index_add_all`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_add_all),
+  [`git_index_remove_all`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_remove_all),
+  [`git_index_update_all`](http://libgit2.org/libgit2/#HEAD/group/index/git_index_update_all)
 )
 
 
@@ -1113,8 +1113,8 @@ status_data d = {0};
 int error = git_status_foreach(repo, status_cb, &d);
 ~~~
 
-([`git_status_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach),
-[`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
+([`git_status_foreach`](http://libgit2.org/libgit2/#HEAD/group/status/git_status_foreach),
+[`git_status_cb`](http://libgit2.org/libgit2/#HEAD/type/git_status_cb))
 
 <h3 id="status_iterating_options">Iterating (Options)</h3>
 
@@ -1134,9 +1134,9 @@ status_data d = {0};
 int error = git_status_foreach_ext(repo, &opts, status_cb, &d);
 ~~~
 
-([`git_status_foreach_ext`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_foreach_ext),
-[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
-[`git_status_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_cb))
+([`git_status_foreach_ext`](http://libgit2.org/libgit2/#HEAD/group/status/git_status_foreach_ext),
+[`git_status_options`](http://libgit2.org/libgit2/#HEAD/type/git_status_options),
+[`git_status_cb`](http://libgit2.org/libgit2/#HEAD/type/git_status_cb))
 
 
 <h3 id="status_iterating_manual">Iterating (Manual)</h3>
@@ -1153,12 +1153,12 @@ for (size_t i=0; i<count; ++i) {
 }
 ~~~
 
-([`git_status_list_new`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_new),
-[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
-[`git_status_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_options),
-[`git_status_list_entrycount`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_list_entrycount),
-[`git_status_byindex`](http://libgit2.github.com/libgit2/#HEAD/group/status/git_status_byindex),
-[`git_status_entry`](http://libgit2.github.com/libgit2/#HEAD/type/git_status_entry))
+([`git_status_list_new`](http://libgit2.org/libgit2/#HEAD/group/status/git_status_list_new),
+[`git_status_options`](http://libgit2.org/libgit2/#HEAD/type/git_status_options),
+[`git_status_options`](http://libgit2.org/libgit2/#HEAD/type/git_status_options),
+[`git_status_list_entrycount`](http://libgit2.org/libgit2/#HEAD/group/status/git_status_list_entrycount),
+[`git_status_byindex`](http://libgit2.org/libgit2/#HEAD/group/status/git_status_byindex),
+[`git_status_entry`](http://libgit2.org/libgit2/#HEAD/type/git_status_entry))
 
 
 
@@ -1173,7 +1173,7 @@ git_diff *diff = NULL;
 int error = git_diff_index_to_workdir(&diff, repo, NULL, NULL);
 ~~~
 
-([`git_diff_index_to_workdir`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_index_to_workdir))
+([`git_diff_index_to_workdir`](http://libgit2.org/libgit2/#HEAD/group/diff/git_diff_index_to_workdir))
 
 <h3 id="diff_head_to_index">HEAD to Index</h3>
 
@@ -1190,9 +1190,9 @@ git_diff *diff = NULL;
 error = git_diff_tree_to_index(&diff, repo, tree, NULL, NULL);
 ~~~
 
-([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
-[`git_diff_tree_to_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_index))
+([`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_tree_lookup`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_diff_tree_to_index`](http://libgit2.org/libgit2/#HEAD/group/diff/git_diff_tree_to_index))
 
 <h3 id="diff_head_to_workdir">HEAD to Workdir</h3>
 
@@ -1209,9 +1209,9 @@ git_diff *diff = NULL;
 error = git_diff_tree_to_workdir_with_index(&diff, repo, tree, NULL);
 ~~~
 
-([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_tree_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/tree/git_tree_lookup),
-[`git_diff_tree_to_workdir_with_index`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_workdir_with_index))
+([`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_tree_lookup`](http://libgit2.org/libgit2/#HEAD/group/tree/git_tree_lookup),
+[`git_diff_tree_to_workdir_with_index`](http://libgit2.org/libgit2/#HEAD/group/diff/git_diff_tree_to_workdir_with_index))
 
 <h3 id="diff_commit_to_its_parent">Commit to its Parent</h3>
 
@@ -1236,11 +1236,11 @@ error = git_diff_tree_to_tree(
           &diff, repo, parent_tree, commit_tree, NULL);
 ~~~
 
-([`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single),
-[`git_commit_lookup`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_lookup),
-[`git_commit_parent`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_parent),
-[`git_commit_tree`](http://libgit2.github.com/libgit2/#HEAD/group/commit/git_commit_tree),
-[`git_diff_tree_to_tree`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_tree_to_tree))
+([`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single),
+[`git_commit_lookup`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_lookup),
+[`git_commit_parent`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_parent),
+[`git_commit_tree`](http://libgit2.org/libgit2/#HEAD/group/commit/git_commit_tree),
+[`git_diff_tree_to_tree`](http://libgit2.org/libgit2/#HEAD/group/diff/git_diff_tree_to_tree))
 
 
 <h3 id="diff_rename_detection">Rename detection</h3>
@@ -1254,8 +1254,8 @@ opts.flags = GIT_DIFF_FIND_RENAMES |
 int error = git_diff_find_similar(diff, &opts);
 ~~~
 
-([`git_diff_find_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_find_options),
-[`git_diff_find_similar`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_find_similar))
+([`git_diff_find_options`](http://libgit2.org/libgit2/#HEAD/type/git_diff_find_options),
+[`git_diff_find_similar`](http://libgit2.org/libgit2/#HEAD/group/diff/git_diff_find_similar))
 
 <h3 id="diff_iterating_deltas">Iterating Deltas</h3>
 
@@ -1295,9 +1295,9 @@ int error = git_diff_foreach(diff,
                              &d);
 ~~~
 
-([`git_diff_foreach`](http://libgit2.github.com/libgit2/#HEAD/group/diff/git_diff_foreach),
-[`git_diff_file_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_file_cb),
-[`git_diff_hunk_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_diff_hunk_cb))
+([`git_diff_foreach`](http://libgit2.org/libgit2/#HEAD/group/diff/git_diff_foreach),
+[`git_diff_file_cb`](http://libgit2.org/libgit2/#HEAD/type/git_diff_file_cb),
+[`git_diff_hunk_cb`](http://libgit2.org/libgit2/#HEAD/type/git_diff_hunk_cb))
 
 <h3 id="diff_generating_a_patch">Generating a Patch</h3>
 
@@ -1308,7 +1308,7 @@ git_patch *patch = NULL;
 int error = git_patch_from_diff(&patch, diff, 0);
 ~~~
 
-([`git_patch_from_diff`](http://libgit2.github.com/libgit2/#HEAD/group/patch/git_patch_from_diff))
+([`git_patch_from_diff`](http://libgit2.org/libgit2/#HEAD/group/patch/git_patch_from_diff))
 
 
 <h2 id="config">Config</h2>
@@ -1323,9 +1323,9 @@ error = git_config_find_system(path, 1024);
 ~~~
 
 (
-  [`git_config_find_global`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_global),
-  [`git_config_find_xdg`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_xdg),
-  [`git_config_find_system`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_find_system)
+  [`git_config_find_global`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_find_global),
+  [`git_config_find_xdg`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_find_xdg),
+  [`git_config_find_system`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_find_system)
 )
 
 <h3 id="config_opening">Opening</h3>
@@ -1346,9 +1346,9 @@ int error = git_config_open_level(&sys_cfg, cfg, GIT_CONFIG_LEVEL_SYSTEM);
 ~~~
 
 (
-  [`git_config_open_default`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_open_default),
-  [`git_repository_config`](http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_config),
-  [`git_config_open_level`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_open_level)
+  [`git_config_open_default`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_open_default),
+  [`git_repository_config`](http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_config),
+  [`git_config_open_level`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_open_level)
 )
 
 <h3 id="config_values_simple">Values (Simple)</h3>
@@ -1386,15 +1386,15 @@ error = git_config_set_string(cfg, "foo.bar", "baz");
 ~~~
 
 (
-  [`git_config_get_entry`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_entry),
-  [`git_config_get_int32`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_int32),
-  [`git_config_get_int64`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_int64),
-  [`git_config_get_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_bool),
-  [`git_config_get_string`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_string),
-  [`git_config_set_int32`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_int32),
-  [`git_config_set_int64`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_int64),
-  [`git_config_set_bool`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_bool),
-  [`git_config_set_string`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_string)
+  [`git_config_get_entry`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_get_entry),
+  [`git_config_get_int32`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_get_int32),
+  [`git_config_get_int64`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_get_int64),
+  [`git_config_get_bool`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_get_bool),
+  [`git_config_get_string`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_get_string),
+  [`git_config_set_int32`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_set_int32),
+  [`git_config_set_int64`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_set_int64),
+  [`git_config_set_bool`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_set_bool),
+  [`git_config_set_string`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_set_string)
 )
 
 <h3 id="config_values_multi">Values (Multi)</h3>
@@ -1444,11 +1444,11 @@ git_config_iterator_free(iter);
 ~~~
 
 (
-  [`git_config_set_multivar`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_set_multivar),
-  [`git_config_get_multivar`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_get_multivar),
-  [`git_config_multivar_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_multivar_iterator_new),
-  [`git_config_next`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_next),
-  [`git_config_free`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_free)
+  [`git_config_set_multivar`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_set_multivar),
+  [`git_config_get_multivar`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_get_multivar),
+  [`git_config_multivar_iterator_new`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_multivar_iterator_new),
+  [`git_config_next`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_next),
+  [`git_config_free`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_free)
 )
 
 <h3 id="config_iterating">Iterating</h3>
@@ -1463,8 +1463,8 @@ while (git_config_next(&entry, iter) == 0) {
 ~~~
 
 (
-  [`git_config_iterator_new`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_iterator_new),
-  [`git_config_next`](http://libgit2.github.com/libgit2/#HEAD/group/config/git_config_next),
+  [`git_config_iterator_new`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_iterator_new),
+  [`git_config_next`](http://libgit2.org/libgit2/#HEAD/group/config/git_config_next),
 )
 
 
@@ -1484,9 +1484,9 @@ while (!git_revwalk_next(&oid, walker)) {
 ~~~
 
 (
-  [`git_revwalk_new`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_new),
-  [`git_revwalk_push_range`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_push_range),
-  [`git_revwalk_next`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_next)
+  [`git_revwalk_new`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_new),
+  [`git_revwalk_push_range`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_push_range),
+  [`git_revwalk_next`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_next)
 )
 
 <h3 id="revwalk_pushing_and_hiding">Pushing and Hiding</h3>
@@ -1503,11 +1503,11 @@ error = git_revwalk_hide_glob(walker, "tags/v0.*");
 ~~~
 
 (
-  [`git_revwalk_push_head`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_push_head),
-  [`git_revwalk_push_ref`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_push_ref),
-  [`git_revwalk_push_glob`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_push_glob),
-  [`git_revwalk_hide`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_hide),
-  [`git_revwalk_hide_glob`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_hide_glob)
+  [`git_revwalk_push_head`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_push_head),
+  [`git_revwalk_push_ref`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_push_ref),
+  [`git_revwalk_push_glob`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_push_glob),
+  [`git_revwalk_hide`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_hide),
+  [`git_revwalk_hide_glob`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_hide_glob)
 )
 
 <h3 id="revwalk_with_options">With Options</h3>
@@ -1521,8 +1521,8 @@ git_revwalk_simplify_first_parent(walker);
 ~~~
 
 (
-  [`git_revwalk_sorting`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_sorting),
-  [`git_revwalk_simplify_first_parent`](http://libgit2.github.com/libgit2/#HEAD/group/revwalk/git_revwalk_simplify_first_parent)
+  [`git_revwalk_sorting`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_sorting),
+  [`git_revwalk_simplify_first_parent`](http://libgit2.org/libgit2/#HEAD/group/revwalk/git_revwalk_simplify_first_parent)
 )
 
 
@@ -1560,10 +1560,10 @@ error = git_checkout_tree(repo, treeish, &opts);
 ~~~
 
 (
-  [`git_checkout_head`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_head),
-  [`git_checkout_index`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_index),
-  [`git_checkout_tree`](http://libgit2.github.com/libgit2/#HEAD/group/checkout/git_checkout_tree),
-  [`git_revparse_single`](http://libgit2.github.com/libgit2/#HEAD/group/revparse/git_revparse_single)
+  [`git_checkout_head`](http://libgit2.org/libgit2/#HEAD/group/checkout/git_checkout_head),
+  [`git_checkout_index`](http://libgit2.org/libgit2/#HEAD/group/checkout/git_checkout_index),
+  [`git_checkout_tree`](http://libgit2.org/libgit2/#HEAD/group/checkout/git_checkout_tree),
+  [`git_revparse_single`](http://libgit2.org/libgit2/#HEAD/group/revparse/git_revparse_single)
 )
 
 <h3 id="checkout_paths">Paths</h3>
@@ -1577,7 +1577,7 @@ opts.paths.count = 2;
 int error = git_checkout_head(repo, &opts);
 ~~~
 
-([`git_strarray`](http://libgit2.github.com/libgit2/#HEAD/type/git_strarray))
+([`git_strarray`](http://libgit2.org/libgit2/#HEAD/type/git_strarray))
 
 <h3 id="checkout_progress">Progress</h3>
 
@@ -1606,8 +1606,8 @@ int error = git_checkout_head(repo, &opts);
 ~~~
 
 (
-  [`git_checkout_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_options),
-  [`git_checkout_progress_cb`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_progress_cb)
+  [`git_checkout_options`](http://libgit2.org/libgit2/#HEAD/type/git_checkout_options),
+  [`git_checkout_progress_cb`](http://libgit2.org/libgit2/#HEAD/type/git_checkout_progress_cb)
 )
 
 <h3 id="checkout_notify">Notify</h3>
@@ -1636,8 +1636,8 @@ int error = git_checkout_head(repo, &opts);
 ~~~
 
 (
-  [`git_checkout_options`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_options),
-  [`git_checkout_notify_t`](http://libgit2.github.com/libgit2/#HEAD/type/git_checkout_notify_t)
+  [`git_checkout_options`](http://libgit2.org/libgit2/#HEAD/type/git_checkout_options),
+  [`git_checkout_notify_t`](http://libgit2.org/libgit2/#HEAD/type/git_checkout_notify_t)
 )
 
 <h2 id="remotes">Remotes</h2>
@@ -1649,7 +1649,7 @@ git_strarray remotes = {0};
 int error = git_remote_list(&remotes, repo);
 ~~~
 (
-  [`git_remote_list`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_list)
+  [`git_remote_list`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_list)
 )
 
 <h3 id="remotes_load">Looking up</h3>
@@ -1659,7 +1659,7 @@ git_remote *remote = NULL;
 int error = git_remote_lookup(&remote, repo, "origin");
 ~~~
 (
-  [`git_remote_load`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_lookup)
+  [`git_remote_load`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_lookup)
 )
 
 <h3 id="remotes_create">Creating</h3>
@@ -1679,8 +1679,8 @@ error = git_remote_create(&newremote2, repo, "upstream2",
       "+refs/heads/*:refs/custom/namespace/*"); /* fetchspec */
 ~~~
 (
-  [`git_remote_create`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create),
-  [`git_remote_create_with_fetchspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec)
+  [`git_remote_create`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_create),
+  [`git_remote_create_with_fetchspec`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_create_with_fetchspec)
 )
 
 <h3 id="remotes_in_memory">Creating (anonymous)</h3>
@@ -1695,7 +1695,7 @@ int error = git_remote_create_anonymous(&remote, repo,
       "https://github.com/libgit2/libgit2");   /* URL */
 ~~~
 (
-  [`git_remote_create_anonymous`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_create_anonymous)
+  [`git_remote_create_anonymous`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_create_anonymous)
 )
 
 <h3 id="remotes_rename">Renaming</h3>
@@ -1708,7 +1708,7 @@ int error = git_remote_rename(&problems, repo, "origin", "old_origin");
 git_strarray_free(&problems);
 ~~~
 (
-  [`git_remote_rename`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_rename)
+  [`git_remote_rename`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_rename)
 )
 
 <h3 id="remotes_properties">Properties</h3>
@@ -1723,11 +1723,11 @@ int error = git_remote_set_url(remote, "https://…");
 error = git_remote_set_pushurl(remote, "https://…");
 ~~~
 (
-  [`git_remote_name`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_name),
-  [`git_remote_url`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_url),
-  [`git_remote_pushurl`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_pushurl),
-  [`git_remote_set_url`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_url),
-  [`git_remote_set_pushurl`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_set_pushurl),
+  [`git_remote_name`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_name),
+  [`git_remote_url`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_url),
+  [`git_remote_pushurl`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_pushurl),
+  [`git_remote_set_url`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_set_url),
+  [`git_remote_set_pushurl`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_set_pushurl),
 )
 
 <h3 id="remotes_refspecs">Refspecs</h3>
@@ -1749,12 +1749,12 @@ error = git_remote_add_push(repo, "origin", "…");
 
 ~~~
 (
-  [`git_remote_get_fetch_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_get_fetch_refspecs),
-  [`git_remote_get_push_refspecs`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_get_push_refspecs),
-  [`git_remote_refspec_count`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_refspec_count),
-  [`git_remote_get_refspec`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_get_refspec),
-  [`git_remote_add_fetch`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_add_fetch),
-  [`git_remote_add_push`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_add_push),
+  [`git_remote_get_fetch_refspecs`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_get_fetch_refspecs),
+  [`git_remote_get_push_refspecs`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_get_push_refspecs),
+  [`git_remote_refspec_count`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_refspec_count),
+  [`git_remote_get_refspec`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_get_refspec),
+  [`git_remote_add_fetch`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_add_fetch),
+  [`git_remote_add_push`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_add_push),
 )
 
 <h3 id="remotes_fetching">Fetching</h3>
@@ -1771,7 +1771,7 @@ error = git_remote_fetch(remote,
                          NULL); /* reflog mesage, usually "fetch" or "pull", you can leave it NULL for "fetch" */
 ~~~
 (
-  [`git_remote_fetch`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_fetch)
+  [`git_remote_fetch`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_fetch)
 )
 
 <h3 id="remotes_callbacks">Callbacks</h3>
@@ -1811,6 +1811,6 @@ int error = git_remote_fetch(remote, NULL, &fetch_opts, NULL);
 For a credentials example, check out [the fetch example](https://github.com/libgit2/libgit2/blob/master/examples/fetch.c#L78), which uses an [interactive credential callback](https://github.com/libgit2/libgit2/blob/master/examples/common.c#L354). See also the built-in [credential helpers](https://github.com/libgit2/libgit2/blob/master/src/transports/credential_helpers.c).
 
 (
-  [`git_remote_stop`](http://libgit2.github.com/libgit2/#HEAD/group/remote/git_remote_stop),
-  [`git_remote_callbacks`](http://libgit2.github.com/libgit2/#HEAD/type/git_remote_callbacks),
+  [`git_remote_stop`](http://libgit2.org/libgit2/#HEAD/group/remote/git_remote_stop),
+  [`git_remote_callbacks`](http://libgit2.org/libgit2/#HEAD/type/git_remote_callbacks),
 )

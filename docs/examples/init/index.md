@@ -40,7 +40,7 @@ If the situation is more complex, you can use the extended API to handle it.
 The fields in [the options structure][initopts] are designed to provide much of what `git init` does.
 Note that it's important to use the `_INIT` structure initializers; these structures have version numbers so future libgit2's can maintain backwards compatibility.
 
-[initopts]: http://libgit2.github.com/libgit2/#HEAD/type/git_repository_init_options
+[initopts]: http://libgit2.org/libgit2/#HEAD/type/git_repository_init_options
 
 ~~~c
 	else {
@@ -71,7 +71,7 @@ Libgit2's repository is always oriented at the `.git` directory, so specifying a
 Now the call that does all the work: [`git_repository_init_ext`][grie].
 The output (if the call succeeds) lands in `repo`, which is a `git_repository*`, which we can then go on and use.
 
-[grie]: http://libgit2.github.com/libgit2/#HEAD/group/repository/git_repository_init_ext
+[grie]: http://libgit2.org/libgit2/#HEAD/group/repository/git_repository_init_ext
 
 ~~~c
 		check_lg2(git_repository_init_ext(&repo, o.dir, &initopts),
@@ -149,7 +149,7 @@ It's worth noting that this doesn't actually write the index to disk.
 There's a separate call for that: [`git_index_write`][write].
 All this code does is use the empty index to get the SHA-1 hash of the empty tree.
 
-[write]: http://libgit2.github.com/libgit2/#HEAD/group/index/git_index_write
+[write]: http://libgit2.org/libgit2/#HEAD/group/index/git_index_write
 
 Okay, now we have the empty tree's SHA-1 hash, but we need an actual `git_tree` object to create a commit.
 
@@ -194,4 +194,4 @@ Date:   Sat Oct 5 20:59:50 2013 -0700
 ~~~
 
 ## What's next?
-Go [back to the Learning center](/docs) for more, or check out [the API documentation](http://libgit2.github.com/libgit2/).
+Go [back to the Learning center](/docs) for more, or check out [the API documentation](http://libgit2.org/libgit2/).
