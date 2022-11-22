@@ -104,7 +104,7 @@ int error = git_clone(&repo, url, path, NULL);
 ~~~c
 typedef struct { /* … */ } progress_data;
 int fetch_progress(
-            const git_transfer_progress *stats,
+            const git_indexer_progress *stats,
             void *payload)
 {
   progress_data *pd = (progress_data*)payload;
@@ -1782,7 +1782,7 @@ Note that inside a callback is the only place where `git_remote_stop` has any ef
 ~~~c
 /* Progress callback */
 typedef struct { /* … */ } remote_data;
-int progress_cb(const git_transfer_progress *stats, void *payload)
+int progress_cb(const git_indexer_progress *stats, void *payload)
 {
   remote_data *d = (remote_data*)payload;
   /* … */
