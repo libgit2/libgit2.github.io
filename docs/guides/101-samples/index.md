@@ -142,7 +142,7 @@ int error = git_clone(&repo, url, path, &clone_opts);
 <h3 id="repositories_clone_repo">Clone (Custom repo and remote)</h3>
 
 ~~~c
-int create_repsitory(git_repository **out, const char *path, int bare, void *payload)
+int create_repository(git_repository **out, const char *path, int bare, void *payload)
 {
     int error;
 
