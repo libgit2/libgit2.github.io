@@ -1,0 +1,627 @@
+/* API Page */
+
+.version,
+.group,
+.api {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.api code,
+.api pre {
+    font-family: Monaco, Courier, monospace;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.3rem;
+    padding: 0.15rem 0.5rem;
+}
+
+.apiBreadcrumb ul,
+.groupBreadcrumb ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.3rem 0 0 0;
+    display: block;
+}
+.apiBreadcrumb ul li,
+.groupBreadcrumb ul li {
+    display: inline-block;
+    padding: 0;
+}
+.apiBreadcrumb ul li a,
+.groupBreadcrumb ul li a {
+    color: rgba(78, 68, 60, 0.75);
+}
+.apiBreadcrumb ul li::after,
+.groupBreadcrumb ul li a::after {
+    content: "/";
+    color: rgba(78, 68, 60, 0.5);
+    padding: 0 0.4rem 0 0.5rem;
+}
+
+.apiHeader,
+.groupHeader,
+.versionHeader {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.apiHeader h2 {
+    margin-top: 0.2rem;
+}
+
+.apiHeaderVersionSelect,
+.groupHeaderVersionSelect,
+.versionHeaderVersionSelect {
+    flex-grow: 1000;
+    display: flex;
+}
+.apiHeaderVersionSelect span,
+.groupHeaderVersionSelect span,
+.versionHeaderVersionSelect span {
+    margin-right: 0.75rem;
+    flex-basis: 100%;
+    text-align: right;
+}
+.apiHeaderVersionSelect select,
+.groupHeaderVersionSelect select,
+.versionHeaderVersionSelect select {
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.98);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    margin-bottom: 0.25rem;
+    margin-left: auto;
+}
+
+.apiName,
+.groupName,
+.versionName {
+    color: #4e443c;
+    font-family: "adelle", Monaco, Courier, monospace;
+    font-weight: 600;
+    font-size: 2.0rem;
+    margin: 0.5rem 0 0 0;
+    text-rendering: optimizelegibility;
+}
+.versionName {
+    font-family: "adelle", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 2.25rem;
+}
+
+.codeWord {
+    white-space: nowrap;
+    display: inline-block;
+    bottom: -0.4rem;
+}
+
+.apiDescription .apiLink {
+    color: #f14e32;
+    text-decoration: none;
+}
+.apiDescription .apiLink:hover {
+    text-decoration: underline;
+}
+
+.apiAttribute {
+    background-color: rgba(0, 0, 0, 0.15);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0.1rem 0.5rem;
+    font-weight: 500;
+    height: 100%;
+    margin-left: 1rem;
+}
+.apiAttributeDeprecated {
+    background-color: #f14e32;
+    color: #fafafa;
+    font-weight: 600;
+}
+
+.apiWarningsHeader::before {
+    visibility: visible;
+    content: "Warning";
+}
+.apiWarningsHeader {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    visibility: hidden;
+}
+.apiWarnings {
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0 1rem;
+}
+.apiWarnings ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.apiWarningsHeader {
+    color: #f14e32;
+}
+.apiWarnings {
+    background-color: rgba(241, 78, 50, 0.15);
+}
+.apiWarnings ul li {
+    font-weight: 500;
+}
+
+.apiSeeHeader {
+    display: none;
+}
+.apiSee ul::before {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding-right: 0.25rem;
+    color: #007a83;
+    content: "See Also:";
+}
+.apiSee ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+}
+.apiSee ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    font-family: Monaco, Courier, monospace;
+}
+.apiSee ul li a {
+    color: #f14e32;
+    text-decoration: none;
+}
+.apiSee ul li a:hover {
+    text-decoration: underline;
+}
+.apiSee ul li::after {
+    content: ",";
+    margin-left: -0.5rem;
+    margin-right: 0.25rem;
+}
+.apiSee ul li:last-of-type::after {
+    display: inline-block;
+    content: "";
+}
+
+.apiNotesHeader,
+.apiDeprecationsHeader {
+    display: none;
+}
+.apiNotes ul,
+.apiDeprecations ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+}
+.apiNotes ul li::before,
+.apiDeprecations ul li::before {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding-right: 0.25rem;
+}
+.apiNotes ul li,
+.apiDeprecations ul li {
+    font-weight: 500;
+}
+
+.apiNotes ul li::before {
+    color: #007a83;
+    content: "Note:";
+}
+.apiDeprecations ul li::before {
+    color: #f14e32;
+    content: "Deprecated:";
+}
+
+.apiSignatureHeader,
+.apiParametersHeader,
+.apiMembersHeader {
+    float: left;
+}
+
+.apiSignatureHeader,
+.apiParametersHeader,
+.apiMembersHeader,
+.apiReturnHeader,
+.apiVersionsHeader {
+    text-transform: uppercase;
+    color: #007a83;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: -0.25rem;
+}
+.structMembersHeader {
+    margin-top: 0.5rem;
+}
+
+.apiReturnHeader,
+.apiVersionsHeader,
+.apiParametersHeader {
+    margin-top: 0.5rem;
+}
+
+.apiSignatureLink {
+    text-transform: uppercase;
+    color: #007a83;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0.4rem 0 0 0;
+    float: right;
+}
+
+.apiSignatureLink a:last-child:after {
+    content: '';
+    display: inline-block;
+    background: url('/images/icons/external.svg') 0 0 no-repeat;
+    opacity: 0.90;
+    float: right;
+    background-size: 0.75rem;
+    margin-top: 0.1rem;
+    margin-left: 0.25rem;
+    padding: 0.375rem;
+    position: relative;
+    top: 0.2rem;
+}
+
+.apiSignature {
+    clear: both;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.25rem 0.5rem 1.25rem;
+    font-family: Monaco, Courier, monospace;
+}
+.functionSignature {
+    padding-left: 2.75rem;
+    text-indent: -1.5rem;
+}
+
+.functionSignatureParameter,
+.callbackSignatureParameter {
+    white-space: nowrap;
+}
+
+.apiParameters,
+.apiMembers {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0.75rem 1rem;
+    clear: both;
+}
+
+.apiParameter,
+.apiMember {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0.25rem 0;
+}
+
+.apiParameterName,
+.apiMemberName {
+    order: 0;
+    margin-right: 0.4rem;
+    padding: 0.15rem 0.3rem;
+    font-family: Monaco, Courier, monospace;
+    font-weight: 600;
+}
+
+.apiParameterDirection {
+    display: none;
+}
+
+.apiParameterDirectionOut {
+    order: 1;
+    display: block;
+    background-color: #f14e32;
+    color: #fefefe;
+    text-transform: lowercase;
+    border-radius: 0.3rem 0 0 0.3rem;
+    padding: 0.15rem 0.6rem 0.15rem 0.5rem;
+}
+
+.apiParameterType,
+.apiMemberType {
+    order: 2;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #f14e32;
+    border-radius: 0.3rem;
+    margin-right: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    font-family: Monaco, Courier, monospace;
+    white-space: nowrap;
+}
+.apiParameterType a,
+.apiMemberType a,
+.apiReturnType a {
+    color: #f14e32;
+    text-decoration: none;
+}
+.apiParameterType a:hover,
+.apiMemberType a:hover,
+.apiReturnType a:hover {
+    text-decoration: underline;
+}
+
+.enumMemberName::after {
+    content: '=';
+    color: rgb(0, 0, 0, 0.25);
+    padding-left: 0.5rem;
+    font-family: Monaco, Courier, monospace;
+    font-weight: 600;
+}
+
+.enumMemberValue {
+    order: 2;
+    color: #f14e32;
+    padding: 0.15rem 1.1rem 0.15rem 0;
+    font-family: Monaco, Courier, monospace;
+}
+
+.functionParameterOut > .functionParameterType,
+.callbackParameterOut > .callbackParameterType {
+    border-radius: 0 0.3rem 0.3rem 0;
+    padding: 0.15rem 0.5rem 0.15rem 0.6rem;
+}
+
+.functionParameterType:has(~ .functionParameterTypeExtended),
+.structMemberType:has(~ .structMemberTypeExtended),
+.callbackParameterType:has(~ .callbackParameterTypeExtended) {
+    color: #aeaeae;
+    border-radius: 0.3rem 0 0 0.3rem;
+    margin-right: 0;
+    padding: 0.15rem 0.6rem 0.15rem 0.5rem;
+}
+
+.apiParameterTypeExtended,
+.apiMemberTypeExtended {
+    order: 3;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #f14e32;
+    margin-right: 0.4rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+    border-left: solid 1px #dddddd;
+    padding: 0.15rem 0.5rem 0.15rem 0.6rem;
+    font-family: Monaco, Courier, monospace;
+    white-space: nowrap;
+}
+
+.apiParameterDescription,
+.apiMemberDescription {
+    order: 4;
+    padding: 0.15rem 0 0 0.4rem;
+}
+
+.apiParameterDescription p:first-of-type,
+.apiMemberDescription p:first-of-type,
+.apiReturnDescription p:first-of-type {
+    margin-top: 0;
+}
+.apiParameterDescription p:last-of-type,
+.apiMemberDescription p:last-of-type,
+.apiReturnDescription p:last-of-type {
+    margin-bottom: 0;
+}
+
+.apiParameterDescription a,
+.apiMemberDescription a,
+.apiReturnDescription a {
+    color: #f14e32;
+    text-decoration: none;
+}
+.apiParameterDescription a:hover,
+.apiMemberDescription a:hover,
+.apiReturnDescription a:hover {
+    text-decoration: underline;
+}
+
+.structSignatureMember {
+    display: block;
+    margin: 0 0 0 2rem;
+}
+.structSignatureMember::after {
+    content: ",";
+}
+.structSignatureMember:last-of-type::after {
+    display: inline-block;
+    content: "";
+}
+
+.apiReturn {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+}
+.apiReturnType {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #f14e32;
+    border-radius: 0.3rem;
+    margin-left: 0.4rem;
+    padding: 0.15rem 0.5rem;
+    font-family: Monaco, Courier, monospace;
+    white-space: nowrap;
+}
+.apiReturnDescription {
+    margin-left: 0.4rem;
+    padding-top: 0.15rem;
+}
+
+.apiReturnedByHeader,
+.apiParameterToHeader {
+    text-transform: uppercase;
+    color: #007a83;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin: 0.5rem 0 -0.25rem 0;
+}
+.apiReturnedBy,
+.apiParameterTo {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0.75rem 1.25rem;
+}
+.apiReturnedBy ul,
+.apiParameterTo ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.apiReturnedBy ul li,
+.apiParameterTo ul li {
+    display: inline-block;
+    font-family: Monaco, Courier, monospace;
+}
+.apiReturnedBy ul li a,
+.apiParameterTo ul li a {
+    color: rgba(241, 78, 50, 0.8);
+    text-decoration: none;
+}
+.apiReturnedBy ul li a:hover,
+.apiParameterTo ul li a:hover {
+    text-decoration: underline;
+}
+.apiReturnedBy ul li::after,
+.apiParameterTo ul li::after {
+    content: ",";
+    margin-left: -0.5rem;
+    margin-right: 0.25rem;
+}
+.apiReturnedBy ul li:last-of-type::after,
+.apiParameterTo ul li:last-of-type::after {
+    display: inline-block;
+    content: "";
+}
+
+.apiVersions {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0.75rem 1.25rem;
+}
+.apiVersions ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.apiVersionDeltaIntroduced a {
+    border-bottom: solid 2px rgba(0, 122, 131, 0.5);
+}
+.apiVersionDeltaChanged a {
+    border-bottom: solid 2px rgba(241, 78, 50, 0.5);
+}
+.apiVersionDeltaChanged a:hover {
+    border-bottom: solid 2px rgba(241, 78, 50, 0.5);
+}
+.apiVersions ul li {
+    display: inline-block;
+}
+.apiVersions ul li::after {
+    display: inline-block;
+    content: "/";
+    padding: 0 0.4rem;
+    color: #aaaaaa;
+}
+.apiVersions ul li:last-of-type::after {
+    display: inline-block;
+    content: "";
+    padding: 0;
+}
+.apiVersions ul li a {
+    text-decoration: none;
+    color: #007a83;
+}
+.apiVersions ul li a:hover {
+    border-bottom: solid 1px #007a83;
+}
+
+/* API Index */
+
+.versionIndexDetails,
+.groupIndexDetails {
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+.version h3 {
+    text-transform: uppercase;
+    color: #007a83;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+ul.versionIndexStandard,
+ul.versionIndexSystem {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0.75rem 1.25rem;
+    margin: 0;
+}
+
+ul.versionIndexStandard li,
+ul.versionIndexSystem li {
+    list-style-type: none;
+    display: flex;
+}
+
+.versionIndexName a {
+    color: #f14e32;
+}
+
+.versionIndexSummary {
+    padding-left: 0.5rem;
+}
+
+.apiListHeader {
+    text-transform: uppercase;
+    color: #007a83;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+}
+
+.apiList {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.apiListItem {
+    display: flex;
+}
+.apiListItemChanged {
+    font-weight: bold;
+}
+
+.apiListName a {
+    color: #f14e32;
+    font-family: Monaco, Courier, monospace;
+}
+
+.apiListItemDescription {
+    padding-left: 1.25rem;
+}
+.apiListItemDescription p:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+}
+.apiListItemDescription p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
