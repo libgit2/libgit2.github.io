@@ -1,0 +1,330 @@
+---
+title: tree APIs (libgit2 v0.3.0)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.3.0/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">tree</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/tree/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/tree/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/tree/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/tree/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/tree/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/tree/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/tree/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/tree/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/tree/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/tree/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/tree/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/tree/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/tree/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/tree/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/tree/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/tree/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/tree/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/tree/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/tree/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/tree/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/tree/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/tree/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/tree/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/tree/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/tree/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/tree/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/tree/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/tree/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/tree/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/tree/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/tree/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/tree/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/tree/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/tree/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/tree/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/tree/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/tree/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/tree/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/tree/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/tree/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/tree/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/tree/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/tree/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/tree/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/tree/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/tree/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/tree/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/tree/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/tree/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/tree/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/tree/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/tree/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/tree/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/tree/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/tree/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/tree/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/tree/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/tree/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/tree/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/tree/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/tree/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/tree/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/tree/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/tree/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/tree/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/tree/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/tree/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/tree/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/tree/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/tree/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/tree/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/tree/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/tree/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/tree/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/tree/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/tree/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/tree/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/tree/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/tree/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/tree/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/tree/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/tree/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/tree/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/tree/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/tree/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/tree/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/tree/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/tree/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/tree/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/tree/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/tree/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/tree/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/tree/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/tree/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/tree/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/tree/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/tree/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/tree/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/tree/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/tree/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/tree/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/tree/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/tree/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/tree/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/tree/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/tree/index.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/tree/index.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/tree/index.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/tree/index.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/tree/index.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/tree/index.html">v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/tree/index.html" selected>v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/tree/index.html">v0.2.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git tree parsing, loading routines
+      </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_lookup.html">
+                git_tree_lookup
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup a tree object from the repository The generated tree object is owned by the revision repo and shall not be freed by the user.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_new.html">
+                git_tree_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new in-memory git_tree</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_id.html">
+                git_tree_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the id of a tree</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entrycount.html">
+                git_tree_entrycount
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the number of entries listed in a tree</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_byname.html">
+                git_tree_entry_byname
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup a tree entry by its filename</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_byindex.html">
+                git_tree_entry_byindex
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup a tree entry by its position in the tree</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_attributes.html">
+                git_tree_entry_attributes
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the UNIX file attributes of a tree entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_name.html">
+                git_tree_entry_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the filename of a tree entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_id.html">
+                git_tree_entry_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the id of the object pointed by the entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_2object.html">
+                git_tree_entry_2object
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Convert a tree entry to the git_object it points too</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_add_entry.html">
+                git_tree_add_entry
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Add a new entry to a tree and return the new entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_add_entry_unsorted.html">
+                git_tree_add_entry_unsorted
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Add a new entry to a tree, returning that new entry The only difference with this call is that it does not sort tree afterwards, this requirement is left to the caller.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_sort_entries.html">
+                git_tree_sort_entries
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Sort the entries in a tree created using git_tree_add_entry2</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_remove_entry_byindex.html">
+                git_tree_remove_entry_byindex
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Remove an entry by its index</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_remove_entry_byname.html">
+                git_tree_remove_entry_byname
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Remove an entry by its filename</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_clear_entries.html">
+                git_tree_clear_entries
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Clear all the entries in a tree</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_set_id.html">
+                git_tree_entry_set_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Change the SHA1 id of a tree entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_set_name.html">
+                git_tree_entry_set_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Change the filename of a tree entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.3.0/tree/git_tree_entry_set_attributes.html">
+                git_tree_entry_set_attributes
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Change the attributes of a tree entry</p> 
+            </div>
+          </div>
+        </div>
+    </div>

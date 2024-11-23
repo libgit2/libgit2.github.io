@@ -1,0 +1,184 @@
+---
+title: git_blob_data_is_binary (libgit2 v1.5.1)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.5.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.5.1/blob/index.html">blob</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_blob_data_is_binary</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/blob/git_blob_data_is_binary.html">main</option>
+              <option value="/docs/reference/v1.8.4/blob/git_blob_data_is_binary.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/blob/git_blob_data_is_binary.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/blob/git_blob_data_is_binary.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/blob/git_blob_data_is_binary.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/blob/git_blob_data_is_binary.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/blob/git_blob_data_is_binary.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/blob/git_blob_data_is_binary.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/blob/git_blob_data_is_binary.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/blob/git_blob_data_is_binary.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/blob/git_blob_data_is_binary.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/blob/git_blob_data_is_binary.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/blob/git_blob_data_is_binary.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/blob/git_blob_data_is_binary.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/blob/git_blob_data_is_binary.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/blob/git_blob_data_is_binary.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/blob/git_blob_data_is_binary.html" selected>v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/blob/git_blob_data_is_binary.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/blob/git_blob_data_is_binary.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/blob/git_blob_data_is_binary.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/blob/git_blob_data_is_binary.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/blob/git_blob_data_is_binary.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/blob/git_blob_data_is_binary.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/blob/git_blob_data_is_binary.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/blob/git_blob_data_is_binary.html">v1.4.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Determine if the given content is most certainly binary or not;
+this is the same mechanism used by <a href="/docs/reference/v1.5.1/blob/git_blob_is_binary.html" class="apiLink functionLink"><code><span class="codeWord">git_blob_is_binary</span></code></a> but only
+looking at raw data.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.5.1/include/git2/blob.h#L297" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_blob_data_is_binary(<span class="apiSignatureParameter functionSignatureParameter">const char *data</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t len</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              data
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The blob data which content should be analyzed</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              len
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The length of the data</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>1 if the content of the blob is detected as binary; 0 otherwise.</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.4.0/blob/git_blob_data_is_binary.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

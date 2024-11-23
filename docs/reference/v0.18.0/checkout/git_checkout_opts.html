@@ -1,0 +1,233 @@
+---
+title: git_checkout_opts (libgit2 v0.18.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.18.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.18.0/checkout/index.html">checkout</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_checkout_opts</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.20.0/checkout/git_checkout_opts.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/checkout/git_checkout_opts.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/checkout/git_checkout_opts.html" selected>v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Checkout options structure</p>
+
+        <p>Zero out for defaults.  Initialize with <a href="/docs/reference/v0.18.0/checkout/GIT_CHECKOUT_OPTS_INIT.html" class="apiLink macroLink"><code><span class="codeWord">GIT_CHECKOUT_OPTS_INIT</span></code></a> macro to
+correctly set the <code><span class="codeWord">version</span></code> field.  E.g.</p>
+
+        <p>git_checkout_opts opts = GIT_CHECKOUT_OPTS_INIT;</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.18.0/include/git2/checkout.h#L209" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_checkout_opts {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int checkout_strategy</span>
+<span class="apiSignatureMember structSignatureMember">int disable_filters</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int dir_mode</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int file_mode</span>
+<span class="apiSignatureMember structSignatureMember">int file_open_flags</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int notify_flags</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_notify_cb notify_cb</span>
+<span class="apiSignatureMember structSignatureMember">void *notify_payload</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_progress_cb progress_cb</span>
+<span class="apiSignatureMember structSignatureMember">void *progress_payload</span>
+<span class="apiSignatureMember structSignatureMember">git_strarray paths</span>
+<span class="apiSignatureMember structSignatureMember">git_tree *baseline</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              checkout_strategy
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              disable_filters
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>default will be a dry run</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              dir_mode
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>don't apply filters like CRLF conversion</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              file_mode
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>default is 0755</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              file_open_flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>default is 0644 or 0755 as dictated by blob</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              notify_flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>default is O_CREAT | O_TRUNC | O_WRONLY</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.18.0/checkout/git_checkout_notify_cb.html" class="apiLink callbackLink">git_checkout_notify_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              notify_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>see <a href="/docs/reference/v0.18.0/checkout/git_checkout_notify_t.html" class="apiLink enumLink"><code><span class="codeWord">git_checkout_notify_t</span></code></a> above</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              notify_payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.18.0/checkout/git_checkout_progress_cb.html" class="apiLink callbackLink">git_checkout_progress_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              progress_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              progress_payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.18.0/strarray/git_strarray.html" class="apiLink structLink">git_strarray</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              paths
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>When not zeroed out, array of fnmatch patterns specifying which paths should be taken into account, otherwise all files. Use GIT_CHECKOUT_DISABLE_PATHSPEC_MATCH to treat as simple list.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.18.0/tree/git_tree.html" class="apiLink objectLink">git_tree *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              baseline
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.18.0/checkout/git_checkout_head.html" className="apiLink functionLink">git_checkout_head</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.18.0/checkout/git_checkout_index.html" className="apiLink functionLink">git_checkout_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.18.0/checkout/git_checkout_tree.html" className="apiLink functionLink">git_checkout_tree</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.20.0/checkout/git_checkout_opts.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.19.0/checkout/git_checkout_opts.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/checkout/git_checkout_opts.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

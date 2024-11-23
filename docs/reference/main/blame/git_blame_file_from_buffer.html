@@ -1,0 +1,144 @@
+---
+title: git_blame_file_from_buffer (libgit2 main)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/main/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/main/blame/index.html">blame</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_blame_file_from_buffer</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/blame/git_blame_file_from_buffer.html" selected>main</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Get the blame for a single file in the repository, using the specified
+buffer contents as the uncommitted changes of the file (the working
+directory contents).</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/blame.h#L341" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_blame_file_from_buffer(<span class="apiSignatureParameter functionSignatureParameter">git_blame **out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *path</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *contents</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t contents_len</span>, <span class="apiSignatureParameter functionSignatureParameter">git_blame_options *options</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/blame/git_blame.html" class="apiLink objectLink">git_blame **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>pointer that will receive the blame object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>repository whose history is to be walked</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              path
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>path to file to consider</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              contents
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the uncommitted changes</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              contents_len
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the length of the changes buffer</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/blame/git_blame_options.html" class="apiLink structLink">git_blame_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              options
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>options for the blame operation or NULL</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/main/blame/git_blame_file_from_buffer.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          </ul>
+        </div>
+      </div>

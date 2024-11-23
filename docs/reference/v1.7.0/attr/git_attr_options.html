@@ -1,0 +1,224 @@
+---
+title: git_attr_options (libgit2 v1.7.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.7.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.7.0/attr/index.html">attr</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_attr_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/attr/git_attr_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/attr/git_attr_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/attr/git_attr_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/attr/git_attr_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/attr/git_attr_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/attr/git_attr_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/attr/git_attr_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/attr/git_attr_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/attr/git_attr_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/attr/git_attr_options.html" selected>v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/attr/git_attr_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/attr/git_attr_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/attr/git_attr_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/attr/git_attr_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/attr/git_attr_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/attr/git_attr_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/attr/git_attr_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/attr/git_attr_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/attr/git_attr_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/attr/git_attr_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/attr/git_attr_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/attr/git_attr_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/attr/git_attr_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/attr/git_attr_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/attr/git_attr_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/attr/git_attr_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/attr/git_attr_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/attr/git_attr_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/attr/git_attr_options.html">v1.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>An options structure for querying attributes.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.7.0/include/git2/attr.h#L144" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_attr_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int flags</span>
+<span class="apiSignatureMember structSignatureMember">git_oid *commit_id</span>
+<span class="apiSignatureMember structSignatureMember">git_oid attr_commit_id</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>A combination of GIT_ATTR_CHECK flags</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.7.0/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              commit_id
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.7.0/oid/git_oid.html" class="apiLink structLink">git_oid</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              attr_commit_id
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The commit to load attributes from, when <a href="/docs/reference/v1.7.0/attr/GIT_ATTR_CHECK_INCLUDE_COMMIT.html" class="apiLink macroLink"><code><span class="codeWord">GIT_ATTR_CHECK_INCLUDE_COMMIT</span></code></a> is specified.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.7.0/attr/git_attr_get_ext.html" className="apiLink functionLink">git_attr_get_ext</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.7.0/attr/git_attr_get_many_ext.html" className="apiLink functionLink">git_attr_get_many_ext</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.7.0/attr/git_attr_foreach_ext.html" className="apiLink functionLink">git_attr_foreach_ext</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/attr/git_attr_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v1.3.0/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.2.0/attr/git_attr_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

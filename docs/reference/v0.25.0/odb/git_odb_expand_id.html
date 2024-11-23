@@ -1,0 +1,375 @@
+---
+title: git_odb_expand_id (libgit2 v0.25.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.25.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.25.0/odb/index.html">odb</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_odb_expand_id</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/odb/git_odb_expand_id.html">main</option>
+              <option value="/docs/reference/v1.8.4/odb/git_odb_expand_id.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/odb/git_odb_expand_id.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/odb/git_odb_expand_id.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/odb/git_odb_expand_id.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/odb/git_odb_expand_id.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/odb/git_odb_expand_id.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/odb/git_odb_expand_id.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/odb/git_odb_expand_id.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/odb/git_odb_expand_id.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/odb/git_odb_expand_id.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/odb/git_odb_expand_id.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/odb/git_odb_expand_id.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/odb/git_odb_expand_id.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/odb/git_odb_expand_id.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/odb/git_odb_expand_id.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/odb/git_odb_expand_id.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/odb/git_odb_expand_id.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/odb/git_odb_expand_id.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/odb/git_odb_expand_id.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/odb/git_odb_expand_id.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/odb/git_odb_expand_id.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/odb/git_odb_expand_id.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/odb/git_odb_expand_id.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/odb/git_odb_expand_id.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/odb/git_odb_expand_id.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/odb/git_odb_expand_id.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/odb/git_odb_expand_id.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/odb/git_odb_expand_id.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/odb/git_odb_expand_id.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/odb/git_odb_expand_id.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/odb/git_odb_expand_id.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/odb/git_odb_expand_id.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/odb/git_odb_expand_id.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/odb/git_odb_expand_id.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/odb/git_odb_expand_id.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/odb/git_odb_expand_id.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/odb/git_odb_expand_id.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/odb/git_odb_expand_id.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/odb/git_odb_expand_id.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/odb/git_odb_expand_id.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/odb/git_odb_expand_id.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/odb/git_odb_expand_id.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/odb/git_odb_expand_id.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/odb/git_odb_expand_id.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/odb/git_odb_expand_id.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/odb/git_odb_expand_id.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/odb/git_odb_expand_id.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/odb/git_odb_expand_id.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/odb/git_odb_expand_id.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/odb/git_odb_expand_id.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/odb/git_odb_expand_id.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/odb/git_odb_expand_id.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/odb/git_odb_expand_id.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/odb/git_odb_expand_id.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/odb/git_odb_expand_id.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/odb/git_odb_expand_id.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/odb/git_odb_expand_id.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/odb/git_odb_expand_id.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/odb/git_odb_expand_id.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/odb/git_odb_expand_id.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/odb/git_odb_expand_id.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/odb/git_odb_expand_id.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/odb/git_odb_expand_id.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/odb/git_odb_expand_id.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/odb/git_odb_expand_id.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/odb/git_odb_expand_id.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/odb/git_odb_expand_id.html" selected>v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/odb/git_odb_expand_id.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/odb/git_odb_expand_id.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.4/odb/git_odb_expand_id.html">v0.24.4</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>The information about object IDs to query in <a href="/docs/reference/v0.25.0/odb/git_odb_expand_ids.html" class="apiLink functionLink"><code><span class="codeWord">git_odb_expand_ids</span></code></a>,
+which will be populated upon return.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.25.0/include/git2/odb.h#L180" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_odb_expand_id {
+<span class="apiSignatureMember structSignatureMember">git_oid id</span>
+<span class="apiSignatureMember structSignatureMember">unsigned short length</span>
+<span class="apiSignatureMember structSignatureMember">git_otype type</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.25.0/oid/git_oid.html" class="apiLink structLink">git_oid</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              id
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The object ID to expand</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned short
+            </div>
+            <div class="apiMemberName structMemberName">
+              length
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The length of the object ID (in nibbles, or packets of 4 bits; the number of hex characters)</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.25.0/types/git_otype.html" class="apiLink enumLink">git_otype</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              type
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The (optional) type of the object to search for; leave as <code><span class="codeWord">0</span></code> or set to <a href="/docs/reference/v0.25.0/types/git_otype.html#GIT_OBJ_ANY" class="apiLink enumLink"><code><span class="codeWord">GIT_OBJ_ANY</span></code></a> to query for any object matching the ID.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.25.0/odb/git_odb_expand_ids.html" className="apiLink functionLink">git_odb_expand_ids</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.28.0-rc1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.24.4/odb/git_odb_expand_id.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,135 @@
+---
+title: git_reference_listall (libgit2 v0.10.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.10.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.10.0/refs/index.html">refs</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_reference_listall</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.16.0/refs/git_reference_listall.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/refs/git_reference_listall.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/refs/git_reference_listall.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/refs/git_reference_listall.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/refs/git_reference_listall.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/refs/git_reference_listall.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/refs/git_reference_listall.html" selected>v0.10.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Fill a list with all the references that can be found
+in a repository.</p>
+
+        <p>The listed references may be filtered by type, or using
+a bitwise OR of several types. Use the magic value
+<a href="/docs/reference/v0.10.0/types/git_rtype.html#GIT_REF_LISTALL" class="apiLink enumLink"><code><span class="codeWord">GIT_REF_LISTALL</span></code></a> to obtain all references, including
+packed ones.</p>
+
+        <p>The string array will be filled with the names of all
+references; these values are owned by the user and
+should be free'd manually when no longer needed, using
+<a href="/docs/reference/v0.10.0/common/git_strarray_free.html" class="apiLink functionLink"><code><span class="codeWord">git_strarray_free</span></code></a>.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.10.0/include/git2/refs.h#L242" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_reference_listall(<span class="apiSignatureParameter functionSignatureParameter">git_strarray *array</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">unsigned int list_flags</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.10.0/common/git_strarray.html" class="apiLink structLink">git_strarray *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              array
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Pointer to a git_strarray structure where the reference names will be stored</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.10.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Repository where to find the refs</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              unsigned int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              list_flags
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Filtering flags for the reference listing.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success; error code otherwise</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/refs/git_reference_listall.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/refs/git_reference_listall.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/refs/git_reference_listall.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/refs/git_reference_listall.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/refs/git_reference_listall.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/refs/git_reference_listall.html" class="apiVersionLink functionVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.10.0/refs/git_reference_listall.html" class="apiVersionLink functionVersionLink">v0.10.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

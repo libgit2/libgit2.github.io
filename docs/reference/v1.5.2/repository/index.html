@@ -1,0 +1,711 @@
+---
+title: repository APIs (libgit2 v1.5.2)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v1.5.2/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">repository</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/repository/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/repository/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/repository/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/repository/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/repository/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/repository/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/repository/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/repository/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/repository/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/repository/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/repository/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/repository/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/repository/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/repository/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/repository/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/repository/index.html" selected>v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/repository/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/repository/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/repository/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/repository/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/repository/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/repository/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/repository/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/repository/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/repository/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/repository/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/repository/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/repository/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/repository/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/repository/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/repository/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/repository/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/repository/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/repository/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/repository/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/repository/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/repository/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/repository/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/repository/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/repository/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/repository/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/repository/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/repository/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/repository/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/repository/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/repository/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/repository/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/repository/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/repository/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/repository/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/repository/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/repository/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/repository/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/repository/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/repository/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/repository/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/repository/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/repository/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/repository/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/repository/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/repository/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/repository/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/repository/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/repository/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/repository/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/repository/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/repository/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/repository/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/repository/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/repository/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/repository/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/repository/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/repository/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/repository/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/repository/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/repository/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/repository/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/repository/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/repository/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/repository/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/repository/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/repository/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/repository/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/repository/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/repository/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/repository/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/repository/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/repository/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/repository/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/repository/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/repository/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/repository/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/repository/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/repository/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/repository/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/repository/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/repository/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/repository/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/repository/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/repository/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/repository/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/repository/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/repository/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/repository/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/repository/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/repository/index.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/repository/index.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/repository/index.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/repository/index.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/repository/index.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/repository/index.html">v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/repository/index.html">v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/repository/index.html">v0.2.0</option>
+              <option value="/docs/reference/v0.1.0/repository/index.html">v0.1.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git repository management routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository.html">
+                git_repository
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Representation of an existing git repository, including all its object contents</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_init_options.html">
+                git_repository_init_options
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Extended options structure for <a href="/docs/reference/v1.5.2/repository/git_repository_init_ext.html" class="apiLink functionLink"><code><span class="codeWord">git_repository_init_ext</span></code></a></p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader macroListHeader">Macros</h3>
+        <div class="apiList macroList">
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.5.2/repository/GIT_REPOSITORY_INIT_OPTIONS_VERSION.html">
+                GIT_REPOSITORY_INIT_OPTIONS_VERSION
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.5.2/repository/GIT_REPOSITORY_INIT_OPTIONS_INIT.html">
+                GIT_REPOSITORY_INIT_OPTIONS_INIT
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_open_flag_t.html">
+                git_repository_open_flag_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Option flags for <a href="/docs/reference/v1.5.2/repository/git_repository_open_ext.html" class="apiLink functionLink"><code><span class="codeWord">git_repository_open_ext</span></code></a></p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_init_flag_t.html">
+                git_repository_init_flag_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Option flags for <a href="/docs/reference/v1.5.2/repository/git_repository_init_ext.html" class="apiLink functionLink"><code><span class="codeWord">git_repository_init_ext</span></code></a></p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_init_mode_t.html">
+                git_repository_init_mode_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Mode options for <a href="/docs/reference/v1.5.2/repository/git_repository_init_ext.html" class="apiLink functionLink"><code><span class="codeWord">git_repository_init_ext</span></code></a></p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_item_t.html">
+                git_repository_item_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>List of items which belong to the git repository layout</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_state_t.html">
+                git_repository_state_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Repository state</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader callbackListHeader">Callbacks</h3>
+        <div class="apiList callbackList">
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_fetchhead_foreach_cb.html">
+                git_repository_fetchhead_foreach_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Callback used to iterate over each FETCH_HEAD entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_mergehead_foreach_cb.html">
+                git_repository_mergehead_foreach_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Callback used to iterate over each MERGE_HEAD entry</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_open.html">
+                git_repository_open
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Open a git repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_open_from_worktree.html">
+                git_repository_open_from_worktree
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Open working tree as a repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_wrap_odb.html">
+                git_repository_wrap_odb
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a &quot;fake&quot; repository to wrap an object database</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_discover.html">
+                git_repository_discover
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Look for a git repository and copy its path in the given buffer The lookup start from base_path and walk across parent directories if nothing has been found. The lookup ends when the first repository is found, or when reaching a directory referenced in ceiling_dirs or when the filesystem changes (in case across_fs is true).</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_open_ext.html">
+                git_repository_open_ext
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Find and open a repository with extended controls</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_open_bare.html">
+                git_repository_open_bare
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Open a bare repository on the serverside</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_free.html">
+                git_repository_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free a previously allocated repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_init.html">
+                git_repository_init
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Creates a new Git repository in the given folder</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_init_options_init.html">
+                git_repository_init_options_init
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Initialize git_repository_init_options structure</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_init_ext.html">
+                git_repository_init_ext
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new Git repository in the given folder with extended controls</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_head.html">
+                git_repository_head
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Retrieve and resolve the reference pointed at by HEAD</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_head_for_worktree.html">
+                git_repository_head_for_worktree
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Retrieve the referenced HEAD for the worktree</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_head_detached.html">
+                git_repository_head_detached
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Check if a repository's HEAD is detached</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_head_detached_for_worktree.html">
+                git_repository_head_detached_for_worktree
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Check if a worktree's HEAD is detached</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_head_unborn.html">
+                git_repository_head_unborn
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Check if the current branch is unborn</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_is_empty.html">
+                git_repository_is_empty
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Check if a repository is empty</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_item_path.html">
+                git_repository_item_path
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the location of a specific repository file or directory</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_path.html">
+                git_repository_path
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the path of this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_workdir.html">
+                git_repository_workdir
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the path of the working directory for this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_commondir.html">
+                git_repository_commondir
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the path of the shared common directory for this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_set_workdir.html">
+                git_repository_set_workdir
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the path to the working directory for this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_is_bare.html">
+                git_repository_is_bare
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Check if a repository is bare</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_is_worktree.html">
+                git_repository_is_worktree
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Check if a repository is a linked work tree</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_config.html">
+                git_repository_config
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the configuration file for this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_config_snapshot.html">
+                git_repository_config_snapshot
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get a snapshot of the repository's configuration</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_odb.html">
+                git_repository_odb
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the Object Database for this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_refdb.html">
+                git_repository_refdb
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the Reference Database Backend for this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_index.html">
+                git_repository_index
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the Index file for this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_message.html">
+                git_repository_message
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Retrieve git's prepared message</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_message_remove.html">
+                git_repository_message_remove
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Remove git's prepared message</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_state_cleanup.html">
+                git_repository_state_cleanup
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Remove all the metadata associated with an ongoing command like merge, revert, cherry-pick, etc</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_fetchhead_foreach.html">
+                git_repository_fetchhead_foreach
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Invoke 'callback' for each entry in the given FETCH_HEAD file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_mergehead_foreach.html">
+                git_repository_mergehead_foreach
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>If a merge is in progress, invoke 'callback' for each commit ID in the MERGE_HEAD file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_hashfile.html">
+                git_repository_hashfile
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Calculate hash of file using repository filtering rules</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_set_head.html">
+                git_repository_set_head
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Make the repository HEAD point to the specified reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_set_head_detached.html">
+                git_repository_set_head_detached
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Make the repository HEAD directly point to the Commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_set_head_detached_from_annotated.html">
+                git_repository_set_head_detached_from_annotated
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Make the repository HEAD directly point to the Commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_detach_head.html">
+                git_repository_detach_head
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Detach the HEAD</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_state.html">
+                git_repository_state
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Determines the status of a git repository - ie, whether an operation (merge, cherry-pick, etc) is in progress</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_set_namespace.html">
+                git_repository_set_namespace
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Sets the active namespace for this Git Repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_get_namespace.html">
+                git_repository_get_namespace
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the currently active namespace for this repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_is_shallow.html">
+                git_repository_is_shallow
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Determine if the repository was a shallow clone</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_ident.html">
+                git_repository_ident
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Retrieve the configured identity to use for reflogs</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.5.2/repository/git_repository_set_ident.html">
+                git_repository_set_ident
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the identity to be used for writing reflogs</p> 
+            </div>
+          </div>
+        </div>
+    </div>

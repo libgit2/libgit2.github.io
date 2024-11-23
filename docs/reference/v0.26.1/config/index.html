@@ -1,0 +1,640 @@
+---
+title: config APIs (libgit2 v0.26.1)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.26.1/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">config</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/config/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/config/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/config/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/config/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/config/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/config/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/config/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/config/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/config/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/config/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/config/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/config/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/config/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/config/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/config/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/config/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/config/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/config/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/config/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/config/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/config/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/config/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/config/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/config/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/config/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/config/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/config/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/config/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/config/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/config/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/config/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/config/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/config/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/config/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/config/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/config/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/config/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/config/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/config/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/config/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/config/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/config/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/config/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/config/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/config/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/config/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/config/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/config/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/config/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/config/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/config/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/config/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/config/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/config/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/config/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/config/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/config/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/config/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/config/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/config/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/config/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/config/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/config/index.html" selected>v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/config/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/config/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/config/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/config/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/config/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/config/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/config/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/config/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/config/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/config/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/config/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/config/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/config/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/config/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/config/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/config/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/config/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/config/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/config/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/config/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/config/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/config/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/config/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/config/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/config/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/config/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/config/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/config/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/config/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/config/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/config/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/config/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/config/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/config/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/config/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/config/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/config/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/config/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/config/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/config/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/config/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/config/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/config/index.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/config/index.html">v0.13.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git config management routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v0.26.1/config/git_config.html">
+                git_config
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Memory representation of a set of config files</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_entry.html">
+                git_config_entry
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>An entry in a configuration file</p> 
+            </div>
+          </div>
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v0.26.1/config/git_cvar_map.html">
+                git_cvar_map
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Mapping from config variables to values</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_level_t.html">
+                git_config_level_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Priority level of a config file These priority levels correspond to the natural escalation logic (from higher to lower) when searching for config entries in git.git.</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.26.1/config/git_cvar_t.html">
+                git_cvar_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Config var type</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader callbackListHeader">Callbacks</h3>
+        <div class="apiList callbackList">
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_foreach_cb.html">
+                git_config_foreach_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_entry_free.html">
+                git_config_entry_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free a config entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_find_global.html">
+                git_config_find_global
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Locate the path to the global configuration file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_find_xdg.html">
+                git_config_find_xdg
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Locate the path to the global xdg compatible configuration file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_find_system.html">
+                git_config_find_system
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Locate the path to the system configuration file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_find_programdata.html">
+                git_config_find_programdata
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Locate the path to the configuration file in ProgramData</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_open_default.html">
+                git_config_open_default
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Open the global, XDG and system configuration files</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_new.html">
+                git_config_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Allocate a new configuration object</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_add_file_ondisk.html">
+                git_config_add_file_ondisk
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Add an on-disk config file instance to an existing config</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_open_ondisk.html">
+                git_config_open_ondisk
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new config instance containing a single on-disk file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_open_level.html">
+                git_config_open_level
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Build a single-level focused config object from a multi-level one</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_open_global.html">
+                git_config_open_global
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Open the global/XDG configuration file according to git's rules</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_snapshot.html">
+                git_config_snapshot
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a snapshot of the configuration</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_free.html">
+                git_config_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free the configuration and its associated memory and files</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_entry.html">
+                git_config_get_entry
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the git_config_entry of a config variable</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_int32.html">
+                git_config_get_int32
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the value of an integer config variable</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_int64.html">
+                git_config_get_int64
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the value of a long integer config variable</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_bool.html">
+                git_config_get_bool
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the value of a boolean config variable</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_path.html">
+                git_config_get_path
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the value of a path config variable</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_string.html">
+                git_config_get_string
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the value of a string config variable</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_string_buf.html">
+                git_config_get_string_buf
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the value of a string config variable</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_multivar_foreach.html">
+                git_config_get_multivar_foreach
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get each value of a multivar in a foreach callback</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_multivar_iterator_new.html">
+                git_config_multivar_iterator_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get each value of a multivar</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_next.html">
+                git_config_next
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Return the current entry and advance the iterator</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_iterator_free.html">
+                git_config_iterator_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free a config iterator</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_set_int32.html">
+                git_config_set_int32
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the value of an integer config variable in the config file with the highest level (usually the local one)</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_set_int64.html">
+                git_config_set_int64
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the value of a long integer config variable in the config file with the highest level (usually the local one)</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_set_bool.html">
+                git_config_set_bool
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the value of a boolean config variable in the config file with the highest level (usually the local one)</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_set_string.html">
+                git_config_set_string
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the value of a string config variable in the config file with the highest level (usually the local one)</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_set_multivar.html">
+                git_config_set_multivar
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set a multivar in the local config file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_delete_entry.html">
+                git_config_delete_entry
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Delete a config variable from the config file with the highest level (usually the local one)</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_delete_multivar.html">
+                git_config_delete_multivar
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Deletes one or several entries from a multivar in the local config file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_foreach.html">
+                git_config_foreach
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Perform an operation on each config variable</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_iterator_new.html">
+                git_config_iterator_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Iterate over all the config variables</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_iterator_glob_new.html">
+                git_config_iterator_glob_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Iterate over all the config variables whose name matches a pattern</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_foreach_match.html">
+                git_config_foreach_match
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Perform an operation on each config variable matching a regular expression</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_get_mapped.html">
+                git_config_get_mapped
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Query the value of a config variable and return it mapped to an integer constant</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_lookup_map_value.html">
+                git_config_lookup_map_value
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Maps a string value to an integer constant</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_parse_bool.html">
+                git_config_parse_bool
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Parse a string value as a bool</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_parse_int32.html">
+                git_config_parse_int32
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Parse a string value as an int32</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_parse_int64.html">
+                git_config_parse_int64
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Parse a string value as an int64</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_parse_path.html">
+                git_config_parse_path
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Parse a string value as a path</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_backend_foreach_match.html">
+                git_config_backend_foreach_match
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Perform an operation on each config variable in given config backend matching a regular expression</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.1/config/git_config_lock.html">
+                git_config_lock
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lock the backend with the highest priority</p> 
+            </div>
+          </div>
+        </div>
+    </div>

@@ -1,0 +1,108 @@
+---
+title: git_diff_list (libgit2 v0.19.0)
+layout: default
+---
+
+      <div class="api object">
+        <div class="apiBreadcrumb objectBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.19.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.19.0/diff/index.html">diff</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader objectHeader">
+          <h2 class="apiName objectName">git_diff_list</h2>
+          <div class="apiHeaderVersionSelect objectHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.19.0/diff/git_diff_list.html" selected>v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/diff/git_diff_list.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/diff/git_diff_list.html">v0.17.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription objectDescription">
+        <p>The diff list object that contains all individual file deltas.</p>
+
+        <p>This is an opaque structure which will be allocated by one of the diff
+generator functions below (such as <a href="/docs/reference/v0.19.0/diff/git_diff_tree_to_tree.html" class="apiLink functionLink"><code><span class="codeWord">git_diff_tree_to_tree</span></code></a>).  You are
+responsible for releasing the object memory when done, using the
+<code><span class="codeWord">git_diff_list_free()</span></code> function.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader objectSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink objectSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.19.0/include/git2/diff.h#L164" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature objectSignature">
+          typedef struct git_diff_list git_diff_list
+        </div>
+
+        <h3 class="apiParameterToHeader objectParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo objectParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_notify_cb.html" className="apiLink callbackLink">git_diff_notify_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_list_free.html" className="apiLink functionLink">git_diff_list_free</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_tree_to_tree.html" className="apiLink functionLink">git_diff_tree_to_tree</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_tree_to_index.html" className="apiLink functionLink">git_diff_tree_to_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_index_to_workdir.html" className="apiLink functionLink">git_diff_index_to_workdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_tree_to_workdir.html" className="apiLink functionLink">git_diff_tree_to_workdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_merge.html" className="apiLink functionLink">git_diff_merge</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_find_similar.html" className="apiLink functionLink">git_diff_find_similar</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_foreach.html" className="apiLink functionLink">git_diff_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_print_compact.html" className="apiLink functionLink">git_diff_print_compact</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_print_raw.html" className="apiLink functionLink">git_diff_print_raw</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_print_patch.html" className="apiLink functionLink">git_diff_print_patch</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_num_deltas.html" className="apiLink functionLink">git_diff_num_deltas</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_num_deltas_of_type.html" className="apiLink functionLink">git_diff_num_deltas_of_type</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.19.0/diff/git_diff_get_patch.html" className="apiLink functionLink">git_diff_get_patch</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader objectVersionsHeader">Versions</h3>
+        <div class="apiVersions objectVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/diff/git_diff_list.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.18.0/diff/git_diff_list.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced objectVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.17.0/diff/git_diff_list.html" class="apiVersionLink structVersionLink">v0.17.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

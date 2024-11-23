@@ -1,0 +1,74 @@
+---
+title: git_libgit2_capabilities (libgit2 v0.18.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.18.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.18.0/common/index.html">common</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_libgit2_capabilities</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.20.0/common/git_libgit2_capabilities.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/common/git_libgit2_capabilities.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/common/git_libgit2_capabilities.html" selected>v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Query compile time options for libgit2.</p>
+
+        <ul>
+<li>GIT_CAP_THREADS
+Libgit2 was compiled with thread support. Note that thread support is still to be seen as a
+'work in progress'.</li>
+</ul>
+
+        <ul>
+<li>GIT_CAP_HTTPS
+Libgit2 supports the https:// protocol. This requires the open ssl library to be
+found when compiling libgit2.</li>
+</ul>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.18.0/include/git2/common.h#L124" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_libgit2_capabilities();
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>A combination of GIT_CAP_* values.</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/common/git_libgit2_capabilities.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/common/git_libgit2_capabilities.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/common/git_libgit2_capabilities.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

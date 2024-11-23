@@ -1,0 +1,359 @@
+---
+title: git_cvar_t (libgit2 v0.23.3)
+layout: default
+---
+
+      <div class="api enum">
+        <div class="apiBreadcrumb enumBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.23.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.23.3/config/index.html">config</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader enumHeader">
+          <h2 class="apiName enumName">git_cvar_t</h2>
+          <div class="apiHeaderVersionSelect enumHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.28.5/config/git_cvar_t.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/config/git_cvar_t.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/config/git_cvar_t.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/config/git_cvar_t.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/config/git_cvar_t.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/config/git_cvar_t.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/config/git_cvar_t.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/config/git_cvar_t.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/config/git_cvar_t.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/config/git_cvar_t.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/config/git_cvar_t.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/config/git_cvar_t.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/config/git_cvar_t.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/config/git_cvar_t.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/config/git_cvar_t.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/config/git_cvar_t.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/config/git_cvar_t.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/config/git_cvar_t.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/config/git_cvar_t.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/config/git_cvar_t.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/config/git_cvar_t.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/config/git_cvar_t.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/config/git_cvar_t.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/config/git_cvar_t.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/config/git_cvar_t.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/config/git_cvar_t.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/config/git_cvar_t.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/config/git_cvar_t.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/config/git_cvar_t.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/config/git_cvar_t.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/config/git_cvar_t.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/config/git_cvar_t.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/config/git_cvar_t.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/config/git_cvar_t.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/config/git_cvar_t.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/config/git_cvar_t.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/config/git_cvar_t.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/config/git_cvar_t.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/config/git_cvar_t.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/config/git_cvar_t.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/config/git_cvar_t.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/config/git_cvar_t.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/config/git_cvar_t.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/config/git_cvar_t.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/config/git_cvar_t.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/config/git_cvar_t.html" selected>v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/config/git_cvar_t.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/config/git_cvar_t.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/config/git_cvar_t.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/config/git_cvar_t.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/config/git_cvar_t.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/config/git_cvar_t.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/config/git_cvar_t.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/config/git_cvar_t.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/config/git_cvar_t.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/config/git_cvar_t.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/config/git_cvar_t.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/config/git_cvar_t.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/config/git_cvar_t.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/config/git_cvar_t.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/config/git_cvar_t.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/config/git_cvar_t.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/config/git_cvar_t.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/config/git_cvar_t.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/config/git_cvar_t.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/config/git_cvar_t.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/config/git_cvar_t.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/config/git_cvar_t.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/config/git_cvar_t.html">v0.17.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription enumDescription">
+        <p>Config var type</p>
+
+        </div>
+
+        <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
+        <div class="apiSignatureLink enumSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.23.3/include/git2/config.h#L80" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiMembers enumMembers">
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CVAR_FALSE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              0
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CVAR_TRUE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              1
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CVAR_INT32
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              2
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CVAR_STRING
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              3
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader enumVersionsHeader">Versions</h3>
+        <div class="apiVersions enumVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.18.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced enumVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.17.0/config/git_cvar_t.html" class="apiVersionLink enumVersionLink">v0.17.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

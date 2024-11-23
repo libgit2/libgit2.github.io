@@ -1,0 +1,122 @@
+---
+title: git_rawobj (libgit2 v0.10.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.10.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.10.0/odb/index.html">odb</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_rawobj</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.10.0/odb/git_rawobj.html" selected>v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/odb/git_rawobj.html">v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/odb/git_rawobj.html">v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/odb/git_rawobj.html">v0.2.0</option>
+              <option value="/docs/reference/v0.1.0/odb/git_rawobj.html">v0.1.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>An object read from the database.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.10.0/include/git2/odb.h#L108" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_rawobj {
+<span class="apiSignatureMember structSignatureMember">void *data</span>
+<span class="apiSignatureMember structSignatureMember">size_t len</span>
+<span class="apiSignatureMember structSignatureMember">git_otype type</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              data
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Raw, decompressed object data.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              len
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Total number of bytes in data.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.10.0/types/git_otype.html" class="apiLink enumLink">git_otype</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              type
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Type of this object.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.10.0/odb/git_odb_read.html" className="apiLink functionLink">git_odb_read</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.10.0/odb/git_odb_read_header.html" className="apiLink functionLink">git_odb_read_header</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.10.0/odb/git_odb_write.html" className="apiLink functionLink">git_odb_write</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.10.0/odb/git_rawobj_hash.html" className="apiLink functionLink">git_rawobj_hash</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.10.0/odb/git_rawobj_close.html" className="apiLink functionLink">git_rawobj_close</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/odb/git_rawobj.html" class="apiVersionLink structVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.8.0/odb/git_rawobj.html" class="apiVersionLink structVersionLink">v0.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.3.0/odb/git_rawobj.html" class="apiVersionLink structVersionLink">v0.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.2.0/odb/git_rawobj.html" class="apiVersionLink structVersionLink">v0.2.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.1.0/odb/git_rawobj.html" class="apiVersionLink structVersionLink">v0.1.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

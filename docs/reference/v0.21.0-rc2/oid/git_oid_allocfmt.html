@@ -1,0 +1,152 @@
+---
+title: git_oid_allocfmt (libgit2 v0.21.0-rc2)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.0-rc2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.0-rc2/oid/index.html">oid</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_oid_allocfmt</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/oid/git_oid_allocfmt.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/oid/git_oid_allocfmt.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/oid/git_oid_allocfmt.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/oid/git_oid_allocfmt.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/oid/git_oid_allocfmt.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/oid/git_oid_allocfmt.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/oid/git_oid_allocfmt.html" selected>v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/oid/git_oid_allocfmt.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/oid/git_oid_allocfmt.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/oid/git_oid_allocfmt.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/oid/git_oid_allocfmt.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/oid/git_oid_allocfmt.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/oid/git_oid_allocfmt.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/oid/git_oid_allocfmt.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/oid/git_oid_allocfmt.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/oid/git_oid_allocfmt.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/oid/git_oid_allocfmt.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/oid/git_oid_allocfmt.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/oid/git_oid_allocfmt.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/oid/git_oid_allocfmt.html">v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/oid/git_oid_allocfmt.html">v0.3.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Format a git_oid into a newly allocated c-string.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.0-rc2/include/git2/oid.h#L125" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          char *git_oid_allocfmt(<span class="apiSignatureParameter functionSignatureParameter">const git_oid *id</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.0-rc2/oid/git_oid.html" class="apiLink structLink">const git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              id
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the oid structure to format</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            char *
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>the c-string; NULL if memory is exhausted. Caller must deallocate the string with git__free().</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.18.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.8.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.8.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.3.0/oid/git_oid_allocfmt.html" class="apiVersionLink functionVersionLink">v0.3.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

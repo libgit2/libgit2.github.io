@@ -1,0 +1,208 @@
+---
+title: git_time_monotonic (libgit2 v0.28.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.28.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.28.0/sys/time/index.html">time (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_time_monotonic</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.28.5/sys/time/git_time_monotonic.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/sys/time/git_time_monotonic.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/sys/time/git_time_monotonic.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/sys/time/git_time_monotonic.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/sys/time/git_time_monotonic.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/sys/time/git_time_monotonic.html" selected>v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/sys/time/git_time_monotonic.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/sys/time/git_time_monotonic.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/sys/time/git_time_monotonic.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/sys/time/git_time_monotonic.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/sys/time/git_time_monotonic.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/sys/time/git_time_monotonic.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/sys/time/git_time_monotonic.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/sys/time/git_time_monotonic.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/sys/time/git_time_monotonic.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/sys/time/git_time_monotonic.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/sys/time/git_time_monotonic.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/sys/time/git_time_monotonic.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/sys/time/git_time_monotonic.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/sys/time/git_time_monotonic.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/sys/time/git_time_monotonic.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/sys/time/git_time_monotonic.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/sys/time/git_time_monotonic.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/sys/time/git_time_monotonic.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/sys/time/git_time_monotonic.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/sys/time/git_time_monotonic.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/sys/time/git_time_monotonic.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/sys/time/git_time_monotonic.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/sys/time/git_time_monotonic.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/sys/time/git_time_monotonic.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/sys/time/git_time_monotonic.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/sys/time/git_time_monotonic.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/sys/time/git_time_monotonic.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/sys/time/git_time_monotonic.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/sys/time/git_time_monotonic.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/sys/time/git_time_monotonic.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.4/sys/time/git_time_monotonic.html">v0.24.4</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Return a monotonic time value, useful for measuring running time
+and setting up timeouts.</p>
+
+        <p>The returned value is an arbitrary point in time -- it can only be
+used when comparing it to another <a href="/docs/reference/v0.28.0/sys/time/git_time_monotonic.html" class="apiLink functionLink"><code><span class="codeWord">git_time_monotonic</span></code></a> call.</p>
+
+        <p>The time is returned in seconds, with a decimal fraction that differs
+on accuracy based on the underlying system, but should be least
+accurate to Nanoseconds.</p>
+
+        <p>This function cannot fail.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.28.0/include/git2/sys/time.h#L27" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          double git_time_monotonic();
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            double
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.24.4/sys/time/git_time_monotonic.html" class="apiVersionLink functionVersionLink">v0.24.4</a>
+          </li>
+          </ul>
+        </div>
+      </div>

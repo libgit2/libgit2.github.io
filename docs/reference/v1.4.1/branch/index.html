@@ -1,0 +1,341 @@
+---
+title: branch APIs (libgit2 v1.4.1)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v1.4.1/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">branch</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/branch/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/branch/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/branch/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/branch/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/branch/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/branch/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/branch/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/branch/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/branch/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/branch/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/branch/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/branch/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/branch/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/branch/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/branch/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/branch/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/branch/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/branch/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/branch/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/branch/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/branch/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/branch/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/branch/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/branch/index.html" selected>v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/branch/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/branch/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/branch/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/branch/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/branch/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/branch/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/branch/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/branch/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/branch/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/branch/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/branch/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/branch/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/branch/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/branch/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/branch/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/branch/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/branch/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/branch/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/branch/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/branch/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/branch/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/branch/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/branch/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/branch/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/branch/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/branch/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/branch/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/branch/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/branch/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/branch/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/branch/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/branch/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/branch/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/branch/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/branch/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/branch/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/branch/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/branch/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/branch/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/branch/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/branch/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/branch/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/branch/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/branch/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/branch/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/branch/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/branch/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/branch/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/branch/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/branch/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/branch/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/branch/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/branch/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/branch/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/branch/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/branch/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/branch/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/branch/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/branch/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/branch/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/branch/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/branch/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/branch/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/branch/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/branch/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/branch/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/branch/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/branch/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/branch/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/branch/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/branch/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/branch/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/branch/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/branch/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/branch/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/branch/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/branch/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/branch/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/branch/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/branch/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/branch/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/branch/index.html">v0.14.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git branch parsing routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_iterator.html">
+                git_branch_iterator
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Iterator type for branches</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_t.html">
+                git_branch_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Basic type of any Git branch</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_create.html">
+                git_branch_create
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new branch pointing at a target commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_create_from_annotated.html">
+                git_branch_create_from_annotated
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new branch pointing at a target commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_delete.html">
+                git_branch_delete
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Delete an existing branch reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_iterator_new.html">
+                git_branch_iterator_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create an iterator which loops over the requested branches</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_next.html">
+                git_branch_next
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Retrieve the next branch from the iterator</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_iterator_free.html">
+                git_branch_iterator_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free a branch iterator</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_move.html">
+                git_branch_move
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Move/rename an existing local branch reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_lookup.html">
+                git_branch_lookup
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup a branch by its name in a repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_name.html">
+                git_branch_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the branch name</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_upstream.html">
+                git_branch_upstream
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the upstream of a branch</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_set_upstream.html">
+                git_branch_set_upstream
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set a branch's upstream branch</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_upstream_name.html">
+                git_branch_upstream_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the upstream name of a branch</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_is_head.html">
+                git_branch_is_head
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Determine if HEAD points to the given branch</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_is_checked_out.html">
+                git_branch_is_checked_out
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Determine if any HEAD points to the current branch</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_remote_name.html">
+                git_branch_remote_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Find the remote name of a remote-tracking branch</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_upstream_remote.html">
+                git_branch_upstream_remote
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Retrieve the upstream remote of a local branch</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_upstream_merge.html">
+                git_branch_upstream_merge
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Retrieve the upstream merge of a local branch</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.1/branch/git_branch_name_is_valid.html">
+                git_branch_name_is_valid
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Determine whether a branch name is valid, meaning that (when prefixed with <code><span class="codeWord">refs/heads/</span></code>) that it is a valid reference name, and that any additional branch name restrictions are imposed (eg, it cannot start with a <code><span class="codeWord">-</span></code>)</p> 
+            </div>
+          </div>
+        </div>
+    </div>

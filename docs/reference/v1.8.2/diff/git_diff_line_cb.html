@@ -1,0 +1,517 @@
+---
+title: git_diff_line_cb (libgit2 v1.8.2)
+layout: default
+---
+
+      <div class="api callback">
+        <div class="apiBreadcrumb callbackBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.2/diff/index.html">diff</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader callbackHeader">
+          <h2 class="apiName callbackName">git_diff_line_cb</h2>
+          <div class="apiHeaderVersionSelect callbackHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/diff/git_diff_line_cb.html">main</option>
+              <option value="/docs/reference/v1.8.4/diff/git_diff_line_cb.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/diff/git_diff_line_cb.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/diff/git_diff_line_cb.html" selected>v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/diff/git_diff_line_cb.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/diff/git_diff_line_cb.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/diff/git_diff_line_cb.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/diff/git_diff_line_cb.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/diff/git_diff_line_cb.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/diff/git_diff_line_cb.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/diff/git_diff_line_cb.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/diff/git_diff_line_cb.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/diff/git_diff_line_cb.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/diff/git_diff_line_cb.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/diff/git_diff_line_cb.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/diff/git_diff_line_cb.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/diff/git_diff_line_cb.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/diff/git_diff_line_cb.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/diff/git_diff_line_cb.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/diff/git_diff_line_cb.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/diff/git_diff_line_cb.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/diff/git_diff_line_cb.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/diff/git_diff_line_cb.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/diff/git_diff_line_cb.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/diff/git_diff_line_cb.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/diff/git_diff_line_cb.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/diff/git_diff_line_cb.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/diff/git_diff_line_cb.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/diff/git_diff_line_cb.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/diff/git_diff_line_cb.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/diff/git_diff_line_cb.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/diff/git_diff_line_cb.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/diff/git_diff_line_cb.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/diff/git_diff_line_cb.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/diff/git_diff_line_cb.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/diff/git_diff_line_cb.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/diff/git_diff_line_cb.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/diff/git_diff_line_cb.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/diff/git_diff_line_cb.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/diff/git_diff_line_cb.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/diff/git_diff_line_cb.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/diff/git_diff_line_cb.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/diff/git_diff_line_cb.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/diff/git_diff_line_cb.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/diff/git_diff_line_cb.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/diff/git_diff_line_cb.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/diff/git_diff_line_cb.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/diff/git_diff_line_cb.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/diff/git_diff_line_cb.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/diff/git_diff_line_cb.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/diff/git_diff_line_cb.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/diff/git_diff_line_cb.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/diff/git_diff_line_cb.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/diff/git_diff_line_cb.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/diff/git_diff_line_cb.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/diff/git_diff_line_cb.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/diff/git_diff_line_cb.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/diff/git_diff_line_cb.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/diff/git_diff_line_cb.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/diff/git_diff_line_cb.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/diff/git_diff_line_cb.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/diff/git_diff_line_cb.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/diff/git_diff_line_cb.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/diff/git_diff_line_cb.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/diff/git_diff_line_cb.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/diff/git_diff_line_cb.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/diff/git_diff_line_cb.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/diff/git_diff_line_cb.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/diff/git_diff_line_cb.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/diff/git_diff_line_cb.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/diff/git_diff_line_cb.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/diff/git_diff_line_cb.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/diff/git_diff_line_cb.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/diff/git_diff_line_cb.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/diff/git_diff_line_cb.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/diff/git_diff_line_cb.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/diff/git_diff_line_cb.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/diff/git_diff_line_cb.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/diff/git_diff_line_cb.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/diff/git_diff_line_cb.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/diff/git_diff_line_cb.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/diff/git_diff_line_cb.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/diff/git_diff_line_cb.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/diff/git_diff_line_cb.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/diff/git_diff_line_cb.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/diff/git_diff_line_cb.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/diff/git_diff_line_cb.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/diff/git_diff_line_cb.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/diff/git_diff_line_cb.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/diff/git_diff_line_cb.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/diff/git_diff_line_cb.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/diff/git_diff_line_cb.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/diff/git_diff_line_cb.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/diff/git_diff_line_cb.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/diff/git_diff_line_cb.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/diff/git_diff_line_cb.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/diff/git_diff_line_cb.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/diff/git_diff_line_cb.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/diff/git_diff_line_cb.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/diff/git_diff_line_cb.html">v0.20.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription callbackDescription">
+        <p>When iterating over a diff, callback that will be made per text diff
+line. In this context, the provided range will be NULL.</p>
+
+        <p>When printing a diff, callback that will be made to output each line
+of text.  This uses some extra GIT_DIFF_LINE_... constants for output
+of lines of file and hunk headers.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink callbackSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.2/include/git2/diff.h#L649" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature callbackSignature">
+          typedef int git_diff_line_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_diff_delta *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_hunk *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_line *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+        </div>
+
+        <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
+        <div class="apiParameters callbackParameters">
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v1.8.2/diff/git_diff_delta.html" class="apiLink structLink">const git_diff_delta *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v1.8.2/diff/git_diff_hunk.html" class="apiLink structLink">const git_diff_hunk *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v1.8.2/diff/git_diff_line.html" class="apiLink structLink">const git_diff_line *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader callbackParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo callbackParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.8.2/diff/git_diff_foreach.html" className="apiLink functionLink">git_diff_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.2/diff/git_diff_print.html" className="apiLink functionLink">git_diff_print</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.2/diff/git_diff_blobs.html" className="apiLink functionLink">git_diff_blobs</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.2/diff/git_diff_blob_to_buffer.html" className="apiLink functionLink">git_diff_blob_to_buffer</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.2/diff/git_diff_buffers.html" className="apiLink functionLink">git_diff_buffers</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.2/patch/git_patch_print.html" className="apiLink functionLink">git_patch_print</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>
+        <div class="apiVersions callbackVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/main/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced callbackVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.20.0/diff/git_diff_line_cb.html" class="apiVersionLink callbackVersionLink">v0.20.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

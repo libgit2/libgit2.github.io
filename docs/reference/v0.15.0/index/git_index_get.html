@@ -1,0 +1,127 @@
+---
+title: git_index_get (libgit2 v0.15.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.15.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.15.0/index/index.html">index</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_index_get</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.17.0/index/git_index_get.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/index/git_index_get.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/index/git_index_get.html" selected>v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/index/git_index_get.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/index/git_index_get.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/index/git_index_get.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/index/git_index_get.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/index/git_index_get.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/index/git_index_get.html">v0.8.0</option>
+              <option value="/docs/reference/v0.1.0/index/git_index_get.html">v0.1.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Get a pointer to one of the entries in the index</p>
+
+        <p>This entry can be modified, and the changes will be written
+back to disk on the next write() call.</p>
+
+        <p>The entry should not be freed by the caller.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.15.0/include/git2/index.h#L249" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          git_index_entry *git_index_get(<span class="apiSignatureParameter functionSignatureParameter">git_index *index</span>, <span class="apiSignatureParameter functionSignatureParameter">unsigned int n</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.15.0/index/git_index.html" class="apiLink objectLink">git_index *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              index
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>an existing index object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              unsigned int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              n
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the position of the entry</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            <a href="/docs/reference/v0.15.0/index/git_index_entry.html" class="apiLink structLink">git_index_entry *</a>
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>a pointer to the entry; NULL if out of bounds</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.13.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.8.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.8.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.1.0/index/git_index_get.html" class="apiVersionLink functionVersionLink">v0.1.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

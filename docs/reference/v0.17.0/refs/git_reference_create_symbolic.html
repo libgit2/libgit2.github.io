@@ -1,0 +1,168 @@
+---
+title: git_reference_create_symbolic (libgit2 v0.17.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.17.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.17.0/refs/index.html">refs</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_reference_create_symbolic</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.17.0/refs/git_reference_create_symbolic.html" selected>v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/refs/git_reference_create_symbolic.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/refs/git_reference_create_symbolic.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/refs/git_reference_create_symbolic.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/refs/git_reference_create_symbolic.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/refs/git_reference_create_symbolic.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/refs/git_reference_create_symbolic.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/refs/git_reference_create_symbolic.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/refs/git_reference_create_symbolic.html">v0.8.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create a new symbolic reference.</p>
+
+        <p>The reference will be created in the repository and written
+to the disk.</p>
+
+        <p>The generated reference must be freed by the user.</p>
+
+        <p>If <code><span class="codeWord">force</span></code> is true and there already exists a reference
+with the same name, it will be overwritten.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.17.0/include/git2/refs.h#L64" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_reference_create_symbolic(<span class="apiSignatureParameter functionSignatureParameter">git_reference **ref_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *name</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *target</span>, <span class="apiSignatureParameter functionSignatureParameter">int force</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.17.0/refs/git_reference.html" class="apiLink objectLink">git_reference **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              ref_out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Pointer to the newly created reference</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.17.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Repository where that reference will live</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              name
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The name of the reference</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              target
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The target of the reference</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              force
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Overwrite existing references</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.14.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.8.0/refs/git_reference_create_symbolic.html" class="apiVersionLink functionVersionLink">v0.8.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

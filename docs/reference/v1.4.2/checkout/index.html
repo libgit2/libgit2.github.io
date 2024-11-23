@@ -1,0 +1,275 @@
+---
+title: checkout APIs (libgit2 v1.4.2)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v1.4.2/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">checkout</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/checkout/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/checkout/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/checkout/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/checkout/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/checkout/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/checkout/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/checkout/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/checkout/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/checkout/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/checkout/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/checkout/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/checkout/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/checkout/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/checkout/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/checkout/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/checkout/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/checkout/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/checkout/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/checkout/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/checkout/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/checkout/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/checkout/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/checkout/index.html" selected>v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/checkout/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/checkout/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/checkout/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/checkout/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/checkout/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/checkout/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/checkout/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/checkout/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/checkout/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/checkout/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/checkout/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/checkout/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/checkout/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/checkout/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/checkout/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/checkout/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/checkout/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/checkout/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/checkout/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/checkout/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/checkout/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/checkout/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/checkout/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/checkout/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/checkout/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/checkout/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/checkout/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/checkout/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/checkout/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/checkout/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/checkout/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/checkout/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/checkout/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/checkout/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/checkout/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/checkout/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/checkout/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/checkout/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/checkout/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/checkout/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/checkout/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/checkout/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/checkout/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/checkout/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/checkout/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/checkout/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/checkout/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/checkout/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/checkout/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/checkout/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/checkout/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/checkout/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/checkout/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/checkout/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/checkout/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/checkout/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/checkout/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/checkout/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/checkout/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/checkout/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/checkout/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/checkout/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/checkout/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/checkout/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/checkout/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/checkout/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/checkout/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/checkout/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/checkout/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/checkout/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/checkout/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/checkout/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/checkout/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/checkout/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/checkout/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/checkout/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/checkout/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/checkout/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/checkout/index.html">v0.18.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git checkout routines
+      </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_perfdata.html">
+                git_checkout_perfdata
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Checkout performance-reporting structure</p> 
+            </div>
+          </div>
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_options.html">
+                git_checkout_options
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Checkout options structure</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader macroListHeader">Macros</h3>
+        <div class="apiList macroList">
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.4.2/checkout/GIT_CHECKOUT_OPTIONS_VERSION.html">
+                GIT_CHECKOUT_OPTIONS_VERSION
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.4.2/checkout/GIT_CHECKOUT_OPTIONS_INIT.html">
+                GIT_CHECKOUT_OPTIONS_INIT
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_strategy_t.html">
+                git_checkout_strategy_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Checkout behavior flags</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_notify_t.html">
+                git_checkout_notify_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Checkout notification flags</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader callbackListHeader">Callbacks</h3>
+        <div class="apiList callbackList">
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_notify_cb.html">
+                git_checkout_notify_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Checkout notification callback function</p> 
+            </div>
+          </div>
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_progress_cb.html">
+                git_checkout_progress_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Checkout progress notification function</p> 
+            </div>
+          </div>
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_perfdata_cb.html">
+                git_checkout_perfdata_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Checkout perfdata notification function</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_options_init.html">
+                git_checkout_options_init
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Initialize git_checkout_options structure</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_head.html">
+                git_checkout_head
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Updates files in the index and the working tree to match the content of the commit pointed at by HEAD</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_index.html">
+                git_checkout_index
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Updates files in the working tree to match the content of the index</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.2/checkout/git_checkout_tree.html">
+                git_checkout_tree
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Updates files in the index and working tree to match the content of the tree pointed at by the treeish</p> 
+            </div>
+          </div>
+        </div>
+    </div>

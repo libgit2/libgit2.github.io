@@ -1,0 +1,417 @@
+---
+title: git_submodule_cb (libgit2 v0.27.6)
+layout: default
+---
+
+      <div class="api callback">
+        <div class="apiBreadcrumb callbackBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.27.6/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.27.6/submodule/index.html">submodule</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader callbackHeader">
+          <h2 class="apiName callbackName">git_submodule_cb</h2>
+          <div class="apiHeaderVersionSelect callbackHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/submodule/git_submodule_cb.html">main</option>
+              <option value="/docs/reference/v1.8.4/submodule/git_submodule_cb.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/submodule/git_submodule_cb.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/submodule/git_submodule_cb.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/submodule/git_submodule_cb.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/submodule/git_submodule_cb.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/submodule/git_submodule_cb.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/submodule/git_submodule_cb.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/submodule/git_submodule_cb.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/submodule/git_submodule_cb.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/submodule/git_submodule_cb.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/submodule/git_submodule_cb.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/submodule/git_submodule_cb.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/submodule/git_submodule_cb.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/submodule/git_submodule_cb.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/submodule/git_submodule_cb.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/submodule/git_submodule_cb.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/submodule/git_submodule_cb.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/submodule/git_submodule_cb.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/submodule/git_submodule_cb.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/submodule/git_submodule_cb.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/submodule/git_submodule_cb.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/submodule/git_submodule_cb.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/submodule/git_submodule_cb.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/submodule/git_submodule_cb.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/submodule/git_submodule_cb.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/submodule/git_submodule_cb.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/submodule/git_submodule_cb.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/submodule/git_submodule_cb.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/submodule/git_submodule_cb.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/submodule/git_submodule_cb.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/submodule/git_submodule_cb.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/submodule/git_submodule_cb.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/submodule/git_submodule_cb.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/submodule/git_submodule_cb.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/submodule/git_submodule_cb.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/submodule/git_submodule_cb.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/submodule/git_submodule_cb.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/submodule/git_submodule_cb.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/submodule/git_submodule_cb.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/submodule/git_submodule_cb.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/submodule/git_submodule_cb.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/submodule/git_submodule_cb.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/submodule/git_submodule_cb.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/submodule/git_submodule_cb.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/submodule/git_submodule_cb.html" selected>v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/submodule/git_submodule_cb.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/submodule/git_submodule_cb.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/submodule/git_submodule_cb.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/submodule/git_submodule_cb.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/submodule/git_submodule_cb.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/submodule/git_submodule_cb.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/submodule/git_submodule_cb.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/submodule/git_submodule_cb.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/submodule/git_submodule_cb.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/submodule/git_submodule_cb.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/submodule/git_submodule_cb.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/submodule/git_submodule_cb.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/submodule/git_submodule_cb.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/submodule/git_submodule_cb.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/submodule/git_submodule_cb.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/submodule/git_submodule_cb.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/submodule/git_submodule_cb.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/submodule/git_submodule_cb.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/submodule/git_submodule_cb.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/submodule/git_submodule_cb.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/submodule/git_submodule_cb.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/submodule/git_submodule_cb.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/submodule/git_submodule_cb.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/submodule/git_submodule_cb.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/submodule/git_submodule_cb.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/submodule/git_submodule_cb.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/submodule/git_submodule_cb.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/submodule/git_submodule_cb.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/submodule/git_submodule_cb.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/submodule/git_submodule_cb.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/submodule/git_submodule_cb.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/submodule/git_submodule_cb.html">v0.24.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription callbackDescription">
+        <p>Function pointer to receive each submodule</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink callbackSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.27.6/include/git2/submodule.h#L118" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature callbackSignature">
+          typedef int git_submodule_cb(<span class="apiSignatureParameter callbackSignatureParameter">git_submodule *sm</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *name</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
+        </div>
+
+        <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
+        <div class="apiParameters callbackParameters">
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v0.27.6/submodule/git_submodule.html" class="apiLink objectLink">git_submodule *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              sm
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>git_submodule currently being visited</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              name
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>name of the submodule</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              payload
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>value you passed to the foreach function as payload</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success or error code</p> 
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader callbackParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo callbackParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.27.6/submodule/git_submodule_foreach.html" className="apiLink functionLink">git_submodule_foreach</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>
+        <div class="apiVersions callbackVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/main/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced callbackVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.24.0-rc1/submodule/git_submodule_cb.html" class="apiVersionLink callbackVersionLink">v0.24.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

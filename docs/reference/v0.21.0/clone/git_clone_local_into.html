@@ -1,0 +1,175 @@
+---
+title: git_clone_local_into (libgit2 v0.21.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.0/clone/index.html">clone</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_clone_local_into</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/clone/git_clone_local_into.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/clone/git_clone_local_into.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/clone/git_clone_local_into.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/clone/git_clone_local_into.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/clone/git_clone_local_into.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/clone/git_clone_local_into.html" selected>v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/clone/git_clone_local_into.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/clone/git_clone_local_into.html">v0.21.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Perform a local clone into a repository</p>
+
+        <p>A &quot;local clone&quot; bypasses any git-aware protocols and simply copies
+over the object database from the source repository. It is often
+faster than a git-aware clone, but no verification of the data is
+performed, and can copy over too much data.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.0/include/git2/clone.h#L197" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_clone_local_into(<span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">git_remote *remote</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_checkout_options *co_opts</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *branch</span>, <span class="apiSignatureParameter functionSignatureParameter">int link</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *signature</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the repository to use</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.0/remote/git_remote.html" class="apiLink objectLink">git_remote *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              remote
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the remote repository to clone from</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.0/checkout/git_checkout_options.html" class="apiLink structLink">const git_checkout_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              co_opts
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>options to use during checkout</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              branch
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the branch to checkout after the clone, pass NULL for the remote's default branch</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              link
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>wether to use hardlinks instead of copying objects. This is only possible if both repositories are on the same filesystem.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.0/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              signature
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the identity used when updating the reflog</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, any non-zero return value from a callback function, or a negative value to indicate an error (use <a href="/docs/reference/v0.21.0/errors/giterr_last.html" class="apiLink functionLink"><code><span class="codeWord">giterr_last</span></code></a> for a detailed error message)</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/clone/git_clone_local_into.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/clone/git_clone_local_into.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/clone/git_clone_local_into.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/clone/git_clone_local_into.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/clone/git_clone_local_into.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/clone/git_clone_local_into.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/clone/git_clone_local_into.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.21.0-rc1/clone/git_clone_local_into.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -16,3 +16,7 @@ This is the place for information on how to get started, best practices, and in-
 ## Annotated Examples
 
 * [Repository Initialization](examples/init) that works a lot like `git init`.
+
+## Reference Documentation
+
+* [Reference Documentation](reference) is a complete documentation for the libgit2 APIs

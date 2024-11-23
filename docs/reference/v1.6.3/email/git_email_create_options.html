@@ -1,0 +1,256 @@
+---
+title: git_email_create_options (libgit2 v1.6.3)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.6.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.6.3/email/index.html">email</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_email_create_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/email/git_email_create_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/email/git_email_create_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/email/git_email_create_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/email/git_email_create_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/email/git_email_create_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/email/git_email_create_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/email/git_email_create_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/email/git_email_create_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/email/git_email_create_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/email/git_email_create_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/email/git_email_create_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/email/git_email_create_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/email/git_email_create_options.html" selected>v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/email/git_email_create_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/email/git_email_create_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/email/git_email_create_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/email/git_email_create_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/email/git_email_create_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/email/git_email_create_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/email/git_email_create_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/email/git_email_create_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/email/git_email_create_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/email/git_email_create_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/email/git_email_create_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/email/git_email_create_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/email/git_email_create_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/email/git_email_create_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/email/git_email_create_options.html">v1.3.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Options for controlling the formatting of the generated e-mail.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.6.3/include/git2/email.h#L43" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_email_create_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">uint32_t flags</span>
+<span class="apiSignatureMember structSignatureMember">git_diff_options diff_opts</span>
+<span class="apiSignatureMember structSignatureMember">git_diff_find_options diff_find_opts</span>
+<span class="apiSignatureMember structSignatureMember">const char *subject_prefix</span>
+<span class="apiSignatureMember structSignatureMember">size_t start_number</span>
+<span class="apiSignatureMember structSignatureMember">size_t reroll_number</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              uint32_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>see <a href="/docs/reference/v1.6.3/email/git_email_create_flags_t.html" class="apiLink enumLink"><code><span class="codeWord">git_email_create_flags_t</span></code></a> above</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.3/diff/git_diff_options.html" class="apiLink structLink">git_diff_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              diff_opts
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Options to use when creating diffs</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.3/diff/git_diff_find_options.html" class="apiLink structLink">git_diff_find_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              diff_find_opts
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Options for finding similarities within diffs</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              subject_prefix
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The subject prefix, by default &quot;PATCH&quot;. If set to an empty string (&quot;&quot;) then only the patch numbers will be shown in the prefix. If the subject_prefix is empty and patch numbers are not being shown, the prefix will be omitted entirely.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              start_number
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The starting patch number; this cannot be 0. By default, this is 1.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              reroll_number
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The &quot;re-roll&quot; number. By default, there is no re-roll.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.6.3/sys/email/git_email_create_from_diff.html" className="apiLink functionLink">git_email_create_from_diff</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.6.3/email/git_email_create_from_commit.html" className="apiLink functionLink">git_email_create_from_commit</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.6.3/sys/email/git_email_create_from_diff.html" className="apiLink functionLink">git_email_create_from_diff</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/email/git_email_create_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.3.0/email/git_email_create_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

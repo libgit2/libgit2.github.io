@@ -1,0 +1,129 @@
+---
+title: git_merge_tree_opts (libgit2 v0.20.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.20.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.20.0/merge/index.html">merge</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_merge_tree_opts</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.20.0/merge/git_merge_tree_opts.html" selected>v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/merge/git_merge_tree_opts.html">v0.19.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.20.0/include/git2/merge.h#L45" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_merge_tree_opts {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">git_merge_tree_flag_t flags</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int rename_threshold</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int target_limit</span>
+<span class="apiSignatureMember structSignatureMember">git_diff_similarity_metric *metric</span>
+<span class="apiSignatureMember structSignatureMember">git_merge_automerge_flags automerge_flags</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.20.0/merge/git_merge_tree_flag_t.html" class="apiLink enumLink">git_merge_tree_flag_t</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              rename_threshold
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Similarity to consider a file renamed (default 50)</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              target_limit
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Maximum similarity sources to examine (overrides the <code><span class="codeWord">merge.renameLimit</span></code> config) (default 200)</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.20.0/diff/git_diff_similarity_metric.html" class="apiLink structLink">git_diff_similarity_metric *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              metric
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Pluggable similarity metric; pass NULL to use internal metric</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.20.0/merge/git_merge_automerge_flags.html" class="apiLink enumLink">git_merge_automerge_flags</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              automerge_flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Flags for automerging content.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.20.0/merge/git_merge_trees.html" className="apiLink functionLink">git_merge_trees</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/merge/git_merge_tree_opts.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.19.0/merge/git_merge_tree_opts.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

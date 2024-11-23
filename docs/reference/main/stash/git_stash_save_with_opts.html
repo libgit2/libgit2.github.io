@@ -1,0 +1,156 @@
+---
+title: git_stash_save_with_opts (libgit2 main)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/main/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/main/stash/index.html">stash</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_stash_save_with_opts</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/stash/git_stash_save_with_opts.html" selected>main</option>
+              <option value="/docs/reference/v1.8.4/stash/git_stash_save_with_opts.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/stash/git_stash_save_with_opts.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/stash/git_stash_save_with_opts.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/stash/git_stash_save_with_opts.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/stash/git_stash_save_with_opts.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/stash/git_stash_save_with_opts.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/stash/git_stash_save_with_opts.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/stash/git_stash_save_with_opts.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/stash/git_stash_save_with_opts.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/stash/git_stash_save_with_opts.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/stash/git_stash_save_with_opts.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/stash/git_stash_save_with_opts.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/stash/git_stash_save_with_opts.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/stash/git_stash_save_with_opts.html">v1.6.1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Save the local modifications to a new stash, with options.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/stash.h#L123" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_stash_save_with_opts(<span class="apiSignatureParameter functionSignatureParameter">git_oid *out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_stash_save_options *opts</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Object id of the commit containing the stashed state. This commit is also the target of the direct reference refs/stash.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The owning repository.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/stash/git_stash_save_options.html" class="apiLink structLink">const git_stash_save_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              opts
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The stash options.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, GIT_ENOTFOUND where there's nothing to stash, or error code.</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.6.1/stash/git_stash_save_with_opts.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

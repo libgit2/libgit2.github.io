@@ -1,0 +1,434 @@
+---
+title: git_annotated_commit (libgit2 v0.22.3)
+layout: default
+---
+
+      <div class="api object">
+        <div class="apiBreadcrumb objectBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.22.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.22.3/annotated_commit/index.html">annotated_commit</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader objectHeader">
+          <h2 class="apiName objectName">git_annotated_commit</h2>
+          <div class="apiHeaderVersionSelect objectHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/annotated_commit/git_annotated_commit.html">main</option>
+              <option value="/docs/reference/v1.8.4/annotated_commit/git_annotated_commit.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/annotated_commit/git_annotated_commit.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/annotated_commit/git_annotated_commit.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/annotated_commit/git_annotated_commit.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/annotated_commit/git_annotated_commit.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/annotated_commit/git_annotated_commit.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/annotated_commit/git_annotated_commit.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/annotated_commit/git_annotated_commit.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/annotated_commit/git_annotated_commit.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/annotated_commit/git_annotated_commit.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/annotated_commit/git_annotated_commit.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/annotated_commit/git_annotated_commit.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/annotated_commit/git_annotated_commit.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/annotated_commit/git_annotated_commit.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/annotated_commit/git_annotated_commit.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/annotated_commit/git_annotated_commit.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/annotated_commit/git_annotated_commit.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/annotated_commit/git_annotated_commit.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/annotated_commit/git_annotated_commit.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/annotated_commit/git_annotated_commit.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/annotated_commit/git_annotated_commit.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/annotated_commit/git_annotated_commit.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/annotated_commit/git_annotated_commit.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/annotated_commit/git_annotated_commit.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/annotated_commit/git_annotated_commit.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/annotated_commit/git_annotated_commit.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/annotated_commit/git_annotated_commit.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/annotated_commit/git_annotated_commit.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/annotated_commit/git_annotated_commit.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/annotated_commit/git_annotated_commit.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/annotated_commit/git_annotated_commit.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/annotated_commit/git_annotated_commit.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/annotated_commit/git_annotated_commit.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/annotated_commit/git_annotated_commit.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/annotated_commit/git_annotated_commit.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/annotated_commit/git_annotated_commit.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/annotated_commit/git_annotated_commit.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/annotated_commit/git_annotated_commit.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/annotated_commit/git_annotated_commit.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/annotated_commit/git_annotated_commit.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/annotated_commit/git_annotated_commit.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/annotated_commit/git_annotated_commit.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/annotated_commit/git_annotated_commit.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/annotated_commit/git_annotated_commit.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/annotated_commit/git_annotated_commit.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/annotated_commit/git_annotated_commit.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/annotated_commit/git_annotated_commit.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/annotated_commit/git_annotated_commit.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/annotated_commit/git_annotated_commit.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/annotated_commit/git_annotated_commit.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/annotated_commit/git_annotated_commit.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/annotated_commit/git_annotated_commit.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/annotated_commit/git_annotated_commit.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/annotated_commit/git_annotated_commit.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/annotated_commit/git_annotated_commit.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/annotated_commit/git_annotated_commit.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/annotated_commit/git_annotated_commit.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/annotated_commit/git_annotated_commit.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/annotated_commit/git_annotated_commit.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/annotated_commit/git_annotated_commit.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/annotated_commit/git_annotated_commit.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/annotated_commit/git_annotated_commit.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/annotated_commit/git_annotated_commit.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/annotated_commit/git_annotated_commit.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/annotated_commit/git_annotated_commit.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/annotated_commit/git_annotated_commit.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/annotated_commit/git_annotated_commit.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/annotated_commit/git_annotated_commit.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/annotated_commit/git_annotated_commit.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/annotated_commit/git_annotated_commit.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/annotated_commit/git_annotated_commit.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/annotated_commit/git_annotated_commit.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/annotated_commit/git_annotated_commit.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/annotated_commit/git_annotated_commit.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/annotated_commit/git_annotated_commit.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/annotated_commit/git_annotated_commit.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/annotated_commit/git_annotated_commit.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/annotated_commit/git_annotated_commit.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/annotated_commit/git_annotated_commit.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/annotated_commit/git_annotated_commit.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/annotated_commit/git_annotated_commit.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/annotated_commit/git_annotated_commit.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/annotated_commit/git_annotated_commit.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/annotated_commit/git_annotated_commit.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/annotated_commit/git_annotated_commit.html" selected>v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/annotated_commit/git_annotated_commit.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/annotated_commit/git_annotated_commit.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/annotated_commit/git_annotated_commit.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/annotated_commit/git_annotated_commit.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/annotated_commit/git_annotated_commit.html">v0.22.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription objectDescription">
+        <p>Annotated commits, the input to merge and rebase.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader objectSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink objectSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.22.3/include/git2/types.h#L178" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature objectSignature">
+          typedef struct git_annotated_commit git_annotated_commit
+        </div>
+
+        <h3 class="apiParameterToHeader objectParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo objectParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.22.3/annotated_commit/git_annotated_commit_from_ref.html" className="apiLink functionLink">git_annotated_commit_from_ref</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/annotated_commit/git_annotated_commit_from_fetchhead.html" className="apiLink functionLink">git_annotated_commit_from_fetchhead</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/annotated_commit/git_annotated_commit_lookup.html" className="apiLink functionLink">git_annotated_commit_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/annotated_commit/git_annotated_commit_id.html" className="apiLink functionLink">git_annotated_commit_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/annotated_commit/git_annotated_commit_free.html" className="apiLink functionLink">git_annotated_commit_free</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/merge/git_merge_analysis.html" className="apiLink functionLink">git_merge_analysis</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/merge/git_merge.html" className="apiLink functionLink">git_merge</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/rebase/git_rebase_init.html" className="apiLink functionLink">git_rebase_init</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader objectVersionsHeader">Versions</h3>
+        <div class="apiVersions objectVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/main/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced objectVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.22.0-rc1/annotated_commit/git_annotated_commit.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

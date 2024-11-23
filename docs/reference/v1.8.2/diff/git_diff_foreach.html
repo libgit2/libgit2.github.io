@@ -1,0 +1,561 @@
+---
+title: git_diff_foreach (libgit2 v1.8.2)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.2/diff/index.html">diff</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_diff_foreach</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/diff/git_diff_foreach.html">main</option>
+              <option value="/docs/reference/v1.8.4/diff/git_diff_foreach.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/diff/git_diff_foreach.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/diff/git_diff_foreach.html" selected>v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/diff/git_diff_foreach.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/diff/git_diff_foreach.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/diff/git_diff_foreach.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/diff/git_diff_foreach.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/diff/git_diff_foreach.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/diff/git_diff_foreach.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/diff/git_diff_foreach.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/diff/git_diff_foreach.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/diff/git_diff_foreach.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/diff/git_diff_foreach.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/diff/git_diff_foreach.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/diff/git_diff_foreach.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/diff/git_diff_foreach.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/diff/git_diff_foreach.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/diff/git_diff_foreach.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/diff/git_diff_foreach.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/diff/git_diff_foreach.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/diff/git_diff_foreach.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/diff/git_diff_foreach.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/diff/git_diff_foreach.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/diff/git_diff_foreach.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/diff/git_diff_foreach.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/diff/git_diff_foreach.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/diff/git_diff_foreach.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/diff/git_diff_foreach.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/diff/git_diff_foreach.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/diff/git_diff_foreach.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/diff/git_diff_foreach.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/diff/git_diff_foreach.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/diff/git_diff_foreach.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/diff/git_diff_foreach.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/diff/git_diff_foreach.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/diff/git_diff_foreach.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/diff/git_diff_foreach.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/diff/git_diff_foreach.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/diff/git_diff_foreach.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/diff/git_diff_foreach.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/diff/git_diff_foreach.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/diff/git_diff_foreach.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/diff/git_diff_foreach.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/diff/git_diff_foreach.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/diff/git_diff_foreach.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/diff/git_diff_foreach.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/diff/git_diff_foreach.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/diff/git_diff_foreach.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/diff/git_diff_foreach.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/diff/git_diff_foreach.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/diff/git_diff_foreach.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/diff/git_diff_foreach.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/diff/git_diff_foreach.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/diff/git_diff_foreach.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/diff/git_diff_foreach.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/diff/git_diff_foreach.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/diff/git_diff_foreach.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/diff/git_diff_foreach.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/diff/git_diff_foreach.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/diff/git_diff_foreach.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/diff/git_diff_foreach.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/diff/git_diff_foreach.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/diff/git_diff_foreach.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/diff/git_diff_foreach.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/diff/git_diff_foreach.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/diff/git_diff_foreach.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/diff/git_diff_foreach.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/diff/git_diff_foreach.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/diff/git_diff_foreach.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/diff/git_diff_foreach.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/diff/git_diff_foreach.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/diff/git_diff_foreach.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/diff/git_diff_foreach.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/diff/git_diff_foreach.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/diff/git_diff_foreach.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/diff/git_diff_foreach.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/diff/git_diff_foreach.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/diff/git_diff_foreach.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/diff/git_diff_foreach.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/diff/git_diff_foreach.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/diff/git_diff_foreach.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/diff/git_diff_foreach.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/diff/git_diff_foreach.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/diff/git_diff_foreach.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/diff/git_diff_foreach.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/diff/git_diff_foreach.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/diff/git_diff_foreach.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/diff/git_diff_foreach.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/diff/git_diff_foreach.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/diff/git_diff_foreach.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/diff/git_diff_foreach.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/diff/git_diff_foreach.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/diff/git_diff_foreach.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/diff/git_diff_foreach.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/diff/git_diff_foreach.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/diff/git_diff_foreach.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/diff/git_diff_foreach.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/diff/git_diff_foreach.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/diff/git_diff_foreach.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/diff/git_diff_foreach.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/diff/git_diff_foreach.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/diff/git_diff_foreach.html">v0.17.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Loop over all deltas in a diff issuing callbacks.</p>
+
+        <p>This will iterate through all of the files described in a diff.  You
+should provide a file callback to learn about each file.</p>
+
+        <p>The &quot;hunk&quot; and &quot;line&quot; callbacks are optional, and the text diff of the
+files will only be calculated if they are not NULL.  Of course, these
+callbacks will not be invoked for binary files on the diff or for
+files whose only changed is a file mode change.</p>
+
+        <p>Returning a non-zero value from any of the callbacks will terminate
+the iteration and return the value to the user.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.2/include/git2/diff.h#L1104" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_diff_foreach(<span class="apiSignatureParameter functionSignatureParameter">git_diff *diff</span>, <span class="apiSignatureParameter functionSignatureParameter">git_diff_file_cb file_cb</span>, <span class="apiSignatureParameter functionSignatureParameter">git_diff_binary_cb binary_cb</span>, <span class="apiSignatureParameter functionSignatureParameter">git_diff_hunk_cb hunk_cb</span>, <span class="apiSignatureParameter functionSignatureParameter">git_diff_line_cb line_cb</span>, <span class="apiSignatureParameter functionSignatureParameter">void *payload</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.2/diff/git_diff.html" class="apiLink objectLink">git_diff *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              diff
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>A git_diff generated by one of the above functions.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.2/diff/git_diff_file_cb.html" class="apiLink callbackLink">git_diff_file_cb</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              file_cb
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Callback function to make per file in the diff.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.2/diff/git_diff_binary_cb.html" class="apiLink callbackLink">git_diff_binary_cb</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              binary_cb
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Optional callback to make for binary files.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.2/diff/git_diff_hunk_cb.html" class="apiLink callbackLink">git_diff_hunk_cb</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              hunk_cb
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Optional callback to make per hunk of text diff. This callback is called to describe a range of lines in the diff. It will not be issued for binary files.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.2/diff/git_diff_line_cb.html" class="apiLink callbackLink">git_diff_line_cb</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              line_cb
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Optional callback to make per line of diff text. This same callback will be made for context lines, added, and removed lines, and even for a deleted trailing newline.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              payload
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Reference pointer that will be passed to your callbacks.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, non-zero callback return value, or error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.20.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.18.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.17.0/diff/git_diff_foreach.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

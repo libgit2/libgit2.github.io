@@ -1,0 +1,134 @@
+---
+title: git_diff_get_patch (libgit2 v0.19.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.19.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.19.0/diff/index.html">diff</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_diff_get_patch</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.19.0/diff/git_diff_get_patch.html" selected>v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/diff/git_diff_get_patch.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Return the diff delta and patch for an entry in the diff list.</p>
+
+        <p>The <a href="/docs/reference/v0.19.0/diff/git_diff_patch.html" class="apiLink objectLink"><code><span class="codeWord">git_diff_patch</span></code></a> is a newly created object contains the text diffs
+for the delta.  You have to call <code><span class="codeWord">git_diff_patch_free()</span></code> when you are
+done with it.  You can use the patch object to loop over all the hunks
+and lines in the diff of the one delta.</p>
+
+        <p>For an unchanged file or a binary file, no <a href="/docs/reference/v0.19.0/diff/git_diff_patch.html" class="apiLink objectLink"><code><span class="codeWord">git_diff_patch</span></code></a> will be
+created, the output will be set to NULL, and the <code><span class="codeWord">binary</span></code> flag will be
+set true in the <a href="/docs/reference/v0.19.0/diff/git_diff_delta.html" class="apiLink structLink"><code><span class="codeWord">git_diff_delta</span></code></a> structure.</p>
+
+        <p>The <a href="/docs/reference/v0.19.0/diff/git_diff_delta.html" class="apiLink structLink"><code><span class="codeWord">git_diff_delta</span></code></a> pointer points to internal data and you do not have
+to release it when you are done with it.  It will go away when the
+<a href="/docs/reference/v0.19.0/diff/git_diff_list.html" class="apiLink objectLink"><code><span class="codeWord">git_diff_list</span></code></a> and <a href="/docs/reference/v0.19.0/diff/git_diff_patch.html" class="apiLink objectLink"><code><span class="codeWord">git_diff_patch</span></code></a> go away.</p>
+
+        <p>It is okay to pass NULL for either of the output parameters; if you pass
+NULL for the <a href="/docs/reference/v0.19.0/diff/git_diff_patch.html" class="apiLink objectLink"><code><span class="codeWord">git_diff_patch</span></code></a>, then the text diff will not be calculated.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.19.0/include/git2/diff.h#L825" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_diff_get_patch(<span class="apiSignatureParameter functionSignatureParameter">git_diff_patch **patch_out</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_diff_delta **delta_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_diff_list *diff</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t idx</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.19.0/diff/git_diff_patch.html" class="apiLink objectLink">git_diff_patch **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              patch_out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Output parameter for the delta patch object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.19.0/diff/git_diff_delta.html" class="apiLink structLink">const git_diff_delta **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              delta_out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Output parameter for the delta object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.19.0/diff/git_diff_list.html" class="apiLink objectLink">git_diff_list *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              diff
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Diff list object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              idx
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Index into diff list</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, other value &lt; 0 on error</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/diff/git_diff_get_patch.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/diff/git_diff_get_patch.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,292 @@
+---
+title: git_email_create_from_diff (libgit2 v1.7.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.7.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.7.0/sys/email/index.html">email (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_email_create_from_diff</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/email/git_email_create_from_diff.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/email/git_email_create_from_diff.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/email/git_email_create_from_diff.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/email/git_email_create_from_diff.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/email/git_email_create_from_diff.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/email/git_email_create_from_diff.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/email/git_email_create_from_diff.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/email/git_email_create_from_diff.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/email/git_email_create_from_diff.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/email/git_email_create_from_diff.html" selected>v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/sys/email/git_email_create_from_diff.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/sys/email/git_email_create_from_diff.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/sys/email/git_email_create_from_diff.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/sys/email/git_email_create_from_diff.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/sys/email/git_email_create_from_diff.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/sys/email/git_email_create_from_diff.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/sys/email/git_email_create_from_diff.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/sys/email/git_email_create_from_diff.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/sys/email/git_email_create_from_diff.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/sys/email/git_email_create_from_diff.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/sys/email/git_email_create_from_diff.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/sys/email/git_email_create_from_diff.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/sys/email/git_email_create_from_diff.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/sys/email/git_email_create_from_diff.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/sys/email/git_email_create_from_diff.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/sys/email/git_email_create_from_diff.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/sys/email/git_email_create_from_diff.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/sys/email/git_email_create_from_diff.html">v1.3.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create a diff for a commit in mbox format for sending via email.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.7.0/include/git2/sys/email.h#L32" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_email_create_from_diff(<span class="apiSignatureParameter functionSignatureParameter">git_buf *out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_diff *diff</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t patch_idx</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t patch_count</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_oid *commit_id</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *summary</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *body</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *author</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_email_create_options *opts</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.7.0/buffer/git_buf.html" class="apiLink structLink">git_buf *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>buffer to store the e-mail patch in</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.7.0/diff/git_diff.html" class="apiLink objectLink">git_diff *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              diff
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the changes to include in the email</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              patch_idx
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the patch index</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              patch_count
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the total number of patches that will be included</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.7.0/oid/git_oid.html" class="apiLink structLink">const git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              commit_id
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the commit id for this change</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              summary
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the commit message for this change</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              body
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>optional text to include above the diffstat</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.7.0/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              author
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the person who authored this commit</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.7.0/email/git_email_create_options.html" class="apiLink structLink">const git_email_create_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              opts
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>email creation options</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.3.0/sys/email/git_email_create_from_diff.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

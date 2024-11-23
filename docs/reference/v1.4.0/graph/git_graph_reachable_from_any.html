@@ -1,0 +1,227 @@
+---
+title: git_graph_reachable_from_any (libgit2 v1.4.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.4.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.4.0/graph/index.html">graph</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_graph_reachable_from_any</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/graph/git_graph_reachable_from_any.html">main</option>
+              <option value="/docs/reference/v1.8.4/graph/git_graph_reachable_from_any.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/graph/git_graph_reachable_from_any.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/graph/git_graph_reachable_from_any.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/graph/git_graph_reachable_from_any.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/graph/git_graph_reachable_from_any.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/graph/git_graph_reachable_from_any.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/graph/git_graph_reachable_from_any.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/graph/git_graph_reachable_from_any.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/graph/git_graph_reachable_from_any.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/graph/git_graph_reachable_from_any.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/graph/git_graph_reachable_from_any.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/graph/git_graph_reachable_from_any.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/graph/git_graph_reachable_from_any.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/graph/git_graph_reachable_from_any.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/graph/git_graph_reachable_from_any.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/graph/git_graph_reachable_from_any.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/graph/git_graph_reachable_from_any.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/graph/git_graph_reachable_from_any.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/graph/git_graph_reachable_from_any.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/graph/git_graph_reachable_from_any.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/graph/git_graph_reachable_from_any.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/graph/git_graph_reachable_from_any.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/graph/git_graph_reachable_from_any.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/graph/git_graph_reachable_from_any.html" selected>v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/graph/git_graph_reachable_from_any.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/graph/git_graph_reachable_from_any.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/graph/git_graph_reachable_from_any.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/graph/git_graph_reachable_from_any.html">v1.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Determine if a commit is reachable from any of a list of commits by
+following parent edges.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.4.0/include/git2/graph.h#L69" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_graph_reachable_from_any(<span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_oid *commit</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_oid *descendant_array</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t length</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.4.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the repository where the commits exist</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.4.0/oid/git_oid.html" class="apiLink structLink">const git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              commit
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>a previously loaded commit</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.4.0/oid/git_oid.html" class="apiLink structLink">const git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              descendant_array
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>oids of the commits</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              length
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the number of commits in the provided <code><span class="codeWord">descendant_array</span></code></p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>1 if the given commit is an ancestor of any of the given potential descendants, 0 if not, error code otherwise.</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.2.0/graph/git_graph_reachable_from_any.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

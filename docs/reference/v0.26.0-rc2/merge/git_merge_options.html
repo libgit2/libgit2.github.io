@@ -1,0 +1,573 @@
+---
+title: git_merge_options (libgit2 v0.26.0-rc2)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.26.0-rc2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.26.0-rc2/merge/index.html">merge</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_merge_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/merge/git_merge_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/merge/git_merge_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/merge/git_merge_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/merge/git_merge_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/merge/git_merge_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/merge/git_merge_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/merge/git_merge_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/merge/git_merge_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/merge/git_merge_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/merge/git_merge_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/merge/git_merge_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/merge/git_merge_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/merge/git_merge_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/merge/git_merge_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/merge/git_merge_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/merge/git_merge_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/merge/git_merge_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/merge/git_merge_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/merge/git_merge_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/merge/git_merge_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/merge/git_merge_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/merge/git_merge_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/merge/git_merge_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/merge/git_merge_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/merge/git_merge_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/merge/git_merge_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/merge/git_merge_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/merge/git_merge_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/merge/git_merge_options.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/merge/git_merge_options.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/merge/git_merge_options.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/merge/git_merge_options.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/merge/git_merge_options.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/merge/git_merge_options.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/merge/git_merge_options.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/merge/git_merge_options.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/merge/git_merge_options.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/merge/git_merge_options.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/merge/git_merge_options.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/merge/git_merge_options.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/merge/git_merge_options.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/merge/git_merge_options.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/merge/git_merge_options.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/merge/git_merge_options.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/merge/git_merge_options.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/merge/git_merge_options.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/merge/git_merge_options.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/merge/git_merge_options.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/merge/git_merge_options.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/merge/git_merge_options.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/merge/git_merge_options.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/merge/git_merge_options.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/merge/git_merge_options.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/merge/git_merge_options.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/merge/git_merge_options.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/merge/git_merge_options.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/merge/git_merge_options.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/merge/git_merge_options.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/merge/git_merge_options.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/merge/git_merge_options.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/merge/git_merge_options.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/merge/git_merge_options.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/merge/git_merge_options.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/merge/git_merge_options.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/merge/git_merge_options.html" selected>v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/merge/git_merge_options.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/merge/git_merge_options.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/merge/git_merge_options.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/merge/git_merge_options.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/merge/git_merge_options.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/merge/git_merge_options.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/merge/git_merge_options.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/merge/git_merge_options.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/merge/git_merge_options.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/merge/git_merge_options.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/merge/git_merge_options.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/merge/git_merge_options.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/merge/git_merge_options.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/merge/git_merge_options.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/merge/git_merge_options.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/merge/git_merge_options.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/merge/git_merge_options.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/merge/git_merge_options.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/merge/git_merge_options.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/merge/git_merge_options.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/merge/git_merge_options.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/merge/git_merge_options.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/merge/git_merge_options.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/merge/git_merge_options.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/merge/git_merge_options.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/merge/git_merge_options.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/merge/git_merge_options.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/merge/git_merge_options.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/merge/git_merge_options.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/merge/git_merge_options.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/merge/git_merge_options.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/merge/git_merge_options.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/merge/git_merge_options.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/merge/git_merge_options.html">v0.21.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Merging options</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.26.0-rc2/include/git2/merge.h#L241" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_merge_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">git_merge_flag_t flags</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int rename_threshold</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int target_limit</span>
+<span class="apiSignatureMember structSignatureMember">git_diff_similarity_metric *metric</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int recursion_limit</span>
+<span class="apiSignatureMember structSignatureMember">const char *default_driver</span>
+<span class="apiSignatureMember structSignatureMember">git_merge_file_favor_t file_favor</span>
+<span class="apiSignatureMember structSignatureMember">git_merge_file_flag_t file_flags</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_flag_t.html" class="apiLink enumLink">git_merge_flag_t</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>See <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_flag_t.html" class="apiLink enumLink"><code><span class="codeWord">git_merge_flag_t</span></code></a> above</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              rename_threshold
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Similarity to consider a file renamed (default 50). If <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_flag_t.html#GIT_MERGE_FIND_RENAMES" class="apiLink enumLink"><code><span class="codeWord">GIT_MERGE_FIND_RENAMES</span></code></a> is enabled, added files will be compared with deleted files to determine their similarity. Files that are more similar than the rename threshold (percentage-wise) will be treated as a rename.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              target_limit
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Maximum similarity sources to examine for renames (default 200). If the number of rename candidates (add / delete pairs) is greater than this value, inexact rename detection is aborted.</p>  <p>This setting overrides the <code><span class="codeWord">merge.renameLimit</span></code> configuration value.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.26.0-rc2/diff/git_diff_similarity_metric.html" class="apiLink structLink">git_diff_similarity_metric *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              metric
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Pluggable similarity metric; pass NULL to use internal metric</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              recursion_limit
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Maximum number of times to merge common ancestors to build a virtual merge base when faced with criss-cross merges. When this limit is reached, the next ancestor will simply be used instead of attempting to merge it. The default is unlimited.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              default_driver
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Default merge driver to be used when both sides of a merge have changed. The default is the <code><span class="codeWord">text</span></code> driver.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_file_favor_t.html" class="apiLink enumLink">git_merge_file_favor_t</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              file_favor
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Flags for handling conflicting content, to be used with the standard (<code><span class="codeWord">text</span></code>) merge driver.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_file_flag_t.html" class="apiLink enumLink">git_merge_file_flag_t</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              file_flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>see <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_file_flag_t.html" class="apiLink enumLink"><code><span class="codeWord">git_merge_file_flag_t</span></code></a> above</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.26.0-rc2/cherrypick/git_cherrypick_commit.html" className="apiLink functionLink">git_cherrypick_commit</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_init_options.html" className="apiLink functionLink">git_merge_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_trees.html" className="apiLink functionLink">git_merge_trees</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_commits.html" className="apiLink functionLink">git_merge_commits</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.26.0-rc2/merge/git_merge.html" className="apiLink functionLink">git_merge</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.26.0-rc2/revert/git_revert_commit.html" className="apiLink functionLink">git_revert_commit</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/merge/git_merge_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.99.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.25.0-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.24.5/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.24.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.24.0-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.21.0-rc1/merge/git_merge_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

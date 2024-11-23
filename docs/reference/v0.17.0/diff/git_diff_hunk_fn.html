@@ -1,0 +1,115 @@
+---
+title: git_diff_hunk_fn (libgit2 v0.17.0)
+layout: default
+---
+
+      <div class="api callback">
+        <div class="apiBreadcrumb callbackBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.17.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.17.0/diff/index.html">diff</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader callbackHeader">
+          <h2 class="apiName callbackName">git_diff_hunk_fn</h2>
+          <div class="apiHeaderVersionSelect callbackHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.17.0/diff/git_diff_hunk_fn.html" selected>v0.17.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription callbackDescription">
+        <p>When iterating over a diff, callback that will be made per hunk.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink callbackSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.17.0/include/git2/diff.h#L146" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature callbackSignature">
+          typedef int git_diff_hunk_fn(<span class="apiSignatureParameter callbackSignatureParameter">void *</span>, <span class="apiSignatureParameter callbackSignatureParameter">git_diff_delta *</span>, <span class="apiSignatureParameter callbackSignatureParameter">git_diff_range *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *</span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t </span>);
+        </div>
+
+        <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
+        <div class="apiParameters callbackParameters">
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v0.17.0/diff/git_diff_delta.html" class="apiLink structLink">git_diff_delta *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v0.17.0/diff/git_diff_range.html" class="apiLink structLink">git_diff_range *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader callbackParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo callbackParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.17.0/diff/git_diff_foreach.html" className="apiLink functionLink">git_diff_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.17.0/diff/git_diff_blobs.html" className="apiLink functionLink">git_diff_blobs</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>
+        <div class="apiVersions callbackVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced callbackVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.17.0/diff/git_diff_hunk_fn.html" class="apiVersionLink callbackVersionLink">v0.17.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

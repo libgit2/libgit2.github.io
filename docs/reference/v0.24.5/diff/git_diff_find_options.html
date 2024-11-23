@@ -1,0 +1,580 @@
+---
+title: git_diff_find_options (libgit2 v0.24.5)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.24.5/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.24.5/diff/index.html">diff</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_diff_find_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/diff/git_diff_find_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/diff/git_diff_find_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/diff/git_diff_find_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/diff/git_diff_find_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/diff/git_diff_find_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/diff/git_diff_find_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/diff/git_diff_find_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/diff/git_diff_find_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/diff/git_diff_find_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/diff/git_diff_find_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/diff/git_diff_find_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/diff/git_diff_find_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/diff/git_diff_find_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/diff/git_diff_find_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/diff/git_diff_find_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/diff/git_diff_find_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/diff/git_diff_find_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/diff/git_diff_find_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/diff/git_diff_find_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/diff/git_diff_find_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/diff/git_diff_find_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/diff/git_diff_find_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/diff/git_diff_find_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/diff/git_diff_find_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/diff/git_diff_find_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/diff/git_diff_find_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/diff/git_diff_find_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/diff/git_diff_find_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/diff/git_diff_find_options.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/diff/git_diff_find_options.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/diff/git_diff_find_options.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/diff/git_diff_find_options.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/diff/git_diff_find_options.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/diff/git_diff_find_options.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/diff/git_diff_find_options.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/diff/git_diff_find_options.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/diff/git_diff_find_options.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/diff/git_diff_find_options.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/diff/git_diff_find_options.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/diff/git_diff_find_options.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/diff/git_diff_find_options.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/diff/git_diff_find_options.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/diff/git_diff_find_options.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/diff/git_diff_find_options.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/diff/git_diff_find_options.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/diff/git_diff_find_options.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/diff/git_diff_find_options.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/diff/git_diff_find_options.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/diff/git_diff_find_options.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/diff/git_diff_find_options.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/diff/git_diff_find_options.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/diff/git_diff_find_options.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/diff/git_diff_find_options.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/diff/git_diff_find_options.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/diff/git_diff_find_options.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/diff/git_diff_find_options.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/diff/git_diff_find_options.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/diff/git_diff_find_options.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/diff/git_diff_find_options.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/diff/git_diff_find_options.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/diff/git_diff_find_options.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/diff/git_diff_find_options.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/diff/git_diff_find_options.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/diff/git_diff_find_options.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/diff/git_diff_find_options.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/diff/git_diff_find_options.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/diff/git_diff_find_options.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/diff/git_diff_find_options.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/diff/git_diff_find_options.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/diff/git_diff_find_options.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/diff/git_diff_find_options.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/diff/git_diff_find_options.html" selected>v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/diff/git_diff_find_options.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/diff/git_diff_find_options.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/diff/git_diff_find_options.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/diff/git_diff_find_options.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/diff/git_diff_find_options.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/diff/git_diff_find_options.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/diff/git_diff_find_options.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/diff/git_diff_find_options.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/diff/git_diff_find_options.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/diff/git_diff_find_options.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/diff/git_diff_find_options.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/diff/git_diff_find_options.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/diff/git_diff_find_options.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/diff/git_diff_find_options.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/diff/git_diff_find_options.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/diff/git_diff_find_options.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/diff/git_diff_find_options.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/diff/git_diff_find_options.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/diff/git_diff_find_options.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/diff/git_diff_find_options.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/diff/git_diff_find_options.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/diff/git_diff_find_options.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/diff/git_diff_find_options.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/diff/git_diff_find_options.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/diff/git_diff_find_options.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/diff/git_diff_find_options.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/diff/git_diff_find_options.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/diff/git_diff_find_options.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/diff/git_diff_find_options.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/diff/git_diff_find_options.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Control behavior of rename and copy detection</p>
+
+        <p>These options mostly mimic parameters that can be passed to git-diff.</p>
+
+        <ul>
+<li><code><span class="codeWord">rename_threshold</span></code> is the same as the -M option with a value</li>
+<li><code><span class="codeWord">copy_threshold</span></code> is the same as the -C option with a value</li>
+<li><code><span class="codeWord">rename_from_rewrite_threshold</span></code> matches the top of the -B option</li>
+<li><code><span class="codeWord">break_rewrite_threshold</span></code> matches the bottom of the -B option</li>
+<li><code><span class="codeWord">rename_limit</span></code> is the maximum number of matches to consider for
+a particular file.  This is a little different from the <code><span class="codeWord">-l</span></code> option
+to regular Git because we will still process up to this many matches
+before abandoning the search.</li>
+</ul>
+
+        <p>The <code><span class="codeWord">metric</span></code> option allows you to plug in a custom similarity metric.
+Set it to NULL for the default internal metric which is based on sampling
+hashes of ranges of data in the file.  The default metric is a pretty
+good similarity approximation that should work fairly well for both text
+and binary data, and is pretty fast with fixed memory overhead.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.24.5/include/git2/diff.h#L681" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_diff_find_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">uint32_t flags</span>
+<span class="apiSignatureMember structSignatureMember">uint16_t rename_threshold</span>
+<span class="apiSignatureMember structSignatureMember">uint16_t rename_from_rewrite_threshold</span>
+<span class="apiSignatureMember structSignatureMember">uint16_t copy_threshold</span>
+<span class="apiSignatureMember structSignatureMember">uint16_t break_rewrite_threshold</span>
+<span class="apiSignatureMember structSignatureMember">size_t rename_limit</span>
+<span class="apiSignatureMember structSignatureMember">git_diff_similarity_metric *metric</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              uint32_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Combination of git_diff_find_t values (default GIT_DIFF_FIND_BY_CONFIG). NOTE: if you don't explicitly set this, <code><span class="codeWord">diff.renames</span></code> could be set to false, resulting in <a href="/docs/reference/v0.24.5/diff/git_diff_find_similar.html" class="apiLink functionLink"><code><span class="codeWord">git_diff_find_similar</span></code></a> doing nothing.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              uint16_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              rename_threshold
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Similarity to consider a file renamed (default 50)</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              uint16_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              rename_from_rewrite_threshold
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Similarity of modified to be eligible rename source (default 50)</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              uint16_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              copy_threshold
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Similarity to consider a file a copy (default 50)</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              uint16_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              break_rewrite_threshold
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Similarity to split modify into delete/add pair (default 60)</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              rename_limit
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Maximum similarity sources to examine for a file (somewhat like git-diff's <code><span class="codeWord">-l</span></code> option or <code><span class="codeWord">diff.renameLimit</span></code> config) (default 200)</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.24.5/diff/git_diff_similarity_metric.html" class="apiLink structLink">git_diff_similarity_metric *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              metric
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Pluggable similarity metric; pass NULL to use internal metric</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.24.5/diff/git_diff_find_init_options.html" className="apiLink functionLink">git_diff_find_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/diff/git_diff_find_similar.html" className="apiLink functionLink">git_diff_find_similar</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.19.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/diff/git_diff_find_options.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

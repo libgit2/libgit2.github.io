@@ -1,0 +1,102 @@
+---
+title: git_tag_new (libgit2 v0.3.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.3.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.3.0/tag/index.html">tag</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_tag_new</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.10.0/tag/git_tag_new.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/tag/git_tag_new.html">v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/tag/git_tag_new.html" selected>v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/tag/git_tag_new.html">v0.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create a new in-memory git_tag.</p>
+
+        <p>The tag object must be manually filled using
+setter methods before it can be written to its
+repository.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.3.0/include/git2/tag.h#L68" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_tag_new(<span class="apiSignatureParameter functionSignatureParameter">git_tag **tag</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_tag **
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              tag
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>pointer to the new tag</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_repository *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The repository where the object will reside</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success; error code otherwise</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/tag/git_tag_new.html" class="apiVersionLink functionVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.8.0/tag/git_tag_new.html" class="apiVersionLink functionVersionLink">v0.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.3.0/tag/git_tag_new.html" class="apiVersionLink functionVersionLink">v0.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.2.0/tag/git_tag_new.html" class="apiVersionLink functionVersionLink">v0.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

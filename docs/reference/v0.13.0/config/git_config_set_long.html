@@ -1,0 +1,104 @@
+---
+title: git_config_set_long (libgit2 v0.13.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.13.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.13.0/config/index.html">config</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_config_set_long</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.14.0/config/git_config_set_long.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/config/git_config_set_long.html" selected>v0.13.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Set the value of a long integer config variable.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.13.0/include/git2/config.h#L231" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_config_set_long(<span class="apiSignatureParameter functionSignatureParameter">git_config *cfg</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *name</span>, <span class="apiSignatureParameter functionSignatureParameter">long value</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/config/git_config.html" class="apiLink objectLink">git_config *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              cfg
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>where to look for the variable</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              name
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the variable's name</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              long
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              value
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Long integer value for the variable</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>GIT_SUCCESS on success; error code otherwise</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/config/git_config_set_long.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.13.0/config/git_config_set_long.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,465 @@
+---
+title: commit APIs (libgit2 v0.28.4)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.28.4/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">commit</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/commit/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/commit/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/commit/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/commit/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/commit/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/commit/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/commit/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/commit/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/commit/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/commit/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/commit/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/commit/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/commit/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/commit/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/commit/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/commit/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/commit/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/commit/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/commit/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/commit/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/commit/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/commit/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/commit/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/commit/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/commit/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/commit/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/commit/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/commit/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/commit/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/commit/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/commit/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/commit/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/commit/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/commit/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/commit/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/commit/index.html" selected>v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/commit/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/commit/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/commit/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/commit/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/commit/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/commit/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/commit/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/commit/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/commit/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/commit/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/commit/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/commit/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/commit/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/commit/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/commit/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/commit/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/commit/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/commit/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/commit/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/commit/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/commit/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/commit/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/commit/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/commit/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/commit/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/commit/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/commit/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/commit/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/commit/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/commit/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/commit/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/commit/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/commit/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/commit/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/commit/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/commit/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/commit/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/commit/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/commit/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/commit/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/commit/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/commit/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/commit/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/commit/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/commit/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/commit/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/commit/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/commit/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/commit/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/commit/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/commit/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/commit/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/commit/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/commit/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/commit/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/commit/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/commit/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/commit/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/commit/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/commit/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/commit/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/commit/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/commit/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/commit/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/commit/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/commit/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/commit/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/commit/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/commit/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/commit/index.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/commit/index.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/commit/index.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/commit/index.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/commit/index.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/commit/index.html">v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/commit/index.html">v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/commit/index.html">v0.2.0</option>
+              <option value="/docs/reference/v0.1.0/commit/index.html">v0.1.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git commit parsing, formatting routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit.html">
+                git_commit
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Parsed representation of a commit object</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_lookup.html">
+                git_commit_lookup
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup a commit object from a repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_lookup_prefix.html">
+                git_commit_lookup_prefix
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup a commit object from a repository, given a prefix of its identifier (short id)</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_free.html">
+                git_commit_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Close an open commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_id.html">
+                git_commit_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the id of a commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_owner.html">
+                git_commit_owner
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the repository that contains the commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_message_encoding.html">
+                git_commit_message_encoding
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the encoding for the message of a commit, as a string representing a standard encoding name</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_message.html">
+                git_commit_message
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the full message of a commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_message_raw.html">
+                git_commit_message_raw
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the full raw message of a commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_summary.html">
+                git_commit_summary
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the short &quot;summary&quot; of the git commit message</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_body.html">
+                git_commit_body
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the long &quot;body&quot; of the git commit message</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_time.html">
+                git_commit_time
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the commit time (i</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_time_offset.html">
+                git_commit_time_offset
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the commit timezone offset (i</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_committer.html">
+                git_commit_committer
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the committer of a commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_author.html">
+                git_commit_author
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the author of a commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_committer_with_mailmap.html">
+                git_commit_committer_with_mailmap
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the committer of a commit, using the mailmap to map names and email addresses to canonical real names and email addresses</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_author_with_mailmap.html">
+                git_commit_author_with_mailmap
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the author of a commit, using the mailmap to map names and email addresses to canonical real names and email addresses</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_raw_header.html">
+                git_commit_raw_header
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the full raw text of the commit header</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_tree.html">
+                git_commit_tree
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the tree pointed to by a commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_tree_id.html">
+                git_commit_tree_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the id of the tree pointed to by a commit <a href="/docs/reference/v0.28.4/commit/git_commit_tree.html" class="apiLink functionLink"><code><span class="codeWord">git_commit_tree</span></code></a> in that no attempts are made to fetch an object from the ODB.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_parentcount.html">
+                git_commit_parentcount
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the number of parents of this commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_parent.html">
+                git_commit_parent
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the specified parent of the commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_parent_id.html">
+                git_commit_parent_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the oid of a specified parent for a commit <a href="/docs/reference/v0.28.4/commit/git_commit_parent.html" class="apiLink functionLink"><code><span class="codeWord">git_commit_parent</span></code></a>, which will attempt to load the parent commit from the ODB.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_nth_gen_ancestor.html">
+                git_commit_nth_gen_ancestor
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the commit object that is the &lt;n&gt;th generation ancestor of the named commit object, following only the first parents The returned commit has to be freed by the caller.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_header_field.html">
+                git_commit_header_field
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get an arbitrary header field</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_extract_signature.html">
+                git_commit_extract_signature
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Extract the signature from a commit</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_create.html">
+                git_commit_create
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create new commit in the repository from a list of <a href="/docs/reference/v0.28.4/object/git_object.html" class="apiLink objectLink"><code><span class="codeWord">git_object</span></code></a> pointers</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_create_v.html">
+                git_commit_create_v
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create new commit in the repository using a variable argument list</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_amend.html">
+                git_commit_amend
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Amend an existing commit by replacing only non-NULL values</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_create_buffer.html">
+                git_commit_create_buffer
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a commit and write it into a buffer</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_create_with_signature.html">
+                git_commit_create_with_signature
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a commit object from the given buffer and signature</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.28.4/commit/git_commit_dup.html">
+                git_commit_dup
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create an in-memory copy of a commit free'd or it will leak.</p> 
+            </div>
+          </div>
+        </div>
+    </div>

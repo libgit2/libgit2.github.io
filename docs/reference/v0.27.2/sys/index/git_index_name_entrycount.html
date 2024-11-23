@@ -1,0 +1,472 @@
+---
+title: git_index_name_entrycount (libgit2 v0.27.2)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.27.2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.27.2/sys/index/index.html">index (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_index_name_entrycount</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/index/git_index_name_entrycount.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/index/git_index_name_entrycount.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/index/git_index_name_entrycount.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/index/git_index_name_entrycount.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/index/git_index_name_entrycount.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/index/git_index_name_entrycount.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/index/git_index_name_entrycount.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/index/git_index_name_entrycount.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/index/git_index_name_entrycount.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/index/git_index_name_entrycount.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/sys/index/git_index_name_entrycount.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/sys/index/git_index_name_entrycount.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/sys/index/git_index_name_entrycount.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/sys/index/git_index_name_entrycount.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/sys/index/git_index_name_entrycount.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/sys/index/git_index_name_entrycount.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/sys/index/git_index_name_entrycount.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/sys/index/git_index_name_entrycount.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/sys/index/git_index_name_entrycount.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/sys/index/git_index_name_entrycount.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/sys/index/git_index_name_entrycount.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/sys/index/git_index_name_entrycount.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/sys/index/git_index_name_entrycount.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/sys/index/git_index_name_entrycount.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/sys/index/git_index_name_entrycount.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/sys/index/git_index_name_entrycount.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/sys/index/git_index_name_entrycount.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/sys/index/git_index_name_entrycount.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/sys/index/git_index_name_entrycount.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/sys/index/git_index_name_entrycount.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/sys/index/git_index_name_entrycount.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/sys/index/git_index_name_entrycount.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/sys/index/git_index_name_entrycount.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/sys/index/git_index_name_entrycount.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/sys/index/git_index_name_entrycount.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/sys/index/git_index_name_entrycount.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/sys/index/git_index_name_entrycount.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/sys/index/git_index_name_entrycount.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/sys/index/git_index_name_entrycount.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/sys/index/git_index_name_entrycount.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/sys/index/git_index_name_entrycount.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/sys/index/git_index_name_entrycount.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/sys/index/git_index_name_entrycount.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/sys/index/git_index_name_entrycount.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/sys/index/git_index_name_entrycount.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/sys/index/git_index_name_entrycount.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/sys/index/git_index_name_entrycount.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/sys/index/git_index_name_entrycount.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/sys/index/git_index_name_entrycount.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/sys/index/git_index_name_entrycount.html" selected>v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/sys/index/git_index_name_entrycount.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/sys/index/git_index_name_entrycount.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/sys/index/git_index_name_entrycount.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/sys/index/git_index_name_entrycount.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/sys/index/git_index_name_entrycount.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/sys/index/git_index_name_entrycount.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/sys/index/git_index_name_entrycount.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/sys/index/git_index_name_entrycount.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/sys/index/git_index_name_entrycount.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/sys/index/git_index_name_entrycount.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/sys/index/git_index_name_entrycount.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/sys/index/git_index_name_entrycount.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/sys/index/git_index_name_entrycount.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/sys/index/git_index_name_entrycount.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/sys/index/git_index_name_entrycount.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/sys/index/git_index_name_entrycount.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/sys/index/git_index_name_entrycount.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/sys/index/git_index_name_entrycount.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/sys/index/git_index_name_entrycount.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/sys/index/git_index_name_entrycount.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/sys/index/git_index_name_entrycount.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/sys/index/git_index_name_entrycount.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/sys/index/git_index_name_entrycount.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/sys/index/git_index_name_entrycount.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/sys/index/git_index_name_entrycount.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/sys/index/git_index_name_entrycount.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/sys/index/git_index_name_entrycount.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/sys/index/git_index_name_entrycount.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/sys/index/git_index_name_entrycount.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/sys/index/git_index_name_entrycount.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/sys/index/git_index_name_entrycount.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/sys/index/git_index_name_entrycount.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/sys/index/git_index_name_entrycount.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/sys/index/git_index_name_entrycount.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/sys/index/git_index_name_entrycount.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/sys/index/git_index_name_entrycount.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/sys/index/git_index_name_entrycount.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/sys/index/git_index_name_entrycount.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/sys/index/git_index_name_entrycount.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/sys/index/git_index_name_entrycount.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/sys/index/git_index_name_entrycount.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/sys/index/git_index_name_entrycount.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/sys/index/git_index_name_entrycount.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/sys/index/git_index_name_entrycount.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/sys/index/git_index_name_entrycount.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/sys/index/git_index_name_entrycount.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/sys/index/git_index_name_entrycount.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/sys/index/git_index_name_entrycount.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/sys/index/git_index_name_entrycount.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/sys/index/git_index_name_entrycount.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/sys/index/git_index_name_entrycount.html">v0.19.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Get the count of filename conflict entries currently in the index.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.27.2/include/git2/sys/index.h#L45" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          size_t git_index_name_entrycount(<span class="apiSignatureParameter functionSignatureParameter">git_index *index</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.27.2/index/git_index.html" class="apiLink objectLink">git_index *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              index
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>an existing index object</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            size_t
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>integer of count of current filename conflict entries</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.22.0-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.19.0/sys/index/git_index_name_entrycount.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

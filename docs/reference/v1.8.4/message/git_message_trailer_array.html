@@ -1,0 +1,316 @@
+---
+title: git_message_trailer_array (libgit2 v1.8.4)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.4/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.4/message/index.html">message</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_message_trailer_array</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/message/git_message_trailer_array.html">main</option>
+              <option value="/docs/reference/v1.8.4/message/git_message_trailer_array.html" selected>v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/message/git_message_trailer_array.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/message/git_message_trailer_array.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/message/git_message_trailer_array.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/message/git_message_trailer_array.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/message/git_message_trailer_array.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/message/git_message_trailer_array.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/message/git_message_trailer_array.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/message/git_message_trailer_array.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/message/git_message_trailer_array.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/message/git_message_trailer_array.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/message/git_message_trailer_array.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/message/git_message_trailer_array.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/message/git_message_trailer_array.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/message/git_message_trailer_array.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/message/git_message_trailer_array.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/message/git_message_trailer_array.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/message/git_message_trailer_array.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/message/git_message_trailer_array.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/message/git_message_trailer_array.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/message/git_message_trailer_array.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/message/git_message_trailer_array.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/message/git_message_trailer_array.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/message/git_message_trailer_array.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/message/git_message_trailer_array.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/message/git_message_trailer_array.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/message/git_message_trailer_array.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/message/git_message_trailer_array.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/message/git_message_trailer_array.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/message/git_message_trailer_array.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/message/git_message_trailer_array.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/message/git_message_trailer_array.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/message/git_message_trailer_array.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/message/git_message_trailer_array.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/message/git_message_trailer_array.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/message/git_message_trailer_array.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/message/git_message_trailer_array.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/message/git_message_trailer_array.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/message/git_message_trailer_array.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/message/git_message_trailer_array.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/message/git_message_trailer_array.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/message/git_message_trailer_array.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/message/git_message_trailer_array.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/message/git_message_trailer_array.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/message/git_message_trailer_array.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/message/git_message_trailer_array.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/message/git_message_trailer_array.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/message/git_message_trailer_array.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/message/git_message_trailer_array.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/message/git_message_trailer_array.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/message/git_message_trailer_array.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/message/git_message_trailer_array.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/message/git_message_trailer_array.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/message/git_message_trailer_array.html">v0.27.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Represents an array of git message trailers.</p>
+
+        <p>Struct members under the private comment are private, subject to change
+and should not be used by callers.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.4/include/git2/message.h#L54" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_message_trailer_array {
+<span class="apiSignatureMember structSignatureMember">git_message_trailer *trailers</span>
+<span class="apiSignatureMember structSignatureMember">size_t count</span>
+<span class="apiSignatureMember structSignatureMember">char *_trailer_block</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.8.4/message/git_message_trailer.html" class="apiLink structLink">git_message_trailer *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              trailers
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              count
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              _trailer_block
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.8.4/message/git_message_trailers.html" className="apiLink functionLink">git_message_trailers</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.4/message/git_message_trailer_array_free.html" className="apiLink functionLink">git_message_trailer_array_free</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.27.0-rc1/message/git_message_trailer_array.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

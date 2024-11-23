@@ -1,0 +1,364 @@
+---
+title: rebase APIs (libgit2 v1.6.5)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v1.6.5/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">rebase</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/rebase/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/rebase/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/rebase/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/rebase/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/rebase/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/rebase/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/rebase/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/rebase/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/rebase/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/rebase/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/rebase/index.html" selected>v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/rebase/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/rebase/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/rebase/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/rebase/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/rebase/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/rebase/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/rebase/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/rebase/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/rebase/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/rebase/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/rebase/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/rebase/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/rebase/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/rebase/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/rebase/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/rebase/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/rebase/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/rebase/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/rebase/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/rebase/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/rebase/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/rebase/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/rebase/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/rebase/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/rebase/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/rebase/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/rebase/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/rebase/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/rebase/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/rebase/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/rebase/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/rebase/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/rebase/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/rebase/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/rebase/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/rebase/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/rebase/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/rebase/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/rebase/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/rebase/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/rebase/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/rebase/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/rebase/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/rebase/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/rebase/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/rebase/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/rebase/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/rebase/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/rebase/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/rebase/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/rebase/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/rebase/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/rebase/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/rebase/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/rebase/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/rebase/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/rebase/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/rebase/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/rebase/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/rebase/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/rebase/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/rebase/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/rebase/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/rebase/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/rebase/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/rebase/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/rebase/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/rebase/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/rebase/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/rebase/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/rebase/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/rebase/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/rebase/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/rebase/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/rebase/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/rebase/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/rebase/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/rebase/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/rebase/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/rebase/index.html">v0.22.0-rc1</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git rebase routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase.html">
+                git_rebase
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Representation of a rebase</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_options.html">
+                git_rebase_options
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Rebase options</p> 
+            </div>
+          </div>
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_operation.html">
+                git_rebase_operation
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>A rebase operation</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader macroListHeader">Macros</h3>
+        <div class="apiList macroList">
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.6.5/rebase/GIT_REBASE_OPTIONS_VERSION.html">
+                GIT_REBASE_OPTIONS_VERSION
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.6.5/rebase/GIT_REBASE_OPTIONS_INIT.html">
+                GIT_REBASE_OPTIONS_INIT
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.6.5/rebase/GIT_REBASE_NO_OPERATION.html">
+                GIT_REBASE_NO_OPERATION
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Indicates that a rebase operation is not (yet) in progress</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_operation_t.html">
+                git_rebase_operation_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Type of rebase operation in-progress after calling <a href="/docs/reference/v1.6.5/rebase/git_rebase_next.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_next</span></code></a></p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_options_init.html">
+                git_rebase_options_init
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Initialize git_rebase_options structure</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_init.html">
+                git_rebase_init
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Initializes a rebase operation to rebase the changes in <code><span class="codeWord">branch</span></code> relative to <code><span class="codeWord">upstream</span></code> onto another branch process, call <a href="/docs/reference/v1.6.5/rebase/git_rebase_next.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_next</span></code></a>. When you have finished with this object, call <a href="/docs/reference/v1.6.5/rebase/git_rebase_free.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_free</span></code></a>.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_open.html">
+                git_rebase_open
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Opens an existing rebase that was previously started by either an invocation of <a href="/docs/reference/v1.6.5/rebase/git_rebase_init.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_init</span></code></a> or by another client</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_orig_head_name.html">
+                git_rebase_orig_head_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the original <code><span class="codeWord">HEAD</span></code> ref name for merge rebases</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_orig_head_id.html">
+                git_rebase_orig_head_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the original <code><span class="codeWord">HEAD</span></code> id for merge rebases</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_onto_name.html">
+                git_rebase_onto_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the <code><span class="codeWord">onto</span></code> ref name for merge rebases</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_onto_id.html">
+                git_rebase_onto_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the <code><span class="codeWord">onto</span></code> id for merge rebases</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_operation_entrycount.html">
+                git_rebase_operation_entrycount
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the count of rebase operations that are to be applied</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_operation_current.html">
+                git_rebase_operation_current
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the index of the rebase operation that is currently being applied If the first operation has not yet been applied (because you have called <code><span class="codeWord">init</span></code> but not yet <code><span class="codeWord">next</span></code>) then this returns <a href="/docs/reference/v1.6.5/rebase/GIT_REBASE_NO_OPERATION.html" class="apiLink macroLink"><code><span class="codeWord">GIT_REBASE_NO_OPERATION</span></code></a>.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_operation_byindex.html">
+                git_rebase_operation_byindex
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the rebase operation specified by the given index</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_next.html">
+                git_rebase_next
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Performs the next rebase operation and returns the information about it If the operation is one that applies a patch (which is any operation except GIT_REBASE_OPERATION_EXEC) then the patch will be applied and the index and working directory will be updated with the changes. If there are conflicts, you will need to address those before committing the changes.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_inmemory_index.html">
+                git_rebase_inmemory_index
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the index produced by the last operation, which is the result of <a href="/docs/reference/v1.6.5/rebase/git_rebase_next.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_next</span></code></a> and which will be committed by the next invocation of <a href="/docs/reference/v1.6.5/rebase/git_rebase_commit.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_commit</span></code></a> conflicts in an in-memory rebase before committing them. You must call <a href="/docs/reference/v1.6.5/index/git_index_free.html" class="apiLink functionLink"><code><span class="codeWord">git_index_free</span></code></a> when you are finished with this.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_commit.html">
+                git_rebase_commit
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Commits the current patch were introduced during the patch application from the <a href="/docs/reference/v1.6.5/rebase/git_rebase_next.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_next</span></code></a> invocation.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_abort.html">
+                git_rebase_abort
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Aborts a rebase that is currently in progress, resetting the repository and working directory to their state before rebase began</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_finish.html">
+                git_rebase_finish
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Finishes a rebase that is currently in progress once all patches have been applied</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.5/rebase/git_rebase_free.html">
+                git_rebase_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Frees the <a href="/docs/reference/v1.6.5/rebase/git_rebase.html" class="apiLink objectLink"><code><span class="codeWord">git_rebase</span></code></a> object</p> 
+            </div>
+          </div>
+        </div>
+    </div>

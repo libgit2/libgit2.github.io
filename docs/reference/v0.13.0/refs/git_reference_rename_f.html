@@ -1,0 +1,98 @@
+---
+title: git_reference_rename_f (libgit2 v0.13.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.13.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.13.0/refs/index.html">refs</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_reference_rename_f</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.13.0/refs/git_reference_rename_f.html" selected>v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/refs/git_reference_rename_f.html">v0.12.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Rename an existing reference, overwriting an existing one with the
+same name, if it exists.</p>
+
+        <p>This method works for both direct and symbolic references.
+The new name will be checked for validity and may be
+modified into a normalized form.</p>
+
+        <p>The refernece will be immediately renamed in-memory
+and on disk.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.13.0/include/git2/refs.h#L246" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_reference_rename_f(<span class="apiSignatureParameter functionSignatureParameter">git_reference *ref</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *new_name</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/refs/git_reference.html" class="apiLink objectLink">git_reference *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              ref
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              new_name
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/refs/git_reference_rename_f.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.12.0/refs/git_reference_rename_f.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

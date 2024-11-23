@@ -1,0 +1,125 @@
+---
+title: git_blob_create_fromfile (libgit2 v0.16.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.16.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.16.0/blob/index.html">blob</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_blob_create_fromfile</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.17.0/blob/git_blob_create_fromfile.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/blob/git_blob_create_fromfile.html" selected>v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/blob/git_blob_create_fromfile.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/blob/git_blob_create_fromfile.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/blob/git_blob_create_fromfile.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/blob/git_blob_create_fromfile.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/blob/git_blob_create_fromfile.html">v0.11.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Read a file from the working folder of a repository
+and write it to the Object Database as a loose blob</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.16.0/include/git2/blob.h#L104" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_blob_create_fromfile(<span class="apiSignatureParameter functionSignatureParameter">git_oid *oid</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *path</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.16.0/oid/git_oid.html" class="apiLink objectLink">git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              oid
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>return the id of the written blob</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.16.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>repository where the blob will be written. this repository cannot be bare</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              path
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>file from which the blob will be created, relative to the repository's working dir</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>GIT_SUCCESS or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/blob/git_blob_create_fromfile.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/blob/git_blob_create_fromfile.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/blob/git_blob_create_fromfile.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/blob/git_blob_create_fromfile.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/blob/git_blob_create_fromfile.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/blob/git_blob_create_fromfile.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.11.0/blob/git_blob_create_fromfile.html" class="apiVersionLink functionVersionLink">v0.11.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

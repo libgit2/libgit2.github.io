@@ -1,0 +1,228 @@
+---
+title: git_commit_graph_writer_options (libgit2 v1.8.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.0/sys/commit_graph/index.html">commit_graph (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_commit_graph_writer_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/commit_graph/git_commit_graph_writer_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/commit_graph/git_commit_graph_writer_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/commit_graph/git_commit_graph_writer_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/commit_graph/git_commit_graph_writer_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/commit_graph/git_commit_graph_writer_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/commit_graph/git_commit_graph_writer_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_options.html" selected>v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/commit_graph/git_commit_graph_writer_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/commit_graph/git_commit_graph_writer_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/commit_graph/git_commit_graph_writer_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/sys/commit_graph/git_commit_graph_writer_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/sys/commit_graph/git_commit_graph_writer_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/sys/commit_graph/git_commit_graph_writer_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/sys/commit_graph/git_commit_graph_writer_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/sys/commit_graph/git_commit_graph_writer_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/sys/commit_graph/git_commit_graph_writer_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/sys/commit_graph/git_commit_graph_writer_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/sys/commit_graph/git_commit_graph_writer_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/sys/commit_graph/git_commit_graph_writer_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/sys/commit_graph/git_commit_graph_writer_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/sys/commit_graph/git_commit_graph_writer_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/sys/commit_graph/git_commit_graph_writer_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/sys/commit_graph/git_commit_graph_writer_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/sys/commit_graph/git_commit_graph_writer_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/sys/commit_graph/git_commit_graph_writer_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/sys/commit_graph/git_commit_graph_writer_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/sys/commit_graph/git_commit_graph_writer_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/sys/commit_graph/git_commit_graph_writer_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/sys/commit_graph/git_commit_graph_writer_options.html">v1.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Options structure for
+<a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_commit.html" class="apiLink functionLink"><code><span class="codeWord">git_commit_graph_writer_commit</span></code></a>/<a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_dump.html" class="apiLink functionLink"><code><span class="codeWord">git_commit_graph_writer_dump</span></code></a>.</p>
+
+        <p>Initialize with <a href="/docs/reference/v1.8.0/sys/commit_graph/GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT.html" class="apiLink macroLink"><code><span class="codeWord">GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT</span></code></a>. Alternatively, you
+can use <a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_options_init.html" class="apiLink functionLink"><code><span class="codeWord">git_commit_graph_writer_options_init</span></code></a>.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.0/include/git2/sys/commit_graph.h#L117" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_commit_graph_writer_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">git_commit_graph_split_strategy_t split_strategy</span>
+<span class="apiSignatureMember structSignatureMember">float size_multiple</span>
+<span class="apiSignatureMember structSignatureMember">size_t max_commits</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_split_strategy_t.html" class="apiLink enumLink">git_commit_graph_split_strategy_t</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              split_strategy
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The strategy to use when adding new commits to a pre-existing commit-graph chain.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              float
+            </div>
+            <div class="apiMemberName structMemberName">
+              size_multiple
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The number of commits in level N is less than X times the number of commits in level N + 1. Default is 2.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              max_commits
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The number of commits in level N + 1 is more than C commits. Default is 64000.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_options_init.html" className="apiLink functionLink">git_commit_graph_writer_options_init</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_commit.html" className="apiLink functionLink">git_commit_graph_writer_commit</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_dump.html" className="apiLink functionLink">git_commit_graph_writer_dump</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.2.0/sys/commit_graph/git_commit_graph_writer_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

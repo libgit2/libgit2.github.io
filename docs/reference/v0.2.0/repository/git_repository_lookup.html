@@ -1,0 +1,130 @@
+---
+title: git_repository_lookup (libgit2 v0.2.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.2.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.2.0/repository/index.html">repository</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_repository_lookup</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.3.0/repository/git_repository_lookup.html">v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/repository/git_repository_lookup.html" selected>v0.2.0</option>
+              <option value="/docs/reference/v0.1.0/repository/git_repository_lookup.html">v0.1.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Lookup a reference to one of the objects in the repostory.</p>
+
+        <p>The generated reference is owned by the repository and
+should not be freed by the user.</p>
+
+        <p>The 'type' parameter must match the type of the object
+in the odb; the method will fail otherwise.
+The special value 'GIT_OBJ_ANY' may be passed to let
+the method guess the object's type.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.2.0/include/git2/repository.h#L117" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_repository_lookup(<span class="apiSignatureParameter functionSignatureParameter">git_object **object</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_oid *id</span>, <span class="apiSignatureParameter functionSignatureParameter">git_otype type</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_object **
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              object
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>pointer to the looked-up object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_repository *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the repository to look up the object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const git_oid *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              id
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the unique identifier for the object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_otype
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              type
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the type of the object</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>a reference to the object</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.3.0/repository/git_repository_lookup.html" class="apiVersionLink functionVersionLink">v0.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.2.0/repository/git_repository_lookup.html" class="apiVersionLink functionVersionLink">v0.2.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.1.0/repository/git_repository_lookup.html" class="apiVersionLink functionVersionLink">v0.1.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

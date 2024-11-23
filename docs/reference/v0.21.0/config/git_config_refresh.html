@@ -1,0 +1,117 @@
+---
+title: git_config_refresh (libgit2 v0.21.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.0/config/index.html">config</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_config_refresh</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/config/git_config_refresh.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/config/git_config_refresh.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/config/git_config_refresh.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/config/git_config_refresh.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/config/git_config_refresh.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/config/git_config_refresh.html" selected>v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/config/git_config_refresh.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/config/git_config_refresh.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/config/git_config_refresh.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/config/git_config_refresh.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/config/git_config_refresh.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Reload changed config files</p>
+
+        <p>A config file may be changed on disk out from under the in-memory
+config object.  This function causes us to look for files that have
+been modified since we last loaded them and refresh the config with
+the latest information.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.0/include/git2/config.h#L257" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_config_refresh(<span class="apiSignatureParameter functionSignatureParameter">git_config *cfg</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.0/config/git_config.html" class="apiLink objectLink">git_config *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              cfg
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The configuration to refresh</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/config/git_config_refresh.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

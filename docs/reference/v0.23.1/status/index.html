@@ -1,0 +1,343 @@
+---
+title: status APIs (libgit2 v0.23.1)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.23.1/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">status</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/status/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/status/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/status/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/status/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/status/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/status/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/status/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/status/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/status/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/status/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/status/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/status/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/status/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/status/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/status/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/status/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/status/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/status/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/status/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/status/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/status/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/status/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/status/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/status/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/status/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/status/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/status/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/status/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/status/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/status/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/status/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/status/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/status/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/status/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/status/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/status/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/status/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/status/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/status/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/status/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/status/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/status/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/status/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/status/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/status/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/status/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/status/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/status/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/status/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/status/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/status/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/status/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/status/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/status/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/status/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/status/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/status/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/status/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/status/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/status/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/status/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/status/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/status/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/status/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/status/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/status/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/status/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/status/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/status/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/status/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/status/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/status/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/status/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/status/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/status/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/status/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/status/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/status/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/status/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/status/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/status/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/status/index.html" selected>v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/status/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/status/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/status/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/status/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/status/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/status/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/status/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/status/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/status/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/status/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/status/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/status/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/status/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/status/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/status/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/status/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/status/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/status/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/status/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/status/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/status/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/status/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/status/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/status/index.html">v0.14.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git file status routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_list.html">
+                git_status_list
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Representation of a status collection</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_options.html">
+                git_status_options
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Options to control how <code><span class="codeWord">git_status_foreach_ext()</span></code> will issue callbacks</p> 
+            </div>
+          </div>
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_entry.html">
+                git_status_entry
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>A status entry, providing the differences between the file as it exists in HEAD and the index, and providing the differences between the index and the working directory</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader macroListHeader">Macros</h3>
+        <div class="apiList macroList">
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.23.1/status/GIT_STATUS_OPT_DEFAULTS.html">
+                GIT_STATUS_OPT_DEFAULTS
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.23.1/status/GIT_STATUS_OPTIONS_VERSION.html">
+                GIT_STATUS_OPTIONS_VERSION
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.23.1/status/GIT_STATUS_OPTIONS_INIT.html">
+                GIT_STATUS_OPTIONS_INIT
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_t.html">
+                git_status_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Status flags for a single file</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_show_t.html">
+                git_status_show_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Select the files on which to report status</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_opt_t.html">
+                git_status_opt_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Flags to control status callbacks</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader callbackListHeader">Callbacks</h3>
+        <div class="apiList callbackList">
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_cb.html">
+                git_status_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Function pointer to receive status on individual files</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_init_options.html">
+                git_status_init_options
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Initializes a <a href="/docs/reference/v0.23.1/status/git_status_options.html" class="apiLink structLink"><code><span class="codeWord">git_status_options</span></code></a> with default values creating an instance with GIT_STATUS_OPTIONS_INIT.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_foreach.html">
+                git_status_foreach
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gather file statuses and run a callback for each one</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_foreach_ext.html">
+                git_status_foreach_ext
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gather file status information and run callbacks as requested</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_file.html">
+                git_status_file
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get file status for a single file</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_list_new.html">
+                git_status_list_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gather file status information and populate the <a href="/docs/reference/v0.23.1/status/git_status_list.html" class="apiLink objectLink"><code><span class="codeWord">git_status_list</span></code></a></p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_list_entrycount.html">
+                git_status_list_entrycount
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Gets the count of status entries in this list</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_byindex.html">
+                git_status_byindex
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get a pointer to one of the entries in the status list</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_list_free.html">
+                git_status_list_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free an existing status list</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.1/status/git_status_should_ignore.html">
+                git_status_should_ignore
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Test if the ignore rules apply to a given file</p> 
+            </div>
+          </div>
+        </div>
+    </div>

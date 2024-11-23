@@ -1,0 +1,137 @@
+---
+title: git_commit_create_options (libgit2 v1.8.1)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.1/commit/index.html">commit</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_commit_create_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/commit/git_commit_create_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/commit/git_commit_create_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/commit/git_commit_create_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/commit/git_commit_create_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/commit/git_commit_create_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/commit/git_commit_create_options.html" selected>v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/commit/git_commit_create_options.html">v1.8.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.1/include/git2/commit.h#L397" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_commit_create_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int allow_empty_commit</span>
+<span class="apiSignatureMember structSignatureMember">const git_signature *author</span>
+<span class="apiSignatureMember structSignatureMember">const git_signature *committer</span>
+<span class="apiSignatureMember structSignatureMember">const char *message_encoding</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              allow_empty_commit
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Flags for creating the commit.</p>  <p>If <code><span class="codeWord">allow_empty_commit</span></code> is specified, a commit with no changes from the prior commit (and &quot;empty&quot; commit) is allowed. Otherwise, commit creation will be stopped.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.8.1/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              author
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The commit author, or NULL for the default.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.8.1/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              committer
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The committer, or NULL for the default.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              message_encoding
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Encoding for the commit message; leave NULL for default.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.8.1/commit/git_commit_create_from_stage.html" className="apiLink functionLink">git_commit_create_from_stage</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/commit/git_commit_create_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/commit/git_commit_create_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/commit/git_commit_create_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/commit/git_commit_create_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/commit/git_commit_create_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/commit/git_commit_create_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.8.0/commit/git_commit_create_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

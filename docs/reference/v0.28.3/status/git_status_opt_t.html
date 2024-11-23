@@ -1,0 +1,674 @@
+---
+title: git_status_opt_t (libgit2 v0.28.3)
+layout: default
+---
+
+      <div class="api enum">
+        <div class="apiBreadcrumb enumBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.28.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.28.3/status/index.html">status</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader enumHeader">
+          <h2 class="apiName enumName">git_status_opt_t</h2>
+          <div class="apiHeaderVersionSelect enumHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/status/git_status_opt_t.html">main</option>
+              <option value="/docs/reference/v1.8.4/status/git_status_opt_t.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/status/git_status_opt_t.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/status/git_status_opt_t.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/status/git_status_opt_t.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/status/git_status_opt_t.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/status/git_status_opt_t.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/status/git_status_opt_t.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/status/git_status_opt_t.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/status/git_status_opt_t.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/status/git_status_opt_t.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/status/git_status_opt_t.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/status/git_status_opt_t.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/status/git_status_opt_t.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/status/git_status_opt_t.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/status/git_status_opt_t.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/status/git_status_opt_t.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/status/git_status_opt_t.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/status/git_status_opt_t.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/status/git_status_opt_t.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/status/git_status_opt_t.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/status/git_status_opt_t.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/status/git_status_opt_t.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/status/git_status_opt_t.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/status/git_status_opt_t.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/status/git_status_opt_t.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/status/git_status_opt_t.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/status/git_status_opt_t.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/status/git_status_opt_t.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/status/git_status_opt_t.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/status/git_status_opt_t.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/status/git_status_opt_t.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/status/git_status_opt_t.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/status/git_status_opt_t.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/status/git_status_opt_t.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/status/git_status_opt_t.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/status/git_status_opt_t.html" selected>v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/status/git_status_opt_t.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/status/git_status_opt_t.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/status/git_status_opt_t.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/status/git_status_opt_t.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/status/git_status_opt_t.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/status/git_status_opt_t.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/status/git_status_opt_t.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/status/git_status_opt_t.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/status/git_status_opt_t.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/status/git_status_opt_t.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/status/git_status_opt_t.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/status/git_status_opt_t.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/status/git_status_opt_t.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/status/git_status_opt_t.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/status/git_status_opt_t.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/status/git_status_opt_t.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/status/git_status_opt_t.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/status/git_status_opt_t.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/status/git_status_opt_t.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/status/git_status_opt_t.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/status/git_status_opt_t.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/status/git_status_opt_t.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/status/git_status_opt_t.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/status/git_status_opt_t.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/status/git_status_opt_t.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/status/git_status_opt_t.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/status/git_status_opt_t.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/status/git_status_opt_t.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/status/git_status_opt_t.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/status/git_status_opt_t.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/status/git_status_opt_t.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/status/git_status_opt_t.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/status/git_status_opt_t.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/status/git_status_opt_t.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/status/git_status_opt_t.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/status/git_status_opt_t.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/status/git_status_opt_t.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/status/git_status_opt_t.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/status/git_status_opt_t.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/status/git_status_opt_t.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/status/git_status_opt_t.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/status/git_status_opt_t.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/status/git_status_opt_t.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/status/git_status_opt_t.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/status/git_status_opt_t.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/status/git_status_opt_t.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/status/git_status_opt_t.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/status/git_status_opt_t.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/status/git_status_opt_t.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/status/git_status_opt_t.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/status/git_status_opt_t.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/status/git_status_opt_t.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/status/git_status_opt_t.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/status/git_status_opt_t.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/status/git_status_opt_t.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/status/git_status_opt_t.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/status/git_status_opt_t.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/status/git_status_opt_t.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/status/git_status_opt_t.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/status/git_status_opt_t.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/status/git_status_opt_t.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/status/git_status_opt_t.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/status/git_status_opt_t.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/status/git_status_opt_t.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/status/git_status_opt_t.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription enumDescription">
+        <p>Flags to control status callbacks</p>
+
+        <ul>
+<li>GIT_STATUS_OPT_INCLUDE_UNTRACKED says that callbacks should be made
+on untracked files.  These will only be made if the workdir files are
+included in the status &quot;show&quot; option.</li>
+<li>GIT_STATUS_OPT_INCLUDE_IGNORED says that ignored files get callbacks.
+Again, these callbacks will only be made if the workdir files are
+included in the status &quot;show&quot; option.</li>
+<li>GIT_STATUS_OPT_INCLUDE_UNMODIFIED indicates that callback should be
+made even on unmodified files.</li>
+<li>GIT_STATUS_OPT_EXCLUDE_SUBMODULES indicates that submodules should be
+skipped.  This only applies if there are no pending typechanges to
+the submodule (either from or to another type).</li>
+<li>GIT_STATUS_OPT_RECURSE_UNTRACKED_DIRS indicates that all files in
+untracked directories should be included.  Normally if an entire
+directory is new, then just the top-level directory is included (with
+a trailing slash on the entry name).  This flag says to include all
+of the individual files in the directory instead.</li>
+<li>GIT_STATUS_OPT_DISABLE_PATHSPEC_MATCH indicates that the given path
+should be treated as a literal path, and not as a pathspec pattern.</li>
+<li>GIT_STATUS_OPT_RECURSE_IGNORED_DIRS indicates that the contents of
+ignored directories should be included in the status.  This is like
+doing <code><span class="codeWord">git</span> <span class="codeWord">ls-files</span> <span class="codeWord">-o</span> <span class="codeWord">-i</span> <span class="codeWord">--exclude-standard</span></code> with core git.</li>
+<li>GIT_STATUS_OPT_RENAMES_HEAD_TO_INDEX indicates that rename detection
+should be processed between the head and the index and enables
+the GIT_STATUS_INDEX_RENAMED as a possible status flag.</li>
+<li>GIT_STATUS_OPT_RENAMES_INDEX_TO_WORKDIR indicates that rename
+detection should be run between the index and the working directory
+and enabled GIT_STATUS_WT_RENAMED as a possible status flag.</li>
+<li>GIT_STATUS_OPT_SORT_CASE_SENSITIVELY overrides the native case
+sensitivity for the file system and forces the output to be in
+case-sensitive order</li>
+<li>GIT_STATUS_OPT_SORT_CASE_INSENSITIVELY overrides the native case
+sensitivity for the file system and forces the output to be in
+case-insensitive order</li>
+<li>GIT_STATUS_OPT_RENAMES_FROM_REWRITES indicates that rename detection
+should include rewritten files</li>
+<li>GIT_STATUS_OPT_NO_REFRESH bypasses the default status behavior of
+doing a &quot;soft&quot; index reload (i.e. reloading the index data if the
+file on disk has been modified outside libgit2).</li>
+<li>GIT_STATUS_OPT_UPDATE_INDEX tells libgit2 to refresh the stat cache
+in the index for files that are unchanged but have out of date stat
+information in the index.  It will result in less work being done on
+subsequent calls to get status.  This is mutually exclusive with the
+NO_REFRESH option.</li>
+</ul>
+
+        <p>Calling <code><span class="codeWord">git_status_foreach()</span></code> is like calling the extended version
+with: GIT_STATUS_OPT_INCLUDE_IGNORED, GIT_STATUS_OPT_INCLUDE_UNTRACKED,
+and GIT_STATUS_OPT_RECURSE_UNTRACKED_DIRS.  Those options are bundled
+together as <a href="/docs/reference/v0.28.3/status/GIT_STATUS_OPT_DEFAULTS.html" class="apiLink macroLink"><code><span class="codeWord">GIT_STATUS_OPT_DEFAULTS</span></code></a> if you want them as a baseline.</p>
+
+        </div>
+
+        <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
+        <div class="apiSignatureLink enumSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.28.3/include/git2/status.h#L139" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiMembers enumMembers">
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_INCLUDE_UNTRACKED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              0
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_INCLUDE_IGNORED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              1
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_INCLUDE_UNMODIFIED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              2
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_EXCLUDE_SUBMODULES
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              3
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_RECURSE_UNTRACKED_DIRS
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              4
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_DISABLE_PATHSPEC_MATCH
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              5
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_RECURSE_IGNORED_DIRS
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              6
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_RENAMES_HEAD_TO_INDEX
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              7
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_RENAMES_INDEX_TO_WORKDIR
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              8
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_SORT_CASE_SENSITIVELY
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              9
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_SORT_CASE_INSENSITIVELY
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              10
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_RENAMES_FROM_REWRITES
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              11
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_NO_REFRESH
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              12
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_UPDATE_INDEX
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              13
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_INCLUDE_UNREADABLE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              14
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_STATUS_OPT_INCLUDE_UNREADABLE_AS_UNTRACKED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              15
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader enumVersionsHeader">Versions</h3>
+        <div class="apiVersions enumVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/main/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.22.0-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.21.0-rc1/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.20.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.19.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced enumVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/status/git_status_opt_t.html" class="apiVersionLink enumVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

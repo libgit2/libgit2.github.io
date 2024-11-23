@@ -1,0 +1,120 @@
+---
+title: git_diff_range (libgit2 v0.18.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.18.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.18.0/diff/index.html">diff</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_diff_range</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.19.0/diff/git_diff_range.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/diff/git_diff_range.html" selected>v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/diff/git_diff_range.html">v0.17.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Structure describing a hunk of a diff.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.18.0/include/git2/diff.h#L309" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_diff_range {
+<span class="apiSignatureMember structSignatureMember">int old_start</span>
+<span class="apiSignatureMember structSignatureMember">int old_lines</span>
+<span class="apiSignatureMember structSignatureMember">int new_start</span>
+<span class="apiSignatureMember structSignatureMember">int new_lines</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              old_start
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              old_lines
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Starting line number in old_file</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              new_start
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Number of lines in old_file</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              new_lines
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Starting line number in new_file</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.18.0/diff/git_diff_hunk_cb.html" className="apiLink callbackLink">git_diff_hunk_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.18.0/diff/git_diff_data_cb.html" className="apiLink callbackLink">git_diff_data_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.18.0/diff/git_diff_patch_get_hunk.html" className="apiLink functionLink">git_diff_patch_get_hunk</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/diff/git_diff_range.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.18.0/diff/git_diff_range.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.17.0/diff/git_diff_range.html" class="apiVersionLink structVersionLink">v0.17.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

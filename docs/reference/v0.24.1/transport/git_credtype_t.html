@@ -1,0 +1,524 @@
+---
+title: git_credtype_t (libgit2 v0.24.1)
+layout: default
+---
+
+      <div class="api enum">
+        <div class="apiBreadcrumb enumBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.24.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.24.1/transport/index.html">transport</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader enumHeader">
+          <h2 class="apiName enumName">git_credtype_t</h2>
+          <div class="apiHeaderVersionSelect enumHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/deprecated/git_credtype_t.html">main</option>
+              <option value="/docs/reference/v1.8.4/deprecated/git_credtype_t.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/deprecated/git_credtype_t.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/deprecated/git_credtype_t.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/deprecated/git_credtype_t.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/deprecated/git_credtype_t.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/deprecated/git_credtype_t.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/deprecated/git_credtype_t.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/deprecated/git_credtype_t.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/deprecated/git_credtype_t.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/deprecated/git_credtype_t.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/deprecated/git_credtype_t.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/deprecated/git_credtype_t.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/deprecated/git_credtype_t.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/deprecated/git_credtype_t.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/deprecated/git_credtype_t.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/deprecated/git_credtype_t.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/deprecated/git_credtype_t.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/deprecated/git_credtype_t.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/deprecated/git_credtype_t.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/deprecated/git_credtype_t.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/deprecated/git_credtype_t.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/deprecated/git_credtype_t.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/deprecated/git_credtype_t.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/deprecated/git_credtype_t.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/deprecated/git_credtype_t.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/deprecated/git_credtype_t.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/deprecated/git_credtype_t.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/deprecated/git_credtype_t.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/deprecated/git_credtype_t.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/deprecated/git_credtype_t.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/deprecated/git_credtype_t.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/deprecated/git_credtype_t.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/deprecated/git_credtype_t.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/transport/git_credtype_t.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/transport/git_credtype_t.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/transport/git_credtype_t.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/transport/git_credtype_t.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/transport/git_credtype_t.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/transport/git_credtype_t.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/transport/git_credtype_t.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/transport/git_credtype_t.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/transport/git_credtype_t.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/transport/git_credtype_t.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/transport/git_credtype_t.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/transport/git_credtype_t.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/transport/git_credtype_t.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/transport/git_credtype_t.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/transport/git_credtype_t.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/transport/git_credtype_t.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/transport/git_credtype_t.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/transport/git_credtype_t.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/transport/git_credtype_t.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/transport/git_credtype_t.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/transport/git_credtype_t.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/transport/git_credtype_t.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/transport/git_credtype_t.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/transport/git_credtype_t.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/transport/git_credtype_t.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/transport/git_credtype_t.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/transport/git_credtype_t.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/transport/git_credtype_t.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/transport/git_credtype_t.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/transport/git_credtype_t.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/transport/git_credtype_t.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/transport/git_credtype_t.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/transport/git_credtype_t.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/transport/git_credtype_t.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/transport/git_credtype_t.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/transport/git_credtype_t.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/transport/git_credtype_t.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/transport/git_credtype_t.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/transport/git_credtype_t.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/transport/git_credtype_t.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/transport/git_credtype_t.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/transport/git_credtype_t.html" selected>v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/transport/git_credtype_t.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/transport/git_credtype_t.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/transport/git_credtype_t.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/transport/git_credtype_t.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/transport/git_credtype_t.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/transport/git_credtype_t.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/transport/git_credtype_t.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/transport/git_credtype_t.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/transport/git_credtype_t.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/transport/git_credtype_t.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/transport/git_credtype_t.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/transport/git_credtype_t.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/transport/git_credtype_t.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/transport/git_credtype_t.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/transport/git_credtype_t.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/transport/git_credtype_t.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/transport/git_credtype_t.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/transport/git_credtype_t.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/transport/git_credtype_t.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/transport/git_credtype_t.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/transport/git_credtype_t.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/transport/git_credtype_t.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/transport/git_credtype_t.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/transport/git_credtype_t.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/transport/git_credtype_t.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/transport/git_credtype_t.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription enumDescription">
+        <p>Authentication type requested</p>
+
+        </div>
+
+        <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
+        <div class="apiSignatureLink enumSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.24.1/include/git2/transport.h#L81" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiMembers enumMembers">
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CREDTYPE_USERPASS_PLAINTEXT
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              0
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CREDTYPE_SSH_KEY
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              1
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CREDTYPE_SSH_CUSTOM
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              2
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CREDTYPE_DEFAULT
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              3
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CREDTYPE_SSH_INTERACTIVE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              4
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CREDTYPE_USERNAME
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              5
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Username-only information</p>  <p>If the SSH transport does not know which username to use, it will ask via this credential type.</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CREDTYPE_SSH_MEMORY
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              6
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Credentials read from memory.</p>  <p>Only available for libssh2+OpenSSL for now.</p> 
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader enumVersionsHeader">Versions</h3>
+        <div class="apiVersions enumVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/main/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.99.0/deprecated/git_credtype_t.html" class="apiVersionLink macroVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.22.0-rc1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.21.0-rc1/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.20.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.19.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced enumVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/transport/git_credtype_t.html" class="apiVersionLink enumVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,605 @@
+---
+title: git_commit_create_from_callback (libgit2 v0.22.1)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.22.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.22.1/sys/commit/index.html">commit (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_commit_create_from_callback</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/commit/git_commit_create_from_callback.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/commit/git_commit_create_from_callback.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/commit/git_commit_create_from_callback.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/commit/git_commit_create_from_callback.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/commit/git_commit_create_from_callback.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/commit/git_commit_create_from_callback.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/commit/git_commit_create_from_callback.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/commit/git_commit_create_from_callback.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/commit/git_commit_create_from_callback.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/commit/git_commit_create_from_callback.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/sys/commit/git_commit_create_from_callback.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/sys/commit/git_commit_create_from_callback.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/sys/commit/git_commit_create_from_callback.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/sys/commit/git_commit_create_from_callback.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/sys/commit/git_commit_create_from_callback.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/sys/commit/git_commit_create_from_callback.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/sys/commit/git_commit_create_from_callback.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/sys/commit/git_commit_create_from_callback.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/sys/commit/git_commit_create_from_callback.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/sys/commit/git_commit_create_from_callback.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/sys/commit/git_commit_create_from_callback.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/sys/commit/git_commit_create_from_callback.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/sys/commit/git_commit_create_from_callback.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/sys/commit/git_commit_create_from_callback.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/sys/commit/git_commit_create_from_callback.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/sys/commit/git_commit_create_from_callback.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/sys/commit/git_commit_create_from_callback.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/sys/commit/git_commit_create_from_callback.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/sys/commit/git_commit_create_from_callback.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/sys/commit/git_commit_create_from_callback.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/sys/commit/git_commit_create_from_callback.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/sys/commit/git_commit_create_from_callback.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/sys/commit/git_commit_create_from_callback.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/sys/commit/git_commit_create_from_callback.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/sys/commit/git_commit_create_from_callback.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/sys/commit/git_commit_create_from_callback.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/sys/commit/git_commit_create_from_callback.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/sys/commit/git_commit_create_from_callback.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/sys/commit/git_commit_create_from_callback.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/sys/commit/git_commit_create_from_callback.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/sys/commit/git_commit_create_from_callback.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/sys/commit/git_commit_create_from_callback.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/sys/commit/git_commit_create_from_callback.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/sys/commit/git_commit_create_from_callback.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/sys/commit/git_commit_create_from_callback.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/sys/commit/git_commit_create_from_callback.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/sys/commit/git_commit_create_from_callback.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/sys/commit/git_commit_create_from_callback.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/sys/commit/git_commit_create_from_callback.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/sys/commit/git_commit_create_from_callback.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/sys/commit/git_commit_create_from_callback.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/sys/commit/git_commit_create_from_callback.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/sys/commit/git_commit_create_from_callback.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/sys/commit/git_commit_create_from_callback.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/sys/commit/git_commit_create_from_callback.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/sys/commit/git_commit_create_from_callback.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/sys/commit/git_commit_create_from_callback.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/sys/commit/git_commit_create_from_callback.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/sys/commit/git_commit_create_from_callback.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/sys/commit/git_commit_create_from_callback.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/sys/commit/git_commit_create_from_callback.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/sys/commit/git_commit_create_from_callback.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/sys/commit/git_commit_create_from_callback.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/sys/commit/git_commit_create_from_callback.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/sys/commit/git_commit_create_from_callback.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/sys/commit/git_commit_create_from_callback.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/sys/commit/git_commit_create_from_callback.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/sys/commit/git_commit_create_from_callback.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/sys/commit/git_commit_create_from_callback.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/sys/commit/git_commit_create_from_callback.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/sys/commit/git_commit_create_from_callback.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/sys/commit/git_commit_create_from_callback.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/sys/commit/git_commit_create_from_callback.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/sys/commit/git_commit_create_from_callback.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/sys/commit/git_commit_create_from_callback.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/sys/commit/git_commit_create_from_callback.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/sys/commit/git_commit_create_from_callback.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/sys/commit/git_commit_create_from_callback.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/sys/commit/git_commit_create_from_callback.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/sys/commit/git_commit_create_from_callback.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/sys/commit/git_commit_create_from_callback.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/sys/commit/git_commit_create_from_callback.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/sys/commit/git_commit_create_from_callback.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/sys/commit/git_commit_create_from_callback.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/sys/commit/git_commit_create_from_callback.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/sys/commit/git_commit_create_from_callback.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/sys/commit/git_commit_create_from_callback.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/sys/commit/git_commit_create_from_callback.html" selected>v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/sys/commit/git_commit_create_from_callback.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/sys/commit/git_commit_create_from_callback.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/sys/commit/git_commit_create_from_callback.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/sys/commit/git_commit_create_from_callback.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/sys/commit/git_commit_create_from_callback.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/sys/commit/git_commit_create_from_callback.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/sys/commit/git_commit_create_from_callback.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/sys/commit/git_commit_create_from_callback.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/sys/commit/git_commit_create_from_callback.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/sys/commit/git_commit_create_from_callback.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/sys/commit/git_commit_create_from_callback.html">v0.21.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create a new commit in the repository with an callback to supply parents.</p>
+
+        <p>See documentation for <code><span class="codeWord">git_commit_create()</span></code> for information about the
+parameters, as the meaning is identical excepting that <code><span class="codeWord">tree</span></code> takes a
+<a href="/docs/reference/v0.22.1/oid/git_oid.html" class="apiLink structLink"><code><span class="codeWord">git_oid</span></code></a> and doesn't check for validity, and <code><span class="codeWord">parent_cb</span></code> is invoked
+with <code><span class="codeWord">parent_payload</span></code> and should return <a href="/docs/reference/v0.22.1/oid/git_oid.html" class="apiLink structLink"><code><span class="codeWord">git_oid</span></code></a> values or NULL to
+indicate that all parents are accounted for.</p>
+
+        </div>
+
+        <h3 class="apiSeeHeader functionSeeHeader">See</h3>
+        <div class="apiSee functionSee">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.22.1/commit/git_commit_create.html" className="apiLink functionLink">git_commit_create</a>
+          </li>
+          </ul>
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.22.1/include/git2/sys/commit.h#L66" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_commit_create_from_callback(<span class="apiSignatureParameter functionSignatureParameter">git_oid *id</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *update_ref</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *author</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *committer</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *message_encoding</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *message</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_oid *tree</span>, <span class="apiSignatureParameter functionSignatureParameter">git_commit_parent_callback parent_cb</span>, <span class="apiSignatureParameter functionSignatureParameter">void *parent_payload</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.22.1/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              id
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.22.1/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              update_ref
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.22.1/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              author
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.22.1/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              committer
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              message_encoding
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              message
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.22.1/oid/git_oid.html" class="apiLink structLink">const git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              tree
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.22.1/sys/commit/git_commit_parent_callback.html" class="apiLink callbackLink">git_commit_parent_callback</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              parent_cb
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              parent_payload
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.21.0-rc1/sys/commit/git_commit_create_from_callback.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

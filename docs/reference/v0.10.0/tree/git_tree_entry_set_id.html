@@ -1,0 +1,91 @@
+---
+title: git_tree_entry_set_id (libgit2 v0.10.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.10.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.10.0/tree/index.html">tree</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_tree_entry_set_id</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.10.0/tree/git_tree_entry_set_id.html" selected>v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/tree/git_tree_entry_set_id.html">v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/tree/git_tree_entry_set_id.html">v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/tree/git_tree_entry_set_id.html">v0.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Change the SHA1 id of a tree entry.</p>
+
+        <p>This will mark the tree that contains the entry as modified;
+the modified entry will be written back to disk on the next git_object_write()</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.10.0/include/git2/tree.h#L196" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          void git_tree_entry_set_id(<span class="apiSignatureParameter functionSignatureParameter">git_tree_entry *entry</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_oid *oid</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.10.0/tree/git_tree_entry.html" class="apiLink objectLink">git_tree_entry *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              entry
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Entry object which will be modified</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.10.0/oid/git_oid.html" class="apiLink structLink">const git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              oid
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>new SHA1 oid for the entry</p> 
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/tree/git_tree_entry_set_id.html" class="apiVersionLink functionVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.8.0/tree/git_tree_entry_set_id.html" class="apiVersionLink functionVersionLink">v0.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.3.0/tree/git_tree_entry_set_id.html" class="apiVersionLink functionVersionLink">v0.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.2.0/tree/git_tree_entry_set_id.html" class="apiVersionLink functionVersionLink">v0.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

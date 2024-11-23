@@ -1,0 +1,138 @@
+---
+title: git_config_get_multivar (libgit2 v0.17.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.17.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.17.0/config/index.html">config</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_config_get_multivar</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.19.0/config/git_config_get_multivar.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/config/git_config_get_multivar.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/config/git_config_get_multivar.html" selected>v0.17.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Get each value of a multivar.</p>
+
+        <p>The callback will be called on each variable found</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.17.0/include/git2/config.h#L235" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_config_get_multivar(<span class="apiSignatureParameter functionSignatureParameter">git_config *cfg</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *name</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *regexp</span>, <span class="apiSignatureParameter functionSignatureParameter">int (*)(const char *, void *) fn</span>, <span class="apiSignatureParameter functionSignatureParameter">void *data</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.17.0/config/git_config.html" class="apiLink objectLink">git_config *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              cfg
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>where to look for the variable</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              name
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the variable's name</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              regexp
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>regular expression to filter which variables we're interested in. Use NULL to indicate all</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              int (*)(const char *, void *)
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              fn
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the function to be called on each value of the variable</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              data
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>opaque pointer to pass to the callback</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/config/git_config_get_multivar.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.18.0/config/git_config_get_multivar.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.17.0/config/git_config_get_multivar.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,105 @@
+---
+title: git_index_get_unmerged_byindex (libgit2 v0.13.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.13.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.13.0/index/index.html">index</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_index_get_unmerged_byindex</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.17.0/index/git_index_get_unmerged_byindex.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/index/git_index_get_unmerged_byindex.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/index/git_index_get_unmerged_byindex.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/index/git_index_get_unmerged_byindex.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/index/git_index_get_unmerged_byindex.html" selected>v0.13.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Get an unmerged entry from the index.</p>
+
+        <p>The returned entry is read-only and should not be modified
+of freed by the caller.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.13.0/include/git2/index.h#L300" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          const git_index_entry_unmerged *git_index_get_unmerged_byindex(<span class="apiSignatureParameter functionSignatureParameter">git_index *index</span>, <span class="apiSignatureParameter functionSignatureParameter">unsigned int n</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/index/git_index.html" class="apiLink objectLink">git_index *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              index
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>an existing index object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              unsigned int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              n
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the position of the entry</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            <a href="/docs/reference/v0.13.0/index/git_index_entry_unmerged.html" class="apiLink structLink">const git_index_entry_unmerged *</a>
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>a pointer to the unmerged entry; NULL if out of bounds</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/index/git_index_get_unmerged_byindex.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/index/git_index_get_unmerged_byindex.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/index/git_index_get_unmerged_byindex.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/index/git_index_get_unmerged_byindex.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.13.0/index/git_index_get_unmerged_byindex.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

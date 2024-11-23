@@ -1,0 +1,218 @@
+---
+title: errors APIs (libgit2 v0.26.0-rc1)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.26.0-rc1/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">errors</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/errors/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/errors/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/errors/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/errors/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/errors/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/errors/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/errors/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/errors/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/errors/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/errors/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/errors/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/errors/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/errors/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/errors/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/errors/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/errors/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/errors/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/errors/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/errors/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/errors/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/errors/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/errors/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/errors/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/errors/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/errors/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/errors/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/errors/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/errors/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/errors/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/errors/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/errors/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/errors/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/errors/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/errors/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/errors/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/errors/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/errors/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/errors/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/errors/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/errors/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/errors/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/errors/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/errors/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/errors/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/errors/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/errors/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/errors/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/errors/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/errors/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/errors/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/errors/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/errors/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/errors/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/errors/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/errors/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/errors/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/errors/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/errors/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/errors/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/errors/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/errors/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/errors/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/errors/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/errors/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/errors/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/errors/index.html" selected>v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/errors/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/errors/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/errors/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/errors/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/errors/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/errors/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/errors/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/errors/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/errors/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/errors/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/errors/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/errors/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/errors/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/errors/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/errors/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/errors/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/errors/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/errors/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/errors/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/errors/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/errors/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/errors/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/errors/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/errors/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/errors/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/errors/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/errors/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/errors/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/errors/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/errors/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/errors/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/errors/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/errors/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/errors/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/errors/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/errors/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/errors/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/errors/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/errors/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/errors/index.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/errors/index.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/errors/index.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/errors/index.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/errors/index.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/errors/index.html">v0.8.0</option>
+              <option value="/docs/reference/v0.2.0/errors/index.html">v0.2.0</option>
+              <option value="/docs/reference/v0.1.0/errors/index.html">v0.1.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git error handling routines and variables
+      </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v0.26.0-rc1/errors/git_error.html">
+                git_error
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Structure to store extra details of the last error that occurred</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.26.0-rc1/errors/git_error_code.html">
+                git_error_code
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Generic return codes</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.26.0-rc1/errors/git_error_t.html">
+                git_error_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Error classes</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.0-rc1/errors/giterr_last.html">
+                giterr_last
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Return the last <a href="/docs/reference/v0.26.0-rc1/errors/git_error.html" class="apiLink structLink"><code><span class="codeWord">git_error</span></code></a> object that was generated for the current thread or NULL if no error has occurred</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.0-rc1/errors/giterr_clear.html">
+                giterr_clear
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Clear the last library error that occurred for this thread</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.0-rc1/errors/giterr_set_str.html">
+                giterr_set_str
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the error message string for this thread</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.26.0-rc1/errors/giterr_set_oom.html">
+                giterr_set_oom
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the error message to a special value for memory allocation failure</p> 
+            </div>
+          </div>
+        </div>
+    </div>

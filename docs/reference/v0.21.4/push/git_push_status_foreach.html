@@ -1,0 +1,147 @@
+---
+title: git_push_status_foreach (libgit2 v0.21.4)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.4/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.4/push/index.html">push</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_push_status_foreach</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/push/git_push_status_foreach.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/push/git_push_status_foreach.html" selected>v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/push/git_push_status_foreach.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/push/git_push_status_foreach.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/push/git_push_status_foreach.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/push/git_push_status_foreach.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/push/git_push_status_foreach.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/push/git_push_status_foreach.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/push/git_push_status_foreach.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/push/git_push_status_foreach.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/push/git_push_status_foreach.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Invoke callback `cb' on each status entry</p>
+
+        <p>For each of the updated references, we receive a status report in the
+form of <code><span class="codeWord">ok</span> <span class="codeWord">refs/heads/master</span></code> or <code><span class="codeWord">ng</span> <span class="codeWord">refs/heads/master</span> <span class="codeWord"></span> <span class="codeWord">&lt;msg&gt;</span></code>.
+<code><span class="codeWord">msg</span> <span class="codeWord">!=</span> <span class="codeWord">NULL</span></code> means the reference has not been updated for the given
+reason.</p>
+
+        <p>Return a non-zero value from the callback to stop the loop.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.4/include/git2/push.h#L168" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_push_status_foreach(<span class="apiSignatureParameter functionSignatureParameter">git_push *push</span>, <span class="apiSignatureParameter functionSignatureParameter">int (*)(const char *, const char *, void *) cb</span>, <span class="apiSignatureParameter functionSignatureParameter">void *data</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.4/remote/git_push.html" class="apiLink objectLink">git_push *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              push
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The push object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              int (*)(const char *, const char *, void *)
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              cb
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The callback to call on each object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              data
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, non-zero callback return value, or error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/push/git_push_status_foreach.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

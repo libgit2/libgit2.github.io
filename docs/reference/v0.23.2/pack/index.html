@@ -1,0 +1,351 @@
+---
+title: pack APIs (libgit2 v0.23.2)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.23.2/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">pack</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/pack/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/pack/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/pack/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/pack/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/pack/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/pack/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/pack/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/pack/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/pack/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/pack/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/pack/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/pack/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/pack/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/pack/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/pack/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/pack/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/pack/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/pack/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/pack/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/pack/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/pack/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/pack/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/pack/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/pack/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/pack/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/pack/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/pack/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/pack/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/pack/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/pack/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/pack/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/pack/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/pack/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/pack/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/pack/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/pack/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/pack/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/pack/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/pack/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/pack/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/pack/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/pack/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/pack/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/pack/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/pack/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/pack/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/pack/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/pack/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/pack/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/pack/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/pack/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/pack/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/pack/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/pack/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/pack/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/pack/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/pack/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/pack/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/pack/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/pack/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/pack/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/pack/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/pack/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/pack/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/pack/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/pack/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/pack/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/pack/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/pack/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/pack/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/pack/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/pack/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/pack/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/pack/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/pack/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/pack/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/pack/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/pack/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/pack/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/pack/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/pack/index.html" selected>v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/pack/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/pack/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/pack/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/pack/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/pack/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/pack/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/pack/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/pack/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/pack/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/pack/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/pack/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/pack/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/pack/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/pack/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/pack/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/pack/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/pack/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/pack/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/pack/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/pack/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/pack/index.html">v0.18.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        <h2>Packing objects</h2>
+<p>Creation of packfiles requires two steps:</p>
+<ul>
+<li>First, insert all the objects you want to put into the packfile
+using <a href="/docs/reference/v0.23.2/pack/git_packbuilder_insert.html" class="apiLink functionLink"><code><span class="codeWord">git_packbuilder_insert</span></code></a> and <a href="/docs/reference/v0.23.2/pack/git_packbuilder_insert_tree.html" class="apiLink functionLink"><code><span class="codeWord">git_packbuilder_insert_tree</span></code></a>.
+It's important to add the objects in recency order (&quot;in the order
+that they are 'reachable' from head&quot;).
+&quot;ANY order will give you a working pack, ... [but it is] the thing
+that gives packs good locality. It keeps the objects close to the
+head (whether they are old or new, but they are <em>reachable</em> from the
+head) at the head of the pack. So packs actually have absolutely
+<em>wonderful</em> IO patterns.&quot; - Linus Torvalds
+git.git/Documentation/technical/pack-heuristics.txt</li>
+<li>Second, use <a href="/docs/reference/v0.23.2/pack/git_packbuilder_write.html" class="apiLink functionLink"><code><span class="codeWord">git_packbuilder_write</span></code></a> or <a href="/docs/reference/v0.23.2/pack/git_packbuilder_foreach.html" class="apiLink functionLink"><code><span class="codeWord">git_packbuilder_foreach</span></code></a> to
+write the resulting packfile.
+libgit2 will take care of the delta ordering and generation.
+<a href="/docs/reference/v0.23.2/pack/git_packbuilder_set_threads.html" class="apiLink functionLink"><code><span class="codeWord">git_packbuilder_set_threads</span></code></a> can be used to adjust the number of
+threads used for the process.
+See tests/pack/packbuilder.c for an example.</li>
+</ul>
+
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder.html">
+                git_packbuilder
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Representation of a git packbuilder</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_stage_t.html">
+                git_packbuilder_stage_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Stages that are reported by the packbuilder progress callback</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader callbackListHeader">Callbacks</h3>
+        <div class="apiList callbackList">
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_foreach_cb.html">
+                git_packbuilder_foreach_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_progress.html">
+                git_packbuilder_progress
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Packbuilder progress notification function</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_new.html">
+                git_packbuilder_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Initialize a new packbuilder</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_set_threads.html">
+                git_packbuilder_set_threads
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set number of threads to spawn</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_insert.html">
+                git_packbuilder_insert
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Insert a single object</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_insert_tree.html">
+                git_packbuilder_insert_tree
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Insert a root tree object</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_insert_commit.html">
+                git_packbuilder_insert_commit
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Insert a commit object</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_insert_walk.html">
+                git_packbuilder_insert_walk
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Insert objects as given by the walk</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_insert_recur.html">
+                git_packbuilder_insert_recur
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Recursively insert an object and its referenced objects</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_write_buf.html">
+                git_packbuilder_write_buf
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Write the contents of the packfile to an in-memory buffer</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_write.html">
+                git_packbuilder_write
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Write the new pack and corresponding index file to path</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_hash.html">
+                git_packbuilder_hash
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the packfile's hash</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_foreach.html">
+                git_packbuilder_foreach
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create the new pack and pass each object to the callback</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_object_count.html">
+                git_packbuilder_object_count
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the total number of objects the packbuilder will write out</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_written.html">
+                git_packbuilder_written
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the number of objects the packbuilder has already written out</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_set_callbacks.html">
+                git_packbuilder_set_callbacks
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the callbacks for a packbuilder</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.23.2/pack/git_packbuilder_free.html">
+                git_packbuilder_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free the packbuilder and all associated data</p> 
+            </div>
+          </div>
+        </div>
+    </div>

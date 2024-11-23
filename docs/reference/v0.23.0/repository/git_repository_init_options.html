@@ -1,0 +1,588 @@
+---
+title: git_repository_init_options (libgit2 v0.23.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.23.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.23.0/repository/index.html">repository</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_repository_init_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/repository/git_repository_init_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/repository/git_repository_init_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/repository/git_repository_init_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/repository/git_repository_init_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/repository/git_repository_init_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/repository/git_repository_init_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/repository/git_repository_init_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/repository/git_repository_init_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/repository/git_repository_init_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/repository/git_repository_init_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/repository/git_repository_init_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/repository/git_repository_init_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/repository/git_repository_init_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/repository/git_repository_init_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/repository/git_repository_init_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/repository/git_repository_init_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/repository/git_repository_init_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/repository/git_repository_init_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/repository/git_repository_init_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/repository/git_repository_init_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/repository/git_repository_init_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/repository/git_repository_init_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/repository/git_repository_init_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/repository/git_repository_init_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/repository/git_repository_init_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/repository/git_repository_init_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/repository/git_repository_init_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/repository/git_repository_init_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/repository/git_repository_init_options.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/repository/git_repository_init_options.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/repository/git_repository_init_options.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/repository/git_repository_init_options.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/repository/git_repository_init_options.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/repository/git_repository_init_options.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/repository/git_repository_init_options.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/repository/git_repository_init_options.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/repository/git_repository_init_options.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/repository/git_repository_init_options.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/repository/git_repository_init_options.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/repository/git_repository_init_options.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/repository/git_repository_init_options.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/repository/git_repository_init_options.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/repository/git_repository_init_options.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/repository/git_repository_init_options.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/repository/git_repository_init_options.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/repository/git_repository_init_options.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/repository/git_repository_init_options.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/repository/git_repository_init_options.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/repository/git_repository_init_options.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/repository/git_repository_init_options.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/repository/git_repository_init_options.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/repository/git_repository_init_options.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/repository/git_repository_init_options.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/repository/git_repository_init_options.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/repository/git_repository_init_options.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/repository/git_repository_init_options.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/repository/git_repository_init_options.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/repository/git_repository_init_options.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/repository/git_repository_init_options.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/repository/git_repository_init_options.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/repository/git_repository_init_options.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/repository/git_repository_init_options.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/repository/git_repository_init_options.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/repository/git_repository_init_options.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/repository/git_repository_init_options.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/repository/git_repository_init_options.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/repository/git_repository_init_options.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/repository/git_repository_init_options.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/repository/git_repository_init_options.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/repository/git_repository_init_options.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/repository/git_repository_init_options.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/repository/git_repository_init_options.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/repository/git_repository_init_options.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/repository/git_repository_init_options.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/repository/git_repository_init_options.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/repository/git_repository_init_options.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/repository/git_repository_init_options.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/repository/git_repository_init_options.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/repository/git_repository_init_options.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/repository/git_repository_init_options.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/repository/git_repository_init_options.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/repository/git_repository_init_options.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/repository/git_repository_init_options.html" selected>v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/repository/git_repository_init_options.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/repository/git_repository_init_options.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/repository/git_repository_init_options.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/repository/git_repository_init_options.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/repository/git_repository_init_options.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/repository/git_repository_init_options.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/repository/git_repository_init_options.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/repository/git_repository_init_options.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/repository/git_repository_init_options.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/repository/git_repository_init_options.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/repository/git_repository_init_options.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/repository/git_repository_init_options.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/repository/git_repository_init_options.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/repository/git_repository_init_options.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/repository/git_repository_init_options.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/repository/git_repository_init_options.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/repository/git_repository_init_options.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/repository/git_repository_init_options.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/repository/git_repository_init_options.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Extended options structure for <a href="/docs/reference/v0.23.0/repository/git_repository_init_ext.html" class="apiLink functionLink"><code><span class="codeWord">git_repository_init_ext</span></code></a>.</p>
+
+        <p>This contains extra options for <a href="/docs/reference/v0.23.0/repository/git_repository_init_ext.html" class="apiLink functionLink"><code><span class="codeWord">git_repository_init_ext</span></code></a> that enable
+additional initialization features.  The fields are:</p>
+
+        <ul>
+<li>flags - Combination of GIT_REPOSITORY_INIT flags above.</li>
+<li>mode  - Set to one of the standard GIT_REPOSITORY_INIT_SHARED_...
+constants above, or to a custom value that you would like.</li>
+<li>workdir_path - The path to the working dir or NULL for default (i.e.
+repo_path parent on non-bare repos).  IF THIS IS RELATIVE PATH,
+IT WILL BE EVALUATED RELATIVE TO THE REPO_PATH.  If this is not
+the &quot;natural&quot; working directory, a .git gitlink file will be
+created here linking to the repo_path.</li>
+<li>description - If set, this will be used to initialize the &quot;description&quot;
+file in the repository, instead of using the template content.</li>
+<li>template_path - When GIT_REPOSITORY_INIT_EXTERNAL_TEMPLATE is set,
+this contains the path to use for the template directory.  If
+this is NULL, the config or default directory options will be
+used instead.</li>
+<li>initial_head - The name of the head to point HEAD at.  If NULL, then
+this will be treated as &quot;master&quot; and the HEAD ref will be set
+to &quot;refs/heads/master&quot;.  If this begins with &quot;refs/&quot; it will be
+used verbatim; otherwise &quot;refs/heads/&quot; will be prefixed.</li>
+<li>origin_url - If this is non-NULL, then after the rest of the
+repository initialization is completed, an &quot;origin&quot; remote
+will be added pointing to this URL.</li>
+</ul>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.23.0/include/git2/repository.h#L259" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_repository_init_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">uint32_t flags</span>
+<span class="apiSignatureMember structSignatureMember">uint32_t mode</span>
+<span class="apiSignatureMember structSignatureMember">const char *workdir_path</span>
+<span class="apiSignatureMember structSignatureMember">const char *description</span>
+<span class="apiSignatureMember structSignatureMember">const char *template_path</span>
+<span class="apiSignatureMember structSignatureMember">const char *initial_head</span>
+<span class="apiSignatureMember structSignatureMember">const char *origin_url</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              uint32_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              uint32_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              mode
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              workdir_path
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              description
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              template_path
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              initial_head
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              origin_url
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.23.0/repository/git_repository_init_init_options.html" className="apiLink functionLink">git_repository_init_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.23.0/repository/git_repository_init_ext.html" className="apiLink functionLink">git_repository_init_ext</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/repository/git_repository_init_options.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

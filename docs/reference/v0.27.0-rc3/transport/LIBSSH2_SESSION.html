@@ -1,0 +1,428 @@
+---
+title: LIBSSH2_SESSION (libgit2 v0.27.0-rc3)
+layout: default
+---
+
+      <div class="api object">
+        <div class="apiBreadcrumb objectBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.27.0-rc3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.27.0-rc3/transport/index.html">transport</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader objectHeader">
+          <h2 class="apiName objectName">LIBSSH2_SESSION</h2>
+          <div class="apiHeaderVersionSelect objectHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/credential/LIBSSH2_SESSION.html">main</option>
+              <option value="/docs/reference/v1.8.4/credential/LIBSSH2_SESSION.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/credential/LIBSSH2_SESSION.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/credential/LIBSSH2_SESSION.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/credential/LIBSSH2_SESSION.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/credential/LIBSSH2_SESSION.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/credential/LIBSSH2_SESSION.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/credential/LIBSSH2_SESSION.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/credential/LIBSSH2_SESSION.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/credential/LIBSSH2_SESSION.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/credential/LIBSSH2_SESSION.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/credential/LIBSSH2_SESSION.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/credential/LIBSSH2_SESSION.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/credential/LIBSSH2_SESSION.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/credential/LIBSSH2_SESSION.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/credential/LIBSSH2_SESSION.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/credential/LIBSSH2_SESSION.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/credential/LIBSSH2_SESSION.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/credential/LIBSSH2_SESSION.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/credential/LIBSSH2_SESSION.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/credential/LIBSSH2_SESSION.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/credential/LIBSSH2_SESSION.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/credential/LIBSSH2_SESSION.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/credential/LIBSSH2_SESSION.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/credential/LIBSSH2_SESSION.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/credential/LIBSSH2_SESSION.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/credential/LIBSSH2_SESSION.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/credential/LIBSSH2_SESSION.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/credential/LIBSSH2_SESSION.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/credential/LIBSSH2_SESSION.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/credential/LIBSSH2_SESSION.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/credential/LIBSSH2_SESSION.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/credential/LIBSSH2_SESSION.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/credential/LIBSSH2_SESSION.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/transport/LIBSSH2_SESSION.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/transport/LIBSSH2_SESSION.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/transport/LIBSSH2_SESSION.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/transport/LIBSSH2_SESSION.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/transport/LIBSSH2_SESSION.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/transport/LIBSSH2_SESSION.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/transport/LIBSSH2_SESSION.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/transport/LIBSSH2_SESSION.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/transport/LIBSSH2_SESSION.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/transport/LIBSSH2_SESSION.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/transport/LIBSSH2_SESSION.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/transport/LIBSSH2_SESSION.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/transport/LIBSSH2_SESSION.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/transport/LIBSSH2_SESSION.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/transport/LIBSSH2_SESSION.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/transport/LIBSSH2_SESSION.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/transport/LIBSSH2_SESSION.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/transport/LIBSSH2_SESSION.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/transport/LIBSSH2_SESSION.html" selected>v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/transport/LIBSSH2_SESSION.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/transport/LIBSSH2_SESSION.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/transport/LIBSSH2_SESSION.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/transport/LIBSSH2_SESSION.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/transport/LIBSSH2_SESSION.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/transport/LIBSSH2_SESSION.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/transport/LIBSSH2_SESSION.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/transport/LIBSSH2_SESSION.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/transport/LIBSSH2_SESSION.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/transport/LIBSSH2_SESSION.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/transport/LIBSSH2_SESSION.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/transport/LIBSSH2_SESSION.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/transport/LIBSSH2_SESSION.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/transport/LIBSSH2_SESSION.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/transport/LIBSSH2_SESSION.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/transport/LIBSSH2_SESSION.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/transport/LIBSSH2_SESSION.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/transport/LIBSSH2_SESSION.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/transport/LIBSSH2_SESSION.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/transport/LIBSSH2_SESSION.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/transport/LIBSSH2_SESSION.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/transport/LIBSSH2_SESSION.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/transport/LIBSSH2_SESSION.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/transport/LIBSSH2_SESSION.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/transport/LIBSSH2_SESSION.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/transport/LIBSSH2_SESSION.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/transport/LIBSSH2_SESSION.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/transport/LIBSSH2_SESSION.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/transport/LIBSSH2_SESSION.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/transport/LIBSSH2_SESSION.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/transport/LIBSSH2_SESSION.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/transport/LIBSSH2_SESSION.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/transport/LIBSSH2_SESSION.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/transport/LIBSSH2_SESSION.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/transport/LIBSSH2_SESSION.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/transport/LIBSSH2_SESSION.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/transport/LIBSSH2_SESSION.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/transport/LIBSSH2_SESSION.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/transport/LIBSSH2_SESSION.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/transport/LIBSSH2_SESSION.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/transport/LIBSSH2_SESSION.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/transport/LIBSSH2_SESSION.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/transport/LIBSSH2_SESSION.html">v0.21.1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h3 class="apiSignatureHeader objectSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink objectSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.27.0-rc3/include/git2/transport.h#L134" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature objectSignature">
+          typedef struct _LIBSSH2_SESSION LIBSSH2_SESSION
+        </div>
+
+        <h3 class="apiParameterToHeader objectParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo objectParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.27.0-rc3/transport/git_cred_sign_callback.html" className="apiLink callbackLink">git_cred_sign_callback</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader objectVersionsHeader">Versions</h3>
+        <div class="apiVersions objectVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/main/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/credential/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced objectVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.21.1/transport/LIBSSH2_SESSION.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,140 @@
+---
+title: git_fetch_negotiation (libgit2 v1.8.4)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.4/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.4/sys/transport/index.html">transport (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_fetch_negotiation</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/transport/git_fetch_negotiation.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/transport/git_fetch_negotiation.html" selected>v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/transport/git_fetch_negotiation.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/transport/git_fetch_negotiation.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/transport/git_fetch_negotiation.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/transport/git_fetch_negotiation.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/transport/git_fetch_negotiation.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/transport/git_fetch_negotiation.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/transport/git_fetch_negotiation.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/transport/git_fetch_negotiation.html">v1.7.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.4/include/git2/sys/transport.h#L29" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_fetch_negotiation {
+<span class="apiSignatureMember structSignatureMember">const git_remote_head *const *refs</span>
+<span class="apiSignatureMember structSignatureMember">size_t refs_len</span>
+<span class="apiSignatureMember structSignatureMember">git_oid *shallow_roots</span>
+<span class="apiSignatureMember structSignatureMember">size_t shallow_roots_len</span>
+<span class="apiSignatureMember structSignatureMember">int depth</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.8.4/net/git_remote_head.html" class="apiLink structLink">const git_remote_head *const *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              refs
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              refs_len
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.8.4/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              shallow_roots
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              shallow_roots_len
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              depth
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.7.0/sys/transport/git_fetch_negotiation.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

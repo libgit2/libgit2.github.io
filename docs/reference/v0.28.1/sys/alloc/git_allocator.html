@@ -1,0 +1,334 @@
+---
+title: git_allocator (libgit2 v0.28.1)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.28.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.28.1/sys/alloc/index.html">alloc (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_allocator</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/alloc/git_allocator.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/alloc/git_allocator.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/alloc/git_allocator.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/alloc/git_allocator.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/alloc/git_allocator.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/alloc/git_allocator.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/alloc/git_allocator.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/alloc/git_allocator.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/alloc/git_allocator.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/alloc/git_allocator.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/sys/alloc/git_allocator.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/sys/alloc/git_allocator.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/sys/alloc/git_allocator.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/sys/alloc/git_allocator.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/sys/alloc/git_allocator.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/sys/alloc/git_allocator.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/sys/alloc/git_allocator.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/sys/alloc/git_allocator.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/sys/alloc/git_allocator.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/sys/alloc/git_allocator.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/sys/alloc/git_allocator.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/sys/alloc/git_allocator.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/sys/alloc/git_allocator.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/sys/alloc/git_allocator.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/sys/alloc/git_allocator.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/sys/alloc/git_allocator.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/sys/alloc/git_allocator.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/sys/alloc/git_allocator.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/sys/alloc/git_allocator.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/sys/alloc/git_allocator.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/sys/alloc/git_allocator.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/sys/alloc/git_allocator.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/sys/alloc/git_allocator.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/sys/alloc/git_allocator.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/sys/alloc/git_allocator.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/sys/alloc/git_allocator.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/sys/alloc/git_allocator.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/sys/alloc/git_allocator.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/sys/alloc/git_allocator.html" selected>v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/sys/alloc/git_allocator.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/sys/alloc/git_allocator.html">v0.28.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>An instance for a custom memory allocator</p>
+
+        <p>Setting the pointers of this structure allows the developer to implement
+custom memory allocators. The global memory allocator can be set by using
+&quot;GIT_OPT_SET_ALLOCATOR&quot; with the <a href="/docs/reference/v0.28.1/common/git_libgit2_opts.html" class="apiLink functionLink"><code><span class="codeWord">git_libgit2_opts</span></code></a> function. Keep in mind
+that all fields need to be set to a proper function.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.28.1/include/git2/sys/alloc.h#L23" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_allocator {
+<span class="apiSignatureMember structSignatureMember">void *(*)(size_t, const char *, int) gmalloc</span>
+<span class="apiSignatureMember structSignatureMember">void *(*)(size_t, size_t, const char *, int) gcalloc</span>
+<span class="apiSignatureMember structSignatureMember">char *(*)(const char *, const char *, int) gstrdup</span>
+<span class="apiSignatureMember structSignatureMember">char *(*)(const char *, size_t, const char *, int) gstrndup</span>
+<span class="apiSignatureMember structSignatureMember">char *(*)(const char *, size_t, const char *, int) gsubstrdup</span>
+<span class="apiSignatureMember structSignatureMember">void *(*)(void *, size_t, const char *, int) grealloc</span>
+<span class="apiSignatureMember structSignatureMember">void *(*)(void *, size_t, size_t, const char *, int) greallocarray</span>
+<span class="apiSignatureMember structSignatureMember">void *(*)(size_t, size_t, const char *, int) gmallocarray</span>
+<span class="apiSignatureMember structSignatureMember">void (*)(void *) gfree</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *(*)(size_t, const char *, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              gmalloc
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *(*)(size_t, size_t, const char *, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              gcalloc
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              char *(*)(const char *, const char *, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              gstrdup
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              char *(*)(const char *, size_t, const char *, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              gstrndup
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              char *(*)(const char *, size_t, const char *, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              gsubstrdup
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *(*)(void *, size_t, const char *, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              grealloc
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *(*)(void *, size_t, size_t, const char *, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              greallocarray
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *(*)(size_t, size_t, const char *, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              gmallocarray
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void (*)(void *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              gfree
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.28.1/sys/alloc/git_stdalloc_init_allocator.html" className="apiLink functionLink">git_stdalloc_init_allocator</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.28.1/sys/alloc/git_win32_crtdbg_init_allocator.html" className="apiLink functionLink">git_win32_crtdbg_init_allocator</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v1.7.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.28.0-rc1/sys/alloc/git_allocator.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

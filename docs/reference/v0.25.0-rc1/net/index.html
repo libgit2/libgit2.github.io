@@ -1,0 +1,185 @@
+---
+title: net APIs (libgit2 v0.25.0-rc1)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.25.0-rc1/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">net</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/net/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/net/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/net/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/net/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/net/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/net/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/net/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/net/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/net/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/net/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/net/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/net/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/net/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/net/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/net/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/net/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/net/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/net/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/net/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/net/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/net/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/net/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/net/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/net/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/net/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/net/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/net/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/net/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/net/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/net/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/net/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/net/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/net/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/net/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/net/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/net/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/net/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/net/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/net/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/net/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/net/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/net/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/net/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/net/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/net/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/net/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/net/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/net/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/net/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/net/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/net/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/net/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/net/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/net/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/net/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/net/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/net/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/net/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/net/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/net/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/net/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/net/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/net/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/net/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/net/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/net/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/net/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/net/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/net/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/net/index.html" selected>v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/net/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/net/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/net/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/net/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/net/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/net/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/net/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/net/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/net/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/net/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/net/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/net/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/net/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/net/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/net/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/net/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/net/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/net/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/net/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/net/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/net/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/net/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/net/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/net/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/net/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/net/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/net/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/net/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/net/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/net/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/net/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/net/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/net/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/net/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/net/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/net/index.html">v0.14.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git networking declarations
+      </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v0.25.0-rc1/net/git_remote_head.html">
+                git_remote_head
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Description of a reference advertised by a remote server, given out on <code><span class="codeWord">ls</span></code> calls</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader macroListHeader">Macros</h3>
+        <div class="apiList macroList">
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.25.0-rc1/net/GIT_DEFAULT_PORT.html">
+                GIT_DEFAULT_PORT
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.25.0-rc1/net/git_direction.html">
+                git_direction
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Direction of the connection</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader callbackListHeader">Callbacks</h3>
+        <div class="apiList callbackList">
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v0.25.0-rc1/net/git_headlist_cb.html">
+                git_headlist_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Callback for listing the remote heads</p> 
+            </div>
+          </div>
+        </div>
+    </div>

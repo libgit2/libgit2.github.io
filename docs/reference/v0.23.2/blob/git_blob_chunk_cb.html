@@ -1,0 +1,205 @@
+---
+title: git_blob_chunk_cb (libgit2 v0.23.2)
+layout: default
+---
+
+      <div class="api callback">
+        <div class="apiBreadcrumb callbackBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.23.2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.23.2/blob/index.html">blob</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader callbackHeader">
+          <h2 class="apiName callbackName">git_blob_chunk_cb</h2>
+          <div class="apiHeaderVersionSelect callbackHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.24.6/blob/git_blob_chunk_cb.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/blob/git_blob_chunk_cb.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.3/blob/git_blob_chunk_cb.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/blob/git_blob_chunk_cb.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/blob/git_blob_chunk_cb.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/blob/git_blob_chunk_cb.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/blob/git_blob_chunk_cb.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/blob/git_blob_chunk_cb.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/blob/git_blob_chunk_cb.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/blob/git_blob_chunk_cb.html" selected>v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/blob/git_blob_chunk_cb.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/blob/git_blob_chunk_cb.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/blob/git_blob_chunk_cb.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/blob/git_blob_chunk_cb.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/blob/git_blob_chunk_cb.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/blob/git_blob_chunk_cb.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/blob/git_blob_chunk_cb.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/blob/git_blob_chunk_cb.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/blob/git_blob_chunk_cb.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/blob/git_blob_chunk_cb.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/blob/git_blob_chunk_cb.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/blob/git_blob_chunk_cb.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/blob/git_blob_chunk_cb.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/blob/git_blob_chunk_cb.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/blob/git_blob_chunk_cb.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/blob/git_blob_chunk_cb.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/blob/git_blob_chunk_cb.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/blob/git_blob_chunk_cb.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/blob/git_blob_chunk_cb.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/blob/git_blob_chunk_cb.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/blob/git_blob_chunk_cb.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink callbackSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.23.2/include/git2/blob.h#L154" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature callbackSignature">
+          typedef int git_blob_chunk_cb(<span class="apiSignatureParameter callbackSignatureParameter">char *</span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+        </div>
+
+        <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
+        <div class="apiParameters callbackParameters">
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              char *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader callbackParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo callbackParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.23.2/blob/git_blob_create_fromchunks.html" className="apiLink functionLink">git_blob_create_fromchunks</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>
+        <div class="apiVersions callbackVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced callbackVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/blob/git_blob_chunk_cb.html" class="apiVersionLink callbackVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

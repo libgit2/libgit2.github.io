@@ -1,0 +1,792 @@
+---
+title: git_checkout_strategy_t (libgit2 v0.23.4)
+layout: default
+---
+
+      <div class="api enum">
+        <div class="apiBreadcrumb enumBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.23.4/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.23.4/checkout/index.html">checkout</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader enumHeader">
+          <h2 class="apiName enumName">git_checkout_strategy_t</h2>
+          <div class="apiHeaderVersionSelect enumHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/checkout/git_checkout_strategy_t.html">main</option>
+              <option value="/docs/reference/v1.8.4/checkout/git_checkout_strategy_t.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/checkout/git_checkout_strategy_t.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/checkout/git_checkout_strategy_t.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/checkout/git_checkout_strategy_t.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/checkout/git_checkout_strategy_t.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/checkout/git_checkout_strategy_t.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/checkout/git_checkout_strategy_t.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/checkout/git_checkout_strategy_t.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/checkout/git_checkout_strategy_t.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/checkout/git_checkout_strategy_t.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/checkout/git_checkout_strategy_t.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/checkout/git_checkout_strategy_t.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/checkout/git_checkout_strategy_t.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/checkout/git_checkout_strategy_t.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/checkout/git_checkout_strategy_t.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/checkout/git_checkout_strategy_t.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/checkout/git_checkout_strategy_t.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/checkout/git_checkout_strategy_t.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/checkout/git_checkout_strategy_t.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/checkout/git_checkout_strategy_t.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/checkout/git_checkout_strategy_t.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/checkout/git_checkout_strategy_t.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/checkout/git_checkout_strategy_t.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/checkout/git_checkout_strategy_t.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/checkout/git_checkout_strategy_t.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/checkout/git_checkout_strategy_t.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/checkout/git_checkout_strategy_t.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/checkout/git_checkout_strategy_t.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/checkout/git_checkout_strategy_t.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/checkout/git_checkout_strategy_t.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/checkout/git_checkout_strategy_t.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/checkout/git_checkout_strategy_t.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/checkout/git_checkout_strategy_t.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/checkout/git_checkout_strategy_t.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/checkout/git_checkout_strategy_t.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/checkout/git_checkout_strategy_t.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/checkout/git_checkout_strategy_t.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/checkout/git_checkout_strategy_t.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/checkout/git_checkout_strategy_t.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/checkout/git_checkout_strategy_t.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/checkout/git_checkout_strategy_t.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/checkout/git_checkout_strategy_t.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/checkout/git_checkout_strategy_t.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/checkout/git_checkout_strategy_t.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/checkout/git_checkout_strategy_t.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/checkout/git_checkout_strategy_t.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/checkout/git_checkout_strategy_t.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/checkout/git_checkout_strategy_t.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/checkout/git_checkout_strategy_t.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/checkout/git_checkout_strategy_t.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/checkout/git_checkout_strategy_t.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/checkout/git_checkout_strategy_t.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/checkout/git_checkout_strategy_t.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/checkout/git_checkout_strategy_t.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/checkout/git_checkout_strategy_t.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/checkout/git_checkout_strategy_t.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/checkout/git_checkout_strategy_t.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/checkout/git_checkout_strategy_t.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/checkout/git_checkout_strategy_t.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/checkout/git_checkout_strategy_t.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/checkout/git_checkout_strategy_t.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/checkout/git_checkout_strategy_t.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/checkout/git_checkout_strategy_t.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/checkout/git_checkout_strategy_t.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/checkout/git_checkout_strategy_t.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/checkout/git_checkout_strategy_t.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/checkout/git_checkout_strategy_t.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/checkout/git_checkout_strategy_t.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/checkout/git_checkout_strategy_t.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/checkout/git_checkout_strategy_t.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/checkout/git_checkout_strategy_t.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/checkout/git_checkout_strategy_t.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/checkout/git_checkout_strategy_t.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/checkout/git_checkout_strategy_t.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/checkout/git_checkout_strategy_t.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/checkout/git_checkout_strategy_t.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/checkout/git_checkout_strategy_t.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html" selected>v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/checkout/git_checkout_strategy_t.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/checkout/git_checkout_strategy_t.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/checkout/git_checkout_strategy_t.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/checkout/git_checkout_strategy_t.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/checkout/git_checkout_strategy_t.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/checkout/git_checkout_strategy_t.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/checkout/git_checkout_strategy_t.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/checkout/git_checkout_strategy_t.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/checkout/git_checkout_strategy_t.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/checkout/git_checkout_strategy_t.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/checkout/git_checkout_strategy_t.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/checkout/git_checkout_strategy_t.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/checkout/git_checkout_strategy_t.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/checkout/git_checkout_strategy_t.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/checkout/git_checkout_strategy_t.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/checkout/git_checkout_strategy_t.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/checkout/git_checkout_strategy_t.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/checkout/git_checkout_strategy_t.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/checkout/git_checkout_strategy_t.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/checkout/git_checkout_strategy_t.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/checkout/git_checkout_strategy_t.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/checkout/git_checkout_strategy_t.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/checkout/git_checkout_strategy_t.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription enumDescription">
+        <p>Checkout behavior flags</p>
+
+        <p>In libgit2, checkout is used to update the working directory and index
+to match a target tree.  Unlike git checkout, it does not move the HEAD
+commit for you - use <a href="/docs/reference/v0.23.4/repository/git_repository_set_head.html" class="apiLink functionLink"><code><span class="codeWord">git_repository_set_head</span></code></a> or the like to do that.</p>
+
+        <p>Checkout looks at (up to) four things: the &quot;target&quot; tree you want to
+check out, the &quot;baseline&quot; tree of what was checked out previously, the
+working directory for actual files, and the index for staged changes.</p>
+
+        <p>You give checkout one of three strategies for update:</p>
+
+        <ul>
+<li><a href="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_NONE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_NONE</span></code></a> is a dry-run strategy that checks for conflicts,
+etc., but doesn't make any actual changes.</li>
+</ul>
+
+        <ul>
+<li><a href="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_FORCE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_FORCE</span></code></a> is at the opposite extreme, taking any action to
+make the working directory match the target (including potentially
+discarding modified files).</li>
+</ul>
+
+        <ul>
+<li><a href="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_SAFE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_SAFE</span></code></a> is between these two options, it will only make
+modifications that will not lose changes.</li>
+</ul>
+
+        <p>|  target == baseline   |  target != baseline  |
+---------------------|-----------------------|----------------------|
+workdir == baseline |       no action       |  create, update, or  |
+|                       |     delete file      |
+---------------------|-----------------------|----------------------|
+workdir exists and  |       no action       |   conflict (notify   |
+is != baseline    | notify dirty MODIFIED | and cancel checkout) |
+---------------------|-----------------------|----------------------|
+workdir missing,   | notify dirty DELETED  |     create file      |
+baseline present   |                       |                      |
+---------------------|-----------------------|----------------------|</p>
+
+        <p>To emulate <code><span class="codeWord">git</span> <span class="codeWord">checkout</span></code>, use <a href="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_SAFE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_SAFE</span></code></a> with a checkout
+notification callback (see below) that displays information about dirty
+files.  The default behavior will cancel checkout on conflicts.</p>
+
+        <p>To emulate <code><span class="codeWord">git</span> <span class="codeWord">checkout-index</span></code>, use <a href="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_SAFE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_SAFE</span></code></a> with a
+notification callback that cancels the operation if a dirty-but-existing
+file is found in the working directory.  This core git command isn't
+quite &quot;force&quot; but is sensitive about some types of changes.</p>
+
+        <p>To emulate <code><span class="codeWord">git</span> <span class="codeWord">checkout</span> <span class="codeWord">-f</span></code>, use <a href="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_FORCE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_FORCE</span></code></a>.</p>
+
+        <p>There are some additional flags to modified the behavior of checkout:</p>
+
+        <ul>
+<li>GIT_CHECKOUT_ALLOW_CONFLICTS makes SAFE mode apply safe file updates
+even if there are conflicts (instead of cancelling the checkout).</li>
+</ul>
+
+        <ul>
+<li>GIT_CHECKOUT_REMOVE_UNTRACKED means remove untracked files (i.e. not
+in target, baseline, or index, and not ignored) from the working dir.</li>
+</ul>
+
+        <ul>
+<li>GIT_CHECKOUT_REMOVE_IGNORED means remove ignored files (that are also
+untracked) from the working directory as well.</li>
+</ul>
+
+        <ul>
+<li>GIT_CHECKOUT_UPDATE_ONLY means to only update the content of files that
+already exist.  Files will not be created nor deleted.  This just skips
+applying adds, deletes, and typechanges.</li>
+</ul>
+
+        <ul>
+<li>GIT_CHECKOUT_DONT_UPDATE_INDEX prevents checkout from writing the
+updated files' information to the index.</li>
+</ul>
+
+        <ul>
+<li>Normally, checkout will reload the index and git attributes from disk
+before any operations.  GIT_CHECKOUT_NO_REFRESH prevents this reload.</li>
+</ul>
+
+        <ul>
+<li>Unmerged index entries are conflicts.  GIT_CHECKOUT_SKIP_UNMERGED skips
+files with unmerged index entries instead.  GIT_CHECKOUT_USE_OURS and
+GIT_CHECKOUT_USE_THEIRS to proceed with the checkout using either the
+stage 2 (&quot;ours&quot;) or stage 3 (&quot;theirs&quot;) version of files in the index.</li>
+</ul>
+
+        <ul>
+<li>GIT_CHECKOUT_DONT_OVERWRITE_IGNORED prevents ignored files from being
+overwritten.  Normally, files that are ignored in the working directory
+are not considered &quot;precious&quot; and may be overwritten if the checkout
+target contains that file.</li>
+</ul>
+
+        <ul>
+<li>GIT_CHECKOUT_DONT_REMOVE_EXISTING prevents checkout from removing
+files or folders that fold to the same name on case insensitive
+filesystems.  This can cause files to retain their existing names
+and write through existing symbolic links.</li>
+</ul>
+
+        </div>
+
+        <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
+        <div class="apiSignatureLink enumSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.23.4/include/git2/checkout.h#L106" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiMembers enumMembers">
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_NONE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              0
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>default is a dry run, no actual updates</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_SAFE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              1
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Allow safe updates that cannot overwrite uncommitted data</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_FORCE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              2
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Allow all updates to force working directory to look like index</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_RECREATE_MISSING
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              3
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Allow checkout to recreate missing files</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_ALLOW_CONFLICTS
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              4
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Allow checkout to make safe updates even if conflicts are found</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_REMOVE_UNTRACKED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              5
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Remove untracked files not in index (that are not ignored)</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_REMOVE_IGNORED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              6
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Remove ignored files not in index</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_UPDATE_ONLY
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              7
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Only update existing files, don't create new ones</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_DONT_UPDATE_INDEX
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              8
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Normally checkout updates index entries as it goes; this stops that. Implies <a href="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_DONT_WRITE_INDEX" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_DONT_WRITE_INDEX</span></code></a>.</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_NO_REFRESH
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              9
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Don't refresh index/config/etc before doing checkout</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_SKIP_UNMERGED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              10
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Allow checkout to skip unmerged files</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_USE_OURS
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              11
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>For unmerged files, checkout stage 2 from index</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_USE_THEIRS
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              12
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>For unmerged files, checkout stage 3 from index</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_DISABLE_PATHSPEC_MATCH
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              13
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Treat pathspec as simple list of exact match file paths</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_SKIP_LOCKED_DIRECTORIES
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              14
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Ignore directories in use, they will be left empty</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_DONT_OVERWRITE_IGNORED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              15
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Don't overwrite ignored files that exist in the checkout target</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_CONFLICT_STYLE_MERGE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              16
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Write normal merge files for conflicts</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_CONFLICT_STYLE_DIFF3
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              17
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Include common ancestor data in diff3 format files for conflicts</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_DONT_REMOVE_EXISTING
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              18
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Don't overwrite existing files or folders</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_DONT_WRITE_INDEX
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              19
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Normally checkout writes the index upon completion; this prevents that.</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_UPDATE_SUBMODULES
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              20
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Recursively checkout submodules with same options (NOT IMPLEMENTED)</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_CHECKOUT_UPDATE_SUBMODULES_IF_CHANGED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              21
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Recursively checkout submodules if HEAD moved in super repo (NOT IMPLEMENTED)</p> 
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader enumVersionsHeader">Versions</h3>
+        <div class="apiVersions enumVersions">
+          <ul>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/main/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v1.4.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v1.2.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.22.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.22.0-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.21.5/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.21.0-rc1/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.20.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v0.19.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced enumVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/checkout/git_checkout_strategy_t.html" class="apiVersionLink enumVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

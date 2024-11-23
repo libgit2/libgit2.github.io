@@ -1,0 +1,187 @@
+---
+title: git_strarray_dispose (libgit2 v1.4.1)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.4.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.4.1/strarray/index.html">strarray</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_strarray_dispose</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/strarray/git_strarray_dispose.html">main</option>
+              <option value="/docs/reference/v1.8.4/strarray/git_strarray_dispose.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/strarray/git_strarray_dispose.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/strarray/git_strarray_dispose.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/strarray/git_strarray_dispose.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/strarray/git_strarray_dispose.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/strarray/git_strarray_dispose.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/strarray/git_strarray_dispose.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/strarray/git_strarray_dispose.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/strarray/git_strarray_dispose.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/strarray/git_strarray_dispose.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/strarray/git_strarray_dispose.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/strarray/git_strarray_dispose.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/strarray/git_strarray_dispose.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/strarray/git_strarray_dispose.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/strarray/git_strarray_dispose.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/strarray/git_strarray_dispose.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/strarray/git_strarray_dispose.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/strarray/git_strarray_dispose.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/strarray/git_strarray_dispose.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/strarray/git_strarray_dispose.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/strarray/git_strarray_dispose.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/strarray/git_strarray_dispose.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/strarray/git_strarray_dispose.html" selected>v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/strarray/git_strarray_dispose.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/strarray/git_strarray_dispose.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/strarray/git_strarray_dispose.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/strarray/git_strarray_dispose.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/strarray/git_strarray_dispose.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/strarray/git_strarray_dispose.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/strarray/git_strarray_dispose.html">v1.1.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Free the strings contained in a string array.  This method should
+be called on <a href="/docs/reference/v1.4.1/strarray/git_strarray.html" class="apiLink structLink"><code><span class="codeWord">git_strarray</span></code></a> objects that were provided by the
+library.  Not doing so, will result in a memory leak.</p>
+
+        <p>This does not free the <a href="/docs/reference/v1.4.1/strarray/git_strarray.html" class="apiLink structLink"><code><span class="codeWord">git_strarray</span></code></a> itself, since the library will
+never allocate that object directly itself.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.4.1/include/git2/strarray.h#L37" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          void git_strarray_dispose(<span class="apiSignatureParameter functionSignatureParameter">git_strarray *array</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.4.1/strarray/git_strarray.html" class="apiLink structLink">git_strarray *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              array
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The git_strarray that contains strings to free</p> 
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.1.0/strarray/git_strarray_dispose.html" class="apiVersionLink functionVersionLink">v1.1.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

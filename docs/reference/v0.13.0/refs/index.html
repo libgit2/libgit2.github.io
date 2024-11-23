@@ -1,0 +1,342 @@
+---
+title: refs APIs (libgit2 v0.13.0)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.13.0/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">refs</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/refs/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/refs/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/refs/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/refs/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/refs/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/refs/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/refs/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/refs/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/refs/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/refs/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/refs/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/refs/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/refs/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/refs/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/refs/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/refs/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/refs/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/refs/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/refs/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/refs/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/refs/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/refs/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/refs/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/refs/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/refs/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/refs/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/refs/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/refs/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/refs/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/refs/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/refs/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/refs/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/refs/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/refs/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/refs/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/refs/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/refs/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/refs/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/refs/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/refs/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/refs/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/refs/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/refs/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/refs/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/refs/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/refs/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/refs/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/refs/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/refs/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/refs/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/refs/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/refs/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/refs/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/refs/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/refs/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/refs/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/refs/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/refs/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/refs/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/refs/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/refs/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/refs/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/refs/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/refs/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/refs/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/refs/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/refs/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/refs/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/refs/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/refs/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/refs/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/refs/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/refs/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/refs/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/refs/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/refs/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/refs/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/refs/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/refs/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/refs/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/refs/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/refs/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/refs/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/refs/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/refs/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/refs/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/refs/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/refs/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/refs/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/refs/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/refs/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/refs/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/refs/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/refs/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/refs/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/refs/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/refs/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/refs/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/refs/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/refs/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/refs/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/refs/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/refs/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/refs/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/refs/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/refs/index.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/refs/index.html" selected>v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/refs/index.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/refs/index.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/refs/index.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/refs/index.html">v0.8.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git reference management routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference.html">
+                git_reference
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>In-memory representation of a reference</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_lookup.html">
+                git_reference_lookup
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup a reference by its name in a repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_create_symbolic.html">
+                git_reference_create_symbolic
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new symbolic reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_create_symbolic_f.html">
+                git_reference_create_symbolic_f
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new symbolic reference, overwriting an existing one with the same name, if it exists</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_create_oid.html">
+                git_reference_create_oid
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new object id reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_create_oid_f.html">
+                git_reference_create_oid_f
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new object id reference, overwriting an existing one with the same name, if it exists</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_oid.html">
+                git_reference_oid
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the OID pointed to by a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_target.html">
+                git_reference_target
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get full name to the reference pointed by this reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_type.html">
+                git_reference_type
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the type of a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_name.html">
+                git_reference_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the full name of a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_resolve.html">
+                git_reference_resolve
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Resolve a symbolic reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_owner.html">
+                git_reference_owner
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the repository where a reference resides</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_set_target.html">
+                git_reference_set_target
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the symbolic target of a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_set_oid.html">
+                git_reference_set_oid
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the OID target of a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_rename.html">
+                git_reference_rename
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Rename an existing reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_rename_f.html">
+                git_reference_rename_f
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Rename an existing reference, overwriting an existing one with the same name, if it exists</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_delete.html">
+                git_reference_delete
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Delete an existing reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_packall.html">
+                git_reference_packall
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Pack all the loose references in the repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_listall.html">
+                git_reference_listall
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Fill a list with all the references that can be found in a repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.13.0/refs/git_reference_foreach.html">
+                git_reference_foreach
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Perform an operation on each reference in the repository</p> 
+            </div>
+          </div>
+        </div>
+    </div>

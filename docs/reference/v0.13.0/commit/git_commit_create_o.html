@@ -1,0 +1,207 @@
+---
+title: git_commit_create_o (libgit2 v0.13.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.13.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.13.0/commit/index.html">commit</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_commit_create_o</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.13.0/commit/git_commit_create_o.html" selected>v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/commit/git_commit_create_o.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/commit/git_commit_create_o.html">v0.11.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create a new commit in the repository using <a href="/docs/reference/v0.13.0/object/git_object.html" class="apiLink objectLink"><code><span class="codeWord">git_object</span></code></a>
+instances as parameters.</p>
+
+        <p>The <code><span class="codeWord">tree_oid</span></code> and <code><span class="codeWord">parent_oids</span></code> paremeters now take a instance
+of <a href="/docs/reference/v0.13.0/tree/git_tree.html" class="apiLink objectLink"><code><span class="codeWord">git_tree</span></code></a> and <a href="/docs/reference/v0.13.0/commit/git_commit.html" class="apiLink objectLink"><code><span class="codeWord">git_commit</span></code></a>, respectively.</p>
+
+        <p>All other parameters remain the same</p>
+
+        </div>
+
+        <h3 class="apiSeeHeader functionSeeHeader">See</h3>
+        <div class="apiSee functionSee">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.13.0/commit/git_commit_create.html" className="apiLink functionLink">git_commit_create</a>
+          </li>
+          </ul>
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.13.0/include/git2/commit.h#L254" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_commit_create_o(<span class="apiSignatureParameter functionSignatureParameter">git_oid *oid</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *update_ref</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *author</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *committer</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *message</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_tree *tree</span>, <span class="apiSignatureParameter functionSignatureParameter">int parent_count</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_commit **parents</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              oid
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              update_ref
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              author
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              committer
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              message
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/tree/git_tree.html" class="apiLink objectLink">const git_tree *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              tree
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              parent_count
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.13.0/commit/git_commit.html" class="apiLink objectLink">const git_commit **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              parents
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/commit/git_commit_create_o.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/commit/git_commit_create_o.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.11.0/commit/git_commit_create_o.html" class="apiVersionLink functionVersionLink">v0.11.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

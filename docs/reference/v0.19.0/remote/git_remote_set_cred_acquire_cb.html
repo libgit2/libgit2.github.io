@@ -1,0 +1,97 @@
+---
+title: git_remote_set_cred_acquire_cb (libgit2 v0.19.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.19.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.19.0/remote/index.html">remote</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_remote_set_cred_acquire_cb</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.19.0/remote/git_remote_set_cred_acquire_cb.html" selected>v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/remote/git_remote_set_cred_acquire_cb.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Set a credentials acquisition callback for this remote. If the remote is
+not available for anonymous access, then you must set this callback in order
+to provide credentials to the transport at the time of authentication
+failure so that retry can be performed.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.19.0/include/git2/remote.h#L364" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          void git_remote_set_cred_acquire_cb(<span class="apiSignatureParameter functionSignatureParameter">git_remote *remote</span>, <span class="apiSignatureParameter functionSignatureParameter">git_cred_acquire_cb cred_acquire_cb</span>, <span class="apiSignatureParameter functionSignatureParameter">void *payload</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.19.0/remote/git_remote.html" class="apiLink objectLink">git_remote *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              remote
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the remote to configure</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.19.0/transport/git_cred_acquire_cb.html" class="apiLink callbackLink">git_cred_acquire_cb</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              cred_acquire_cb
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The credentials acquisition callback to use (defaults to NULL)</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              payload
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/remote/git_remote_set_cred_acquire_cb.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/remote/git_remote_set_cred_acquire_cb.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

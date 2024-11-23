@@ -1,0 +1,77 @@
+---
+title: git_tree_sort_entries (libgit2 v0.3.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.3.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.3.0/tree/index.html">tree</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_tree_sort_entries</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.3.0/tree/git_tree_sort_entries.html" selected>v0.3.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Sort the entries in a tree created using git_tree_add_entry2.</p>
+
+        <p>This does not mark the tree as modified.  It is intended to be used
+after several invocations of git_tree_add_entry2.
+git_tree_add_entry, on the other hand, sorts after each entry is
+added.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.3.0/include/git2/tree.h#L179" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_tree_sort_entries(<span class="apiSignatureParameter functionSignatureParameter">git_tree *tree</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_tree *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              tree
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Tree object whose entries are to be sorted</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success; otherwise error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.3.0/tree/git_tree_sort_entries.html" class="apiVersionLink functionVersionLink">v0.3.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

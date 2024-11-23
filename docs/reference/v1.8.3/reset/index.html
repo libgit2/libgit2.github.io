@@ -1,0 +1,173 @@
+---
+title: reset APIs (libgit2 v1.8.3)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v1.8.3/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">reset</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/reset/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/reset/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/reset/index.html" selected>v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/reset/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/reset/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/reset/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/reset/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/reset/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/reset/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/reset/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/reset/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/reset/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/reset/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/reset/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/reset/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/reset/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/reset/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/reset/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/reset/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/reset/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/reset/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/reset/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/reset/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/reset/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/reset/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/reset/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/reset/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/reset/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/reset/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/reset/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/reset/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/reset/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/reset/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/reset/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/reset/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/reset/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/reset/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/reset/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/reset/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/reset/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/reset/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/reset/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/reset/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/reset/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/reset/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/reset/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/reset/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/reset/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/reset/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/reset/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/reset/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/reset/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/reset/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/reset/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/reset/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/reset/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/reset/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/reset/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/reset/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/reset/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/reset/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/reset/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/reset/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/reset/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/reset/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/reset/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/reset/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/reset/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/reset/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/reset/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/reset/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/reset/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/reset/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/reset/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/reset/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/reset/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/reset/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/reset/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/reset/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/reset/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/reset/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/reset/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/reset/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/reset/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/reset/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/reset/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/reset/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/reset/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/reset/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/reset/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/reset/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/reset/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/reset/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/reset/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/reset/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/reset/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/reset/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/reset/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/reset/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/reset/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/reset/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/reset/index.html">v0.18.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git reset management routines
+      </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v1.8.3/reset/git_reset_t.html">
+                git_reset_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Kinds of reset operation</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.8.3/reset/git_reset.html">
+                git_reset
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Sets the current head to the specified commit oid and optionally resets the index and working tree to match</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.8.3/reset/git_reset_from_annotated.html">
+                git_reset_from_annotated
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Sets the current head to the specified commit oid and optionally resets the index and working tree to match</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.8.3/reset/git_reset_default.html">
+                git_reset_default
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Updates some entries in the index from the target commit tree</p> 
+            </div>
+          </div>
+        </div>
+    </div>

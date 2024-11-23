@@ -1,0 +1,159 @@
+---
+title: git_treebuilder_create (libgit2 v0.21.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.0/tree/index.html">tree</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_treebuilder_create</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/tree/git_treebuilder_create.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/tree/git_treebuilder_create.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/tree/git_treebuilder_create.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/tree/git_treebuilder_create.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/tree/git_treebuilder_create.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/tree/git_treebuilder_create.html" selected>v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/tree/git_treebuilder_create.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/tree/git_treebuilder_create.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/tree/git_treebuilder_create.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/tree/git_treebuilder_create.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/tree/git_treebuilder_create.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/tree/git_treebuilder_create.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/tree/git_treebuilder_create.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/tree/git_treebuilder_create.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/tree/git_treebuilder_create.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/tree/git_treebuilder_create.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/tree/git_treebuilder_create.html">v0.12.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create a new tree builder.</p>
+
+        <p>The tree builder can be used to create or modify trees in memory and
+write them as tree objects to the database.</p>
+
+        <p>If the <code><span class="codeWord">source</span></code> parameter is not NULL, the tree builder will be
+initialized with the entries of the given tree.</p>
+
+        <p>If the <code><span class="codeWord">source</span></code> parameter is NULL, the tree builder will start with no
+entries and will have to be filled manually.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.0/include/git2/tree.h#L253" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_treebuilder_create(<span class="apiSignatureParameter functionSignatureParameter">git_treebuilder **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_tree *source</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.0/tree/git_treebuilder.html" class="apiLink objectLink">git_treebuilder **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Pointer where to store the tree builder</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.0/tree/git_tree.html" class="apiLink objectLink">const git_tree *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              source
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Source tree to initialize the builder (optional)</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success; error code otherwise</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.18.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.12.0/tree/git_treebuilder_create.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

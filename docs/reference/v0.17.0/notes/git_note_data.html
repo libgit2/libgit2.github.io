@@ -1,0 +1,81 @@
+---
+title: git_note_data (libgit2 v0.17.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.17.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.17.0/notes/index.html">notes</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_note_data</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.17.0/notes/git_note_data.html" selected>v0.17.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Basic components of a note</p>
+
+        <ul>
+<li>Oid of the blob containing the message
+<ul>
+<li>Oid of the git object being annotated</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.17.0/include/git2/notes.h#L111" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_note_data {
+<span class="apiSignatureMember structSignatureMember">git_oid blob_oid</span>
+<span class="apiSignatureMember structSignatureMember">git_oid annotated_object_oid</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.17.0/oid/git_oid.html" class="apiLink objectLink">git_oid</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              blob_oid
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.17.0/oid/git_oid.html" class="apiLink objectLink">git_oid</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              annotated_object_oid
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.17.0/notes/git_note_data.html" class="apiVersionLink structVersionLink">v0.17.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

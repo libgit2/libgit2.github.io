@@ -1,0 +1,546 @@
+---
+title: git_stream (libgit2 v0.28.3)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.28.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.28.3/sys/stream/index.html">stream (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_stream</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/stream/git_stream.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/stream/git_stream.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/stream/git_stream.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/stream/git_stream.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/stream/git_stream.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/stream/git_stream.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/stream/git_stream.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/stream/git_stream.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/stream/git_stream.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/stream/git_stream.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/sys/stream/git_stream.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/sys/stream/git_stream.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/sys/stream/git_stream.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/sys/stream/git_stream.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/sys/stream/git_stream.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/sys/stream/git_stream.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/sys/stream/git_stream.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/sys/stream/git_stream.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/sys/stream/git_stream.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/sys/stream/git_stream.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/sys/stream/git_stream.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/sys/stream/git_stream.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/sys/stream/git_stream.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/sys/stream/git_stream.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/sys/stream/git_stream.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/sys/stream/git_stream.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/sys/stream/git_stream.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/sys/stream/git_stream.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/sys/stream/git_stream.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/sys/stream/git_stream.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/sys/stream/git_stream.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/sys/stream/git_stream.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/sys/stream/git_stream.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/sys/stream/git_stream.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/sys/stream/git_stream.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/sys/stream/git_stream.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/sys/stream/git_stream.html" selected>v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/sys/stream/git_stream.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/sys/stream/git_stream.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/sys/stream/git_stream.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/sys/stream/git_stream.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/sys/stream/git_stream.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/sys/stream/git_stream.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/sys/stream/git_stream.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/sys/stream/git_stream.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/sys/stream/git_stream.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/sys/stream/git_stream.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/sys/stream/git_stream.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/sys/stream/git_stream.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/sys/stream/git_stream.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/sys/stream/git_stream.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/sys/stream/git_stream.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/sys/stream/git_stream.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/sys/stream/git_stream.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/sys/stream/git_stream.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/sys/stream/git_stream.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/sys/stream/git_stream.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/sys/stream/git_stream.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/sys/stream/git_stream.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/sys/stream/git_stream.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/sys/stream/git_stream.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/sys/stream/git_stream.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/sys/stream/git_stream.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/sys/stream/git_stream.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/sys/stream/git_stream.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/sys/stream/git_stream.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/sys/stream/git_stream.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/sys/stream/git_stream.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/sys/stream/git_stream.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/sys/stream/git_stream.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/sys/stream/git_stream.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/sys/stream/git_stream.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/sys/stream/git_stream.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/sys/stream/git_stream.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/sys/stream/git_stream.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/sys/stream/git_stream.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/sys/stream/git_stream.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/sys/stream/git_stream.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/sys/stream/git_stream.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/sys/stream/git_stream.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/sys/stream/git_stream.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/sys/stream/git_stream.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/sys/stream/git_stream.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/sys/stream/git_stream.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/sys/stream/git_stream.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/sys/stream/git_stream.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/sys/stream/git_stream.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/sys/stream/git_stream.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/sys/stream/git_stream.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/sys/stream/git_stream.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/sys/stream/git_stream.html">v0.22.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Every stream must have this struct as its first element, so the
+API can talk to it. You'd define your stream as</p>
+
+        <p>struct my_stream {
+git_stream parent;
+...
+}</p>
+
+        <p>and fill the functions</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.28.3/include/git2/sys/stream.h#L29" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_stream {
+<span class="apiSignatureMember structSignatureMember">int version</span>
+<span class="apiSignatureMember structSignatureMember">int encrypted</span>
+<span class="apiSignatureMember structSignatureMember">int proxy_support</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(struct git_stream *) connect</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(git_cert **, struct git_stream *) certificate</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(struct git_stream *, const git_proxy_options *) set_proxy</span>
+<span class="apiSignatureMember structSignatureMember">ssize_t (*)(struct git_stream *, void *, size_t) read</span>
+<span class="apiSignatureMember structSignatureMember">ssize_t (*)(struct git_stream *, const char *, size_t, int) write</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(struct git_stream *) close</span>
+<span class="apiSignatureMember structSignatureMember">void (*)(struct git_stream *) free</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              encrypted
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              proxy_support
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(struct git_stream *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              connect
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(git_cert **, struct git_stream *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              certificate
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(struct git_stream *, const git_proxy_options *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              set_proxy
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              ssize_t (*)(struct git_stream *, void *, size_t)
+            </div>
+            <div class="apiMemberName structMemberName">
+              read
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              ssize_t (*)(struct git_stream *, const char *, size_t, int)
+            </div>
+            <div class="apiMemberName structMemberName">
+              write
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(struct git_stream *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              close
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void (*)(struct git_stream *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              free
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.28.3/sys/stream/git_stream_cb.html" className="apiLink callbackLink">git_stream_cb</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v1.8.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v1.7.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.25.0-rc1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.24.5/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.24.4/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.22.0-rc1/sys/stream/git_stream.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

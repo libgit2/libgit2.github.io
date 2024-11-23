@@ -1,0 +1,150 @@
+---
+title: git_diff_patch_get_hunk (libgit2 v0.18.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.18.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.18.0/diff/index.html">diff</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_diff_patch_get_hunk</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.19.0/diff/git_diff_patch_get_hunk.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/diff/git_diff_patch_get_hunk.html" selected>v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Get the information about a hunk in a patch</p>
+
+        <p>Given a patch and a hunk index into the patch, this returns detailed
+information about that hunk.  Any of the output pointers can be passed
+as NULL if you don't care about that particular piece of information.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.18.0/include/git2/diff.h#L812" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_diff_patch_get_hunk(<span class="apiSignatureParameter functionSignatureParameter">const git_diff_range **range</span>, <span class="apiSignatureParameter functionSignatureParameter">const char **header</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t *header_len</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t *lines_in_hunk</span>, <span class="apiSignatureParameter functionSignatureParameter">git_diff_patch *patch</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t hunk_idx</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.18.0/diff/git_diff_range.html" class="apiLink structLink">const git_diff_range **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              range
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Output pointer to git_diff_range of hunk</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char **
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              header
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Output pointer to header string for hunk. Unlike the content pointer for each line, this will be NUL-terminated</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              header_len
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Output value of characters in header string</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              lines_in_hunk
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Output count of total lines in this hunk</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.18.0/diff/git_diff_patch.html" class="apiLink objectLink">git_diff_patch *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              patch
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Input pointer to patch object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              hunk_idx
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Input index of hunk to get information about</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, GIT_ENOTFOUND if hunk_idx out of range, &lt; 0 on error</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/diff/git_diff_patch_get_hunk.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/diff/git_diff_patch_get_hunk.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

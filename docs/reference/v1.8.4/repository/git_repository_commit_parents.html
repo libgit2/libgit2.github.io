@@ -1,0 +1,112 @@
+---
+title: git_repository_commit_parents (libgit2 v1.8.4)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.4/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.4/repository/index.html">repository</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_repository_commit_parents</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/repository/git_repository_commit_parents.html">main</option>
+              <option value="/docs/reference/v1.8.4/repository/git_repository_commit_parents.html" selected>v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/repository/git_repository_commit_parents.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/repository/git_repository_commit_parents.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/repository/git_repository_commit_parents.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/repository/git_repository_commit_parents.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/repository/git_repository_commit_parents.html">v1.8.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Gets the parents of the next commit, given the current repository state.
+Generally, this is the HEAD commit, except when performing a merge, in
+which case it is two or more commits.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.4/include/git2/repository.h#L992" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_repository_commit_parents(<span class="apiSignatureParameter functionSignatureParameter">git_commitarray *commits</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.4/commit/git_commitarray.html" class="apiLink structLink">git_commitarray *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              commits
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>a <a href="/docs/reference/v1.8.4/commit/git_commitarray.html" class="apiLink structLink"><code><span class="codeWord">git_commitarray</span></code></a> that will contain the commit parents</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.4/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the repository</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/repository/git_repository_commit_parents.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/repository/git_repository_commit_parents.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/repository/git_repository_commit_parents.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/repository/git_repository_commit_parents.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/repository/git_repository_commit_parents.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/repository/git_repository_commit_parents.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.8.0/repository/git_repository_commit_parents.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

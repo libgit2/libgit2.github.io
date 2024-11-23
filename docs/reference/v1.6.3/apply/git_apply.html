@@ -1,0 +1,275 @@
+---
+title: git_apply (libgit2 v1.6.3)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.6.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.6.3/apply/index.html">apply</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_apply</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/apply/git_apply.html">main</option>
+              <option value="/docs/reference/v1.8.4/apply/git_apply.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/apply/git_apply.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/apply/git_apply.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/apply/git_apply.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/apply/git_apply.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/apply/git_apply.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/apply/git_apply.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/apply/git_apply.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/apply/git_apply.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/apply/git_apply.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/apply/git_apply.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/apply/git_apply.html" selected>v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/apply/git_apply.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/apply/git_apply.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/apply/git_apply.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/apply/git_apply.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/apply/git_apply.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/apply/git_apply.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/apply/git_apply.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/apply/git_apply.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/apply/git_apply.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/apply/git_apply.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/apply/git_apply.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/apply/git_apply.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/apply/git_apply.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/apply/git_apply.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/apply/git_apply.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/apply/git_apply.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/apply/git_apply.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/apply/git_apply.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/apply/git_apply.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/apply/git_apply.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/apply/git_apply.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/apply/git_apply.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/apply/git_apply.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/apply/git_apply.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/apply/git_apply.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/apply/git_apply.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/apply/git_apply.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/apply/git_apply.html">v0.28.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Apply a <a href="/docs/reference/v1.6.3/diff/git_diff.html" class="apiLink objectLink"><code><span class="codeWord">git_diff</span></code></a> to the given repository, making changes directly
+in the working directory, the index, or both.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.6.3/include/git2/apply.h#L157" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_apply(<span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">git_diff *diff</span>, <span class="apiSignatureParameter functionSignatureParameter">git_apply_location_t location</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_apply_options *options</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.6.3/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the repository to apply to</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.6.3/diff/git_diff.html" class="apiLink objectLink">git_diff *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              diff
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the diff to apply</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.6.3/apply/git_apply_location_t.html" class="apiLink enumLink">git_apply_location_t</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              location
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the location to apply (workdir, index or both)</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.6.3/apply/git_apply_options.html" class="apiLink structLink">const git_apply_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              options
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the options for the apply (or null for defaults)</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/apply/git_apply.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/apply/git_apply.html" class="apiVersionLink functionVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/apply/git_apply.html" class="apiVersionLink functionVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/apply/git_apply.html" class="apiVersionLink functionVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/apply/git_apply.html" class="apiVersionLink functionVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/apply/git_apply.html" class="apiVersionLink functionVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.28.0-rc1/apply/git_apply.html" class="apiVersionLink functionVersionLink">v0.28.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

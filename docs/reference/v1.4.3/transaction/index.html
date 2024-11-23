@@ -1,0 +1,212 @@
+---
+title: transaction APIs (libgit2 v1.4.3)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v1.4.3/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">transaction</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/transaction/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/transaction/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/transaction/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/transaction/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/transaction/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/transaction/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/transaction/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/transaction/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/transaction/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/transaction/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/transaction/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/transaction/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/transaction/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/transaction/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/transaction/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/transaction/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/transaction/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/transaction/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/transaction/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/transaction/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/transaction/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/transaction/index.html" selected>v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/transaction/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/transaction/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/transaction/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/transaction/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/transaction/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/transaction/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/transaction/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/transaction/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/transaction/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/transaction/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/transaction/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/transaction/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/transaction/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/transaction/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/transaction/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/transaction/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/transaction/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/transaction/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/transaction/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/transaction/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/transaction/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/transaction/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/transaction/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/transaction/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/transaction/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/transaction/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/transaction/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/transaction/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/transaction/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/transaction/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/transaction/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/transaction/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/transaction/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/transaction/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/transaction/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/transaction/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/transaction/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/transaction/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/transaction/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/transaction/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/transaction/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/transaction/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/transaction/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/transaction/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/transaction/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/transaction/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/transaction/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/transaction/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/transaction/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/transaction/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/transaction/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/transaction/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/transaction/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/transaction/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/transaction/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/transaction/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/transaction/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/transaction/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/transaction/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/transaction/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/transaction/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/transaction/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/transaction/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/transaction/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/transaction/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/transaction/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/transaction/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/transaction/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/transaction/index.html">v0.22.0-rc1</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git transactional reference routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction.html">
+                git_transaction
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Transactional interface to references</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction_new.html">
+                git_transaction_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Create a new transaction object</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction_lock_ref.html">
+                git_transaction_lock_ref
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lock a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction_set_target.html">
+                git_transaction_set_target
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the target of a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction_set_symbolic_target.html">
+                git_transaction_set_symbolic_target
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the target of a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction_set_reflog.html">
+                git_transaction_set_reflog
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the reflog of a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction_remove.html">
+                git_transaction_remove
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Remove a reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction_commit.html">
+                git_transaction_commit
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Commit the changes from the transaction</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.4.3/transaction/git_transaction_free.html">
+                git_transaction_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free the resources allocated by this transaction</p> 
+            </div>
+          </div>
+        </div>
+    </div>

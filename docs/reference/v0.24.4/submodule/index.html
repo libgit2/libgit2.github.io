@@ -1,0 +1,635 @@
+---
+title: submodule APIs (libgit2 v0.24.4)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.24.4/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">submodule</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/submodule/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/submodule/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/submodule/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/submodule/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/submodule/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/submodule/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/submodule/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/submodule/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/submodule/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/submodule/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/submodule/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/submodule/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/submodule/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/submodule/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/submodule/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/submodule/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/submodule/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/submodule/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/submodule/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/submodule/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/submodule/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/submodule/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/submodule/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/submodule/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/submodule/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/submodule/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/submodule/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/submodule/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/submodule/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/submodule/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/submodule/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/submodule/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/submodule/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/submodule/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/submodule/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/submodule/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/submodule/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/submodule/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/submodule/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/submodule/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/submodule/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/submodule/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/submodule/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/submodule/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/submodule/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/submodule/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/submodule/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/submodule/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/submodule/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/submodule/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/submodule/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/submodule/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/submodule/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/submodule/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/submodule/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/submodule/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/submodule/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/submodule/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/submodule/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/submodule/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/submodule/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/submodule/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/submodule/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/submodule/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/submodule/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/submodule/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/submodule/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/submodule/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/submodule/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/submodule/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/submodule/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/submodule/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/submodule/index.html" selected>v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/submodule/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/submodule/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/submodule/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/submodule/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/submodule/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/submodule/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/submodule/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/submodule/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/submodule/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/submodule/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/submodule/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/submodule/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/submodule/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/submodule/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/submodule/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/submodule/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/submodule/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/submodule/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/submodule/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/submodule/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/submodule/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/submodule/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/submodule/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/submodule/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/submodule/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/submodule/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/submodule/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/submodule/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/submodule/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/submodule/index.html">v0.17.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        <p>Submodule support in libgit2 builds a list of known submodules and keeps
+it in the repository.  The list is built from the .gitmodules file, the
+.git/config file, the index, and the HEAD tree.  Items in the working
+directory that look like submodules (i.e. a git repo) but are not
+mentioned in those places won't be tracked.</p>
+
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule.html">
+                git_submodule
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Opaque structure representing a submodule</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_update_options.html">
+                git_submodule_update_options
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Submodule update options structure</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader macroListHeader">Macros</h3>
+        <div class="apiList macroList">
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_STATUS__IN_FLAGS.html">
+                GIT_SUBMODULE_STATUS__IN_FLAGS
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_STATUS__INDEX_FLAGS.html">
+                GIT_SUBMODULE_STATUS__INDEX_FLAGS
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_STATUS__WD_FLAGS.html">
+                GIT_SUBMODULE_STATUS__WD_FLAGS
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_STATUS_IS_UNMODIFIED.html">
+                GIT_SUBMODULE_STATUS_IS_UNMODIFIED(S)
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_STATUS_IS_INDEX_UNMODIFIED.html">
+                GIT_SUBMODULE_STATUS_IS_INDEX_UNMODIFIED(S)
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_STATUS_IS_WD_UNMODIFIED.html">
+                GIT_SUBMODULE_STATUS_IS_WD_UNMODIFIED(S)
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_STATUS_IS_WD_DIRTY.html">
+                GIT_SUBMODULE_STATUS_IS_WD_DIRTY(S)
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_UPDATE_OPTIONS_VERSION.html">
+                GIT_SUBMODULE_UPDATE_OPTIONS_VERSION
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.24.4/submodule/GIT_SUBMODULE_UPDATE_OPTIONS_INIT.html">
+                GIT_SUBMODULE_UPDATE_OPTIONS_INIT
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader enumListHeader">Enums</h3>
+        <div class="apiList enumList">
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_status_t.html">
+                git_submodule_status_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Return codes for submodule status</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_update_t.html">
+                git_submodule_update_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Submodule update values</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_ignore_t.html">
+                git_submodule_ignore_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Submodule ignore values</p> 
+            </div>
+          </div>
+          <div class="apiListItem enumListItem">
+            <div class="apiListName enumListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_recurse_t.html">
+                git_submodule_recurse_t
+              </a>
+            </div>
+            <div class="apiListItemDescription enumListItemDescription">
+              <p>Options for submodule recurse</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader callbackListHeader">Callbacks</h3>
+        <div class="apiList callbackList">
+          <div class="apiListItem callbackListItem">
+            <div class="apiListName callbackListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_cb.html">
+                git_submodule_cb
+              </a>
+            </div>
+            <div class="apiListItemDescription callbackListItemDescription">
+              <p>Function pointer to receive each submodule</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_update_init_options.html">
+                git_submodule_update_init_options
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Initializes a <a href="/docs/reference/v0.24.4/submodule/git_submodule_update_options.html" class="apiLink structLink"><code><span class="codeWord">git_submodule_update_options</span></code></a> with default values Equivalent to creating an instance with GIT_SUBMODULE_UPDATE_OPTIONS_INIT.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_update.html">
+                git_submodule_update
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Update a submodule checkout the subrepository to the commit specified in the index of the containing repository. If the submodule repository doesn't contain the target commit (e.g. because fetchRecurseSubmodules isn't set), then the submodule is fetched using the fetch options supplied in options.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_lookup.html">
+                git_submodule_lookup
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup submodule information by name or path</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_free.html">
+                git_submodule_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Release a submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_foreach.html">
+                git_submodule_foreach
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Iterate over all tracked submodules of a repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_add_setup.html">
+                git_submodule_add_setup
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set up a new git submodule for checkout</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_add_finalize.html">
+                git_submodule_add_finalize
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Resolve the setup of a new git submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_add_to_index.html">
+                git_submodule_add_to_index
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Add current submodule HEAD commit to index of superproject</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_owner.html">
+                git_submodule_owner
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the containing repository for a submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_name.html">
+                git_submodule_name
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the name of submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_path.html">
+                git_submodule_path
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the path to the submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_url.html">
+                git_submodule_url
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the URL for the submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_resolve_url.html">
+                git_submodule_resolve_url
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Resolve a submodule url relative to the given repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_branch.html">
+                git_submodule_branch
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the branch for the submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_set_branch.html">
+                git_submodule_set_branch
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the branch for the submodule in the configuration</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_set_url.html">
+                git_submodule_set_url
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the URL for the submodule in the configuration</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_index_id.html">
+                git_submodule_index_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the OID for the submodule in the index</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_head_id.html">
+                git_submodule_head_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the OID for the submodule in the current HEAD tree</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_wd_id.html">
+                git_submodule_wd_id
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the OID for the submodule in the current working directory</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_ignore.html">
+                git_submodule_ignore
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the ignore rule that will be used for the submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_set_ignore.html">
+                git_submodule_set_ignore
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the ignore rule for the submodule in the configuration</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_update_strategy.html">
+                git_submodule_update_strategy
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the update rule that will be used for the submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_set_update.html">
+                git_submodule_set_update
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the update rule for the submodule in the configuration</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_fetch_recurse_submodules.html">
+                git_submodule_fetch_recurse_submodules
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Read the fetchRecurseSubmodules rule for a submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_set_fetch_recurse_submodules.html">
+                git_submodule_set_fetch_recurse_submodules
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set the fetchRecurseSubmodules rule for a submodule in the configuration</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_init.html">
+                git_submodule_init
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Copy submodule info into &quot;</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_repo_init.html">
+                git_submodule_repo_init
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Set up the subrepository for a submodule in preparation for clone</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_sync.html">
+                git_submodule_sync
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Copy submodule remote info into submodule repo</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_open.html">
+                git_submodule_open
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Open the repository for a submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_reload.html">
+                git_submodule_reload
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Reread submodule info from config, index, and HEAD</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_status.html">
+                git_submodule_status
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the status for a submodule</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.24.4/submodule/git_submodule_location.html">
+                git_submodule_location
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the locations of submodule information</p> 
+            </div>
+          </div>
+        </div>
+    </div>

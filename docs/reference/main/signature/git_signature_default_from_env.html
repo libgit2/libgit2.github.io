@@ -1,0 +1,123 @@
+---
+title: git_signature_default_from_env (libgit2 main)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/main/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/main/signature/index.html">signature</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_signature_default_from_env</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/signature/git_signature_default_from_env.html" selected>main</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create a new author and/or committer signatures with default
+information based on the configuration and environment variables.</p>
+
+        <p>If <code><span class="codeWord">author_out</span></code> is set, it will be populated with the author
+information. The <code><span class="codeWord">GIT_AUTHOR_NAME</span></code> and <code><span class="codeWord">GIT_AUTHOR_EMAIL</span></code>
+environment variables will be honored, and <code><span class="codeWord">user.name</span></code> and
+<code><span class="codeWord">user.email</span></code> configuration options will be honored if the
+environment variables are unset. For timestamps, <code><span class="codeWord">GIT_AUTHOR_DATE</span></code>
+will be used, otherwise the current time will be used.</p>
+
+        <p>If <code><span class="codeWord">committer_out</span></code> is set, it will be populated with the
+committer information. The <code><span class="codeWord">GIT_COMMITTER_NAME</span></code> and
+<code><span class="codeWord">GIT_COMMITTER_EMAIL</span></code> environment variables will be honored,
+and <code><span class="codeWord">user.name</span></code> and <code><span class="codeWord">user.email</span></code> configuration options will
+be honored if the environment variables are unset. For timestamps,
+<code><span class="codeWord">GIT_COMMITTER_DATE</span></code> will be used, otherwise the current time will
+be used.</p>
+
+        <p>If neither <code><span class="codeWord">GIT_AUTHOR_DATE</span></code> nor <code><span class="codeWord">GIT_COMMITTER_DATE</span></code> are set,
+both timestamps will be set to the same time.</p>
+
+        <p>It will return <a href="/docs/reference/main/errors/git_error_code.html#GIT_ENOTFOUND" class="apiLink enumLink"><code><span class="codeWord">GIT_ENOTFOUND</span></code></a> if either the <code><span class="codeWord">user.name</span></code> or
+<code><span class="codeWord">user.email</span></code> are not set and there is no fallback from an environment
+variable. One of <code><span class="codeWord">author_out</span></code> or <code><span class="codeWord">committer_out</span></code> must be set.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/signature.h#L82" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_signature_default_from_env(<span class="apiSignatureParameter functionSignatureParameter">git_signature **author_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_signature **committer_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/signature/git_signature.html" class="apiLink structLink">git_signature **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              author_out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>pointer to set the author signature, or NULL</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/signature/git_signature.html" class="apiLink structLink">git_signature **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              committer_out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>pointer to set the committer signature, or NULL</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>repository pointer</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, GIT_ENOTFOUND if config is missing, or error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/main/signature/git_signature_default_from_env.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          </ul>
+        </div>
+      </div>

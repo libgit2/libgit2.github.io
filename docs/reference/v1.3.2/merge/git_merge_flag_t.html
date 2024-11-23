@@ -1,0 +1,396 @@
+---
+title: git_merge_flag_t (libgit2 v1.3.2)
+layout: default
+---
+
+      <div class="api enum">
+        <div class="apiBreadcrumb enumBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.3.2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.3.2/merge/index.html">merge</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader enumHeader">
+          <h2 class="apiName enumName">git_merge_flag_t</h2>
+          <div class="apiHeaderVersionSelect enumHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/merge/git_merge_flag_t.html">main</option>
+              <option value="/docs/reference/v1.8.4/merge/git_merge_flag_t.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/merge/git_merge_flag_t.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/merge/git_merge_flag_t.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/merge/git_merge_flag_t.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/merge/git_merge_flag_t.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/merge/git_merge_flag_t.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/merge/git_merge_flag_t.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/merge/git_merge_flag_t.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/merge/git_merge_flag_t.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/merge/git_merge_flag_t.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/merge/git_merge_flag_t.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/merge/git_merge_flag_t.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/merge/git_merge_flag_t.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/merge/git_merge_flag_t.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/merge/git_merge_flag_t.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/merge/git_merge_flag_t.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/merge/git_merge_flag_t.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/merge/git_merge_flag_t.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/merge/git_merge_flag_t.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/merge/git_merge_flag_t.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/merge/git_merge_flag_t.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/merge/git_merge_flag_t.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/merge/git_merge_flag_t.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/merge/git_merge_flag_t.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/merge/git_merge_flag_t.html" selected>v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/merge/git_merge_flag_t.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/merge/git_merge_flag_t.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/merge/git_merge_flag_t.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/merge/git_merge_flag_t.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/merge/git_merge_flag_t.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/merge/git_merge_flag_t.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/merge/git_merge_flag_t.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/merge/git_merge_flag_t.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/merge/git_merge_flag_t.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/merge/git_merge_flag_t.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/merge/git_merge_flag_t.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/merge/git_merge_flag_t.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/merge/git_merge_flag_t.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/merge/git_merge_flag_t.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/merge/git_merge_flag_t.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/merge/git_merge_flag_t.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/merge/git_merge_flag_t.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/merge/git_merge_flag_t.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/merge/git_merge_flag_t.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/merge/git_merge_flag_t.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/merge/git_merge_flag_t.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/merge/git_merge_flag_t.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/merge/git_merge_flag_t.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/merge/git_merge_flag_t.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/merge/git_merge_flag_t.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/merge/git_merge_flag_t.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/merge/git_merge_flag_t.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/merge/git_merge_flag_t.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/merge/git_merge_flag_t.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/merge/git_merge_flag_t.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/merge/git_merge_flag_t.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/merge/git_merge_flag_t.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/merge/git_merge_flag_t.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/merge/git_merge_flag_t.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/merge/git_merge_flag_t.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/merge/git_merge_flag_t.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/merge/git_merge_flag_t.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/merge/git_merge_flag_t.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/merge/git_merge_flag_t.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/merge/git_merge_flag_t.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/merge/git_merge_flag_t.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/merge/git_merge_flag_t.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/merge/git_merge_flag_t.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/merge/git_merge_flag_t.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/merge/git_merge_flag_t.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/merge/git_merge_flag_t.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/merge/git_merge_flag_t.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/merge/git_merge_flag_t.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/merge/git_merge_flag_t.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/merge/git_merge_flag_t.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/merge/git_merge_flag_t.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/merge/git_merge_flag_t.html">v0.24.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription enumDescription">
+        <p>Flags for <a href="/docs/reference/v1.3.2/merge/git_merge.html" class="apiLink functionLink"><code><span class="codeWord">git_merge</span></code></a> options.  A combination of these flags can be
+passed in via the <code><span class="codeWord">flags</span></code> value in the <a href="/docs/reference/v1.3.2/merge/git_merge_options.html" class="apiLink structLink"><code><span class="codeWord">git_merge_options</span></code></a>.</p>
+
+        </div>
+
+        <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
+        <div class="apiSignatureLink enumSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.3.2/include/git2/merge.h#L68" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiMembers enumMembers">
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_MERGE_FIND_RENAMES
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              (1 << 0)
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Detect renames that occur between the common ancestor and the &quot;ours&quot; side or the common ancestor and the &quot;theirs&quot; side. This will enable the ability to merge between a modified and renamed file.</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_MERGE_FAIL_ON_CONFLICT
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              (1 << 1)
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>If a conflict occurs, exit immediately instead of attempting to continue resolving conflicts. The merge operation will fail with GIT_EMERGECONFLICT and no index will be returned.</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_MERGE_SKIP_REUC
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              (1 << 2)
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Do not write the REUC extension on the generated index</p> 
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_MERGE_NO_RECURSIVE
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              (1 << 3)
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>If the commits being merged have multiple merge bases, do not build a recursive merge base (by merging the multiple merge bases), instead simply use the first base. This flag provides a similar merge base to <code><span class="codeWord">git-merge-resolve</span></code>.</p> 
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader enumVersionsHeader">Versions</h3>
+        <div class="apiVersions enumVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/main/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaChanged enumVersionDeltaChanged">
+            <a href="/docs/reference/v1.4.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced enumVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.24.0-rc1/merge/git_merge_flag_t.html" class="apiVersionLink enumVersionLink">v0.24.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

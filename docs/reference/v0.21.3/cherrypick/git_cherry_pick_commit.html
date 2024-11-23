@@ -1,0 +1,173 @@
+---
+title: git_cherry_pick_commit (libgit2 v0.21.3)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.3/cherrypick/index.html">cherrypick</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_cherry_pick_commit</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/cherrypick/git_cherry_pick_commit.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/cherrypick/git_cherry_pick_commit.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/cherrypick/git_cherry_pick_commit.html" selected>v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/cherrypick/git_cherry_pick_commit.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/cherrypick/git_cherry_pick_commit.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/cherrypick/git_cherry_pick_commit.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/cherrypick/git_cherry_pick_commit.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/cherrypick/git_cherry_pick_commit.html">v0.21.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Cherry-picks the given commit against the given &quot;our&quot; commit, producing an
+index that reflects the result of the cherry-pick.</p>
+
+        <p>The returned index must be freed explicitly with <a href="/docs/reference/v0.21.3/index/git_index_free.html" class="apiLink functionLink"><code><span class="codeWord">git_index_free</span></code></a>.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.3/include/git2/cherrypick.h#L62" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_cherry_pick_commit(<span class="apiSignatureParameter functionSignatureParameter">git_index **out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">git_commit *cherry_pick_commit</span>, <span class="apiSignatureParameter functionSignatureParameter">git_commit *our_commit</span>, <span class="apiSignatureParameter functionSignatureParameter">unsigned int mainline</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_merge_options *merge_options</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.3/index/git_index.html" class="apiLink objectLink">git_index **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>pointer to store the index result in</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.3/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the repository that contains the given commits</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.3/commit/git_commit.html" class="apiLink objectLink">git_commit *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              cherry_pick_commit
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the commit to cherry-pick</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.3/commit/git_commit.html" class="apiLink objectLink">git_commit *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              our_commit
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the commit to revert against (eg, HEAD)</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              unsigned int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              mainline
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the parent of the revert commit, if it is a merge</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.3/merge/git_merge_options.html" class="apiLink structLink">const git_merge_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              merge_options
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the merge options (or null for defaults)</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>zero on success, -1 on failure.</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/cherrypick/git_cherry_pick_commit.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/cherrypick/git_cherry_pick_commit.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/cherrypick/git_cherry_pick_commit.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/cherrypick/git_cherry_pick_commit.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/cherrypick/git_cherry_pick_commit.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/cherrypick/git_cherry_pick_commit.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/cherrypick/git_cherry_pick_commit.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.21.0-rc1/cherrypick/git_cherry_pick_commit.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

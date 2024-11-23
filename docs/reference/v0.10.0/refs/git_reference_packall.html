@@ -1,0 +1,114 @@
+---
+title: git_reference_packall (libgit2 v0.10.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.10.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.10.0/refs/index.html">refs</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_reference_packall</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.17.0/refs/git_reference_packall.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/refs/git_reference_packall.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/refs/git_reference_packall.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/refs/git_reference_packall.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/refs/git_reference_packall.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/refs/git_reference_packall.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/refs/git_reference_packall.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/refs/git_reference_packall.html" selected>v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/refs/git_reference_packall.html">v0.8.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Pack all the loose references in the repository</p>
+
+        <p>This method will load into the cache all the loose
+references on the repository and update the
+<code><span class="codeWord">packed-refs</span></code> file with them.</p>
+
+        <p>Once the <code><span class="codeWord">packed-refs</span></code> file has been written properly,
+the loose references will be removed from disk.</p>
+
+        <p>WARNING: calling this method may invalidate any existing
+references previously loaded on the cache.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.10.0/include/git2/refs.h#L219" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_reference_packall(<span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.10.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Repository where the loose refs will be packed</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success; error code otherwise</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.8.0/refs/git_reference_packall.html" class="apiVersionLink functionVersionLink">v0.8.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

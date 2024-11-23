@@ -1,0 +1,121 @@
+---
+title: git_config_backend_memory_options (libgit2 v1.8.1)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.1/sys/config/index.html">config (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_config_backend_memory_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/config/git_config_backend_memory_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/config/git_config_backend_memory_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/config/git_config_backend_memory_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/config/git_config_backend_memory_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/config/git_config_backend_memory_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/config/git_config_backend_memory_options.html" selected>v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/config/git_config_backend_memory_options.html">v1.8.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Options for in-memory configuration backends.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.1/include/git2/sys/config.h#L129" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_config_backend_memory_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">const char *backend_type</span>
+<span class="apiSignatureMember structSignatureMember">const char *origin_path</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              backend_type
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The type of this backend (eg, &quot;command line&quot;). If this is NULL, then this will be &quot;in-memory&quot;.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              origin_path
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The path to the origin; if this is NULL then it will be left unset in the resulting configuration entries.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.8.1/sys/config/git_config_backend_from_string.html" className="apiLink functionLink">git_config_backend_from_string</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.8.1/sys/config/git_config_backend_from_values.html" className="apiLink functionLink">git_config_backend_from_values</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/config/git_config_backend_memory_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/config/git_config_backend_memory_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/config/git_config_backend_memory_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/config/git_config_backend_memory_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/config/git_config_backend_memory_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/config/git_config_backend_memory_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.8.0/sys/config/git_config_backend_memory_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

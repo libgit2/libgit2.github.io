@@ -1,0 +1,204 @@
+---
+title: diff APIs (libgit2 v1.6.4)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v1.6.4/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">diff</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/diff/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/diff/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/diff/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/diff/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/diff/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/diff/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/diff/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/diff/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/diff/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/diff/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/diff/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/diff/index.html" selected>v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/diff/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/diff/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/diff/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/diff/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/diff/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/diff/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/diff/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/diff/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/diff/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/diff/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/diff/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/diff/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/diff/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/diff/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/diff/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/diff/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/diff/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/diff/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/diff/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/diff/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/diff/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/diff/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/diff/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/diff/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/diff/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/diff/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/diff/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/diff/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/diff/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/diff/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/diff/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/diff/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/diff/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/diff/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/diff/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/diff/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/diff/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/diff/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/diff/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/diff/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/diff/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/diff/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/diff/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/diff/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/diff/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/diff/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/diff/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/diff/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/diff/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/diff/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/diff/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/diff/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/diff/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/diff/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/diff/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/diff/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/diff/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/diff/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/diff/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/diff/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/diff/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/diff/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/diff/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/diff/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/diff/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/diff/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/diff/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/diff/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/diff/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/diff/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/diff/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/diff/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/diff/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/diff/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/diff/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/diff/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/diff/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/diff/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/diff/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/diff/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/diff/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/diff/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/diff/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/diff/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/diff/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/diff/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/diff/index.html">v0.21.0-rc1</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Low-level Git diff utilities
+      </div>
+
+        <h3 class="apiListHeader structListHeader">Structs</h3>
+        <div class="apiList structList">
+          <div class="apiListItem structListItem">
+            <div class="apiListName structListName">
+              <a href="/docs/reference/v1.6.4/sys/diff/git_diff_perfdata.html">
+                git_diff_perfdata
+              </a>
+            </div>
+            <div class="apiListItemDescription structListItemDescription">
+              <p>Performance data from diffing</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader macroListHeader">Macros</h3>
+        <div class="apiList macroList">
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.6.4/sys/diff/GIT_DIFF_PERFDATA_VERSION.html">
+                GIT_DIFF_PERFDATA_VERSION
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v1.6.4/sys/diff/GIT_DIFF_PERFDATA_INIT.html">
+                GIT_DIFF_PERFDATA_INIT
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.4/sys/diff/git_diff_print_callback__to_buf.html">
+                git_diff_print_callback__to_buf
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Diff print callback that writes to a git_buf</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.4/sys/diff/git_diff_print_callback__to_file_handle.html">
+                git_diff_print_callback__to_file_handle
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Diff print callback that writes to stdio FILE handle</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.4/sys/diff/git_diff_get_perfdata.html">
+                git_diff_get_perfdata
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get performance data for a diff object</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v1.6.4/sys/diff/git_status_list_get_perfdata.html">
+                git_status_list_get_perfdata
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get performance data for diffs from a git_status_list</p> 
+            </div>
+          </div>
+        </div>
+    </div>

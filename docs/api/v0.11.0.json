@@ -1,0 +1,5690 @@
+{
+  "info": {
+    "version": "v0.11.0",
+    "commit": "6dcb09b5b57875f334f61aebed695e2e4193db5e"
+  },
+  "groups": {
+    "blob": {
+      "apis": {
+        "git_blob_lookup": {
+          "kind": "function",
+          "name": "git_blob_lookup",
+          "location": {
+            "file": "blob.h",
+            "line": 50,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "blob",
+              "type": "git_blob **",
+              "direction": "in",
+              "comment": "pointer to the looked up blob"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "the repo to use when locating the blob."
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "identity of the blob to locate."
+            }
+          ],
+          "comment": [
+            "Lookup a blob object from a repository."
+          ],
+          "group": "blob"
+        },
+        "git_blob_close": {
+          "kind": "function",
+          "name": "git_blob_close",
+          "location": {
+            "file": "blob.h",
+            "line": 67,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "blob",
+              "type": "git_blob *",
+              "direction": "in",
+              "comment": "the blob to close"
+            }
+          ],
+          "comment": [
+            "Close an open blob",
+            "This is a wrapper around git_object_close()",
+            "IMPORTANT:\n It *is* necessary to call this method when you stop\n using a blob. Failure to do so will cause a memory leak."
+          ],
+          "group": "blob"
+        },
+        "git_blob_rawcontent": {
+          "kind": "function",
+          "name": "git_blob_rawcontent",
+          "location": {
+            "file": "blob.h",
+            "line": 84,
+            "column": 26
+          },
+          "returns": {
+            "type": "const void *",
+            "comment": "the pointer; NULL if the blob has no contents"
+          },
+          "params": [
+            {
+              "name": "blob",
+              "type": "git_blob *",
+              "direction": "in",
+              "comment": "pointer to the blob"
+            }
+          ],
+          "comment": [
+            "Get a read-only buffer with the raw content of a blob.",
+            "A pointer to the raw content of a blob is returned;\n this pointer is owned internally by the object and shall\n not be free'd. The pointer may be invalidated at a later\n time."
+          ],
+          "group": "blob"
+        },
+        "git_blob_rawsize": {
+          "kind": "function",
+          "name": "git_blob_rawsize",
+          "location": {
+            "file": "blob.h",
+            "line": 92,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "size on bytes"
+          },
+          "params": [
+            {
+              "name": "blob",
+              "type": "git_blob *",
+              "direction": "in",
+              "comment": "pointer to the blob"
+            }
+          ],
+          "comment": [
+            "Get the size in bytes of the contents of a blob"
+          ],
+          "group": "blob"
+        },
+        "git_blob_create_fromfile": {
+          "kind": "function",
+          "name": "git_blob_create_fromfile",
+          "location": {
+            "file": "blob.h",
+            "line": 105,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "return the id of the written blob"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "repository where the blob will be written.\n\tthis repository cannot be bare"
+            },
+            {
+              "name": "path",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "file from which the blob will be created,\n\trelative to the repository's working dir"
+            }
+          ],
+          "comment": [
+            "Read a file from the working folder of a repository\n and write it to the Object Database as a loose blob"
+          ],
+          "group": "blob"
+        },
+        "git_blob_create_frombuffer": {
+          "kind": "function",
+          "name": "git_blob_create_frombuffer",
+          "location": {
+            "file": "blob.h",
+            "line": 117,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "return the oid of the written blob"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "repository where to blob will be written"
+            },
+            {
+              "name": "buffer",
+              "type": "const void *",
+              "direction": "in",
+              "comment": "data to be written into the blob"
+            },
+            {
+              "name": "len",
+              "type": "size_t",
+              "direction": "in",
+              "comment": "length of the data"
+            }
+          ],
+          "comment": [
+            "Write an in-memory buffer to the ODB as a blob"
+          ],
+          "group": "blob"
+        },
+        "git_blob": {
+          "kind": "struct",
+          "name": "git_blob",
+          "referenceName": "struct git_blob",
+          "opaque": true,
+          "comment": [
+            "In-memory representation of a blob object."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 116,
+            "column": 25
+          },
+          "group": "blob",
+          "parameterTo": [
+            "git_blob_lookup",
+            "git_blob_close",
+            "git_blob_rawcontent",
+            "git_blob_rawsize"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git blob load and write routines"
+      }
+    },
+    "commit": {
+      "apis": {
+        "git_commit_lookup": {
+          "kind": "function",
+          "name": "git_commit_lookup",
+          "location": {
+            "file": "commit.h",
+            "line": 51,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit **",
+              "direction": "in",
+              "comment": "pointer to the looked up commit"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "the repo to use when locating the commit."
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "identity of the commit to locate.  If the object is\n        an annotated tag it will be peeled back to the commit."
+            }
+          ],
+          "comment": [
+            "Lookup a commit object from a repository."
+          ],
+          "group": "commit"
+        },
+        "git_commit_close": {
+          "kind": "function",
+          "name": "git_commit_close",
+          "location": {
+            "file": "commit.h",
+            "line": 68,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "the commit to close"
+            }
+          ],
+          "comment": [
+            "Close an open commit",
+            "This is a wrapper around git_object_close()",
+            "IMPORTANT:\n It *is* necessary to call this method when you stop\n using a commit. Failure to do so will cause a memory leak."
+          ],
+          "group": "commit"
+        },
+        "git_commit_id": {
+          "kind": "function",
+          "name": "git_commit_id",
+          "location": {
+            "file": "commit.h",
+            "line": 79,
+            "column": 29
+          },
+          "returns": {
+            "type": "const git_oid *",
+            "comment": "object identity for the commit."
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the id of a commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_message_short": {
+          "kind": "function",
+          "name": "git_commit_message_short",
+          "location": {
+            "file": "commit.h",
+            "line": 87,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "the short message of a commit"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the short (one line) message of a commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_message": {
+          "kind": "function",
+          "name": "git_commit_message",
+          "location": {
+            "file": "commit.h",
+            "line": 95,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "the message of a commit"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the full message of a commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_time": {
+          "kind": "function",
+          "name": "git_commit_time",
+          "location": {
+            "file": "commit.h",
+            "line": 103,
+            "column": 24
+          },
+          "returns": {
+            "type": "git_time_t",
+            "comment": "the time of a commit"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the commit time (i.e. committer time) of a commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_time_offset": {
+          "kind": "function",
+          "name": "git_commit_time_offset",
+          "location": {
+            "file": "commit.h",
+            "line": 111,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "positive or negative timezone offset, in minutes from UTC"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the commit timezone offset (i.e. committer's preferred timezone) of a commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_committer": {
+          "kind": "function",
+          "name": "git_commit_committer",
+          "location": {
+            "file": "commit.h",
+            "line": 119,
+            "column": 35
+          },
+          "returns": {
+            "type": "const git_signature *",
+            "comment": "the committer of a commit"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the committer of a commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_author": {
+          "kind": "function",
+          "name": "git_commit_author",
+          "location": {
+            "file": "commit.h",
+            "line": 127,
+            "column": 35
+          },
+          "returns": {
+            "type": "const git_signature *",
+            "comment": "the author of a commit"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the author of a commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_tree": {
+          "kind": "function",
+          "name": "git_commit_tree",
+          "location": {
+            "file": "commit.h",
+            "line": 136,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "tree_out",
+              "type": "git_tree **",
+              "direction": "in",
+              "comment": "pointer where to store the tree object"
+            },
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the tree pointed to by a commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_parentcount": {
+          "kind": "function",
+          "name": "git_commit_parentcount",
+          "location": {
+            "file": "commit.h",
+            "line": 144,
+            "column": 26
+          },
+          "returns": {
+            "type": "unsigned int",
+            "comment": "integer of count of parents"
+          },
+          "params": [
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            }
+          ],
+          "comment": [
+            "Get the number of parents of this commit"
+          ],
+          "group": "commit"
+        },
+        "git_commit_parent": {
+          "kind": "function",
+          "name": "git_commit_parent",
+          "location": {
+            "file": "commit.h",
+            "line": 154,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "parent",
+              "type": "git_commit **",
+              "direction": "in",
+              "comment": "Pointer where to store the parent commit"
+            },
+            {
+              "name": "commit",
+              "type": "git_commit *",
+              "direction": "in",
+              "comment": "a previously loaded commit."
+            },
+            {
+              "name": "n",
+              "type": "unsigned int",
+              "direction": "in",
+              "comment": "the position of the parent (from 0 to `parentcount`)"
+            }
+          ],
+          "comment": [
+            "Get the specified parent of the commit."
+          ],
+          "group": "commit"
+        },
+        "git_commit_create": {
+          "kind": "function",
+          "name": "git_commit_create",
+          "location": {
+            "file": "commit.h",
+            "line": 195,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise\n\tThe created commit will be written to the Object Database and\n\tthe given reference will be updated to point to it"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "Pointer where to store the OID of the\n\tnewly created commit"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "Repository where to store the commit"
+            },
+            {
+              "name": "update_ref",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "If not NULL, name of the reference that\n\twill be updated to point to this commit. If the reference\n\tis not direct, it will be resolved to a direct reference.\n\tUse \"HEAD\" to update the HEAD of the current branch and\n\tmake it point to this commit"
+            },
+            {
+              "name": "author",
+              "type": "const git_signature *",
+              "direction": "in",
+              "comment": "Signature representing the author and the authory\n\ttime of this commit"
+            },
+            {
+              "name": "committer",
+              "type": "const git_signature *",
+              "direction": "in",
+              "comment": "Signature representing the committer and the\n  commit time of this commit"
+            },
+            {
+              "name": "message",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "Full message for this commit"
+            },
+            {
+              "name": "tree_oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "Object ID of the tree for this commit. Note that\n  no validation is performed on this OID. Use the _o variants of\n  this method to assure a proper tree is passed to the commit."
+            },
+            {
+              "name": "parent_count",
+              "type": "int",
+              "direction": "in",
+              "comment": "Number of parents for this commit"
+            },
+            {
+              "name": "parent_oids",
+              "type": "const git_oid **"
+            }
+          ],
+          "comment": [
+            "Create a new commit in the repository"
+          ],
+          "group": "commit"
+        },
+        "git_commit_create_o": {
+          "kind": "function",
+          "name": "git_commit_create_o",
+          "location": {
+            "file": "commit.h",
+            "line": 217,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *"
+            },
+            {
+              "name": "update_ref",
+              "type": "const char *"
+            },
+            {
+              "name": "author",
+              "type": "const git_signature *"
+            },
+            {
+              "name": "committer",
+              "type": "const git_signature *"
+            },
+            {
+              "name": "message",
+              "type": "const char *"
+            },
+            {
+              "name": "tree",
+              "type": "const git_tree *"
+            },
+            {
+              "name": "parent_count",
+              "type": "int"
+            },
+            {
+              "name": "parents",
+              "type": "const git_commit **"
+            }
+          ],
+          "comment": [
+            "Create a new commit in the repository using `git_object`\n instances as parameters.",
+            "The `tree_oid` and `parent_oids` paremeters now take a instance\n of `git_tree` and `git_commit`, respectively.",
+            "All other parameters remain the same"
+          ],
+          "see": [
+            "git_commit_create"
+          ],
+          "group": "commit"
+        },
+        "git_commit_create_ov": {
+          "kind": "function",
+          "name": "git_commit_create_ov",
+          "location": {
+            "file": "commit.h",
+            "line": 244,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *"
+            },
+            {
+              "name": "update_ref",
+              "type": "const char *"
+            },
+            {
+              "name": "author",
+              "type": "const git_signature *"
+            },
+            {
+              "name": "committer",
+              "type": "const git_signature *"
+            },
+            {
+              "name": "message",
+              "type": "const char *"
+            },
+            {
+              "name": "tree",
+              "type": "const git_tree *"
+            },
+            {
+              "name": "parent_count",
+              "type": "int"
+            }
+          ],
+          "comment": [
+            "Create a new commit in the repository using `git_object`\n instances and a variable argument list.",
+            "The `tree_oid` paremeter now takes a instance\n of `const git_tree *`.",
+            "The parents for the commit are specified as a variable\n list of pointers to `const git_commit *`. Note that this\n is a convenience method which may not be safe to export\n for certain languages or compilers",
+            "All other parameters remain the same"
+          ],
+          "see": [
+            "git_commit_create"
+          ],
+          "group": "commit"
+        },
+        "git_commit_create_v": {
+          "kind": "function",
+          "name": "git_commit_create_v",
+          "location": {
+            "file": "commit.h",
+            "line": 269,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *"
+            },
+            {
+              "name": "update_ref",
+              "type": "const char *"
+            },
+            {
+              "name": "author",
+              "type": "const git_signature *"
+            },
+            {
+              "name": "committer",
+              "type": "const git_signature *"
+            },
+            {
+              "name": "message",
+              "type": "const char *"
+            },
+            {
+              "name": "tree_oid",
+              "type": "const git_oid *"
+            },
+            {
+              "name": "parent_count",
+              "type": "int"
+            }
+          ],
+          "comment": [
+            "Create a new commit in the repository using \n a variable argument list.",
+            "The parents for the commit are specified as a variable\n list of pointers to `const git_oid *`. Note that this\n is a convenience method which may not be safe to export\n for certain languages or compilers",
+            "All other parameters remain the same"
+          ],
+          "see": [
+            "git_commit_create"
+          ],
+          "group": "commit"
+        },
+        "git_commit": {
+          "kind": "struct",
+          "name": "git_commit",
+          "referenceName": "struct git_commit",
+          "opaque": true,
+          "comment": [
+            "Parsed representation of a commit object."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 119,
+            "column": 27
+          },
+          "group": "commit",
+          "parameterTo": [
+            "git_commit_lookup",
+            "git_commit_close",
+            "git_commit_id",
+            "git_commit_message_short",
+            "git_commit_message",
+            "git_commit_time",
+            "git_commit_time_offset",
+            "git_commit_committer",
+            "git_commit_author",
+            "git_commit_tree",
+            "git_commit_parentcount",
+            "git_commit_parent",
+            "git_commit_create_o"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git commit parsing, formatting routines"
+      }
+    },
+    "common": {
+      "apis": {
+        "GIT_EXTERN(type)": {
+          "kind": "macro",
+          "name": "GIT_EXTERN(type)",
+          "location": {
+            "file": "common.h",
+            "line": 46,
+            "column": 10
+          },
+          "value": "extern __attribute__((visibility(\"default\"))) type",
+          "comment": "Declare a public function exported for application use.",
+          "group": "common"
+        },
+        "GIT_EXTERN_TLS(type)": {
+          "kind": "macro",
+          "name": "GIT_EXTERN_TLS(type)",
+          "location": {
+            "file": "common.h",
+            "line": 58,
+            "column": 10
+          },
+          "value": "extern __attribute__((visibility(\"default\"))) GIT_TLS type",
+          "comment": "Declare a public TLS symbol exported for application use.",
+          "group": "common"
+        },
+        "GIT_INLINE(type)": {
+          "kind": "macro",
+          "name": "GIT_INLINE(type)",
+          "location": {
+            "file": "common.h",
+            "line": 67,
+            "column": 10
+          },
+          "value": "static __inline type",
+          "comment": "Declare a function as always inlined.",
+          "group": "common"
+        },
+        "GIT_FORMAT_PRINTF(a,b)": {
+          "kind": "macro",
+          "name": "GIT_FORMAT_PRINTF(a,b)",
+          "location": {
+            "file": "common.h",
+            "line": 74,
+            "column": 10
+          },
+          "value": "__attribute__((format (printf, a, b)))",
+          "comment": "Declare a function's takes printf style arguments.",
+          "group": "common"
+        },
+        "GIT_SUCCESS": {
+          "kind": "macro",
+          "name": "GIT_SUCCESS",
+          "location": {
+            "file": "common.h",
+            "line": 88,
+            "column": 9
+          },
+          "value": "0",
+          "comment": "Operation completed successfully.",
+          "group": "common"
+        },
+        "GIT_ERROR": {
+          "kind": "macro",
+          "name": "GIT_ERROR",
+          "location": {
+            "file": "common.h",
+            "line": 96,
+            "column": 9
+          },
+          "value": "-1",
+          "comment": "Operation failed, with unspecified reason. This value also serves as the base error code; all other error codes are subtracted from it such that all errors are < 0, in typical POSIX C tradition.",
+          "group": "common"
+        },
+        "GIT_ENOTOID": {
+          "kind": "macro",
+          "name": "GIT_ENOTOID",
+          "location": {
+            "file": "common.h",
+            "line": 99,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 1)",
+          "comment": "Input was not a properly formatted Git object id.",
+          "group": "common"
+        },
+        "GIT_ENOTFOUND": {
+          "kind": "macro",
+          "name": "GIT_ENOTFOUND",
+          "location": {
+            "file": "common.h",
+            "line": 102,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 2)",
+          "comment": "Input does not exist in the scope searched.",
+          "group": "common"
+        },
+        "GIT_ENOMEM": {
+          "kind": "macro",
+          "name": "GIT_ENOMEM",
+          "location": {
+            "file": "common.h",
+            "line": 105,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 3)",
+          "comment": "Not enough space available.",
+          "group": "common"
+        },
+        "GIT_EOSERR": {
+          "kind": "macro",
+          "name": "GIT_EOSERR",
+          "location": {
+            "file": "common.h",
+            "line": 108,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 4)",
+          "comment": "Consult the OS error information.",
+          "group": "common"
+        },
+        "GIT_EOBJTYPE": {
+          "kind": "macro",
+          "name": "GIT_EOBJTYPE",
+          "location": {
+            "file": "common.h",
+            "line": 111,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 5)",
+          "comment": "The specified object is of invalid type",
+          "group": "common"
+        },
+        "GIT_EOBJCORRUPTED": {
+          "kind": "macro",
+          "name": "GIT_EOBJCORRUPTED",
+          "location": {
+            "file": "common.h",
+            "line": 114,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 6)",
+          "comment": "The specified object has its data corrupted",
+          "group": "common"
+        },
+        "GIT_ENOTAREPO": {
+          "kind": "macro",
+          "name": "GIT_ENOTAREPO",
+          "location": {
+            "file": "common.h",
+            "line": 117,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 7)",
+          "comment": "The specified repository is invalid",
+          "group": "common"
+        },
+        "GIT_EINVALIDTYPE": {
+          "kind": "macro",
+          "name": "GIT_EINVALIDTYPE",
+          "location": {
+            "file": "common.h",
+            "line": 120,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 8)",
+          "comment": "The object type is invalid or doesn't match",
+          "group": "common"
+        },
+        "GIT_EMISSINGOBJDATA": {
+          "kind": "macro",
+          "name": "GIT_EMISSINGOBJDATA",
+          "location": {
+            "file": "common.h",
+            "line": 123,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 9)",
+          "comment": "The object cannot be written because it's missing internal data",
+          "group": "common"
+        },
+        "GIT_EPACKCORRUPTED": {
+          "kind": "macro",
+          "name": "GIT_EPACKCORRUPTED",
+          "location": {
+            "file": "common.h",
+            "line": 126,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 10)",
+          "comment": "The packfile for the ODB is corrupted",
+          "group": "common"
+        },
+        "GIT_EFLOCKFAIL": {
+          "kind": "macro",
+          "name": "GIT_EFLOCKFAIL",
+          "location": {
+            "file": "common.h",
+            "line": 129,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 11)",
+          "comment": "Failed to acquire or release a file lock",
+          "group": "common"
+        },
+        "GIT_EZLIB": {
+          "kind": "macro",
+          "name": "GIT_EZLIB",
+          "location": {
+            "file": "common.h",
+            "line": 132,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 12)",
+          "comment": "The Z library failed to inflate/deflate an object's data",
+          "group": "common"
+        },
+        "GIT_EBUSY": {
+          "kind": "macro",
+          "name": "GIT_EBUSY",
+          "location": {
+            "file": "common.h",
+            "line": 135,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 13)",
+          "comment": "The queried object is currently busy",
+          "group": "common"
+        },
+        "GIT_EBAREINDEX": {
+          "kind": "macro",
+          "name": "GIT_EBAREINDEX",
+          "location": {
+            "file": "common.h",
+            "line": 138,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 14)",
+          "comment": "The index file is not backed up by an existing repository",
+          "group": "common"
+        },
+        "GIT_EINVALIDREFNAME": {
+          "kind": "macro",
+          "name": "GIT_EINVALIDREFNAME",
+          "location": {
+            "file": "common.h",
+            "line": 141,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 15)",
+          "comment": "The name of the reference is not valid",
+          "group": "common"
+        },
+        "GIT_EREFCORRUPTED": {
+          "kind": "macro",
+          "name": "GIT_EREFCORRUPTED",
+          "location": {
+            "file": "common.h",
+            "line": 144,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 16)",
+          "comment": "The specified reference has its data corrupted",
+          "group": "common"
+        },
+        "GIT_ETOONESTEDSYMREF": {
+          "kind": "macro",
+          "name": "GIT_ETOONESTEDSYMREF",
+          "location": {
+            "file": "common.h",
+            "line": 147,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 17)",
+          "comment": "The specified symbolic reference is too deeply nested",
+          "group": "common"
+        },
+        "GIT_EPACKEDREFSCORRUPTED": {
+          "kind": "macro",
+          "name": "GIT_EPACKEDREFSCORRUPTED",
+          "location": {
+            "file": "common.h",
+            "line": 150,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 18)",
+          "comment": "The pack-refs file is either corrupted or its format is not currently supported",
+          "group": "common"
+        },
+        "GIT_EINVALIDPATH": {
+          "kind": "macro",
+          "name": "GIT_EINVALIDPATH",
+          "location": {
+            "file": "common.h",
+            "line": 153,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 19)",
+          "comment": "The path is invalid",
+          "group": "common"
+        },
+        "GIT_EREVWALKOVER": {
+          "kind": "macro",
+          "name": "GIT_EREVWALKOVER",
+          "location": {
+            "file": "common.h",
+            "line": 156,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 20)",
+          "comment": "The revision walker is empty; there are no more commits left to iterate",
+          "group": "common"
+        },
+        "GIT_EINVALIDREFSTATE": {
+          "kind": "macro",
+          "name": "GIT_EINVALIDREFSTATE",
+          "location": {
+            "file": "common.h",
+            "line": 159,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 21)",
+          "comment": "The state of the reference is not valid",
+          "group": "common"
+        },
+        "GIT_ENOTIMPLEMENTED": {
+          "kind": "macro",
+          "name": "GIT_ENOTIMPLEMENTED",
+          "location": {
+            "file": "common.h",
+            "line": 162,
+            "column": 9
+          },
+          "value": "(GIT_ERROR - 22)",
+          "comment": "This feature has not been implemented yet",
+          "group": "common"
+        },
+        "git_strarray": {
+          "kind": "struct",
+          "name": "git_strarray",
+          "referenceName": "git_strarray",
+          "members": [
+            {
+              "name": "strings",
+              "type": "char **"
+            },
+            {
+              "name": "count",
+              "type": "size_t"
+            }
+          ],
+          "location": {
+            "file": "common.h",
+            "line": 166,
+            "column": 9
+          },
+          "group": "common",
+          "parameterTo": [
+            "git_strarray_free",
+            "git_reference_listall"
+          ]
+        },
+        "git_strarray_free": {
+          "kind": "function",
+          "name": "git_strarray_free",
+          "location": {
+            "file": "common.h",
+            "line": 171,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "array",
+              "type": "git_strarray *"
+            }
+          ],
+          "group": "common"
+        }
+      },
+      "info": {
+        "details": "#define GIT_ENOTIMPLEMENTED (GIT_ERROR - 22)"
+      }
+    },
+    "errors": {
+      "apis": {
+        "git_strerror": {
+          "kind": "function",
+          "name": "git_strerror",
+          "location": {
+            "file": "errors.h",
+            "line": 41,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "a string explaining the error code"
+          },
+          "params": [
+            {
+              "name": "num",
+              "type": "int",
+              "direction": "in",
+              "comment": "The error code to explain"
+            }
+          ],
+          "comment": [
+            "strerror() for the Git library"
+          ],
+          "group": "errors"
+        }
+      },
+      "info": {
+        "summary": "Git error handling routines and variables"
+      }
+    },
+    "index": {
+      "apis": {
+        "GIT_IDXENTRY_NAMEMASK": {
+          "kind": "macro",
+          "name": "GIT_IDXENTRY_NAMEMASK",
+          "location": {
+            "file": "index.h",
+            "line": 41,
+            "column": 9
+          },
+          "value": "(0x0fff)",
+          "comment": "",
+          "group": "index"
+        },
+        "GIT_IDXENTRY_STAGEMASK": {
+          "kind": "macro",
+          "name": "GIT_IDXENTRY_STAGEMASK",
+          "location": {
+            "file": "index.h",
+            "line": 42,
+            "column": 9
+          },
+          "value": "(0x3000)",
+          "comment": "",
+          "group": "index"
+        },
+        "GIT_IDXENTRY_EXTENDED": {
+          "kind": "macro",
+          "name": "GIT_IDXENTRY_EXTENDED",
+          "location": {
+            "file": "index.h",
+            "line": 43,
+            "column": 9
+          },
+          "value": "(0x4000)",
+          "comment": "",
+          "group": "index"
+        },
+        "GIT_IDXENTRY_VALID": {
+          "kind": "macro",
+          "name": "GIT_IDXENTRY_VALID",
+          "location": {
+            "file": "index.h",
+            "line": 44,
+            "column": 9
+          },
+          "value": "(0x8000)",
+          "comment": "",
+          "group": "index"
+        },
+        "GIT_IDXENTRY_STAGESHIFT": {
+          "kind": "macro",
+          "name": "GIT_IDXENTRY_STAGESHIFT",
+          "location": {
+            "file": "index.h",
+            "line": 45,
+            "column": 9
+          },
+          "value": "12",
+          "comment": "",
+          "group": "index"
+        },
+        "git_index_time": {
+          "kind": "struct",
+          "name": "git_index_time",
+          "referenceName": "git_index_time",
+          "comment": [
+            "Time used in a git index entry"
+          ],
+          "members": [
+            {
+              "name": "seconds",
+              "type": "git_time_t",
+              "referenceType": "int64_t"
+            },
+            {
+              "name": "nanoseconds",
+              "type": "unsigned int"
+            }
+          ],
+          "location": {
+            "file": "index.h",
+            "line": 48,
+            "column": 9
+          },
+          "group": "index"
+        },
+        "git_index_entry": {
+          "kind": "struct",
+          "name": "git_index_entry",
+          "referenceName": "git_index_entry",
+          "comment": [
+            "Memory representation of a file entry in the index."
+          ],
+          "members": [
+            {
+              "name": "ctime",
+              "type": "git_index_time",
+              "referenceType": "struct git_index_time"
+            },
+            {
+              "name": "mtime",
+              "type": "git_index_time",
+              "referenceType": "struct git_index_time"
+            },
+            {
+              "name": "dev",
+              "type": "unsigned int"
+            },
+            {
+              "name": "ino",
+              "type": "unsigned int"
+            },
+            {
+              "name": "mode",
+              "type": "unsigned int"
+            },
+            {
+              "name": "uid",
+              "type": "unsigned int"
+            },
+            {
+              "name": "gid",
+              "type": "unsigned int"
+            },
+            {
+              "name": "file_size",
+              "type": "git_off_t",
+              "referenceType": "int64_t"
+            },
+            {
+              "name": "oid",
+              "type": "git_oid",
+              "referenceType": "struct git_oid"
+            },
+            {
+              "name": "flags",
+              "type": "unsigned short"
+            },
+            {
+              "name": "flags_extended",
+              "type": "unsigned short"
+            },
+            {
+              "name": "path",
+              "type": "char *"
+            }
+          ],
+          "location": {
+            "file": "index.h",
+            "line": 55,
+            "column": 16
+          },
+          "group": "index",
+          "returnedBy": [
+            "git_index_get"
+          ],
+          "parameterTo": [
+            "git_index_insert"
+          ]
+        },
+        "git_index_open_bare": {
+          "kind": "function",
+          "name": "git_index_open_bare",
+          "location": {
+            "file": "index.h",
+            "line": 88,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index **",
+              "direction": "in",
+              "comment": "the pointer for the new index"
+            },
+            {
+              "name": "index_path",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "the path to the index file in disk"
+            }
+          ],
+          "comment": [
+            "Create a new Git index object as a memory representation\n of the Git index file in 'index_path', without a repository\n to back it.",
+            "Since there is no ODB behind this index, any Index methods\n which rely on the ODB (e.g. index_add) will fail with the\n GIT_EBAREINDEX error code."
+          ],
+          "group": "index"
+        },
+        "git_index_open_inrepo": {
+          "kind": "function",
+          "name": "git_index_open_inrepo",
+          "location": {
+            "file": "index.h",
+            "line": 98,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index **",
+              "direction": "in",
+              "comment": "the pointer for the new index"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "the git repo which owns the index"
+            }
+          ],
+          "comment": [
+            "Open the Index inside the git repository pointed\n by 'repo'."
+          ],
+          "group": "index"
+        },
+        "git_index_clear": {
+          "kind": "function",
+          "name": "git_index_clear",
+          "location": {
+            "file": "index.h",
+            "line": 107,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            }
+          ],
+          "comment": [
+            "Clear the contents (all the entries) of an index object.\n This clears the index object in memory; changes must be manually\n written to disk for them to take effect."
+          ],
+          "group": "index"
+        },
+        "git_index_free": {
+          "kind": "function",
+          "name": "git_index_free",
+          "location": {
+            "file": "index.h",
+            "line": 114,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            }
+          ],
+          "comment": [
+            "Free an existing index object."
+          ],
+          "group": "index"
+        },
+        "git_index_read": {
+          "kind": "function",
+          "name": "git_index_read",
+          "location": {
+            "file": "index.h",
+            "line": 123,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success, otherwise an error code"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            }
+          ],
+          "comment": [
+            "Update the contents of an existing index object in memory\n by reading from the hard disk."
+          ],
+          "group": "index"
+        },
+        "git_index_write": {
+          "kind": "function",
+          "name": "git_index_write",
+          "location": {
+            "file": "index.h",
+            "line": 132,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success, otherwise an error code"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            }
+          ],
+          "comment": [
+            "Write an existing index object from memory back to disk\n using an atomic file lock."
+          ],
+          "group": "index"
+        },
+        "git_index_find": {
+          "kind": "function",
+          "name": "git_index_find",
+          "location": {
+            "file": "index.h",
+            "line": 142,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "an index >= 0 if found, -1 otherwise"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            },
+            {
+              "name": "path",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "path to search"
+            }
+          ],
+          "comment": [
+            "Find the first index of any entries which point to given\n path in the Git index."
+          ],
+          "group": "index"
+        },
+        "git_index_add": {
+          "kind": "function",
+          "name": "git_index_add",
+          "location": {
+            "file": "index.h",
+            "line": 152,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success, otherwise an error code"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            },
+            {
+              "name": "path",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "filename to add"
+            },
+            {
+              "name": "stage",
+              "type": "int",
+              "direction": "in",
+              "comment": "stage for the entry"
+            }
+          ],
+          "comment": [
+            "Add or update an index entry from a file in disk."
+          ],
+          "group": "index"
+        },
+        "git_index_remove": {
+          "kind": "function",
+          "name": "git_index_remove",
+          "location": {
+            "file": "index.h",
+            "line": 161,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success, otherwise an error code"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            },
+            {
+              "name": "position",
+              "type": "int",
+              "direction": "in",
+              "comment": "position of the entry to remove"
+            }
+          ],
+          "comment": [
+            "Remove an entry from the index"
+          ],
+          "group": "index"
+        },
+        "git_index_insert": {
+          "kind": "function",
+          "name": "git_index_insert",
+          "location": {
+            "file": "index.h",
+            "line": 174,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success, otherwise an error code"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            },
+            {
+              "name": "source_entry",
+              "type": "const git_index_entry *",
+              "direction": "in",
+              "comment": "new entry object"
+            }
+          ],
+          "comment": [
+            "Insert an entry into the index.\n A full copy (including the 'path' string) of the given\n 'source_entry' will be inserted on the index; if the index\n already contains an entry for the same path, the entry\n will be updated."
+          ],
+          "group": "index"
+        },
+        "git_index_get": {
+          "kind": "function",
+          "name": "git_index_get",
+          "location": {
+            "file": "index.h",
+            "line": 186,
+            "column": 31
+          },
+          "returns": {
+            "type": "git_index_entry *",
+            "comment": "a pointer to the entry; NULL if out of bounds"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            },
+            {
+              "name": "n",
+              "type": "int",
+              "direction": "in",
+              "comment": "the position of the entry"
+            }
+          ],
+          "comment": [
+            "Get a pointer to one of the entries in the index",
+            "This entry can be modified, and the changes will be written\n back to disk on the next write() call."
+          ],
+          "group": "index"
+        },
+        "git_index_entrycount": {
+          "kind": "function",
+          "name": "git_index_entrycount",
+          "location": {
+            "file": "index.h",
+            "line": 194,
+            "column": 26
+          },
+          "returns": {
+            "type": "unsigned int",
+            "comment": "integer of count of current entries"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index *",
+              "direction": "in",
+              "comment": "an existing index object"
+            }
+          ],
+          "comment": [
+            "Get the count of entries currently in the index"
+          ],
+          "group": "index"
+        },
+        "git_index": {
+          "kind": "struct",
+          "name": "git_index",
+          "referenceName": "struct git_index",
+          "opaque": true,
+          "comment": [
+            "Memory representation of an index file."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 128,
+            "column": 26
+          },
+          "group": "index",
+          "parameterTo": [
+            "git_index_open_bare",
+            "git_index_open_inrepo",
+            "git_index_clear",
+            "git_index_free",
+            "git_index_read",
+            "git_index_write",
+            "git_index_find",
+            "git_index_add",
+            "git_index_remove",
+            "git_index_insert",
+            "git_index_get",
+            "git_index_entrycount",
+            "git_repository_index"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git index parsing and manipulation routines"
+      }
+    },
+    "object": {
+      "apis": {
+        "git_object_lookup": {
+          "kind": "function",
+          "name": "git_object_lookup",
+          "location": {
+            "file": "object.h",
+            "line": 59,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "a reference to the object"
+          },
+          "params": [
+            {
+              "name": "object",
+              "type": "git_object **",
+              "direction": "in",
+              "comment": "pointer to the looked-up object"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "the repository to look up the object"
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "the unique identifier for the object"
+            },
+            {
+              "name": "type",
+              "type": "git_otype",
+              "direction": "in",
+              "comment": "the type of the object",
+              "referenceType": "enum git_otype"
+            }
+          ],
+          "comment": [
+            "Lookup a reference to one of the objects in a repostory.",
+            "The generated reference is owned by the repository and\n should be closed with the `git_object_close` method\n instead of free'd manually.",
+            "The 'type' parameter must match the type of the object\n in the odb; the method will fail otherwise.\n The special value 'GIT_OBJ_ANY' may be passed to let\n the method guess the object's type."
+          ],
+          "group": "object"
+        },
+        "git_object_id": {
+          "kind": "function",
+          "name": "git_object_id",
+          "location": {
+            "file": "object.h",
+            "line": 67,
+            "column": 29
+          },
+          "returns": {
+            "type": "const git_oid *",
+            "comment": "the SHA1 id"
+          },
+          "params": [
+            {
+              "name": "obj",
+              "type": "const git_object *",
+              "direction": "in",
+              "comment": "the repository object"
+            }
+          ],
+          "comment": [
+            "Get the id (SHA1) of a repository object"
+          ],
+          "group": "object"
+        },
+        "git_object_type": {
+          "kind": "function",
+          "name": "git_object_type",
+          "location": {
+            "file": "object.h",
+            "line": 75,
+            "column": 23
+          },
+          "returns": {
+            "type": "git_otype",
+            "comment": "the object's type"
+          },
+          "params": [
+            {
+              "name": "obj",
+              "type": "const git_object *",
+              "direction": "in",
+              "comment": "the repository object"
+            }
+          ],
+          "comment": [
+            "Get the object type of an object"
+          ],
+          "group": "object"
+        },
+        "git_object_owner": {
+          "kind": "function",
+          "name": "git_object_owner",
+          "location": {
+            "file": "object.h",
+            "line": 83,
+            "column": 30
+          },
+          "returns": {
+            "type": "git_repository *",
+            "comment": "the repository who owns this object"
+          },
+          "params": [
+            {
+              "name": "obj",
+              "type": "const git_object *",
+              "direction": "in",
+              "comment": "the object"
+            }
+          ],
+          "comment": [
+            "Get the repository that owns this object"
+          ],
+          "group": "object"
+        },
+        "git_object_close": {
+          "kind": "function",
+          "name": "git_object_close",
+          "location": {
+            "file": "object.h",
+            "line": 100,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "object",
+              "type": "git_object *",
+              "direction": "in",
+              "comment": "the object to close"
+            }
+          ],
+          "comment": [
+            "Close an open object",
+            "This method instructs the library to close an existing\n object; note that git_objects are owned and cached by the repository\n so the object may or may not be freed after this library call,\n depending on how agressive is the caching mechanism used\n by the repository.",
+            "IMPORTANT:\n It *is* necessary to call this method when you stop using\n an object. Failure to do so will cause a memory leak."
+          ],
+          "group": "object"
+        },
+        "git_object_type2string": {
+          "kind": "function",
+          "name": "git_object_type2string",
+          "location": {
+            "file": "object.h",
+            "line": 111,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "the corresponding string representation."
+          },
+          "params": [
+            {
+              "name": "type",
+              "type": "git_otype",
+              "direction": "in",
+              "comment": "object type to convert.",
+              "referenceType": "enum git_otype"
+            }
+          ],
+          "comment": [
+            "Convert an object type to it's string representation.",
+            "The result is a pointer to a string in static memory and\n should not be free()'ed."
+          ],
+          "group": "object"
+        },
+        "git_object_string2type": {
+          "kind": "function",
+          "name": "git_object_string2type",
+          "location": {
+            "file": "object.h",
+            "line": 119,
+            "column": 23
+          },
+          "returns": {
+            "type": "git_otype",
+            "comment": "the corresponding git_otype."
+          },
+          "params": [
+            {
+              "name": "str",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "the string to convert."
+            }
+          ],
+          "comment": [
+            "Convert a string object type representation to it's git_otype."
+          ],
+          "group": "object"
+        },
+        "git_object_typeisloose": {
+          "kind": "function",
+          "name": "git_object_typeisloose",
+          "location": {
+            "file": "object.h",
+            "line": 128,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "true if the type represents a valid loose object type,\n false otherwise."
+          },
+          "params": [
+            {
+              "name": "type",
+              "type": "git_otype",
+              "direction": "in",
+              "comment": "object type to test.",
+              "referenceType": "enum git_otype"
+            }
+          ],
+          "comment": [
+            "Determine if the given git_otype is a valid loose object type."
+          ],
+          "group": "object"
+        },
+        "git_object__size": {
+          "kind": "function",
+          "name": "git_object__size",
+          "location": {
+            "file": "object.h",
+            "line": 142,
+            "column": 20
+          },
+          "returns": {
+            "type": "size_t",
+            "comment": "size in bytes of the object"
+          },
+          "params": [
+            {
+              "name": "type",
+              "type": "git_otype",
+              "direction": "in",
+              "comment": "object type to get its size",
+              "referenceType": "enum git_otype"
+            }
+          ],
+          "comment": [
+            "Get the size in bytes for the structure which\n acts as an in-memory representation of any given\n object type.",
+            "For all the core types, this would the equivalent\n of calling `sizeof(git_commit)` if the core types\n were not opaque on the external API."
+          ],
+          "group": "object"
+        },
+        "git_object": {
+          "kind": "struct",
+          "name": "git_object",
+          "referenceName": "struct git_object",
+          "opaque": true,
+          "comment": [
+            "Representation of a generic object in a repository"
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 107,
+            "column": 27
+          },
+          "group": "object",
+          "parameterTo": [
+            "git_object_lookup",
+            "git_object_id",
+            "git_object_type",
+            "git_object_owner",
+            "git_object_close",
+            "git_tag_target",
+            "git_tag_create_o",
+            "git_tree_entry_2object"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git revision object management routines"
+      }
+    },
+    "odb": {
+      "apis": {
+        "git_odb_new": {
+          "kind": "function",
+          "name": "git_odb_new",
+          "location": {
+            "file": "odb.h",
+            "line": 53,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "GIT_SUCCESS if the database was created; otherwise an error\n         code describing why the open was not possible."
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "git_odb **",
+              "direction": "in",
+              "comment": "location to store the database pointer, if opened.\n            Set to NULL if the open failed."
+            }
+          ],
+          "comment": [
+            "Create a new object database with no backends.",
+            "Before the ODB can be used for read/writing, a custom database\n backend must be manually added using `git_odb_add_backend()`"
+          ],
+          "group": "odb"
+        },
+        "git_odb_open": {
+          "kind": "function",
+          "name": "git_odb_open",
+          "location": {
+            "file": "odb.h",
+            "line": 72,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "GIT_SUCCESS if the database opened; otherwise an error\n         code describing why the open was not possible."
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "git_odb **",
+              "direction": "in",
+              "comment": "location to store the database pointer, if opened.\n            Set to NULL if the open failed."
+            },
+            {
+              "name": "objects_dir",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "path of the backends' \"objects\" directory."
+            }
+          ],
+          "comment": [
+            "Create a new object database and automatically add\n the two default backends:",
+            "- git_odb_backend_loose: read and write loose object files\n\t\tfrom disk, assuming `objects_dir` as the Objects folder",
+            "- git_odb_backend_pack: read objects from packfiles,\n\t\tassuming `objects_dir` as the Objects folder which\n\t\tcontains a 'pack/' folder with the corresponding data"
+          ],
+          "group": "odb"
+        },
+        "git_odb_add_backend": {
+          "kind": "function",
+          "name": "git_odb_add_backend",
+          "location": {
+            "file": "odb.h",
+            "line": 83,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on sucess; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "odb",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "database to add the backend to"
+            },
+            {
+              "name": "backend",
+              "type": "git_odb_backend *",
+              "direction": "in",
+              "comment": "pointer to a git_odb_backend instance"
+            },
+            {
+              "name": "priority",
+              "type": "int"
+            }
+          ],
+          "comment": [
+            "Add a custom backend to an existing Object DB",
+            "Read \n<odb\n_backends.h> for more information."
+          ],
+          "group": "odb"
+        },
+        "git_odb_add_alternate": {
+          "kind": "function",
+          "name": "git_odb_add_alternate",
+          "location": {
+            "file": "odb.h",
+            "line": 100,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on sucess; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "odb",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "database to add the backend to"
+            },
+            {
+              "name": "backend",
+              "type": "git_odb_backend *",
+              "direction": "in",
+              "comment": "pointer to a git_odb_backend instance"
+            },
+            {
+              "name": "priority",
+              "type": "int"
+            }
+          ],
+          "comment": [
+            "Add a custom backend to an existing Object DB; this\n backend will work as an alternate.",
+            "Alternate backends are always checked for objects *after*\n all the main backends have been exhausted.",
+            "Writing is disabled on alternate backends.",
+            "Read \n<odb\n_backends.h> for more information."
+          ],
+          "group": "odb"
+        },
+        "git_odb_close": {
+          "kind": "function",
+          "name": "git_odb_close",
+          "location": {
+            "file": "odb.h",
+            "line": 107,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "db",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "database pointer to close.  If NULL no action is taken."
+            }
+          ],
+          "comment": [
+            "Close an open object database."
+          ],
+          "group": "odb"
+        },
+        "git_odb_read": {
+          "kind": "function",
+          "name": "git_odb_read",
+          "location": {
+            "file": "odb.h",
+            "line": 126,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "- GIT_SUCCESS if the object was read;\n - GIT_ENOTFOUND if the object is not in the database."
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "git_odb_object **",
+              "direction": "in",
+              "comment": "pointer where to store the read object"
+            },
+            {
+              "name": "db",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "database to search for the object in."
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "identity of the object to read."
+            }
+          ],
+          "comment": [
+            "Read an object from the database.",
+            "This method queries all avaiable ODB backends\n trying to read the given OID.",
+            "The returned object is reference counted and\n internally cached, so it should be closed\n by the user once it's no longer in use."
+          ],
+          "group": "odb"
+        },
+        "git_odb_read_header": {
+          "kind": "function",
+          "name": "git_odb_read_header",
+          "location": {
+            "file": "odb.h",
+            "line": 146,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "- GIT_SUCCESS if the object was read;\n - GIT_ENOTFOUND if the object is not in the database."
+          },
+          "params": [
+            {
+              "name": "len_p",
+              "type": "size_t *",
+              "direction": "in",
+              "comment": "pointer where to store the length"
+            },
+            {
+              "name": "type_p",
+              "type": "git_otype *",
+              "direction": "in",
+              "comment": "pointer where to store the type"
+            },
+            {
+              "name": "db",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "database to search for the object in."
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "identity of the object to read."
+            }
+          ],
+          "comment": [
+            "Read the header of an object from the database, without\n reading its full contents.",
+            "The header includes the length and the type of an object.",
+            "Note that most backends do not support reading only the header\n of an object, so the whole object will be read and then the\n header will be returned."
+          ],
+          "group": "odb"
+        },
+        "git_odb_exists": {
+          "kind": "function",
+          "name": "git_odb_exists",
+          "location": {
+            "file": "odb.h",
+            "line": 157,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "- 1, if the object was found\n - 0, otherwise"
+          },
+          "params": [
+            {
+              "name": "db",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "database to be searched for the given object."
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "the object to search for."
+            }
+          ],
+          "comment": [
+            "Determine if the given object can be found in the object database."
+          ],
+          "group": "odb"
+        },
+        "git_odb_write": {
+          "kind": "function",
+          "name": "git_odb_write",
+          "location": {
+            "file": "odb.h",
+            "line": 177,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "pointer to store the OID result of the write"
+            },
+            {
+              "name": "odb",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "object database where to store the object"
+            },
+            {
+              "name": "data",
+              "type": "const void *",
+              "direction": "in",
+              "comment": "buffer with the data to storr"
+            },
+            {
+              "name": "len",
+              "type": "size_t",
+              "direction": "in",
+              "comment": "size of the buffer"
+            },
+            {
+              "name": "type",
+              "type": "git_otype",
+              "direction": "in",
+              "comment": "type of the data to store",
+              "referenceType": "enum git_otype"
+            }
+          ],
+          "comment": [
+            "Write an object directly into the ODB",
+            "This method writes a full object straight into the ODB.\n For most cases, it is preferred to write objects through a write\n stream, which is both faster and less memory intensive, specially\n for big objects.",
+            "This method is provided for compatibility with custom backends\n which are not able to support streaming writes"
+          ],
+          "group": "odb"
+        },
+        "git_odb_open_wstream": {
+          "kind": "function",
+          "name": "git_odb_open_wstream",
+          "location": {
+            "file": "odb.h",
+            "line": 206,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 if the stream was created; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "stream",
+              "type": "git_odb_stream **",
+              "direction": "in",
+              "comment": "pointer where to store the stream"
+            },
+            {
+              "name": "db",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "object database where the stream will write"
+            },
+            {
+              "name": "size",
+              "type": "size_t",
+              "direction": "in",
+              "comment": "final size of the object that will be written"
+            },
+            {
+              "name": "type",
+              "type": "git_otype",
+              "direction": "in",
+              "comment": "type of the object that will be written",
+              "referenceType": "enum git_otype"
+            }
+          ],
+          "comment": [
+            "Open a stream to write an object into the ODB",
+            "The type and final length of the object must be specified\n when opening the stream.",
+            "The returned stream will be of type `GIT_STREAM_WRONLY` and\n will have the following methods:",
+            "- stream->write: write `n` bytes into the stream\n\t\t- stream->finalize_write: close the stream and store the object in\n\t\t\tthe odb\n\t\t- stream->free: free the stream",
+            "The streaming write won't be effective until `stream->finalize_write`\n is called and returns without an error",
+            "The stream must always be free'd or will leak memory."
+          ],
+          "see": [
+            "git_odb_stream"
+          ],
+          "group": "odb"
+        },
+        "git_odb_open_rstream": {
+          "kind": "function",
+          "name": "git_odb_open_rstream",
+          "location": {
+            "file": "odb.h",
+            "line": 232,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 if the stream was created; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "stream",
+              "type": "git_odb_stream **",
+              "direction": "in",
+              "comment": "pointer where to store the stream"
+            },
+            {
+              "name": "db",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "object database where the stream will read from"
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "oid of the object the stream will read from"
+            }
+          ],
+          "comment": [
+            "Open a stream to read an object from the ODB",
+            "Note that most backends do *not* support streaming reads\n because they store their objects as compressed/delta'ed blobs.",
+            "It's recommended to use `git_odb_read` instead, which is\n assured to work on all backends.",
+            "The returned stream will be of type `GIT_STREAM_RDONLY` and\n will have the following methods:",
+            "- stream->read: read `n` bytes from the stream\n\t\t- stream->free: free the stream",
+            "The stream must always be free'd or will leak memory."
+          ],
+          "see": [
+            "git_odb_stream"
+          ],
+          "group": "odb"
+        },
+        "git_odb_hash": {
+          "kind": "function",
+          "name": "git_odb_hash",
+          "location": {
+            "file": "odb.h",
+            "line": 246,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "id",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "the resulting object-ID."
+            },
+            {
+              "name": "data",
+              "type": "const void *",
+              "direction": "in",
+              "comment": "data to hash"
+            },
+            {
+              "name": "len",
+              "type": "size_t",
+              "direction": "in",
+              "comment": "size of the data"
+            },
+            {
+              "name": "type",
+              "type": "git_otype",
+              "direction": "in",
+              "comment": "of the data to hash",
+              "referenceType": "enum git_otype"
+            }
+          ],
+          "comment": [
+            "Determine the object-ID (sha1 hash) of a data buffer",
+            "The resulting SHA-1 OID will the itentifier for the data\n buffer as if the data buffer it were to written to the ODB."
+          ],
+          "group": "odb"
+        },
+        "git_odb_object_close": {
+          "kind": "function",
+          "name": "git_odb_object_close",
+          "location": {
+            "file": "odb.h",
+            "line": 256,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "object",
+              "type": "git_odb_object *",
+              "direction": "in",
+              "comment": "object to close"
+            }
+          ],
+          "comment": [
+            "Close an ODB object",
+            "This method must always be called once a `git_odb_object` is no\n longer needed, otherwise memory will leak."
+          ],
+          "group": "odb"
+        },
+        "git_odb_object_id": {
+          "kind": "function",
+          "name": "git_odb_object_id",
+          "location": {
+            "file": "odb.h",
+            "line": 266,
+            "column": 29
+          },
+          "returns": {
+            "type": "const git_oid *",
+            "comment": "a pointer to the OID"
+          },
+          "params": [
+            {
+              "name": "object",
+              "type": "git_odb_object *",
+              "direction": "in",
+              "comment": "the object"
+            }
+          ],
+          "comment": [
+            "Return the OID of an ODB object",
+            "This is the OID from which the object was read from"
+          ],
+          "group": "odb"
+        },
+        "git_odb_object_data": {
+          "kind": "function",
+          "name": "git_odb_object_data",
+          "location": {
+            "file": "odb.h",
+            "line": 279,
+            "column": 26
+          },
+          "returns": {
+            "type": "const void *",
+            "comment": "a pointer to the data"
+          },
+          "params": [
+            {
+              "name": "object",
+              "type": "git_odb_object *",
+              "direction": "in",
+              "comment": "the object"
+            }
+          ],
+          "comment": [
+            "Return the data of an ODB object",
+            "This is the uncompressed, raw data as read from the ODB,\n without the leading header.",
+            "This pointer is owned by the object and shall not be free'd."
+          ],
+          "group": "odb"
+        },
+        "git_odb_object_size": {
+          "kind": "function",
+          "name": "git_odb_object_size",
+          "location": {
+            "file": "odb.h",
+            "line": 290,
+            "column": 20
+          },
+          "returns": {
+            "type": "size_t",
+            "comment": "the size"
+          },
+          "params": [
+            {
+              "name": "object",
+              "type": "git_odb_object *",
+              "direction": "in",
+              "comment": "the object"
+            }
+          ],
+          "comment": [
+            "Return the size of an ODB object",
+            "This is the real size of the `data` buffer, not the\n actual size of the object."
+          ],
+          "group": "odb"
+        },
+        "git_odb_object_type": {
+          "kind": "function",
+          "name": "git_odb_object_type",
+          "location": {
+            "file": "odb.h",
+            "line": 298,
+            "column": 23
+          },
+          "returns": {
+            "type": "git_otype",
+            "comment": "the type"
+          },
+          "params": [
+            {
+              "name": "object",
+              "type": "git_odb_object *",
+              "direction": "in",
+              "comment": "the object"
+            }
+          ],
+          "comment": [
+            "Return the type of an ODB object"
+          ],
+          "group": "odb"
+        },
+        "git_odb": {
+          "kind": "struct",
+          "name": "git_odb",
+          "referenceName": "struct git_odb",
+          "opaque": true,
+          "comment": [
+            "An open object database handle."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 89,
+            "column": 24
+          },
+          "group": "odb",
+          "returnedBy": [
+            "git_repository_database"
+          ],
+          "parameterTo": [
+            "git_odb_new",
+            "git_odb_open",
+            "git_odb_add_backend",
+            "git_odb_add_alternate",
+            "git_odb_close",
+            "git_odb_read",
+            "git_odb_read_header",
+            "git_odb_exists",
+            "git_odb_write",
+            "git_odb_open_wstream",
+            "git_odb_open_rstream",
+            "git_repository_open3"
+          ]
+        },
+        "git_odb_object": {
+          "kind": "struct",
+          "name": "git_odb_object",
+          "referenceName": "struct git_odb_object",
+          "opaque": true,
+          "comment": [
+            "An object read from the ODB"
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 95,
+            "column": 31
+          },
+          "group": "odb",
+          "parameterTo": [
+            "git_odb_read",
+            "git_odb_object_close",
+            "git_odb_object_id",
+            "git_odb_object_data",
+            "git_odb_object_size",
+            "git_odb_object_type"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git object database routines"
+      }
+    },
+    "odb_backend": {
+      "apis": {
+        "git_odb_backend": {
+          "kind": "struct",
+          "name": "git_odb_backend",
+          "referenceName": "struct git_odb_backend",
+          "comment": [
+            "An instance for a custom backend"
+          ],
+          "members": [
+            {
+              "name": "odb",
+              "type": "git_odb *"
+            },
+            {
+              "name": "read",
+              "type": "int (*)(void **, size_t *, git_otype *, struct git_odb_backend *, const git_oid *)"
+            },
+            {
+              "name": "read_header",
+              "type": "int (*)(size_t *, git_otype *, struct git_odb_backend *, const git_oid *)"
+            },
+            {
+              "name": "write",
+              "type": "int (*)(git_oid *, struct git_odb_backend *, const void *, size_t, git_otype)"
+            },
+            {
+              "name": "writestream",
+              "type": "int (*)(struct git_odb_stream **, struct git_odb_backend *, size_t, git_otype)"
+            },
+            {
+              "name": "readstream",
+              "type": "int (*)(struct git_odb_stream **, struct git_odb_backend *, const git_oid *)"
+            },
+            {
+              "name": "exists",
+              "type": "int (*)(struct git_odb_backend *, const git_oid *)"
+            },
+            {
+              "name": "free",
+              "type": "void (*)(struct git_odb_backend *)"
+            }
+          ],
+          "location": {
+            "file": "odb_backend.h",
+            "line": 44,
+            "column": 8
+          },
+          "group": "odb_backend",
+          "parameterTo": [
+            "git_odb_add_backend",
+            "git_odb_add_alternate",
+            "git_odb_backend_pack",
+            "git_odb_backend_loose",
+            "git_odb_backend_sqlite"
+          ]
+        },
+        "git_odb_stream": {
+          "kind": "struct",
+          "name": "git_odb_stream",
+          "referenceName": "struct git_odb_stream",
+          "comment": [
+            "A stream to read/write from a backend"
+          ],
+          "members": [
+            {
+              "name": "backend",
+              "type": "struct git_odb_backend *"
+            },
+            {
+              "name": "mode",
+              "type": "int"
+            },
+            {
+              "name": "read",
+              "type": "int (*)(struct git_odb_stream *, char *, size_t)"
+            },
+            {
+              "name": "write",
+              "type": "int (*)(struct git_odb_stream *, const char *, size_t)"
+            },
+            {
+              "name": "finalize_write",
+              "type": "int (*)(git_oid *, struct git_odb_stream *)"
+            },
+            {
+              "name": "free",
+              "type": "void (*)(struct git_odb_stream *)"
+            }
+          ],
+          "location": {
+            "file": "odb_backend.h",
+            "line": 83,
+            "column": 8
+          },
+          "group": "odb_backend",
+          "parameterTo": [
+            "git_odb_open_wstream",
+            "git_odb_open_rstream"
+          ]
+        },
+        "git_odb_streammode": {
+          "kind": "enum",
+          "name": "git_odb_streammode",
+          "referenceName": "git_odb_streammode",
+          "members": [
+            {
+              "name": "GIT_STREAM_RDONLY",
+              "value": "2"
+            },
+            {
+              "name": "GIT_STREAM_WRONLY",
+              "value": "4"
+            },
+            {
+              "name": "GIT_STREAM_RW",
+              "value": "6"
+            }
+          ],
+          "comment": [
+            "Streaming mode"
+          ],
+          "location": {
+            "file": "odb_backend.h",
+            "line": 94,
+            "column": 9
+          },
+          "group": "odb_backend"
+        },
+        "git_odb_backend_pack": {
+          "kind": "function",
+          "name": "git_odb_backend_pack",
+          "location": {
+            "file": "odb_backend.h",
+            "line": 101,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "backend_out",
+              "type": "git_odb_backend **"
+            },
+            {
+              "name": "objects_dir",
+              "type": "const char *"
+            }
+          ],
+          "group": "odb_backend"
+        },
+        "git_odb_backend_loose": {
+          "kind": "function",
+          "name": "git_odb_backend_loose",
+          "location": {
+            "file": "odb_backend.h",
+            "line": 102,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "backend_out",
+              "type": "git_odb_backend **"
+            },
+            {
+              "name": "objects_dir",
+              "type": "const char *"
+            }
+          ],
+          "group": "odb_backend"
+        },
+        "git_odb_backend_sqlite": {
+          "kind": "function",
+          "name": "git_odb_backend_sqlite",
+          "location": {
+            "file": "odb_backend.h",
+            "line": 103,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "backend_out",
+              "type": "git_odb_backend **"
+            },
+            {
+              "name": "sqlite_db",
+              "type": "const char *"
+            }
+          ],
+          "group": "odb_backend"
+        }
+      },
+      "info": {
+        "summary": "Git custom backend functions"
+      }
+    },
+    "oid": {
+      "apis": {
+        "GIT_OID_RAWSZ": {
+          "kind": "macro",
+          "name": "GIT_OID_RAWSZ",
+          "location": {
+            "file": "oid.h",
+            "line": 41,
+            "column": 9
+          },
+          "value": "20",
+          "comment": "Size (in bytes) of a raw/binary oid",
+          "group": "oid"
+        },
+        "GIT_OID_HEXSZ": {
+          "kind": "macro",
+          "name": "GIT_OID_HEXSZ",
+          "location": {
+            "file": "oid.h",
+            "line": 44,
+            "column": 9
+          },
+          "value": "(GIT_OID_RAWSZ * 2)",
+          "comment": "Size (in bytes) of a hex formatted oid",
+          "group": "oid"
+        },
+        "git_oid": {
+          "kind": "struct",
+          "name": "git_oid",
+          "referenceName": "git_oid",
+          "comment": [
+            "Unique identity of any object (commit, tree, blob, tag)."
+          ],
+          "members": [
+            {
+              "name": "id",
+              "type": "unsigned char[20]",
+              "comment": [
+                "raw binary formatted id"
+              ]
+            }
+          ],
+          "location": {
+            "file": "oid.h",
+            "line": 47,
+            "column": 9
+          },
+          "group": "oid",
+          "returnedBy": [
+            "git_commit_id",
+            "git_object_id",
+            "git_odb_object_id",
+            "git_reference_oid",
+            "git_tag_id",
+            "git_tag_target_oid",
+            "git_tree_id",
+            "git_tree_entry_id"
+          ],
+          "parameterTo": [
+            "git_blob_lookup",
+            "git_blob_create_fromfile",
+            "git_blob_create_frombuffer",
+            "git_commit_lookup",
+            "git_commit_create",
+            "git_commit_create_o",
+            "git_commit_create_ov",
+            "git_commit_create_v",
+            "git_object_lookup",
+            "git_odb_read",
+            "git_odb_read_header",
+            "git_odb_exists",
+            "git_odb_write",
+            "git_odb_open_rstream",
+            "git_odb_hash",
+            "git_oid_mkstr",
+            "git_oid_mkraw",
+            "git_oid_fmt",
+            "git_oid_pathfmt",
+            "git_oid_allocfmt",
+            "git_oid_to_string",
+            "git_oid_cpy",
+            "git_oid_cmp",
+            "git_reference_create_oid",
+            "git_reference_set_oid",
+            "git_revwalk_push",
+            "git_revwalk_hide",
+            "git_revwalk_next",
+            "git_tag_lookup",
+            "git_tag_create",
+            "git_tag_create_o",
+            "git_tree_lookup"
+          ]
+        },
+        "git_oid_mkstr": {
+          "kind": "function",
+          "name": "git_oid_mkstr",
+          "location": {
+            "file": "oid.h",
+            "line": 60,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "GIT_SUCCESS if valid; GIT_ENOTOID on failure."
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "oid structure the result is written into."
+            },
+            {
+              "name": "str",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "input hex string; must be pointing at the start of\n        the hex sequence and have at least the number of bytes\n        needed for an oid encoded in hex (40 bytes)."
+            }
+          ],
+          "comment": [
+            "Parse a hex formatted object id into a git_oid."
+          ],
+          "group": "oid"
+        },
+        "git_oid_mkraw": {
+          "kind": "function",
+          "name": "git_oid_mkraw",
+          "location": {
+            "file": "oid.h",
+            "line": 67,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "oid structure the result is written into."
+            },
+            {
+              "name": "raw",
+              "type": "const unsigned char *",
+              "direction": "in",
+              "comment": "the raw input bytes to be copied."
+            }
+          ],
+          "comment": [
+            "Copy an already raw oid into a git_oid structure."
+          ],
+          "group": "oid"
+        },
+        "git_oid_fmt": {
+          "kind": "function",
+          "name": "git_oid_fmt",
+          "location": {
+            "file": "oid.h",
+            "line": 78,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "str",
+              "type": "char *",
+              "direction": "in",
+              "comment": "output hex string; must be pointing at the start of\n        the hex sequence and have at least the number of bytes\n        needed for an oid encoded in hex (40 bytes).  Only the\n        oid digits are written; a '\n\\\n0' terminator must be added\n        by the caller if it is required."
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "oid structure to format."
+            }
+          ],
+          "comment": [
+            "Format a git_oid into a hex string."
+          ],
+          "group": "oid"
+        },
+        "git_oid_pathfmt": {
+          "kind": "function",
+          "name": "git_oid_pathfmt",
+          "location": {
+            "file": "oid.h",
+            "line": 93,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "str",
+              "type": "char *",
+              "direction": "in",
+              "comment": "output hex string; must be pointing at the start of\n        the hex sequence and have at least the number of bytes\n        needed for an oid encoded in hex (41 bytes).  Only the\n        oid digits are written; a '\n\\\n0' terminator must be added\n        by the caller if it is required."
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "oid structure to format."
+            }
+          ],
+          "comment": [
+            "Format a git_oid into a loose-object path string.\n \n\n The resulting string is \"aa/...\", where \"aa\" is the first two\n hex digitis of the oid and \"...\" is the remaining 38 digits."
+          ],
+          "group": "oid"
+        },
+        "git_oid_allocfmt": {
+          "kind": "function",
+          "name": "git_oid_allocfmt",
+          "location": {
+            "file": "oid.h",
+            "line": 101,
+            "column": 20
+          },
+          "returns": {
+            "type": "char *",
+            "comment": "the c-string; NULL if memory is exhausted.  Caller must\n         deallocate the string with free()."
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "the oid structure to format"
+            }
+          ],
+          "comment": [
+            "Format a gid_oid into a newly allocated c-string."
+          ],
+          "group": "oid"
+        },
+        "git_oid_to_string": {
+          "kind": "function",
+          "name": "git_oid_to_string",
+          "location": {
+            "file": "oid.h",
+            "line": 118,
+            "column": 20
+          },
+          "returns": {
+            "type": "char *",
+            "comment": "the out buffer pointer, assuming no input parameter\n         errors, otherwise a pointer to an empty string."
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "char *",
+              "direction": "in",
+              "comment": "the buffer into which the oid string is output."
+            },
+            {
+              "name": "n",
+              "type": "size_t",
+              "direction": "in",
+              "comment": "the size of the out buffer."
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "the oid structure to format."
+            }
+          ],
+          "comment": [
+            "Format a git_oid into a buffer as a hex format c-string.\n \n\n If the buffer is smaller than GIT_OID_HEXSZ+1, then the resulting\n oid c-string will be truncated to n-1 characters. If there are\n any input parameter errors (out == NULL, n == 0, oid == NULL),\n then a pointer to an empty string is returned, so that the return\n value can always be printed."
+          ],
+          "group": "oid"
+        },
+        "git_oid_cpy": {
+          "kind": "function",
+          "name": "git_oid_cpy",
+          "location": {
+            "file": "oid.h",
+            "line": 125,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "oid structure the result is written into."
+            },
+            {
+              "name": "src",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "oid structure to copy from."
+            }
+          ],
+          "comment": [
+            "Copy an oid from one structure to another."
+          ],
+          "group": "oid"
+        },
+        "git_oid_cmp": {
+          "kind": "function",
+          "name": "git_oid_cmp",
+          "location": {
+            "file": "oid.h",
+            "line": 133,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "<\n0, 0, >0 if a \n<\n b, a == b, a > b."
+          },
+          "params": [
+            {
+              "name": "a",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "first oid structure."
+            },
+            {
+              "name": "b",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "second oid structure."
+            }
+          ],
+          "comment": [
+            "Compare two oid structures."
+          ],
+          "group": "oid"
+        },
+        "git_oid_shorten": {
+          "kind": "struct",
+          "name": "git_oid_shorten",
+          "referenceName": "struct git_oid_shorten",
+          "opaque": true,
+          "comment": [
+            "OID Shortener object"
+          ],
+          "location": {
+            "file": "oid.h",
+            "line": 138,
+            "column": 32
+          },
+          "group": "oid",
+          "returnedBy": [
+            "git_oid_shorten_new"
+          ],
+          "parameterTo": [
+            "git_oid_shorten_add",
+            "git_oid_shorten_free"
+          ]
+        },
+        "git_oid_shorten_new": {
+          "kind": "function",
+          "name": "git_oid_shorten_new",
+          "location": {
+            "file": "oid.h",
+            "line": 154,
+            "column": 18
+          },
+          "returns": {
+            "type": "git_oid_shorten *",
+            "comment": "a `git_oid_shorten` instance, NULL if OOM"
+          },
+          "params": [
+            {
+              "name": "min_length",
+              "type": "size_t",
+              "direction": "in",
+              "comment": "The minimal length for all identifiers,\n\t\twhich will be used even if shorter OIDs would still\n\t\tbe unique."
+            }
+          ],
+          "comment": [
+            "Create a new OID shortener.",
+            "The OID shortener is used to process a list of OIDs\n in text form and return the shortest length that would\n uniquely identify all of them.",
+            "E.g. look at the result of `git log --abbrev`."
+          ],
+          "group": "oid"
+        },
+        "git_oid_shorten_add": {
+          "kind": "function",
+          "name": "git_oid_shorten_add",
+          "location": {
+            "file": "oid.h",
+            "line": 180,
+            "column": 5
+          },
+          "returns": {
+            "type": "int",
+            "comment": "the minimal length to uniquely identify all OIDs\n\t\tadded so far to the set; or an error code (\n<\n0) if an\n\t\terror occurs."
+          },
+          "params": [
+            {
+              "name": "os",
+              "type": "git_oid_shorten *",
+              "direction": "in",
+              "comment": "a `git_oid_shorten` instance"
+            },
+            {
+              "name": "text_oid",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "an OID in text form"
+            }
+          ],
+          "comment": [
+            "Add a new OID to set of shortened OIDs and calculate\n the minimal length to uniquely identify all the OIDs in\n the set.",
+            "The OID is expected to be a 40-char hexadecimal string.\n The OID is owned by the user and will not be modified\n or freed.",
+            "For performance reasons, there is a hard-limit of how many\n OIDs can be added to a single set (around ~22000, assuming\n a mostly randomized distribution), which should be enough\n for any kind of program, and keeps the algorithm fast and\n memory-efficient.",
+            "Attempting to add more than those OIDs will result in a\n GIT_ENOMEM error"
+          ],
+          "group": "oid"
+        },
+        "git_oid_shorten_free": {
+          "kind": "function",
+          "name": "git_oid_shorten_free",
+          "location": {
+            "file": "oid.h",
+            "line": 187,
+            "column": 6
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "os",
+              "type": "git_oid_shorten *",
+              "direction": "in",
+              "comment": "a `git_oid_shorten` instance"
+            }
+          ],
+          "comment": [
+            "Free an OID shortener instance"
+          ],
+          "group": "oid"
+        }
+      },
+      "info": {
+        "summary": "Git object id routines"
+      }
+    },
+    "refs": {
+      "apis": {
+        "git_reference_lookup": {
+          "kind": "function",
+          "name": "git_reference_lookup",
+          "location": {
+            "file": "refs.h",
+            "line": 52,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "reference_out",
+              "type": "git_reference **",
+              "direction": "in",
+              "comment": "pointer to the looked-up reference"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "the repository to look up the reference"
+            },
+            {
+              "name": "name",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "the long name for the reference (e.g. HEAD, ref/heads/master, refs/tags/v0.1.0, ...)"
+            }
+          ],
+          "comment": [
+            "Lookup a reference by its name in a repository.",
+            "The generated reference is owned by the repository and\n should not be freed by the user."
+          ],
+          "group": "refs"
+        },
+        "git_reference_create_symbolic": {
+          "kind": "function",
+          "name": "git_reference_create_symbolic",
+          "location": {
+            "file": "refs.h",
+            "line": 69,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "ref_out",
+              "type": "git_reference **",
+              "direction": "in",
+              "comment": "Pointer to the newly created reference"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "Repository where that reference will live"
+            },
+            {
+              "name": "name",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The name of the reference"
+            },
+            {
+              "name": "target",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The target of the reference"
+            }
+          ],
+          "comment": [
+            "Create a new symbolic reference.",
+            "The reference will be created in the repository and written\n to the disk.",
+            "This reference is owned by the repository and shall not\n be free'd by the user."
+          ],
+          "group": "refs"
+        },
+        "git_reference_create_oid": {
+          "kind": "function",
+          "name": "git_reference_create_oid",
+          "location": {
+            "file": "refs.h",
+            "line": 86,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "ref_out",
+              "type": "git_reference **",
+              "direction": "in",
+              "comment": "Pointer to the newly created reference"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "Repository where that reference will live"
+            },
+            {
+              "name": "name",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The name of the reference"
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "The object id pointed to by the reference."
+            }
+          ],
+          "comment": [
+            "Create a new object id reference.",
+            "The reference will be created in the repository and written\n to the disk.",
+            "This reference is owned by the repository and shall not\n be free'd by the user."
+          ],
+          "group": "refs"
+        },
+        "git_reference_oid": {
+          "kind": "function",
+          "name": "git_reference_oid",
+          "location": {
+            "file": "refs.h",
+            "line": 96,
+            "column": 29
+          },
+          "returns": {
+            "type": "const git_oid *",
+            "comment": "a pointer to the oid if available, NULL otherwise"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *",
+              "direction": "in",
+              "comment": "The reference"
+            }
+          ],
+          "comment": [
+            "Get the OID pointed to by a reference.",
+            "Only available if the reference is direct (i.e. not symbolic)"
+          ],
+          "group": "refs"
+        },
+        "git_reference_target": {
+          "kind": "function",
+          "name": "git_reference_target",
+          "location": {
+            "file": "refs.h",
+            "line": 106,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "a pointer to the name if available, NULL otherwise"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *",
+              "direction": "in",
+              "comment": "The reference"
+            }
+          ],
+          "comment": [
+            "Get full name to the reference pointed by this reference",
+            "Only available if the reference is symbolic"
+          ],
+          "group": "refs"
+        },
+        "git_reference_type": {
+          "kind": "function",
+          "name": "git_reference_type",
+          "location": {
+            "file": "refs.h",
+            "line": 116,
+            "column": 23
+          },
+          "returns": {
+            "type": "git_rtype",
+            "comment": "the type"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *",
+              "direction": "in",
+              "comment": "The reference"
+            }
+          ],
+          "comment": [
+            "Get the type of a reference",
+            "Either direct (GIT_REF_OID) or symbolic (GIT_REF_SYMBOLIC)"
+          ],
+          "group": "refs"
+        },
+        "git_reference_name": {
+          "kind": "function",
+          "name": "git_reference_name",
+          "location": {
+            "file": "refs.h",
+            "line": 124,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "the full name for the ref"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *",
+              "direction": "in",
+              "comment": "The reference"
+            }
+          ],
+          "comment": [
+            "Get the full name of a reference"
+          ],
+          "group": "refs"
+        },
+        "git_reference_resolve": {
+          "kind": "function",
+          "name": "git_reference_resolve",
+          "location": {
+            "file": "refs.h",
+            "line": 139,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "resolved_ref",
+              "type": "git_reference **",
+              "direction": "in",
+              "comment": "Pointer to the peeled reference"
+            },
+            {
+              "name": "ref",
+              "type": "git_reference *",
+              "direction": "in",
+              "comment": "The reference"
+            }
+          ],
+          "comment": [
+            "Resolve a symbolic reference",
+            "Thie method iteratively peels a symbolic reference\n until it resolves to a direct reference to an OID.",
+            "If a direct reference is passed as an argument,\n that reference is returned immediately"
+          ],
+          "group": "refs"
+        },
+        "git_reference_owner": {
+          "kind": "function",
+          "name": "git_reference_owner",
+          "location": {
+            "file": "refs.h",
+            "line": 147,
+            "column": 30
+          },
+          "returns": {
+            "type": "git_repository *",
+            "comment": "a pointer to the repo"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *",
+              "direction": "in",
+              "comment": "The reference"
+            }
+          ],
+          "comment": [
+            "Get the repository where a reference resides"
+          ],
+          "group": "refs"
+        },
+        "git_reference_set_target": {
+          "kind": "function",
+          "name": "git_reference_set_target",
+          "location": {
+            "file": "refs.h",
+            "line": 162,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *",
+              "direction": "in",
+              "comment": "The reference"
+            },
+            {
+              "name": "target",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The new target for the reference"
+            }
+          ],
+          "comment": [
+            "Set the symbolic target of a reference.",
+            "The reference must be a symbolic reference, otherwise\n this method will fail.",
+            "The reference will be automatically updated in\n memory and on disk."
+          ],
+          "group": "refs"
+        },
+        "git_reference_set_oid": {
+          "kind": "function",
+          "name": "git_reference_set_oid",
+          "location": {
+            "file": "refs.h",
+            "line": 177,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *",
+              "direction": "in",
+              "comment": "The reference"
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *"
+            }
+          ],
+          "comment": [
+            "Set the OID target of a reference.",
+            "The reference must be a direct reference, otherwise\n this method will fail.",
+            "The reference will be automatically updated in\n memory and on disk."
+          ],
+          "group": "refs"
+        },
+        "git_reference_rename": {
+          "kind": "function",
+          "name": "git_reference_rename",
+          "location": {
+            "file": "refs.h",
+            "line": 190,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *"
+            },
+            {
+              "name": "new_name",
+              "type": "const char *"
+            }
+          ],
+          "comment": [
+            "Rename an existing reference",
+            "This method works for both direct and symbolic references.\n The new name will be checked for validity and may be\n modified into a normalized form.",
+            "The refernece will be immediately renamed in-memory\n and on disk."
+          ],
+          "group": "refs"
+        },
+        "git_reference_delete": {
+          "kind": "function",
+          "name": "git_reference_delete",
+          "location": {
+            "file": "refs.h",
+            "line": 201,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "ref",
+              "type": "git_reference *"
+            }
+          ],
+          "comment": [
+            "Delete an existing reference",
+            "This method works for both direct and symbolic references.",
+            "The reference will be immediately removed on disk and from\n memory. The given reference pointer will no longer be valid."
+          ],
+          "group": "refs"
+        },
+        "git_reference_packall": {
+          "kind": "function",
+          "name": "git_reference_packall",
+          "location": {
+            "file": "refs.h",
+            "line": 219,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "Repository where the loose refs will be packed"
+            }
+          ],
+          "comment": [
+            "Pack all the loose references in the repository",
+            "This method will load into the cache all the loose\n references on the repository and update the \n `packed-refs` file with them.",
+            "Once the `packed-refs` file has been written properly,\n the loose references will be removed from disk.",
+            "WARNING: calling this method may invalidate any existing\n references previously loaded on the cache."
+          ],
+          "group": "refs"
+        },
+        "git_reference_listall": {
+          "kind": "function",
+          "name": "git_reference_listall",
+          "location": {
+            "file": "refs.h",
+            "line": 242,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "array",
+              "type": "git_strarray *",
+              "direction": "in",
+              "comment": "Pointer to a git_strarray structure where\n\t\tthe reference names will be stored"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "Repository where to find the refs"
+            },
+            {
+              "name": "list_flags",
+              "type": "unsigned int",
+              "direction": "in",
+              "comment": "Filtering flags for the reference\n\t\tlisting."
+            }
+          ],
+          "comment": [
+            "Fill a list with all the references that can be found\n in a repository.",
+            "The listed references may be filtered by type, or using\n a bitwise OR of several types. Use the magic value\n `GIT_REF_LISTALL` to obtain all references, including\n packed ones.",
+            "The string array will be filled with the names of all\n references; these values are owned by the user and\n should be free'd manually when no longer needed, using\n `git_strarray_free`."
+          ],
+          "group": "refs"
+        },
+        "git_reference_listcb": {
+          "kind": "function",
+          "name": "git_reference_listcb",
+          "location": {
+            "file": "refs.h",
+            "line": 265,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "Repository where to find the refs"
+            },
+            {
+              "name": "list_flags",
+              "type": "unsigned int",
+              "direction": "in",
+              "comment": "Filtering flags for the reference\n\t\tlisting."
+            },
+            {
+              "name": "callback",
+              "type": "int (*)(const char *, void *)",
+              "direction": "in",
+              "comment": "Function which will be called for every listed ref"
+            },
+            {
+              "name": "payload",
+              "type": "void *",
+              "direction": "in",
+              "comment": "Additional data to pass to the callback"
+            }
+          ],
+          "comment": [
+            "List all the references in the repository, calling a custom\n callback for each one.",
+            "The listed references may be filtered by type, or using\n a bitwise OR of several types. Use the magic value\n `GIT_REF_LISTALL` to obtain all references, including\n packed ones.",
+            "The `callback` function will be called for each of the references\n in the repository, and will receive the name of the reference and\n the `payload` value passed to this method."
+          ],
+          "group": "refs"
+        },
+        "git_reference": {
+          "kind": "struct",
+          "name": "git_reference",
+          "referenceName": "struct git_reference",
+          "opaque": true,
+          "comment": [
+            "In-memory representation of a reference."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 144,
+            "column": 30
+          },
+          "group": "refs",
+          "parameterTo": [
+            "git_reference_lookup",
+            "git_reference_create_symbolic",
+            "git_reference_create_oid",
+            "git_reference_oid",
+            "git_reference_target",
+            "git_reference_type",
+            "git_reference_name",
+            "git_reference_resolve",
+            "git_reference_owner",
+            "git_reference_set_target",
+            "git_reference_set_oid",
+            "git_reference_rename",
+            "git_reference_delete"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git reference management routines"
+      }
+    },
+    "repository": {
+      "apis": {
+        "git_repository_open": {
+          "kind": "function",
+          "name": "git_repository_open",
+          "location": {
+            "file": "repository.h",
+            "line": 64,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "repository",
+              "type": "git_repository **",
+              "direction": "in",
+              "comment": "pointer to the repo which will be opened"
+            },
+            {
+              "name": "path",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "the path to the repository"
+            }
+          ],
+          "comment": [
+            "Open a git repository.",
+            "The 'path' argument must point to an existing git repository\n folder, e.g.",
+            "/path/to/my_repo/.git/\t(normal repository)\n\t\t\t\t\t\t\tobjects/\n\t\t\t\t\t\t\tindex\n\t\t\t\t\t\t\tHEAD",
+            "/path/to/bare_repo/\t\t(bare repository)\n\t\t\t\t\t\tobjects/\n\t\t\t\t\t\tindex\n\t\t\t\t\t\tHEAD",
+            "The method will automatically detect if 'path' is a normal\n\tor bare repository or fail is 'path' is neither."
+          ],
+          "group": "repository"
+        },
+        "git_repository_open2": {
+          "kind": "function",
+          "name": "git_repository_open2",
+          "location": {
+            "file": "repository.h",
+            "line": 93,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "repository",
+              "type": "git_repository **",
+              "direction": "in",
+              "comment": "pointer to the repo which will be opened"
+            },
+            {
+              "name": "git_dir",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The full path to the repository folder\n\t\te.g. a '.git' folder for live repos, any folder for bare\n\t\tEquivalent to $GIT_DIR. \n\t\tCannot be NULL."
+            },
+            {
+              "name": "git_object_directory",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The full path to the ODB folder.\n\t\tthe folder where all the loose and packed objects are stored\n\t\tEquivalent to $GIT_OBJECT_DIRECTORY.\n\t\tIf NULL, \"$GIT_DIR/objects/\" is assumed."
+            },
+            {
+              "name": "git_index_file",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The full path to the index (dircache) file\n\t\tEquivalent to $GIT_INDEX_FILE.\n\t\tIf NULL, \"$GIT_DIR/index\" is assumed."
+            },
+            {
+              "name": "git_work_tree",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The full path to the working tree of the repository,\n\t\tif the repository is not bare.\n\t\tEquivalent to $GIT_WORK_TREE.\n\t\tIf NULL, the repository is assumed to be bare."
+            }
+          ],
+          "comment": [
+            "Open a git repository by manually specifying all its paths"
+          ],
+          "group": "repository"
+        },
+        "git_repository_open3": {
+          "kind": "function",
+          "name": "git_repository_open3",
+          "location": {
+            "file": "repository.h",
+            "line": 129,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "repository",
+              "type": "git_repository **",
+              "direction": "in",
+              "comment": "pointer to the repo which will be opened"
+            },
+            {
+              "name": "git_dir",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The full path to the repository folder\n\t\te.g. a '.git' folder for live repos, any folder for bare\n\t\tEquivalent to $GIT_DIR. \n\t\tCannot be NULL."
+            },
+            {
+              "name": "object_database",
+              "type": "git_odb *",
+              "direction": "in",
+              "comment": "A pointer to a git_odb created \n&\n initialized\n\t\tby the user (e.g. with custom backends). This object database\n\t\twill be owned by the repository and will be automatically free'd.\n\t\tIt should not be manually free'd by the user, or this\n\t\tgit_repository object will become invalid."
+            },
+            {
+              "name": "git_index_file",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The full path to the index (dircache) file\n\t\tEquivalent to $GIT_INDEX_FILE.\n\t\tIf NULL, \"$GIT_DIR/index\" is assumed."
+            },
+            {
+              "name": "git_work_tree",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "The full path to the working tree of the repository,\n\t\tif the repository is not bare.\n\t\tEquivalent to $GIT_WORK_TREE.\n\t\tIf NULL, the repository is assumed to be bare."
+            }
+          ],
+          "comment": [
+            "Open a git repository by manually specifying its paths and\n the object database it will use."
+          ],
+          "group": "repository"
+        },
+        "git_repository_database": {
+          "kind": "function",
+          "name": "git_repository_database",
+          "location": {
+            "file": "repository.h",
+            "line": 141,
+            "column": 23
+          },
+          "returns": {
+            "type": "git_odb *",
+            "comment": "a pointer to the object db"
+          },
+          "params": [
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "a repository object"
+            }
+          ],
+          "comment": [
+            "Get the object database behind a Git repository"
+          ],
+          "group": "repository"
+        },
+        "git_repository_index": {
+          "kind": "function",
+          "name": "git_repository_index",
+          "location": {
+            "file": "repository.h",
+            "line": 153,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code if the index could not be opened"
+          },
+          "params": [
+            {
+              "name": "index",
+              "type": "git_index **",
+              "direction": "in",
+              "comment": "Pointer where to store the index"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "a repository object"
+            }
+          ],
+          "comment": [
+            "Get the Index file of a Git repository",
+            "This is a cheap operation; the index is only opened on the first call,\n and subsequent calls only retrieve the previous pointer."
+          ],
+          "group": "repository"
+        },
+        "git_repository_free": {
+          "kind": "function",
+          "name": "git_repository_free",
+          "location": {
+            "file": "repository.h",
+            "line": 166,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "repository handle to close. If NULL nothing occurs."
+            }
+          ],
+          "comment": [
+            "Free a previously allocated repository",
+            "Note that after a repository is free'd, all the objects it has spawned\n will still exist until they are manually closed by the user\n with `git_object_close`, but accessing any of the attributes of\n an object without a backing repository will result in undefined\n behavior"
+          ],
+          "group": "repository"
+        },
+        "git_repository_init": {
+          "kind": "function",
+          "name": "git_repository_init",
+          "location": {
+            "file": "repository.h",
+            "line": 183,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "repo_out",
+              "type": "git_repository **",
+              "direction": "in",
+              "comment": "pointer to the repo which will be created or reinitialized"
+            },
+            {
+              "name": "path",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "the path to the repository"
+            },
+            {
+              "name": "is_bare",
+              "type": "unsigned int",
+              "direction": "in",
+              "comment": "if true, a Git repository without a working directory is created \n\t\tat the pointed path. If false, provided path will be considered as the working \n\t\tdirectory into which the .git directory will be created."
+            }
+          ],
+          "comment": [
+            "Creates a new Git repository in the given folder.",
+            "TODO:\n\t- Reinit the repository\n\t- Create config files"
+          ],
+          "group": "repository"
+        },
+        "git_repository": {
+          "kind": "struct",
+          "name": "git_repository",
+          "referenceName": "struct git_repository",
+          "opaque": true,
+          "comment": [
+            "Representation of an existing git repository,\n including all its object contents"
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 104,
+            "column": 31
+          },
+          "group": "repository",
+          "returnedBy": [
+            "git_object_owner",
+            "git_reference_owner",
+            "git_revwalk_repository"
+          ],
+          "parameterTo": [
+            "git_blob_lookup",
+            "git_blob_create_fromfile",
+            "git_blob_create_frombuffer",
+            "git_commit_lookup",
+            "git_commit_create",
+            "git_commit_create_o",
+            "git_commit_create_ov",
+            "git_commit_create_v",
+            "git_index_open_inrepo",
+            "git_object_lookup",
+            "git_reference_lookup",
+            "git_reference_create_symbolic",
+            "git_reference_create_oid",
+            "git_reference_packall",
+            "git_reference_listall",
+            "git_reference_listcb",
+            "git_repository_open",
+            "git_repository_open2",
+            "git_repository_open3",
+            "git_repository_database",
+            "git_repository_index",
+            "git_repository_free",
+            "git_repository_init",
+            "git_revwalk_new",
+            "git_tag_lookup",
+            "git_tag_create",
+            "git_tag_create_o",
+            "git_tree_lookup",
+            "git_tree_entry_2object"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git repository management routines"
+      }
+    },
+    "revwalk": {
+      "apis": {
+        "GIT_SORT_NONE": {
+          "kind": "macro",
+          "name": "GIT_SORT_NONE",
+          "location": {
+            "file": "revwalk.h",
+            "line": 47,
+            "column": 9
+          },
+          "value": "(0)",
+          "comment": "Sort the repository contents in no particular ordering; this sorting is arbitrary, implementation-specific and subject to change at any time. This is the default sorting for new walkers.",
+          "group": "revwalk"
+        },
+        "GIT_SORT_TOPOLOGICAL": {
+          "kind": "macro",
+          "name": "GIT_SORT_TOPOLOGICAL",
+          "location": {
+            "file": "revwalk.h",
+            "line": 54,
+            "column": 9
+          },
+          "value": "(1 << 0)",
+          "comment": "Sort the repository contents in topological order (parents before children); this sorting mode can be combined with time sorting.",
+          "group": "revwalk"
+        },
+        "GIT_SORT_TIME": {
+          "kind": "macro",
+          "name": "GIT_SORT_TIME",
+          "location": {
+            "file": "revwalk.h",
+            "line": 61,
+            "column": 9
+          },
+          "value": "(1 << 1)",
+          "comment": "Sort the repository contents by commit time; this sorting mode can be combined with topological sorting.",
+          "group": "revwalk"
+        },
+        "GIT_SORT_REVERSE": {
+          "kind": "macro",
+          "name": "GIT_SORT_REVERSE",
+          "location": {
+            "file": "revwalk.h",
+            "line": 68,
+            "column": 9
+          },
+          "value": "(1 << 2)",
+          "comment": "Iterate through the repository contents in reverse order; this sorting mode can be combined with any of the above.",
+          "group": "revwalk"
+        },
+        "git_revwalk_new": {
+          "kind": "function",
+          "name": "git_revwalk_new",
+          "location": {
+            "file": "revwalk.h",
+            "line": 88,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "walker",
+              "type": "git_revwalk **",
+              "direction": "in",
+              "comment": "pointer to the new revision walker"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "the repo to walk through"
+            }
+          ],
+          "comment": [
+            "Allocate a new revision walker to iterate through a repo.",
+            "This revision walker uses a custom memory pool and an internal\n commit cache, so it is relatively expensive to allocate.",
+            "For maximum performance, this revision walker should be\n reused for different walks.",
+            "This revision walker is *not* thread safe: it may only be\n used to walk a repository on a single thread; however,\n it is possible to have several revision walkers in\n several different threads walking the same repository."
+          ],
+          "group": "revwalk"
+        },
+        "git_revwalk_reset": {
+          "kind": "function",
+          "name": "git_revwalk_reset",
+          "location": {
+            "file": "revwalk.h",
+            "line": 103,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "walker",
+              "type": "git_revwalk *",
+              "direction": "in",
+              "comment": "handle to reset."
+            }
+          ],
+          "comment": [
+            "Reset the revision walker for reuse.",
+            "This will clear all the pushed and hidden commits, and\n leave the walker in a blank state (just like at\n creation) ready to receive new commit pushes and\n start a new walk.",
+            "The revision walk is automatically reset when a walk\n is over."
+          ],
+          "group": "revwalk"
+        },
+        "git_revwalk_push": {
+          "kind": "function",
+          "name": "git_revwalk_push",
+          "location": {
+            "file": "revwalk.h",
+            "line": 120,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "walk",
+              "type": "git_revwalk *"
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "the oid of the commit to start from."
+            }
+          ],
+          "comment": [
+            "Mark a commit to start traversal from.",
+            "The given OID must belong to a commit on the walked\n repository.",
+            "The given commit will be used as one of the roots\n when starting the revision walk. At least one commit\n must be pushed the repository before a walk can\n be started."
+          ],
+          "group": "revwalk"
+        },
+        "git_revwalk_hide": {
+          "kind": "function",
+          "name": "git_revwalk_hide",
+          "location": {
+            "file": "revwalk.h",
+            "line": 136,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "walk",
+              "type": "git_revwalk *"
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *"
+            }
+          ],
+          "comment": [
+            "Mark a commit (and its ancestors) uninteresting for the output.",
+            "The given OID must belong to a commit on the walked\n repository.",
+            "The resolved commit and all its parents will be hidden from the\n output on the revision walk."
+          ],
+          "group": "revwalk"
+        },
+        "git_revwalk_next": {
+          "kind": "function",
+          "name": "git_revwalk_next",
+          "location": {
+            "file": "revwalk.h",
+            "line": 156,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "GIT_SUCCESS if the next commit was found;\n\tGIT_EREVWALKOVER if there are no commits left to iterate"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "Pointer where to store the oid of the next commit"
+            },
+            {
+              "name": "walk",
+              "type": "git_revwalk *",
+              "direction": "in",
+              "comment": "the walker to pop the commit from."
+            }
+          ],
+          "comment": [
+            "Get the next commit from the revision walk.",
+            "The initial call to this method is *not* blocking when\n iterating through a repo with a time-sorting mode.",
+            "Iterating with Topological or inverted modes makes the initial\n call blocking to preprocess the commit list, but this block should be\n mostly unnoticeable on most repositories (topological preprocessing\n times at 0.3s on the git.git repo).",
+            "The revision walker is reset when the walk is over."
+          ],
+          "group": "revwalk"
+        },
+        "git_revwalk_sorting": {
+          "kind": "function",
+          "name": "git_revwalk_sorting",
+          "location": {
+            "file": "revwalk.h",
+            "line": 167,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "walk",
+              "type": "git_revwalk *",
+              "direction": "in",
+              "comment": "the walker being used for the traversal."
+            },
+            {
+              "name": "sort_mode",
+              "type": "unsigned int",
+              "direction": "in",
+              "comment": "combination of GIT_SORT_XXX flags"
+            }
+          ],
+          "comment": [
+            "Change the sorting mode when iterating through the\n repository's contents.",
+            "Changing the sorting mode resets the walker."
+          ],
+          "group": "revwalk"
+        },
+        "git_revwalk_free": {
+          "kind": "function",
+          "name": "git_revwalk_free",
+          "location": {
+            "file": "revwalk.h",
+            "line": 174,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "walk",
+              "type": "git_revwalk *",
+              "direction": "in",
+              "comment": "traversal handle to close.  If NULL nothing occurs."
+            }
+          ],
+          "comment": [
+            "Free a revision walker previously allocated."
+          ],
+          "group": "revwalk"
+        },
+        "git_revwalk_repository": {
+          "kind": "function",
+          "name": "git_revwalk_repository",
+          "location": {
+            "file": "revwalk.h",
+            "line": 183,
+            "column": 30
+          },
+          "returns": {
+            "type": "git_repository *",
+            "comment": "the repository being walked"
+          },
+          "params": [
+            {
+              "name": "walk",
+              "type": "git_revwalk *",
+              "direction": "in",
+              "comment": "the revision walker"
+            }
+          ],
+          "comment": [
+            "Return the repository on which this walker\n is operating."
+          ],
+          "group": "revwalk"
+        },
+        "git_revwalk": {
+          "kind": "struct",
+          "name": "git_revwalk",
+          "referenceName": "struct git_revwalk",
+          "opaque": true,
+          "comment": [
+            "Representation of an in-progress walk through the commits in a repo"
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 110,
+            "column": 28
+          },
+          "group": "revwalk",
+          "parameterTo": [
+            "git_revwalk_new",
+            "git_revwalk_reset",
+            "git_revwalk_push",
+            "git_revwalk_hide",
+            "git_revwalk_next",
+            "git_revwalk_sorting",
+            "git_revwalk_free",
+            "git_revwalk_repository"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git revision traversal routines"
+      }
+    },
+    "signature": {
+      "apis": {
+        "git_signature_new": {
+          "kind": "function",
+          "name": "git_signature_new",
+          "location": {
+            "file": "signature.h",
+            "line": 50,
+            "column": 29
+          },
+          "returns": {
+            "type": "git_signature *",
+            "comment": "the new sig, NULL on out of memory"
+          },
+          "params": [
+            {
+              "name": "name",
+              "type": "const char *"
+            },
+            {
+              "name": "email",
+              "type": "const char *"
+            },
+            {
+              "name": "time",
+              "type": "git_time_t",
+              "referenceType": "int64_t"
+            },
+            {
+              "name": "offset",
+              "type": "int"
+            }
+          ],
+          "comment": [
+            "Create a new action signature. The signature must be freed\n manually or using git_signature_free",
+            "name of the person",
+            "\\email\n email of the person\n \\time\n time when the action happened\n \\offset\n timezone offset in minutes for the time"
+          ],
+          "group": "signature"
+        },
+        "git_signature_dup": {
+          "kind": "function",
+          "name": "git_signature_dup",
+          "location": {
+            "file": "signature.h",
+            "line": 59,
+            "column": 29
+          },
+          "returns": {
+            "type": "git_signature *",
+            "comment": "a copy of sig, NULL on out of memory"
+          },
+          "params": [
+            {
+              "name": "sig",
+              "type": "const git_signature *"
+            }
+          ],
+          "comment": [
+            "Create a copy of an existing signature.",
+            "All internal strings are also duplicated.\n \\sig\n signature to duplicated"
+          ],
+          "group": "signature"
+        },
+        "git_signature_free": {
+          "kind": "function",
+          "name": "git_signature_free",
+          "location": {
+            "file": "signature.h",
+            "line": 66,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "sig",
+              "type": "git_signature *"
+            }
+          ],
+          "comment": [
+            "Free an existing signature",
+            "\\sig\n signature to free"
+          ],
+          "group": "signature"
+        },
+        "git_signature": {
+          "kind": "struct",
+          "name": "git_signature",
+          "referenceName": "git_signature",
+          "comment": [
+            "An action signature (e.g. for committers, taggers, etc)"
+          ],
+          "members": [
+            {
+              "name": "name",
+              "type": "char *"
+            },
+            {
+              "name": "email",
+              "type": "char *",
+              "comment": [
+                "full name of the author"
+              ]
+            },
+            {
+              "name": "when",
+              "type": "git_time",
+              "comment": [
+                "email of the author"
+              ],
+              "referenceType": "struct git_time"
+            }
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 137,
+            "column": 16
+          },
+          "group": "signature",
+          "returnedBy": [
+            "git_commit_committer",
+            "git_commit_author",
+            "git_signature_new",
+            "git_signature_dup",
+            "git_tag_tagger"
+          ],
+          "parameterTo": [
+            "git_commit_create",
+            "git_commit_create_o",
+            "git_commit_create_ov",
+            "git_commit_create_v",
+            "git_signature_dup",
+            "git_signature_free",
+            "git_tag_create",
+            "git_tag_create_o"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git signature creation"
+      }
+    },
+    "tag": {
+      "apis": {
+        "git_tag_lookup": {
+          "kind": "function",
+          "name": "git_tag_lookup",
+          "location": {
+            "file": "tag.h",
+            "line": 50,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "tag",
+              "type": "git_tag **",
+              "direction": "in",
+              "comment": "pointer to the looked up tag"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "the repo to use when locating the tag."
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "identity of the tag to locate."
+            }
+          ],
+          "comment": [
+            "Lookup a tag object from the repository."
+          ],
+          "group": "tag"
+        },
+        "git_tag_close": {
+          "kind": "function",
+          "name": "git_tag_close",
+          "location": {
+            "file": "tag.h",
+            "line": 67,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "tag",
+              "type": "git_tag *",
+              "direction": "in",
+              "comment": "the tag to close"
+            }
+          ],
+          "comment": [
+            "Close an open tag",
+            "This is a wrapper around git_object_close()",
+            "IMPORTANT:\n It *is* necessary to call this method when you stop\n using a tag. Failure to do so will cause a memory leak."
+          ],
+          "group": "tag"
+        },
+        "git_tag_id": {
+          "kind": "function",
+          "name": "git_tag_id",
+          "location": {
+            "file": "tag.h",
+            "line": 79,
+            "column": 29
+          },
+          "returns": {
+            "type": "const git_oid *",
+            "comment": "object identity for the tag."
+          },
+          "params": [
+            {
+              "name": "tag",
+              "type": "git_tag *",
+              "direction": "in",
+              "comment": "a previously loaded tag."
+            }
+          ],
+          "comment": [
+            "Get the id of a tag."
+          ],
+          "group": "tag"
+        },
+        "git_tag_target": {
+          "kind": "function",
+          "name": "git_tag_target",
+          "location": {
+            "file": "tag.h",
+            "line": 91,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "target",
+              "type": "git_object **",
+              "direction": "in",
+              "comment": "pointer where to store the target"
+            },
+            {
+              "name": "t",
+              "type": "git_tag *"
+            }
+          ],
+          "comment": [
+            "Get the tagged object of a tag",
+            "This method performs a repository lookup for the\n given object and returns it"
+          ],
+          "group": "tag"
+        },
+        "git_tag_target_oid": {
+          "kind": "function",
+          "name": "git_tag_target_oid",
+          "location": {
+            "file": "tag.h",
+            "line": 99,
+            "column": 29
+          },
+          "returns": {
+            "type": "const git_oid *",
+            "comment": "pointer to the OID"
+          },
+          "params": [
+            {
+              "name": "t",
+              "type": "git_tag *"
+            }
+          ],
+          "comment": [
+            "Get the OID of the tagged object of a tag"
+          ],
+          "group": "tag"
+        },
+        "git_tag_type": {
+          "kind": "function",
+          "name": "git_tag_type",
+          "location": {
+            "file": "tag.h",
+            "line": 107,
+            "column": 23
+          },
+          "returns": {
+            "type": "git_otype",
+            "comment": "type of the tagged object"
+          },
+          "params": [
+            {
+              "name": "t",
+              "type": "git_tag *"
+            }
+          ],
+          "comment": [
+            "Get the type of a tag's tagged object"
+          ],
+          "group": "tag"
+        },
+        "git_tag_name": {
+          "kind": "function",
+          "name": "git_tag_name",
+          "location": {
+            "file": "tag.h",
+            "line": 115,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "name of the tag"
+          },
+          "params": [
+            {
+              "name": "t",
+              "type": "git_tag *"
+            }
+          ],
+          "comment": [
+            "Get the name of a tag"
+          ],
+          "group": "tag"
+        },
+        "git_tag_tagger": {
+          "kind": "function",
+          "name": "git_tag_tagger",
+          "location": {
+            "file": "tag.h",
+            "line": 123,
+            "column": 35
+          },
+          "returns": {
+            "type": "const git_signature *",
+            "comment": "reference to the tag's author"
+          },
+          "params": [
+            {
+              "name": "t",
+              "type": "git_tag *"
+            }
+          ],
+          "comment": [
+            "Get the tagger (author) of a tag"
+          ],
+          "group": "tag"
+        },
+        "git_tag_message": {
+          "kind": "function",
+          "name": "git_tag_message",
+          "location": {
+            "file": "tag.h",
+            "line": 131,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "message of the tag"
+          },
+          "params": [
+            {
+              "name": "t",
+              "type": "git_tag *"
+            }
+          ],
+          "comment": [
+            "Get the message of a tag"
+          ],
+          "group": "tag"
+        },
+        "git_tag_create": {
+          "kind": "function",
+          "name": "git_tag_create",
+          "location": {
+            "file": "tag.h",
+            "line": 161,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise.\n\tA tag object is written to the ODB, and a proper reference\n\tis written in the /refs/tags folder, pointing to it"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "Pointer where to store the OID of the\n\tnewly created tag"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "Repository where to store the tag"
+            },
+            {
+              "name": "tag_name",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "Name for the tag; this name is validated\n for consistency"
+            },
+            {
+              "name": "target",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "OID to which this tag points; note that no\n\tvalidation is done on this OID. Use the _o version of this\n\tmethod to assure a proper object is being tagged"
+            },
+            {
+              "name": "target_type",
+              "type": "git_otype",
+              "direction": "in",
+              "comment": "Type of the tagged OID; note that no\n\tvalidation is performed here either",
+              "referenceType": "enum git_otype"
+            },
+            {
+              "name": "tagger",
+              "type": "const git_signature *",
+              "direction": "in",
+              "comment": "Signature of the tagger for this tag, and\n  of the tagging time"
+            },
+            {
+              "name": "message",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "Full message for this tag"
+            }
+          ],
+          "comment": [
+            "Create a new tag in the repository from an OID"
+          ],
+          "group": "tag"
+        },
+        "git_tag_create_o": {
+          "kind": "function",
+          "name": "git_tag_create_o",
+          "location": {
+            "file": "tag.h",
+            "line": 183,
+            "column": 17
+          },
+          "returns": {
+            "type": "int"
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "git_oid *"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *"
+            },
+            {
+              "name": "tag_name",
+              "type": "const char *"
+            },
+            {
+              "name": "target",
+              "type": "const git_object *"
+            },
+            {
+              "name": "tagger",
+              "type": "const git_signature *"
+            },
+            {
+              "name": "message",
+              "type": "const char *"
+            }
+          ],
+          "comment": [
+            "Create a new tag in the repository from an existing\n `git_object` instance",
+            "This method replaces the `target` and `target_type`\n paremeters of `git_tag_create` by a single instance\n of a `const git_object *`, which is assured to be\n a proper object in the ODB and hence will create\n a valid tag"
+          ],
+          "see": [
+            "git_tag_create"
+          ],
+          "group": "tag"
+        },
+        "git_tag": {
+          "kind": "struct",
+          "name": "git_tag",
+          "referenceName": "struct git_tag",
+          "opaque": true,
+          "comment": [
+            "Parsed representation of a tag object."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 113,
+            "column": 24
+          },
+          "group": "tag",
+          "parameterTo": [
+            "git_tag_lookup",
+            "git_tag_close",
+            "git_tag_id",
+            "git_tag_target",
+            "git_tag_target_oid",
+            "git_tag_type",
+            "git_tag_name",
+            "git_tag_tagger",
+            "git_tag_message"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git tag parsing routines"
+      }
+    },
+    "thread-utils": {
+      "apis": {
+        "GIT_HAS_TLS": {
+          "kind": "macro",
+          "name": "GIT_HAS_TLS",
+          "location": {
+            "file": "thread-utils.h",
+            "line": 34,
+            "column": 9
+          },
+          "value": "1",
+          "comment": "",
+          "group": "thread-utils"
+        },
+        "GIT_TLS": {
+          "kind": "macro",
+          "name": "GIT_TLS",
+          "location": {
+            "file": "thread-utils.h",
+            "line": 44,
+            "column": 10
+          },
+          "value": "__thread",
+          "comment": "",
+          "group": "thread-utils"
+        }
+      },
+      "info": {}
+    },
+    "tree": {
+      "apis": {
+        "git_tree_lookup": {
+          "kind": "function",
+          "name": "git_tree_lookup",
+          "location": {
+            "file": "tree.h",
+            "line": 50,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success; error code otherwise"
+          },
+          "params": [
+            {
+              "name": "tree",
+              "type": "git_tree **",
+              "direction": "in",
+              "comment": "pointer to the looked up tree"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "the repo to use when locating the tree."
+            },
+            {
+              "name": "id",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "identity of the tree to locate."
+            }
+          ],
+          "comment": [
+            "Lookup a tree object from the repository."
+          ],
+          "group": "tree"
+        },
+        "git_tree_close": {
+          "kind": "function",
+          "name": "git_tree_close",
+          "location": {
+            "file": "tree.h",
+            "line": 67,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "tree",
+              "type": "git_tree *",
+              "direction": "in",
+              "comment": "the tree to close"
+            }
+          ],
+          "comment": [
+            "Close an open tree",
+            "This is a wrapper around git_object_close()",
+            "IMPORTANT:\n It *is* necessary to call this method when you stop\n using a tree. Failure to do so will cause a memory leak."
+          ],
+          "group": "tree"
+        },
+        "git_tree_id": {
+          "kind": "function",
+          "name": "git_tree_id",
+          "location": {
+            "file": "tree.h",
+            "line": 79,
+            "column": 29
+          },
+          "returns": {
+            "type": "const git_oid *",
+            "comment": "object identity for the tree."
+          },
+          "params": [
+            {
+              "name": "tree",
+              "type": "git_tree *",
+              "direction": "in",
+              "comment": "a previously loaded tree."
+            }
+          ],
+          "comment": [
+            "Get the id of a tree."
+          ],
+          "group": "tree"
+        },
+        "git_tree_entrycount": {
+          "kind": "function",
+          "name": "git_tree_entrycount",
+          "location": {
+            "file": "tree.h",
+            "line": 87,
+            "column": 20
+          },
+          "returns": {
+            "type": "size_t",
+            "comment": "the number of entries in the tree"
+          },
+          "params": [
+            {
+              "name": "tree",
+              "type": "git_tree *",
+              "direction": "in",
+              "comment": "a previously loaded tree."
+            }
+          ],
+          "comment": [
+            "Get the number of entries listed in a tree"
+          ],
+          "group": "tree"
+        },
+        "git_tree_entry_byname": {
+          "kind": "function",
+          "name": "git_tree_entry_byname",
+          "location": {
+            "file": "tree.h",
+            "line": 96,
+            "column": 30
+          },
+          "returns": {
+            "type": "git_tree_entry *",
+            "comment": "the tree entry; NULL if not found"
+          },
+          "params": [
+            {
+              "name": "tree",
+              "type": "git_tree *",
+              "direction": "in",
+              "comment": "a previously loaded tree."
+            },
+            {
+              "name": "filename",
+              "type": "const char *",
+              "direction": "in",
+              "comment": "the filename of the desired entry"
+            }
+          ],
+          "comment": [
+            "Lookup a tree entry by its filename"
+          ],
+          "group": "tree"
+        },
+        "git_tree_entry_byindex": {
+          "kind": "function",
+          "name": "git_tree_entry_byindex",
+          "location": {
+            "file": "tree.h",
+            "line": 105,
+            "column": 30
+          },
+          "returns": {
+            "type": "git_tree_entry *",
+            "comment": "the tree entry; NULL if not found"
+          },
+          "params": [
+            {
+              "name": "tree",
+              "type": "git_tree *",
+              "direction": "in",
+              "comment": "a previously loaded tree."
+            },
+            {
+              "name": "idx",
+              "type": "int",
+              "direction": "in",
+              "comment": "the position in the entry list"
+            }
+          ],
+          "comment": [
+            "Lookup a tree entry by its position in the tree"
+          ],
+          "group": "tree"
+        },
+        "git_tree_entry_attributes": {
+          "kind": "function",
+          "name": "git_tree_entry_attributes",
+          "location": {
+            "file": "tree.h",
+            "line": 113,
+            "column": 26
+          },
+          "returns": {
+            "type": "unsigned int",
+            "comment": "attributes as an integer"
+          },
+          "params": [
+            {
+              "name": "entry",
+              "type": "git_tree_entry *",
+              "direction": "in",
+              "comment": "a tree entry"
+            }
+          ],
+          "comment": [
+            "Get the UNIX file attributes of a tree entry"
+          ],
+          "group": "tree"
+        },
+        "git_tree_entry_name": {
+          "kind": "function",
+          "name": "git_tree_entry_name",
+          "location": {
+            "file": "tree.h",
+            "line": 121,
+            "column": 26
+          },
+          "returns": {
+            "type": "const char *",
+            "comment": "the name of the file"
+          },
+          "params": [
+            {
+              "name": "entry",
+              "type": "git_tree_entry *",
+              "direction": "in",
+              "comment": "a tree entry"
+            }
+          ],
+          "comment": [
+            "Get the filename of a tree entry"
+          ],
+          "group": "tree"
+        },
+        "git_tree_entry_id": {
+          "kind": "function",
+          "name": "git_tree_entry_id",
+          "location": {
+            "file": "tree.h",
+            "line": 129,
+            "column": 29
+          },
+          "returns": {
+            "type": "const git_oid *",
+            "comment": "the oid of the object"
+          },
+          "params": [
+            {
+              "name": "entry",
+              "type": "git_tree_entry *",
+              "direction": "in",
+              "comment": "a tree entry"
+            }
+          ],
+          "comment": [
+            "Get the id of the object pointed by the entry"
+          ],
+          "group": "tree"
+        },
+        "git_tree_entry_2object": {
+          "kind": "function",
+          "name": "git_tree_entry_2object",
+          "location": {
+            "file": "tree.h",
+            "line": 139,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "a reference to the pointed object in the repository"
+          },
+          "params": [
+            {
+              "name": "object_out",
+              "type": "git_object **"
+            },
+            {
+              "name": "repo",
+              "type": "git_repository *",
+              "direction": "in",
+              "comment": "repository where to lookup the pointed object"
+            },
+            {
+              "name": "entry",
+              "type": "git_tree_entry *",
+              "direction": "in",
+              "comment": "a tree entry"
+            }
+          ],
+          "comment": [
+            "Convert a tree entry to the git_object it points too."
+          ],
+          "group": "tree"
+        },
+        "git_tree_entry": {
+          "kind": "struct",
+          "name": "git_tree_entry",
+          "referenceName": "struct git_tree_entry",
+          "opaque": true,
+          "comment": [
+            "Representation of each one of the entries in a tree object."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 122,
+            "column": 31
+          },
+          "group": "tree",
+          "returnedBy": [
+            "git_tree_entry_byname",
+            "git_tree_entry_byindex"
+          ],
+          "parameterTo": [
+            "git_tree_entry_attributes",
+            "git_tree_entry_name",
+            "git_tree_entry_id",
+            "git_tree_entry_2object"
+          ]
+        },
+        "git_tree": {
+          "kind": "struct",
+          "name": "git_tree",
+          "referenceName": "struct git_tree",
+          "opaque": true,
+          "comment": [
+            "Representation of a tree object."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 125,
+            "column": 25
+          },
+          "group": "tree",
+          "parameterTo": [
+            "git_commit_tree",
+            "git_commit_create_o",
+            "git_commit_create_ov",
+            "git_tree_lookup",
+            "git_tree_close",
+            "git_tree_id",
+            "git_tree_entrycount",
+            "git_tree_entry_byname",
+            "git_tree_entry_byindex"
+          ]
+        }
+      },
+      "info": {
+        "summary": "Git tree parsing, loading routines"
+      }
+    },
+    "types": {
+      "apis": {
+        "git_off_t": {
+          "kind": "alias",
+          "name": "git_off_t",
+          "type": "int64_t",
+          "location": {
+            "file": "types.h",
+            "line": 69,
+            "column": 17
+          },
+          "group": "types",
+          "typedef": true
+        },
+        "git_time_t": {
+          "kind": "alias",
+          "name": "git_time_t",
+          "type": "int64_t",
+          "location": {
+            "file": "types.h",
+            "line": 70,
+            "column": 17
+          },
+          "group": "types",
+          "returnedBy": [
+            "git_commit_time"
+          ],
+          "parameterTo": [
+            "git_signature_new"
+          ],
+          "typedef": true
+        },
+        "git_otype": {
+          "kind": "enum",
+          "name": "git_otype",
+          "referenceName": "git_otype",
+          "members": [
+            {
+              "name": "GIT_OBJ_ANY",
+              "value": "-2",
+              "comment": [
+                "Object can be any of the following"
+              ]
+            },
+            {
+              "name": "GIT_OBJ_BAD",
+              "value": "-1",
+              "comment": [
+                "Object is invalid."
+              ]
+            },
+            {
+              "name": "GIT_OBJ__EXT1",
+              "value": "0",
+              "comment": [
+                "Reserved for future use."
+              ]
+            },
+            {
+              "name": "GIT_OBJ_COMMIT",
+              "value": "1",
+              "comment": [
+                "A commit object."
+              ]
+            },
+            {
+              "name": "GIT_OBJ_TREE",
+              "value": "2",
+              "comment": [
+                "A tree (directory listing) object."
+              ]
+            },
+            {
+              "name": "GIT_OBJ_BLOB",
+              "value": "3",
+              "comment": [
+                "A file revision object."
+              ]
+            },
+            {
+              "name": "GIT_OBJ_TAG",
+              "value": "4",
+              "comment": [
+                "An annotated tag object."
+              ]
+            },
+            {
+              "name": "GIT_OBJ__EXT2",
+              "value": "5",
+              "comment": [
+                "Reserved for future use."
+              ]
+            },
+            {
+              "name": "GIT_OBJ_OFS_DELTA",
+              "value": "6",
+              "comment": [
+                "A delta, base is given by an offset."
+              ]
+            },
+            {
+              "name": "GIT_OBJ_REF_DELTA",
+              "value": "7",
+              "comment": [
+                "A delta, base is given by object id."
+              ]
+            }
+          ],
+          "comment": [
+            "Basic type (loose or packed) of any Git object."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 75,
+            "column": 9
+          },
+          "group": "types",
+          "returnedBy": [
+            "git_object_type",
+            "git_object_string2type",
+            "git_odb_object_type",
+            "git_tag_type"
+          ],
+          "parameterTo": [
+            "git_object_lookup",
+            "git_object_type2string",
+            "git_object_typeisloose",
+            "git_object__size",
+            "git_odb_read_header",
+            "git_odb_write",
+            "git_odb_open_wstream",
+            "git_odb_hash",
+            "git_tag_create"
+          ]
+        },
+        "git_time": {
+          "kind": "struct",
+          "name": "git_time",
+          "referenceName": "git_time",
+          "comment": [
+            "Time in a signature"
+          ],
+          "members": [
+            {
+              "name": "time",
+              "type": "git_time_t",
+              "referenceType": "int64_t"
+            },
+            {
+              "name": "offset",
+              "type": "int",
+              "comment": [
+                "time in seconds from epoch"
+              ]
+            }
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 131,
+            "column": 16
+          },
+          "group": "types"
+        },
+        "git_rtype": {
+          "kind": "enum",
+          "name": "git_rtype",
+          "referenceName": "git_rtype",
+          "members": [
+            {
+              "name": "GIT_REF_INVALID",
+              "value": "0"
+            },
+            {
+              "name": "GIT_REF_OID",
+              "value": "1",
+              "comment": [
+                "Invalid reference"
+              ]
+            },
+            {
+              "name": "GIT_REF_SYMBOLIC",
+              "value": "2",
+              "comment": [
+                "A reference which points at an object id"
+              ]
+            },
+            {
+              "name": "GIT_REF_PACKED",
+              "value": "4",
+              "comment": [
+                "A reference which points at another reference"
+              ]
+            },
+            {
+              "name": "GIT_REF_HAS_PEEL",
+              "value": "8",
+              "comment": [
+                "A reference which points at another reference"
+              ]
+            },
+            {
+              "name": "GIT_REF_LISTALL",
+              "value": "7",
+              "comment": [
+                "A reference which points at another reference"
+              ]
+            }
+          ],
+          "comment": [
+            "Basic type of any Git reference."
+          ],
+          "location": {
+            "file": "types.h",
+            "line": 147,
+            "column": 9
+          },
+          "group": "types",
+          "returnedBy": [
+            "git_reference_type"
+          ]
+        }
+      },
+      "info": {
+        "summary": "libgit2 base & compatibility types"
+      }
+    }
+  }
+}

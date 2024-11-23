@@ -1,0 +1,132 @@
+---
+title: git_cherry_pick_options (libgit2 v0.21.0-rc2)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.0-rc2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.0-rc2/cherrypick/index.html">cherrypick</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_cherry_pick_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/cherrypick/git_cherry_pick_options.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/cherrypick/git_cherry_pick_options.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/cherrypick/git_cherry_pick_options.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/cherrypick/git_cherry_pick_options.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/cherrypick/git_cherry_pick_options.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/cherrypick/git_cherry_pick_options.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/cherrypick/git_cherry_pick_options.html" selected>v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/cherrypick/git_cherry_pick_options.html">v0.21.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.0-rc2/include/git2/cherrypick.h#L23" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_cherry_pick_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int mainline</span>
+<span class="apiSignatureMember structSignatureMember">git_merge_options merge_opts</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_options checkout_opts</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              mainline
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>For merge commits, the &quot;mainline&quot; is treated as the parent.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.21.0-rc2/merge/git_merge_options.html" class="apiLink structLink">git_merge_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              merge_opts
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.21.0-rc2/checkout/git_checkout_options.html" class="apiLink structLink">git_checkout_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              checkout_opts
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.21.0-rc2/cherrypick/git_cherry_pick_init_options.html" className="apiLink functionLink">git_cherry_pick_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.21.0-rc2/cherrypick/git_cherry_pick.html" className="apiLink functionLink">git_cherry_pick</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/cherrypick/git_cherry_pick_options.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/cherrypick/git_cherry_pick_options.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/cherrypick/git_cherry_pick_options.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/cherrypick/git_cherry_pick_options.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/cherrypick/git_cherry_pick_options.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/cherrypick/git_cherry_pick_options.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/cherrypick/git_cherry_pick_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.21.0-rc1/cherrypick/git_cherry_pick_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,277 @@
+---
+title: git_blob_create_fromchunks (libgit2 v0.18.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.18.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.18.0/blob/index.html">blob</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_blob_create_fromchunks</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.24.6/blob/git_blob_create_fromchunks.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/blob/git_blob_create_fromchunks.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.3/blob/git_blob_create_fromchunks.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/blob/git_blob_create_fromchunks.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/blob/git_blob_create_fromchunks.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/blob/git_blob_create_fromchunks.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/blob/git_blob_create_fromchunks.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/blob/git_blob_create_fromchunks.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/blob/git_blob_create_fromchunks.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/blob/git_blob_create_fromchunks.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/blob/git_blob_create_fromchunks.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/blob/git_blob_create_fromchunks.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/blob/git_blob_create_fromchunks.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/blob/git_blob_create_fromchunks.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/blob/git_blob_create_fromchunks.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/blob/git_blob_create_fromchunks.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/blob/git_blob_create_fromchunks.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/blob/git_blob_create_fromchunks.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/blob/git_blob_create_fromchunks.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/blob/git_blob_create_fromchunks.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/blob/git_blob_create_fromchunks.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/blob/git_blob_create_fromchunks.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/blob/git_blob_create_fromchunks.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/blob/git_blob_create_fromchunks.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/blob/git_blob_create_fromchunks.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/blob/git_blob_create_fromchunks.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/blob/git_blob_create_fromchunks.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/blob/git_blob_create_fromchunks.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/blob/git_blob_create_fromchunks.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/blob/git_blob_create_fromchunks.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/blob/git_blob_create_fromchunks.html" selected>v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Write a loose blob to the Object Database from a
+provider of chunks of data.</p>
+
+        <p>Provided the <code><span class="codeWord">hintpath</span></code> parameter is filled, its value
+will help to determine what git filters should be applied
+to the object before it can be placed to the object database.</p>
+
+        <p>The implementation of the callback has to respect the
+following rules:</p>
+
+        <ul>
+<li><code><span class="codeWord">content</span></code> will have to be filled by the consumer. The maximum number
+of bytes that the buffer can accept per call is defined by the
+<code><span class="codeWord">max_length</span></code> parameter. Allocation and freeing of the buffer will be taken
+care of by the function.</li>
+</ul>
+
+        <ul>
+<li>The callback is expected to return the number of bytes
+that <code><span class="codeWord">content</span></code> have been filled with.</li>
+</ul>
+
+        <ul>
+<li>When there is no more data to stream, the callback should
+return 0. This will prevent it from being invoked anymore.</li>
+</ul>
+
+        <ul>
+<li>When an error occurs, the callback should return -1.</li>
+</ul>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.18.0/include/git2/blob.h#L168" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_blob_create_fromchunks(<span class="apiSignatureParameter functionSignatureParameter">git_oid *id</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *hintpath</span>, <span class="apiSignatureParameter functionSignatureParameter">git_blob_chunk_cb callback</span>, <span class="apiSignatureParameter functionSignatureParameter">void *payload</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.18.0/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              id
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Return the id of the written blob</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.18.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>repository where the blob will be written. This repository can be bare or not.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              hintpath
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>if not NULL, will help selecting the filters to apply onto the content of the blob to be created.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.18.0/blob/git_blob_chunk_cb.html" class="apiLink callbackLink">git_blob_chunk_cb</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              callback
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              payload
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/blob/git_blob_create_fromchunks.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

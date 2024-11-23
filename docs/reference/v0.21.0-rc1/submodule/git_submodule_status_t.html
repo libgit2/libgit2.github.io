@@ -1,0 +1,648 @@
+---
+title: git_submodule_status_t (libgit2 v0.21.0-rc1)
+layout: default
+---
+
+      <div class="api enum">
+        <div class="apiBreadcrumb enumBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.0-rc1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.0-rc1/submodule/index.html">submodule</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader enumHeader">
+          <h2 class="apiName enumName">git_submodule_status_t</h2>
+          <div class="apiHeaderVersionSelect enumHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/submodule/git_submodule_status_t.html">main</option>
+              <option value="/docs/reference/v1.8.4/submodule/git_submodule_status_t.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/submodule/git_submodule_status_t.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/submodule/git_submodule_status_t.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/submodule/git_submodule_status_t.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/submodule/git_submodule_status_t.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/submodule/git_submodule_status_t.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/submodule/git_submodule_status_t.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/submodule/git_submodule_status_t.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/submodule/git_submodule_status_t.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/submodule/git_submodule_status_t.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/submodule/git_submodule_status_t.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/submodule/git_submodule_status_t.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/submodule/git_submodule_status_t.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/submodule/git_submodule_status_t.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/submodule/git_submodule_status_t.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/submodule/git_submodule_status_t.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/submodule/git_submodule_status_t.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/submodule/git_submodule_status_t.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/submodule/git_submodule_status_t.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/submodule/git_submodule_status_t.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/submodule/git_submodule_status_t.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/submodule/git_submodule_status_t.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/submodule/git_submodule_status_t.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/submodule/git_submodule_status_t.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/submodule/git_submodule_status_t.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/submodule/git_submodule_status_t.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/submodule/git_submodule_status_t.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/submodule/git_submodule_status_t.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/submodule/git_submodule_status_t.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/submodule/git_submodule_status_t.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/submodule/git_submodule_status_t.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/submodule/git_submodule_status_t.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/submodule/git_submodule_status_t.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/submodule/git_submodule_status_t.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/submodule/git_submodule_status_t.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/submodule/git_submodule_status_t.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/submodule/git_submodule_status_t.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/submodule/git_submodule_status_t.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/submodule/git_submodule_status_t.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/submodule/git_submodule_status_t.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/submodule/git_submodule_status_t.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/submodule/git_submodule_status_t.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/submodule/git_submodule_status_t.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/submodule/git_submodule_status_t.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/submodule/git_submodule_status_t.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/submodule/git_submodule_status_t.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/submodule/git_submodule_status_t.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/submodule/git_submodule_status_t.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/submodule/git_submodule_status_t.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/submodule/git_submodule_status_t.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/submodule/git_submodule_status_t.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/submodule/git_submodule_status_t.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/submodule/git_submodule_status_t.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/submodule/git_submodule_status_t.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/submodule/git_submodule_status_t.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/submodule/git_submodule_status_t.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/submodule/git_submodule_status_t.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/submodule/git_submodule_status_t.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/submodule/git_submodule_status_t.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/submodule/git_submodule_status_t.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/submodule/git_submodule_status_t.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/submodule/git_submodule_status_t.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/submodule/git_submodule_status_t.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/submodule/git_submodule_status_t.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/submodule/git_submodule_status_t.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/submodule/git_submodule_status_t.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/submodule/git_submodule_status_t.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/submodule/git_submodule_status_t.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/submodule/git_submodule_status_t.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/submodule/git_submodule_status_t.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/submodule/git_submodule_status_t.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/submodule/git_submodule_status_t.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/submodule/git_submodule_status_t.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/submodule/git_submodule_status_t.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/submodule/git_submodule_status_t.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/submodule/git_submodule_status_t.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/submodule/git_submodule_status_t.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/submodule/git_submodule_status_t.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/submodule/git_submodule_status_t.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/submodule/git_submodule_status_t.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/submodule/git_submodule_status_t.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/submodule/git_submodule_status_t.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/submodule/git_submodule_status_t.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/submodule/git_submodule_status_t.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/submodule/git_submodule_status_t.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/submodule/git_submodule_status_t.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/submodule/git_submodule_status_t.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/submodule/git_submodule_status_t.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/submodule/git_submodule_status_t.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/submodule/git_submodule_status_t.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/submodule/git_submodule_status_t.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/submodule/git_submodule_status_t.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/submodule/git_submodule_status_t.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/submodule/git_submodule_status_t.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/submodule/git_submodule_status_t.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/submodule/git_submodule_status_t.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/submodule/git_submodule_status_t.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/submodule/git_submodule_status_t.html" selected>v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/submodule/git_submodule_status_t.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/submodule/git_submodule_status_t.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/submodule/git_submodule_status_t.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription enumDescription">
+        <p>Return codes for submodule status.</p>
+
+        <p>A combination of these flags will be returned to describe the status of a
+submodule.  Depending on the &quot;ignore&quot; property of the submodule, some of
+the flags may never be returned because they indicate changes that are
+supposed to be ignored.</p>
+
+        <p>Submodule info is contained in 4 places: the HEAD tree, the index, config
+files (both .git/config and .gitmodules), and the working directory.  Any
+or all of those places might be missing information about the submodule
+depending on what state the repo is in.  We consider all four places to
+build the combination of status flags.</p>
+
+        <p>There are four values that are not really status, but give basic info
+about what sources of submodule data are available.  These will be
+returned even if ignore is set to &quot;ALL&quot;.</p>
+
+        <ul>
+<li>IN_HEAD   - superproject head contains submodule</li>
+<li>IN_INDEX  - superproject index contains submodule</li>
+<li>IN_CONFIG - superproject gitmodules has submodule</li>
+<li>IN_WD     - superproject workdir has submodule</li>
+</ul>
+
+        <p>The following values will be returned so long as ignore is not &quot;ALL&quot;.</p>
+
+        <ul>
+<li>INDEX_ADDED       - in index, not in head</li>
+<li>INDEX_DELETED     - in head, not in index</li>
+<li>INDEX_MODIFIED    - index and head don't match</li>
+<li>WD_UNINITIALIZED  - workdir contains empty directory</li>
+<li>WD_ADDED          - in workdir, not index</li>
+<li>WD_DELETED        - in index, not workdir</li>
+<li>WD_MODIFIED       - index and workdir head don't match</li>
+</ul>
+
+        <p>The following can only be returned if ignore is &quot;NONE&quot; or &quot;UNTRACKED&quot;.</p>
+
+        <ul>
+<li>WD_INDEX_MODIFIED - submodule workdir index is dirty</li>
+<li>WD_WD_MODIFIED    - submodule workdir has modified files</li>
+</ul>
+
+        <p>Lastly, the following will only be returned for ignore &quot;NONE&quot;.</p>
+
+        <ul>
+<li>WD_UNTRACKED      - wd contains untracked files</li>
+</ul>
+
+        </div>
+
+        <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
+        <div class="apiSignatureLink enumSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.0-rc1/include/git2/submodule.h#L72" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiMembers enumMembers">
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_IN_HEAD
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              0
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_IN_INDEX
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              1
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_IN_CONFIG
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              2
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_IN_WD
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              3
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_INDEX_ADDED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              4
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_INDEX_DELETED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              5
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_INDEX_MODIFIED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              6
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_WD_UNINITIALIZED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              7
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_WD_ADDED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              8
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_WD_DELETED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              9
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_WD_MODIFIED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              10
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_WD_INDEX_MODIFIED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              11
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_WD_WD_MODIFIED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              12
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_SUBMODULE_STATUS_WD_UNTRACKED
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              13
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader enumVersionsHeader">Versions</h3>
+        <div class="apiVersions enumVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/main/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced enumVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/submodule/git_submodule_status_t.html" class="apiVersionLink enumVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

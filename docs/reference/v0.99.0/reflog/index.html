@@ -1,0 +1,287 @@
+---
+title: reflog APIs (libgit2 v0.99.0)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.99.0/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">reflog</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/reflog/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/reflog/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/reflog/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/reflog/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/reflog/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/reflog/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/reflog/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/reflog/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/reflog/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/reflog/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/reflog/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/reflog/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/reflog/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/reflog/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/reflog/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/reflog/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/reflog/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/reflog/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/reflog/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/reflog/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/reflog/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/reflog/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/reflog/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/reflog/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/reflog/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/reflog/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/reflog/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/reflog/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/reflog/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/reflog/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/reflog/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/reflog/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/reflog/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/reflog/index.html" selected>v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/reflog/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/reflog/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/reflog/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/reflog/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/reflog/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/reflog/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/reflog/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/reflog/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/reflog/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/reflog/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/reflog/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/reflog/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/reflog/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/reflog/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/reflog/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/reflog/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/reflog/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/reflog/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/reflog/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/reflog/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/reflog/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/reflog/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/reflog/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/reflog/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/reflog/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/reflog/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/reflog/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/reflog/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/reflog/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/reflog/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/reflog/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/reflog/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/reflog/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/reflog/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/reflog/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/reflog/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/reflog/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/reflog/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/reflog/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/reflog/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/reflog/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/reflog/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/reflog/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/reflog/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/reflog/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/reflog/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/reflog/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/reflog/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/reflog/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/reflog/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/reflog/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/reflog/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/reflog/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/reflog/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/reflog/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/reflog/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/reflog/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/reflog/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/reflog/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/reflog/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/reflog/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/reflog/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/reflog/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/reflog/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/reflog/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/reflog/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/reflog/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/reflog/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/reflog/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/reflog/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/reflog/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/reflog/index.html">v0.14.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git reflog management routines
+      </div>
+
+        <h3 class="apiListHeader objectListHeader">Objects</h3>
+        <div class="apiList objectList">
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_entry.html">
+                git_reflog_entry
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Representation of a reference log entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem objectListItem">
+            <div class="apiListName objectListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog.html">
+                git_reflog
+              </a>
+            </div>
+            <div class="apiListItemDescription objectListItemDescription">
+              <p>Representation of a reference log</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_read.html">
+                git_reflog_read
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Read the reflog for the given reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_write.html">
+                git_reflog_write
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Write an existing in-memory reflog object back to disk using an atomic file lock</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_append.html">
+                git_reflog_append
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Add a new entry to the in-memory reflog</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_rename.html">
+                git_reflog_rename
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Rename a reflog</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_delete.html">
+                git_reflog_delete
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Delete the reflog for the given reference</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_entrycount.html">
+                git_reflog_entrycount
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the number of log entries in a reflog</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_entry_byindex.html">
+                git_reflog_entry_byindex
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Lookup an entry by its index</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_drop.html">
+                git_reflog_drop
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Remove an entry from the reflog by its index</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_entry_id_old.html">
+                git_reflog_entry_id_old
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the old oid</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_entry_id_new.html">
+                git_reflog_entry_id_new
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the new oid</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_entry_committer.html">
+                git_reflog_entry_committer
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the committer of this entry</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_entry_message.html">
+                git_reflog_entry_message
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Get the log message</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.99.0/reflog/git_reflog_free.html">
+                git_reflog_free
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Free the reflog</p> 
+            </div>
+          </div>
+        </div>
+    </div>

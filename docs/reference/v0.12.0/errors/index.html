@@ -1,0 +1,454 @@
+---
+title: errors APIs (libgit2 v0.12.0)
+layout: default
+---
+
+    <div class="group">
+      <div class="groupBreadcrumb">
+        <ul>
+          <li><a href="/docs/reference/v0.12.0/index.html">API Documentation</a></li>
+        </ul>
+      </div>
+      <div class="groupHeader">
+        <h2 class="groupName">errors</h2>
+          <div class="groupHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/errors/index.html">main</option>
+              <option value="/docs/reference/v1.8.4/errors/index.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/errors/index.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/errors/index.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/errors/index.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/errors/index.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/errors/index.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/errors/index.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/errors/index.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/errors/index.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/errors/index.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/errors/index.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/errors/index.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/errors/index.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/errors/index.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/errors/index.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/errors/index.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/errors/index.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/errors/index.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/errors/index.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/errors/index.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/errors/index.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/errors/index.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/errors/index.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/errors/index.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/errors/index.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/errors/index.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/errors/index.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/errors/index.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/errors/index.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/errors/index.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/errors/index.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/errors/index.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/errors/index.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/errors/index.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/errors/index.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/errors/index.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/errors/index.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/errors/index.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/errors/index.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/errors/index.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/errors/index.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/errors/index.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/errors/index.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/errors/index.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/errors/index.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/errors/index.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/errors/index.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/errors/index.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/errors/index.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/errors/index.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/errors/index.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/errors/index.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/errors/index.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/errors/index.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/errors/index.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/errors/index.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/errors/index.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/errors/index.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/errors/index.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/errors/index.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/errors/index.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/errors/index.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/errors/index.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/errors/index.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/errors/index.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/errors/index.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/errors/index.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/errors/index.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/errors/index.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/errors/index.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/errors/index.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/errors/index.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/errors/index.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/errors/index.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/errors/index.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/errors/index.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/errors/index.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/errors/index.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/errors/index.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/errors/index.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/errors/index.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/errors/index.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/errors/index.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/errors/index.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/errors/index.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/errors/index.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/errors/index.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/errors/index.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/errors/index.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/errors/index.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/errors/index.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/errors/index.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/errors/index.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/errors/index.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/errors/index.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/errors/index.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/errors/index.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/errors/index.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/errors/index.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/errors/index.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/errors/index.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/errors/index.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/errors/index.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/errors/index.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/errors/index.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/errors/index.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/errors/index.html" selected>v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/errors/index.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/errors/index.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/errors/index.html">v0.8.0</option>
+              <option value="/docs/reference/v0.2.0/errors/index.html">v0.2.0</option>
+              <option value="/docs/reference/v0.1.0/errors/index.html">v0.1.0</option>
+            </select>
+          </div>
+      </div>
+      <div class="groupIndexDetails">
+        Git error handling routines and variables
+      </div>
+
+        <h3 class="apiListHeader macroListHeader">Macros</h3>
+        <div class="apiList macroList">
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_SUCCESS.html">
+                GIT_SUCCESS
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Operation completed successfully</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ERROR.html">
+                GIT_ERROR
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Operation failed, with unspecified reason</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ENOTOID.html">
+                GIT_ENOTOID
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Input was not a properly formatted Git object id</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ENOTFOUND.html">
+                GIT_ENOTFOUND
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Input does not exist in the scope searched</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ENOMEM.html">
+                GIT_ENOMEM
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Not enough space available</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EOSERR.html">
+                GIT_EOSERR
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Consult the OS error information</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EOBJTYPE.html">
+                GIT_EOBJTYPE
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The specified object is of invalid type</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EOBJCORRUPTED.html">
+                GIT_EOBJCORRUPTED
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The specified object has its data corrupted</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ENOTAREPO.html">
+                GIT_ENOTAREPO
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The specified repository is invalid</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EINVALIDTYPE.html">
+                GIT_EINVALIDTYPE
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The object type is invalid or doesn't match</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EMISSINGOBJDATA.html">
+                GIT_EMISSINGOBJDATA
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The object cannot be written because it's missing internal data</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EPACKCORRUPTED.html">
+                GIT_EPACKCORRUPTED
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The packfile for the ODB is corrupted</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EFLOCKFAIL.html">
+                GIT_EFLOCKFAIL
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Failed to acquire or release a file lock</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EZLIB.html">
+                GIT_EZLIB
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The Z library failed to inflate/deflate an object's data</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EBUSY.html">
+                GIT_EBUSY
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The queried object is currently busy</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EBAREINDEX.html">
+                GIT_EBAREINDEX
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The index file is not backed up by an existing repository</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EINVALIDREFNAME.html">
+                GIT_EINVALIDREFNAME
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The name of the reference is not valid</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EREFCORRUPTED.html">
+                GIT_EREFCORRUPTED
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The specified reference has its data corrupted</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ETOONESTEDSYMREF.html">
+                GIT_ETOONESTEDSYMREF
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The specified symbolic reference is too deeply nested</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EPACKEDREFSCORRUPTED.html">
+                GIT_EPACKEDREFSCORRUPTED
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The pack-refs file is either corrupted or its format is not currently supported</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EINVALIDPATH.html">
+                GIT_EINVALIDPATH
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The path is invalid</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EREVWALKOVER.html">
+                GIT_EREVWALKOVER
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The revision walker is empty; there are no more commits left to iterate</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EINVALIDREFSTATE.html">
+                GIT_EINVALIDREFSTATE
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The state of the reference is not valid</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ENOTIMPLEMENTED.html">
+                GIT_ENOTIMPLEMENTED
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>This feature has not been implemented yet</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EEXISTS.html">
+                GIT_EEXISTS
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>A reference with this name already exists</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EOVERFLOW.html">
+                GIT_EOVERFLOW
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The given integer literal is too large to be parsed</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ENOTNUM.html">
+                GIT_ENOTNUM
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>The given literal is not a valid number</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_ESTREAM.html">
+                GIT_ESTREAM
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>Streaming error</p> 
+            </div>
+          </div>
+          <div class="apiListItem macroListItem">
+            <div class="apiListName macroListName">
+              <a href="/docs/reference/v0.12.0/errors/GIT_EINVALIDARGS.html">
+                GIT_EINVALIDARGS
+              </a>
+            </div>
+            <div class="apiListItemDescription macroListItemDescription">
+              <p>invalid arguments to function</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiListHeader functionListHeader">Functions</h3>
+        <div class="apiList functionList">
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.12.0/errors/git_lasterror.html">
+                git_lasterror
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Return a detailed error string with the latest error that occurred in the library</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.12.0/errors/git_strerror.html">
+                git_strerror
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>strerror() for the Git library</p> 
+            </div>
+          </div>
+        </div>
+    </div>

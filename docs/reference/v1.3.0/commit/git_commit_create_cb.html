@@ -1,0 +1,302 @@
+---
+title: git_commit_create_cb (libgit2 v1.3.0)
+layout: default
+---
+
+      <div class="api callback">
+        <div class="apiBreadcrumb callbackBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.3.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.3.0/commit/index.html">commit</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader callbackHeader">
+          <h2 class="apiName callbackName">git_commit_create_cb</h2>
+          <div class="apiHeaderVersionSelect callbackHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/commit/git_commit_create_cb.html">main</option>
+              <option value="/docs/reference/v1.8.4/commit/git_commit_create_cb.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/commit/git_commit_create_cb.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/commit/git_commit_create_cb.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/commit/git_commit_create_cb.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/commit/git_commit_create_cb.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/commit/git_commit_create_cb.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/commit/git_commit_create_cb.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/commit/git_commit_create_cb.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/commit/git_commit_create_cb.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/commit/git_commit_create_cb.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/commit/git_commit_create_cb.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/commit/git_commit_create_cb.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/commit/git_commit_create_cb.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/commit/git_commit_create_cb.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/commit/git_commit_create_cb.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/commit/git_commit_create_cb.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/commit/git_commit_create_cb.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/commit/git_commit_create_cb.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/commit/git_commit_create_cb.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/commit/git_commit_create_cb.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/commit/git_commit_create_cb.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/commit/git_commit_create_cb.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/commit/git_commit_create_cb.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/commit/git_commit_create_cb.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/commit/git_commit_create_cb.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/commit/git_commit_create_cb.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/commit/git_commit_create_cb.html" selected>v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/commit/git_commit_create_cb.html">v1.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription callbackDescription">
+        <p>Commit creation callback: used when a function is going to create
+commits (for example, in <a href="/docs/reference/v1.3.0/rebase/git_rebase_commit.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_commit</span></code></a>) to allow callers to
+override the commit creation behavior.  For example, users may
+wish to sign commits by providing this information to
+<a href="/docs/reference/v1.3.0/commit/git_commit_create_buffer.html" class="apiLink functionLink"><code><span class="codeWord">git_commit_create_buffer</span></code></a>, signing that buffer, then calling
+<a href="/docs/reference/v1.3.0/commit/git_commit_create_with_signature.html" class="apiLink functionLink"><code><span class="codeWord">git_commit_create_with_signature</span></code></a>.  The resultant commit id
+should be set in the <code><span class="codeWord">out</span></code> object id parameter.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink callbackSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.3.0/include/git2/commit.h#L531" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature callbackSignature">
+          typedef int git_commit_create_cb(<span class="apiSignatureParameter callbackSignatureParameter">git_oid *out</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_signature *author</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_signature *committer</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *message_encoding</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *message</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_tree *tree</span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t parent_count</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_commit **parents</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
+        </div>
+
+        <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
+        <div class="apiParameters callbackParameters">
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v1.3.0/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              out
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>pointer that this callback will populate with the object id of the commit that is created</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v1.3.0/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              author
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the author name and time of the commit</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v1.3.0/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              committer
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the committer name and time of the commit</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              message_encoding
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the encoding of the given message, or NULL to assume UTF8</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              message
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the commit message</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v1.3.0/tree/git_tree.html" class="apiLink objectLink">const git_tree *</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              tree
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the tree to be committed</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              parent_count
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the number of parents for this commit</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              <a href="/docs/reference/v1.3.0/commit/git_commit.html" class="apiLink objectLink">const git_commit **</a>
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              parents
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the commit parents</p> 
+            </div>
+          </div>
+          <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
+            <div class="apiParameterType callbackParameterType">
+              void *
+            </div>
+            <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName callbackParameterName">
+              payload
+            </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the payload pointer in the rebase options</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 if this callback has created the commit and populated the out parameter, GIT_PASSTHROUGH if the callback has not created a commit and wants the calling function to create the commit as if no callback had been specified, any other value to stop and return a failure</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>
+        <div class="apiVersions callbackVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/main/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged callbackVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced callbackVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.2.0/commit/git_commit_create_cb.html" class="apiVersionLink callbackVersionLink">v1.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

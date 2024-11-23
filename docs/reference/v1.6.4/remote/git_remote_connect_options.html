@@ -1,0 +1,226 @@
+---
+title: git_remote_connect_options (libgit2 v1.6.4)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.6.4/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.6.4/remote/index.html">remote</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_remote_connect_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/remote/git_remote_connect_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/remote/git_remote_connect_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/remote/git_remote_connect_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/remote/git_remote_connect_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/remote/git_remote_connect_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/remote/git_remote_connect_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/remote/git_remote_connect_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/remote/git_remote_connect_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/remote/git_remote_connect_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/remote/git_remote_connect_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/remote/git_remote_connect_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/remote/git_remote_connect_options.html" selected>v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/remote/git_remote_connect_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/remote/git_remote_connect_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/remote/git_remote_connect_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/remote/git_remote_connect_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/remote/git_remote_connect_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/remote/git_remote_connect_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/remote/git_remote_connect_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/remote/git_remote_connect_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/remote/git_remote_connect_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/remote/git_remote_connect_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/remote/git_remote_connect_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/remote/git_remote_connect_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/remote/git_remote_connect_options.html">v1.4.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Remote creation options structure</p>
+
+        <p>Initialize with <a href="/docs/reference/v1.6.4/remote/GIT_REMOTE_CREATE_OPTIONS_INIT.html" class="apiLink macroLink"><code><span class="codeWord">GIT_REMOTE_CREATE_OPTIONS_INIT</span></code></a>. Alternatively, you can
+use <a href="/docs/reference/v1.6.4/remote/git_remote_create_options_init.html" class="apiLink functionLink"><code><span class="codeWord">git_remote_create_options_init</span></code></a>.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.6.4/include/git2/remote.h#L841" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_remote_connect_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">git_remote_callbacks callbacks</span>
+<span class="apiSignatureMember structSignatureMember">git_proxy_options proxy_opts</span>
+<span class="apiSignatureMember structSignatureMember">git_remote_redirect_t follow_redirects</span>
+<span class="apiSignatureMember structSignatureMember">git_strarray custom_headers</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.4/remote/git_remote_callbacks.html" class="apiLink structLink">git_remote_callbacks</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              callbacks
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Callbacks to use for this connection</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.4/proxy/git_proxy_options.html" class="apiLink structLink">git_proxy_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              proxy_opts
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>HTTP Proxy settings</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.4/remote/git_remote_redirect_t.html" class="apiLink enumLink">git_remote_redirect_t</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              follow_redirects
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Whether to allow off-site redirects. If this is not specified, the <code><span class="codeWord">http.followRedirects</span></code> configuration setting will be consulted.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.4/strarray/git_strarray.html" class="apiLink structLink">git_strarray</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              custom_headers
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Extra HTTP headers to use in this connection</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.6.4/remote/git_remote_connect_options_init.html" className="apiLink functionLink">git_remote_connect_options_init</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.6.4/remote/git_remote_connect_ext.html" className="apiLink functionLink">git_remote_connect_ext</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.6.4/sys/remote/git_remote_connect_options_dispose.html" className="apiLink functionLink">git_remote_connect_options_dispose</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.6.4/sys/transport/git_transport_remote_connect_options.html" className="apiLink functionLink">git_transport_remote_connect_options</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.4.0/remote/git_remote_connect_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

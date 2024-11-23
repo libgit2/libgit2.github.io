@@ -1,0 +1,87 @@
+---
+title: git_blame_hunk_byline (libgit2 main)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/main/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/main/blame/index.html">blame</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_blame_hunk_byline</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/blame/git_blame_hunk_byline.html" selected>main</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Gets the hunk that relates to the given line number in the newest
+commit.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/blame.h#L265" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          const git_blame_hunk *git_blame_hunk_byline(<span class="apiSignatureParameter functionSignatureParameter">git_blame *blame</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t lineno</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/blame/git_blame.html" class="apiLink objectLink">git_blame *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              blame
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the blame structure to query</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              lineno
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the (1-based) line number to find a hunk for</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            <a href="/docs/reference/main/blame/git_blame_hunk.html" class="apiLink structLink">const git_blame_hunk *</a>
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>the hunk that contains the given line, or NULL on error</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/main/blame/git_blame_hunk_byline.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,519 @@
+---
+title: git_strarray (libgit2 v0.12.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.12.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.12.0/common/index.html">common</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_strarray</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/strarray/git_strarray.html">main</option>
+              <option value="/docs/reference/v1.8.4/strarray/git_strarray.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/strarray/git_strarray.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/strarray/git_strarray.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/strarray/git_strarray.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/strarray/git_strarray.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/strarray/git_strarray.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/strarray/git_strarray.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/strarray/git_strarray.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/strarray/git_strarray.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/strarray/git_strarray.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/strarray/git_strarray.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/strarray/git_strarray.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/strarray/git_strarray.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/strarray/git_strarray.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/strarray/git_strarray.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/strarray/git_strarray.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/strarray/git_strarray.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/strarray/git_strarray.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/strarray/git_strarray.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/strarray/git_strarray.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/strarray/git_strarray.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/strarray/git_strarray.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/strarray/git_strarray.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/strarray/git_strarray.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/strarray/git_strarray.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/strarray/git_strarray.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/strarray/git_strarray.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/strarray/git_strarray.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/strarray/git_strarray.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/strarray/git_strarray.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/strarray/git_strarray.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/strarray/git_strarray.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/strarray/git_strarray.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/strarray/git_strarray.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/strarray/git_strarray.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/strarray/git_strarray.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/strarray/git_strarray.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/strarray/git_strarray.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/strarray/git_strarray.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/strarray/git_strarray.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/strarray/git_strarray.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/strarray/git_strarray.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/strarray/git_strarray.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/strarray/git_strarray.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/strarray/git_strarray.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/strarray/git_strarray.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/strarray/git_strarray.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/strarray/git_strarray.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/strarray/git_strarray.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/strarray/git_strarray.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/strarray/git_strarray.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/strarray/git_strarray.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/strarray/git_strarray.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/strarray/git_strarray.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/strarray/git_strarray.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/strarray/git_strarray.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/strarray/git_strarray.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/strarray/git_strarray.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/strarray/git_strarray.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/strarray/git_strarray.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/strarray/git_strarray.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/strarray/git_strarray.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/strarray/git_strarray.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/strarray/git_strarray.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/strarray/git_strarray.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/strarray/git_strarray.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/strarray/git_strarray.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/strarray/git_strarray.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/strarray/git_strarray.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/strarray/git_strarray.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/strarray/git_strarray.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/strarray/git_strarray.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/strarray/git_strarray.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/strarray/git_strarray.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/strarray/git_strarray.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/strarray/git_strarray.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/strarray/git_strarray.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/strarray/git_strarray.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/strarray/git_strarray.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/strarray/git_strarray.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/strarray/git_strarray.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/strarray/git_strarray.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/strarray/git_strarray.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/strarray/git_strarray.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/strarray/git_strarray.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/strarray/git_strarray.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/strarray/git_strarray.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/strarray/git_strarray.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/strarray/git_strarray.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/strarray/git_strarray.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/strarray/git_strarray.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/strarray/git_strarray.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/strarray/git_strarray.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/strarray/git_strarray.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/strarray/git_strarray.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/strarray/git_strarray.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/strarray/git_strarray.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/strarray/git_strarray.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/strarray/git_strarray.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/strarray/git_strarray.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/strarray/git_strarray.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/common/git_strarray.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/common/git_strarray.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/common/git_strarray.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/common/git_strarray.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/common/git_strarray.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/common/git_strarray.html" selected>v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/common/git_strarray.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/common/git_strarray.html">v0.10.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.12.0/include/git2/common.h#L89" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_strarray {
+<span class="apiSignatureMember structSignatureMember">char **strings</span>
+<span class="apiSignatureMember structSignatureMember">size_t count</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              char **
+            </div>
+            <div class="apiMemberName structMemberName">
+              strings
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              count
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.12.0/common/git_strarray_free.html" className="apiLink functionLink">git_strarray_free</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.12.0/refs/git_reference_listall.html" className="apiLink functionLink">git_reference_listall</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.12.0/tag/git_tag_list.html" className="apiLink functionLink">git_tag_list</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/strarray/git_strarray.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.18.0/strarray/git_strarray.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/common/git_strarray.html" class="apiVersionLink structVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/common/git_strarray.html" class="apiVersionLink structVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/common/git_strarray.html" class="apiVersionLink structVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/common/git_strarray.html" class="apiVersionLink structVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/common/git_strarray.html" class="apiVersionLink structVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/common/git_strarray.html" class="apiVersionLink structVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/common/git_strarray.html" class="apiVersionLink structVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.10.0/common/git_strarray.html" class="apiVersionLink structVersionLink">v0.10.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

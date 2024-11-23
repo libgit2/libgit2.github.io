@@ -1,0 +1,1146 @@
+---
+title: git_repository (libgit2 v0.24.3)
+layout: default
+---
+
+      <div class="api object">
+        <div class="apiBreadcrumb objectBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.24.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.24.3/repository/index.html">repository</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader objectHeader">
+          <h2 class="apiName objectName">git_repository</h2>
+          <div class="apiHeaderVersionSelect objectHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/repository/git_repository.html">main</option>
+              <option value="/docs/reference/v1.8.4/repository/git_repository.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/repository/git_repository.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/repository/git_repository.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/repository/git_repository.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/repository/git_repository.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/repository/git_repository.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/repository/git_repository.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/repository/git_repository.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/repository/git_repository.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/repository/git_repository.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/repository/git_repository.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/repository/git_repository.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/repository/git_repository.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/repository/git_repository.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/repository/git_repository.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/repository/git_repository.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/repository/git_repository.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/repository/git_repository.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/repository/git_repository.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/repository/git_repository.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/repository/git_repository.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/repository/git_repository.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/repository/git_repository.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/repository/git_repository.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/repository/git_repository.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/repository/git_repository.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/repository/git_repository.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/repository/git_repository.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/repository/git_repository.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/repository/git_repository.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/repository/git_repository.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/repository/git_repository.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/repository/git_repository.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/repository/git_repository.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/repository/git_repository.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/repository/git_repository.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/repository/git_repository.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/repository/git_repository.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/repository/git_repository.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/repository/git_repository.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/repository/git_repository.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/repository/git_repository.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/repository/git_repository.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/repository/git_repository.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/repository/git_repository.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/repository/git_repository.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/repository/git_repository.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/repository/git_repository.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/repository/git_repository.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/repository/git_repository.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/repository/git_repository.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/repository/git_repository.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/repository/git_repository.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/repository/git_repository.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/repository/git_repository.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/repository/git_repository.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/repository/git_repository.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/repository/git_repository.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/repository/git_repository.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/repository/git_repository.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/repository/git_repository.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/repository/git_repository.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/repository/git_repository.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/repository/git_repository.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/repository/git_repository.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/repository/git_repository.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/repository/git_repository.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/repository/git_repository.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/repository/git_repository.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/repository/git_repository.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/repository/git_repository.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/repository/git_repository.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/repository/git_repository.html" selected>v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/repository/git_repository.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/repository/git_repository.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/repository/git_repository.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/repository/git_repository.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/repository/git_repository.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/repository/git_repository.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/repository/git_repository.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/repository/git_repository.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/repository/git_repository.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/repository/git_repository.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/repository/git_repository.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/repository/git_repository.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/repository/git_repository.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/repository/git_repository.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/repository/git_repository.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/repository/git_repository.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/repository/git_repository.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/repository/git_repository.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/repository/git_repository.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/repository/git_repository.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/repository/git_repository.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/repository/git_repository.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/repository/git_repository.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/repository/git_repository.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/repository/git_repository.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/repository/git_repository.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/repository/git_repository.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/repository/git_repository.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/repository/git_repository.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/repository/git_repository.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/repository/git_repository.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/repository/git_repository.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/repository/git_repository.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/repository/git_repository.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/repository/git_repository.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/repository/git_repository.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/repository/git_repository.html">v0.8.0</option>
+              <option value="/docs/reference/v0.1.0/common/git_repository.html">v0.1.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription objectDescription">
+        <p>Representation of an existing git repository,
+including all its object contents</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader objectSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink objectSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.24.3/include/git2/types.h#L105" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature objectSignature">
+          typedef struct git_repository git_repository
+        </div>
+
+        <h3 class="apiReturnedByHeader objectReturnedByHeader">Returned By</h3>
+        <div class="apiReturnedBy objectReturnedBy">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.24.3/blob/git_blob_owner.html" className="apiLink functionLink">git_blob_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/commit/git_commit_owner.html" className="apiLink functionLink">git_commit_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/index/git_index_owner.html" className="apiLink functionLink">git_index_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/object/git_object_owner.html" className="apiLink functionLink">git_object_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_owner.html" className="apiLink functionLink">git_reference_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_owner.html" className="apiLink functionLink">git_remote_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/revwalk/git_revwalk_repository.html" className="apiLink functionLink">git_revwalk_repository</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_owner.html" className="apiLink functionLink">git_submodule_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_owner.html" className="apiLink functionLink">git_tag_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tree/git_tree_owner.html" className="apiLink functionLink">git_tree_owner</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/filter/git_filter_source_repo.html" className="apiLink functionLink">git_filter_source_repo</a>
+          </li>
+          </ul>
+        </div>
+
+        <h3 class="apiParameterToHeader objectParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo objectParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.24.3/annotated_commit/git_annotated_commit_from_ref.html" className="apiLink functionLink">git_annotated_commit_from_ref</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/annotated_commit/git_annotated_commit_from_fetchhead.html" className="apiLink functionLink">git_annotated_commit_from_fetchhead</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/annotated_commit/git_annotated_commit_lookup.html" className="apiLink functionLink">git_annotated_commit_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/annotated_commit/git_annotated_commit_from_revspec.html" className="apiLink functionLink">git_annotated_commit_from_revspec</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/attr/git_attr_get.html" className="apiLink functionLink">git_attr_get</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/attr/git_attr_get_many.html" className="apiLink functionLink">git_attr_get_many</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/attr/git_attr_foreach.html" className="apiLink functionLink">git_attr_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/attr/git_attr_cache_flush.html" className="apiLink functionLink">git_attr_cache_flush</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/attr/git_attr_add_macro.html" className="apiLink functionLink">git_attr_add_macro</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/blame/git_blame_file.html" className="apiLink functionLink">git_blame_file</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/blob/git_blob_lookup.html" className="apiLink functionLink">git_blob_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/blob/git_blob_lookup_prefix.html" className="apiLink functionLink">git_blob_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/blob/git_blob_create_fromworkdir.html" className="apiLink functionLink">git_blob_create_fromworkdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/blob/git_blob_create_fromdisk.html" className="apiLink functionLink">git_blob_create_fromdisk</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/blob/git_blob_create_fromchunks.html" className="apiLink functionLink">git_blob_create_fromchunks</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/blob/git_blob_create_frombuffer.html" className="apiLink functionLink">git_blob_create_frombuffer</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/branch/git_branch_create.html" className="apiLink functionLink">git_branch_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/branch/git_branch_create_from_annotated.html" className="apiLink functionLink">git_branch_create_from_annotated</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/branch/git_branch_iterator_new.html" className="apiLink functionLink">git_branch_iterator_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/branch/git_branch_lookup.html" className="apiLink functionLink">git_branch_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/branch/git_branch_upstream_name.html" className="apiLink functionLink">git_branch_upstream_name</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/branch/git_branch_remote_name.html" className="apiLink functionLink">git_branch_remote_name</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/branch/git_branch_upstream_remote.html" className="apiLink functionLink">git_branch_upstream_remote</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/checkout/git_checkout_head.html" className="apiLink functionLink">git_checkout_head</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/checkout/git_checkout_index.html" className="apiLink functionLink">git_checkout_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/checkout/git_checkout_tree.html" className="apiLink functionLink">git_checkout_tree</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/cherrypick/git_cherrypick_commit.html" className="apiLink functionLink">git_cherrypick_commit</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/cherrypick/git_cherrypick.html" className="apiLink functionLink">git_cherrypick</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/clone/git_remote_create_cb.html" className="apiLink callbackLink">git_remote_create_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/clone/git_repository_create_cb.html" className="apiLink callbackLink">git_repository_create_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/clone/git_clone.html" className="apiLink functionLink">git_clone</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/commit/git_commit_lookup.html" className="apiLink functionLink">git_commit_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/commit/git_commit_lookup_prefix.html" className="apiLink functionLink">git_commit_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/commit/git_commit_extract_signature.html" className="apiLink functionLink">git_commit_extract_signature</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/commit/git_commit_create.html" className="apiLink functionLink">git_commit_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/commit/git_commit_create_v.html" className="apiLink functionLink">git_commit_create_v</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/describe/git_describe_workdir.html" className="apiLink functionLink">git_describe_workdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/diff/git_diff_tree_to_tree.html" className="apiLink functionLink">git_diff_tree_to_tree</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/diff/git_diff_tree_to_index.html" className="apiLink functionLink">git_diff_tree_to_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/diff/git_diff_index_to_workdir.html" className="apiLink functionLink">git_diff_index_to_workdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/diff/git_diff_tree_to_workdir.html" className="apiLink functionLink">git_diff_tree_to_workdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/diff/git_diff_tree_to_workdir_with_index.html" className="apiLink functionLink">git_diff_tree_to_workdir_with_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/diff/git_diff_index_to_index.html" className="apiLink functionLink">git_diff_index_to_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/diff/git_diff_commit_as_email.html" className="apiLink functionLink">git_diff_commit_as_email</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/filter/git_filter_list_load.html" className="apiLink functionLink">git_filter_list_load</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/filter/git_filter_list_apply_to_file.html" className="apiLink functionLink">git_filter_list_apply_to_file</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/filter/git_filter_list_stream_file.html" className="apiLink functionLink">git_filter_list_stream_file</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/graph/git_graph_ahead_behind.html" className="apiLink functionLink">git_graph_ahead_behind</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/graph/git_graph_descendant_of.html" className="apiLink functionLink">git_graph_descendant_of</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/ignore/git_ignore_add_rule.html" className="apiLink functionLink">git_ignore_add_rule</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/ignore/git_ignore_clear_internal_rules.html" className="apiLink functionLink">git_ignore_clear_internal_rules</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/ignore/git_ignore_path_is_ignored.html" className="apiLink functionLink">git_ignore_path_is_ignored</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/index/git_index_write_tree_to.html" className="apiLink functionLink">git_index_write_tree_to</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_analysis.html" className="apiLink functionLink">git_merge_analysis</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_base.html" className="apiLink functionLink">git_merge_base</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_bases.html" className="apiLink functionLink">git_merge_bases</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_base_many.html" className="apiLink functionLink">git_merge_base_many</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_bases_many.html" className="apiLink functionLink">git_merge_bases_many</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_base_octopus.html" className="apiLink functionLink">git_merge_base_octopus</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_file_from_index.html" className="apiLink functionLink">git_merge_file_from_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_trees.html" className="apiLink functionLink">git_merge_trees</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge_commits.html" className="apiLink functionLink">git_merge_commits</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/merge/git_merge.html" className="apiLink functionLink">git_merge</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/notes/git_note_iterator_new.html" className="apiLink functionLink">git_note_iterator_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/notes/git_note_read.html" className="apiLink functionLink">git_note_read</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/notes/git_note_create.html" className="apiLink functionLink">git_note_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/notes/git_note_remove.html" className="apiLink functionLink">git_note_remove</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/notes/git_note_default_ref.html" className="apiLink functionLink">git_note_default_ref</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/notes/git_note_foreach.html" className="apiLink functionLink">git_note_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/object/git_object_lookup.html" className="apiLink functionLink">git_object_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/object/git_object_lookup_prefix.html" className="apiLink functionLink">git_object_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/pack/git_packbuilder_new.html" className="apiLink functionLink">git_packbuilder_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/pathspec/git_pathspec_match_workdir.html" className="apiLink functionLink">git_pathspec_match_workdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/rebase/git_rebase_init.html" className="apiLink functionLink">git_rebase_init</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/rebase/git_rebase_open.html" className="apiLink functionLink">git_rebase_open</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refdb/git_refdb_new.html" className="apiLink functionLink">git_refdb_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refdb/git_refdb_open.html" className="apiLink functionLink">git_refdb_open</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/reflog/git_reflog_read.html" className="apiLink functionLink">git_reflog_read</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/reflog/git_reflog_rename.html" className="apiLink functionLink">git_reflog_rename</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/reflog/git_reflog_delete.html" className="apiLink functionLink">git_reflog_delete</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_lookup.html" className="apiLink functionLink">git_reference_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_name_to_id.html" className="apiLink functionLink">git_reference_name_to_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_dwim.html" className="apiLink functionLink">git_reference_dwim</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_symbolic_create_matching.html" className="apiLink functionLink">git_reference_symbolic_create_matching</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_symbolic_create.html" className="apiLink functionLink">git_reference_symbolic_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_create.html" className="apiLink functionLink">git_reference_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_create_matching.html" className="apiLink functionLink">git_reference_create_matching</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_remove.html" className="apiLink functionLink">git_reference_remove</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_list.html" className="apiLink functionLink">git_reference_list</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_foreach.html" className="apiLink functionLink">git_reference_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_foreach_name.html" className="apiLink functionLink">git_reference_foreach_name</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_iterator_new.html" className="apiLink functionLink">git_reference_iterator_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_iterator_glob_new.html" className="apiLink functionLink">git_reference_iterator_glob_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_foreach_glob.html" className="apiLink functionLink">git_reference_foreach_glob</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_has_log.html" className="apiLink functionLink">git_reference_has_log</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/refs/git_reference_ensure_log.html" className="apiLink functionLink">git_reference_ensure_log</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_create.html" className="apiLink functionLink">git_remote_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_create_with_fetchspec.html" className="apiLink functionLink">git_remote_create_with_fetchspec</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_create_anonymous.html" className="apiLink functionLink">git_remote_create_anonymous</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_lookup.html" className="apiLink functionLink">git_remote_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_set_url.html" className="apiLink functionLink">git_remote_set_url</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_set_pushurl.html" className="apiLink functionLink">git_remote_set_pushurl</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_add_fetch.html" className="apiLink functionLink">git_remote_add_fetch</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_add_push.html" className="apiLink functionLink">git_remote_add_push</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_list.html" className="apiLink functionLink">git_remote_list</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_set_autotag.html" className="apiLink functionLink">git_remote_set_autotag</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_rename.html" className="apiLink functionLink">git_remote_rename</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/remote/git_remote_delete.html" className="apiLink functionLink">git_remote_delete</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_open.html" className="apiLink functionLink">git_repository_open</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_wrap_odb.html" className="apiLink functionLink">git_repository_wrap_odb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_open_ext.html" className="apiLink functionLink">git_repository_open_ext</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_open_bare.html" className="apiLink functionLink">git_repository_open_bare</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_free.html" className="apiLink functionLink">git_repository_free</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_init.html" className="apiLink functionLink">git_repository_init</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_init_ext.html" className="apiLink functionLink">git_repository_init_ext</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_head.html" className="apiLink functionLink">git_repository_head</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_head_detached.html" className="apiLink functionLink">git_repository_head_detached</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_head_unborn.html" className="apiLink functionLink">git_repository_head_unborn</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_is_empty.html" className="apiLink functionLink">git_repository_is_empty</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_path.html" className="apiLink functionLink">git_repository_path</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_workdir.html" className="apiLink functionLink">git_repository_workdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_set_workdir.html" className="apiLink functionLink">git_repository_set_workdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_is_bare.html" className="apiLink functionLink">git_repository_is_bare</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_config.html" className="apiLink functionLink">git_repository_config</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_config_snapshot.html" className="apiLink functionLink">git_repository_config_snapshot</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_odb.html" className="apiLink functionLink">git_repository_odb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_refdb.html" className="apiLink functionLink">git_repository_refdb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_index.html" className="apiLink functionLink">git_repository_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_message.html" className="apiLink functionLink">git_repository_message</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_message_remove.html" className="apiLink functionLink">git_repository_message_remove</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_state_cleanup.html" className="apiLink functionLink">git_repository_state_cleanup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_fetchhead_foreach.html" className="apiLink functionLink">git_repository_fetchhead_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_mergehead_foreach.html" className="apiLink functionLink">git_repository_mergehead_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_hashfile.html" className="apiLink functionLink">git_repository_hashfile</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_set_head.html" className="apiLink functionLink">git_repository_set_head</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_set_head_detached.html" className="apiLink functionLink">git_repository_set_head_detached</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_set_head_detached_from_annotated.html" className="apiLink functionLink">git_repository_set_head_detached_from_annotated</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_detach_head.html" className="apiLink functionLink">git_repository_detach_head</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_state.html" className="apiLink functionLink">git_repository_state</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_set_namespace.html" className="apiLink functionLink">git_repository_set_namespace</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_get_namespace.html" className="apiLink functionLink">git_repository_get_namespace</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_is_shallow.html" className="apiLink functionLink">git_repository_is_shallow</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_ident.html" className="apiLink functionLink">git_repository_ident</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/repository/git_repository_set_ident.html" className="apiLink functionLink">git_repository_set_ident</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/reset/git_reset.html" className="apiLink functionLink">git_reset</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/reset/git_reset_from_annotated.html" className="apiLink functionLink">git_reset_from_annotated</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/reset/git_reset_default.html" className="apiLink functionLink">git_reset_default</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/revert/git_revert_commit.html" className="apiLink functionLink">git_revert_commit</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/revert/git_revert.html" className="apiLink functionLink">git_revert</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/revparse/git_revparse_single.html" className="apiLink functionLink">git_revparse_single</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/revparse/git_revparse_ext.html" className="apiLink functionLink">git_revparse_ext</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/revparse/git_revparse.html" className="apiLink functionLink">git_revparse</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/revwalk/git_revwalk_new.html" className="apiLink functionLink">git_revwalk_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/signature/git_signature_default.html" className="apiLink functionLink">git_signature_default</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/stash/git_stash_save.html" className="apiLink functionLink">git_stash_save</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/stash/git_stash_apply.html" className="apiLink functionLink">git_stash_apply</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/stash/git_stash_foreach.html" className="apiLink functionLink">git_stash_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/stash/git_stash_drop.html" className="apiLink functionLink">git_stash_drop</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/stash/git_stash_pop.html" className="apiLink functionLink">git_stash_pop</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/status/git_status_foreach.html" className="apiLink functionLink">git_status_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/status/git_status_foreach_ext.html" className="apiLink functionLink">git_status_foreach_ext</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/status/git_status_file.html" className="apiLink functionLink">git_status_file</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/status/git_status_list_new.html" className="apiLink functionLink">git_status_list_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/status/git_status_should_ignore.html" className="apiLink functionLink">git_status_should_ignore</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_lookup.html" className="apiLink functionLink">git_submodule_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_foreach.html" className="apiLink functionLink">git_submodule_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_add_setup.html" className="apiLink functionLink">git_submodule_add_setup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_resolve_url.html" className="apiLink functionLink">git_submodule_resolve_url</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_set_branch.html" className="apiLink functionLink">git_submodule_set_branch</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_set_url.html" className="apiLink functionLink">git_submodule_set_url</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_set_ignore.html" className="apiLink functionLink">git_submodule_set_ignore</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_set_update.html" className="apiLink functionLink">git_submodule_set_update</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_set_fetch_recurse_submodules.html" className="apiLink functionLink">git_submodule_set_fetch_recurse_submodules</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_repo_init.html" className="apiLink functionLink">git_submodule_repo_init</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_open.html" className="apiLink functionLink">git_submodule_open</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_status.html" className="apiLink functionLink">git_submodule_status</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_lookup.html" className="apiLink functionLink">git_tag_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_lookup_prefix.html" className="apiLink functionLink">git_tag_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_create.html" className="apiLink functionLink">git_tag_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_annotation_create.html" className="apiLink functionLink">git_tag_annotation_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_create_frombuffer.html" className="apiLink functionLink">git_tag_create_frombuffer</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_create_lightweight.html" className="apiLink functionLink">git_tag_create_lightweight</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_delete.html" className="apiLink functionLink">git_tag_delete</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_list.html" className="apiLink functionLink">git_tag_list</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_list_match.html" className="apiLink functionLink">git_tag_list_match</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tag/git_tag_foreach.html" className="apiLink functionLink">git_tag_foreach</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/transaction/git_transaction_new.html" className="apiLink functionLink">git_transaction_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tree/git_tree_lookup.html" className="apiLink functionLink">git_tree_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tree/git_tree_lookup_prefix.html" className="apiLink functionLink">git_tree_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tree/git_tree_entry_to_object.html" className="apiLink functionLink">git_tree_entry_to_object</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/tree/git_treebuilder_new.html" className="apiLink functionLink">git_treebuilder_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/commit/git_commit_create_from_ids.html" className="apiLink functionLink">git_commit_create_from_ids</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/commit/git_commit_create_from_callback.html" className="apiLink functionLink">git_commit_create_from_callback</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/filter/git_filter_list_new.html" className="apiLink functionLink">git_filter_list_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/mempack/git_mempack_dump.html" className="apiLink functionLink">git_mempack_dump</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/refdb_backend/git_refdb_backend_fs.html" className="apiLink functionLink">git_refdb_backend_fs</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/repository/git_repository_new.html" className="apiLink functionLink">git_repository_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/repository/git_repository__cleanup.html" className="apiLink functionLink">git_repository__cleanup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/repository/git_repository_reinit_filesystem.html" className="apiLink functionLink">git_repository_reinit_filesystem</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/repository/git_repository_set_config.html" className="apiLink functionLink">git_repository_set_config</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/repository/git_repository_set_odb.html" className="apiLink functionLink">git_repository_set_odb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/repository/git_repository_set_refdb.html" className="apiLink functionLink">git_repository_set_refdb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/repository/git_repository_set_index.html" className="apiLink functionLink">git_repository_set_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.3/sys/repository/git_repository_set_bare.html" className="apiLink functionLink">git_repository_set_bare</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader objectVersionsHeader">Versions</h3>
+        <div class="apiVersions objectVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/main/repository/git_repository.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.18.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.8.0/repository/git_repository.html" class="apiVersionLink structVersionLink">v0.8.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced objectVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.1.0/common/git_repository.html" class="apiVersionLink structVersionLink">v0.1.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

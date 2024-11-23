@@ -1,0 +1,147 @@
+---
+title: git_config_file (libgit2 v0.13.0)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.13.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.13.0/config/index.html">config</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_config_file</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.17.0/config/git_config_file.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/config/git_config_file.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/config/git_config_file.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/config/git_config_file.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/config/git_config_file.html" selected>v0.13.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Generic backend that implements the interface to
+access a configuration file</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.13.0/include/git2/config.h#L44" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_config_file {
+<span class="apiSignatureMember structSignatureMember">struct git_config *cfg</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(struct git_config_file *) open</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(struct git_config_file *, const char *, const char **) get</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(struct git_config_file *, const char *, const char *) set</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(struct git_config_file *, int (*)(const char *, void *), void *) foreach</span>
+<span class="apiSignatureMember structSignatureMember">void (*)(struct git_config_file *) free</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              struct git_config *
+            </div>
+            <div class="apiMemberName structMemberName">
+              cfg
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(struct git_config_file *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              open
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(struct git_config_file *, const char *, const char **)
+            </div>
+            <div class="apiMemberName structMemberName">
+              get
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(struct git_config_file *, const char *, const char *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              set
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(struct git_config_file *, int (*)(const char *, void *), void *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              foreach
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void (*)(struct git_config_file *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              free
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.13.0/config/git_config_add_file.html" className="apiLink functionLink">git_config_add_file</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.17.0/config/git_config_file.html" class="apiVersionLink structVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.16.0/config/git_config_file.html" class="apiVersionLink structVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/config/git_config_file.html" class="apiVersionLink structVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.14.0/config/git_config_file.html" class="apiVersionLink structVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.13.0/config/git_config_file.html" class="apiVersionLink structVersionLink">v0.13.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

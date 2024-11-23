@@ -1,0 +1,140 @@
+---
+title: git_push_update_tips (libgit2 v0.21.3)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.21.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.21.3/push/index.html">push</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_push_update_tips</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/push/git_push_update_tips.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/push/git_push_update_tips.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/push/git_push_update_tips.html" selected>v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/push/git_push_update_tips.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/push/git_push_update_tips.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/push/git_push_update_tips.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/push/git_push_update_tips.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/push/git_push_update_tips.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/push/git_push_update_tips.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/push/git_push_update_tips.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/push/git_push_update_tips.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Update remote tips after a push</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.21.3/include/git2/push.h#L125" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_push_update_tips(<span class="apiSignatureParameter functionSignatureParameter">git_push *push</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *signature</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *reflog_message</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.3/remote/git_push.html" class="apiLink objectLink">git_push *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              push
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The push object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.21.3/signature/git_signature.html" class="apiLink structLink">const git_signature *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              signature
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The identity to use when updating reflogs</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              reflog_message
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The message to insert into the reflogs. If NULL, the default is &quot;update by push&quot;.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.21.0-rc1/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/push/git_push_update_tips.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,240 @@
+---
+title: git_attr_get_ext (libgit2 v1.2.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.2.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.2.0/attr/index.html">attr</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_attr_get_ext</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/attr/git_attr_get_ext.html">main</option>
+              <option value="/docs/reference/v1.8.4/attr/git_attr_get_ext.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/attr/git_attr_get_ext.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/attr/git_attr_get_ext.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/attr/git_attr_get_ext.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/attr/git_attr_get_ext.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/attr/git_attr_get_ext.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/attr/git_attr_get_ext.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/attr/git_attr_get_ext.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/attr/git_attr_get_ext.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/attr/git_attr_get_ext.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/attr/git_attr_get_ext.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/attr/git_attr_get_ext.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/attr/git_attr_get_ext.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/attr/git_attr_get_ext.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/attr/git_attr_get_ext.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/attr/git_attr_get_ext.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/attr/git_attr_get_ext.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/attr/git_attr_get_ext.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/attr/git_attr_get_ext.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/attr/git_attr_get_ext.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/attr/git_attr_get_ext.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/attr/git_attr_get_ext.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/attr/git_attr_get_ext.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/attr/git_attr_get_ext.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/attr/git_attr_get_ext.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/attr/git_attr_get_ext.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/attr/git_attr_get_ext.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/attr/git_attr_get_ext.html" selected>v1.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Look up the value of one git attribute for path with extended options.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.2.0/include/git2/attr.h#L197" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_attr_get_ext(<span class="apiSignatureParameter functionSignatureParameter">const char **value_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">git_attr_options *opts</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *path</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *name</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char **
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              value_out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Output of the value of the attribute. Use the GIT_ATTR_... macros to test for TRUE, FALSE, UNSPECIFIED, etc. or just use the string value for attributes set to a value. You should NOT modify or free this value.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.2.0/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The repository containing the path.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.2.0/attr/git_attr_options.html" class="apiLink structLink">git_attr_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              opts
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The <a href="/docs/reference/v1.2.0/attr/git_attr_options.html" class="apiLink structLink"><code><span class="codeWord">git_attr_options</span></code></a> to use when querying these attributes.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              path
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The path to check for attributes. Relative paths are interpreted relative to the repo root. The file does not have to exist, but if it does not, then it will be treated as a plain file (not a directory).</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              name
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The name of the attribute to look up.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.2.0/attr/git_attr_get_ext.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

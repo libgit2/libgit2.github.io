@@ -1,0 +1,714 @@
+---
+title: git_checkout_options (libgit2 v1.0.1)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.0.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.0.1/checkout/index.html">checkout</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_checkout_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/checkout/git_checkout_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/checkout/git_checkout_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/checkout/git_checkout_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/checkout/git_checkout_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/checkout/git_checkout_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/checkout/git_checkout_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/checkout/git_checkout_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/checkout/git_checkout_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/checkout/git_checkout_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/checkout/git_checkout_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/checkout/git_checkout_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/checkout/git_checkout_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/checkout/git_checkout_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/checkout/git_checkout_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/checkout/git_checkout_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/checkout/git_checkout_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/checkout/git_checkout_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/checkout/git_checkout_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/checkout/git_checkout_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/checkout/git_checkout_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/checkout/git_checkout_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/checkout/git_checkout_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/checkout/git_checkout_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/checkout/git_checkout_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/checkout/git_checkout_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/checkout/git_checkout_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/checkout/git_checkout_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/checkout/git_checkout_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/checkout/git_checkout_options.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/checkout/git_checkout_options.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/checkout/git_checkout_options.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/checkout/git_checkout_options.html" selected>v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/checkout/git_checkout_options.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/checkout/git_checkout_options.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/checkout/git_checkout_options.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/checkout/git_checkout_options.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/checkout/git_checkout_options.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/checkout/git_checkout_options.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/checkout/git_checkout_options.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/checkout/git_checkout_options.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/checkout/git_checkout_options.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/checkout/git_checkout_options.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/checkout/git_checkout_options.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/checkout/git_checkout_options.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/checkout/git_checkout_options.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/checkout/git_checkout_options.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/checkout/git_checkout_options.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/checkout/git_checkout_options.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/checkout/git_checkout_options.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/checkout/git_checkout_options.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/checkout/git_checkout_options.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/checkout/git_checkout_options.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/checkout/git_checkout_options.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/checkout/git_checkout_options.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/checkout/git_checkout_options.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/checkout/git_checkout_options.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/checkout/git_checkout_options.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/checkout/git_checkout_options.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/checkout/git_checkout_options.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/checkout/git_checkout_options.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/checkout/git_checkout_options.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/checkout/git_checkout_options.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/checkout/git_checkout_options.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/checkout/git_checkout_options.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/checkout/git_checkout_options.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/checkout/git_checkout_options.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/checkout/git_checkout_options.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/checkout/git_checkout_options.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/checkout/git_checkout_options.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/checkout/git_checkout_options.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/checkout/git_checkout_options.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/checkout/git_checkout_options.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/checkout/git_checkout_options.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/checkout/git_checkout_options.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/checkout/git_checkout_options.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/checkout/git_checkout_options.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/checkout/git_checkout_options.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/checkout/git_checkout_options.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/checkout/git_checkout_options.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/checkout/git_checkout_options.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/checkout/git_checkout_options.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/checkout/git_checkout_options.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/checkout/git_checkout_options.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/checkout/git_checkout_options.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/checkout/git_checkout_options.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/checkout/git_checkout_options.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/checkout/git_checkout_options.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/checkout/git_checkout_options.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/checkout/git_checkout_options.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/checkout/git_checkout_options.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/checkout/git_checkout_options.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/checkout/git_checkout_options.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/checkout/git_checkout_options.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/checkout/git_checkout_options.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/checkout/git_checkout_options.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/checkout/git_checkout_options.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/checkout/git_checkout_options.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/checkout/git_checkout_options.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/checkout/git_checkout_options.html">v0.21.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Checkout options structure</p>
+
+        <p>Initialize with <a href="/docs/reference/v1.0.1/checkout/GIT_CHECKOUT_OPTIONS_INIT.html" class="apiLink macroLink"><code><span class="codeWord">GIT_CHECKOUT_OPTIONS_INIT</span></code></a>. Alternatively, you can
+use <a href="/docs/reference/v1.0.1/checkout/git_checkout_options_init.html" class="apiLink functionLink"><code><span class="codeWord">git_checkout_options_init</span></code></a>.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.0.1/include/git2/checkout.h#L263" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_checkout_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int checkout_strategy</span>
+<span class="apiSignatureMember structSignatureMember">int disable_filters</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int dir_mode</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int file_mode</span>
+<span class="apiSignatureMember structSignatureMember">int file_open_flags</span>
+<span class="apiSignatureMember structSignatureMember">unsigned int notify_flags</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_notify_cb notify_cb</span>
+<span class="apiSignatureMember structSignatureMember">void *notify_payload</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_progress_cb progress_cb</span>
+<span class="apiSignatureMember structSignatureMember">void *progress_payload</span>
+<span class="apiSignatureMember structSignatureMember">git_strarray paths</span>
+<span class="apiSignatureMember structSignatureMember">git_tree *baseline</span>
+<span class="apiSignatureMember structSignatureMember">git_index *baseline_index</span>
+<span class="apiSignatureMember structSignatureMember">const char *target_directory</span>
+<span class="apiSignatureMember structSignatureMember">const char *ancestor_label</span>
+<span class="apiSignatureMember structSignatureMember">const char *our_label</span>
+<span class="apiSignatureMember structSignatureMember">const char *their_label</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_perfdata_cb perfdata_cb</span>
+<span class="apiSignatureMember structSignatureMember">void *perfdata_payload</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The version</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              checkout_strategy
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>default will be a safe checkout</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              disable_filters
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>don't apply filters like CRLF conversion</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              dir_mode
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>default is 0755</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              file_mode
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>default is 0644 or 0755 as dictated by blob</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              file_open_flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>default is O_CREAT | O_TRUNC | O_WRONLY</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              notify_flags
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>see <a href="/docs/reference/v1.0.1/checkout/git_checkout_notify_t.html" class="apiLink enumLink"><code><span class="codeWord">git_checkout_notify_t</span></code></a> above</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.0.1/checkout/git_checkout_notify_cb.html" class="apiLink callbackLink">git_checkout_notify_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              notify_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Optional callback to get notifications on specific file states.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              notify_payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Payload passed to notify_cb</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.0.1/checkout/git_checkout_progress_cb.html" class="apiLink callbackLink">git_checkout_progress_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              progress_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Optional callback to notify the consumer of checkout progress.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              progress_payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Payload passed to progress_cb</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.0.1/strarray/git_strarray.html" class="apiLink structLink">git_strarray</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              paths
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>A list of wildmatch patterns or paths.</p>  <p>By default, all paths are processed. If you pass an array of wildmatch patterns, those will be used to filter which paths should be taken into account.</p>  <p>Use GIT_CHECKOUT_DISABLE_PATHSPEC_MATCH to treat as a simple list.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.0.1/tree/git_tree.html" class="apiLink objectLink">git_tree *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              baseline
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The expected content of the working directory; defaults to HEAD.</p>  <p>If the working directory does not match this baseline information, that will produce a checkout conflict.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.0.1/index/git_index.html" class="apiLink objectLink">git_index *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              baseline_index
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Like <code><span class="codeWord">baseline</span></code> above, though expressed as an index. This option overrides <code><span class="codeWord">baseline</span></code>.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              target_directory
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>alternative checkout path to workdir</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              ancestor_label
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>the name of the common ancestor side of conflicts</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              our_label
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>the name of the &quot;our&quot; side of conflicts</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              their_label
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>the name of the &quot;their&quot; side of conflicts</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.0.1/checkout/git_checkout_perfdata_cb.html" class="apiLink callbackLink">git_checkout_perfdata_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              perfdata_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Optional callback to notify the consumer of performance data.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              perfdata_payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Payload passed to perfdata_cb</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.0.1/checkout/git_checkout_options_init.html" className="apiLink functionLink">git_checkout_options_init</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.0.1/checkout/git_checkout_head.html" className="apiLink functionLink">git_checkout_head</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.0.1/checkout/git_checkout_index.html" className="apiLink functionLink">git_checkout_index</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.0.1/checkout/git_checkout_tree.html" className="apiLink functionLink">git_checkout_tree</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.0.1/deprecated/git_checkout_init_options.html" className="apiLink functionLink">git_checkout_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.0.1/merge/git_merge.html" className="apiLink functionLink">git_merge</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.0.1/reset/git_reset.html" className="apiLink functionLink">git_reset</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.0.1/reset/git_reset_from_annotated.html" className="apiLink functionLink">git_reset_from_annotated</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.21.0-rc1/checkout/git_checkout_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

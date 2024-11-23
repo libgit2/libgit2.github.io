@@ -1,0 +1,537 @@
+---
+title: git_rebase_options (libgit2 v1.6.1)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.6.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.6.1/rebase/index.html">rebase</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_rebase_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/rebase/git_rebase_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/rebase/git_rebase_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/rebase/git_rebase_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/rebase/git_rebase_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/rebase/git_rebase_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/rebase/git_rebase_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/rebase/git_rebase_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/rebase/git_rebase_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/rebase/git_rebase_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/rebase/git_rebase_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/rebase/git_rebase_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/rebase/git_rebase_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/rebase/git_rebase_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/rebase/git_rebase_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/rebase/git_rebase_options.html" selected>v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/rebase/git_rebase_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/rebase/git_rebase_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/rebase/git_rebase_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/rebase/git_rebase_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/rebase/git_rebase_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/rebase/git_rebase_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/rebase/git_rebase_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/rebase/git_rebase_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/rebase/git_rebase_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/rebase/git_rebase_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/rebase/git_rebase_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/rebase/git_rebase_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/rebase/git_rebase_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/rebase/git_rebase_options.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/rebase/git_rebase_options.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/rebase/git_rebase_options.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/rebase/git_rebase_options.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/rebase/git_rebase_options.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/rebase/git_rebase_options.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/rebase/git_rebase_options.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/rebase/git_rebase_options.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/rebase/git_rebase_options.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/rebase/git_rebase_options.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/rebase/git_rebase_options.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/rebase/git_rebase_options.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/rebase/git_rebase_options.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/rebase/git_rebase_options.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/rebase/git_rebase_options.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/rebase/git_rebase_options.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/rebase/git_rebase_options.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/rebase/git_rebase_options.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/rebase/git_rebase_options.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/rebase/git_rebase_options.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/rebase/git_rebase_options.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/rebase/git_rebase_options.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/rebase/git_rebase_options.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/rebase/git_rebase_options.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/rebase/git_rebase_options.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/rebase/git_rebase_options.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/rebase/git_rebase_options.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/rebase/git_rebase_options.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/rebase/git_rebase_options.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/rebase/git_rebase_options.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/rebase/git_rebase_options.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/rebase/git_rebase_options.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/rebase/git_rebase_options.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/rebase/git_rebase_options.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/rebase/git_rebase_options.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/rebase/git_rebase_options.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/rebase/git_rebase_options.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/rebase/git_rebase_options.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/rebase/git_rebase_options.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/rebase/git_rebase_options.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/rebase/git_rebase_options.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/rebase/git_rebase_options.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/rebase/git_rebase_options.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/rebase/git_rebase_options.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/rebase/git_rebase_options.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/rebase/git_rebase_options.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/rebase/git_rebase_options.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/rebase/git_rebase_options.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/rebase/git_rebase_options.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/rebase/git_rebase_options.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/rebase/git_rebase_options.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/rebase/git_rebase_options.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/rebase/git_rebase_options.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/rebase/git_rebase_options.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/rebase/git_rebase_options.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/rebase/git_rebase_options.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/rebase/git_rebase_options.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/rebase/git_rebase_options.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/rebase/git_rebase_options.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/rebase/git_rebase_options.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/rebase/git_rebase_options.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/rebase/git_rebase_options.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/rebase/git_rebase_options.html">v0.22.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Rebase options</p>
+
+        <p>Use to tell the rebase machinery how to operate.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.6.1/include/git2/rebase.h#L32" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_rebase_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">int quiet</span>
+<span class="apiSignatureMember structSignatureMember">int inmemory</span>
+<span class="apiSignatureMember structSignatureMember">const char *rewrite_notes_ref</span>
+<span class="apiSignatureMember structSignatureMember">git_merge_options merge_options</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_options checkout_options</span>
+<span class="apiSignatureMember structSignatureMember">git_commit_create_cb commit_create_cb</span>
+<span class="apiSignatureMember structSignatureMember">int (*)(git_buf *, git_buf *, const char *, void *) signing_cb</span>
+<span class="apiSignatureMember structSignatureMember">void *payload</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              quiet
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Used by <a href="/docs/reference/v1.6.1/rebase/git_rebase_init.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_init</span></code></a>, this will instruct other clients working on this rebase that you want a quiet rebase experience, which they may choose to provide in an application-specific manner. This has no effect upon libgit2 directly, but is provided for interoperability between Git tools.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              inmemory
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Used by <a href="/docs/reference/v1.6.1/rebase/git_rebase_init.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_init</span></code></a>, this will begin an in-memory rebase, which will allow callers to step through the rebase operations and commit the rebased changes, but will not rewind HEAD or update the repository to be in a rebasing state. This will not interfere with the working directory (if there is one).</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              rewrite_notes_ref
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Used by <a href="/docs/reference/v1.6.1/rebase/git_rebase_finish.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_finish</span></code></a>, this is the name of the notes reference used to rewrite notes for rebased commits when finishing the rebase; if NULL, the contents of the configuration option <code><span class="codeWord">notes.rewriteRef</span></code> is examined, unless the configuration option <code><span class="codeWord">notes.rewrite.rebase</span></code> is set to false. If <code><span class="codeWord">notes.rewriteRef</span></code> is also NULL, notes will not be rewritten.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.1/merge/git_merge_options.html" class="apiLink structLink">git_merge_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              merge_options
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Options to control how trees are merged during <a href="/docs/reference/v1.6.1/rebase/git_rebase_next.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_next</span></code></a>.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.1/checkout/git_checkout_options.html" class="apiLink structLink">git_checkout_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              checkout_options
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Options to control how files are written during <a href="/docs/reference/v1.6.1/rebase/git_rebase_init.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_init</span></code></a>, <a href="/docs/reference/v1.6.1/rebase/git_rebase_next.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_next</span></code></a> and <a href="/docs/reference/v1.6.1/rebase/git_rebase_abort.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_abort</span></code></a>. Note that a minimum strategy of <a href="/docs/reference/v1.6.1/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_SAFE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_SAFE</span></code></a> is defaulted in <code><span class="codeWord">init</span></code> and <code><span class="codeWord">next</span></code>, and a minimum strategy of <a href="/docs/reference/v1.6.1/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_FORCE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_FORCE</span></code></a> is defaulted in <code><span class="codeWord">abort</span></code> to match git semantics.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v1.6.1/commit/git_commit_create_cb.html" class="apiLink callbackLink">git_commit_create_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              commit_create_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Optional callback that allows users to override commit creation in <a href="/docs/reference/v1.6.1/rebase/git_rebase_commit.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_commit</span></code></a>. If specified, users can create their own commit and provide the commit ID, which may be useful for signing commits or otherwise customizing the commit creation.</p>  <p>If this callback returns <a href="/docs/reference/v1.6.1/errors/git_error_code.html#GIT_PASSTHROUGH" class="apiLink enumLink"><code><span class="codeWord">GIT_PASSTHROUGH</span></code></a>, then <a href="/docs/reference/v1.6.1/rebase/git_rebase_commit.html" class="apiLink functionLink"><code><span class="codeWord">git_rebase_commit</span></code></a> will continue to create the commit.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int (*)(git_buf *, git_buf *, const char *, void *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              signing_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>If provided, this will be called with the commit content, allowing a signature to be added to the rebase commit. Can be skipped with GIT_PASSTHROUGH. If GIT_PASSTHROUGH is returned, a commit will be made without a signature.</p>  <p>This field is only used when performing git_rebase_commit.</p>  <p>This callback is not invoked if a <a href="/docs/reference/v1.6.1/commit/git_commit_create_cb.html" class="apiLink callbackLink"><code><span class="codeWord">git_commit_create_cb</span></code></a> is specified.</p>  <p>This callback is deprecated; users should provide a creation callback as <code><span class="codeWord">commit_create_cb</span></code> that produces a commit buffer, signs it, and commits it.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>This will be passed to each of the callbacks in this struct as the last parameter.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.6.1/deprecated/git_rebase_init_options.html" className="apiLink functionLink">git_rebase_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.6.1/rebase/git_rebase_options_init.html" className="apiLink functionLink">git_rebase_options_init</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.6.1/rebase/git_rebase_init.html" className="apiLink functionLink">git_rebase_init</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.6.1/rebase/git_rebase_open.html" className="apiLink functionLink">git_rebase_open</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v1.2.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.99.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.24.0-rc1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.22.0-rc1/rebase/git_rebase_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

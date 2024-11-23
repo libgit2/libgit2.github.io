@@ -1,0 +1,212 @@
+---
+title: git_commit_graph_writer_add_index_file (libgit2 v1.3.1)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.3.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.3.1/sys/commit_graph/index.html">commit_graph (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_commit_graph_writer_add_index_file</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/commit_graph/git_commit_graph_writer_add_index_file.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html" selected>v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html">v1.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Add an <code><span class="codeWord">.idx</span></code> file (associated to a packfile) to the writer.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.3.1/include/git2/sys/commit_graph.h#L70" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_commit_graph_writer_add_index_file(<span class="apiSignatureParameter functionSignatureParameter">git_commit_graph_writer *w</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *idx_path</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.3.1/sys/commit_graph/git_commit_graph_writer.html" class="apiLink objectLink">git_commit_graph_writer *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              w
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The writer.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.3.1/repository/git_repository.html" class="apiLink objectLink">git_repository *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The repository that owns the <code><span class="codeWord">.idx</span></code> file.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              idx_path
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The path of an <code><span class="codeWord">.idx</span></code> file.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.2.0/sys/commit_graph/git_commit_graph_writer_add_index_file.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

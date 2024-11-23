@@ -1,0 +1,614 @@
+---
+title: git_buf (libgit2 v0.22.3)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.22.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.22.3/buffer/index.html">buffer</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_buf</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/buffer/git_buf.html">main</option>
+              <option value="/docs/reference/v1.8.4/buffer/git_buf.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/buffer/git_buf.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/buffer/git_buf.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/buffer/git_buf.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/buffer/git_buf.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/buffer/git_buf.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/buffer/git_buf.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/buffer/git_buf.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/buffer/git_buf.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/buffer/git_buf.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/buffer/git_buf.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/buffer/git_buf.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/buffer/git_buf.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/buffer/git_buf.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/buffer/git_buf.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/buffer/git_buf.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/buffer/git_buf.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/buffer/git_buf.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/buffer/git_buf.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/buffer/git_buf.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/buffer/git_buf.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/buffer/git_buf.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/buffer/git_buf.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/buffer/git_buf.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/buffer/git_buf.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/buffer/git_buf.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/buffer/git_buf.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/buffer/git_buf.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/buffer/git_buf.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/buffer/git_buf.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/buffer/git_buf.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/buffer/git_buf.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/buffer/git_buf.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/buffer/git_buf.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/buffer/git_buf.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/buffer/git_buf.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/buffer/git_buf.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/buffer/git_buf.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/buffer/git_buf.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/buffer/git_buf.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/buffer/git_buf.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/buffer/git_buf.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/buffer/git_buf.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/buffer/git_buf.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/buffer/git_buf.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/buffer/git_buf.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/buffer/git_buf.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/buffer/git_buf.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/buffer/git_buf.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/buffer/git_buf.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/buffer/git_buf.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/buffer/git_buf.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/buffer/git_buf.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/buffer/git_buf.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/buffer/git_buf.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/buffer/git_buf.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/buffer/git_buf.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/buffer/git_buf.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/buffer/git_buf.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/buffer/git_buf.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/buffer/git_buf.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/buffer/git_buf.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/buffer/git_buf.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/buffer/git_buf.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/buffer/git_buf.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/buffer/git_buf.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/buffer/git_buf.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/buffer/git_buf.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/buffer/git_buf.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/buffer/git_buf.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/buffer/git_buf.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/buffer/git_buf.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/buffer/git_buf.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/buffer/git_buf.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/buffer/git_buf.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/buffer/git_buf.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/buffer/git_buf.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/buffer/git_buf.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/buffer/git_buf.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/buffer/git_buf.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/buffer/git_buf.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/buffer/git_buf.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/buffer/git_buf.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/buffer/git_buf.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/buffer/git_buf.html" selected>v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/buffer/git_buf.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/buffer/git_buf.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/buffer/git_buf.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/buffer/git_buf.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/buffer/git_buf.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/buffer/git_buf.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/buffer/git_buf.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/buffer/git_buf.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/buffer/git_buf.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/buffer/git_buf.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/buffer/git_buf.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/buffer/git_buf.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/buffer/git_buf.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/buffer/git_buf.html">v0.20.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>A data buffer for exporting data from libgit2</p>
+
+        <p>Sometimes libgit2 wants to return an allocated data buffer to the
+caller and have the caller take responsibility for freeing that memory.
+This can be awkward if the caller does not have easy access to the same
+allocation functions that libgit2 is using.  In those cases, libgit2
+will fill in a <a href="/docs/reference/v0.22.3/buffer/git_buf.html" class="apiLink structLink"><code><span class="codeWord">git_buf</span></code></a> and the caller can use <code><span class="codeWord">git_buf_free()</span></code> to
+release it when they are done.</p>
+
+        <p>A <a href="/docs/reference/v0.22.3/buffer/git_buf.html" class="apiLink structLink"><code><span class="codeWord">git_buf</span></code></a> may also be used for the caller to pass in a reference to
+a block of memory they hold.  In this case, libgit2 will not resize or
+free the memory, but will read from it as needed.</p>
+
+        <p>A <a href="/docs/reference/v0.22.3/buffer/git_buf.html" class="apiLink structLink"><code><span class="codeWord">git_buf</span></code></a> is a public structure with three fields:</p>
+
+        <ul>
+<li><code><span class="codeWord">ptr</span></code> points to the start of the allocated memory.  If it is NULL,
+then the <a href="/docs/reference/v0.22.3/buffer/git_buf.html" class="apiLink structLink"><code><span class="codeWord">git_buf</span></code></a> is considered empty and libgit2 will feel free
+to overwrite it with new data.</li>
+</ul>
+
+        <ul>
+<li><code><span class="codeWord">size</span></code> holds the size (in bytes) of the data that is actually used.</li>
+</ul>
+
+        <ul>
+<li><code><span class="codeWord">asize</span></code> holds the known total amount of allocated memory if the <code><span class="codeWord">ptr</span></code>
+was allocated by libgit2.  It may be larger than <code><span class="codeWord">size</span></code>.  If <code><span class="codeWord">ptr</span></code>
+was not allocated by libgit2 and should not be resized and/or freed,
+then <code><span class="codeWord">asize</span></code> will be set to zero.</li>
+</ul>
+
+        <p>Some APIs may occasionally do something slightly unusual with a buffer,
+such as setting <code><span class="codeWord">ptr</span></code> to a value that was passed in by the user.  In
+those cases, the behavior will be clearly documented by the API.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.22.3/include/git2/buffer.h#L52" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_buf {
+<span class="apiSignatureMember structSignatureMember">char *ptr</span>
+<span class="apiSignatureMember structSignatureMember">size_t asize</span>
+<span class="apiSignatureMember structSignatureMember">size_t size</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              ptr
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              asize
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              size_t
+            </div>
+            <div class="apiMemberName structMemberName">
+              size
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.22.3/blob/git_blob_filtered_content.html" className="apiLink functionLink">git_blob_filtered_content</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/branch/git_branch_upstream_name.html" className="apiLink functionLink">git_branch_upstream_name</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/branch/git_branch_remote_name.html" className="apiLink functionLink">git_branch_remote_name</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/branch/git_branch_upstream_remote.html" className="apiLink functionLink">git_branch_upstream_remote</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/buffer/git_buf_free.html" className="apiLink functionLink">git_buf_free</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/buffer/git_buf_grow.html" className="apiLink functionLink">git_buf_grow</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/buffer/git_buf_set.html" className="apiLink functionLink">git_buf_set</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/buffer/git_buf_is_binary.html" className="apiLink functionLink">git_buf_is_binary</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/buffer/git_buf_contains_nul.html" className="apiLink functionLink">git_buf_contains_nul</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/config/git_config_find_global.html" className="apiLink functionLink">git_config_find_global</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/config/git_config_find_xdg.html" className="apiLink functionLink">git_config_find_xdg</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/config/git_config_find_system.html" className="apiLink functionLink">git_config_find_system</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/describe/git_describe_format.html" className="apiLink functionLink">git_describe_format</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/diff/git_diff_stats_to_buf.html" className="apiLink functionLink">git_diff_stats_to_buf</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/diff/git_diff_format_email.html" className="apiLink functionLink">git_diff_format_email</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/diff/git_diff_commit_as_email.html" className="apiLink functionLink">git_diff_commit_as_email</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/filter/git_filter_list_apply_to_data.html" className="apiLink functionLink">git_filter_list_apply_to_data</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/filter/git_filter_list_apply_to_file.html" className="apiLink functionLink">git_filter_list_apply_to_file</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/filter/git_filter_list_apply_to_blob.html" className="apiLink functionLink">git_filter_list_apply_to_blob</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/message/git_message_prettify.html" className="apiLink functionLink">git_message_prettify</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/object/git_object_short_id.html" className="apiLink functionLink">git_object_short_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/pack/git_packbuilder_write_buf.html" className="apiLink functionLink">git_packbuilder_write_buf</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/patch/git_patch_to_buf.html" className="apiLink functionLink">git_patch_to_buf</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/refspec/git_refspec_transform.html" className="apiLink functionLink">git_refspec_transform</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/refspec/git_refspec_rtransform.html" className="apiLink functionLink">git_refspec_rtransform</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/remote/git_remote_default_branch.html" className="apiLink functionLink">git_remote_default_branch</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/repository/git_repository_discover.html" className="apiLink functionLink">git_repository_discover</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/repository/git_repository_message.html" className="apiLink functionLink">git_repository_message</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/submodule/git_submodule_resolve_url.html" className="apiLink functionLink">git_submodule_resolve_url</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/sys/filter/git_filter_apply_fn.html" className="apiLink callbackLink">git_filter_apply_fn</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/sys/mempack/git_mempack_dump.html" className="apiLink functionLink">git_mempack_dump</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/buffer/git_buf.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v1.4.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.20.0/buffer/git_buf.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

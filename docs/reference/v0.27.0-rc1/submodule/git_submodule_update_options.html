@@ -1,0 +1,474 @@
+---
+title: git_submodule_update_options (libgit2 v0.27.0-rc1)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.27.0-rc1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.27.0-rc1/submodule/index.html">submodule</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_submodule_update_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/submodule/git_submodule_update_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/submodule/git_submodule_update_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/submodule/git_submodule_update_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/submodule/git_submodule_update_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/submodule/git_submodule_update_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/submodule/git_submodule_update_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/submodule/git_submodule_update_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/submodule/git_submodule_update_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/submodule/git_submodule_update_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/submodule/git_submodule_update_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/submodule/git_submodule_update_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/submodule/git_submodule_update_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/submodule/git_submodule_update_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/submodule/git_submodule_update_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/submodule/git_submodule_update_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/submodule/git_submodule_update_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/submodule/git_submodule_update_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/submodule/git_submodule_update_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/submodule/git_submodule_update_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/submodule/git_submodule_update_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/submodule/git_submodule_update_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/submodule/git_submodule_update_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/submodule/git_submodule_update_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/submodule/git_submodule_update_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/submodule/git_submodule_update_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/submodule/git_submodule_update_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/submodule/git_submodule_update_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/submodule/git_submodule_update_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/submodule/git_submodule_update_options.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/submodule/git_submodule_update_options.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/submodule/git_submodule_update_options.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/submodule/git_submodule_update_options.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/submodule/git_submodule_update_options.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/submodule/git_submodule_update_options.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/submodule/git_submodule_update_options.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/submodule/git_submodule_update_options.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/submodule/git_submodule_update_options.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/submodule/git_submodule_update_options.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/submodule/git_submodule_update_options.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/submodule/git_submodule_update_options.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/submodule/git_submodule_update_options.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/submodule/git_submodule_update_options.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/submodule/git_submodule_update_options.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/submodule/git_submodule_update_options.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/submodule/git_submodule_update_options.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/submodule/git_submodule_update_options.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/submodule/git_submodule_update_options.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/submodule/git_submodule_update_options.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/submodule/git_submodule_update_options.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/submodule/git_submodule_update_options.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/submodule/git_submodule_update_options.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/submodule/git_submodule_update_options.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/submodule/git_submodule_update_options.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/submodule/git_submodule_update_options.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/submodule/git_submodule_update_options.html" selected>v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/submodule/git_submodule_update_options.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/submodule/git_submodule_update_options.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/submodule/git_submodule_update_options.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/submodule/git_submodule_update_options.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/submodule/git_submodule_update_options.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/submodule/git_submodule_update_options.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/submodule/git_submodule_update_options.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/submodule/git_submodule_update_options.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/submodule/git_submodule_update_options.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/submodule/git_submodule_update_options.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/submodule/git_submodule_update_options.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/submodule/git_submodule_update_options.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/submodule/git_submodule_update_options.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/submodule/git_submodule_update_options.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/submodule/git_submodule_update_options.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/submodule/git_submodule_update_options.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/submodule/git_submodule_update_options.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/submodule/git_submodule_update_options.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/submodule/git_submodule_update_options.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/submodule/git_submodule_update_options.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/submodule/git_submodule_update_options.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/submodule/git_submodule_update_options.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/submodule/git_submodule_update_options.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/submodule/git_submodule_update_options.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/submodule/git_submodule_update_options.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/submodule/git_submodule_update_options.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/submodule/git_submodule_update_options.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/submodule/git_submodule_update_options.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/submodule/git_submodule_update_options.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/submodule/git_submodule_update_options.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/submodule/git_submodule_update_options.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/submodule/git_submodule_update_options.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/submodule/git_submodule_update_options.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/submodule/git_submodule_update_options.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/submodule/git_submodule_update_options.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/submodule/git_submodule_update_options.html">v0.22.0-rc1</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Submodule update options structure</p>
+
+        <p>Use the GIT_SUBMODULE_UPDATE_OPTIONS_INIT to get the default settings,
+like this:</p>
+
+        <p>git_submodule_update_options opts = GIT_SUBMODULE_UPDATE_OPTIONS_INIT;</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.27.0-rc1/include/git2/submodule.h#L129" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_submodule_update_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_options checkout_opts</span>
+<span class="apiSignatureMember structSignatureMember">git_fetch_options fetch_opts</span>
+<span class="apiSignatureMember structSignatureMember">int allow_fetch</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.27.0-rc1/checkout/git_checkout_options.html" class="apiLink structLink">git_checkout_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              checkout_opts
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>These options are passed to the checkout step. To disable checkout, set the <code><span class="codeWord">checkout_strategy</span></code> to <a href="/docs/reference/v0.27.0-rc1/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_NONE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_NONE</span></code></a>. Generally you will want the use GIT_CHECKOUT_SAFE to update files in the working directory.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.27.0-rc1/remote/git_fetch_options.html" class="apiLink structLink">git_fetch_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              fetch_opts
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Options which control the fetch, including callbacks.</p>  <p>The callbacks to use for reporting fetch progress, and for acquiring credentials in the event they are needed.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              allow_fetch
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Allow fetching from the submodule's default remote if the target commit isn't found. Enabled by default.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.27.0-rc1/submodule/git_submodule_update_init_options.html" className="apiLink functionLink">git_submodule_update_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.27.0-rc1/submodule/git_submodule_update.html" className="apiLink functionLink">git_submodule_update</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.26.0-rc1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.25.0-rc1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.24.5/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.24.4/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.22.0-rc1/submodule/git_submodule_update_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,68 @@
+---
+title: git_config_backend_entry (libgit2 main)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/main/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/main/sys/config/index.html">config (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_config_backend_entry</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/config/git_config_backend_entry.html" selected>main</option>
+            </select>
+          </div>
+        </div>
+
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/config.h#L23" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_config_backend_entry {
+<span class="apiSignatureMember structSignatureMember">struct git_config_entry entry</span>
+<span class="apiSignatureMember structSignatureMember">void (*)(struct git_config_backend_entry *) free</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              struct git_config_entry
+            </div>
+            <div class="apiMemberName structMemberName">
+              entry
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void (*)(struct git_config_backend_entry *)
+            </div>
+            <div class="apiMemberName structMemberName">
+              free
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/main/sys/config/git_config_backend_entry.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          </ul>
+        </div>
+      </div>

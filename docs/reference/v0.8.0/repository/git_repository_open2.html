@@ -1,0 +1,160 @@
+---
+title: git_repository_open2 (libgit2 v0.8.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.8.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.8.0/repository/index.html">repository</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_repository_open2</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.15.0/repository/git_repository_open2.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/repository/git_repository_open2.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/repository/git_repository_open2.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/repository/git_repository_open2.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/repository/git_repository_open2.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/repository/git_repository_open2.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/repository/git_repository_open2.html" selected>v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/repository/git_repository_open2.html">v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/repository/git_repository_open2.html">v0.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Open a git repository by manually specifying all its paths</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.8.0/include/git2/repository.h#L93" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_repository_open2(<span class="apiSignatureParameter functionSignatureParameter">git_repository **repository</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *git_dir</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *git_object_directory</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *git_index_file</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *git_work_tree</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.8.0/repository/git_repository.html" class="apiLink objectLink">git_repository **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repository
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>pointer to the repo which will be opened</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              git_dir
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The full path to the repository folder e.g. a '.git' folder for live repos, any folder for bare Equivalent to $GIT_DIR. Cannot be NULL.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              git_object_directory
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The full path to the ODB folder. the folder where all the loose and packed objects are stored Equivalent to $GIT_OBJECT_DIRECTORY. If NULL, &quot;$GIT_DIR/objects/&quot; is assumed.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              git_index_file
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The full path to the index (dircache) file Equivalent to $GIT_INDEX_FILE. If NULL, &quot;$GIT_DIR/index&quot; is assumed.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              git_work_tree
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The full path to the working tree of the repository, if the repository is not bare. Equivalent to $GIT_WORK_TREE. If NULL, the repository is assumed to be bare.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success; error code otherwise</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.15.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.8.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.3.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.2.0/repository/git_repository_open2.html" class="apiVersionLink functionVersionLink">v0.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

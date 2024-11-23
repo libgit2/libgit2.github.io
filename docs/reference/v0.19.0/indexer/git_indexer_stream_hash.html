@@ -1,0 +1,83 @@
+---
+title: git_indexer_stream_hash (libgit2 v0.19.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.19.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.19.0/indexer/index.html">indexer</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_indexer_stream_hash</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.19.0/indexer/git_indexer_stream_hash.html" selected>v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/indexer/git_indexer_stream_hash.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/indexer/git_indexer_stream_hash.html">v0.17.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Get the packfile's hash</p>
+
+        <p>A packfile's name is derived from the sorted hashing of all object
+names. This is only correct after the index has been finalized.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.19.0/include/git2/indexer.h#L59" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          const git_oid *git_indexer_stream_hash(<span class="apiSignatureParameter functionSignatureParameter">const git_indexer_stream *idx</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v0.19.0/indexer/git_indexer_stream.html" class="apiLink objectLink">const git_indexer_stream *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              idx
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the indexer instance</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            <a href="/docs/reference/v0.19.0/oid/git_oid.html" class="apiLink structLink">const git_oid *</a>
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/indexer/git_indexer_stream_hash.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.18.0/indexer/git_indexer_stream_hash.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.17.0/indexer/git_indexer_stream_hash.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,419 @@
+---
+title: git_proxy_options (libgit2 v0.28.0-rc1)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.28.0-rc1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.28.0-rc1/proxy/index.html">proxy</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_proxy_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/proxy/git_proxy_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/proxy/git_proxy_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/proxy/git_proxy_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/proxy/git_proxy_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/proxy/git_proxy_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/proxy/git_proxy_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/proxy/git_proxy_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/proxy/git_proxy_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/proxy/git_proxy_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/proxy/git_proxy_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/proxy/git_proxy_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/proxy/git_proxy_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/proxy/git_proxy_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/proxy/git_proxy_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/proxy/git_proxy_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/proxy/git_proxy_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/proxy/git_proxy_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/proxy/git_proxy_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/proxy/git_proxy_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/proxy/git_proxy_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/proxy/git_proxy_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/proxy/git_proxy_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/proxy/git_proxy_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/proxy/git_proxy_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/proxy/git_proxy_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/proxy/git_proxy_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/proxy/git_proxy_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/proxy/git_proxy_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/proxy/git_proxy_options.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/proxy/git_proxy_options.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/proxy/git_proxy_options.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/proxy/git_proxy_options.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/proxy/git_proxy_options.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/proxy/git_proxy_options.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/proxy/git_proxy_options.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/proxy/git_proxy_options.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/proxy/git_proxy_options.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/proxy/git_proxy_options.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/proxy/git_proxy_options.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/proxy/git_proxy_options.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/proxy/git_proxy_options.html" selected>v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/proxy/git_proxy_options.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/proxy/git_proxy_options.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/proxy/git_proxy_options.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/proxy/git_proxy_options.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/proxy/git_proxy_options.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/proxy/git_proxy_options.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/proxy/git_proxy_options.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/proxy/git_proxy_options.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/proxy/git_proxy_options.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/proxy/git_proxy_options.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/proxy/git_proxy_options.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/proxy/git_proxy_options.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/proxy/git_proxy_options.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/proxy/git_proxy_options.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/proxy/git_proxy_options.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/proxy/git_proxy_options.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/proxy/git_proxy_options.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/proxy/git_proxy_options.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/proxy/git_proxy_options.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/proxy/git_proxy_options.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/proxy/git_proxy_options.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/proxy/git_proxy_options.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/proxy/git_proxy_options.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/proxy/git_proxy_options.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/proxy/git_proxy_options.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/proxy/git_proxy_options.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/proxy/git_proxy_options.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/proxy/git_proxy_options.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/proxy/git_proxy_options.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.4/proxy/git_proxy_options.html">v0.24.4</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Options for connecting through a proxy</p>
+
+        <p>Note that not all types may be supported, depending on the platform
+and compilation options.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.28.0-rc1/include/git2/proxy.h#L42" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_proxy_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">git_proxy_t type</span>
+<span class="apiSignatureMember structSignatureMember">const char *url</span>
+<span class="apiSignatureMember structSignatureMember">git_cred_acquire_cb credentials</span>
+<span class="apiSignatureMember structSignatureMember">git_transport_certificate_check_cb certificate_check</span>
+<span class="apiSignatureMember structSignatureMember">void *payload</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.28.0-rc1/proxy/git_proxy_t.html" class="apiLink enumLink">git_proxy_t</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              type
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The type of proxy to use, by URL, auto-detect.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              url
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The URL of the proxy.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.28.0-rc1/transport/git_cred_acquire_cb.html" class="apiLink callbackLink">git_cred_acquire_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              credentials
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>This will be called if the remote host requires authentication in order to connect to it.</p>  <p>Returning GIT_PASSTHROUGH will make libgit2 behave as though this field isn't set.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.28.0-rc1/transport/git_transport_certificate_check_cb.html" class="apiLink callbackLink">git_transport_certificate_check_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              certificate_check
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>If cert verification fails, this will be called to let the user make the final decision of whether to allow the connection to proceed. Returns 0 to allow the connection or a negative value to indicate an error.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Payload to be provided to the credentials and certificate check callbacks.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.28.0-rc1/proxy/git_proxy_init_options.html" className="apiLink functionLink">git_proxy_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.28.0-rc1/remote/git_remote_connect.html" className="apiLink functionLink">git_remote_connect</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.28.0-rc1/sys/transport/git_transport_smart_proxy_options.html" className="apiLink functionLink">git_transport_smart_proxy_options</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.99.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.24.4/proxy/git_proxy_options.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          </ul>
+        </div>
+      </div>

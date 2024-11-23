@@ -1,0 +1,154 @@
+---
+title: git_error_set (libgit2 v1.8.4)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.4/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.4/sys/errors/index.html">errors (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_error_set</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/errors/git_error_set.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/errors/git_error_set.html" selected>v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/errors/git_error_set.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/errors/git_error_set.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/errors/git_error_set.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/errors/git_error_set.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/errors/git_error_set.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/errors/git_error_set.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/errors/git_error_set.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/errors/git_error_set.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/errors/git_error_set.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/errors/git_error_set.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/errors/git_error_set.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/errors/git_error_set.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/errors/git_error_set.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/errors/git_error_set.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/errors/git_error_set.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/errors/git_error_set.html">v1.5.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Set the error message string for this thread, using <code><span class="codeWord">printf</span></code>-style
+formatting.</p>
+
+        <p>This function is public so that custom ODB backends and the like can
+relay an error message through libgit2.  Most regular users of libgit2
+will never need to call this function -- actually, calling it in most
+circumstances (for example, calling from within a callback function)
+will just end up having the value overwritten by libgit2 internals.</p>
+
+        <p>This error message is stored in thread-local storage and only applies
+to the particular thread that this libgit2 call is made from.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.4/include/git2/sys/errors.h#L38" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          void git_error_set(<span class="apiSignatureParameter functionSignatureParameter">int error_class</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *fmt</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              error_class
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>One of the <a href="/docs/reference/v1.8.4/errors/git_error_t.html" class="apiLink enumLink"><code><span class="codeWord">git_error_t</span></code></a> enum above describing the general subsystem that is responsible for the error.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              fmt
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The <code><span class="codeWord">printf</span></code>-style format string; subsequent arguments must be the arguments for the format string.</p> 
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/errors/git_error_set.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.5.0/errors/git_error_set.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,121 @@
+---
+title: git_repository_newobject (libgit2 v0.3.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.3.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.3.0/repository/index.html">repository</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_repository_newobject</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.3.0/repository/git_repository_newobject.html" selected>v0.3.0</option>
+              <option value="/docs/reference/v0.2.0/repository/git_repository_newobject.html">v0.2.0</option>
+              <option value="/docs/reference/v0.1.0/repository/git_repository_newobject.html">v0.1.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create a new in-memory repository object with
+the given type.</p>
+
+        <p>The object's attributes can be filled in using the
+corresponding setter methods.</p>
+
+        <p>The object will be written back to given git_repository
+when the git_object_write() function is called; objects
+cannot be written to disk until all their main
+attributes have been properly filled.</p>
+
+        <p>Objects are instantiated with no SHA1 id; their id
+will be automatically generated when writing to the
+repository.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.3.0/include/git2/repository.h#L196" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_repository_newobject(<span class="apiSignatureParameter functionSignatureParameter">git_object **object</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">git_otype type</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_object **
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              object
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>pointer to the new object</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_repository *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              repo
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Repository where the object belongs</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              git_otype
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              type
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Type of the object to be created</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>the new object</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.3.0/repository/git_repository_newobject.html" class="apiVersionLink functionVersionLink">v0.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.2.0/repository/git_repository_newobject.html" class="apiVersionLink functionVersionLink">v0.2.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.1.0/repository/git_repository_newobject.html" class="apiVersionLink functionVersionLink">v0.1.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

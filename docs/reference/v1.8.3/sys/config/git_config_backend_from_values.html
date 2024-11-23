@@ -1,0 +1,139 @@
+---
+title: git_config_backend_from_values (libgit2 v1.8.3)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.3/sys/config/index.html">config (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_config_backend_from_values</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/config/git_config_backend_from_values.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/config/git_config_backend_from_values.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/config/git_config_backend_from_values.html" selected>v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/config/git_config_backend_from_values.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/config/git_config_backend_from_values.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/config/git_config_backend_from_values.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/config/git_config_backend_from_values.html">v1.8.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Create an in-memory configuration backend from a list of name/value
+pairs.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.3/include/git2/sys/config.h#L173" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_config_backend_from_values(<span class="apiSignatureParameter functionSignatureParameter">git_config_backend **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char **values</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t len</span>, <span class="apiSignatureParameter functionSignatureParameter">git_config_backend_memory_options *opts</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.3/sys/config/git_config_backend.html" class="apiLink structLink">git_config_backend **</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              out
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the new backend</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char **
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              values
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the configuration values to set (in &quot;key=value&quot; format)</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              len
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the length of the values array</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.8.3/sys/config/git_config_backend_memory_options.html" class="apiLink structLink">git_config_backend_memory_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              opts
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the options to initialize this backend with, or NULL</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/config/git_config_backend_from_values.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/config/git_config_backend_from_values.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/config/git_config_backend_from_values.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/config/git_config_backend_from_values.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/config/git_config_backend_from_values.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/config/git_config_backend_from_values.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.8.0/sys/config/git_config_backend_from_values.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

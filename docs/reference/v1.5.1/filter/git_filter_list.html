@@ -1,0 +1,498 @@
+---
+title: git_filter_list (libgit2 v1.5.1)
+layout: default
+---
+
+      <div class="api object">
+        <div class="apiBreadcrumb objectBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.5.1/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.5.1/filter/index.html">filter</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader objectHeader">
+          <h2 class="apiName objectName">git_filter_list</h2>
+          <div class="apiHeaderVersionSelect objectHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/filter/git_filter_list.html">main</option>
+              <option value="/docs/reference/v1.8.4/filter/git_filter_list.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/filter/git_filter_list.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/filter/git_filter_list.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/filter/git_filter_list.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/filter/git_filter_list.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/filter/git_filter_list.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/filter/git_filter_list.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/filter/git_filter_list.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/filter/git_filter_list.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/filter/git_filter_list.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/filter/git_filter_list.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/filter/git_filter_list.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/filter/git_filter_list.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/filter/git_filter_list.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/filter/git_filter_list.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/filter/git_filter_list.html" selected>v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/filter/git_filter_list.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/filter/git_filter_list.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/filter/git_filter_list.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/filter/git_filter_list.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/filter/git_filter_list.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/filter/git_filter_list.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/filter/git_filter_list.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/filter/git_filter_list.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/filter/git_filter_list.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/filter/git_filter_list.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/filter/git_filter_list.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/filter/git_filter_list.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/filter/git_filter_list.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/filter/git_filter_list.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/filter/git_filter_list.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/filter/git_filter_list.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/filter/git_filter_list.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/filter/git_filter_list.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/filter/git_filter_list.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/filter/git_filter_list.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/filter/git_filter_list.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/filter/git_filter_list.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/filter/git_filter_list.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/filter/git_filter_list.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/filter/git_filter_list.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/filter/git_filter_list.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/filter/git_filter_list.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/filter/git_filter_list.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/filter/git_filter_list.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/filter/git_filter_list.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/filter/git_filter_list.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/filter/git_filter_list.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/filter/git_filter_list.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/filter/git_filter_list.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/filter/git_filter_list.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/filter/git_filter_list.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/filter/git_filter_list.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/filter/git_filter_list.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/filter/git_filter_list.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/filter/git_filter_list.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/filter/git_filter_list.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/filter/git_filter_list.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/filter/git_filter_list.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/filter/git_filter_list.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/filter/git_filter_list.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/filter/git_filter_list.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/filter/git_filter_list.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/filter/git_filter_list.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/filter/git_filter_list.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/filter/git_filter_list.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/filter/git_filter_list.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/filter/git_filter_list.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/filter/git_filter_list.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/filter/git_filter_list.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/filter/git_filter_list.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/filter/git_filter_list.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/filter/git_filter_list.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/filter/git_filter_list.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/filter/git_filter_list.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/filter/git_filter_list.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/filter/git_filter_list.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/filter/git_filter_list.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/filter/git_filter_list.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/filter/git_filter_list.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/filter/git_filter_list.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/filter/git_filter_list.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/filter/git_filter_list.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/filter/git_filter_list.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/filter/git_filter_list.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/filter/git_filter_list.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/filter/git_filter_list.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/filter/git_filter_list.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/filter/git_filter_list.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/filter/git_filter_list.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/filter/git_filter_list.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/filter/git_filter_list.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/filter/git_filter_list.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/filter/git_filter_list.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/filter/git_filter_list.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/filter/git_filter_list.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/filter/git_filter_list.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/filter/git_filter_list.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/filter/git_filter_list.html">v0.20.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription objectDescription">
+        <p>List of filters to be applied</p>
+
+        <p>This represents a list of filters to be applied to a file / blob.  You
+can build the list with one call, apply it with another, and dispose it
+with a third.  In typical usage, there are not many occasions where a
+git_filter_list is needed directly since the library will generally
+handle conversions for you, but it can be convenient to be able to
+build and apply the list sometimes.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader objectSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink objectSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.5.1/include/git2/filter.h#L112" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature objectSignature">
+          typedef struct git_filter_list git_filter_list
+        </div>
+
+        <h3 class="apiParameterToHeader objectParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo objectParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v1.5.1/deprecated/git_filter_list_stream_data.html" className="apiLink functionLink">git_filter_list_stream_data</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/deprecated/git_filter_list_apply_to_data.html" className="apiLink functionLink">git_filter_list_apply_to_data</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_load.html" className="apiLink functionLink">git_filter_list_load</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_load_ext.html" className="apiLink functionLink">git_filter_list_load_ext</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_contains.html" className="apiLink functionLink">git_filter_list_contains</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_apply_to_buffer.html" className="apiLink functionLink">git_filter_list_apply_to_buffer</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_apply_to_file.html" className="apiLink functionLink">git_filter_list_apply_to_file</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_apply_to_blob.html" className="apiLink functionLink">git_filter_list_apply_to_blob</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_stream_buffer.html" className="apiLink functionLink">git_filter_list_stream_buffer</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_stream_file.html" className="apiLink functionLink">git_filter_list_stream_file</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_stream_blob.html" className="apiLink functionLink">git_filter_list_stream_blob</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list_free.html" className="apiLink functionLink">git_filter_list_free</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/sys/filter/git_filter_list_new.html" className="apiLink functionLink">git_filter_list_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/sys/filter/git_filter_list_push.html" className="apiLink functionLink">git_filter_list_push</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v1.5.1/sys/filter/git_filter_list_length.html" className="apiLink functionLink">git_filter_list_length</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader objectVersionsHeader">Versions</h3>
+        <div class="apiVersions objectVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/main/filter/git_filter_list.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged objectVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced objectVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.20.0/filter/git_filter_list.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

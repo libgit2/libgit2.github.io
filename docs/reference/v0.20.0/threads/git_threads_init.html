@@ -1,0 +1,109 @@
+---
+title: git_threads_init (libgit2 v0.20.0)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.20.0/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.20.0/threads/index.html">threads</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_threads_init</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/v0.21.5/threads/git_threads_init.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/threads/git_threads_init.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/threads/git_threads_init.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/threads/git_threads_init.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/threads/git_threads_init.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/threads/git_threads_init.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/threads/git_threads_init.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/threads/git_threads_init.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/threads/git_threads_init.html" selected>v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/threads/git_threads_init.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/threads/git_threads_init.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/threads/git_threads_init.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/threads/git_threads_init.html">v0.16.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Init the threading system.</p>
+
+        <p>If libgit2 has been built with GIT_THREADS
+on, this function must be called once before
+any other library functions.</p>
+
+        <p>If libgit2 has been built without GIT_THREADS
+support, this function is a no-op.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.20.0/include/git2/threads.h#L33" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_threads_init();
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error code</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
+            <a href="/docs/reference/v0.18.0/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.16.0/threads/git_threads_init.html" class="apiVersionLink functionVersionLink">v0.16.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

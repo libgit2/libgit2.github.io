@@ -1,0 +1,872 @@
+---
+title: git_oid (libgit2 v0.24.5)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.24.5/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.24.5/oid/index.html">oid</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_oid</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/oid/git_oid.html">main</option>
+              <option value="/docs/reference/v1.8.4/oid/git_oid.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/oid/git_oid.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/oid/git_oid.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/oid/git_oid.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/oid/git_oid.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/oid/git_oid.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/oid/git_oid.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/oid/git_oid.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/oid/git_oid.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/oid/git_oid.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/oid/git_oid.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/oid/git_oid.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/oid/git_oid.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/oid/git_oid.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/oid/git_oid.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/oid/git_oid.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/oid/git_oid.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/oid/git_oid.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/oid/git_oid.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/oid/git_oid.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/oid/git_oid.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/oid/git_oid.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/oid/git_oid.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/oid/git_oid.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/oid/git_oid.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/oid/git_oid.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/oid/git_oid.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/oid/git_oid.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/oid/git_oid.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/oid/git_oid.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/oid/git_oid.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/oid/git_oid.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/oid/git_oid.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/oid/git_oid.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/oid/git_oid.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/oid/git_oid.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/oid/git_oid.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/oid/git_oid.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/oid/git_oid.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/oid/git_oid.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/oid/git_oid.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/oid/git_oid.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/oid/git_oid.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/oid/git_oid.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/oid/git_oid.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/oid/git_oid.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/oid/git_oid.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/oid/git_oid.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/oid/git_oid.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/oid/git_oid.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/oid/git_oid.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/oid/git_oid.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/oid/git_oid.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/oid/git_oid.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/oid/git_oid.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/oid/git_oid.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/oid/git_oid.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/oid/git_oid.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/oid/git_oid.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/oid/git_oid.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/oid/git_oid.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/oid/git_oid.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/oid/git_oid.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/oid/git_oid.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/oid/git_oid.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/oid/git_oid.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/oid/git_oid.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/oid/git_oid.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/oid/git_oid.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/oid/git_oid.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/oid/git_oid.html" selected>v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/oid/git_oid.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/oid/git_oid.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/oid/git_oid.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/oid/git_oid.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/oid/git_oid.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/oid/git_oid.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/oid/git_oid.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/oid/git_oid.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/oid/git_oid.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/oid/git_oid.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/oid/git_oid.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/oid/git_oid.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/oid/git_oid.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/oid/git_oid.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/oid/git_oid.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/oid/git_oid.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/oid/git_oid.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/oid/git_oid.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/oid/git_oid.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/oid/git_oid.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/oid/git_oid.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/oid/git_oid.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/oid/git_oid.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/oid/git_oid.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/oid/git_oid.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/oid/git_oid.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/oid/git_oid.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/oid/git_oid.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/oid/git_oid.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/oid/git_oid.html">v0.18.0</option>
+              <option value="/docs/reference/v0.17.0/oid/git_oid.html">v0.17.0</option>
+              <option value="/docs/reference/v0.16.0/oid/git_oid.html">v0.16.0</option>
+              <option value="/docs/reference/v0.15.0/oid/git_oid.html">v0.15.0</option>
+              <option value="/docs/reference/v0.14.0/oid/git_oid.html">v0.14.0</option>
+              <option value="/docs/reference/v0.13.0/oid/git_oid.html">v0.13.0</option>
+              <option value="/docs/reference/v0.12.0/oid/git_oid.html">v0.12.0</option>
+              <option value="/docs/reference/v0.11.0/oid/git_oid.html">v0.11.0</option>
+              <option value="/docs/reference/v0.10.0/oid/git_oid.html">v0.10.0</option>
+              <option value="/docs/reference/v0.8.0/oid/git_oid.html">v0.8.0</option>
+              <option value="/docs/reference/v0.3.0/oid/git_oid.html">v0.3.0</option>
+              <option value="/docs/reference/v0.1.0/oid/git_oid.html">v0.1.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Unique identity of any object (commit, tree, blob, tag).</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.24.5/include/git2/oid.h#L33" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_oid {
+<span class="apiSignatureMember structSignatureMember">unsigned char[20] id</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned char[20]
+            </div>
+            <div class="apiMemberName structMemberName">
+              id
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>raw binary formatted id</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnedByHeader structReturnedByHeader">Returned By</h3>
+        <div class="apiReturnedBy structReturnedBy">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.24.5/annotated_commit/git_annotated_commit_id.html" className="apiLink functionLink">git_annotated_commit_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/blob/git_blob_id.html" className="apiLink functionLink">git_blob_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_id.html" className="apiLink functionLink">git_commit_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_tree_id.html" className="apiLink functionLink">git_commit_tree_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_parent_id.html" className="apiLink functionLink">git_commit_parent_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/index/git_index_checksum.html" className="apiLink functionLink">git_index_checksum</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/indexer/git_indexer_hash.html" className="apiLink functionLink">git_indexer_hash</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/notes/git_note_id.html" className="apiLink functionLink">git_note_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/object/git_object_id.html" className="apiLink functionLink">git_object_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_object_id.html" className="apiLink functionLink">git_odb_object_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/pack/git_packbuilder_hash.html" className="apiLink functionLink">git_packbuilder_hash</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/reflog/git_reflog_entry_id_old.html" className="apiLink functionLink">git_reflog_entry_id_old</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/reflog/git_reflog_entry_id_new.html" className="apiLink functionLink">git_reflog_entry_id_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/refs/git_reference_target.html" className="apiLink functionLink">git_reference_target</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/refs/git_reference_target_peel.html" className="apiLink functionLink">git_reference_target_peel</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/submodule/git_submodule_index_id.html" className="apiLink functionLink">git_submodule_index_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/submodule/git_submodule_head_id.html" className="apiLink functionLink">git_submodule_head_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/submodule/git_submodule_wd_id.html" className="apiLink functionLink">git_submodule_wd_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_id.html" className="apiLink functionLink">git_tag_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_target_id.html" className="apiLink functionLink">git_tag_target_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tree/git_tree_id.html" className="apiLink functionLink">git_tree_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tree/git_tree_entry_id.html" className="apiLink functionLink">git_tree_entry_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/sys/filter/git_filter_source_id.html" className="apiLink functionLink">git_filter_source_id</a>
+          </li>
+          </ul>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.24.5/annotated_commit/git_annotated_commit_from_fetchhead.html" className="apiLink functionLink">git_annotated_commit_from_fetchhead</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/annotated_commit/git_annotated_commit_lookup.html" className="apiLink functionLink">git_annotated_commit_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/blob/git_blob_lookup.html" className="apiLink functionLink">git_blob_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/blob/git_blob_lookup_prefix.html" className="apiLink functionLink">git_blob_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/blob/git_blob_create_fromworkdir.html" className="apiLink functionLink">git_blob_create_fromworkdir</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/blob/git_blob_create_fromdisk.html" className="apiLink functionLink">git_blob_create_fromdisk</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/blob/git_blob_create_fromchunks.html" className="apiLink functionLink">git_blob_create_fromchunks</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/blob/git_blob_create_frombuffer.html" className="apiLink functionLink">git_blob_create_frombuffer</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_lookup.html" className="apiLink functionLink">git_commit_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_lookup_prefix.html" className="apiLink functionLink">git_commit_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_extract_signature.html" className="apiLink functionLink">git_commit_extract_signature</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_create.html" className="apiLink functionLink">git_commit_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_create_v.html" className="apiLink functionLink">git_commit_create_v</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/commit/git_commit_amend.html" className="apiLink functionLink">git_commit_amend</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/graph/git_graph_ahead_behind.html" className="apiLink functionLink">git_graph_ahead_behind</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/graph/git_graph_descendant_of.html" className="apiLink functionLink">git_graph_descendant_of</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/index/git_index_write_tree.html" className="apiLink functionLink">git_index_write_tree</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/index/git_index_write_tree_to.html" className="apiLink functionLink">git_index_write_tree_to</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/merge/git_merge_base.html" className="apiLink functionLink">git_merge_base</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/merge/git_merge_bases.html" className="apiLink functionLink">git_merge_bases</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/merge/git_merge_base_many.html" className="apiLink functionLink">git_merge_base_many</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/merge/git_merge_bases_many.html" className="apiLink functionLink">git_merge_bases_many</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/merge/git_merge_base_octopus.html" className="apiLink functionLink">git_merge_base_octopus</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/notes/git_note_foreach_cb.html" className="apiLink callbackLink">git_note_foreach_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/notes/git_note_next.html" className="apiLink functionLink">git_note_next</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/notes/git_note_read.html" className="apiLink functionLink">git_note_read</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/notes/git_note_create.html" className="apiLink functionLink">git_note_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/notes/git_note_remove.html" className="apiLink functionLink">git_note_remove</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/object/git_object_lookup.html" className="apiLink functionLink">git_object_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/object/git_object_lookup_prefix.html" className="apiLink functionLink">git_object_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_foreach_cb.html" className="apiLink callbackLink">git_odb_foreach_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_read.html" className="apiLink functionLink">git_odb_read</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_read_prefix.html" className="apiLink functionLink">git_odb_read_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_read_header.html" className="apiLink functionLink">git_odb_read_header</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_exists.html" className="apiLink functionLink">git_odb_exists</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_exists_prefix.html" className="apiLink functionLink">git_odb_exists_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_write.html" className="apiLink functionLink">git_odb_write</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_stream_finalize_write.html" className="apiLink functionLink">git_odb_stream_finalize_write</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_open_rstream.html" className="apiLink functionLink">git_odb_open_rstream</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_hash.html" className="apiLink functionLink">git_odb_hash</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/odb/git_odb_hashfile.html" className="apiLink functionLink">git_odb_hashfile</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_fromstr.html" className="apiLink functionLink">git_oid_fromstr</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_fromstrp.html" className="apiLink functionLink">git_oid_fromstrp</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_fromstrn.html" className="apiLink functionLink">git_oid_fromstrn</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_fromraw.html" className="apiLink functionLink">git_oid_fromraw</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_fmt.html" className="apiLink functionLink">git_oid_fmt</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_nfmt.html" className="apiLink functionLink">git_oid_nfmt</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_pathfmt.html" className="apiLink functionLink">git_oid_pathfmt</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_tostr_s.html" className="apiLink functionLink">git_oid_tostr_s</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_tostr.html" className="apiLink functionLink">git_oid_tostr</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_cpy.html" className="apiLink functionLink">git_oid_cpy</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_cmp.html" className="apiLink functionLink">git_oid_cmp</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_equal.html" className="apiLink functionLink">git_oid_equal</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_ncmp.html" className="apiLink functionLink">git_oid_ncmp</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_streq.html" className="apiLink functionLink">git_oid_streq</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_strcmp.html" className="apiLink functionLink">git_oid_strcmp</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/oid/git_oid_iszero.html" className="apiLink functionLink">git_oid_iszero</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/pack/git_packbuilder_insert.html" className="apiLink functionLink">git_packbuilder_insert</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/pack/git_packbuilder_insert_tree.html" className="apiLink functionLink">git_packbuilder_insert_tree</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/pack/git_packbuilder_insert_commit.html" className="apiLink functionLink">git_packbuilder_insert_commit</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/pack/git_packbuilder_insert_recur.html" className="apiLink functionLink">git_packbuilder_insert_recur</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/rebase/git_rebase_commit.html" className="apiLink functionLink">git_rebase_commit</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/reflog/git_reflog_append.html" className="apiLink functionLink">git_reflog_append</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/refs/git_reference_name_to_id.html" className="apiLink functionLink">git_reference_name_to_id</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/refs/git_reference_create.html" className="apiLink functionLink">git_reference_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/refs/git_reference_create_matching.html" className="apiLink functionLink">git_reference_create_matching</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/refs/git_reference_set_target.html" className="apiLink functionLink">git_reference_set_target</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/repository/git_repository_fetchhead_foreach_cb.html" className="apiLink callbackLink">git_repository_fetchhead_foreach_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/repository/git_repository_mergehead_foreach_cb.html" className="apiLink callbackLink">git_repository_mergehead_foreach_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/repository/git_repository_hashfile.html" className="apiLink functionLink">git_repository_hashfile</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/repository/git_repository_set_head_detached.html" className="apiLink functionLink">git_repository_set_head_detached</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/revwalk/git_revwalk_push.html" className="apiLink functionLink">git_revwalk_push</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/revwalk/git_revwalk_hide.html" className="apiLink functionLink">git_revwalk_hide</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/revwalk/git_revwalk_next.html" className="apiLink functionLink">git_revwalk_next</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/revwalk/git_revwalk_hide_cb.html" className="apiLink callbackLink">git_revwalk_hide_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/stash/git_stash_save.html" className="apiLink functionLink">git_stash_save</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/stash/git_stash_cb.html" className="apiLink callbackLink">git_stash_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_lookup.html" className="apiLink functionLink">git_tag_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_lookup_prefix.html" className="apiLink functionLink">git_tag_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_create.html" className="apiLink functionLink">git_tag_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_annotation_create.html" className="apiLink functionLink">git_tag_annotation_create</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_create_frombuffer.html" className="apiLink functionLink">git_tag_create_frombuffer</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_create_lightweight.html" className="apiLink functionLink">git_tag_create_lightweight</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tag/git_tag_foreach_cb.html" className="apiLink callbackLink">git_tag_foreach_cb</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/transaction/git_transaction_set_target.html" className="apiLink functionLink">git_transaction_set_target</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tree/git_tree_lookup.html" className="apiLink functionLink">git_tree_lookup</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tree/git_tree_lookup_prefix.html" className="apiLink functionLink">git_tree_lookup_prefix</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tree/git_tree_entry_byid.html" className="apiLink functionLink">git_tree_entry_byid</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tree/git_treebuilder_insert.html" className="apiLink functionLink">git_treebuilder_insert</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/tree/git_treebuilder_write.html" className="apiLink functionLink">git_treebuilder_write</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/sys/commit/git_commit_create_from_ids.html" className="apiLink functionLink">git_commit_create_from_ids</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/sys/commit/git_commit_create_from_callback.html" className="apiLink functionLink">git_commit_create_from_callback</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/sys/index/git_index_reuc_add.html" className="apiLink functionLink">git_index_reuc_add</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.24.5/sys/refs/git_reference__alloc.html" className="apiLink functionLink">git_reference__alloc</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/oid/git_oid.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.18.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.17.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.17.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.16.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.16.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.15.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.15.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.14.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.14.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.13.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.13.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.12.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.12.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.11.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.11.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.10.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.10.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.8.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.3.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.1.0/oid/git_oid.html" class="apiVersionLink structVersionLink">v0.1.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

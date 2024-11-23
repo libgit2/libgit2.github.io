@@ -1,0 +1,135 @@
+---
+title: git_remote_connect_options_dispose (libgit2 v1.7.2)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.7.2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.7.2/sys/remote/index.html">remote (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_remote_connect_options_dispose</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/remote/git_remote_connect_options_dispose.html">main</option>
+              <option value="/docs/reference/v1.8.4/sys/remote/git_remote_connect_options_dispose.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/sys/remote/git_remote_connect_options_dispose.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/sys/remote/git_remote_connect_options_dispose.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/sys/remote/git_remote_connect_options_dispose.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/sys/remote/git_remote_connect_options_dispose.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/sys/remote/git_remote_connect_options_dispose.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/sys/remote/git_remote_connect_options_dispose.html" selected>v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/sys/remote/git_remote_connect_options_dispose.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/sys/remote/git_remote_connect_options_dispose.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/sys/remote/git_remote_connect_options_dispose.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/sys/remote/git_remote_connect_options_dispose.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/sys/remote/git_remote_connect_options_dispose.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/sys/remote/git_remote_connect_options_dispose.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/sys/remote/git_remote_connect_options_dispose.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/sys/remote/git_remote_connect_options_dispose.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/sys/remote/git_remote_connect_options_dispose.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/sys/remote/git_remote_connect_options_dispose.html">v1.5.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Disposes libgit2-initialized fields from a git_remote_connect_options.
+This should only be used for git_remote_connect_options returned by
+git_transport_remote_connect_options.</p>
+
+        <p>Note that this does not free the <a href="/docs/reference/v1.7.2/remote/git_remote_connect_options.html" class="apiLink structLink"><code><span class="codeWord">git_remote_connect_options</span></code></a> itself, just
+the memory pointed to by it.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.7.2/include/git2/sys/remote.h#L41" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          void git_remote_connect_options_dispose(<span class="apiSignatureParameter functionSignatureParameter">git_remote_connect_options *opts</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.7.2/remote/git_remote_connect_options.html" class="apiLink structLink">git_remote_connect_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              opts
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The <a href="/docs/reference/v1.7.2/remote/git_remote_connect_options.html" class="apiLink structLink"><code><span class="codeWord">git_remote_connect_options</span></code></a> struct to dispose.</p> 
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.5.0/sys/remote/git_remote_connect_options_dispose.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

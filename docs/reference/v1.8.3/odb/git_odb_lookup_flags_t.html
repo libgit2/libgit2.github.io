@@ -1,0 +1,150 @@
+---
+title: git_odb_lookup_flags_t (libgit2 v1.8.3)
+layout: default
+---
+
+      <div class="api enum">
+        <div class="apiBreadcrumb enumBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.8.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.8.3/odb/index.html">odb</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader enumHeader">
+          <h2 class="apiName enumName">git_odb_lookup_flags_t</h2>
+          <div class="apiHeaderVersionSelect enumHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/odb/git_odb_lookup_flags_t.html">main</option>
+              <option value="/docs/reference/v1.8.4/odb/git_odb_lookup_flags_t.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/odb/git_odb_lookup_flags_t.html" selected>v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/odb/git_odb_lookup_flags_t.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/odb/git_odb_lookup_flags_t.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/odb/git_odb_lookup_flags_t.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/odb/git_odb_lookup_flags_t.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/odb/git_odb_lookup_flags_t.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/odb/git_odb_lookup_flags_t.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/odb/git_odb_lookup_flags_t.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/odb/git_odb_lookup_flags_t.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/odb/git_odb_lookup_flags_t.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/odb/git_odb_lookup_flags_t.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/odb/git_odb_lookup_flags_t.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/odb/git_odb_lookup_flags_t.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/odb/git_odb_lookup_flags_t.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/odb/git_odb_lookup_flags_t.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/odb/git_odb_lookup_flags_t.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/odb/git_odb_lookup_flags_t.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/odb/git_odb_lookup_flags_t.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/odb/git_odb_lookup_flags_t.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/odb/git_odb_lookup_flags_t.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/odb/git_odb_lookup_flags_t.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/odb/git_odb_lookup_flags_t.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/odb/git_odb_lookup_flags_t.html">v1.4.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription enumDescription">
+        <p>Flags controlling the behavior of ODB lookup operations</p>
+
+        </div>
+
+        <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
+        <div class="apiSignatureLink enumSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.8.3/include/git2/odb.h#L26" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiMembers enumMembers">
+          <div class="apiMember enumMember">
+            <div class="apiMemberName enumMemberName">
+              GIT_ODB_LOOKUP_NO_REFRESH
+            </div>
+            <div class="apiMemberValue enumMemberValue">
+              1
+            </div>
+            <div class="apiMemberDescription enumMemberDescription">
+              <p>Don't call <a href="/docs/reference/v1.8.3/odb/git_odb_refresh.html" class="apiLink functionLink"><code><span class="codeWord">git_odb_refresh</span></code></a> if the lookup fails. Useful when doing a batch of lookup operations for objects that may legitimately not exist. When using this flag, you may wish to manually call <a href="/docs/reference/v1.8.3/odb/git_odb_refresh.html" class="apiLink functionLink"><code><span class="codeWord">git_odb_refresh</span></code></a> before processing a batch of objects.</p> 
+            </div>
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader enumVersionsHeader">Versions</h3>
+        <div class="apiVersions enumVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/main/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged enumVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced enumVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.4.0/odb/git_odb_lookup_flags_t.html" class="apiVersionLink enumVersionLink">v1.4.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

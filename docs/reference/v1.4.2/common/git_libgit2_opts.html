@@ -1,0 +1,820 @@
+---
+title: git_libgit2_opts (libgit2 v1.4.2)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.4.2/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.4.2/common/index.html">common</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_libgit2_opts</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/common/git_libgit2_opts.html">main</option>
+              <option value="/docs/reference/v1.8.4/common/git_libgit2_opts.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/common/git_libgit2_opts.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/common/git_libgit2_opts.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/common/git_libgit2_opts.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/common/git_libgit2_opts.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/common/git_libgit2_opts.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/common/git_libgit2_opts.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/common/git_libgit2_opts.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/common/git_libgit2_opts.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/common/git_libgit2_opts.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/common/git_libgit2_opts.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/common/git_libgit2_opts.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/common/git_libgit2_opts.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/common/git_libgit2_opts.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/common/git_libgit2_opts.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/common/git_libgit2_opts.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/common/git_libgit2_opts.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/common/git_libgit2_opts.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/common/git_libgit2_opts.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/common/git_libgit2_opts.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/common/git_libgit2_opts.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/common/git_libgit2_opts.html" selected>v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/common/git_libgit2_opts.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/common/git_libgit2_opts.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/common/git_libgit2_opts.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/common/git_libgit2_opts.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/common/git_libgit2_opts.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/common/git_libgit2_opts.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/common/git_libgit2_opts.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/common/git_libgit2_opts.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/common/git_libgit2_opts.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/common/git_libgit2_opts.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/common/git_libgit2_opts.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/common/git_libgit2_opts.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/common/git_libgit2_opts.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/common/git_libgit2_opts.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/common/git_libgit2_opts.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/common/git_libgit2_opts.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/common/git_libgit2_opts.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/common/git_libgit2_opts.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/common/git_libgit2_opts.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/common/git_libgit2_opts.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/common/git_libgit2_opts.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/common/git_libgit2_opts.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/common/git_libgit2_opts.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/common/git_libgit2_opts.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/common/git_libgit2_opts.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/common/git_libgit2_opts.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/common/git_libgit2_opts.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/common/git_libgit2_opts.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/common/git_libgit2_opts.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/common/git_libgit2_opts.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/common/git_libgit2_opts.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/common/git_libgit2_opts.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/common/git_libgit2_opts.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/common/git_libgit2_opts.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/common/git_libgit2_opts.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/common/git_libgit2_opts.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/common/git_libgit2_opts.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/common/git_libgit2_opts.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/common/git_libgit2_opts.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/common/git_libgit2_opts.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/common/git_libgit2_opts.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/common/git_libgit2_opts.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/common/git_libgit2_opts.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/common/git_libgit2_opts.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/common/git_libgit2_opts.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/common/git_libgit2_opts.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/common/git_libgit2_opts.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/common/git_libgit2_opts.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/common/git_libgit2_opts.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/common/git_libgit2_opts.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/common/git_libgit2_opts.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/common/git_libgit2_opts.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/common/git_libgit2_opts.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/common/git_libgit2_opts.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/common/git_libgit2_opts.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/common/git_libgit2_opts.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/common/git_libgit2_opts.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/common/git_libgit2_opts.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/common/git_libgit2_opts.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/common/git_libgit2_opts.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/common/git_libgit2_opts.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/common/git_libgit2_opts.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/common/git_libgit2_opts.html">v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/common/git_libgit2_opts.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/common/git_libgit2_opts.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/common/git_libgit2_opts.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/common/git_libgit2_opts.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/common/git_libgit2_opts.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/common/git_libgit2_opts.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/common/git_libgit2_opts.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/common/git_libgit2_opts.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/common/git_libgit2_opts.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/common/git_libgit2_opts.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/common/git_libgit2_opts.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/common/git_libgit2_opts.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/common/git_libgit2_opts.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/common/git_libgit2_opts.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/common/git_libgit2_opts.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/common/git_libgit2_opts.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Set or query a library global option</p>
+
+        <p>Available options:</p>
+
+        <ul>
+<li>opts(GIT_OPT_GET_MWINDOW_SIZE, size_t *):</li>
+</ul>
+
+        <blockquote>
+<p>Get the maximum mmap window size</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_MWINDOW_SIZE, size_t):</li>
+</ul>
+
+        <blockquote>
+<p>Set the maximum mmap window size</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_GET_MWINDOW_MAPPED_LIMIT, size_t *):</li>
+</ul>
+
+        <blockquote>
+<p>Get the maximum memory that will be mapped in total by the library</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_MWINDOW_MAPPED_LIMIT, size_t):</li>
+</ul>
+
+        <blockquote>
+<p>Set the maximum amount of memory that can be mapped at any time
+by the library</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_GET_MWINDOW_FILE_LIMIT, size_t *):</li>
+</ul>
+
+        <blockquote>
+<p>Get the maximum number of files that will be mapped at any time by the
+library</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_MWINDOW_FILE_LIMIT, size_t):</li>
+</ul>
+
+        <blockquote>
+<p>Set the maximum number of files that can be mapped at any time
+by the library. The default (0) is unlimited.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_GET_SEARCH_PATH, int level, git_buf *buf)</li>
+</ul>
+
+        <blockquote>
+<p>Get the search path for a given level of config data.  &quot;level&quot; must
+be one of <a href="/docs/reference/v1.4.2/config/git_config_level_t.html#GIT_CONFIG_LEVEL_SYSTEM" class="apiLink enumLink"><code><span class="codeWord">GIT_CONFIG_LEVEL_SYSTEM</span></code></a>, <a href="/docs/reference/v1.4.2/config/git_config_level_t.html#GIT_CONFIG_LEVEL_GLOBAL" class="apiLink enumLink"><code><span class="codeWord">GIT_CONFIG_LEVEL_GLOBAL</span></code></a>,
+<a href="/docs/reference/v1.4.2/config/git_config_level_t.html#GIT_CONFIG_LEVEL_XDG" class="apiLink enumLink"><code><span class="codeWord">GIT_CONFIG_LEVEL_XDG</span></code></a>, or <a href="/docs/reference/v1.4.2/config/git_config_level_t.html#GIT_CONFIG_LEVEL_PROGRAMDATA" class="apiLink enumLink"><code><span class="codeWord">GIT_CONFIG_LEVEL_PROGRAMDATA</span></code></a>.
+The search path is written to the <code><span class="codeWord">out</span></code> buffer.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_SEARCH_PATH, int level, const char *path)</li>
+</ul>
+
+        <blockquote>
+<p>Set the search path for a level of config data.  The search path
+applied to shared attributes and ignore files, too.</p>
+<ul>
+<li>
+<p><code><span class="codeWord">path</span></code> lists directories delimited by GIT_PATH_LIST_SEPARATOR.
+Pass NULL to reset to the default (generally based on environment
+variables).  Use magic path <code><span class="codeWord">$PATH</span></code> to include the old value
+of the path (if you want to prepend or append, for instance).</p>
+</li>
+<li>
+<p><code><span class="codeWord">level</span></code> must be <a href="/docs/reference/v1.4.2/config/git_config_level_t.html#GIT_CONFIG_LEVEL_SYSTEM" class="apiLink enumLink"><code><span class="codeWord">GIT_CONFIG_LEVEL_SYSTEM</span></code></a>,
+<a href="/docs/reference/v1.4.2/config/git_config_level_t.html#GIT_CONFIG_LEVEL_GLOBAL" class="apiLink enumLink"><code><span class="codeWord">GIT_CONFIG_LEVEL_GLOBAL</span></code></a>, <a href="/docs/reference/v1.4.2/config/git_config_level_t.html#GIT_CONFIG_LEVEL_XDG" class="apiLink enumLink"><code><span class="codeWord">GIT_CONFIG_LEVEL_XDG</span></code></a>, or
+<a href="/docs/reference/v1.4.2/config/git_config_level_t.html#GIT_CONFIG_LEVEL_PROGRAMDATA" class="apiLink enumLink"><code><span class="codeWord">GIT_CONFIG_LEVEL_PROGRAMDATA</span></code></a>.</p>
+</li>
+</ul>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_CACHE_OBJECT_LIMIT, git_object_t type, size_t size)</li>
+</ul>
+
+        <blockquote>
+<p>Set the maximum data size for the given type of object to be
+considered eligible for caching in memory.  Setting to value to
+zero means that that type of object will not be cached.
+Defaults to 0 for GIT_OBJECT_BLOB (i.e. won't cache blobs) and 4k
+for GIT_OBJECT_COMMIT, GIT_OBJECT_TREE, and GIT_OBJECT_TAG.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_CACHE_MAX_SIZE, ssize_t max_storage_bytes)</li>
+</ul>
+
+        <blockquote>
+<p>Set the maximum total data size that will be cached in memory
+across all repositories before libgit2 starts evicting objects
+from the cache.  This is a soft limit, in that the library might
+briefly exceed it, but will start aggressively evicting objects
+from cache when that happens.  The default cache size is 256MB.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_ENABLE_CACHING, int enabled)</li>
+</ul>
+
+        <blockquote>
+<p>Enable or disable caching completely.</p>
+<p>Because caches are repository-specific, disabling the cache
+cannot immediately clear all cached objects, but each cache will
+be cleared on the next attempt to update anything in it.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_GET_CACHED_MEMORY, ssize_t *current, ssize_t *allowed)</li>
+</ul>
+
+        <blockquote>
+<p>Get the current bytes in cache and the maximum that would be
+allowed in the cache.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_GET_TEMPLATE_PATH, git_buf *out)</li>
+</ul>
+
+        <blockquote>
+<p>Get the default template path.
+The path is written to the <code><span class="codeWord">out</span></code> buffer.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_TEMPLATE_PATH, const char *path)</li>
+</ul>
+
+        <blockquote>
+<p>Set the default template path.</p>
+<ul>
+<li><code><span class="codeWord">path</span></code> directory of template.</li>
+</ul>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_SSL_CERT_LOCATIONS, const char *file, const char *path)</li>
+</ul>
+
+        <blockquote>
+<p>Set the SSL certificate-authority locations.</p>
+<ul>
+<li><code><span class="codeWord">file</span></code> is the location of a file containing several
+certificates concatenated together.</li>
+<li><code><span class="codeWord">path</span></code> is the location of a directory holding several
+certificates, one per file.</li>
+</ul>
+<p>Either parameter may be <code><span class="codeWord">NULL</span></code>, but not both.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_USER_AGENT, const char *user_agent)</li>
+</ul>
+
+        <blockquote>
+<p>Set the value of the User-Agent header.  This value will be
+appended to &quot;git/1.0&quot;, for compatibility with other git clients.</p>
+<ul>
+<li><code><span class="codeWord">user_agent</span></code> is the value that will be delivered as the
+User-Agent header on HTTP requests.</li>
+</ul>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_WINDOWS_SHAREMODE, unsigned long value)</li>
+</ul>
+
+        <blockquote>
+<p>Set the share mode used when opening files on Windows.
+For more information, see the documentation for CreateFile.
+The default is: FILE_SHARE_READ | FILE_SHARE_WRITE.  This is
+ignored and unused on non-Windows platforms.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_GET_WINDOWS_SHAREMODE, unsigned long *value)</li>
+</ul>
+
+        <blockquote>
+<p>Get the share mode used when opening files on Windows.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_ENABLE_STRICT_OBJECT_CREATION, int enabled)</li>
+</ul>
+
+        <blockquote>
+<p>Enable strict input validation when creating new objects
+to ensure that all inputs to the new objects are valid.  For
+example, when this is enabled, the parent(s) and tree inputs
+will be validated when creating a new commit.  This defaults
+to enabled.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_ENABLE_STRICT_SYMBOLIC_REF_CREATION, int enabled)</li>
+</ul>
+
+        <blockquote>
+<p>Validate the target of a symbolic ref when creating it.  For
+example, <code><span class="codeWord">foobar</span></code> is not a valid ref, therefore <code><span class="codeWord">foobar</span></code> is
+not a valid target for a symbolic ref by default, whereas
+<code><span class="codeWord">refs/heads/foobar</span></code> is.  Disabling this bypasses validation
+so that an arbitrary strings such as <code><span class="codeWord">foobar</span></code> can be used
+for a symbolic ref target.  This defaults to enabled.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_SET_SSL_CIPHERS, const char *ciphers)</li>
+</ul>
+
+        <blockquote>
+<p>Set the SSL ciphers use for HTTPS connections.</p>
+<ul>
+<li><code><span class="codeWord">ciphers</span></code> is the list of ciphers that are eanbled.</li>
+</ul>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_GET_USER_AGENT, git_buf *out)</li>
+</ul>
+
+        <blockquote>
+<p>Get the value of the User-Agent header.
+The User-Agent is written to the <code><span class="codeWord">out</span></code> buffer.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_ENABLE_OFS_DELTA, int enabled)</li>
+</ul>
+
+        <blockquote>
+<p>Enable or disable the use of &quot;offset deltas&quot; when creating packfiles,
+and the negotiation of them when talking to a remote server.
+Offset deltas store a delta base location as an offset into the
+packfile from the current location, which provides a shorter encoding
+and thus smaller resultant packfiles.
+Packfiles containing offset deltas can still be read.
+This defaults to enabled.</p>
+</blockquote>
+
+        <ul>
+<li>opts(GIT_OPT_ENABLE_FSYNC_GITDIR, int enabled)</li>
+</ul>
+
+        <blockquote>
+<p>Enable synchronized writes of files in the gitdir using <code><span class="codeWord">fsync</span></code>
+(or the platform equivalent) to ensure that new object data
+is written to permanent storage, not simply cached.  This
+defaults to disabled.</p>
+</blockquote>
+
+        <p>opts(GIT_OPT_ENABLE_STRICT_HASH_VERIFICATION, int enabled)</p>
+
+        <blockquote>
+<p>Enable strict verification of object hashsums when reading
+objects from disk. This may impact performance due to an
+additional checksum calculation on each object. This defaults
+to enabled.</p>
+</blockquote>
+
+        <p>opts(GIT_OPT_SET_ALLOCATOR, git_allocator *allocator)</p>
+
+        <blockquote>
+<p>Set the memory allocator to a different memory allocator. This
+allocator will then be used to make all memory allocations for
+libgit2 operations.  If the given <code><span class="codeWord">allocator</span></code> is NULL, then the
+system default will be restored.</p>
+</blockquote>
+
+        <p>opts(GIT_OPT_ENABLE_UNSAVED_INDEX_SAFETY, int enabled)</p>
+
+        <blockquote>
+<p>Ensure that there are no unsaved changes in the index before
+beginning any operation that reloads the index from disk (eg,
+checkout).  If there are unsaved changes, the instruction will
+fail.  (Using the FORCE flag to checkout will still overwrite
+these changes.)</p>
+</blockquote>
+
+        <p>opts(GIT_OPT_GET_PACK_MAX_OBJECTS, size_t *out)</p>
+
+        <blockquote>
+<p>Get the maximum number of objects libgit2 will allow in a pack
+file when downloading a pack file from a remote. This can be
+used to limit maximum memory usage when fetching from an untrusted
+remote.</p>
+</blockquote>
+
+        <p>opts(GIT_OPT_SET_PACK_MAX_OBJECTS, size_t objects)</p>
+
+        <blockquote>
+<p>Set the maximum number of objects libgit2 will allow in a pack
+file when downloading a pack file from a remote.</p>
+</blockquote>
+
+        <p>opts(GIT_OPT_DISABLE_PACK_KEEP_FILE_CHECKS, int enabled)
+&gt; This will cause .keep file existence checks to be skipped when
+&gt; accessing packfiles, which can help performance with remote filesystems.</p>
+
+        <p>opts(GIT_OPT_ENABLE_HTTP_EXPECT_CONTINUE, int enabled)
+&gt; When connecting to a server using NTLM or Negotiate
+&gt; authentication, use expect/continue when POSTing data.
+&gt; This option is not available on Windows.</p>
+
+        <p>opts(GIT_OPT_SET_ODB_PACKED_PRIORITY, int priority)
+&gt; Override the default priority of the packed ODB backend which
+&gt; is added when default backends are assigned to a repository</p>
+
+        <p>opts(GIT_OPT_SET_ODB_LOOSE_PRIORITY, int priority)
+&gt; Override the default priority of the loose ODB backend which
+&gt; is added when default backends are assigned to a repository</p>
+
+        <p>opts(GIT_OPT_GET_EXTENSIONS, git_strarray *out)
+&gt; Returns the list of git extensions that are supported.  This
+&gt; is the list of built-in extensions supported by libgit2 and
+&gt; custom extensions that have been added with
+&gt; <a href="/docs/reference/v1.4.2/common/git_libgit2_opt_t.html#GIT_OPT_SET_EXTENSIONS" class="apiLink enumLink"><code><span class="codeWord">GIT_OPT_SET_EXTENSIONS</span></code></a>.  Extensions that have been negated
+&gt; will not be returned.  The returned list should be released
+&gt; with <a href="/docs/reference/v1.4.2/strarray/git_strarray_dispose.html" class="apiLink functionLink"><code><span class="codeWord">git_strarray_dispose</span></code></a>.</p>
+
+        <p>opts(GIT_OPT_SET_EXTENSIONS, const char **extensions, size_t len)
+&gt; Set that the given git extensions are supported by the caller.
+&gt; Extensions supported by libgit2 may be negated by prefixing
+&gt; them with a <code><span class="codeWord">!</span></code>.  For example: setting extensions to
+&gt; { &quot;!noop&quot;, &quot;newext&quot; } indicates that the caller does not want
+&gt; to support repositories with the <code><span class="codeWord">noop</span></code> extension but does want
+&gt; to support repositories with the <code><span class="codeWord">newext</span></code> extension.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.4.2/include/git2/common.h#L459" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_libgit2_opts(<span class="apiSignatureParameter functionSignatureParameter">int option</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              option
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>Option key</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, &lt; 0 on failure</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc1/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.20.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.19.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/common/git_libgit2_opts.html" class="apiVersionLink functionVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

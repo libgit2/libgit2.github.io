@@ -1,0 +1,601 @@
+---
+title: git_clone_options (libgit2 v0.22.3)
+layout: default
+---
+
+      <div class="api struct">
+        <div class="apiBreadcrumb structBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v0.22.3/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v0.22.3/clone/index.html">clone</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader structHeader">
+          <h2 class="apiName structName">git_clone_options</h2>
+          <div class="apiHeaderVersionSelect structHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/clone/git_clone_options.html">main</option>
+              <option value="/docs/reference/v1.8.4/clone/git_clone_options.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/clone/git_clone_options.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/clone/git_clone_options.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/clone/git_clone_options.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/clone/git_clone_options.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/clone/git_clone_options.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/clone/git_clone_options.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/clone/git_clone_options.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/clone/git_clone_options.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/clone/git_clone_options.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/clone/git_clone_options.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/clone/git_clone_options.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/clone/git_clone_options.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/clone/git_clone_options.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/clone/git_clone_options.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/clone/git_clone_options.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/clone/git_clone_options.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/clone/git_clone_options.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/clone/git_clone_options.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/clone/git_clone_options.html">v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/clone/git_clone_options.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/clone/git_clone_options.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/clone/git_clone_options.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/clone/git_clone_options.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/clone/git_clone_options.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/clone/git_clone_options.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/clone/git_clone_options.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/clone/git_clone_options.html">v1.2.0</option>
+              <option value="/docs/reference/v1.1.1/clone/git_clone_options.html">v1.1.1</option>
+              <option value="/docs/reference/v1.1.0/clone/git_clone_options.html">v1.1.0</option>
+              <option value="/docs/reference/v1.0.1/clone/git_clone_options.html">v1.0.1</option>
+              <option value="/docs/reference/v1.0.0/clone/git_clone_options.html">v1.0.0</option>
+              <option value="/docs/reference/v0.99.0/clone/git_clone_options.html">v0.99.0</option>
+              <option value="/docs/reference/v0.28.5/clone/git_clone_options.html">v0.28.5</option>
+              <option value="/docs/reference/v0.28.4/clone/git_clone_options.html">v0.28.4</option>
+              <option value="/docs/reference/v0.28.3/clone/git_clone_options.html">v0.28.3</option>
+              <option value="/docs/reference/v0.28.2/clone/git_clone_options.html">v0.28.2</option>
+              <option value="/docs/reference/v0.28.1/clone/git_clone_options.html">v0.28.1</option>
+              <option value="/docs/reference/v0.28.0/clone/git_clone_options.html">v0.28.0</option>
+              <option value="/docs/reference/v0.28.0-rc1/clone/git_clone_options.html">v0.28.0-rc1</option>
+              <option value="/docs/reference/v0.27.10/clone/git_clone_options.html">v0.27.10</option>
+              <option value="/docs/reference/v0.27.9/clone/git_clone_options.html">v0.27.9</option>
+              <option value="/docs/reference/v0.27.8/clone/git_clone_options.html">v0.27.8</option>
+              <option value="/docs/reference/v0.27.7/clone/git_clone_options.html">v0.27.7</option>
+              <option value="/docs/reference/v0.27.6/clone/git_clone_options.html">v0.27.6</option>
+              <option value="/docs/reference/v0.27.5/clone/git_clone_options.html">v0.27.5</option>
+              <option value="/docs/reference/v0.27.4/clone/git_clone_options.html">v0.27.4</option>
+              <option value="/docs/reference/v0.27.3/clone/git_clone_options.html">v0.27.3</option>
+              <option value="/docs/reference/v0.27.2/clone/git_clone_options.html">v0.27.2</option>
+              <option value="/docs/reference/v0.27.1/clone/git_clone_options.html">v0.27.1</option>
+              <option value="/docs/reference/v0.27.0/clone/git_clone_options.html">v0.27.0</option>
+              <option value="/docs/reference/v0.27.0-rc3/clone/git_clone_options.html">v0.27.0-rc3</option>
+              <option value="/docs/reference/v0.27.0-rc2/clone/git_clone_options.html">v0.27.0-rc2</option>
+              <option value="/docs/reference/v0.27.0-rc1/clone/git_clone_options.html">v0.27.0-rc1</option>
+              <option value="/docs/reference/v0.26.8/clone/git_clone_options.html">v0.26.8</option>
+              <option value="/docs/reference/v0.26.7/clone/git_clone_options.html">v0.26.7</option>
+              <option value="/docs/reference/v0.26.6/clone/git_clone_options.html">v0.26.6</option>
+              <option value="/docs/reference/v0.26.5/clone/git_clone_options.html">v0.26.5</option>
+              <option value="/docs/reference/v0.26.4/clone/git_clone_options.html">v0.26.4</option>
+              <option value="/docs/reference/v0.26.3/clone/git_clone_options.html">v0.26.3</option>
+              <option value="/docs/reference/v0.26.2/clone/git_clone_options.html">v0.26.2</option>
+              <option value="/docs/reference/v0.26.1/clone/git_clone_options.html">v0.26.1</option>
+              <option value="/docs/reference/v0.26.0/clone/git_clone_options.html">v0.26.0</option>
+              <option value="/docs/reference/v0.26.0-rc2/clone/git_clone_options.html">v0.26.0-rc2</option>
+              <option value="/docs/reference/v0.26.0-rc1/clone/git_clone_options.html">v0.26.0-rc1</option>
+              <option value="/docs/reference/v0.25.1/clone/git_clone_options.html">v0.25.1</option>
+              <option value="/docs/reference/v0.25.0/clone/git_clone_options.html">v0.25.0</option>
+              <option value="/docs/reference/v0.25.0-rc2/clone/git_clone_options.html">v0.25.0-rc2</option>
+              <option value="/docs/reference/v0.25.0-rc1/clone/git_clone_options.html">v0.25.0-rc1</option>
+              <option value="/docs/reference/v0.24.6/clone/git_clone_options.html">v0.24.6</option>
+              <option value="/docs/reference/v0.24.5/clone/git_clone_options.html">v0.24.5</option>
+              <option value="/docs/reference/v0.24.4/clone/git_clone_options.html">v0.24.4</option>
+              <option value="/docs/reference/v0.24.3/clone/git_clone_options.html">v0.24.3</option>
+              <option value="/docs/reference/v0.24.2/clone/git_clone_options.html">v0.24.2</option>
+              <option value="/docs/reference/v0.24.1/clone/git_clone_options.html">v0.24.1</option>
+              <option value="/docs/reference/v0.24.0/clone/git_clone_options.html">v0.24.0</option>
+              <option value="/docs/reference/v0.24.0-rc1/clone/git_clone_options.html">v0.24.0-rc1</option>
+              <option value="/docs/reference/v0.23.4/clone/git_clone_options.html">v0.23.4</option>
+              <option value="/docs/reference/v0.23.3/clone/git_clone_options.html">v0.23.3</option>
+              <option value="/docs/reference/v0.23.2/clone/git_clone_options.html">v0.23.2</option>
+              <option value="/docs/reference/v0.23.1/clone/git_clone_options.html">v0.23.1</option>
+              <option value="/docs/reference/v0.23.0/clone/git_clone_options.html">v0.23.0</option>
+              <option value="/docs/reference/v0.23.0-rc2/clone/git_clone_options.html">v0.23.0-rc2</option>
+              <option value="/docs/reference/v0.23.0-rc1/clone/git_clone_options.html">v0.23.0-rc1</option>
+              <option value="/docs/reference/v0.22.3/clone/git_clone_options.html" selected>v0.22.3</option>
+              <option value="/docs/reference/v0.22.2/clone/git_clone_options.html">v0.22.2</option>
+              <option value="/docs/reference/v0.22.1/clone/git_clone_options.html">v0.22.1</option>
+              <option value="/docs/reference/v0.22.0/clone/git_clone_options.html">v0.22.0</option>
+              <option value="/docs/reference/v0.22.0-rc2/clone/git_clone_options.html">v0.22.0-rc2</option>
+              <option value="/docs/reference/v0.22.0-rc1/clone/git_clone_options.html">v0.22.0-rc1</option>
+              <option value="/docs/reference/v0.21.5/clone/git_clone_options.html">v0.21.5</option>
+              <option value="/docs/reference/v0.21.4/clone/git_clone_options.html">v0.21.4</option>
+              <option value="/docs/reference/v0.21.3/clone/git_clone_options.html">v0.21.3</option>
+              <option value="/docs/reference/v0.21.2/clone/git_clone_options.html">v0.21.2</option>
+              <option value="/docs/reference/v0.21.1/clone/git_clone_options.html">v0.21.1</option>
+              <option value="/docs/reference/v0.21.0/clone/git_clone_options.html">v0.21.0</option>
+              <option value="/docs/reference/v0.21.0-rc2/clone/git_clone_options.html">v0.21.0-rc2</option>
+              <option value="/docs/reference/v0.21.0-rc1/clone/git_clone_options.html">v0.21.0-rc1</option>
+              <option value="/docs/reference/v0.20.0/clone/git_clone_options.html">v0.20.0</option>
+              <option value="/docs/reference/v0.19.0/clone/git_clone_options.html">v0.19.0</option>
+              <option value="/docs/reference/v0.18.0/clone/git_clone_options.html">v0.18.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription structDescription">
+        <p>Clone options structure</p>
+
+        <p>Use the GIT_CLONE_OPTIONS_INIT to get the default settings, like this:</p>
+
+        <p>git_clone_options opts = GIT_CLONE_OPTIONS_INIT;</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink structSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v0.22.3/include/git2/clone.h#L103" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature structSignature">
+          typedef struct git_clone_options {
+<span class="apiSignatureMember structSignatureMember">unsigned int version</span>
+<span class="apiSignatureMember structSignatureMember">git_checkout_options checkout_opts</span>
+<span class="apiSignatureMember structSignatureMember">git_remote_callbacks remote_callbacks</span>
+<span class="apiSignatureMember structSignatureMember">int bare</span>
+<span class="apiSignatureMember structSignatureMember">git_clone_local_t local</span>
+<span class="apiSignatureMember structSignatureMember">const char *checkout_branch</span>
+<span class="apiSignatureMember structSignatureMember">git_signature *signature</span>
+<span class="apiSignatureMember structSignatureMember">git_repository_create_cb repository_cb</span>
+<span class="apiSignatureMember structSignatureMember">void *repository_cb_payload</span>
+<span class="apiSignatureMember structSignatureMember">git_remote_create_cb remote_cb</span>
+<span class="apiSignatureMember structSignatureMember">void *remote_cb_payload</span>
+          };
+        </div>
+
+        <h3 class="apiMembersHeader structMembersHeader">Members</h3>
+        <div class="apiMembers structMembers">
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              unsigned int
+            </div>
+            <div class="apiMemberName structMemberName">
+              version
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.22.3/checkout/git_checkout_options.html" class="apiLink structLink">git_checkout_options</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              checkout_opts
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>These options are passed to the checkout step. To disable checkout, set the <code><span class="codeWord">checkout_strategy</span></code> to <a href="/docs/reference/v0.22.3/checkout/git_checkout_strategy_t.html#GIT_CHECKOUT_NONE" class="apiLink enumLink"><code><span class="codeWord">GIT_CHECKOUT_NONE</span></code></a>. Generally you will want the use GIT_CHECKOUT_SAFE_CREATE to create all files in the working directory for the newly cloned repository.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.22.3/remote/git_remote_callbacks.html" class="apiLink structLink">git_remote_callbacks</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              remote_callbacks
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Callbacks to use for reporting fetch progress, and for acquiring credentials in the event they are needed. This parameter is ignored if the remote_cb parameter is set; if you provide a remote creation callback, then you have the opportunity to configure remote callbacks in provided function.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              int
+            </div>
+            <div class="apiMemberName structMemberName">
+              bare
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Set to zero (false) to create a standard repo, or non-zero for a bare repo</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.22.3/clone/git_clone_local_t.html" class="apiLink enumLink">git_clone_local_t</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              local
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>Whether to use a fetch or copy the object database.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              const char *
+            </div>
+            <div class="apiMemberName structMemberName">
+              checkout_branch
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The name of the branch to checkout. NULL means use the remote's default branch.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.22.3/signature/git_signature.html" class="apiLink structLink">git_signature *</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              signature
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>The identity used when updating the reflog. NULL means to use the default signature using the config.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.22.3/clone/git_repository_create_cb.html" class="apiLink callbackLink">git_repository_create_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              repository_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>A callback used to create the new repository into which to clone. If NULL, the 'bare' field will be used to determine whether to create a bare repository.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              repository_cb_payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>An opaque payload to pass to the git_repository creation callback. This parameter is ignored unless repository_cb is non-NULL.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              <a href="/docs/reference/v0.22.3/clone/git_remote_create_cb.html" class="apiLink callbackLink">git_remote_create_cb</a>
+            </div>
+            <div class="apiMemberName structMemberName">
+              remote_cb
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>A callback used to create the git_remote, prior to its being used to perform the clone operation. See the documentation for git_remote_create_cb for details. This parameter may be NULL, indicating that git_clone should provide default behavior.</p> 
+            </div>
+          </div>
+          <div class="apiMember structMember">
+            <div class="apiMemberType structMemberType">
+              void *
+            </div>
+            <div class="apiMemberName structMemberName">
+              remote_cb_payload
+            </div>
+            <div class="apiMemberDescription structMemberDescription">
+              <p>An opaque payload to pass to the git_remote creation callback. This parameter is ignored unless remote_cb is non-NULL.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiParameterToHeader structParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo structParameterTo">
+          <ul>
+          <li>
+            <a href="/docs/reference/v0.22.3/clone/git_clone_init_options.html" className="apiLink functionLink">git_clone_init_options</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.22.3/clone/git_clone.html" className="apiLink functionLink">git_clone</a>
+          </li>
+          </ul>
+        </div>
+        <h3 class="apiVersionsHeader structVersionsHeader">Versions</h3>
+        <div class="apiVersions structVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/main/clone/git_clone_options.html" class="apiVersionLink structVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.2.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.2.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.1.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.1.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.1.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.0.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.0.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v1.0.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.99.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.99.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.5/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.28.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.28.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.28.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.28.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.28.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.28.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.28.0-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.28.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.10/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.10</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.9/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.9</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.8/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.7/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.6/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.5/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.27.0-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.27.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.8/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.8</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.7/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.7</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.6/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.5/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.26.0-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.26.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.25.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.25.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.25.0-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.25.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.6/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.24.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.5/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.24.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.24.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.24.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.24.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.24.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.24.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.24.0-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.24.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.23.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.23.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.23.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.23.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.23.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.23.0-rc2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.23.0-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.23.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.22.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.22.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.22.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.22.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.22.0-rc2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.22.0-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.22.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.5/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.21.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.4/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.21.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.3/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.21.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.21.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.21.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.21.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged structVersionDeltaUnchanged">
+            <a href="/docs/reference/v0.21.0-rc2/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc2</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.21.0-rc1/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.21.0-rc1</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.20.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.20.0</a>
+          </li>
+          <li class="apiVersionDeltaChanged structVersionDeltaChanged">
+            <a href="/docs/reference/v0.19.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.19.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced structVersionDeltaIntroduced">
+            <a href="/docs/reference/v0.18.0/clone/git_clone_options.html" class="apiVersionLink structVersionLink">v0.18.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>

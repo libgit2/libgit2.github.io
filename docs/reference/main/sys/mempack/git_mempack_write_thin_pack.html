@@ -1,0 +1,97 @@
+---
+title: git_mempack_write_thin_pack (libgit2 main)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/main/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/main/sys/mempack/index.html">mempack (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_mempack_write_thin_pack</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/mempack/git_mempack_write_thin_pack.html" selected>main</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Write a thin packfile with the objects in the memory store.</p>
+
+        <p>A thin packfile is a packfile that does not contain its transitive closure of
+references. This is useful for efficiently distributing additions to a
+repository over the network, but also finds use in the efficient bulk
+addition of objects to a repository, locally.</p>
+
+        <p>This operation performs the (shallow) insert operations into the
+<a href="/docs/reference/main/pack/git_packbuilder.html" class="apiLink objectLink"><code><span class="codeWord">git_packbuilder</span></code></a>, but does not write the packfile to disk;
+see <a href="/docs/reference/main/pack/git_packbuilder_write_buf.html" class="apiLink functionLink"><code><span class="codeWord">git_packbuilder_write_buf</span></code></a>.</p>
+
+        <p>It also does not reset the in-memory object database; see <a href="/docs/reference/main/sys/mempack/git_mempack_reset.html" class="apiLink functionLink"><code><span class="codeWord">git_mempack_reset</span></code></a>.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/mempack.h#L64" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_mempack_write_thin_pack(<span class="apiSignatureParameter functionSignatureParameter">git_odb_backend *backend</span>, <span class="apiSignatureParameter functionSignatureParameter">git_packbuilder *pb</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/sys/odb_backend/git_odb_backend.html" class="apiLink structLink">git_odb_backend *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              backend
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The mempack backend</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/pack/git_packbuilder.html" class="apiLink objectLink">git_packbuilder *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              pb
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The packbuilder to use to write the packfile</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/main/sys/mempack/git_mempack_write_thin_pack.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          </ul>
+        </div>
+      </div>

@@ -1,0 +1,199 @@
+---
+title: git_remote_set_instance_url (libgit2 v1.4.4)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/v1.4.4/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/v1.4.4/remote/index.html">remote</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_remote_set_instance_url</h2>
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/remote/git_remote_set_instance_url.html">main</option>
+              <option value="/docs/reference/v1.8.4/remote/git_remote_set_instance_url.html">v1.8.4</option>
+              <option value="/docs/reference/v1.8.3/remote/git_remote_set_instance_url.html">v1.8.3</option>
+              <option value="/docs/reference/v1.8.2/remote/git_remote_set_instance_url.html">v1.8.2</option>
+              <option value="/docs/reference/v1.8.2-rc1/remote/git_remote_set_instance_url.html">v1.8.2-rc1</option>
+              <option value="/docs/reference/v1.8.1/remote/git_remote_set_instance_url.html">v1.8.1</option>
+              <option value="/docs/reference/v1.8.0/remote/git_remote_set_instance_url.html">v1.8.0</option>
+              <option value="/docs/reference/v1.7.2/remote/git_remote_set_instance_url.html">v1.7.2</option>
+              <option value="/docs/reference/v1.7.1/remote/git_remote_set_instance_url.html">v1.7.1</option>
+              <option value="/docs/reference/v1.7.0/remote/git_remote_set_instance_url.html">v1.7.0</option>
+              <option value="/docs/reference/v1.6.5/remote/git_remote_set_instance_url.html">v1.6.5</option>
+              <option value="/docs/reference/v1.6.4/remote/git_remote_set_instance_url.html">v1.6.4</option>
+              <option value="/docs/reference/v1.6.3/remote/git_remote_set_instance_url.html">v1.6.3</option>
+              <option value="/docs/reference/v1.6.2/remote/git_remote_set_instance_url.html">v1.6.2</option>
+              <option value="/docs/reference/v1.6.1/remote/git_remote_set_instance_url.html">v1.6.1</option>
+              <option value="/docs/reference/v1.5.2/remote/git_remote_set_instance_url.html">v1.5.2</option>
+              <option value="/docs/reference/v1.5.1/remote/git_remote_set_instance_url.html">v1.5.1</option>
+              <option value="/docs/reference/v1.5.0/remote/git_remote_set_instance_url.html">v1.5.0</option>
+              <option value="/docs/reference/v1.4.6/remote/git_remote_set_instance_url.html">v1.4.6</option>
+              <option value="/docs/reference/v1.4.5/remote/git_remote_set_instance_url.html">v1.4.5</option>
+              <option value="/docs/reference/v1.4.4/remote/git_remote_set_instance_url.html" selected>v1.4.4</option>
+              <option value="/docs/reference/v1.4.3/remote/git_remote_set_instance_url.html">v1.4.3</option>
+              <option value="/docs/reference/v1.4.2/remote/git_remote_set_instance_url.html">v1.4.2</option>
+              <option value="/docs/reference/v1.4.1/remote/git_remote_set_instance_url.html">v1.4.1</option>
+              <option value="/docs/reference/v1.4.0/remote/git_remote_set_instance_url.html">v1.4.0</option>
+              <option value="/docs/reference/v1.3.2/remote/git_remote_set_instance_url.html">v1.3.2</option>
+              <option value="/docs/reference/v1.3.1/remote/git_remote_set_instance_url.html">v1.3.1</option>
+              <option value="/docs/reference/v1.3.0/remote/git_remote_set_instance_url.html">v1.3.0</option>
+              <option value="/docs/reference/v1.2.0/remote/git_remote_set_instance_url.html">v1.2.0</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Set the url for this particular url instance.  The URL in the
+configuration will be ignored, and will not be changed.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/v1.4.4/include/git2/remote.h#L294" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_remote_set_instance_url(<span class="apiSignatureParameter functionSignatureParameter">git_remote *remote</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *url</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/v1.4.4/remote/git_remote.html" class="apiLink objectLink">git_remote *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              remote
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the remote's name</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              const char *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              url
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>the url to set</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 or an error value</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/main/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.4/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.3/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.8.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.8.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.2-rc1/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.8.2-rc1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.1/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.8.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.8.0/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.8.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.2/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.7.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.1/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.7.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.7.0/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.7.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.5/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.6.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.4/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.6.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.3/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.6.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.2/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.6.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.6.1/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.6.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.2/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.5.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.1/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.5.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.5.0/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.5.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.6/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.4.6</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.5/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.4.5</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.4/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.4.4</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.3/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.4.3</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.2/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.4.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.1/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.4.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.4.0/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.4.0</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.2/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.3.2</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.1/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.3.1</a>
+          </li>
+          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+            <a href="/docs/reference/v1.3.0/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.3.0</a>
+          </li>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/v1.2.0/remote/git_remote_set_instance_url.html" class="apiVersionLink functionVersionLink">v1.2.0</a>
+          </li>
+          </ul>
+        </div>
+      </div>
