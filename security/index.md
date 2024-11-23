@@ -1,4 +1,5 @@
 ---
+title: Security (libgit2)
 layout: default
 ---
 

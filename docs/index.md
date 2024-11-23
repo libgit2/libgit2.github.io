@@ -1,4 +1,5 @@
 ---
+title: Documentation (libgit2)
 layout: default
 ---
 
