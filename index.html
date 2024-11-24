@@ -6,7 +6,7 @@ layout: default
 <div id='front-main'>
 	<section id='intro'>
 		<p>
-		libgit2 is a <strong>portable</strong>, <strong>pure C implementation</strong> of the Git core methods provided as a re-entrant linkable library with a solid API, allowing you to write native speed custom Git applications in any language that supports C bindings.
+		libgit2 is a <strong>portable</strong>, <strong>pure C implementation</strong> of the Git core methods provided as a re-entrant linkable library, with an API that's designed to be ergonomic to use from C directly, or from another language through FFI bindings.
 		</p>
 	</section>
 	<section id='features'>
@@ -24,7 +24,7 @@ layout: default
 			<li id='zero-dependencies'>
 			<img src="images/libgit2/icon-zero-dependencies@2x.png" />
 			<h3>Minimal Dependencies</h3>
-			<p>We use the libraries that are on your system, and you can opt-out of any dependencies.</p>
+			<p>libgit2 prefers system libraries, but offers minimal bundled dependencies where sensible.</p>
 			</li>
 			<li id='permissive-licensiing'>
 			<img src="images/libgit2/icon-permissive-licensing@2x.png" />
@@ -53,8 +53,8 @@ layout: default
 			<a href="https://www.striata.com/" target="_blank">
 				<img src="images/libgit2/logo-striata@2x.png" alt="Striata" width="104" height="25" />
 			</a>
-			<a href="https://visualstudio.microsoft.com/xamarin/" target="_blank">
-				<img src="images/libgit2/logo-xamarin@2x.png" alt="Xamarin" width="133" height="32" />
+			<a href="https://matlab.com/" target="_blank">
+				<img src="images/libgit2/logo-matlab@2x.png" alt="Matlab" width="150" height="50" />
 			</a>
 		</div>
 		<div class="row">
@@ -65,45 +65,36 @@ layout: default
 				<img src="images/libgit2/logo-bitbucket@2x.png" alt="Bitbucket" width="150" height="38" />
 			</a>
 			<a href="https://about.gitlab.com/" target="_blank">
-				<img src="images/libgit2/logo-gitlab@2x.png" alt="GitLab" width="134" height="42" />
+				<img src="images/libgit2/logo-gitlab@2x.png" alt="GitLab" width="120" height="25" />
 			</a>
 		</div>
 		<div class="row">
-			<a href="https://www.gitkraken.com/" target="_blank">
-				<img src="images/libgit2/logo-gitkraken@2x.png" alt="GitKraken" width="150" height="36" />
+			<a href="https://www.gitbutler.com/" target="_blank">
+				<img src="images/libgit2/logo-gitbutler@2x.png" alt="GitButler" width="150" height="25" />
 			</a>
 			<a href="https://www.versionsql.com/" target="_blank">
-				<img src="images/libgit2/logo-versionsql@2x.png" alt="VersionSQL" width="134" height="25" />
+				<img src="images/libgit2/logo-versionsql@2x.png" alt="VersionSQL" width="134" height="30" />
 			</a>
 		</div>
 	</section>
 </div>
 <aside class='sidebar'>
 	<h4>Language Bindings</h4>
-	<ul id='primary-languages'>
-		<li id='rugged'>
-		<img src="images/libgit2/logo-ruby@2x.png" width="40" height="40" />
-		<h6>Ruby</h6>
-		<h5>
-			<a href="https://github.com/libgit2/rugged">Rugged</a>
-		</h5>
-		</li>
-		<li id='libgit2sharp'>
-		<img src="images/libgit2/logo-net-mono@2x.png" width="94" height="39" />
-		<h6>.Net &amp; Mono</h6>
-		<h5>
-			<a href="https://github.com/libgit2/libgit2sharp">LibGit2Sharp</a>
-		</h5>
-		</li>
+	<ul class='additional-languages'>
+        <li id='rust'>
+        <img src="images/libgit2/logo-rust@2x.png" />
+        <h6>Rust</h6>
+        <h5>
+            <a href="https://github.com/rust-lang/git2-rs">git2.rs</a>
+        </h5>
+        </li>
 		<li id='objective-c'>
-		<img src="images/libgit2/logo-apple@2x.png" width="46" height="51" />
+		<img src="images/libgit2/logo-apple@2x.png" />
 		<h6>Objective-C</h6>
 		<h5>
 			<a href="https://github.com/libgit2/objective-git">objective-git</a>
 		</h5>
 		</li>
-	</ul>
-	<ul class='additional-languages'>
 		<li>
 		<img src="images/libgit2/logo-python@2x.png" />
 		<h6>Python</h6>
@@ -148,6 +139,20 @@ layout: default
 		</li>
 	</ul>
 	<ul class='additional-languages'>
+		<li id='rugged'>
+		<img src="images/libgit2/logo-ruby@2x.png" />
+		<h6>Ruby</h6>
+		<h5>
+			<a href="https://github.com/libgit2/rugged">Rugged</a>
+		</h5>
+		</li>
+		<li id='libgit2sharp'>
+		<img src="images/libgit2/logo-net@2x.png" />
+		<h6>.Net &amp; Mono</h6>
+		<h5>
+			<a href="https://github.com/libgit2/libgit2sharp">LibGit2Sharp</a>
+		</h5>
+		</li>
 		<li>
 		<img src="images/libgit2/logo-lua@2x.png" />
 		<h6>Lua</h6>
@@ -166,7 +171,7 @@ layout: default
 		<img src="images/libgit2/logo-qt@2x.png" />
 		<h6>C++ Qt</h6>
 		<h5>
-			<a href="https://quickgit.kde.org/?p=libqgit2.git">libqgit2</a>
+			<a href="https://github.com/KDE/libqgit2">libqgit2</a>
 		</h5>
 		</li>
 		<li>

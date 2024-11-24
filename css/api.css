@@ -1,8 +1,8 @@
 /* API Page */
 
-.version,
-.group,
-.api {
+.version h3,
+.group h3,
+.api h3 {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
