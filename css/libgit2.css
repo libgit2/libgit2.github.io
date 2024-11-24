@@ -57,14 +57,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   font-size: 14px;
   line-height: 22px;
-  font-family: "adelle", Georgia, "Times New Roman", serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: #4e443c;
   background: #f0efe7 url(/images/bg/body.jpg);
-}
-
-.windows.chrome body,
-.windows.ie8 body {
-  font-family: Georgia, "Times New Roman", serif !important;
 }
 
 .inner {
@@ -199,6 +194,7 @@ header #tagline em {
   list-style-type: none;
   float: right;
   margin-top: 32px;
+  font-family: "adelle", Georgia, "Times New Roman", serif;
 }
 
 .navigation li {
@@ -448,7 +444,7 @@ table.benchmarks tr td.desc {
 
 table.benchmarks tr td.number {
   text-align: right;
-  font-family: monospace;
+  font-family: Monaco, Courier, monospace;
 }
 
 table.benchmarks tr td {
@@ -490,6 +486,7 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+  font-family: "adelle", Georgia, "Times New Roman", serif;
   font-weight: normal;
   color: #4e443c;
   text-rendering: optimizelegibility;
@@ -727,7 +724,7 @@ blockquote.pull-right small {
 }
 
 code, pre {
-  font-family: Courier, monospace !important;
+  font-family: Monaco, Courier, monospace;
   background-color: #FFF;
   padding: 1px 2px;
 }
@@ -885,7 +882,7 @@ div.more {
 
 
 .fixed {
-  font-family: Courier, monospace !important;
+  font-family: Monaco, Courier, monospace;
 }
 
 
@@ -953,17 +950,10 @@ input.active {
 
 
 input, textarea {
-  font-family: "adelle", Georgia, "Times New Roman", serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 14px;
   outline: none;
 }
-
-
-.windows.chrome input, .windows.chrome textarea,
-.windows.ie8 input, .windows.chrome textarea {
-  font-family: Georgia, "Times New Roman", serif !important;
-}
-
 
 form#search {
   position: absolute;
@@ -1253,14 +1243,14 @@ table.arguments td {
 
 table.arguments td.parameter {
   color: #4e443c;
-  font-family: Courier, monospace !important;
+  font-family: Monaco, Courier, monospace;
   font-weight: bold;
   line-height: 18px;
 }
 
 table.arguments td.type {
   color: #4e443c;
-  font-family: Courier, monospace !important;
+  font-family: Monaco, Courier, monospace;
   line-height: 18px;
 }
 
@@ -1313,7 +1303,7 @@ pre.sh_sourceCode {
   background-color: #fff;
   border: solid 1px #efeee6;
   font-size: 13px;
-  font-family: Courier, monospace !important;
+  font-family: Monaco, Courier, monospace;
   line-height: 18px;
 }
 
@@ -1474,17 +1464,10 @@ pre.sh_sourceCode .sh_value {
 body {
   font-size: 14px;
   line-height: 22px;
-  font-family: "adelle", Georgia, "Times New Roman", serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: #4e443c;
   background: #f0efe7 url(/images/bg/body.jpg);
 }
-
-
-.windows.chrome body *,
-.windows.ie8 body * {
-  font-family: Georgia, "Times New Roman", serif !important;
-}
-
 
 #wrapper {
   overflow: hidden;
@@ -1668,6 +1651,7 @@ p {
 }
 
 #features ul li h3 {
+  font-family: "adelle", Georgia, "Times New Roman", serif;
   font-size: 18px;
   font-weight: bold;
   color: #f14e32;
@@ -1676,8 +1660,8 @@ p {
 }
 
 #features ul li p {
-  font-size: 13px;
-  line-height: 17.6px;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 #features ul li:nth-child(even) {
@@ -1695,6 +1679,7 @@ p {
 
 #production-usage h5 {
   color: #847d75;
+  font-family: "adelle", Georgia, "Times New Roman", serif;
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 0.75em;
@@ -1811,15 +1796,6 @@ ul.additional-languages li h6 {
   font-size: 12px;
   line-height: 1;
 }
-
-ul.additional-languages li#rugged img {
-  margin-top: 11px;
-}
-
-ul.additional-languages li#libgit2sharp img {
-  margin-top: 12px;
-}
-
 
 #library-versions {
   overflow: hidden;
