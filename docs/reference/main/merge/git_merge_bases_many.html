@@ -114,11 +114,41 @@ layout: default
         <div class="apiDescription functionDescription">
         <p>Find all merge bases given a list of commits</p>
 
+        <p>This behaves similar to <a href="https://git-scm.com/docs/git-merge-base#_discussion"><code><span class="codeWord">git</span> <span class="codeWord">merge-base</span></code></a>.</p>
+
+        <p>Given three commits <code><span class="codeWord">a</span></code>, <code><span class="codeWord">b</span></code>, and <code><span class="codeWord">c</span></code>, <code><span class="codeWord">merge_base_many</span></code>
+will compute a hypothetical commit <code><span class="codeWord">m</span></code>, which is a merge between <code><span class="codeWord">b</span></code>
+and <code><span class="codeWord">c</span></code>.</p>
+
+        <p>For example, with the following topology:</p>
+<pre><code class="language-text">       o---o---o---o---C
+      /
+     /   o---o---o---B
+    /   /
+---2---1---o---o---o---A
+</code></pre>
+
+        <p>the result of <code><span class="codeWord">merge_base_many</span></code> given <code><span class="codeWord">a</span></code>, <code><span class="codeWord">b</span></code>, and <code><span class="codeWord">c</span></code> is 1. This is
+because the equivalent topology with the imaginary merge commit <code><span class="codeWord">m</span></code>
+between <code><span class="codeWord">b</span></code> and <code><span class="codeWord">c</span></code> is:</p>
+<pre><code class="language-text">       o---o---o---o---o
+      /                 
+\
+     /   o---o---o---o---M
+    /   /
+---2---1---o---o---o---A
+</code></pre>
+
+        <p>and the result of <code><span class="codeWord">merge_base_many</span></code> given <code><span class="codeWord">a</span></code> and <code><span class="codeWord">m</span></code> is 1.</p>
+
+        <p>If you're looking to recieve the common ancestor between all the
+given commits, use <code><span class="codeWord">merge_base_octopus</span></code>.</p>
+
         </div>
 
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/merge.h#L480" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/merge.h#L511" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_merge_bases_many(<span class="apiSignatureParameter functionSignatureParameter">git_oidarray *out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t length</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_oid *input_array</span>);

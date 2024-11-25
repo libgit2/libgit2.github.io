@@ -1,7 +1,6 @@
 {
   "info": {
-    "version": "main",
-    "commit": "c6111ec06cc0b0126cd67bdab78f8091e4cfaa10"
+    "commit": "4f0def867e4df60a19e54ece3ed1e5dc45dd6ce8"
   },
   "groups": {
     "sys/alloc": {
@@ -25316,7 +25315,7 @@
           "name": "git_merge_bases_many",
           "location": {
             "file": "merge.h",
-            "line": 480,
+            "line": 511,
             "column": 17
           },
           "returns": {
@@ -25350,7 +25349,13 @@
             }
           ],
           "comment": [
-            "Find all merge bases given a list of commits"
+            "Find all merge bases given a list of commits",
+            "This behaves similar to [`git merge-base`](https://git-scm.com/docs/git-merge-base#_discussion).",
+            "Given three commits `a`, `b`, and `c`, `merge_base_many`\n will compute a hypothetical commit `m`, which is a merge between `b`\n and `c`.",
+            "For example, with the following topology:\n ```text\n        o---o---o---o---C\n       /\n      /   o---o---o---B\n     /   /\n ---2---1---o---o---o---A\n ```",
+            "the result of `merge_base_many` given `a`, `b`, and `c` is 1. This is\n because the equivalent topology with the imaginary merge commit `m`\n between `b` and `c` is:\n ```text\n        o---o---o---o---o\n       /                 \n\\\n      /   o---o---o---o---M\n     /   /\n ---2---1---o---o---o---A\n ```",
+            "and the result of `merge_base_many` given `a` and `m` is 1.",
+            "If you're looking to recieve the common ancestor between all the\n given commits, use `merge_base_octopus`."
           ],
           "group": "merge"
         },
@@ -25359,7 +25364,7 @@
           "name": "git_merge_base_octopus",
           "location": {
             "file": "merge.h",
-            "line": 495,
+            "line": 526,
             "column": 17
           },
           "returns": {
@@ -25402,7 +25407,7 @@
           "name": "git_merge_file",
           "location": {
             "file": "merge.h",
-            "line": 517,
+            "line": 548,
             "column": 17
           },
           "returns": {
@@ -25452,7 +25457,7 @@
           "name": "git_merge_file_from_index",
           "location": {
             "file": "merge.h",
-            "line": 538,
+            "line": 569,
             "column": 17
           },
           "returns": {
@@ -25507,7 +25512,7 @@
           "name": "git_merge_file_result_free",
           "location": {
             "file": "merge.h",
-            "line": 551,
+            "line": 582,
             "column": 18
           },
           "returns": {
@@ -25531,7 +25536,7 @@
           "name": "git_merge_trees",
           "location": {
             "file": "merge.h",
-            "line": 569,
+            "line": 600,
             "column": 17
           },
           "returns": {
@@ -25587,7 +25592,7 @@
           "name": "git_merge_commits",
           "location": {
             "file": "merge.h",
-            "line": 592,
+            "line": 623,
             "column": 17
           },
           "returns": {
@@ -25637,7 +25642,7 @@
           "name": "git_merge",
           "location": {
             "file": "merge.h",
-            "line": 617,
+            "line": 648,
             "column": 17
           },
           "returns": {
