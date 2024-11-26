@@ -123,16 +123,16 @@ layout: default
 
 
         <div class="apiDescription callbackDescription">
-        <p>Checkout progress notification function</p>
+        <p>Checkout progress notification function.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/checkout.h#L266" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/checkout.h#L291" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef void git_checkout_progress_cb(<span class="apiSignatureParameter callbackSignatureParameter">const char *</span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef void git_checkout_progress_cb(<span class="apiSignatureParameter callbackSignatureParameter">const char *path</span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t completed_steps</span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t total_steps</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -144,8 +144,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              path
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the path to the file being checked out</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -155,8 +158,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              completed_steps
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>number of checkout steps completed</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -166,8 +172,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              total_steps
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>number of total steps in the checkout process</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -177,8 +186,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              payload
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the user-supplied callback payload</p> 
             </div>
           </div>
         </div>

@@ -112,25 +112,14 @@ layout: default
 commit, which lets you specify which extended sha syntax string was
 specified by a user, allowing for more exact reflog messages.</p>
 
-        <p>See the documentation for <code><span class="codeWord">git_branch_create()</span></code>.</p>
-
-        </div>
-
-        <h3 class="apiSeeHeader functionSeeHeader">See</h3>
-        <div class="apiSee functionSee">
-          <ul>
-          <li>
-            <a href="/docs/reference/main/branch/git_branch_create.html" className="apiLink functionLink">git_branch_create</a>
-          </li>
-          </ul>
         </div>
 
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/branch.h#L70" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/branch.h#L77" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
-          int git_branch_create_from_annotated(<span class="apiSignatureParameter functionSignatureParameter">git_reference **ref_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repository</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *branch_name</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_annotated_commit *commit</span>, <span class="apiSignatureParameter functionSignatureParameter">int force</span>);
+          int git_branch_create_from_annotated(<span class="apiSignatureParameter functionSignatureParameter">git_reference **ref_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *branch_name</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_annotated_commit *target</span>, <span class="apiSignatureParameter functionSignatureParameter">int force</span>);
         </div>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
@@ -146,7 +135,7 @@ specified by a user, allowing for more exact reflog messages.</p>
               ref_out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>Pointer where to store the underlying reference.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -157,10 +146,10 @@ specified by a user, allowing for more exact reflog messages.</p>
               In
             </div>
             <div class="apiParameterName functionParameterName">
-              repository
+              repo
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the repository to create the branch in.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -174,7 +163,7 @@ specified by a user, allowing for more exact reflog messages.</p>
               branch_name
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>Name for the branch; this name is validated for consistency. It should also not conflict with an already existing branch name.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -185,10 +174,10 @@ specified by a user, allowing for more exact reflog messages.</p>
               In
             </div>
             <div class="apiParameterName functionParameterName">
-              commit
+              target
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>Annotated commit to which this branch should point. This object must belong to the given <code><span class="codeWord">repo</span></code>.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -202,7 +191,7 @@ specified by a user, allowing for more exact reflog messages.</p>
               force
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>Overwrite existing branch.</p> 
             </div>
           </div>
         </div>
@@ -213,7 +202,7 @@ specified by a user, allowing for more exact reflog messages.</p>
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0, GIT_EINVALIDSPEC or an error code.</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

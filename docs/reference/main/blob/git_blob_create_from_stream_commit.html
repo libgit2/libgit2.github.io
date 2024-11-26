@@ -55,7 +55,7 @@ layout: default
 
 
         <div class="apiDescription functionDescription">
-        <p>Close the stream and write the blob to the object db</p>
+        <p>Close the stream and finalize writing the blob to the object database.</p>
 
         <p>The stream will be closed and freed.</p>
 
@@ -63,7 +63,7 @@ layout: default
 
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/blob.h#L258" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/blob.h#L301" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_blob_create_from_stream_commit(<span class="apiSignatureParameter functionSignatureParameter">git_oid *out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_writestream *stream</span>);
@@ -71,12 +71,12 @@ layout: default
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
               out

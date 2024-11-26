@@ -125,16 +125,16 @@ layout: default
 
 
         <div class="apiDescription callbackDescription">
-        <p>Signature of a function which creates a transport</p>
+        <p>Signature of a function which creates a transport.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/transport.h#L37" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/transport.h#L45" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_transport_cb(<span class="apiSignatureParameter callbackSignatureParameter">git_transport **</span>, <span class="apiSignatureParameter callbackSignatureParameter">git_remote *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_transport_cb(<span class="apiSignatureParameter callbackSignatureParameter">git_transport **out</span>, <span class="apiSignatureParameter callbackSignatureParameter">git_remote *owner</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *param</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -146,8 +146,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              out
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the transport generate</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -157,8 +160,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              owner
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the owner for the transport</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -168,9 +174,22 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              param
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the param to the transport creation</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success or an error code</p> 
           </div>
         </div>
 

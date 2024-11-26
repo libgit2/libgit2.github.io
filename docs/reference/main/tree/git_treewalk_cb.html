@@ -125,16 +125,16 @@ layout: default
 
 
         <div class="apiDescription callbackDescription">
-        <p>Callback for the tree traversal method</p>
+        <p>Callback for the tree traversal method.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/tree.h#L383" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/tree.h#L394" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_treewalk_cb(<span class="apiSignatureParameter callbackSignatureParameter">const char *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_tree_entry *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_treewalk_cb(<span class="apiSignatureParameter callbackSignatureParameter">const char *root</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_tree_entry *entry</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -146,8 +146,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              root
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the current (relative) root to the entry</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -157,8 +160,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              entry
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the tree entry</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -168,9 +174,22 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              payload
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the caller-provided callback payload</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>a positive value to skip the entry, a negative value to stop the walk</p> 
           </div>
         </div>
 

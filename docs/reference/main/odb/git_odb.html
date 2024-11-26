@@ -133,16 +133,32 @@ layout: default
 
 
         <div class="apiDescription objectDescription">
-        <p>An open object database handle.</p>
+        <p>An object database stores the objects (commit, trees, blobs, tags,
+etc) for a repository.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader objectSignatureHeader">Signature</h3>
         <div class="apiSignatureLink objectSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/types.h#L85" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/types.h#L88" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature objectSignature">
           typedef struct git_odb git_odb
+        </div>
+
+        <h3 class="apiReturnedByHeader objectReturnedByHeader">Returned By</h3>
+        <div class="apiReturnedBy objectReturnedBy">
+          <ul>
+          <li>
+            <a href="/docs/reference/main/odb/git_odb_new.html" className="apiLink functionLink">git_odb_new</a>
+          </li>
+          <li>
+            <a href="/docs/reference/main/odb/git_odb_open.html" className="apiLink functionLink">git_odb_open</a>
+          </li>
+          <li>
+            <a href="/docs/reference/main/repository/git_repository_odb.html" className="apiLink functionLink">git_repository_odb</a>
+          </li>
+          </ul>
         </div>
 
         <h3 class="apiParameterToHeader objectParameterToHeader">Parameter To</h3>
@@ -150,12 +166,6 @@ layout: default
           <ul>
           <li>
             <a href="/docs/reference/main/indexer/git_indexer_new.html" className="apiLink functionLink">git_indexer_new</a>
-          </li>
-          <li>
-            <a href="/docs/reference/main/odb/git_odb_new.html" className="apiLink functionLink">git_odb_new</a>
-          </li>
-          <li>
-            <a href="/docs/reference/main/odb/git_odb_open.html" className="apiLink functionLink">git_odb_open</a>
           </li>
           <li>
             <a href="/docs/reference/main/odb/git_odb_add_disk_alternate.html" className="apiLink functionLink">git_odb_add_disk_alternate</a>
@@ -222,9 +232,6 @@ layout: default
           </li>
           <li>
             <a href="/docs/reference/main/repository/git_repository_wrap_odb.html" className="apiLink functionLink">git_repository_wrap_odb</a>
-          </li>
-          <li>
-            <a href="/docs/reference/main/repository/git_repository_odb.html" className="apiLink functionLink">git_repository_odb</a>
           </li>
           <li>
             <a href="/docs/reference/main/sys/repository/git_repository_set_odb.html" className="apiLink functionLink">git_repository_set_odb</a>

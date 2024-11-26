@@ -107,10 +107,10 @@ layout: default
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/diff.h#L362" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/diff.h#L369" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_diff_progress_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_diff *diff_so_far</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *old_path</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *new_path</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_diff_progress_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_diff *diff_so_far</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *old_path</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *new_path</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -164,8 +164,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              payload
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the user-specified callback payload</p> 
             </div>
           </div>
         </div>
@@ -176,7 +179,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription callbackReturnDescription">
-            <p>Non-zero to abort the diff.</p> 
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>

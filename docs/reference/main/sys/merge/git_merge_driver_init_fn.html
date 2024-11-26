@@ -107,10 +107,10 @@ doesn't need the merge driver).</p>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/merge.h#L76" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/merge.h#L112" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_merge_driver_init_fn(<span class="apiSignatureParameter callbackSignatureParameter">git_merge_driver *</span>);
+          typedef int git_merge_driver_init_fn(<span class="apiSignatureParameter callbackSignatureParameter">git_merge_driver *self</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -122,9 +122,22 @@ doesn't need the merge driver).</p>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              self
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the merge driver to initialize</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success, or a negative number on failure</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>

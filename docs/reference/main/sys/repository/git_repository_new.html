@@ -121,9 +121,21 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Create a new repository with neither backends nor config object</p>
+
+        <p>Note that this is only useful if you wish to associate the repository
+with a non-filesystem-backed object database and config store.</p>
+
+        <p>Caveats: since this repository has no physical location, some systems
+can fail to function properly: locations under $GIT_DIR, $GIT_COMMON_DIR,
+or $GIT_INFO_DIR are impacted.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/repository.h#L39" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/repository.h#L48" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_repository_new(<span class="apiSignatureParameter functionSignatureParameter">git_repository **out</span>);
@@ -131,18 +143,18 @@ layout: default
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/repository/git_repository.html" class="apiLink objectLink">git_repository **</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
               out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>The blank repository</p> 
             </div>
           </div>
         </div>
@@ -153,7 +165,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 on success, or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

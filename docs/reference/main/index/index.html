@@ -132,7 +132,11 @@ layout: default
           </div>
       </div>
       <div class="groupIndexDetails">
-        Git index parsing and manipulation routines
+        <p>The index (or &quot;cache&quot;, or &quot;staging area&quot;) is the contents of the
+next commit. In addition, the index stores other data, such as
+conflicts that occurred during the last merge operation, and
+the &quot;treecache&quot; to speed up various on-disk operations.</p>
+
       </div>
 
         <h3 class="apiListHeader objectListHeader">Objects</h3>
@@ -202,7 +206,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>Mask for name length</p> 
             </div>
           </div>
           <div class="apiListItem macroListItem">
@@ -212,7 +216,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>Mask for index entry stage</p> 
             </div>
           </div>
           <div class="apiListItem macroListItem">
@@ -222,7 +226,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>Shift bits for index entry</p> 
             </div>
           </div>
           <div class="apiListItem macroListItem">
@@ -232,7 +236,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>Macro to get the stage value (0 for the &quot;main index&quot;, or a conflict value) from an index entry</p> 
             </div>
           </div>
           <div class="apiListItem macroListItem">
@@ -242,7 +246,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>Macro to set the stage value (0 for the &quot;main index&quot;, or a conflict value) for an index entry</p> 
             </div>
           </div>
         </div>
@@ -324,7 +328,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              
+              <p>Create a new bare Git index object as a memory representation of the Git index file in 'index_path', without a repository to back it</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -334,7 +338,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              
+              <p>Create an in-memory index object</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">

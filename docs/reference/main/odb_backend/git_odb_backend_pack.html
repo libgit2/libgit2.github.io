@@ -131,9 +131,14 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Create a backend for a directory containing packfiles.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb_backend.h#L61" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb_backend.h#L142" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_odb_backend_pack(<span class="apiSignatureParameter functionSignatureParameter">git_odb_backend **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *objects_dir</span>);
@@ -141,18 +146,18 @@ layout: default
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/sys/odb_backend/git_odb_backend.html" class="apiLink structLink">git_odb_backend **</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
               out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>location to store the odb backend pointer</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -166,7 +171,7 @@ layout: default
               objects_dir
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the Git repository's objects directory</p> 
             </div>
           </div>
         </div>
@@ -177,7 +182,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

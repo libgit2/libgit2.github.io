@@ -55,16 +55,16 @@ layout: default
 
 
         <div class="apiDescription callbackDescription">
-        <p>Push network progress notification function</p>
+        <p>Push network progress notification callback.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/remote.h#L470" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/remote.h#L481" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_push_transfer_progress_cb(<span class="apiSignatureParameter callbackSignatureParameter">unsigned int </span>, <span class="apiSignatureParameter callbackSignatureParameter">unsigned int </span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_push_transfer_progress_cb(<span class="apiSignatureParameter callbackSignatureParameter">unsigned int current</span>, <span class="apiSignatureParameter callbackSignatureParameter">unsigned int total</span>, <span class="apiSignatureParameter callbackSignatureParameter">size_t bytes</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -76,8 +76,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              current
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>The number of objects pushed so far</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -87,8 +90,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              total
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>The total number of objects to push</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -98,8 +104,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              bytes
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>The number of bytes pushed</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -109,9 +118,22 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              payload
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>The user-specified payload callback</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 or an error code to stop the transfer</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>

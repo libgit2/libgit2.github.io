@@ -148,7 +148,7 @@ header will be returned.</p>
 
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb.h#L190" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb.h#L210" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_odb_read_header(<span class="apiSignatureParameter functionSignatureParameter">size_t *len_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_object_t *type_out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_odb *db</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_oid *id</span>);
@@ -156,12 +156,12 @@ header will be returned.</p>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               size_t *
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
               len_out
@@ -170,12 +170,12 @@ header will be returned.</p>
               <p>pointer where to store the length</p> 
             </div>
           </div>
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/object/git_object_t.html" class="apiLink enumLink">git_object_t *</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
               type_out

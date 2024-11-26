@@ -142,9 +142,21 @@ priority levels as well.</p>
 
         </div>
 
+        <h3 class="apiSeeHeader enumSeeHeader">See</h3>
+        <div class="apiSee enumSee">
+          <ul>
+          <li>
+            <a href="/docs/reference/main/config/git_config_open_default.html" className="apiLink functionLink">git_config_open_default</a>
+          </li>
+          <li>
+            <a href="/docs/reference/main/repository/git_repository_config.html" className="apiLink functionLink">git_repository_config</a>
+          </li>
+          </ul>
+        </div>
+
         <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
         <div class="apiSignatureLink enumSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/config.h#L42" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/config.h#L49" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiMembers enumMembers">
           <div class="apiMember enumMember">
@@ -155,7 +167,7 @@ priority levels as well.</p>
               1
             </div>
             <div class="apiMemberDescription enumMemberDescription">
-              <p>System-wide on Windows, for compatibility with portable git</p> 
+              <p>System-wide on Windows, for compatibility with &quot;Portable Git&quot;.</p> 
             </div>
           </div>
           <div class="apiMember enumMember">
@@ -166,7 +178,7 @@ priority levels as well.</p>
               2
             </div>
             <div class="apiMemberDescription enumMemberDescription">
-              <p>System-wide configuration file; /etc/gitconfig on Linux systems</p> 
+              <p>System-wide configuration file; <code><span class="codeWord">/etc/gitconfig</span></code> on Linux.</p> 
             </div>
           </div>
           <div class="apiMember enumMember">
@@ -177,7 +189,7 @@ priority levels as well.</p>
               3
             </div>
             <div class="apiMemberDescription enumMemberDescription">
-              <p>XDG compatible configuration file; typically ~/.config/git/config</p> 
+              <p>XDG compatible configuration file; typically <code><span class="codeWord">~/.config/git/config</span></code>.</p> 
             </div>
           </div>
           <div class="apiMember enumMember">
@@ -188,7 +200,7 @@ priority levels as well.</p>
               4
             </div>
             <div class="apiMemberDescription enumMemberDescription">
-              <p>User-specific configuration file (also called Global configuration file); typically ~/.gitconfig</p> 
+              <p>Global configuration file is the user-specific configuration; typically <code><span class="codeWord">~/.gitconfig</span></code>.</p> 
             </div>
           </div>
           <div class="apiMember enumMember">
@@ -199,7 +211,7 @@ priority levels as well.</p>
               5
             </div>
             <div class="apiMemberDescription enumMemberDescription">
-              <p>Repository specific configuration file; $WORK_DIR/.git/config on non-bare repos</p> 
+              <p>Local configuration, the repository-specific configuration file; typically <code><span class="codeWord">$GIT_DIR/config</span></code>.</p> 
             </div>
           </div>
           <div class="apiMember enumMember">
@@ -210,7 +222,7 @@ priority levels as well.</p>
               6
             </div>
             <div class="apiMemberDescription enumMemberDescription">
-              <p>Worktree specific configuration file; $GIT_DIR/config.worktree</p> 
+              <p>Worktree-specific configuration; typically <code><span class="codeWord">$GIT_DIR/config.worktree</span></code>.</p> 
             </div>
           </div>
           <div class="apiMember enumMember">
@@ -221,7 +233,7 @@ priority levels as well.</p>
               7
             </div>
             <div class="apiMemberDescription enumMemberDescription">
-              <p>Application specific configuration file; freely defined by applications</p> 
+              <p>Application-specific configuration file. Callers into libgit2 can add their own configuration beginning at this level.</p> 
             </div>
           </div>
           <div class="apiMember enumMember">
@@ -232,7 +244,7 @@ priority levels as well.</p>
               -1
             </div>
             <div class="apiMemberDescription enumMemberDescription">
-              <p>Represents the highest level available config file (i.e. the most specific config file available that actually is loaded)</p> 
+              <p>Not a configuration level; callers can use this value when querying configuration levels to specify that they want to have data from the highest-level currently configuration. This can be used to indicate that callers want the most specific config file available that actually is loaded.</p> 
             </div>
           </div>
         </div>

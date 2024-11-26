@@ -130,10 +130,10 @@ the next parent or NULL if all parents have been provided.</p>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/commit.h#L53" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/commit.h#L93" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_commit_parent_callback(<span class="apiSignatureParameter callbackSignatureParameter">size_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef const git_oid *git_commit_parent_callback(<span class="apiSignatureParameter callbackSignatureParameter">size_t idx</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -145,8 +145,11 @@ the next parent or NULL if all parents have been provided.</p>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              idx
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the index of the parent</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -156,9 +159,22 @@ the next parent or NULL if all parents have been provided.</p>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              payload
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the user-specified payload</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            <a href="/docs/reference/main/oid/git_oid.html" class="apiLink structLink">const git_oid *</a>
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>the object id of the parent, or NULL if there are no further parents</p> 
           </div>
         </div>
 

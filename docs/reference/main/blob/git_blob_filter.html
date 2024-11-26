@@ -62,7 +62,7 @@ working directory under the specified filename.  This may apply
 CRLF filtering or other types of changes depending on the file
 attributes set for the blob and the content detected in it.</p>
 
-        <p>The output is written into a <a href="/docs/reference/main/buffer/git_buf.html" class="apiLink structLink"><code><span class="codeWord">git_buf</span></code></a> which the caller must free
+        <p>The output is written into a <a href="/docs/reference/main/buffer/git_buf.html" class="apiLink structLink"><code><span class="codeWord">git_buf</span></code></a> which the caller must dispose
 when done (via <a href="/docs/reference/main/buffer/git_buf_dispose.html" class="apiLink functionLink"><code><span class="codeWord">git_buf_dispose</span></code></a>).</p>
 
         <p>If no filters need to be applied, then the <code><span class="codeWord">out</span></code> buffer will just
@@ -74,7 +74,7 @@ buffer or copy it into memory you own.</p>
 
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/blob.h#L188" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/blob.h#L227" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_blob_filter(<span class="apiSignatureParameter functionSignatureParameter">git_buf *out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_blob *blob</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *as_path</span>, <span class="apiSignatureParameter functionSignatureParameter">git_blob_filter_options *opts</span>);

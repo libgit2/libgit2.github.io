@@ -143,10 +143,10 @@ continues.</li>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/diff.h#L346" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/diff.h#L352" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_diff_notify_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_diff *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_delta *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_diff_notify_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_diff *diff_so_far</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_delta *delta_to_add</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *matched_pathspec</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -158,8 +158,11 @@ continues.</li>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              diff_so_far
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the diff structure as it currently exists</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -169,8 +172,11 @@ continues.</li>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              delta_to_add
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the delta that is to be added</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -180,8 +186,11 @@ continues.</li>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              matched_pathspec
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the pathspec</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -191,9 +200,22 @@ continues.</li>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              payload
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the user-specified callback payload</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success, 1 to skip this delta, or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>

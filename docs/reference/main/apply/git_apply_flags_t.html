@@ -55,13 +55,23 @@ layout: default
 
 
         <div class="apiDescription enumDescription">
-        <p>Flags controlling the behavior of git_apply</p>
+        <p>Flags controlling the behavior of <a href="/docs/reference/main/apply/git_apply.html" class="apiLink functionLink"><code><span class="codeWord">git_apply</span></code></a>.</p>
+
+        <p>When the callback:</p>
+<ul>
+<li>returns
+&lt;
+0, the apply process will be aborted.</li>
+<li>returns &gt; 0, the hunk will not be applied, but the apply process
+continues</li>
+<li>returns 0, the hunk is applied, and the apply process continues.</li>
+</ul>
 
         </div>
 
         <h3 class="apiMembersHeader enumMembersHeader">Values</h3>
         <div class="apiSignatureLink enumSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/apply.h#L61" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/apply.h#L72" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiMembers enumMembers">
           <div class="apiMember enumMember">

@@ -118,10 +118,10 @@ translation and stream the filtered data out to the <code><span class="codeWord"
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/filter.h#L213" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/filter.h#L269" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_filter_stream_fn(<span class="apiSignatureParameter callbackSignatureParameter">git_writestream **</span>, <span class="apiSignatureParameter callbackSignatureParameter">git_filter *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void **</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_filter_source *</span>, <span class="apiSignatureParameter callbackSignatureParameter">git_writestream *</span>);
+          typedef int git_filter_stream_fn(<span class="apiSignatureParameter callbackSignatureParameter">git_writestream **out</span>, <span class="apiSignatureParameter callbackSignatureParameter">git_filter *self</span>, <span class="apiSignatureParameter callbackSignatureParameter">void **payload</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_filter_source *src</span>, <span class="apiSignatureParameter callbackSignatureParameter">git_writestream *next</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -133,8 +133,11 @@ translation and stream the filtered data out to the <code><span class="codeWord"
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              out
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the write stream</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -144,8 +147,11 @@ translation and stream the filtered data out to the <code><span class="codeWord"
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              self
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the filter</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -155,8 +161,11 @@ translation and stream the filtered data out to the <code><span class="codeWord"
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              payload
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>a data for future filter functions</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -166,8 +175,11 @@ translation and stream the filtered data out to the <code><span class="codeWord"
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              src
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the filter source</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -177,9 +189,22 @@ translation and stream the filtered data out to the <code><span class="codeWord"
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              next
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the output stream</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success or a negative value on error</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>

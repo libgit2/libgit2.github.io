@@ -144,10 +144,10 @@ callback can use it.  If a filter allocates and assigns a value to the
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/filter.h#L175" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/filter.h#L218" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_filter_check_fn(<span class="apiSignatureParameter callbackSignatureParameter">git_filter *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void **</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_filter_source *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char **</span>);
+          typedef int git_filter_check_fn(<span class="apiSignatureParameter callbackSignatureParameter">git_filter *self</span>, <span class="apiSignatureParameter callbackSignatureParameter">void **payload</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_filter_source *src</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char **attr_values</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -159,8 +159,11 @@ callback can use it.  If a filter allocates and assigns a value to the
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              self
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the filter check</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -170,8 +173,11 @@ callback can use it.  If a filter allocates and assigns a value to the
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              payload
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>a data for future filter functions</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -181,8 +187,11 @@ callback can use it.  If a filter allocates and assigns a value to the
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              src
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the filter source</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -192,9 +201,22 @@ callback can use it.  If a filter allocates and assigns a value to the
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              attr_values
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the attribute values</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success or a negative value on error</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>

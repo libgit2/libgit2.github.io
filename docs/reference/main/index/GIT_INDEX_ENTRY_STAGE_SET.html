@@ -60,9 +60,14 @@ layout: default
           </div>
         </div>
 
+
+        <div class="apiDescription macroDescription">
+        <p>Macro to set the stage value (0 for the &quot;main index&quot;, or a conflict value) for an index entry.</p>
+
+        </div>
         <h3 class="apiSignatureHeader macroSignatureHeader">Signature</h3>
         <div class="apiSignatureLink macroSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/index.h#L97" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/index.h#L113" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature macroSignature">
           #define GIT_INDEX_ENTRY_STAGE_SET(E,S) do &#123; (E)-&gt;flags = ((E)-&gt;flags &amp; ~GIT_INDEX_ENTRY_STAGEMASK) | (((S) &amp; 0x03) &lt;&lt; GIT_INDEX_ENTRY_STAGESHIFT); &#125; while (0)        </div>

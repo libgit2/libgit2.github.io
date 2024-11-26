@@ -127,9 +127,14 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Copy an already raw oid into a git_oid structure.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/oid.h#L173" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/oid.h#L169" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_oid_fromraw(<span class="apiSignatureParameter functionSignatureParameter">git_oid *out</span>, <span class="apiSignatureParameter functionSignatureParameter">const unsigned char *raw</span>);
@@ -148,7 +153,7 @@ layout: default
               out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>oid structure the result is written into.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -162,7 +167,7 @@ layout: default
               raw
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the raw input bytes to be copied.</p> 
             </div>
           </div>
         </div>
@@ -173,7 +178,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 on success or error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

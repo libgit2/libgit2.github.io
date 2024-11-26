@@ -109,7 +109,13 @@ layout: default
           </div>
       </div>
       <div class="groupIndexDetails">
-        Git annotated commit routines
+        <p>An &quot;annotated commit&quot; is a commit that contains information about
+how the commit was resolved, which can be used for maintaining the
+user's &quot;intent&quot; through commands like merge and rebase. For example,
+if a user wants to &quot;merge HEAD&quot; then an annotated commit is used to
+both contain the HEAD commit <em>and</em> the fact that it was resolved as
+the HEAD ref.</p>
+
       </div>
 
         <h3 class="apiListHeader objectListHeader">Objects</h3>
@@ -121,7 +127,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription objectListItemDescription">
-              <p>Annotated commits, the input to merge and rebase</p> 
+              <p>Annotated commits are commits with additional metadata about how the commit was resolved, which can be used for maintaining the user's &quot;intent&quot; through commands like merge and rebase</p> 
             </div>
           </div>
         </div>

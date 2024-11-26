@@ -132,7 +132,10 @@ layout: default
           </div>
       </div>
       <div class="groupIndexDetails">
-        Git blob load and write routines
+        <p>A blob represents a file in a git repository. This is the raw data
+as it is stored in the repository itself. Blobs may be &quot;filtered&quot;
+to produce the on-disk content.</p>
+
       </div>
 
         <h3 class="apiListHeader objectListHeader">Objects</h3>
@@ -172,7 +175,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>The current version number for the <a href="/docs/reference/main/blob/git_blob_filter_options.html" class="apiLink structLink"><code><span class="codeWord">git_blob_filter_options</span></code></a> structure ABI</p> 
             </div>
           </div>
           <div class="apiListItem macroListItem">
@@ -182,7 +185,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>The default values for <a href="/docs/reference/main/blob/git_blob_filter_options.html" class="apiLink structLink"><code><span class="codeWord">git_blob_filter_options</span></code></a></p> 
             </div>
           </div>
         </div>
@@ -300,7 +303,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              <p>Read a file from the working folder of a repository and write it to the Object Database as a loose blob</p> 
+              <p>Read a file from the working folder of a repository and write it to the object database</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -310,7 +313,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              <p>Read a file from the filesystem and write its content to the Object Database as a loose blob</p> 
+              <p>Read a file from the filesystem (not necessarily inside the working folder of the repository) and write it to the object database</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -320,7 +323,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              <p>Create a stream to write a new blob into the object db</p> 
+              <p>Create a stream to write a new blob into the object database</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -330,7 +333,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              <p>Close the stream and write the blob to the object db</p> 
+              <p>Close the stream and finalize writing the blob to the object database</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -340,7 +343,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              <p>Write an in-memory buffer to the ODB as a blob</p> 
+              <p>Write an in-memory buffer to the object database as a blob</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -350,7 +353,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              <p>Determine if the blob content is most certainly binary or not</p> 
+              <p>Determine if the blob content is most likely binary or not</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">

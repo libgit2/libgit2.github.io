@@ -132,7 +132,7 @@ layout: default
           </div>
       </div>
       <div class="groupIndexDetails">
-        Git object database routines
+        An object database manages the storage of git objects
       </div>
 
         <h3 class="apiListHeader objectListHeader">Objects</h3>
@@ -144,7 +144,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription objectListItemDescription">
-              <p>An open object database handle</p> 
+              <p>An object database stores the objects (commit, trees, blobs, tags, etc) for a repository</p> 
             </div>
           </div>
           <div class="apiListItem objectListItem">
@@ -154,7 +154,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription objectListItemDescription">
-              <p>An object read from the ODB</p> 
+              <p>A &quot;raw&quot; object read from the object database</p> 
             </div>
           </div>
         </div>
@@ -192,7 +192,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>The current version of the diff options structure</p> 
             </div>
           </div>
           <div class="apiListItem macroListItem">
@@ -202,7 +202,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>Stack initializer for odb options</p> 
             </div>
           </div>
         </div>
@@ -244,7 +244,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              
+              <p>Create a new object database with no backends</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -254,7 +254,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              
+              <p>Create a new object database and automatically add the two default backends:</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -464,7 +464,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              
+              <p>Determine the object-ID (sha1 or sha256 hash) of a data buffer</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">
@@ -474,7 +474,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription functionListItemDescription">
-              
+              <p>Read a file from disk and fill a git_oid with the object id that the file would have if it were written to the Object Database as an object of the given type (w/o applying filters) Similar functionality to git.git's <code><span class="codeWord">git</span> <span class="codeWord">hash-object</span></code> without the <code><span class="codeWord">-w</span></code> flag, however, with the --no-filters flag. If you need filters, see git_repository_hashfile.</p> 
             </div>
           </div>
           <div class="apiListItem functionListItem">

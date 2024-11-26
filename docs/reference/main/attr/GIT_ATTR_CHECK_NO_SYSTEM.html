@@ -124,12 +124,12 @@ layout: default
 
 
         <div class="apiDescription macroDescription">
-        <p>Check attribute flags: controlling extended attribute behavior. Normally, attribute checks include looking in the /etc (or system equivalent) directory for a <code><span class="codeWord">gitattributes</span></code> file.  Passing the <a href="/docs/reference/main/attr/GIT_ATTR_CHECK_NO_SYSTEM.html" class="apiLink macroLink"><code><span class="codeWord">GIT_ATTR_CHECK_NO_SYSTEM</span></code></a> flag will cause attribute checks to ignore that file. Passing the <a href="/docs/reference/main/attr/GIT_ATTR_CHECK_INCLUDE_HEAD.html" class="apiLink macroLink"><code><span class="codeWord">GIT_ATTR_CHECK_INCLUDE_HEAD</span></code></a> flag will use attributes from a <code><span class="codeWord">.gitattributes</span></code> file in the repository at the HEAD revision. Passing the <a href="/docs/reference/main/attr/GIT_ATTR_CHECK_INCLUDE_COMMIT.html" class="apiLink macroLink"><code><span class="codeWord">GIT_ATTR_CHECK_INCLUDE_COMMIT</span></code></a> flag will use attributes from a <code><span class="codeWord">.gitattributes</span></code> file in a specific commit.</p>
+        <p>Ignore system attributes</p>
 
         </div>
         <h3 class="apiSignatureHeader macroSignatureHeader">Signature</h3>
         <div class="apiSignatureLink macroSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/attr.h#L135" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/attr.h#L145" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature macroSignature">
           #define GIT_ATTR_CHECK_NO_SYSTEM (1 &lt;&lt; 2)        </div>

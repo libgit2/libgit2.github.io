@@ -118,7 +118,13 @@ layout: default
           </div>
       </div>
       <div class="groupIndexDetails">
-        Git filter APIs
+        <p>During checkout, filters update a file from a &quot;canonical&quot; state to
+a format appropriate for the local filesystem; during commit, filters
+produce the canonical state. For example, on Windows, the line ending
+filters <em>may</em> take a canonical state (with Unix-style newlines) in
+the repository, and place the contents on-disk with Windows-style
+<code><span class="codeWord">\r\n</span></code> line endings.</p>
+
       </div>
 
         <h3 class="apiListHeader objectListHeader">Objects</h3>
@@ -158,7 +164,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>Current version for the <a href="/docs/reference/main/filter/git_filter_options.html" class="apiLink structLink"><code><span class="codeWord">git_filter_options</span></code></a> structure</p> 
             </div>
           </div>
           <div class="apiListItem macroListItem">
@@ -168,7 +174,7 @@ layout: default
               </a>
             </div>
             <div class="apiListItemDescription macroListItemDescription">
-              
+              <p>Static constructor for <a href="/docs/reference/main/filter/git_filter_options.html" class="apiLink structLink"><code><span class="codeWord">git_filter_options</span></code></a></p> 
             </div>
           </div>
         </div>

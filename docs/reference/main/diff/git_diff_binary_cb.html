@@ -113,10 +113,10 @@ binary content within the diff.</p>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/diff.h#L562" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/diff.h#L576" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_diff_binary_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_diff_delta *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_binary *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_diff_binary_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_diff_delta *delta</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_binary *binary</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -128,8 +128,11 @@ binary content within the diff.</p>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              delta
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the delta</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -139,8 +142,11 @@ binary content within the diff.</p>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              binary
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the binary content</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -150,9 +156,22 @@ binary content within the diff.</p>
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              payload
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the user-specified callback payload</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 or an error code</p> 
           </div>
         </div>
 

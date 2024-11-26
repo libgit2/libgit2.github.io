@@ -121,16 +121,16 @@ layout: default
 
 
         <div class="apiDescription callbackDescription">
-        <p>Packbuilder progress notification function</p>
+        <p>Packbuilder progress notification function.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/pack.h#L237" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/pack.h#L245" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_packbuilder_progress(<span class="apiSignatureParameter callbackSignatureParameter">int </span>, <span class="apiSignatureParameter callbackSignatureParameter">uint32_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">uint32_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_packbuilder_progress(<span class="apiSignatureParameter callbackSignatureParameter">int stage</span>, <span class="apiSignatureParameter callbackSignatureParameter">uint32_t current</span>, <span class="apiSignatureParameter callbackSignatureParameter">uint32_t total</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -142,8 +142,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              stage
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the stage of the packbuilder</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -153,8 +156,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              current
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the current object</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -164,8 +170,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              total
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the total number of objects</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -175,9 +184,22 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              payload
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the callback payload</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success or an error code</p> 
           </div>
         </div>
 

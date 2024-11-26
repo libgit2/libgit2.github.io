@@ -127,9 +127,18 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Parse a hex formatted object id into a git_oid.</p>
+
+        <p>The appropriate number of bytes for the given object ID type will
+be read from the string - 40 bytes for SHA1, 64 bytes for SHA256.
+The given string need not be NUL terminated.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/oid.h#L128" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/oid.h#L138" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_oid_fromstr(<span class="apiSignatureParameter functionSignatureParameter">git_oid *out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *str</span>);
@@ -148,7 +157,7 @@ layout: default
               out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>oid structure the result is written into.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -162,7 +171,7 @@ layout: default
               str
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>input hex string; must be pointing at the start of the hex sequence and have at least the number of bytes needed for an oid encoded in hex (40 bytes for sha1, 256 bytes for sha256).</p> 
             </div>
           </div>
         </div>
@@ -173,7 +182,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

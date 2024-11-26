@@ -134,28 +134,45 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Create a new object database and automatically add
+the two default backends:</p>
+
+        <ul>
+<li>git_odb_backend_loose: read and write loose object files
+from disk, assuming <code><span class="codeWord">objects_dir</span></code> as the Objects folder</li>
+</ul>
+
+        <ul>
+<li>git_odb_backend_pack: read objects from packfiles,
+assuming <code><span class="codeWord">objects_dir</span></code> as the Objects folder which
+contains a 'pack/' folder with the corresponding data</li>
+</ul>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb.h#L100" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb.h#L120" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
-          int git_odb_open(<span class="apiSignatureParameter functionSignatureParameter">git_odb **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *objects_dir</span>);
+          int git_odb_open(<span class="apiSignatureParameter functionSignatureParameter">git_odb **odb_out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *objects_dir</span>);
         </div>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/odb/git_odb.html" class="apiLink objectLink">git_odb **</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
-              out
+              odb_out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>location to store the database pointer, if opened. Set to NULL if the open failed.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -169,7 +186,7 @@ layout: default
               objects_dir
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>path of the backends' &quot;objects&quot; directory.</p> 
             </div>
           </div>
         </div>
@@ -180,7 +197,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

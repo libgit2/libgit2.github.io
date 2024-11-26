@@ -131,9 +131,14 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Create a backend for loose objects</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb_backend.h#L145" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb_backend.h#L171" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_odb_backend_loose(<span class="apiSignatureParameter functionSignatureParameter">git_odb_backend **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *objects_dir</span>, <span class="apiSignatureParameter functionSignatureParameter">int compression_level</span>, <span class="apiSignatureParameter functionSignatureParameter">int do_fsync</span>, <span class="apiSignatureParameter functionSignatureParameter">unsigned int dir_mode</span>, <span class="apiSignatureParameter functionSignatureParameter">unsigned int file_mode</span>);
@@ -141,18 +146,18 @@ layout: default
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/sys/odb_backend/git_odb_backend.html" class="apiLink structLink">git_odb_backend **</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
               out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>location to store the odb backend pointer</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -166,7 +171,7 @@ layout: default
               objects_dir
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the Git repository's objects directory</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -180,7 +185,7 @@ layout: default
               compression_level
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>zlib compression level (0-9), or -1 for the default</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -194,7 +199,7 @@ layout: default
               do_fsync
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>if non-zero, perform an fsync on write</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -208,7 +213,7 @@ layout: default
               dir_mode
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>permission to use when creating directories, or 0 for default</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -222,7 +227,7 @@ layout: default
               file_mode
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>permission to use when creating directories, or 0 for default</p> 
             </div>
           </div>
         </div>
@@ -233,7 +238,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

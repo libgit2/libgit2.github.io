@@ -122,9 +122,18 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Create a &quot;fake&quot; repository to wrap an object database</p>
+
+        <p>Create a repository object to wrap an object database to be used
+with the API when all you have is an object database. This doesn't
+have any paths associated with it, so use with care.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/repository.h#L69" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/repository.h#L71" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_repository_wrap_odb(<span class="apiSignatureParameter functionSignatureParameter">git_repository **out</span>, <span class="apiSignatureParameter functionSignatureParameter">git_odb *odb</span>);
@@ -143,7 +152,7 @@ layout: default
               out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>pointer to the repo</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -157,7 +166,7 @@ layout: default
               odb
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the object database to wrap</p> 
             </div>
           </div>
         </div>
@@ -168,7 +177,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

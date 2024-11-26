@@ -122,12 +122,22 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Create an in-memory index object.</p>
+
+        <p>This index object cannot be read/written to the filesystem,
+but may be used to perform in-memory index operations.</p>
+
+        <p>The index must be freed once it's no longer in use.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/index.h#L208" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/index.h#L247" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
-          int git_index_new(<span class="apiSignatureParameter functionSignatureParameter">git_index **out</span>);
+          int git_index_new(<span class="apiSignatureParameter functionSignatureParameter">git_index **index_out</span>);
         </div>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
@@ -140,10 +150,10 @@ layout: default
               In
             </div>
             <div class="apiParameterName functionParameterName">
-              out
+              index_out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the pointer for the new index</p> 
             </div>
           </div>
         </div>
@@ -154,7 +164,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

@@ -61,10 +61,10 @@ layout: default
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/trace.h#L52" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/trace.h#L55" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef void git_trace_cb(<span class="apiSignatureParameter callbackSignatureParameter">git_trace_level_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *</span>);
+          typedef void git_trace_cb(<span class="apiSignatureParameter callbackSignatureParameter">git_trace_level_t level</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *msg</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -76,8 +76,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              level
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the trace level</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -87,8 +90,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              msg
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the trace message</p> 
             </div>
           </div>
         </div>

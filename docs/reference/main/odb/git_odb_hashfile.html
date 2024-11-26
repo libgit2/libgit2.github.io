@@ -126,28 +126,38 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Read a file from disk and fill a git_oid with the object id
+that the file would have if it were written to the Object
+Database as an object of the given type (w/o applying filters).
+Similar functionality to git.git's <code><span class="codeWord">git</span> <span class="codeWord">hash-object</span></code> without
+the <code><span class="codeWord">-w</span></code> flag, however, with the --no-filters flag.
+If you need filters, see git_repository_hashfile.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb.h#L514" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb.h#L554" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
-          int git_odb_hashfile(<span class="apiSignatureParameter functionSignatureParameter">git_oid *out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *path</span>, <span class="apiSignatureParameter functionSignatureParameter">git_object_t type</span>);
+          int git_odb_hashfile(<span class="apiSignatureParameter functionSignatureParameter">git_oid *oid</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *path</span>, <span class="apiSignatureParameter functionSignatureParameter">git_object_t object_type</span>);
         </div>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
-              out
+              oid
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>oid structure the result is written into.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -161,7 +171,7 @@ layout: default
               path
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>file to read and determine object id for</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -172,10 +182,10 @@ layout: default
               In
             </div>
             <div class="apiParameterName functionParameterName">
-              type
+              object_type
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>of the data to hash</p> 
             </div>
           </div>
         </div>
@@ -186,7 +196,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

@@ -55,14 +55,15 @@ layout: default
 
 
         <div class="apiDescription functionDescription">
-        <p>Read a file from the filesystem and write its content
-to the Object Database as a loose blob</p>
+        <p>Read a file from the filesystem (not necessarily inside the
+working folder of the repository) and write it to the object
+database.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/blob.h#L217" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/blob.h#L257" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_blob_create_from_disk(<span class="apiSignatureParameter functionSignatureParameter">git_oid *id</span>, <span class="apiSignatureParameter functionSignatureParameter">git_repository *repo</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *path</span>);
@@ -70,12 +71,12 @@ to the Object Database as a loose blob</p>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
               id

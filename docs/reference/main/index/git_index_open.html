@@ -127,12 +127,28 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Create a new bare Git index object as a memory representation
+of the Git index file in 'index_path', without a repository
+to back it.</p>
+
+        <p>Since there is no ODB or working directory behind this index,
+any Index methods which rely on these (e.g. index_add_bypath)
+will fail with the GIT_ERROR error code.</p>
+
+        <p>If you need to access the index of an actual repository,
+use the <a href="/docs/reference/main/repository/git_repository_index.html" class="apiLink functionLink"><code><span class="codeWord">git_repository_index</span></code></a> wrapper.</p>
+
+        <p>The index must be freed once it's no longer in use.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/index.h#L191" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/index.h#L234" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
-          int git_index_open(<span class="apiSignatureParameter functionSignatureParameter">git_index **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *index_path</span>);
+          int git_index_open(<span class="apiSignatureParameter functionSignatureParameter">git_index **index_out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *index_path</span>);
         </div>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
@@ -145,10 +161,10 @@ layout: default
               In
             </div>
             <div class="apiParameterName functionParameterName">
-              out
+              index_out
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the pointer for the new index</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -162,7 +178,7 @@ layout: default
               index_path
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the path to the index file in disk</p> 
             </div>
           </div>
         </div>
@@ -173,7 +189,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

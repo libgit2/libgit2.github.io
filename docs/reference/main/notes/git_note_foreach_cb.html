@@ -125,13 +125,6 @@ layout: default
         <div class="apiDescription callbackDescription">
         <p>Callback for git_note_foreach.</p>
 
-        <p>Receives:</p>
-<ul>
-<li>blob_id: Oid of the blob containing the message</li>
-<li>annotated_object_id: Oid of the git object being annotated</li>
-<li>payload: Payload data passed to <a href="/docs/reference/main/notes/git_note_foreach.html" class="apiLink functionLink"><code><span class="codeWord">git_note_foreach</span></code></a></li>
-</ul>
-
         </div>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
@@ -139,7 +132,7 @@ layout: default
           <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/notes.h#L29" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_note_foreach_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_oid *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_oid *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_note_foreach_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_oid *blob_id</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_oid *annotated_object_id</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -151,8 +144,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              blob_id
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>object id of the blob containing the message</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -162,8 +158,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              annotated_object_id
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the id of the object being annotated</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -173,9 +172,22 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              payload
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>user-specified data to the foreach function</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success, or a negative number on failure</p> 
           </div>
         </div>
 

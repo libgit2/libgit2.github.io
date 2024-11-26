@@ -12,6 +12,7 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_diff_format_email_options</h2>
+          <span class="apiAttribute structAttribute apiAttributeDeprecated structAttributeDeprecated">Deprecated</span>
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -124,9 +125,18 @@ layout: default
 
         </div>
 
+        <h3 class="apiDeprecationsHeader structDeprecationsHeader">Deprecations</h3>
+        <div class="apiDeprecations structDeprecations">
+          <ul>
+          <li>
+            use `git_email_create_options`
+          </li>
+          </ul>
+        </div>
+
         <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
         <div class="apiSignatureLink structSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/deprecated.h#L323" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/deprecated.h#L338" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature structSignature">
           typedef struct git_diff_format_email_options {

@@ -112,20 +112,29 @@ layout: default
 
 
         <div class="apiDescription objectDescription">
-        <p>Annotated commits, the input to merge and rebase.</p>
+        <p>Annotated commits are commits with additional metadata about how the
+commit was resolved, which can be used for maintaining the user's
+&quot;intent&quot; through commands like merge and rebase.</p>
+
+        <p>For example, if a user wants to conceptually &quot;merge <code><span class="codeWord">HEAD</span></code>&quot;, then the
+commit portion of an annotated commit will point to the <code><span class="codeWord">HEAD</span></code> commit,
+but the <em>annotation</em> will denote the ref <code><span class="codeWord">HEAD</span></code>. This allows git to
+perform the internal bookkeeping so that the system knows both the
+content of what is being merged but also how the content was looked up
+so that it can be recorded in the reflog appropriately.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader objectSignatureHeader">Signature</h3>
         <div class="apiSignatureLink objectSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/types.h#L198" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/types.h#L214" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature objectSignature">
           typedef struct git_annotated_commit git_annotated_commit
         </div>
 
-        <h3 class="apiParameterToHeader objectParameterToHeader">Parameter To</h3>
-        <div class="apiParameterTo objectParameterTo">
+        <h3 class="apiReturnedByHeader objectReturnedByHeader">Returned By</h3>
+        <div class="apiReturnedBy objectReturnedBy">
           <ul>
           <li>
             <a href="/docs/reference/main/annotated_commit/git_annotated_commit_from_ref.html" className="apiLink functionLink">git_annotated_commit_from_ref</a>
@@ -139,6 +148,12 @@ layout: default
           <li>
             <a href="/docs/reference/main/annotated_commit/git_annotated_commit_from_revspec.html" className="apiLink functionLink">git_annotated_commit_from_revspec</a>
           </li>
+          </ul>
+        </div>
+
+        <h3 class="apiParameterToHeader objectParameterToHeader">Parameter To</h3>
+        <div class="apiParameterTo objectParameterTo">
+          <ul>
           <li>
             <a href="/docs/reference/main/annotated_commit/git_annotated_commit_id.html" className="apiLink functionLink">git_annotated_commit_id</a>
           </li>

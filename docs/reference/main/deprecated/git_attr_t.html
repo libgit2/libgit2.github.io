@@ -12,6 +12,7 @@ layout: default
         </div>
         <div class="apiHeader aliasHeader">
           <h2 class="apiName aliasName">git_attr_t</h2>
+          <span class="apiAttribute aliasAttribute apiAttributeDeprecated aliasAttributeDeprecated">Deprecated</span>
           <div class="apiHeaderVersionSelect aliasHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -121,9 +122,18 @@ layout: default
           </div>
         </div>
 
+
+        <h3 class="apiDeprecationsHeader aliasDeprecationsHeader">Deprecations</h3>
+        <div class="apiDeprecations aliasDeprecations">
+          <ul>
+          <li>
+            use git_attr_value_t
+          </li>
+          </ul>
+        </div>
         <h3 class="apiSignatureHeader aliasSignatureHeader">Signature</h3>
         <div class="apiSignatureLink aliasSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/deprecated.h#L81" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/deprecated.h#L89" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature aliasSignature">
           typedef git_attr_t git_attr_value_t;        </div>

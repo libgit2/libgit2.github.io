@@ -129,28 +129,36 @@ layout: default
         </div>
 
 
+        <div class="apiDescription functionDescription">
+        <p>Determine the object-ID (sha1 or sha256 hash) of a data buffer</p>
+
+        <p>The resulting OID will be the identifier for the data buffer as if
+the data buffer it were to written to the ODB.</p>
+
+        </div>
+
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb.h#L490" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/odb.h#L539" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
-          int git_odb_hash(<span class="apiSignatureParameter functionSignatureParameter">git_oid *out</span>, <span class="apiSignatureParameter functionSignatureParameter">const void *data</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t len</span>, <span class="apiSignatureParameter functionSignatureParameter">git_object_t type</span>);
+          int git_odb_hash(<span class="apiSignatureParameter functionSignatureParameter">git_oid *oid</span>, <span class="apiSignatureParameter functionSignatureParameter">const void *data</span>, <span class="apiSignatureParameter functionSignatureParameter">size_t len</span>, <span class="apiSignatureParameter functionSignatureParameter">git_object_t object_type</span>);
         </div>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
         <div class="apiParameters functionParameters">
-          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+          <div class="apiParameter functionParameter apiParameterOut functionParameterOut">
             <div class="apiParameterType functionParameterType">
               <a href="/docs/reference/main/oid/git_oid.html" class="apiLink structLink">git_oid *</a>
             </div>
-            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
-              In
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionOut functionParameterDirectionOut">
+              Out
             </div>
             <div class="apiParameterName functionParameterName">
-              out
+              oid
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>the resulting object-ID.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -164,7 +172,7 @@ layout: default
               data
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>data to hash</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -178,7 +186,7 @@ layout: default
               len
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>size of the data</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -189,10 +197,10 @@ layout: default
               In
             </div>
             <div class="apiParameterName functionParameterName">
-              type
+              object_type
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>of the data to hash</p> 
             </div>
           </div>
         </div>
@@ -203,7 +211,7 @@ layout: default
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>

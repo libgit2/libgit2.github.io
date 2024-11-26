@@ -62,7 +62,17 @@ layout: default
 
 
         <div class="apiDescription structDescription">
-        <p>Apply options structure</p>
+        <p>Apply options structure.</p>
+
+        <p>When the callback:</p>
+<ul>
+<li>returns
+&lt;
+0, the apply process will be aborted.</li>
+<li>returns &gt; 0, the hunk will not be applied, but the apply process
+continues</li>
+<li>returns 0, the hunk is applied, and the apply process continues.</li>
+</ul>
 
         <p>Initialize with <a href="/docs/reference/main/apply/GIT_APPLY_OPTIONS_INIT.html" class="apiLink macroLink"><code><span class="codeWord">GIT_APPLY_OPTIONS_INIT</span></code></a>. Alternatively, you can
 use <a href="/docs/reference/main/apply/git_apply_options_init.html" class="apiLink functionLink"><code><span class="codeWord">git_apply_options_init</span></code></a>.</p>
@@ -73,14 +83,17 @@ use <a href="/docs/reference/main/apply/git_apply_options_init.html" class="apiL
         <div class="apiSee structSee">
           <ul>
           <li>
-            git_apply_to_tree, git_apply
+            <a href="/docs/reference/main/apply/git_apply_to_tree.html" className="apiLink functionLink">git_apply_to_tree</a>
+          </li>
+          <li>
+            <a href="/docs/reference/main/apply/git_apply.html" className="apiLink functionLink">git_apply</a>
           </li>
           </ul>
         </div>
 
         <h3 class="apiSignatureHeader structSignatureHeader">Signature</h3>
         <div class="apiSignatureLink structSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/apply.h#L77" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/apply.h#L95" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature structSignature">
           typedef struct git_apply_options {
@@ -135,7 +148,7 @@ use <a href="/docs/reference/main/apply/git_apply_options_init.html" class="apiL
               payload
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              <p>Payload passed to both delta_cb &amp; hunk_cb.</p> 
+              <p>Payload passed to both <code><span class="codeWord">delta_cb</span></code> &amp; <code><span class="codeWord">hunk_cb</span></code>.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -146,7 +159,7 @@ use <a href="/docs/reference/main/apply/git_apply_options_init.html" class="apiL
               flags
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              <p>Bitmask of git_apply_flags_t</p> 
+              <p>Bitmask of <a href="/docs/reference/main/apply/git_apply_flags_t.html" class="apiLink enumLink"><code><span class="codeWord">git_apply_flags_t</span></code></a></p> 
             </div>
           </div>
         </div>

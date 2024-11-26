@@ -123,16 +123,16 @@ layout: default
 
 
         <div class="apiDescription callbackDescription">
-        <p>Checkout notification callback function</p>
+        <p>Checkout notification callback function.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/checkout.h#L257" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/checkout.h#L275" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef int git_checkout_notify_cb(<span class="apiSignatureParameter callbackSignatureParameter">git_checkout_notify_t </span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_file *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_file *</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_file *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef int git_checkout_notify_cb(<span class="apiSignatureParameter callbackSignatureParameter">git_checkout_notify_t why</span>, <span class="apiSignatureParameter callbackSignatureParameter">const char *path</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_file *baseline</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_file *target</span>, <span class="apiSignatureParameter callbackSignatureParameter">const git_diff_file *workdir</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -144,8 +144,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              why
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the notification reason</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -155,8 +158,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              path
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the path to the file being checked out</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -166,8 +172,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              baseline
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the baseline's diff file information</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -177,8 +186,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              target
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the checkout target diff file information</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -188,8 +200,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              workdir
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the working directory diff file information</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -199,9 +214,22 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
-            <div class="apiParameterDescription callbackParameterDescription">
-              
+            <div class="apiParameterName callbackParameterName">
+              payload
             </div>
+            <div class="apiParameterDescription callbackParameterDescription">
+              <p>the user-supplied callback payload</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader callbackReturnHeader">Returns</h3>
+        <div class="apiReturn callbackReturn">
+          <div class="apiReturnType callbackReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription callbackReturnDescription">
+            <p>0 on success, or an error code</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader callbackVersionsHeader">Versions</h3>

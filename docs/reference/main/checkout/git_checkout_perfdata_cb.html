@@ -106,16 +106,16 @@ layout: default
 
 
         <div class="apiDescription callbackDescription">
-        <p>Checkout perfdata notification function</p>
+        <p>Checkout performance data reporting function.</p>
 
         </div>
 
         <h3 class="apiSignatureHeader callbackSignatureHeader">Signature</h3>
         <div class="apiSignatureLink callbackSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/checkout.h#L273" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/checkout.h#L303" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature callbackSignature">
-          typedef void git_checkout_perfdata_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_checkout_perfdata *</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *</span>);
+          typedef void git_checkout_perfdata_cb(<span class="apiSignatureParameter callbackSignatureParameter">const git_checkout_perfdata *perfdata</span>, <span class="apiSignatureParameter callbackSignatureParameter">void *payload</span>);
         </div>
 
         <h3 class="apiParametersHeader callbackParametersHeader">Parameters</h3>
@@ -127,8 +127,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              perfdata
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the performance data for the checkout</p> 
             </div>
           </div>
           <div class="apiParameter callbackParameter apiParameterIn callbackParameterIn">
@@ -138,8 +141,11 @@ layout: default
             <div class="apiParameterDirection callbackParameterDirection apiParameterDirectionIn callbackParameterDirectionIn">
               In
             </div>
+            <div class="apiParameterName callbackParameterName">
+              payload
+            </div>
             <div class="apiParameterDescription callbackParameterDescription">
-              
+              <p>the user-supplied callback payload</p> 
             </div>
           </div>
         </div>

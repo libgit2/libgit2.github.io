@@ -140,18 +140,9 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
 
         </div>
 
-        <h3 class="apiSeeHeader functionSeeHeader">See</h3>
-        <div class="apiSee functionSee">
-          <ul>
-          <li>
-            <a href="/docs/reference/main/commit/git_commit_create.html" className="apiLink functionLink">git_commit_create</a>
-          </li>
-          </ul>
-        </div>
-
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/commit.h#L461" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/commit.h#L528" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_commit_amend(<span class="apiSignatureParameter functionSignatureParameter">git_oid *id</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_commit *commit_to_amend</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *update_ref</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *author</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_signature *committer</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *message_encoding</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *message</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_tree *tree</span>);
@@ -170,7 +161,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
               id
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>Pointer in which to store the OID of the newly created commit</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -184,7 +175,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
               commit_to_amend
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>The commit to amend</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -198,7 +189,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
               update_ref
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>If not NULL, name of the reference that will be updated to point to this commit. If the reference is not direct, it will be resolved to a direct reference. Use &quot;HEAD&quot; to update the HEAD of the current branch and make it point to this commit. If the reference doesn't exist yet, it will be created. If it does exist, the first parent must be the tip of this branch.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -212,7 +203,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
               author
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>Signature with author and author time of commit</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -226,7 +217,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
               committer
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>Signature with committer and * commit time of commit</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -240,7 +231,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
               message_encoding
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>The encoding for the message in the commit, represented with a standard encoding name. E.g. &quot;UTF-8&quot;. If NULL, no encoding header is written and UTF-8 is assumed.</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -254,7 +245,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
               message
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>Full message for this commit</p> 
             </div>
           </div>
           <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
@@ -268,7 +259,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
               tree
             </div>
             <div class="apiParameterDescription functionParameterDescription">
-              
+              <p>An instance of a <a href="/docs/reference/main/tree/git_tree.html" class="apiLink objectLink"><code><span class="codeWord">git_tree</span></code></a> object that will be used as the tree for the commit. This tree object must also be owned by the given <code><span class="codeWord">repo</span></code>.</p> 
             </div>
           </div>
         </div>
@@ -279,7 +270,7 @@ will use the values from the original <code><span class="codeWord">commit_to_ame
             int
           </div>
           <div class="apiReturnDescription functionReturnDescription">
-            
+            <p>0 or an error code The created commit will be written to the Object Database and the given reference will be updated to point to it</p> 
           </div>
         </div>
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
