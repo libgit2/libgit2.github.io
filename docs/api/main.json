@@ -1,7 +1,7 @@
 {
   "info": {
     "version": "main",
-    "commit": "ce01bb30fced4b156968aa05347d4dc01a77436b"
+    "commit": "2b74d4be1a2ccc0697dbe1d2a64eb65ef9d8b620"
   },
   "groups": {
     "sys/alloc": {
@@ -34976,6 +34976,18 @@
                 "Queries the refdb backend for the existence of a reference.",
                 "A refdb implementation must provide this function."
               ],
+              "params": [
+                {
+                  "name": "exists",
+                  "direction": "in",
+                  "comment": "The implementation shall set this to `0` if a ref does\n             not exist, otherwise to `1`."
+                },
+                {
+                  "name": "ref_name",
+                  "direction": "in",
+                  "comment": "The reference's name that should be checked for\n               existence."
+                }
+              ],
               "returns": {
                 "comment": "`0` on success, a negative error value code."
               }
@@ -34986,6 +34998,18 @@
               "comment": [
                 "Queries the refdb backend for a given reference.",
                 "A refdb implementation must provide this function."
+              ],
+              "params": [
+                {
+                  "name": "out",
+                  "direction": "in",
+                  "comment": "The implementation shall set this to the allocated\n          reference, if it could be found, otherwise to `NULL`."
+                },
+                {
+                  "name": "ref_name",
+                  "direction": "in",
+                  "comment": "The reference's name that should be checked for\n               existence."
+                }
               ],
               "returns": {
                 "comment": "`0` on success, `GIT_ENOTFOUND` if the reference does\n         exist, otherwise a negative error code."
@@ -34998,6 +35022,18 @@
                 "Allocate an iterator object for the backend.",
                 "A refdb implementation must provide this function."
               ],
+              "params": [
+                {
+                  "name": "out",
+                  "direction": "in",
+                  "comment": "The implementation shall set this to the allocated\n          reference iterator. A custom structure may be used with an\n          embedded `git_reference_iterator` structure. Both `next`\n          and `next_name` functions of `git_reference_iterator` need\n          to be populated."
+                },
+                {
+                  "name": "glob",
+                  "direction": "in",
+                  "comment": "A pattern to filter references by. If given, the iterator\n           shall only return references that match the glob when\n           passed to `wildmatch`."
+                }
+              ],
               "returns": {
                 "comment": "`0` on success, otherwise a negative error code."
               }
@@ -35008,6 +35044,38 @@
               "comment": [
                 "Writes the given reference to the refdb.",
                 "A refdb implementation must provide this function."
+              ],
+              "params": [
+                {
+                  "name": "ref",
+                  "direction": "in",
+                  "comment": "The reference to persist. May either be a symbolic or\n          direct reference."
+                },
+                {
+                  "name": "force",
+                  "direction": "in",
+                  "comment": "Whether to write the reference if a reference with the\n            same name already exists."
+                },
+                {
+                  "name": "who",
+                  "direction": "in",
+                  "comment": "The person updating the reference. Shall be used to create\n          a reflog entry."
+                },
+                {
+                  "name": "message",
+                  "direction": "in",
+                  "comment": "The message detailing what kind of reference update is\n              performed. Shall be used to create a reflog entry."
+                },
+                {
+                  "name": "old",
+                  "direction": "in",
+                  "comment": "If not `NULL` and `force` is not set, then the\n          implementation needs to ensure that the reference is currently at\n          the given OID before writing the new value. If both `old`\n          and `old_target` are `NULL`, then the reference should not\n          exist at the point of writing."
+                },
+                {
+                  "name": "old_target",
+                  "direction": "in",
+                  "comment": "If not `NULL` and `force` is not set, then the\n                 implementation needs to ensure that the symbolic\n                 reference is currently at the given target before\n                 writing the new value. If both `old` and\n                 `old_target` are `NULL`, then the reference should\n                 not exist at the point of writing."
+                }
               ],
               "returns": {
                 "comment": "`0` on success, otherwise a negative error code."
@@ -35020,6 +35088,38 @@
                 "Rename a reference in the refdb.",
                 "A refdb implementation must provide this function."
               ],
+              "params": [
+                {
+                  "name": "out",
+                  "direction": "in",
+                  "comment": "The implementation shall set this to the newly created\n          reference or `NULL` on error."
+                },
+                {
+                  "name": "old_name",
+                  "direction": "in",
+                  "comment": "The current name of the reference that is to be renamed."
+                },
+                {
+                  "name": "new_name",
+                  "direction": "in",
+                  "comment": "The new name that the old reference shall be renamed to."
+                },
+                {
+                  "name": "force",
+                  "direction": "in",
+                  "comment": "Whether to write the reference if a reference with the\n            target name already exists."
+                },
+                {
+                  "name": "who",
+                  "direction": "in",
+                  "comment": "The person updating the reference. Shall be used to create\n          a reflog entry."
+                },
+                {
+                  "name": "message",
+                  "direction": "in",
+                  "comment": "The message detailing what kind of reference update is\n              performed. Shall be used to create a reflog entry."
+                }
+              ],
               "returns": {
                 "comment": "`0` on success, otherwise a negative error code."
               }
@@ -35031,6 +35131,23 @@
                 "Deletes the given reference from the refdb.",
                 "If it exists, its reflog should be deleted as well.",
                 "A refdb implementation must provide this function."
+              ],
+              "params": [
+                {
+                  "name": "ref_name",
+                  "direction": "in",
+                  "comment": "The name of the reference name that shall be deleted."
+                },
+                {
+                  "name": "old_id",
+                  "direction": "in",
+                  "comment": "If not `NULL` and `force` is not set, then the\n             implementation needs to ensure that the reference is currently at\n             the given OID before writing the new value."
+                },
+                {
+                  "name": "old_target",
+                  "direction": "in",
+                  "comment": "If not `NULL` and `force` is not set, then the\n                 implementation needs to ensure that the symbolic\n                 reference is currently at the given target before\n                 writing the new value."
+                }
               ],
               "returns": {
                 "comment": "`0` on success, otherwise a negative error code."
@@ -35097,6 +35214,13 @@
                 "Write a reflog to disk.",
                 "A refdb implementation must provide this function."
               ],
+              "params": [
+                {
+                  "name": "reflog",
+                  "direction": "in",
+                  "comment": "The complete reference log for a given reference. Note\n             that this may contain entries that have already been\n             written to disk."
+                }
+              ],
               "returns": {
                 "comment": "`0` on success, a negative error code otherwise"
               }
@@ -35107,6 +35231,18 @@
               "comment": [
                 "Rename a reflog.",
                 "A refdb implementation must provide this function."
+              ],
+              "params": [
+                {
+                  "name": "old_name",
+                  "direction": "in",
+                  "comment": "The name of old reference whose reflog shall be renamed from."
+                },
+                {
+                  "name": "new_name",
+                  "direction": "in",
+                  "comment": "The name of new reference whose reflog shall be renamed to."
+                }
               ],
               "returns": {
                 "comment": "`0` on success, a negative error code otherwise"
@@ -35119,6 +35255,13 @@
                 "Remove a reflog.",
                 "A refdb implementation must provide this function."
               ],
+              "params": [
+                {
+                  "name": "name",
+                  "direction": "in",
+                  "comment": "The name of the reference whose reflog shall be deleted."
+                }
+              ],
               "returns": {
                 "comment": "`0` on success, a negative error code otherwise"
               }
@@ -35129,6 +35272,18 @@
               "comment": [
                 "Lock a reference.",
                 "A refdb implementation may provide this function; if it is not\n provided, the transaction API will fail to work."
+              ],
+              "params": [
+                {
+                  "name": "payload_out",
+                  "direction": "in",
+                  "comment": "Opaque parameter that will be passed verbosely to\n                  `unlock`."
+                },
+                {
+                  "name": "refname",
+                  "direction": "in",
+                  "comment": "Reference that shall be locked."
+                }
               ],
               "returns": {
                 "comment": "`0` on success, a negative error code otherwise"
@@ -35141,6 +35296,38 @@
                 "Unlock a reference.",
                 "Only one of target or symbolic_target will be set.\n `success` will be true if the reference should be update, false if\n the lock must be discarded.",
                 "A refdb implementation must provide this function if a `lock`\n implementation is provided."
+              ],
+              "params": [
+                {
+                  "name": "payload",
+                  "direction": "in",
+                  "comment": "The payload returned by `lock`."
+                },
+                {
+                  "name": "success",
+                  "direction": "in",
+                  "comment": "`1` if a reference should be updated, `2` if\n              a reference should be deleted, `0` if the lock must be\n              discarded."
+                },
+                {
+                  "name": "update_reflog",
+                  "direction": "in",
+                  "comment": "`1` in case the reflog should be updated, `0`\n                    otherwise."
+                },
+                {
+                  "name": "ref",
+                  "direction": "in",
+                  "comment": "The reference which should be unlocked."
+                },
+                {
+                  "name": "who",
+                  "direction": "in",
+                  "comment": "The person updating the reference. Shall be used to create\n          a reflog entry in case `update_reflog` is set."
+                },
+                {
+                  "name": "message",
+                  "direction": "in",
+                  "comment": "The message detailing what kind of reference update is\n              performed. Shall be used to create a reflog entry in\n              case `update_reflog` is set."
+                }
               ],
               "returns": {
                 "comment": "`0` on success, a negative error code otherwise"
