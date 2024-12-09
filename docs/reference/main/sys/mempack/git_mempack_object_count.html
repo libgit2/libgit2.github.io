@@ -1,0 +1,95 @@
+---
+title: git_mempack_object_count (libgit2 main)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/main/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/main/sys/mempack/index.html">mempack (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_mempack_object_count</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea functionHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox functionHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'main' })" onFocusIn="handleSearchSuggest({ version: 'main' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'main' }); }"/>
+             <div class="headerSearchResults functionHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/mempack/git_mempack_object_count.html" selected>main</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Get the total number of objects in mempack</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/mempack.h#L112" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_mempack_object_count(<span class="apiSignatureParameter functionSignatureParameter">size_t *count</span>, <span class="apiSignatureParameter functionSignatureParameter">git_odb_backend *backend</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              size_t *
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              count
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The count of objects in the mempack</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/sys/odb_backend/git_odb_backend.html" class="apiLink structLink">git_odb_backend *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              backend
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The mempack backend</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>0 on success, or -1 on error</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/main/sys/mempack/git_mempack_object_count.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          </ul>
+        </div>
+      </div>

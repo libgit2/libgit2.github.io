@@ -1,7 +1,7 @@
 {
   "info": {
     "version": "main",
-    "commit": "2b74d4be1a2ccc0697dbe1d2a64eb65ef9d8b620"
+    "commit": "4282cbd6d8859b11b2241685612c26f4cf3a7c66"
   },
   "groups": {
     "sys/alloc": {
@@ -24916,6 +24916,37 @@
             "Alternatively, call `reset` without a previous dump to \"undo\"\n all the recently written objects, giving transaction-like\n semantics to the Git repository."
           ],
           "group": "sys/mempack"
+        },
+        "git_mempack_object_count": {
+          "kind": "function",
+          "name": "git_mempack_object_count",
+          "location": {
+            "file": "sys/mempack.h",
+            "line": 112,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "0 on success, or -1 on error"
+          },
+          "params": [
+            {
+              "name": "count",
+              "type": "size_t *",
+              "direction": "in",
+              "comment": "The count of objects in the mempack"
+            },
+            {
+              "name": "backend",
+              "type": "git_odb_backend *",
+              "direction": "in",
+              "comment": "The mempack backend"
+            }
+          ],
+          "comment": [
+            "Get the total number of objects in mempack"
+          ],
+          "group": "sys/mempack"
         }
       },
       "info": {
@@ -30598,6 +30629,7 @@
             "git_mempack_write_thin_pack",
             "git_mempack_dump",
             "git_mempack_reset",
+            "git_mempack_object_count",
             "git_odb_init_backend",
             "git_odb_backend_data_alloc",
             "git_odb_backend_data_free",
