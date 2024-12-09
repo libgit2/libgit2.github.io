@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_smart_subtransport</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.28.4' })" onFocusIn="handleSearchSuggest({ version: 'v0.28.4' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.28.4' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -150,7 +159,7 @@ smart transport</p>
               action
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Setup a subtransport stream for the requested action.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -161,7 +170,7 @@ smart transport</p>
               close
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Close the subtransport.</p>  <p>Subtransports are guaranteed a call to close() between calls to action(), except for the following two &quot;natural&quot; progressions of actions against a constant URL:</p>  <ul> <li>UPLOADPACK_LS -&gt; UPLOADPACK</li> <li>RECEIVEPACK_LS -&gt; RECEIVEPACK</li> </ul> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -172,7 +181,7 @@ smart transport</p>
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Free the subtransport</p> 
             </div>
           </div>
         </div>

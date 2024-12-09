@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_config_entry</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.4.6' })" onFocusIn="handleSearchSuggest({ version: 'v1.4.6' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.4.6' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -196,7 +205,7 @@ layout: default
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Free function for this entry</p> 
             </div>
           </div>
           <div class="apiMember structMember">

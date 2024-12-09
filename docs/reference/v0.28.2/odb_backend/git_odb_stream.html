@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_odb_stream</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.28.2' })" onFocusIn="handleSearchSuggest({ version: 'v0.28.2' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.28.2' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -222,7 +231,7 @@ store the object with the id it is passed.</p>
               read
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Write at most <code><span class="codeWord">len</span></code> bytes into <code><span class="codeWord">buffer</span></code> and advance the stream.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -233,7 +242,7 @@ store the object with the id it is passed.</p>
               write
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Write <code><span class="codeWord">len</span></code> bytes from <code><span class="codeWord">buffer</span></code> into the stream.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -244,7 +253,7 @@ store the object with the id it is passed.</p>
               finalize_write
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Store the contents of the stream as an object with the id specified in <code><span class="codeWord">oid</span></code>.</p>  <p>This method might not be invoked if:</p> <ul> <li>an error occurs earlier with the <code><span class="codeWord">write</span></code> callback,</li> <li>the object referred to by <code><span class="codeWord">oid</span></code> already exists in any backend, or</li> <li>the final number of received bytes differs from the size declared with <code><span class="codeWord">git_odb_open_wstream()</span></code></li> </ul> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -255,7 +264,7 @@ store the object with the id it is passed.</p>
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Free the stream's memory.</p>  <p>This method might be called without a call to <code><span class="codeWord">finalize_write</span></code> if an error occurs or if the object is already present in the ODB.</p> 
             </div>
           </div>
         </div>

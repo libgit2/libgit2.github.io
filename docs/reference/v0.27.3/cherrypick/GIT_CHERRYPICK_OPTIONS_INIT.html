@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader macroHeader">
           <h2 class="apiName macroName">GIT_CHERRYPICK_OPTIONS_INIT</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea macroHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox macroHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.27.3' })" onFocusIn="handleSearchSuggest({ version: 'v0.27.3' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.27.3' }); }"/>
+             <div class="headerSearchResults macroHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect macroHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -119,7 +128,7 @@ layout: default
         <h3 class="apiVersionsHeader macroVersionsHeader">Versions</h3>
         <div class="apiVersions macroVersions">
           <ul>
-          <li class="apiVersionDeltaUnchanged macroVersionDeltaUnchanged">
+          <li class="apiVersionDeltaChanged macroVersionDeltaChanged">
             <a href="/docs/reference/main/cherrypick/GIT_CHERRYPICK_OPTIONS_INIT.html" class="apiVersionLink macroVersionLink">main</a>
           </li>
           <li class="apiVersionDeltaUnchanged macroVersionDeltaUnchanged">

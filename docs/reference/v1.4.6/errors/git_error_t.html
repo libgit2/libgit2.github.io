@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader enumHeader">
           <h2 class="apiName enumName">git_error_t</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea enumHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox enumHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.4.6' })" onFocusIn="handleSearchSuggest({ version: 'v1.4.6' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.4.6' }); }"/>
+             <div class="headerSearchResults enumHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect enumHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">

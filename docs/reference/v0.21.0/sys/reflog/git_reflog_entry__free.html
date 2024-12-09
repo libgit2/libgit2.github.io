@@ -12,10 +12,18 @@ layout: default
         </div>
         <div class="apiHeader functionHeader">
           <h2 class="apiName functionName">git_reflog_entry__free</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea functionHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox functionHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.21.0' })" onFocusIn="handleSearchSuggest({ version: 'v0.21.0' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.21.0' }); }"/>
+             <div class="headerSearchResults functionHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
-              <option value="/docs/reference/main/sys/reflog/git_reflog_entry__free.html">main</option>
               <option value="/docs/reference/v1.8.4/sys/reflog/git_reflog_entry__free.html">v1.8.4</option>
               <option value="/docs/reference/v1.8.3/sys/reflog/git_reflog_entry__free.html">v1.8.3</option>
               <option value="/docs/reference/v1.8.2/sys/reflog/git_reflog_entry__free.html">v1.8.2</option>
@@ -148,9 +156,6 @@ layout: default
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
         <div class="apiVersions functionVersions">
           <ul>
-          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
-            <a href="/docs/reference/main/sys/reflog/git_reflog_entry__free.html" class="apiVersionLink functionVersionLink">main</a>
-          </li>
           <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
             <a href="/docs/reference/v1.8.4/sys/reflog/git_reflog_entry__free.html" class="apiVersionLink functionVersionLink">v1.8.4</a>
           </li>

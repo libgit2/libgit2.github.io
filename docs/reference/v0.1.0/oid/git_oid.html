@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_oid</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.1.0' })" onFocusIn="handleSearchSuggest({ version: 'v0.1.0' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.1.0' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -213,6 +222,24 @@ layout: default
           </li>
           <li>
             <a href="/docs/reference/v0.1.0/oid/git_oid_mkraw.html" className="apiLink functionLink">git_oid_mkraw</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.1.0/oid/git_oid_fmt.html" className="apiLink functionLink">git_oid_fmt</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.1.0/oid/git_oid_pathfmt.html" className="apiLink functionLink">git_oid_pathfmt</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.1.0/oid/git_oid_allocfmt.html" className="apiLink functionLink">git_oid_allocfmt</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.1.0/oid/git_oid_to_string.html" className="apiLink functionLink">git_oid_to_string</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.1.0/oid/git_oid_cpy.html" className="apiLink functionLink">git_oid_cpy</a>
+          </li>
+          <li>
+            <a href="/docs/reference/v0.1.0/oid/git_oid_cmp.html" className="apiLink functionLink">git_oid_cmp</a>
           </li>
           <li>
             <a href="/docs/reference/v0.1.0/repository/git_repository_lookup.html" className="apiLink functionLink">git_repository_lookup</a>

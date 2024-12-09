@@ -17,39 +17,66 @@
           "members": [
             {
               "name": "gmalloc",
-              "type": "void *(*)(size_t, const char *, int)"
+              "type": "void *(*)(size_t, const char *, int)",
+              "comment": [
+                "Allocate `n` bytes of memory"
+              ]
             },
             {
               "name": "gcalloc",
-              "type": "void *(*)(size_t, size_t, const char *, int)"
+              "type": "void *(*)(size_t, size_t, const char *, int)",
+              "comment": [
+                "Allocate memory for an array of `nelem` elements, where each element\n has a size of `elsize`. Returned memory shall be initialized to\n all-zeroes"
+              ]
             },
             {
               "name": "gstrdup",
-              "type": "char *(*)(const char *, const char *, int)"
+              "type": "char *(*)(const char *, const char *, int)",
+              "comment": [
+                "Allocate memory for the string `str` and duplicate its contents."
+              ]
             },
             {
               "name": "gstrndup",
-              "type": "char *(*)(const char *, size_t, const char *, int)"
+              "type": "char *(*)(const char *, size_t, const char *, int)",
+              "comment": [
+                "Equivalent to the `gstrdup` function, but only duplicating at most\n `n + 1` bytes"
+              ]
             },
             {
               "name": "gsubstrdup",
-              "type": "char *(*)(const char *, size_t, const char *, int)"
+              "type": "char *(*)(const char *, size_t, const char *, int)",
+              "comment": [
+                "Equivalent to `gstrndup`, but will always duplicate exactly `n` bytes\n of `str`. Thus, out of bounds reads at `str` may happen."
+              ]
             },
             {
               "name": "grealloc",
-              "type": "void *(*)(void *, size_t, const char *, int)"
+              "type": "void *(*)(void *, size_t, const char *, int)",
+              "comment": [
+                "This function shall deallocate the old object `ptr` and return a\n pointer to a new object that has the size specified by `size`. In\n case `ptr` is `NULL`, a new array shall be allocated."
+              ]
             },
             {
               "name": "greallocarray",
-              "type": "void *(*)(void *, size_t, size_t, const char *, int)"
+              "type": "void *(*)(void *, size_t, size_t, const char *, int)",
+              "comment": [
+                "This function shall be equivalent to `grealloc`, but allocating\n `neleme * elsize` bytes."
+              ]
             },
             {
               "name": "gmallocarray",
-              "type": "void *(*)(size_t, size_t, const char *, int)"
+              "type": "void *(*)(size_t, size_t, const char *, int)",
+              "comment": [
+                "This function shall allocate a new array of `nelem` elements, where\n each element has a size of `elsize` bytes."
+              ]
             },
             {
               "name": "gfree",
-              "type": "void (*)(void *)"
+              "type": "void (*)(void *)",
+              "comment": [
+                "This function shall free the memory pointed to by `ptr`. In case\n `ptr` is `NULL`, this shall be a no-op."
+              ]
             }
           ],
           "location": {
@@ -7525,7 +7552,10 @@
             },
             {
               "name": "free",
-              "type": "void (*)(struct git_config_entry *)"
+              "type": "void (*)(struct git_config_entry *)",
+              "comment": [
+                "Free function for this entry"
+              ]
             },
             {
               "name": "payload",
@@ -9255,11 +9285,17 @@
             },
             {
               "name": "next",
-              "type": "int (*)(git_config_entry **, git_config_iterator *)"
+              "type": "int (*)(git_config_entry **, git_config_iterator *)",
+              "comment": [
+                "Return the current entry and advance the iterator. The\n memory belongs to the library."
+              ]
             },
             {
               "name": "free",
-              "type": "void (*)(git_config_iterator *)"
+              "type": "void (*)(git_config_iterator *)",
+              "comment": [
+                "Free the iterator"
+              ]
             }
           ],
           "location": {
@@ -9329,15 +9365,25 @@
             },
             {
               "name": "snapshot",
-              "type": "int (*)(struct git_config_backend **, struct git_config_backend *)"
+              "type": "int (*)(struct git_config_backend **, struct git_config_backend *)",
+              "comment": [
+                "Produce a read-only version of this backend"
+              ]
             },
             {
               "name": "lock",
-              "type": "int (*)(struct git_config_backend *)"
+              "type": "int (*)(struct git_config_backend *)",
+              "comment": [
+                "Lock this backend.",
+                "Prevent any writes to the data store backing this\n backend. Any updates must not be visible to any other\n readers."
+              ]
             },
             {
               "name": "unlock",
-              "type": "int (*)(struct git_config_backend *, int)"
+              "type": "int (*)(struct git_config_backend *, int)",
+              "comment": [
+                "Unlock the data store backing this backend. If success is\n true, the changes should be committed, otherwise rolled\n back."
+              ]
             },
             {
               "name": "free",
@@ -10170,7 +10216,10 @@
             },
             {
               "name": "free",
-              "type": "void (*)(git_credential *)"
+              "type": "void (*)(git_credential *)",
+              "comment": [
+                "The deallocator for this type of credentials"
+              ]
             }
           ],
           "location": {
@@ -28506,19 +28555,33 @@
             },
             {
               "name": "read",
-              "type": "int (*)(git_odb_stream *, char *, size_t)"
+              "type": "int (*)(git_odb_stream *, char *, size_t)",
+              "comment": [
+                "Write at most `len` bytes into `buffer` and advance the stream."
+              ]
             },
             {
               "name": "write",
-              "type": "int (*)(git_odb_stream *, const char *, size_t)"
+              "type": "int (*)(git_odb_stream *, const char *, size_t)",
+              "comment": [
+                "Write `len` bytes from `buffer` into the stream."
+              ]
             },
             {
               "name": "finalize_write",
-              "type": "int (*)(git_odb_stream *, const git_oid *)"
+              "type": "int (*)(git_odb_stream *, const git_oid *)",
+              "comment": [
+                "Store the contents of the stream as an object with the id\n specified in `oid`.",
+                "This method might not be invoked if:\n - an error occurs earlier with the `write` callback,\n - the object referred to by `oid` already exists in any backend, or\n - the final number of received bytes differs from the size declared\n   with `git_odb_open_wstream()`"
+              ]
             },
             {
               "name": "free",
-              "type": "void (*)(git_odb_stream *)"
+              "type": "void (*)(git_odb_stream *)",
+              "comment": [
+                "Free the stream's memory.",
+                "This method might be called without a call to `finalize_write` if\n an error occurs or if the object is already present in the ODB."
+              ]
             }
           ],
           "location": {
@@ -28608,7 +28671,10 @@
             },
             {
               "name": "write",
-              "type": "int (*)(git_odb_backend *, const git_oid *, const void *, size_t, git_object_t)"
+              "type": "int (*)(git_odb_backend *, const git_oid *, const void *, size_t, git_object_t)",
+              "comment": [
+                "Write an object into the backend. The id of the object has\n already been calculated and is passed in."
+              ]
             },
             {
               "name": "writestream",
@@ -28628,7 +28694,11 @@
             },
             {
               "name": "refresh",
-              "type": "int (*)(git_odb_backend *)"
+              "type": "int (*)(git_odb_backend *)",
+              "comment": [
+                "If the backend implements a refreshing mechanism, it should be exposed\n through this endpoint. Each call to `git_odb_refresh()` will invoke it.",
+                "However, the backend implementation should try to stay up-to-date as much\n as possible by itself as libgit2 will not automatically invoke\n `git_odb_refresh()`. For instance, a potential strategy for the backend\n implementation to achieve this could be to internally invoke this\n endpoint on failed lookups (ie. `exists()`, `read()`, `read_header()`)."
+              ]
             },
             {
               "name": "foreach",
@@ -28640,15 +28710,25 @@
             },
             {
               "name": "writemidx",
-              "type": "int (*)(git_odb_backend *)"
+              "type": "int (*)(git_odb_backend *)",
+              "comment": [
+                "If the backend supports pack files, this will create a\n `multi-pack-index` file which will contain an index of all objects\n across all the `.pack` files."
+              ]
             },
             {
               "name": "freshen",
-              "type": "int (*)(git_odb_backend *, const git_oid *)"
+              "type": "int (*)(git_odb_backend *, const git_oid *)",
+              "comment": [
+                "\"Freshens\" an already existing object, updating its last-used\n time.  This occurs when `git_odb_write` was called, but the\n object already existed (and will not be re-written).  The\n underlying implementation may want to update last-used timestamps.",
+                "If callers implement this, they should return `0` if the object\n exists and was freshened, and non-zero otherwise."
+              ]
             },
             {
               "name": "free",
-              "type": "void (*)(git_odb_backend *)"
+              "type": "void (*)(git_odb_backend *)",
+              "comment": [
+                "Frees any resources held by the odb (including the `git_odb_backend`\n itself). An odb backend implementation must provide this function."
+              ]
             }
           ],
           "location": {
@@ -32762,15 +32842,24 @@
             },
             {
               "name": "next",
-              "type": "int (*)(git_reference **, git_reference_iterator *)"
+              "type": "int (*)(git_reference **, git_reference_iterator *)",
+              "comment": [
+                "Return the current reference and advance the iterator."
+              ]
             },
             {
               "name": "next_name",
-              "type": "int (*)(const char **, git_reference_iterator *)"
+              "type": "int (*)(const char **, git_reference_iterator *)",
+              "comment": [
+                "Return the name of the current reference and advance the iterator"
+              ]
             },
             {
               "name": "free",
-              "type": "void (*)(git_reference_iterator *)"
+              "type": "void (*)(git_reference_iterator *)",
+              "comment": [
+                "Free the iterator"
+              ]
             }
           ],
           "location": {
@@ -32804,67 +32893,180 @@
             },
             {
               "name": "exists",
-              "type": "int (*)(int *, git_refdb_backend *, const char *)"
+              "type": "int (*)(int *, git_refdb_backend *, const char *)",
+              "comment": [
+                "Queries the refdb backend for the existence of a reference.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, a negative error value code."
+              }
             },
             {
               "name": "lookup",
-              "type": "int (*)(git_reference **, git_refdb_backend *, const char *)"
+              "type": "int (*)(git_reference **, git_refdb_backend *, const char *)",
+              "comment": [
+                "Queries the refdb backend for a given reference.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, `GIT_ENOTFOUND` if the reference does\n         exist, otherwise a negative error code."
+              }
             },
             {
               "name": "iterator",
-              "type": "int (*)(git_reference_iterator **, struct git_refdb_backend *, const char *)"
+              "type": "int (*)(git_reference_iterator **, struct git_refdb_backend *, const char *)",
+              "comment": [
+                "Allocate an iterator object for the backend.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, otherwise a negative error code."
+              }
             },
             {
               "name": "write",
-              "type": "int (*)(git_refdb_backend *, const git_reference *, int, const git_signature *, const char *, const git_oid *, const char *)"
+              "type": "int (*)(git_refdb_backend *, const git_reference *, int, const git_signature *, const char *, const git_oid *, const char *)",
+              "comment": [
+                "Writes the given reference to the refdb.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, otherwise a negative error code."
+              }
             },
             {
               "name": "rename",
-              "type": "int (*)(git_reference **, git_refdb_backend *, const char *, const char *, int, const git_signature *, const char *)"
+              "type": "int (*)(git_reference **, git_refdb_backend *, const char *, const char *, int, const git_signature *, const char *)",
+              "comment": [
+                "Rename a reference in the refdb.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, otherwise a negative error code."
+              }
             },
             {
               "name": "del",
-              "type": "int (*)(git_refdb_backend *, const char *, const git_oid *, const char *)"
+              "type": "int (*)(git_refdb_backend *, const char *, const git_oid *, const char *)",
+              "comment": [
+                "Deletes the given reference from the refdb.",
+                "If it exists, its reflog should be deleted as well.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, otherwise a negative error code."
+              }
             },
             {
               "name": "compress",
-              "type": "int (*)(git_refdb_backend *)"
+              "type": "int (*)(git_refdb_backend *)",
+              "comment": [
+                "Suggests that the given refdb compress or optimize its references.",
+                "This mechanism is implementation specific. For on-disk reference\n databases, this may pack all loose references.",
+                "A refdb implementation may provide this function; if it is not\n provided, nothing will be done."
+              ],
+              "returns": {
+                "comment": "`0` on success a negative error code otherwise"
+              }
             },
             {
               "name": "has_log",
-              "type": "int (*)(git_refdb_backend *, const char *)"
+              "type": "int (*)(git_refdb_backend *, const char *)",
+              "comment": [
+                "Query whether a particular reference has a log (may be empty)",
+                "Shall return 1 if it has a reflog, 0 it it doesn't and negative in\n case an error occurred.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, `1` if the reflog for the given reference\n         exists, a negative error code otherwise"
+              }
             },
             {
               "name": "ensure_log",
-              "type": "int (*)(git_refdb_backend *, const char *)"
+              "type": "int (*)(git_refdb_backend *, const char *)",
+              "comment": [
+                "Make sure a particular reference will have a reflog which\n will be appended to on writes.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, a negative error code otherwise"
+              }
             },
             {
               "name": "free",
-              "type": "void (*)(git_refdb_backend *)"
+              "type": "void (*)(git_refdb_backend *)",
+              "comment": [
+                "Frees any resources held by the refdb (including the `git_refdb_backend`\n itself).",
+                "A refdb backend implementation must provide this function."
+              ]
             },
             {
               "name": "reflog_read",
-              "type": "int (*)(git_reflog **, git_refdb_backend *, const char *)"
+              "type": "int (*)(git_reflog **, git_refdb_backend *, const char *)",
+              "comment": [
+                "Read the reflog for the given reference name.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, a negative error code otherwise"
+              }
             },
             {
               "name": "reflog_write",
-              "type": "int (*)(git_refdb_backend *, git_reflog *)"
+              "type": "int (*)(git_refdb_backend *, git_reflog *)",
+              "comment": [
+                "Write a reflog to disk.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, a negative error code otherwise"
+              }
             },
             {
               "name": "reflog_rename",
-              "type": "int (*)(git_refdb_backend *, const char *, const char *)"
+              "type": "int (*)(git_refdb_backend *, const char *, const char *)",
+              "comment": [
+                "Rename a reflog.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, a negative error code otherwise"
+              }
             },
             {
               "name": "reflog_delete",
-              "type": "int (*)(git_refdb_backend *, const char *)"
+              "type": "int (*)(git_refdb_backend *, const char *)",
+              "comment": [
+                "Remove a reflog.",
+                "A refdb implementation must provide this function."
+              ],
+              "returns": {
+                "comment": "`0` on success, a negative error code otherwise"
+              }
             },
             {
               "name": "lock",
-              "type": "int (*)(void **, git_refdb_backend *, const char *)"
+              "type": "int (*)(void **, git_refdb_backend *, const char *)",
+              "comment": [
+                "Lock a reference.",
+                "A refdb implementation may provide this function; if it is not\n provided, the transaction API will fail to work."
+              ],
+              "returns": {
+                "comment": "`0` on success, a negative error code otherwise"
+              }
             },
             {
               "name": "unlock",
-              "type": "int (*)(git_refdb_backend *, void *, int, int, const git_reference *, const git_signature *, const char *)"
+              "type": "int (*)(git_refdb_backend *, void *, int, int, const git_reference *, const git_signature *, const char *)",
+              "comment": [
+                "Unlock a reference.",
+                "Only one of target or symbolic_target will be set.\n `success` will be true if the reference should be update, false if\n the lock must be discarded.",
+                "A refdb implementation must provide this function if a `lock`\n implementation is provided."
+              ],
+              "returns": {
+                "comment": "`0` on success, a negative error code otherwise"
+              }
             }
           ],
           "location": {
@@ -37002,7 +37204,10 @@
             },
             {
               "name": "completion",
-              "type": "int (*)(git_remote_completion_t, void *)"
+              "type": "int (*)(git_remote_completion_t, void *)",
+              "comment": [
+                "Completion is called when different parts of the download\n process are done (currently unused)."
+              ]
             },
             {
               "name": "credentials",
@@ -37031,7 +37236,10 @@
             },
             {
               "name": "update_tips",
-              "type": "int (*)(const char *, const git_oid *, const git_oid *, void *)"
+              "type": "int (*)(const char *, const git_oid *, const git_oid *, void *)",
+              "comment": [
+                "Each time a reference is updated locally, this function\n will be called with information about it."
+              ]
             },
             {
               "name": "pack_progress",
@@ -43483,11 +43691,57 @@
             },
             {
               "name": "init",
-              "type": "int (*)(git_stream **, const char *, const char *)"
+              "type": "int (*)(git_stream **, const char *, const char *)",
+              "comment": [
+                "Called to create a new connection to a given host."
+              ],
+              "params": [
+                {
+                  "name": "out",
+                  "direction": "in",
+                  "comment": "The created stream"
+                },
+                {
+                  "name": "host",
+                  "direction": "in",
+                  "comment": "The hostname to connect to; may be a hostname or\n             IP address"
+                },
+                {
+                  "name": "port",
+                  "direction": "in",
+                  "comment": "The port to connect to; may be a port number or\n             service name"
+                }
+              ],
+              "returns": {
+                "comment": "0 or an error code"
+              }
             },
             {
               "name": "wrap",
-              "type": "int (*)(git_stream **, git_stream *, const char *)"
+              "type": "int (*)(git_stream **, git_stream *, const char *)",
+              "comment": [
+                "Called to create a new connection on top of the given stream.  If\n this is a TLS stream, then this function may be used to proxy a\n TLS stream over an HTTP CONNECT session.  If this is unset, then\n HTTP CONNECT proxies will not be supported."
+              ],
+              "params": [
+                {
+                  "name": "out",
+                  "direction": "in",
+                  "comment": "The created stream"
+                },
+                {
+                  "name": "in",
+                  "direction": "in",
+                  "comment": "An existing stream to add TLS to"
+                },
+                {
+                  "name": "host",
+                  "direction": "in",
+                  "comment": "The hostname that the stream is connected to,\n             for certificate validation"
+                }
+              ],
+              "returns": {
+                "comment": "0 or an error code"
+              }
             }
           ],
           "location": {
@@ -46600,51 +46854,91 @@
             },
             {
               "name": "set_callbacks",
-              "type": "int (*)(git_transport *, git_transport_message_cb, git_transport_message_cb, git_transport_certificate_check_cb, void *)"
+              "type": "int (*)(git_transport *, git_transport_message_cb, git_transport_message_cb, git_transport_certificate_check_cb, void *)",
+              "comment": [
+                "Set progress and error callbacks"
+              ]
             },
             {
               "name": "set_custom_headers",
-              "type": "int (*)(git_transport *, const git_strarray *)"
+              "type": "int (*)(git_transport *, const git_strarray *)",
+              "comment": [
+                "Set custom headers for HTTP requests"
+              ]
             },
             {
               "name": "connect",
-              "type": "int (*)(git_transport *, const char *, git_credential_acquire_cb, void *, const git_proxy_options *, int, int)"
+              "type": "int (*)(git_transport *, const char *, git_credential_acquire_cb, void *, const git_proxy_options *, int, int)",
+              "comment": [
+                "Connect the transport to the remote repository, using the given\n direction."
+              ]
             },
             {
               "name": "ls",
-              "type": "int (*)(const git_remote_head ***, size_t *, git_transport *)"
+              "type": "int (*)(const git_remote_head ***, size_t *, git_transport *)",
+              "comment": [
+                "Get the list of available references in the remote repository.",
+                "This function may be called after a successful call to\n `connect()`. The array returned is owned by the transport and\n must be kept valid until the next call to one of its functions."
+              ]
             },
             {
               "name": "push",
-              "type": "int (*)(git_transport *, git_push *, const git_remote_callbacks *)"
+              "type": "int (*)(git_transport *, git_push *, const git_remote_callbacks *)",
+              "comment": [
+                "Executes the push whose context is in the git_push object."
+              ]
             },
             {
               "name": "negotiate_fetch",
-              "type": "int (*)(git_transport *, git_repository *, const git_remote_head *const *, size_t)"
+              "type": "int (*)(git_transport *, git_repository *, const git_remote_head *const *, size_t)",
+              "comment": [
+                "Negotiate a fetch with the remote repository.",
+                "This function may be called after a successful call to `connect()`,\n when the direction is GIT_DIRECTION_FETCH. The function performs a\n negotiation to calculate the `wants` list for the fetch."
+              ]
             },
             {
               "name": "download_pack",
-              "type": "int (*)(git_transport *, git_repository *, git_indexer_progress *, git_indexer_progress_cb, void *)"
+              "type": "int (*)(git_transport *, git_repository *, git_indexer_progress *, git_indexer_progress_cb, void *)",
+              "comment": [
+                "Start downloading the packfile from the remote repository.",
+                "This function may be called after a successful call to\n negotiate_fetch(), when the direction is GIT_DIRECTION_FETCH."
+              ]
             },
             {
               "name": "is_connected",
-              "type": "int (*)(git_transport *)"
+              "type": "int (*)(git_transport *)",
+              "comment": [
+                "Checks to see if the transport is connected"
+              ]
             },
             {
               "name": "read_flags",
-              "type": "int (*)(git_transport *, int *)"
+              "type": "int (*)(git_transport *, int *)",
+              "comment": [
+                "Reads the flags value previously passed into connect()"
+              ]
             },
             {
               "name": "cancel",
-              "type": "void (*)(git_transport *)"
+              "type": "void (*)(git_transport *)",
+              "comment": [
+                "Cancels any outstanding transport operation"
+              ]
             },
             {
               "name": "close",
-              "type": "int (*)(git_transport *)"
+              "type": "int (*)(git_transport *)",
+              "comment": [
+                "Close the connection to the remote repository.",
+                "This function is the reverse of connect() -- it terminates the\n connection to the remote end."
+              ]
             },
             {
               "name": "free",
-              "type": "void (*)(git_transport *)"
+              "type": "void (*)(git_transport *)",
+              "comment": [
+                "Frees/destructs the git_transport object."
+              ]
             }
           ],
           "location": {
@@ -47144,15 +47438,26 @@
             },
             {
               "name": "read",
-              "type": "int (*)(git_smart_subtransport_stream *, char *, size_t, size_t *)"
+              "type": "int (*)(git_smart_subtransport_stream *, char *, size_t, size_t *)",
+              "comment": [
+                "Read available data from the stream.",
+                "The implementation may read less than requested."
+              ]
             },
             {
               "name": "write",
-              "type": "int (*)(git_smart_subtransport_stream *, const char *, size_t)"
+              "type": "int (*)(git_smart_subtransport_stream *, const char *, size_t)",
+              "comment": [
+                "Write data to the stream",
+                "The implementation must write all data or return an error."
+              ]
             },
             {
               "name": "free",
-              "type": "void (*)(git_smart_subtransport_stream *)"
+              "type": "void (*)(git_smart_subtransport_stream *)",
+              "comment": [
+                "Free the stream"
+              ]
             }
           ],
           "location": {
@@ -47172,15 +47477,26 @@
           "members": [
             {
               "name": "action",
-              "type": "int (*)(git_smart_subtransport_stream **, git_smart_subtransport *, const char *, git_smart_service_t)"
+              "type": "int (*)(git_smart_subtransport_stream **, git_smart_subtransport *, const char *, git_smart_service_t)",
+              "comment": [
+                "Setup a subtransport stream for the requested action."
+              ]
             },
             {
               "name": "close",
-              "type": "int (*)(git_smart_subtransport *)"
+              "type": "int (*)(git_smart_subtransport *)",
+              "comment": [
+                "Close the subtransport.",
+                "Subtransports are guaranteed a call to close() between\n calls to action(), except for the following two \"natural\" progressions\n of actions against a constant URL:",
+                "- UPLOADPACK_LS -> UPLOADPACK\n - RECEIVEPACK_LS -> RECEIVEPACK"
+              ]
             },
             {
               "name": "free",
-              "type": "void (*)(git_smart_subtransport *)"
+              "type": "void (*)(git_smart_subtransport *)",
+              "comment": [
+                "Free the subtransport"
+              ]
             }
           ],
           "location": {

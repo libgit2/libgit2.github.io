@@ -1119,19 +1119,6 @@
           "comment": "",
           "group": "errors"
         },
-        "git__errno_storage": {
-          "kind": "function",
-          "name": "git__errno_storage",
-          "location": {
-            "file": "errors.h",
-            "line": 20,
-            "column": 19
-          },
-          "returns": {
-            "type": "int *"
-          },
-          "group": "errors"
-        },
         "git_strerror": {
           "kind": "function",
           "name": "git_strerror",
@@ -2299,6 +2286,12 @@
             "git_odb_exists",
             "git_oid_mkstr",
             "git_oid_mkraw",
+            "git_oid_fmt",
+            "git_oid_pathfmt",
+            "git_oid_allocfmt",
+            "git_oid_to_string",
+            "git_oid_cpy",
+            "git_oid_cmp",
             "git_repository_lookup"
           ]
         },
@@ -2360,6 +2353,189 @@
           ],
           "comment": [
             "Copy an already raw oid into a git_oid structure."
+          ],
+          "group": "oid"
+        },
+        "git_oid_fmt": {
+          "kind": "function",
+          "name": "git_oid_fmt",
+          "location": {
+            "file": "oid.h",
+            "line": 57,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "str",
+              "type": "char *",
+              "direction": "in",
+              "comment": "output hex string; must be pointing at the start of\n        the hex sequence and have at least the number of bytes\n        needed for an oid encoded in hex (40 bytes).  Only the\n        oid digits are written; a '\n\\\n0' terminator must be added\n        by the caller if it is required."
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "oid structure to format."
+            }
+          ],
+          "comment": [
+            "Format a git_oid into a hex string."
+          ],
+          "group": "oid"
+        },
+        "git_oid_pathfmt": {
+          "kind": "function",
+          "name": "git_oid_pathfmt",
+          "location": {
+            "file": "oid.h",
+            "line": 72,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "str",
+              "type": "char *",
+              "direction": "in",
+              "comment": "output hex string; must be pointing at the start of\n        the hex sequence and have at least the number of bytes\n        needed for an oid encoded in hex (41 bytes).  Only the\n        oid digits are written; a '\n\\\n0' terminator must be added\n        by the caller if it is required."
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "oid structure to format."
+            }
+          ],
+          "comment": [
+            "Format a git_oid into a loose-object path string.\n \n\n The resulting string is \"aa/...\", where \"aa\" is the first two\n hex digitis of the oid and \"...\" is the remaining 38 digits."
+          ],
+          "group": "oid"
+        },
+        "git_oid_allocfmt": {
+          "kind": "function",
+          "name": "git_oid_allocfmt",
+          "location": {
+            "file": "oid.h",
+            "line": 80,
+            "column": 20
+          },
+          "returns": {
+            "type": "char *",
+            "comment": "the c-string; NULL if memory is exhausted.  Caller must\n         deallocate the string with free()."
+          },
+          "params": [
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "the oid structure to format"
+            }
+          ],
+          "comment": [
+            "Format a gid_oid into a newly allocated c-string."
+          ],
+          "group": "oid"
+        },
+        "git_oid_to_string": {
+          "kind": "function",
+          "name": "git_oid_to_string",
+          "location": {
+            "file": "oid.h",
+            "line": 97,
+            "column": 20
+          },
+          "returns": {
+            "type": "char *",
+            "comment": "the out buffer pointer, assuming no input parameter\n         errors, otherwise a pointer to an empty string."
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "char *",
+              "direction": "in",
+              "comment": "the buffer into which the oid string is output."
+            },
+            {
+              "name": "n",
+              "type": "size_t",
+              "direction": "in",
+              "comment": "the size of the out buffer."
+            },
+            {
+              "name": "oid",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "the oid structure to format."
+            }
+          ],
+          "comment": [
+            "Format a git_oid into a buffer as a hex format c-string.\n \n\n If the buffer is smaller than GIT_OID_HEXSZ+1, then the resulting\n oid c-string will be truncated to n-1 characters. If there are\n any input parameter errors (out == NULL, n == 0, oid == NULL),\n then a pointer to an empty string is returned, so that the return\n value can always be printed."
+          ],
+          "group": "oid"
+        },
+        "git_oid_cpy": {
+          "kind": "function",
+          "name": "git_oid_cpy",
+          "location": {
+            "file": "oid.h",
+            "line": 104,
+            "column": 18
+          },
+          "returns": {
+            "type": "void"
+          },
+          "params": [
+            {
+              "name": "out",
+              "type": "git_oid *",
+              "direction": "in",
+              "comment": "oid structure the result is written into."
+            },
+            {
+              "name": "src",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "oid structure to copy from."
+            }
+          ],
+          "comment": [
+            "Copy an oid from one structure to another."
+          ],
+          "group": "oid"
+        },
+        "git_oid_cmp": {
+          "kind": "function",
+          "name": "git_oid_cmp",
+          "location": {
+            "file": "oid.h",
+            "line": 115,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "<\n0, 0, >0 if a \n<\n b, a == b, a > b."
+          },
+          "params": [
+            {
+              "name": "a",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "first oid structure."
+            },
+            {
+              "name": "b",
+              "type": "const git_oid *",
+              "direction": "in",
+              "comment": "second oid structure."
+            }
+          ],
+          "comment": [
+            "Compare two oid structures."
           ],
           "group": "oid"
         }

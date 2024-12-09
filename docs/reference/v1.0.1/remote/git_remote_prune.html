@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader functionHeader">
           <h2 class="apiName functionName">git_remote_prune</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea functionHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox functionHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.0.1' })" onFocusIn="handleSearchSuggest({ version: 'v1.0.1' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.0.1' }); }"/>
+             <div class="headerSearchResults functionHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">

@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_config_iterator</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.8.2' })" onFocusIn="handleSearchSuggest({ version: 'v1.8.2' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.8.2' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -178,7 +187,7 @@ git_config_iterator parent;
               next
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Return the current entry and advance the iterator. The memory belongs to the library.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -189,7 +198,7 @@ git_config_iterator parent;
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Free the iterator</p> 
             </div>
           </div>
         </div>

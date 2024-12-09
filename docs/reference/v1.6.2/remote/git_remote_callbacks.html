@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_remote_callbacks</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.6.2' })" onFocusIn="handleSearchSuggest({ version: 'v1.6.2' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.6.2' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -186,7 +195,7 @@ about the progress of the network operations.</p>
               completion
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Completion is called when different parts of the download process are done (currently unused).</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -230,7 +239,7 @@ about the progress of the network operations.</p>
               update_tips
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Each time a reference is updated locally, this function will be called with information about it.</p> 
             </div>
           </div>
           <div class="apiMember structMember">

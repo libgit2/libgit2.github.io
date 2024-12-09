@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader macroHeader">
           <h2 class="apiName macroName">GIT_ATTR_CHECK_FILE_THEN_INDEX</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea macroHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox macroHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.21.2' })" onFocusIn="handleSearchSuggest({ version: 'v0.21.2' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.21.2' }); }"/>
+             <div class="headerSearchResults macroHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect macroHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">

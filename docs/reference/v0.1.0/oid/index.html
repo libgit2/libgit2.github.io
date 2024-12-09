@@ -11,6 +11,15 @@ layout: default
       </div>
       <div class="groupHeader">
         <h2 class="groupName">oid</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea groupHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox groupHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.1.0' })" onFocusIn="handleSearchSuggest({ version: 'v0.1.0' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.1.0' }); }"/>
+             <div class="headerSearchResults groupHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="groupHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -193,6 +202,66 @@ layout: default
             </div>
             <div class="apiListItemDescription functionListItemDescription">
               <p>Copy an already raw oid into a git_oid structure</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.1.0/oid/git_oid_fmt.html">
+                git_oid_fmt
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Format a git_oid into a hex string</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.1.0/oid/git_oid_pathfmt.html">
+                git_oid_pathfmt
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Format a git_oid into a loose-object path string</p> <p>The resulting string is &quot;aa/...&quot;, where &quot;aa&quot; is the first two hex digitis of the oid and &quot;...&quot; is the remaining 38 digits.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.1.0/oid/git_oid_allocfmt.html">
+                git_oid_allocfmt
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Format a gid_oid into a newly allocated c-string</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.1.0/oid/git_oid_to_string.html">
+                git_oid_to_string
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Format a git_oid into a buffer as a hex format c-string</p> <p>If the buffer is smaller than GIT_OID_HEXSZ+1, then the resulting oid c-string will be truncated to n-1 characters. If there are any input parameter errors (out == NULL, n == 0, oid == NULL), then a pointer to an empty string is returned, so that the return value can always be printed.</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.1.0/oid/git_oid_cpy.html">
+                git_oid_cpy
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Copy an oid from one structure to another</p> 
+            </div>
+          </div>
+          <div class="apiListItem functionListItem">
+            <div class="apiListName functionListName">
+              <a href="/docs/reference/v0.1.0/oid/git_oid_cmp.html">
+                git_oid_cmp
+              </a>
+            </div>
+            <div class="apiListItemDescription functionListItemDescription">
+              <p>Compare two oid structures</p> 
             </div>
           </div>
         </div>

@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_odb_backend</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.3.2' })" onFocusIn="handleSearchSuggest({ version: 'v1.3.2' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.3.2' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -226,7 +235,7 @@ layout: default
               write
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Write an object into the backend. The id of the object has already been calculated and is passed in.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -281,7 +290,7 @@ layout: default
               refresh
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>If the backend implements a refreshing mechanism, it should be exposed through this endpoint. Each call to <code><span class="codeWord">git_odb_refresh()</span></code> will invoke it.</p>  <p>However, the backend implementation should try to stay up-to-date as much as possible by itself as libgit2 will not automatically invoke <code><span class="codeWord">git_odb_refresh()</span></code>. For instance, a potential strategy for the backend implementation to achieve this could be to internally invoke this endpoint on failed lookups (ie. <code><span class="codeWord">exists()</span></code>, <code><span class="codeWord">read()</span></code>, <code><span class="codeWord">read_header()</span></code>).</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -314,7 +323,7 @@ layout: default
               writemidx
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>If the backend supports pack files, this will create a <code><span class="codeWord">multi-pack-index</span></code> file which will contain an index of all objects across all the <code><span class="codeWord">.pack</span></code> files.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -325,7 +334,7 @@ layout: default
               freshen
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>&quot;Freshens&quot; an already existing object, updating its last-used time. This occurs when <a href="/docs/reference/v1.3.2/odb/git_odb_write.html" class="apiLink functionLink"><code><span class="codeWord">git_odb_write</span></code></a> was called, but the object already existed (and will not be re-written). The underlying implementation may want to update last-used timestamps.</p>  <p>If callers implement this, they should return <code><span class="codeWord">0</span></code> if the object exists and was freshened, and non-zero otherwise.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -336,7 +345,7 @@ layout: default
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Frees any resources held by the odb (including the <a href="/docs/reference/v1.3.2/sys/odb_backend/git_odb_backend.html" class="apiLink structLink"><code><span class="codeWord">git_odb_backend</span></code></a> itself). An odb backend implementation must provide this function.</p> 
             </div>
           </div>
         </div>

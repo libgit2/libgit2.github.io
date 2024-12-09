@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_config_backend</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.8.1' })" onFocusIn="handleSearchSuggest({ version: 'v1.8.1' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.8.1' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -271,7 +280,7 @@ access a configuration file</p>
               snapshot
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Produce a read-only version of this backend</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -282,7 +291,7 @@ access a configuration file</p>
               lock
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Lock this backend.</p>  <p>Prevent any writes to the data store backing this backend. Any updates must not be visible to any other readers.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -293,7 +302,7 @@ access a configuration file</p>
               unlock
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Unlock the data store backing this backend. If success is true, the changes should be committed, otherwise rolled back.</p> 
             </div>
           </div>
           <div class="apiMember structMember">

@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_allocator</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.0.1' })" onFocusIn="handleSearchSuggest({ version: 'v1.0.1' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.0.1' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -99,7 +108,7 @@ that all fields need to be set to a proper function.</p>
               gmalloc
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Allocate <code><span class="codeWord">n</span></code> bytes of memory</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -110,7 +119,7 @@ that all fields need to be set to a proper function.</p>
               gcalloc
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Allocate memory for an array of <code><span class="codeWord">nelem</span></code> elements, where each element has a size of <code><span class="codeWord">elsize</span></code>. Returned memory shall be initialized to all-zeroes</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -121,7 +130,7 @@ that all fields need to be set to a proper function.</p>
               gstrdup
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Allocate memory for the string <code><span class="codeWord">str</span></code> and duplicate its contents.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -132,7 +141,7 @@ that all fields need to be set to a proper function.</p>
               gstrndup
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Equivalent to the <code><span class="codeWord">gstrdup</span></code> function, but only duplicating at most <code><span class="codeWord">n</span> <span class="codeWord">+</span> <span class="codeWord">1</span></code> bytes</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -143,7 +152,7 @@ that all fields need to be set to a proper function.</p>
               gsubstrdup
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Equivalent to <code><span class="codeWord">gstrndup</span></code>, but will always duplicate exactly <code><span class="codeWord">n</span></code> bytes of <code><span class="codeWord">str</span></code>. Thus, out of bounds reads at <code><span class="codeWord">str</span></code> may happen.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -154,7 +163,7 @@ that all fields need to be set to a proper function.</p>
               grealloc
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>This function shall deallocate the old object <code><span class="codeWord">ptr</span></code> and return a pointer to a new object that has the size specified by <code><span class="codeWord">size</span></code>. In case <code><span class="codeWord">ptr</span></code> is <code><span class="codeWord">NULL</span></code>, a new array shall be allocated.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -165,7 +174,7 @@ that all fields need to be set to a proper function.</p>
               greallocarray
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>This function shall be equivalent to <code><span class="codeWord">grealloc</span></code>, but allocating <code><span class="codeWord">neleme</span> <span class="codeWord">*</span> <span class="codeWord">elsize</span></code> bytes.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -176,7 +185,7 @@ that all fields need to be set to a proper function.</p>
               gmallocarray
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>This function shall allocate a new array of <code><span class="codeWord">nelem</span></code> elements, where each element has a size of <code><span class="codeWord">elsize</span></code> bytes.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -187,7 +196,7 @@ that all fields need to be set to a proper function.</p>
               gfree
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>This function shall free the memory pointed to by <code><span class="codeWord">ptr</span></code>. In case <code><span class="codeWord">ptr</span></code> is <code><span class="codeWord">NULL</span></code>, this shall be a no-op.</p> 
             </div>
           </div>
         </div>

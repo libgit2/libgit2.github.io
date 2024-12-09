@@ -11,6 +11,15 @@ layout: default
       </div>
       <div class="groupHeader">
         <h2 class="groupName">object</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea groupHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox groupHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.26.4' })" onFocusIn="handleSearchSuggest({ version: 'v0.26.4' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.26.4' }); }"/>
+             <div class="headerSearchResults groupHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="groupHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">

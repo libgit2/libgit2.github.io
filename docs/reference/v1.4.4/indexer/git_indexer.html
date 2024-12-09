@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader objectHeader">
           <h2 class="apiName objectName">git_indexer</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea objectHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox objectHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.4.4' })" onFocusIn="handleSearchSuggest({ version: 'v1.4.4' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.4.4' }); }"/>
+             <div class="headerSearchResults objectHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect objectHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">

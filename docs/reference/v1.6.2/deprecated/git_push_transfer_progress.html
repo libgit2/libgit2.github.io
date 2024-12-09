@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader aliasHeader">
           <h2 class="apiName aliasName">git_push_transfer_progress</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea aliasHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox aliasHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.6.2' })" onFocusIn="handleSearchSuggest({ version: 'v1.6.2' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.6.2' }); }"/>
+             <div class="headerSearchResults aliasHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect aliasHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">

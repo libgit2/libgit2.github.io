@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_smart_subtransport_stream</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.28.1' })" onFocusIn="handleSearchSuggest({ version: 'v0.28.1' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.28.1' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -165,7 +174,7 @@ support some other communication method.</p>
               read
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Read available data from the stream.</p>  <p>The implementation may read less than requested.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -176,7 +185,7 @@ support some other communication method.</p>
               write
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Write data to the stream</p>  <p>The implementation must write all data or return an error.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -187,7 +196,7 @@ support some other communication method.</p>
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Free the stream</p> 
             </div>
           </div>
         </div>

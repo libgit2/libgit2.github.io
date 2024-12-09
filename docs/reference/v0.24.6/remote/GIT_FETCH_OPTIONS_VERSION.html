@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader macroHeader">
           <h2 class="apiName macroName">GIT_FETCH_OPTIONS_VERSION</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea macroHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox macroHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v0.24.6' })" onFocusIn="handleSearchSuggest({ version: 'v0.24.6' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v0.24.6' }); }"/>
+             <div class="headerSearchResults macroHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect macroHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">

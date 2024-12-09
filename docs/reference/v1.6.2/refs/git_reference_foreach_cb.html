@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader callbackHeader">
           <h2 class="apiName callbackName">git_reference_foreach_cb</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea callbackHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox callbackHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.6.2' })" onFocusIn="handleSearchSuggest({ version: 'v1.6.2' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.6.2' }); }"/>
+             <div class="headerSearchResults callbackHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect callbackHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">

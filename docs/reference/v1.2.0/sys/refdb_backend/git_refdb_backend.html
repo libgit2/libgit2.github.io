@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_refdb_backend</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.2.0' })" onFocusIn="handleSearchSuggest({ version: 'v1.2.0' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.2.0' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -174,7 +183,7 @@ layout: default
               exists
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Queries the refdb backend for the existence of a reference.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -185,7 +194,7 @@ layout: default
               lookup
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Queries the refdb backend for a given reference.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -196,7 +205,7 @@ layout: default
               iterator
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Allocate an iterator object for the backend.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -207,7 +216,7 @@ layout: default
               write
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Writes the given reference to the refdb.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -218,7 +227,7 @@ layout: default
               rename
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Rename a reference in the refdb.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -229,7 +238,7 @@ layout: default
               del
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Deletes the given reference from the refdb.</p>  <p>If it exists, its reflog should be deleted as well.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -240,7 +249,7 @@ layout: default
               compress
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Suggests that the given refdb compress or optimize its references.</p>  <p>This mechanism is implementation specific. For on-disk reference databases, this may pack all loose references.</p>  <p>A refdb implementation may provide this function; if it is not provided, nothing will be done.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -251,7 +260,7 @@ layout: default
               has_log
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Query whether a particular reference has a log (may be empty)</p>  <p>Shall return 1 if it has a reflog, 0 it it doesn't and negative in case an error occurred.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -262,7 +271,7 @@ layout: default
               ensure_log
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Make sure a particular reference will have a reflog which will be appended to on writes.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -273,7 +282,7 @@ layout: default
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Frees any resources held by the refdb (including the <a href="/docs/reference/v1.2.0/sys/refdb_backend/git_refdb_backend.html" class="apiLink structLink"><code><span class="codeWord">git_refdb_backend</span></code></a> itself).</p>  <p>A refdb backend implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -284,7 +293,7 @@ layout: default
               reflog_read
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Read the reflog for the given reference name.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -295,7 +304,7 @@ layout: default
               reflog_write
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Write a reflog to disk.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -306,7 +315,7 @@ layout: default
               reflog_rename
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Rename a reflog.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -317,7 +326,7 @@ layout: default
               reflog_delete
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Remove a reflog.</p>  <p>A refdb implementation must provide this function.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -328,7 +337,7 @@ layout: default
               lock
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Lock a reference.</p>  <p>A refdb implementation may provide this function; if it is not provided, the transaction API will fail to work.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -339,7 +348,7 @@ layout: default
               unlock
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Unlock a reference.</p>  <p>Only one of target or symbolic_target will be set. <code><span class="codeWord">success</span></code> will be true if the reference should be update, false if the lock must be discarded.</p>  <p>A refdb implementation must provide this function if a <code><span class="codeWord">lock</span></code> implementation is provided.</p> 
             </div>
           </div>
         </div>

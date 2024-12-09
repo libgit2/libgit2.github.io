@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_transport</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.2.0' })" onFocusIn="handleSearchSuggest({ version: 'v1.2.0' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.2.0' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -167,7 +176,7 @@ layout: default
               set_callbacks
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Set progress and error callbacks</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -178,7 +187,7 @@ layout: default
               set_custom_headers
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Set custom headers for HTTP requests</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -189,7 +198,7 @@ layout: default
               connect
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Connect the transport to the remote repository, using the given direction.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -200,7 +209,7 @@ layout: default
               ls
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Get the list of available references in the remote repository.</p>  <p>This function may be called after a successful call to <code><span class="codeWord">connect()</span></code>. The array returned is owned by the transport and must be kept valid until the next call to one of its functions.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -211,7 +220,7 @@ layout: default
               push
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Executes the push whose context is in the git_push object.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -222,7 +231,7 @@ layout: default
               negotiate_fetch
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Negotiate a fetch with the remote repository.</p>  <p>This function may be called after a successful call to <code><span class="codeWord">connect()</span></code>, when the direction is GIT_DIRECTION_FETCH. The function performs a negotiation to calculate the <code><span class="codeWord">wants</span></code> list for the fetch.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -233,7 +242,7 @@ layout: default
               download_pack
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Start downloading the packfile from the remote repository.</p>  <p>This function may be called after a successful call to negotiate_fetch(), when the direction is GIT_DIRECTION_FETCH.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -244,7 +253,7 @@ layout: default
               is_connected
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Checks to see if the transport is connected</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -255,7 +264,7 @@ layout: default
               read_flags
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Reads the flags value previously passed into connect()</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -266,7 +275,7 @@ layout: default
               cancel
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Cancels any outstanding transport operation</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -277,7 +286,7 @@ layout: default
               close
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Close the connection to the remote repository.</p>  <p>This function is the reverse of connect() -- it terminates the connection to the remote end.</p> 
             </div>
           </div>
           <div class="apiMember structMember">
@@ -288,7 +297,7 @@ layout: default
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Frees/destructs the git_transport object.</p> 
             </div>
           </div>
         </div>

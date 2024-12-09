@@ -6,6 +6,15 @@ layout: default
       <div class="version">
         <div class="versionHeader">
           <h2 class="versionName">libgit2 v1.8.1</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea versionHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox versionHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'v1.8.1' })" onFocusIn="handleSearchSuggest({ version: 'v1.8.1' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'v1.8.1' }); }"/>
+             <div class="headerSearchResults versionHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="versionHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
