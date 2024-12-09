@@ -1,5 +1,6 @@
 /* API Page */
 
+.search h3,
 .version h3,
 .group h3,
 .api h3 {
@@ -37,6 +38,7 @@
     padding: 0 0.4rem 0 0.5rem;
 }
 
+.searchHeader,
 .apiHeader,
 .groupHeader,
 .versionHeader {
@@ -49,12 +51,63 @@
     margin-top: 0.2rem;
 }
 
+.headerSearchArea {
+    position: relative;
+    text-align: right;
+    margin-right: 2.0rem;
+}
+.headerSearchBox {
+    border: solid 1px #c2c0b8;
+    border-radius: 0.3rem;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 0.15rem;
+    text-align: left;
+}
+.headerSearchResults {
+    position: absolute;
+    top: 1.67rem;
+    left: 0;
+    border: solid 1px #c2c0b8;
+    background-color: #f8f7f0; /* #f0efe7; */
+    text-align: left;
+    visibility: hidden;
+    width: 250px;
+}
+.headerSearchResultsError {
+    background-color: rgba(241, 78, 50, 0.15);
+    padding: 0.25rem 0.5rem;
+}
+.headerSearchResultsLoading {
+    padding: 0.25rem 0.5rem;
+}
+.headerSearchResults ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.headerSearchResults ul li {
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+    display: block;
+    border-bottom: solid 1px #e2e0d8;
+}
+.headerSearchResults ul li:last-of-type {
+    border-bottom: none;
+}
+.headerSearchResults ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #666666;
+}
+
+.searchHeaderVersionSelect,
 .apiHeaderVersionSelect,
 .groupHeaderVersionSelect,
 .versionHeaderVersionSelect {
-    flex-grow: 1000;
     display: flex;
 }
+.searchHeaderVersionSelect span,
 .apiHeaderVersionSelect span,
 .groupHeaderVersionSelect span,
 .versionHeaderVersionSelect span {
@@ -62,6 +115,7 @@
     flex-basis: 100%;
     text-align: right;
 }
+.searchHeaderVersionSelect select,
 .apiHeaderVersionSelect select,
 .groupHeaderVersionSelect select,
 .versionHeaderVersionSelect select {
@@ -73,6 +127,7 @@
     margin-left: auto;
 }
 
+.searchName,
 .apiName,
 .groupName,
 .versionName {
@@ -82,7 +137,9 @@
     font-size: 2.0rem;
     margin: 0.5rem 0 0 0;
     text-rendering: optimizelegibility;
+    flex-grow: 1000;
 }
+.searchName,
 .versionName {
     font-family: "adelle", Georgia, "Times New Roman", serif;
     font-weight: 400;
@@ -555,12 +612,133 @@
     margin-bottom: 1.5rem;
 }
 
+.search h3,
 .version h3 {
     text-transform: uppercase;
     color: #007a83;
     font-size: 0.75rem;
     font-weight: 600;
     margin-top: 0.75rem;
+}
+
+.searchSearchBox input {
+    border: solid 1px #c2c0b8;
+    border-radius: 0.3rem;
+    padding: 0.25rem 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.15rem;
+    width: 35rem;
+    text-align: left;
+}
+.searchSearchBox button {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    margin-left: 0.3rem;
+    margin-bottom: 0.15rem;
+}
+
+.searchResultsArea h3 {
+    margin-top: 1.5rem;
+}
+.searchResults {
+    background-color: rgba(255, 255, 255, 0.98);
+    border: solid 1px #e2e0d8;
+    border-radius: 0.3rem;
+    padding: 0;
+    margin: 0;
+}
+.searchResultsEmpty,
+.searchResultsError {
+    padding: 0.75rem 1.25rem;
+}
+.searchResults ul.searchApis {
+    padding: 0;
+    margin: 0;
+}
+.searchResults ul.searchApis li {
+    list-style-type: none;
+    display: flex;
+}
+.searchResults ul.searchApis li .searchResultName {
+    color: #f14e32;
+    font-family: Monaco, Courier, monospace;
+    float: left;
+}
+.searchResults ul.searchApis li:hover {
+    background-color: #f9f9f9;
+}
+.searchResults ul.searchApis li:first-of-type:hover {
+    border-radius: 0.25em 0.25em 0 0;
+}
+.searchResults ul.searchApis li:last-of-type:hover {
+    border-radius: 0 0 0.25em 0.25em;
+}
+.searchResults ul.searchApis li a:hover .searchResultName {
+    text-decoration: underline;
+}
+.searchResults ul.searchApis li .searchResultKind {
+    display: inline;
+    text-transform: uppercase;
+    color: rgba(0, 122, 131, 0.90);
+    line-height: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 1rem;
+    float: left;
+}
+.searchResults ul.searchApis li .searchResultDescription {
+    clear: both;
+    color: #6b5d52;
+}
+.searchResults ul.searchApis li a {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0.75rem 1.25rem;
+    border-bottom: solid 1px rgb(240, 239, 231);
+}
+.searchResults ul.searchApis li p:last-of-type {
+    margin-bottom: 0;
+}
+.searchResults ul.searchApis li:last-of-type a {
+    border-bottom: none;
+}
+
+.searchResults .searchPagesArea {
+    display: flex;
+    margin: 1.25rem 0 1rem 0;
+}
+.searchResults .searchPagesPrompt {
+    padding: 0.4rem 0;
+    display: none;
+}
+.searchResults ul.searchPages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+}
+.searchResults ul.searchPages li {
+    display: inline-block;
+    text-align: middle;
+    border: solid 1px rgba(0, 0, 0, 0);
+    margin: 0 0.1rem;
+}
+.searchResults ul.searchPages li a {
+    display: inline-block;
+    padding: 0.4rem 0.5rem;
+    width: 100%;
+    height: 100%;
+    color: #666666;
+}
+.searchResults ul.searchPages li:hover {
+    border: solid 1px #cccccc;
+    border-radius: 0.25em;
+}
+.searchResults ul.searchPages li.searchPageCurrent {
+    background-color: #f5f5f5;
+    border: solid 1px #cccccc;
+    color: #000000;
+    border-radius: 0.25em;
 }
 
 ul.versionIndexStandard,
