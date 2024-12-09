@@ -1,7 +1,7 @@
 {
   "info": {
-    "version": "ethomson/docs-search",
-    "commit": "5efc00612c853f65f93dd9bd3a0fec123968542e"
+    "version": "main",
+    "commit": "cd8f2730f19b75f014d8e1ed32783b31b033932e"
   },
   "groups": {
     "sys/alloc": {
