@@ -12,6 +12,15 @@ layout: default
         </div>
         <div class="apiHeader structHeader">
           <h2 class="apiName structName">git_config_backend_entry</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea structHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox structHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'main' })" onFocusIn="handleSearchSuggest({ version: 'main' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'main' }); }"/>
+             <div class="headerSearchResults structHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
           <div class="apiHeaderVersionSelect structHeaderVersionSelect">
             <span>Version:</span>
             <select onChange="window.location.href = this.value">
@@ -59,7 +68,7 @@ backend implementors can have a mechanism to free their data.</p>
               free
             </div>
             <div class="apiMemberDescription structMemberDescription">
-              
+              <p>Free function for this entry; for internal purposes. Callers should call <a href="/docs/reference/main/config/git_config_entry_free.html" class="apiLink functionLink"><code><span class="codeWord">git_config_entry_free</span></code></a> to free data.</p> 
             </div>
           </div>
         </div>
