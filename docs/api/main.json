@@ -1,7 +1,7 @@
 {
   "info": {
     "version": "main",
-    "commit": "4282cbd6d8859b11b2241685612c26f4cf3a7c66"
+    "commit": "6821bde736f3baf2eeb77bbd50cf5c36ba4f5712"
   },
   "groups": {
     "sys/alloc": {
@@ -7605,8 +7605,8 @@
           "name": "GIT_PATH_LIST_SEPARATOR",
           "location": {
             "file": "common.h",
-            "line": 105,
-            "column": 9
+            "line": 100,
+            "column": 10
           },
           "value": "';'",
           "comment": "The separator used in path list strings (ie like in the PATH environment variable). A semi-colon \";\" is used on Windows and AmigaOS, and a colon \":\" for all other systems.",
@@ -7617,7 +7617,7 @@
           "name": "GIT_PATH_MAX",
           "location": {
             "file": "common.h",
-            "line": 113,
+            "line": 108,
             "column": 9
           },
           "value": "4096",
@@ -7629,7 +7629,7 @@
           "name": "git_libgit2_version",
           "location": {
             "file": "common.h",
-            "line": 124,
+            "line": 119,
             "column": 17
           },
           "returns": {
@@ -7666,7 +7666,7 @@
           "name": "git_libgit2_prerelease",
           "location": {
             "file": "common.h",
-            "line": 135,
+            "line": 130,
             "column": 26
           },
           "returns": {
@@ -7717,7 +7717,7 @@
           ],
           "location": {
             "file": "common.h",
-            "line": 141,
+            "line": 136,
             "column": 9
           },
           "group": "common"
@@ -7727,7 +7727,7 @@
           "name": "git_libgit2_features",
           "location": {
             "file": "common.h",
-            "line": 187,
+            "line": 182,
             "column": 17
           },
           "returns": {
@@ -7893,7 +7893,7 @@
           ],
           "location": {
             "file": "common.h",
-            "line": 195,
+            "line": 190,
             "column": 9
           },
           "group": "common"
@@ -7903,7 +7903,7 @@
           "name": "git_libgit2_opts",
           "location": {
             "file": "common.h",
-            "line": 550,
+            "line": 545,
             "column": 17
           },
           "returns": {
