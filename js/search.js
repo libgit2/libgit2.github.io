@@ -26,7 +26,6 @@ if (currentUrl.pathname.startsWith(referencePath + '/')) {
 }
 
 const indexUrl = `${currentUrl.origin}${indexPath}/${version}.json`;
-console.log(indexUrl);
 
 fetch(indexUrl)
   .then((response) => {

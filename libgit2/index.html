@@ -1,0 +1,71 @@
+---
+title: Updated Documentation (libgit2)
+layout: default
+---
+<script>
+if (window.location.hash) {
+  let version, path;
+
+  const referencePath = `/docs/reference`;
+  const components = window.location.hash.substr(1).split('/');
+
+  if (components[0]) {
+    version = components[0] === 'HEAD' ? 'main' : components[0];
+  }
+
+  if (components[1] === 'group') {
+    path = components.slice(2).join('/');
+  }
+  else if (components[1] === 'type') {
+    const type = components[2];
+    let group = type.replace(/^git_([^_]+).*/, "$1");
+
+    if (type === 'git_allocator' ||
+        type === 'git_commit_graph_writer_options' ||
+        type === 'git_config_backend' ||
+        type === 'git_config_backend_entry' ||
+        type === 'git_config_backend_memory_options' ||
+        type === 'git_config_iterator' ||
+        type === 'git_credential' ||
+        type === 'git_credential_userpass_plaintext' ||
+        type === 'git_credential_username' ||
+        type === 'git_credential_ssh_key' ||
+        type === 'git_credential_ssh_interactive' ||
+        type === 'git_credential_ssh_custom' ||
+        type === 'git_diff_perfdata' ||
+        type === 'git_fetch_negotiation' ||
+        type === 'git_filter_source' ||
+        type === 'git_filter' ||
+        type === 'git_hashsig' ||
+        type === 'git_index_name_entry' ||
+        type === 'git_index_reuc_entry' ||
+        type === 'git_merge_driver' ||
+        type === 'git_merge_driver_source' ||
+        type === 'git_odb_backend' ||
+        type === 'git_reference_iterator' ||
+        type === 'git_refdb_backend' ||
+        type === 'git_stream' ||
+        type === 'git_stream_registration' ||
+        type === 'git_transport' ||
+        type === 'git_smart_subtransport' ||
+        type === 'git_smart_subtransport_definition' ||
+        type === 'git_smart_subtransport_stream') {
+      group = `sys/${group}`;
+    }
+
+    path = `${group}/${type}`;
+  }
+
+  const url = path ? `${referencePath}/${version}/${path}` :
+    `${referencePath}/${version}`;
+
+  window.location.replace(url);
+}
+</script>
+
+<h1>Updated Documentation</h1>
+
+<p>
+The documentation for libgit2 has been updated. Please visit
+<a href="/docs/reference/">our reference documentation</a>.
+</p>
