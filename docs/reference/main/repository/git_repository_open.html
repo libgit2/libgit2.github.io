@@ -152,11 +152,15 @@ folder, or an existing work dir.</p>
         <p>The method will automatically detect if 'path' is a normal
 or bare repository or fail is 'path' is neither.</p>
 
+        <p>Note that the libgit2 library <em>must</em> be initialized using
+<a href="/docs/reference/main/global/git_libgit2_init.html" class="apiLink functionLink"><code><span class="codeWord">git_libgit2_init</span></code></a> before any APIs can be called, including
+this one.</p>
+
         </div>
 
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/repository.h#L38" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/repository.h#L42" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
           int git_repository_open(<span class="apiSignatureParameter functionSignatureParameter">git_repository **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *path</span>);

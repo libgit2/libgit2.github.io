@@ -1,7 +1,7 @@
 {
   "info": {
     "version": "main",
-    "commit": "1738f891a1eca8d94ba1cffcabd1ec41af122c52"
+    "commit": "8ad1eb9c724b966f961017b2ec7a8bc53cf79e76"
   },
   "groups": {
     "sys/alloc": {
@@ -5418,7 +5418,7 @@
           "name": "git_clone",
           "location": {
             "file": "clone.h",
-            "line": 212,
+            "line": 216,
             "column": 17
           },
           "returns": {
@@ -5453,7 +5453,8 @@
           ],
           "comment": [
             "Clone a remote repository.",
-            "By default this creates its repository and initial remote to match\n git's defaults. You can use the options in the callback to\n customize how these are created."
+            "By default this creates its repository and initial remote to match\n git's defaults. You can use the options in the callback to\n customize how these are created.",
+            "Note that the libgit2 library _must_ be initialized using\n `git_libgit2_init` before any APIs can be called, including\n this one."
           ],
           "group": "clone"
         }
@@ -40934,7 +40935,7 @@
           "name": "git_repository_open",
           "location": {
             "file": "repository.h",
-            "line": 38,
+            "line": 42,
             "column": 17
           },
           "returns": {
@@ -40958,7 +40959,8 @@
           "comment": [
             "Open a git repository.",
             "The 'path' argument must point to either a git repository\n folder, or an existing work dir.",
-            "The method will automatically detect if 'path' is a normal\n or bare repository or fail is 'path' is neither."
+            "The method will automatically detect if 'path' is a normal\n or bare repository or fail is 'path' is neither.",
+            "Note that the libgit2 library _must_ be initialized using\n `git_libgit2_init` before any APIs can be called, including\n this one."
           ],
           "group": "repository"
         },
@@ -40967,7 +40969,7 @@
           "name": "git_repository_open_from_worktree",
           "location": {
             "file": "repository.h",
-            "line": 49,
+            "line": 53,
             "column": 17
           },
           "returns": {
@@ -40999,7 +41001,7 @@
           "name": "git_repository_wrap_odb",
           "location": {
             "file": "repository.h",
-            "line": 71,
+            "line": 75,
             "column": 17
           },
           "returns": {
@@ -41031,7 +41033,7 @@
           "name": "git_repository_discover",
           "location": {
             "file": "repository.h",
-            "line": 103,
+            "line": 111,
             "column": 17
           },
           "returns": {
@@ -41066,7 +41068,8 @@
           ],
           "comment": [
             "Look for a git repository and copy its path in the given buffer.\n The lookup start from base_path and walk across parent directories\n if nothing has been found. The lookup ends when the first repository\n is found, or when reaching a directory referenced in ceiling_dirs\n or when the filesystem changes (in case across_fs is true).",
-            "The method will automatically detect if the repository is bare\n (if there is a repository)."
+            "The method will automatically detect if the repository is bare\n (if there is a repository).",
+            "Note that the libgit2 library _must_ be initialized using\n `git_libgit2_init` before any APIs can be called, including\n this one."
           ],
           "group": "repository"
         },
@@ -41116,7 +41119,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 112,
+            "line": 120,
             "column": 9
           },
           "group": "repository"
@@ -41126,7 +41129,7 @@
           "name": "git_repository_open_ext",
           "location": {
             "file": "repository.h",
-            "line": 179,
+            "line": 191,
             "column": 17
           },
           "returns": {
@@ -41160,7 +41163,8 @@
             }
           ],
           "comment": [
-            "Find and open a repository with extended controls."
+            "Find and open a repository with extended controls.",
+            "Note that the libgit2 library _must_ be initialized using\n `git_libgit2_init` before any APIs can be called, including\n this one."
           ],
           "group": "repository"
         },
@@ -41169,7 +41173,7 @@
           "name": "git_repository_open_bare",
           "location": {
             "file": "repository.h",
-            "line": 196,
+            "line": 212,
             "column": 17
           },
           "returns": {
@@ -41192,7 +41196,8 @@
           ],
           "comment": [
             "Open a bare repository on the serverside.",
-            "This is a fast open for bare repositories that will come in handy\n if you're e.g. hosting git repositories and need to access them\n efficiently"
+            "This is a fast open for bare repositories that will come in handy\n if you're e.g. hosting git repositories and need to access them\n efficiently",
+            "Note that the libgit2 library _must_ be initialized using\n `git_libgit2_init` before any APIs can be called, including\n this one."
           ],
           "group": "repository"
         },
@@ -41201,7 +41206,7 @@
           "name": "git_repository_free",
           "location": {
             "file": "repository.h",
-            "line": 209,
+            "line": 225,
             "column": 18
           },
           "returns": {
@@ -41226,7 +41231,7 @@
           "name": "git_repository_init",
           "location": {
             "file": "repository.h",
-            "line": 226,
+            "line": 246,
             "column": 17
           },
           "returns": {
@@ -41255,7 +41260,8 @@
           ],
           "comment": [
             "Creates a new Git repository in the given folder.",
-            "TODO:\n\t- Reinit the repository"
+            "TODO:\n\t- Reinit the repository",
+            "Note that the libgit2 library _must_ be initialized using\n `git_libgit2_init` before any APIs can be called, including\n this one."
           ],
           "group": "repository"
         },
@@ -41313,7 +41319,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 239,
+            "line": 259,
             "column": 9
           },
           "group": "repository"
@@ -41351,7 +41357,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 294,
+            "line": 314,
             "column": 9
           },
           "group": "repository"
@@ -41421,7 +41427,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 318,
+            "line": 338,
             "column": 9
           },
           "group": "repository",
@@ -41436,7 +41442,7 @@
           "name": "GIT_REPOSITORY_INIT_OPTIONS_VERSION",
           "location": {
             "file": "repository.h",
-            "line": 380,
+            "line": 400,
             "column": 9
           },
           "value": "1",
@@ -41448,7 +41454,7 @@
           "name": "GIT_REPOSITORY_INIT_OPTIONS_INIT",
           "location": {
             "file": "repository.h",
-            "line": 383,
+            "line": 403,
             "column": 9
           },
           "value": "{GIT_REPOSITORY_INIT_OPTIONS_VERSION}",
@@ -41460,7 +41466,7 @@
           "name": "git_repository_init_options_init",
           "location": {
             "file": "repository.h",
-            "line": 395,
+            "line": 415,
             "column": 17
           },
           "returns": {
@@ -41492,7 +41498,7 @@
           "name": "git_repository_init_ext",
           "location": {
             "file": "repository.h",
-            "line": 412,
+            "line": 436,
             "column": 17
           },
           "returns": {
@@ -41521,7 +41527,8 @@
           ],
           "comment": [
             "Create a new Git repository in the given folder with extended controls.",
-            "This will initialize a new git repository (creating the repo_path\n if requested by flags) and working directory as needed.  It will\n auto-detect the case sensitivity of the file system and if the\n file system supports file mode bits correctly."
+            "This will initialize a new git repository (creating the repo_path\n if requested by flags) and working directory as needed.  It will\n auto-detect the case sensitivity of the file system and if the\n file system supports file mode bits correctly.",
+            "Note that the libgit2 library _must_ be initialized using\n `git_libgit2_init` before any APIs can be called, including\n this one."
           ],
           "group": "repository"
         },
@@ -41530,7 +41537,7 @@
           "name": "git_repository_head",
           "location": {
             "file": "repository.h",
-            "line": 430,
+            "line": 454,
             "column": 17
           },
           "returns": {
@@ -41562,7 +41569,7 @@
           "name": "git_repository_head_for_worktree",
           "location": {
             "file": "repository.h",
-            "line": 440,
+            "line": 464,
             "column": 17
           },
           "returns": {
@@ -41599,7 +41606,7 @@
           "name": "git_repository_head_detached",
           "location": {
             "file": "repository.h",
-            "line": 453,
+            "line": 477,
             "column": 17
           },
           "returns": {
@@ -41625,7 +41632,7 @@
           "name": "git_repository_head_detached_for_worktree",
           "location": {
             "file": "repository.h",
-            "line": 466,
+            "line": 490,
             "column": 17
           },
           "returns": {
@@ -41657,7 +41664,7 @@
           "name": "git_repository_head_unborn",
           "location": {
             "file": "repository.h",
-            "line": 479,
+            "line": 503,
             "column": 17
           },
           "returns": {
@@ -41683,7 +41690,7 @@
           "name": "git_repository_is_empty",
           "location": {
             "file": "repository.h",
-            "line": 493,
+            "line": 517,
             "column": 17
           },
           "returns": {
@@ -41763,7 +41770,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 498,
+            "line": 522,
             "column": 9
           },
           "group": "repository",
@@ -41776,7 +41783,7 @@
           "name": "git_repository_item_path",
           "location": {
             "file": "repository.h",
-            "line": 531,
+            "line": 555,
             "column": 17
           },
           "returns": {
@@ -41815,7 +41822,7 @@
           "name": "git_repository_path",
           "location": {
             "file": "repository.h",
-            "line": 542,
+            "line": 566,
             "column": 26
           },
           "returns": {
@@ -41841,7 +41848,7 @@
           "name": "git_repository_workdir",
           "location": {
             "file": "repository.h",
-            "line": 553,
+            "line": 577,
             "column": 26
           },
           "returns": {
@@ -41867,7 +41874,7 @@
           "name": "git_repository_commondir",
           "location": {
             "file": "repository.h",
-            "line": 565,
+            "line": 589,
             "column": 26
           },
           "returns": {
@@ -41893,7 +41900,7 @@
           "name": "git_repository_set_workdir",
           "location": {
             "file": "repository.h",
-            "line": 584,
+            "line": 608,
             "column": 17
           },
           "returns": {
@@ -41932,7 +41939,7 @@
           "name": "git_repository_is_bare",
           "location": {
             "file": "repository.h",
-            "line": 593,
+            "line": 617,
             "column": 17
           },
           "returns": {
@@ -41957,7 +41964,7 @@
           "name": "git_repository_is_worktree",
           "location": {
             "file": "repository.h",
-            "line": 601,
+            "line": 625,
             "column": 17
           },
           "returns": {
@@ -41982,7 +41989,7 @@
           "name": "git_repository_config",
           "location": {
             "file": "repository.h",
-            "line": 617,
+            "line": 641,
             "column": 17
           },
           "returns": {
@@ -42015,7 +42022,7 @@
           "name": "git_repository_config_snapshot",
           "location": {
             "file": "repository.h",
-            "line": 633,
+            "line": 657,
             "column": 17
           },
           "returns": {
@@ -42048,7 +42055,7 @@
           "name": "git_repository_odb",
           "location": {
             "file": "repository.h",
-            "line": 649,
+            "line": 673,
             "column": 17
           },
           "returns": {
@@ -42081,7 +42088,7 @@
           "name": "git_repository_refdb",
           "location": {
             "file": "repository.h",
-            "line": 665,
+            "line": 689,
             "column": 17
           },
           "returns": {
@@ -42114,7 +42121,7 @@
           "name": "git_repository_index",
           "location": {
             "file": "repository.h",
-            "line": 681,
+            "line": 705,
             "column": 17
           },
           "returns": {
@@ -42147,7 +42154,7 @@
           "name": "git_repository_message",
           "location": {
             "file": "repository.h",
-            "line": 699,
+            "line": 723,
             "column": 17
           },
           "returns": {
@@ -42180,7 +42187,7 @@
           "name": "git_repository_message_remove",
           "location": {
             "file": "repository.h",
-            "line": 709,
+            "line": 733,
             "column": 17
           },
           "returns": {
@@ -42206,7 +42213,7 @@
           "name": "git_repository_state_cleanup",
           "location": {
             "file": "repository.h",
-            "line": 718,
+            "line": 742,
             "column": 17
           },
           "returns": {
@@ -42235,7 +42242,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 732,
+            "line": 756,
             "column": 26
           },
           "see": [
@@ -42288,7 +42295,7 @@
           "name": "git_repository_fetchhead_foreach",
           "location": {
             "file": "repository.h",
-            "line": 749,
+            "line": 773,
             "column": 17
           },
           "returns": {
@@ -42331,7 +42338,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 763,
+            "line": 787,
             "column": 26
           },
           "see": [
@@ -42366,7 +42373,7 @@
           "name": "git_repository_mergehead_foreach",
           "location": {
             "file": "repository.h",
-            "line": 778,
+            "line": 802,
             "column": 17
           },
           "returns": {
@@ -42405,7 +42412,7 @@
           "name": "git_repository_hashfile",
           "location": {
             "file": "repository.h",
-            "line": 808,
+            "line": 832,
             "column": 17
           },
           "returns": {
@@ -42457,7 +42464,7 @@
           "name": "git_repository_set_head",
           "location": {
             "file": "repository.h",
-            "line": 833,
+            "line": 857,
             "column": 17
           },
           "returns": {
@@ -42491,7 +42498,7 @@
           "name": "git_repository_set_head_detached",
           "location": {
             "file": "repository.h",
-            "line": 853,
+            "line": 877,
             "column": 17
           },
           "returns": {
@@ -42525,7 +42532,7 @@
           "name": "git_repository_set_head_detached_from_annotated",
           "location": {
             "file": "repository.h",
-            "line": 871,
+            "line": 895,
             "column": 17
           },
           "returns": {
@@ -42558,7 +42565,7 @@
           "name": "git_repository_detach_head",
           "location": {
             "file": "repository.h",
-            "line": 892,
+            "line": 916,
             "column": 17
           },
           "returns": {
@@ -42630,7 +42637,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 901,
+            "line": 925,
             "column": 9
           },
           "group": "repository"
@@ -42640,7 +42647,7 @@
           "name": "git_repository_state",
           "location": {
             "file": "repository.h",
-            "line": 923,
+            "line": 947,
             "column": 17
           },
           "returns": {
@@ -42665,7 +42672,7 @@
           "name": "git_repository_set_namespace",
           "location": {
             "file": "repository.h",
-            "line": 937,
+            "line": 961,
             "column": 17
           },
           "returns": {
@@ -42697,7 +42704,7 @@
           "name": "git_repository_get_namespace",
           "location": {
             "file": "repository.h",
-            "line": 945,
+            "line": 969,
             "column": 26
           },
           "returns": {
@@ -42722,7 +42729,7 @@
           "name": "git_repository_is_shallow",
           "location": {
             "file": "repository.h",
-            "line": 954,
+            "line": 978,
             "column": 17
           },
           "returns": {
@@ -42747,7 +42754,7 @@
           "name": "git_repository_ident",
           "location": {
             "file": "repository.h",
-            "line": 967,
+            "line": 991,
             "column": 17
           },
           "returns": {
@@ -42785,7 +42792,7 @@
           "name": "git_repository_set_ident",
           "location": {
             "file": "repository.h",
-            "line": 981,
+            "line": 1005,
             "column": 17
           },
           "returns": {
@@ -42823,7 +42830,7 @@
           "name": "git_repository_oid_type",
           "location": {
             "file": "repository.h",
-            "line": 989,
+            "line": 1013,
             "column": 23
           },
           "returns": {
@@ -42848,7 +42855,7 @@
           "name": "git_repository_commit_parents",
           "location": {
             "file": "repository.h",
-            "line": 1000,
+            "line": 1024,
             "column": 17
           },
           "returns": {
