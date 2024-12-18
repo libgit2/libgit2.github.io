@@ -65,10 +65,10 @@ layout: default
 
         <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
         <div class="apiSignatureLink functionSignatureLink">
-          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/commit_graph.h#L57" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/commit_graph.h#L165" target="_blank" rel="noopener">GitHub</a>
         </div>
         <div class="apiSignature functionSignature">
-          int git_commit_graph_writer_new(<span class="apiSignatureParameter functionSignatureParameter">git_commit_graph_writer **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *objects_info_dir</span>);
+          int git_commit_graph_writer_new(<span class="apiSignatureParameter functionSignatureParameter">git_commit_graph_writer **out</span>, <span class="apiSignatureParameter functionSignatureParameter">const char *objects_info_dir</span>, <span class="apiSignatureParameter functionSignatureParameter">const git_commit_graph_writer_options *options</span>);
         </div>
 
         <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
@@ -101,6 +101,20 @@ layout: default
               <p>The <code><span class="codeWord">objects/info</span></code> directory. The <code><span class="codeWord">commit-graph</span></code> file will be written in this directory.</p> 
             </div>
           </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/sys/commit_graph/git_commit_graph_writer_options.html" class="apiLink structLink">const git_commit_graph_writer_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              options
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The options for the commit graph writer.</p> 
+            </div>
+          </div>
         </div>
 
         <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
@@ -115,7 +129,7 @@ layout: default
         <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
         <div class="apiVersions functionVersions">
           <ul>
-          <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">
+          <li class="apiVersionDeltaChanged functionVersionDeltaChanged">
             <a href="/docs/reference/main/sys/commit_graph/git_commit_graph_writer_new.html" class="apiVersionLink functionVersionLink">main</a>
           </li>
           <li class="apiVersionDeltaUnchanged functionVersionDeltaUnchanged">

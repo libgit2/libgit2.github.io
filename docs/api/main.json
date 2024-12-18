@@ -1,7 +1,7 @@
 {
   "info": {
     "version": "main",
-    "commit": "12f1706a676b07ce9a98b85a9347887d56b8426e"
+    "commit": "4dcdb64c6844d76776745cdc25071a72c1af84d6"
   },
   "groups": {
     "sys/alloc": {
@@ -3709,6 +3709,9 @@
             "column": 9
           },
           "group": "buffer",
+          "returnedBy": [
+            "git_commit_graph_writer_dump"
+          ],
           "parameterTo": [
             "git_blob_filter",
             "git_branch_upstream_name",
@@ -3759,7 +3762,6 @@
             "git_repository_message",
             "git_submodule_resolve_url",
             "git_worktree_is_locked",
-            "git_commit_graph_writer_dump",
             "git_email_create_from_diff",
             "git_filter_apply_fn",
             "git_mempack_dump",
@@ -7129,12 +7131,92 @@
     },
     "sys/commit_graph": {
       "apis": {
+        "git_commit_graph_open_options": {
+          "kind": "struct",
+          "name": "git_commit_graph_open_options",
+          "referenceName": "git_commit_graph_open_options",
+          "comment": [
+            "Options structure for `git_commit_graph_open_new`.",
+            "Initialize with `GIT_COMMIT_GRAPH_OPEN_OPTIONS_INIT`. Alternatively,\n you can use `git_commit_graph_open_options_init`."
+          ],
+          "members": [
+            {
+              "name": "version",
+              "type": "unsigned int"
+            }
+          ],
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 28,
+            "column": 9
+          },
+          "group": "sys/commit_graph",
+          "parameterTo": [
+            "git_commit_graph_open_options_init"
+          ]
+        },
+        "GIT_COMMIT_GRAPH_OPEN_OPTIONS_VERSION": {
+          "kind": "macro",
+          "name": "GIT_COMMIT_GRAPH_OPEN_OPTIONS_VERSION",
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 38,
+            "column": 9
+          },
+          "value": "1",
+          "comment": "Current version for the `git_commit_graph_open_options` structure",
+          "group": "sys/commit_graph"
+        },
+        "GIT_COMMIT_GRAPH_OPEN_OPTIONS_INIT": {
+          "kind": "macro",
+          "name": "GIT_COMMIT_GRAPH_OPEN_OPTIONS_INIT",
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 43,
+            "column": 9
+          },
+          "value": "{ GIT_COMMIT_GRAPH_OPEN_OPTIONS_VERSION }",
+          "comment": "Static constructor for `git_commit_graph_open_options`",
+          "group": "sys/commit_graph"
+        },
+        "git_commit_graph_open_options_init": {
+          "kind": "function",
+          "name": "git_commit_graph_open_options_init",
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 56,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "Zero on success; -1 on failure."
+          },
+          "params": [
+            {
+              "name": "opts",
+              "type": "git_commit_graph_open_options *",
+              "direction": "in",
+              "comment": "The `git_commit_graph_open_options` struct to initialize."
+            },
+            {
+              "name": "version",
+              "type": "unsigned int",
+              "direction": "in",
+              "comment": "The struct version; pass `GIT_COMMIT_GRAPH_OPEN_OPTIONS_VERSION`."
+            }
+          ],
+          "comment": [
+            "Initialize git_commit_graph_open_options structure",
+            "Initializes a `git_commit_graph_open_options` with default values.\n Equivalent to creating an instance with\n `GIT_COMMIT_GRAPH_OPEN_OPTIONS_INIT`."
+          ],
+          "group": "sys/commit_graph"
+        },
         "git_commit_graph_open": {
           "kind": "function",
           "name": "git_commit_graph_open",
           "location": {
             "file": "sys/commit_graph.h",
-            "line": 31,
+            "line": 70,
             "column": 17
           },
           "returns": {
@@ -7166,7 +7248,7 @@
           "name": "git_commit_graph_free",
           "location": {
             "file": "sys/commit_graph.h",
-            "line": 47,
+            "line": 86,
             "column": 18
           },
           "returns": {
@@ -7185,12 +7267,138 @@
           ],
           "group": "sys/commit_graph"
         },
+        "git_commit_graph_split_strategy_t": {
+          "kind": "enum",
+          "name": "git_commit_graph_split_strategy_t",
+          "referenceName": "git_commit_graph_split_strategy_t",
+          "members": [
+            {
+              "name": "GIT_COMMIT_GRAPH_SPLIT_STRATEGY_SINGLE_FILE",
+              "value": "0",
+              "comment": [
+                "Do not split commit-graph files. The other split strategy-related option\n fields are ignored."
+              ]
+            }
+          ],
+          "comment": [
+            "The strategy to use when adding a new set of commits to a pre-existing\n commit-graph chain."
+          ],
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 93,
+            "column": 9
+          },
+          "group": "sys/commit_graph"
+        },
+        "git_commit_graph_writer_options": {
+          "kind": "struct",
+          "name": "git_commit_graph_writer_options",
+          "referenceName": "git_commit_graph_writer_options",
+          "comment": [
+            "Options structure for `git_commit_graph_writer_new`.",
+            "Initialize with `GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT`. Alternatively,\n you can use `git_commit_graph_writer_options_init`."
+          ],
+          "members": [
+            {
+              "name": "version",
+              "type": "unsigned int"
+            },
+            {
+              "name": "split_strategy",
+              "type": "git_commit_graph_split_strategy_t",
+              "comment": [
+                "The strategy to use when adding new commits to a pre-existing commit-graph\n chain."
+              ],
+              "referenceType": "enum git_commit_graph_split_strategy_t"
+            },
+            {
+              "name": "size_multiple",
+              "type": "float",
+              "comment": [
+                "The number of commits in level N is less than X times the number of\n commits in level N + 1. Default is 2."
+              ]
+            },
+            {
+              "name": "max_commits",
+              "type": "size_t",
+              "comment": [
+                "The number of commits in level N + 1 is more than C commits.\n Default is 64000."
+              ]
+            }
+          ],
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 107,
+            "column": 9
+          },
+          "group": "sys/commit_graph",
+          "parameterTo": [
+            "git_commit_graph_writer_options_init",
+            "git_commit_graph_writer_new"
+          ]
+        },
+        "GIT_COMMIT_GRAPH_WRITER_OPTIONS_VERSION": {
+          "kind": "macro",
+          "name": "GIT_COMMIT_GRAPH_WRITER_OPTIONS_VERSION",
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 135,
+            "column": 9
+          },
+          "value": "1",
+          "comment": "Current version for the `git_commit_graph_writer_options` structure",
+          "group": "sys/commit_graph"
+        },
+        "GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT": {
+          "kind": "macro",
+          "name": "GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT",
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 140,
+            "column": 9
+          },
+          "value": "{ GIT_COMMIT_GRAPH_WRITER_OPTIONS_VERSION }",
+          "comment": "Static constructor for `git_commit_graph_writer_options`",
+          "group": "sys/commit_graph"
+        },
+        "git_commit_graph_writer_options_init": {
+          "kind": "function",
+          "name": "git_commit_graph_writer_options_init",
+          "location": {
+            "file": "sys/commit_graph.h",
+            "line": 152,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "Zero on success; -1 on failure."
+          },
+          "params": [
+            {
+              "name": "opts",
+              "type": "git_commit_graph_writer_options *",
+              "direction": "in",
+              "comment": "The `git_commit_graph_writer_options` struct to initialize."
+            },
+            {
+              "name": "version",
+              "type": "unsigned int",
+              "direction": "in",
+              "comment": "The struct version; pass `GIT_COMMIT_GRAPH_WRITER_OPTIONS_VERSION`."
+            }
+          ],
+          "comment": [
+            "Initialize git_commit_graph_writer_options structure",
+            "Initializes a `git_commit_graph_writer_options` with default values. Equivalent to\n creating an instance with `GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT`."
+          ],
+          "group": "sys/commit_graph"
+        },
         "git_commit_graph_writer_new": {
           "kind": "function",
           "name": "git_commit_graph_writer_new",
           "location": {
             "file": "sys/commit_graph.h",
-            "line": 57,
+            "line": 165,
             "column": 17
           },
           "returns": {
@@ -7209,6 +7417,12 @@
               "type": "const char *",
               "direction": "in",
               "comment": "The `objects/info` directory.\n The `commit-graph` file will be written in this directory."
+            },
+            {
+              "name": "options",
+              "type": "const git_commit_graph_writer_options *",
+              "direction": "in",
+              "comment": "The options for the commit graph writer."
             }
           ],
           "comment": [
@@ -7221,7 +7435,7 @@
           "name": "git_commit_graph_writer_free",
           "location": {
             "file": "sys/commit_graph.h",
-            "line": 70,
+            "line": 175,
             "column": 18
           },
           "returns": {
@@ -7245,7 +7459,7 @@
           "name": "git_commit_graph_writer_add_index_file",
           "location": {
             "file": "sys/commit_graph.h",
-            "line": 80,
+            "line": 185,
             "column": 17
           },
           "returns": {
@@ -7282,7 +7496,7 @@
           "name": "git_commit_graph_writer_add_revwalk",
           "location": {
             "file": "sys/commit_graph.h",
-            "line": 93,
+            "line": 198,
             "column": 17
           },
           "returns": {
@@ -7308,139 +7522,12 @@
           ],
           "group": "sys/commit_graph"
         },
-        "git_commit_graph_split_strategy_t": {
-          "kind": "enum",
-          "name": "git_commit_graph_split_strategy_t",
-          "referenceName": "git_commit_graph_split_strategy_t",
-          "members": [
-            {
-              "name": "GIT_COMMIT_GRAPH_SPLIT_STRATEGY_SINGLE_FILE",
-              "value": "0",
-              "comment": [
-                "Do not split commit-graph files. The other split strategy-related option\n fields are ignored."
-              ]
-            }
-          ],
-          "comment": [
-            "The strategy to use when adding a new set of commits to a pre-existing\n commit-graph chain."
-          ],
-          "location": {
-            "file": "sys/commit_graph.h",
-            "line": 102,
-            "column": 9
-          },
-          "group": "sys/commit_graph"
-        },
-        "git_commit_graph_writer_options": {
-          "kind": "struct",
-          "name": "git_commit_graph_writer_options",
-          "referenceName": "git_commit_graph_writer_options",
-          "comment": [
-            "Options structure for\n `git_commit_graph_writer_commit`/`git_commit_graph_writer_dump`.",
-            "Initialize with `GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT`. Alternatively, you\n can use `git_commit_graph_writer_options_init`."
-          ],
-          "members": [
-            {
-              "name": "version",
-              "type": "unsigned int"
-            },
-            {
-              "name": "split_strategy",
-              "type": "git_commit_graph_split_strategy_t",
-              "comment": [
-                "The strategy to use when adding new commits to a pre-existing commit-graph\n chain."
-              ],
-              "referenceType": "enum git_commit_graph_split_strategy_t"
-            },
-            {
-              "name": "size_multiple",
-              "type": "float",
-              "comment": [
-                "The number of commits in level N is less than X times the number of\n commits in level N + 1. Default is 2."
-              ]
-            },
-            {
-              "name": "max_commits",
-              "type": "size_t",
-              "comment": [
-                "The number of commits in level N + 1 is more than C commits.\n Default is 64000."
-              ]
-            }
-          ],
-          "location": {
-            "file": "sys/commit_graph.h",
-            "line": 117,
-            "column": 9
-          },
-          "group": "sys/commit_graph",
-          "parameterTo": [
-            "git_commit_graph_writer_options_init",
-            "git_commit_graph_writer_commit",
-            "git_commit_graph_writer_dump"
-          ]
-        },
-        "GIT_COMMIT_GRAPH_WRITER_OPTIONS_VERSION": {
-          "kind": "macro",
-          "name": "GIT_COMMIT_GRAPH_WRITER_OPTIONS_VERSION",
-          "location": {
-            "file": "sys/commit_graph.h",
-            "line": 140,
-            "column": 9
-          },
-          "value": "1",
-          "comment": "Current version for the `git_commit_graph_writer_options` structure",
-          "group": "sys/commit_graph"
-        },
-        "GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT": {
-          "kind": "macro",
-          "name": "GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT",
-          "location": {
-            "file": "sys/commit_graph.h",
-            "line": 145,
-            "column": 9
-          },
-          "value": "{ GIT_COMMIT_GRAPH_WRITER_OPTIONS_VERSION }",
-          "comment": "Static constructor for `git_commit_graph_writer_options`",
-          "group": "sys/commit_graph"
-        },
-        "git_commit_graph_writer_options_init": {
-          "kind": "function",
-          "name": "git_commit_graph_writer_options_init",
-          "location": {
-            "file": "sys/commit_graph.h",
-            "line": 157,
-            "column": 17
-          },
-          "returns": {
-            "type": "int",
-            "comment": "Zero on success; -1 on failure."
-          },
-          "params": [
-            {
-              "name": "opts",
-              "type": "git_commit_graph_writer_options *",
-              "direction": "in",
-              "comment": "The `git_commit_graph_writer_options` struct to initialize."
-            },
-            {
-              "name": "version",
-              "type": "unsigned int",
-              "direction": "in",
-              "comment": "The struct version; pass `GIT_COMMIT_GRAPH_WRITER_OPTIONS_VERSION`."
-            }
-          ],
-          "comment": [
-            "Initialize git_commit_graph_writer_options structure",
-            "Initializes a `git_commit_graph_writer_options` with default values. Equivalent to\n creating an instance with `GIT_COMMIT_GRAPH_WRITER_OPTIONS_INIT`."
-          ],
-          "group": "sys/commit_graph"
-        },
         "git_commit_graph_writer_commit": {
           "kind": "function",
           "name": "git_commit_graph_writer_commit",
           "location": {
             "file": "sys/commit_graph.h",
-            "line": 168,
+            "line": 208,
             "column": 17
           },
           "returns": {
@@ -7453,12 +7540,6 @@
               "type": "git_commit_graph_writer *",
               "direction": "in",
               "comment": "The writer"
-            },
-            {
-              "name": "opts",
-              "type": "git_commit_graph_writer_options *",
-              "direction": "in",
-              "comment": "Pointer to git_commit_graph_writer_options struct."
             }
           ],
           "comment": [
@@ -7471,7 +7552,7 @@
           "name": "git_commit_graph_writer_dump",
           "location": {
             "file": "sys/commit_graph.h",
-            "line": 180,
+            "line": 218,
             "column": 17
           },
           "returns": {
@@ -7482,7 +7563,7 @@
             {
               "name": "buffer",
               "type": "git_buf *",
-              "direction": "in",
+              "direction": "out",
               "comment": "Buffer where to store the contents of the `commit-graph`."
             },
             {
@@ -7490,12 +7571,6 @@
               "type": "git_commit_graph_writer *",
               "direction": "in",
               "comment": "The writer."
-            },
-            {
-              "name": "opts",
-              "type": "git_commit_graph_writer_options *",
-              "direction": "in",
-              "comment": "Pointer to git_commit_graph_writer_options struct."
             }
           ],
           "comment": [
@@ -22056,12 +22131,36 @@
           },
           "group": "index"
         },
+        "GIT_INDEX_OPTIONS_VERSION": {
+          "kind": "macro",
+          "name": "GIT_INDEX_OPTIONS_VERSION",
+          "location": {
+            "file": "index.h",
+            "line": 216,
+            "column": 9
+          },
+          "value": "1",
+          "comment": "Current version for the `git_index_options` structure",
+          "group": "index"
+        },
+        "GIT_INDEX_OPTIONS_INIT": {
+          "kind": "macro",
+          "name": "GIT_INDEX_OPTIONS_INIT",
+          "location": {
+            "file": "index.h",
+            "line": 219,
+            "column": 9
+          },
+          "value": "{ GIT_INDEX_OPTIONS_VERSION }",
+          "comment": "Static constructor for `git_index_options`",
+          "group": "index"
+        },
         "git_index_open": {
           "kind": "function",
           "name": "git_index_open",
           "location": {
             "file": "index.h",
-            "line": 234,
+            "line": 278,
             "column": 17
           },
           "returns": {
@@ -22095,7 +22194,7 @@
           "name": "git_index_new",
           "location": {
             "file": "index.h",
-            "line": 247,
+            "line": 291,
             "column": 17
           },
           "returns": {
@@ -22122,7 +22221,7 @@
           "name": "git_index_free",
           "location": {
             "file": "index.h",
-            "line": 256,
+            "line": 300,
             "column": 18
           },
           "returns": {
@@ -22146,7 +22245,7 @@
           "name": "git_index_owner",
           "location": {
             "file": "index.h",
-            "line": 264,
+            "line": 308,
             "column": 30
           },
           "returns": {
@@ -22171,7 +22270,7 @@
           "name": "git_index_caps",
           "location": {
             "file": "index.h",
-            "line": 272,
+            "line": 316,
             "column": 17
           },
           "returns": {
@@ -22196,7 +22295,7 @@
           "name": "git_index_set_caps",
           "location": {
             "file": "index.h",
-            "line": 285,
+            "line": 329,
             "column": 17
           },
           "returns": {
@@ -22228,7 +22327,7 @@
           "name": "git_index_version",
           "location": {
             "file": "index.h",
-            "line": 297,
+            "line": 341,
             "column": 26
           },
           "returns": {
@@ -22254,7 +22353,7 @@
           "name": "git_index_set_version",
           "location": {
             "file": "index.h",
-            "line": 310,
+            "line": 354,
             "column": 17
           },
           "returns": {
@@ -22286,7 +22385,7 @@
           "name": "git_index_read",
           "location": {
             "file": "index.h",
-            "line": 329,
+            "line": 373,
             "column": 17
           },
           "returns": {
@@ -22319,7 +22418,7 @@
           "name": "git_index_write",
           "location": {
             "file": "index.h",
-            "line": 338,
+            "line": 382,
             "column": 17
           },
           "returns": {
@@ -22344,7 +22443,7 @@
           "name": "git_index_path",
           "location": {
             "file": "index.h",
-            "line": 346,
+            "line": 390,
             "column": 26
           },
           "returns": {
@@ -22369,7 +22468,7 @@
           "name": "git_index_checksum",
           "location": {
             "file": "index.h",
-            "line": 360,
+            "line": 404,
             "column": 29
           },
           "returns": {
@@ -22398,7 +22497,7 @@
           "name": "git_index_read_tree",
           "location": {
             "file": "index.h",
-            "line": 372,
+            "line": 416,
             "column": 17
           },
           "returns": {
@@ -22430,7 +22529,7 @@
           "name": "git_index_write_tree",
           "location": {
             "file": "index.h",
-            "line": 393,
+            "line": 437,
             "column": 17
           },
           "returns": {
@@ -22464,7 +22563,7 @@
           "name": "git_index_write_tree_to",
           "location": {
             "file": "index.h",
-            "line": 410,
+            "line": 454,
             "column": 17
           },
           "returns": {
@@ -22503,7 +22602,7 @@
           "name": "git_index_entrycount",
           "location": {
             "file": "index.h",
-            "line": 429,
+            "line": 473,
             "column": 20
           },
           "returns": {
@@ -22528,7 +22627,7 @@
           "name": "git_index_clear",
           "location": {
             "file": "index.h",
-            "line": 440,
+            "line": 484,
             "column": 17
           },
           "returns": {
@@ -22554,7 +22653,7 @@
           "name": "git_index_get_byindex",
           "location": {
             "file": "index.h",
-            "line": 453,
+            "line": 497,
             "column": 37
           },
           "returns": {
@@ -22586,7 +22685,7 @@
           "name": "git_index_get_bypath",
           "location": {
             "file": "index.h",
-            "line": 468,
+            "line": 512,
             "column": 37
           },
           "returns": {
@@ -22624,7 +22723,7 @@
           "name": "git_index_remove",
           "location": {
             "file": "index.h",
-            "line": 479,
+            "line": 523,
             "column": 17
           },
           "returns": {
@@ -22661,7 +22760,7 @@
           "name": "git_index_remove_directory",
           "location": {
             "file": "index.h",
-            "line": 489,
+            "line": 533,
             "column": 17
           },
           "returns": {
@@ -22698,7 +22797,7 @@
           "name": "git_index_add",
           "location": {
             "file": "index.h",
-            "line": 506,
+            "line": 550,
             "column": 17
           },
           "returns": {
@@ -22731,7 +22830,7 @@
           "name": "git_index_entry_stage",
           "location": {
             "file": "index.h",
-            "line": 518,
+            "line": 562,
             "column": 17
           },
           "returns": {
@@ -22758,7 +22857,7 @@
           "name": "git_index_entry_is_conflict",
           "location": {
             "file": "index.h",
-            "line": 527,
+            "line": 571,
             "column": 17
           },
           "returns": {
@@ -22783,7 +22882,7 @@
           "name": "git_index_iterator_new",
           "location": {
             "file": "index.h",
-            "line": 548,
+            "line": 592,
             "column": 17
           },
           "returns": {
@@ -22814,7 +22913,7 @@
           "name": "git_index_iterator_next",
           "location": {
             "file": "index.h",
-            "line": 559,
+            "line": 603,
             "column": 17
           },
           "returns": {
@@ -22845,7 +22944,7 @@
           "name": "git_index_iterator_free",
           "location": {
             "file": "index.h",
-            "line": 568,
+            "line": 612,
             "column": 18
           },
           "returns": {
@@ -22869,7 +22968,7 @@
           "name": "git_index_add_bypath",
           "location": {
             "file": "index.h",
-            "line": 599,
+            "line": 643,
             "column": 17
           },
           "returns": {
@@ -22904,7 +23003,7 @@
           "name": "git_index_add_from_buffer",
           "location": {
             "file": "index.h",
-            "line": 627,
+            "line": 671,
             "column": 17
           },
           "returns": {
@@ -22951,7 +23050,7 @@
           "name": "git_index_remove_bypath",
           "location": {
             "file": "index.h",
-            "line": 646,
+            "line": 690,
             "column": 17
           },
           "returns": {
@@ -22984,7 +23083,7 @@
           "name": "git_index_add_all",
           "location": {
             "file": "index.h",
-            "line": 694,
+            "line": 738,
             "column": 17
           },
           "returns": {
@@ -23041,7 +23140,7 @@
           "name": "git_index_remove_all",
           "location": {
             "file": "index.h",
-            "line": 716,
+            "line": 760,
             "column": 17
           },
           "returns": {
@@ -23086,7 +23185,7 @@
           "name": "git_index_update_all",
           "location": {
             "file": "index.h",
-            "line": 745,
+            "line": 789,
             "column": 17
           },
           "returns": {
@@ -23133,7 +23232,7 @@
           "name": "git_index_find",
           "location": {
             "file": "index.h",
-            "line": 760,
+            "line": 804,
             "column": 17
           },
           "returns": {
@@ -23170,7 +23269,7 @@
           "name": "git_index_find_prefix",
           "location": {
             "file": "index.h",
-            "line": 771,
+            "line": 815,
             "column": 17
           },
           "returns": {
@@ -23207,7 +23306,7 @@
           "name": "git_index_conflict_add",
           "location": {
             "file": "index.h",
-            "line": 796,
+            "line": 840,
             "column": 17
           },
           "returns": {
@@ -23251,7 +23350,7 @@
           "name": "git_index_conflict_get",
           "location": {
             "file": "index.h",
-            "line": 816,
+            "line": 860,
             "column": 17
           },
           "returns": {
@@ -23301,7 +23400,7 @@
           "name": "git_index_conflict_remove",
           "location": {
             "file": "index.h",
-            "line": 830,
+            "line": 874,
             "column": 17
           },
           "returns": {
@@ -23332,7 +23431,7 @@
           "name": "git_index_conflict_cleanup",
           "location": {
             "file": "index.h",
-            "line": 838,
+            "line": 882,
             "column": 17
           },
           "returns": {
@@ -23357,7 +23456,7 @@
           "name": "git_index_has_conflicts",
           "location": {
             "file": "index.h",
-            "line": 846,
+            "line": 890,
             "column": 17
           },
           "returns": {
@@ -23382,7 +23481,7 @@
           "name": "git_index_conflict_iterator_new",
           "location": {
             "file": "index.h",
-            "line": 857,
+            "line": 901,
             "column": 17
           },
           "returns": {
@@ -23414,7 +23513,7 @@
           "name": "git_index_conflict_next",
           "location": {
             "file": "index.h",
-            "line": 872,
+            "line": 916,
             "column": 17
           },
           "returns": {
@@ -23457,7 +23556,7 @@
           "name": "git_index_conflict_iterator_free",
           "location": {
             "file": "index.h",
-            "line": 883,
+            "line": 927,
             "column": 18
           },
           "returns": {
@@ -24237,7 +24336,7 @@
           "name": "GIT_INDEXER_OPTIONS_VERSION",
           "location": {
             "file": "indexer.h",
-            "line": 100,
+            "line": 103,
             "column": 9
           },
           "value": "1",
@@ -24249,7 +24348,7 @@
           "name": "GIT_INDEXER_OPTIONS_INIT",
           "location": {
             "file": "indexer.h",
-            "line": 103,
+            "line": 106,
             "column": 9
           },
           "value": "{ GIT_INDEXER_OPTIONS_VERSION }",
@@ -24261,7 +24360,7 @@
           "name": "git_indexer_options_init",
           "location": {
             "file": "indexer.h",
-            "line": 113,
+            "line": 116,
             "column": 17
           },
           "returns": {
@@ -24292,7 +24391,7 @@
           "name": "git_indexer_new",
           "location": {
             "file": "indexer.h",
-            "line": 145,
+            "line": 147,
             "column": 17
           },
           "returns": {
@@ -24341,7 +24440,7 @@
           "name": "git_indexer_append",
           "location": {
             "file": "indexer.h",
-            "line": 162,
+            "line": 164,
             "column": 17
           },
           "returns": {
@@ -24384,7 +24483,7 @@
           "name": "git_indexer_commit",
           "location": {
             "file": "indexer.h",
-            "line": 173,
+            "line": 175,
             "column": 17
           },
           "returns": {
@@ -24416,7 +24515,7 @@
           "name": "git_indexer_hash",
           "location": {
             "file": "indexer.h",
-            "line": 186,
+            "line": 188,
             "column": 29
           },
           "returns": {
@@ -24445,7 +24544,7 @@
           "name": "git_indexer_name",
           "location": {
             "file": "indexer.h",
-            "line": 198,
+            "line": 200,
             "column": 26
           },
           "returns": {
@@ -24471,7 +24570,7 @@
           "name": "git_indexer_free",
           "location": {
             "file": "indexer.h",
-            "line": 205,
+            "line": 207,
             "column": 18
           },
           "returns": {
@@ -26931,12 +27030,92 @@
     },
     "sys/midx": {
       "apis": {
+        "git_midx_writer_options": {
+          "kind": "struct",
+          "name": "git_midx_writer_options",
+          "referenceName": "git_midx_writer_options",
+          "comment": [
+            "Options structure for `git_midx_writer_options`.",
+            "Initialize with `GIT_MIDX_WRITER_OPTIONS_INIT`. Alternatively,\n you can use `git_midx_writer_options_init`."
+          ],
+          "members": [
+            {
+              "name": "version",
+              "type": "unsigned int"
+            }
+          ],
+          "location": {
+            "file": "sys/midx.h",
+            "line": 28,
+            "column": 9
+          },
+          "group": "sys/midx",
+          "parameterTo": [
+            "git_midx_writer_options_init"
+          ]
+        },
+        "GIT_MIDX_WRITER_OPTIONS_VERSION": {
+          "kind": "macro",
+          "name": "GIT_MIDX_WRITER_OPTIONS_VERSION",
+          "location": {
+            "file": "sys/midx.h",
+            "line": 38,
+            "column": 9
+          },
+          "value": "1",
+          "comment": "Current version for the `git_midx_writer_options` structure",
+          "group": "sys/midx"
+        },
+        "GIT_MIDX_WRITER_OPTIONS_INIT": {
+          "kind": "macro",
+          "name": "GIT_MIDX_WRITER_OPTIONS_INIT",
+          "location": {
+            "file": "sys/midx.h",
+            "line": 43,
+            "column": 9
+          },
+          "value": "{ GIT_MIDX_WRITER_OPTIONS_VERSION }",
+          "comment": "Static constructor for `git_midx_writer_options`",
+          "group": "sys/midx"
+        },
+        "git_midx_writer_options_init": {
+          "kind": "function",
+          "name": "git_midx_writer_options_init",
+          "location": {
+            "file": "sys/midx.h",
+            "line": 56,
+            "column": 17
+          },
+          "returns": {
+            "type": "int",
+            "comment": "Zero on success; -1 on failure."
+          },
+          "params": [
+            {
+              "name": "opts",
+              "type": "git_midx_writer_options *",
+              "direction": "in",
+              "comment": "The `git_midx_writer_options` struct to initialize."
+            },
+            {
+              "name": "version",
+              "type": "unsigned int",
+              "direction": "in",
+              "comment": "The struct version; pass `GIT_MIDX_WRITER_OPTIONS_VERSION`."
+            }
+          ],
+          "comment": [
+            "Initialize git_midx_writer_options structure",
+            "Initializes a `git_midx_writer_options` with default values.\n Equivalent to creating an instance with\n `GIT_MIDX_WRITER_OPTIONS_INIT`."
+          ],
+          "group": "sys/midx"
+        },
         "git_midx_writer_new": {
           "kind": "function",
           "name": "git_midx_writer_new",
           "location": {
             "file": "sys/midx.h",
-            "line": 30,
+            "line": 68,
             "column": 17
           },
           "returns": {
@@ -26967,7 +27146,7 @@
           "name": "git_midx_writer_free",
           "location": {
             "file": "sys/midx.h",
-            "line": 43,
+            "line": 81,
             "column": 18
           },
           "returns": {
@@ -26991,7 +27170,7 @@
           "name": "git_midx_writer_add",
           "location": {
             "file": "sys/midx.h",
-            "line": 52,
+            "line": 90,
             "column": 17
           },
           "returns": {
@@ -27022,7 +27201,7 @@
           "name": "git_midx_writer_commit",
           "location": {
             "file": "sys/midx.h",
-            "line": 62,
+            "line": 100,
             "column": 17
           },
           "returns": {
@@ -27047,7 +27226,7 @@
           "name": "git_midx_writer_dump",
           "location": {
             "file": "sys/midx.h",
-            "line": 72,
+            "line": 110,
             "column": 17
           },
           "returns": {
@@ -40935,7 +41114,7 @@
           "name": "git_repository_open",
           "location": {
             "file": "repository.h",
-            "line": 42,
+            "line": 43,
             "column": 17
           },
           "returns": {
@@ -40969,7 +41148,7 @@
           "name": "git_repository_open_from_worktree",
           "location": {
             "file": "repository.h",
-            "line": 53,
+            "line": 54,
             "column": 17
           },
           "returns": {
@@ -41001,7 +41180,7 @@
           "name": "git_repository_wrap_odb",
           "location": {
             "file": "repository.h",
-            "line": 75,
+            "line": 67,
             "column": 17
           },
           "returns": {
@@ -41033,7 +41212,7 @@
           "name": "git_repository_discover",
           "location": {
             "file": "repository.h",
-            "line": 111,
+            "line": 101,
             "column": 17
           },
           "returns": {
@@ -41119,7 +41298,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 120,
+            "line": 110,
             "column": 9
           },
           "group": "repository"
@@ -41129,7 +41308,7 @@
           "name": "git_repository_open_ext",
           "location": {
             "file": "repository.h",
-            "line": 191,
+            "line": 181,
             "column": 17
           },
           "returns": {
@@ -41173,7 +41352,7 @@
           "name": "git_repository_open_bare",
           "location": {
             "file": "repository.h",
-            "line": 212,
+            "line": 202,
             "column": 17
           },
           "returns": {
@@ -41206,7 +41385,7 @@
           "name": "git_repository_free",
           "location": {
             "file": "repository.h",
-            "line": 225,
+            "line": 215,
             "column": 18
           },
           "returns": {
@@ -41231,7 +41410,7 @@
           "name": "git_repository_init",
           "location": {
             "file": "repository.h",
-            "line": 246,
+            "line": 236,
             "column": 17
           },
           "returns": {
@@ -41319,7 +41498,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 259,
+            "line": 249,
             "column": 9
           },
           "group": "repository"
@@ -41357,7 +41536,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 314,
+            "line": 304,
             "column": 9
           },
           "group": "repository"
@@ -41427,7 +41606,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 338,
+            "line": 328,
             "column": 9
           },
           "group": "repository",
@@ -41442,7 +41621,7 @@
           "name": "GIT_REPOSITORY_INIT_OPTIONS_VERSION",
           "location": {
             "file": "repository.h",
-            "line": 400,
+            "line": 390,
             "column": 9
           },
           "value": "1",
@@ -41454,7 +41633,7 @@
           "name": "GIT_REPOSITORY_INIT_OPTIONS_INIT",
           "location": {
             "file": "repository.h",
-            "line": 403,
+            "line": 393,
             "column": 9
           },
           "value": "{GIT_REPOSITORY_INIT_OPTIONS_VERSION}",
@@ -41466,7 +41645,7 @@
           "name": "git_repository_init_options_init",
           "location": {
             "file": "repository.h",
-            "line": 415,
+            "line": 405,
             "column": 17
           },
           "returns": {
@@ -41498,7 +41677,7 @@
           "name": "git_repository_init_ext",
           "location": {
             "file": "repository.h",
-            "line": 436,
+            "line": 426,
             "column": 17
           },
           "returns": {
@@ -41537,7 +41716,7 @@
           "name": "git_repository_head",
           "location": {
             "file": "repository.h",
-            "line": 454,
+            "line": 444,
             "column": 17
           },
           "returns": {
@@ -41569,7 +41748,7 @@
           "name": "git_repository_head_for_worktree",
           "location": {
             "file": "repository.h",
-            "line": 464,
+            "line": 454,
             "column": 17
           },
           "returns": {
@@ -41606,7 +41785,7 @@
           "name": "git_repository_head_detached",
           "location": {
             "file": "repository.h",
-            "line": 477,
+            "line": 467,
             "column": 17
           },
           "returns": {
@@ -41632,7 +41811,7 @@
           "name": "git_repository_head_detached_for_worktree",
           "location": {
             "file": "repository.h",
-            "line": 490,
+            "line": 480,
             "column": 17
           },
           "returns": {
@@ -41664,7 +41843,7 @@
           "name": "git_repository_head_unborn",
           "location": {
             "file": "repository.h",
-            "line": 503,
+            "line": 493,
             "column": 17
           },
           "returns": {
@@ -41690,7 +41869,7 @@
           "name": "git_repository_is_empty",
           "location": {
             "file": "repository.h",
-            "line": 517,
+            "line": 507,
             "column": 17
           },
           "returns": {
@@ -41770,7 +41949,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 522,
+            "line": 512,
             "column": 9
           },
           "group": "repository",
@@ -41783,7 +41962,7 @@
           "name": "git_repository_item_path",
           "location": {
             "file": "repository.h",
-            "line": 555,
+            "line": 545,
             "column": 17
           },
           "returns": {
@@ -41822,7 +42001,7 @@
           "name": "git_repository_path",
           "location": {
             "file": "repository.h",
-            "line": 566,
+            "line": 556,
             "column": 26
           },
           "returns": {
@@ -41848,7 +42027,7 @@
           "name": "git_repository_workdir",
           "location": {
             "file": "repository.h",
-            "line": 577,
+            "line": 567,
             "column": 26
           },
           "returns": {
@@ -41874,7 +42053,7 @@
           "name": "git_repository_commondir",
           "location": {
             "file": "repository.h",
-            "line": 589,
+            "line": 579,
             "column": 26
           },
           "returns": {
@@ -41900,7 +42079,7 @@
           "name": "git_repository_set_workdir",
           "location": {
             "file": "repository.h",
-            "line": 608,
+            "line": 598,
             "column": 17
           },
           "returns": {
@@ -41939,7 +42118,7 @@
           "name": "git_repository_is_bare",
           "location": {
             "file": "repository.h",
-            "line": 617,
+            "line": 607,
             "column": 17
           },
           "returns": {
@@ -41964,7 +42143,7 @@
           "name": "git_repository_is_worktree",
           "location": {
             "file": "repository.h",
-            "line": 625,
+            "line": 615,
             "column": 17
           },
           "returns": {
@@ -41989,7 +42168,7 @@
           "name": "git_repository_config",
           "location": {
             "file": "repository.h",
-            "line": 641,
+            "line": 631,
             "column": 17
           },
           "returns": {
@@ -42022,7 +42201,7 @@
           "name": "git_repository_config_snapshot",
           "location": {
             "file": "repository.h",
-            "line": 657,
+            "line": 647,
             "column": 17
           },
           "returns": {
@@ -42055,7 +42234,7 @@
           "name": "git_repository_odb",
           "location": {
             "file": "repository.h",
-            "line": 673,
+            "line": 663,
             "column": 17
           },
           "returns": {
@@ -42088,7 +42267,7 @@
           "name": "git_repository_refdb",
           "location": {
             "file": "repository.h",
-            "line": 689,
+            "line": 679,
             "column": 17
           },
           "returns": {
@@ -42121,7 +42300,7 @@
           "name": "git_repository_index",
           "location": {
             "file": "repository.h",
-            "line": 705,
+            "line": 695,
             "column": 17
           },
           "returns": {
@@ -42154,7 +42333,7 @@
           "name": "git_repository_message",
           "location": {
             "file": "repository.h",
-            "line": 723,
+            "line": 713,
             "column": 17
           },
           "returns": {
@@ -42187,7 +42366,7 @@
           "name": "git_repository_message_remove",
           "location": {
             "file": "repository.h",
-            "line": 733,
+            "line": 723,
             "column": 17
           },
           "returns": {
@@ -42213,7 +42392,7 @@
           "name": "git_repository_state_cleanup",
           "location": {
             "file": "repository.h",
-            "line": 742,
+            "line": 732,
             "column": 17
           },
           "returns": {
@@ -42242,7 +42421,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 756,
+            "line": 746,
             "column": 26
           },
           "see": [
@@ -42295,7 +42474,7 @@
           "name": "git_repository_fetchhead_foreach",
           "location": {
             "file": "repository.h",
-            "line": 773,
+            "line": 763,
             "column": 17
           },
           "returns": {
@@ -42338,7 +42517,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 787,
+            "line": 777,
             "column": 26
           },
           "see": [
@@ -42373,7 +42552,7 @@
           "name": "git_repository_mergehead_foreach",
           "location": {
             "file": "repository.h",
-            "line": 802,
+            "line": 792,
             "column": 17
           },
           "returns": {
@@ -42412,7 +42591,7 @@
           "name": "git_repository_hashfile",
           "location": {
             "file": "repository.h",
-            "line": 832,
+            "line": 822,
             "column": 17
           },
           "returns": {
@@ -42464,7 +42643,7 @@
           "name": "git_repository_set_head",
           "location": {
             "file": "repository.h",
-            "line": 857,
+            "line": 847,
             "column": 17
           },
           "returns": {
@@ -42498,7 +42677,7 @@
           "name": "git_repository_set_head_detached",
           "location": {
             "file": "repository.h",
-            "line": 877,
+            "line": 867,
             "column": 17
           },
           "returns": {
@@ -42532,7 +42711,7 @@
           "name": "git_repository_set_head_detached_from_annotated",
           "location": {
             "file": "repository.h",
-            "line": 895,
+            "line": 885,
             "column": 17
           },
           "returns": {
@@ -42565,7 +42744,7 @@
           "name": "git_repository_detach_head",
           "location": {
             "file": "repository.h",
-            "line": 916,
+            "line": 906,
             "column": 17
           },
           "returns": {
@@ -42637,7 +42816,7 @@
           ],
           "location": {
             "file": "repository.h",
-            "line": 925,
+            "line": 915,
             "column": 9
           },
           "group": "repository"
@@ -42647,7 +42826,7 @@
           "name": "git_repository_state",
           "location": {
             "file": "repository.h",
-            "line": 947,
+            "line": 937,
             "column": 17
           },
           "returns": {
@@ -42672,7 +42851,7 @@
           "name": "git_repository_set_namespace",
           "location": {
             "file": "repository.h",
-            "line": 961,
+            "line": 951,
             "column": 17
           },
           "returns": {
@@ -42704,7 +42883,7 @@
           "name": "git_repository_get_namespace",
           "location": {
             "file": "repository.h",
-            "line": 969,
+            "line": 959,
             "column": 26
           },
           "returns": {
@@ -42729,7 +42908,7 @@
           "name": "git_repository_is_shallow",
           "location": {
             "file": "repository.h",
-            "line": 978,
+            "line": 968,
             "column": 17
           },
           "returns": {
@@ -42754,7 +42933,7 @@
           "name": "git_repository_ident",
           "location": {
             "file": "repository.h",
-            "line": 991,
+            "line": 981,
             "column": 17
           },
           "returns": {
@@ -42792,7 +42971,7 @@
           "name": "git_repository_set_ident",
           "location": {
             "file": "repository.h",
-            "line": 1005,
+            "line": 995,
             "column": 17
           },
           "returns": {
@@ -42830,7 +43009,7 @@
           "name": "git_repository_oid_type",
           "location": {
             "file": "repository.h",
-            "line": 1013,
+            "line": 1003,
             "column": 23
           },
           "returns": {
@@ -42855,7 +43034,7 @@
           "name": "git_repository_commit_parents",
           "location": {
             "file": "repository.h",
-            "line": 1024,
+            "line": 1014,
             "column": 17
           },
           "returns": {
@@ -43167,12 +43346,36 @@
     },
     "sys/repository": {
       "apis": {
+        "GIT_REPOSITORY_NEW_OPTIONS_VERSION": {
+          "kind": "macro",
+          "name": "GIT_REPOSITORY_NEW_OPTIONS_VERSION",
+          "location": {
+            "file": "sys/repository.h",
+            "line": 47,
+            "column": 9
+          },
+          "value": "1",
+          "comment": "Current version for the `git_repository_new_options` structure",
+          "group": "sys/repository"
+        },
+        "GIT_REPOSITORY_NEW_OPTIONS_INIT": {
+          "kind": "macro",
+          "name": "GIT_REPOSITORY_NEW_OPTIONS_INIT",
+          "location": {
+            "file": "sys/repository.h",
+            "line": 50,
+            "column": 9
+          },
+          "value": "{ GIT_REPOSITORY_NEW_OPTIONS_VERSION }",
+          "comment": "Static constructor for `git_repository_new_options`",
+          "group": "sys/repository"
+        },
         "git_repository_new": {
           "kind": "function",
           "name": "git_repository_new",
           "location": {
             "file": "sys/repository.h",
-            "line": 48,
+            "line": 90,
             "column": 17
           },
           "returns": {
@@ -43199,7 +43402,7 @@
           "name": "git_repository__cleanup",
           "location": {
             "file": "sys/repository.h",
-            "line": 66,
+            "line": 108,
             "column": 17
           },
           "returns": {
@@ -43226,7 +43429,7 @@
           "name": "git_repository_reinit_filesystem",
           "location": {
             "file": "sys/repository.h",
-            "line": 83,
+            "line": 125,
             "column": 17
           },
           "returns": {
@@ -43258,7 +43461,7 @@
           "name": "git_repository_set_config",
           "location": {
             "file": "sys/repository.h",
-            "line": 101,
+            "line": 143,
             "column": 17
           },
           "returns": {
@@ -43291,7 +43494,7 @@
           "name": "git_repository_set_odb",
           "location": {
             "file": "sys/repository.h",
-            "line": 117,
+            "line": 159,
             "column": 17
           },
           "returns": {
@@ -43324,7 +43527,7 @@
           "name": "git_repository_set_refdb",
           "location": {
             "file": "sys/repository.h",
-            "line": 133,
+            "line": 175,
             "column": 17
           },
           "returns": {
@@ -43357,7 +43560,7 @@
           "name": "git_repository_set_index",
           "location": {
             "file": "sys/repository.h",
-            "line": 149,
+            "line": 191,
             "column": 17
           },
           "returns": {
@@ -43390,7 +43593,7 @@
           "name": "git_repository_set_bare",
           "location": {
             "file": "sys/repository.h",
-            "line": 162,
+            "line": 204,
             "column": 17
           },
           "returns": {
@@ -43416,7 +43619,7 @@
           "name": "git_repository_submodule_cache_all",
           "location": {
             "file": "sys/repository.h",
-            "line": 176,
+            "line": 218,
             "column": 17
           },
           "returns": {
@@ -43442,7 +43645,7 @@
           "name": "git_repository_submodule_cache_clear",
           "location": {
             "file": "sys/repository.h",
-            "line": 192,
+            "line": 234,
             "column": 17
           },
           "returns": {

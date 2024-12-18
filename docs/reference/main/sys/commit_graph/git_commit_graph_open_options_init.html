@@ -1,0 +1,99 @@
+---
+title: git_commit_graph_open_options_init (libgit2 main)
+layout: default
+---
+
+      <div class="api function">
+        <div class="apiBreadcrumb functionBreadcrumb">
+          <ul>
+            <li><a href="/docs/reference/main/index.html">API Documentation</a></li>
+            <li><a href="/docs/reference/main/sys/commit_graph/index.html">commit_graph (advanced)</a></li>
+          </ul>
+        </div>
+        <div class="apiHeader functionHeader">
+          <h2 class="apiName functionName">git_commit_graph_open_options_init</h2>
+
+           <script src="/js/minisearch.js"></script>
+           <script src="/js/search.js"></script>
+           <div class="headerSearchArea functionHeaderSearchArea" id="headersearcharea">
+             <input class="headerSearchBox functionHeaderSearchBox" id="headersearchbox" placeholder="Search..." onInput="handleSearchSuggest({ version: 'main' })" onFocusIn="handleSearchSuggest({ version: 'main' })" onKeyUp="if (event.code === 'Enter') { submitSearch({ version: 'main' }); }"/>
+             <div class="headerSearchResults functionHeaderSearchResults" id="headersearchresults">
+             </div>
+           </div>
+
+          <div class="apiHeaderVersionSelect functionHeaderVersionSelect">
+            <span>Version:</span>
+            <select onChange="window.location.href = this.value">
+              <option value="/docs/reference/main/sys/commit_graph/git_commit_graph_open_options_init.html" selected>main</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="apiDescription functionDescription">
+        <p>Initialize git_commit_graph_open_options structure</p>
+
+        <p>Initializes a <a href="/docs/reference/main/sys/commit_graph/git_commit_graph_open_options.html" class="apiLink structLink"><code><span class="codeWord">git_commit_graph_open_options</span></code></a> with default values.
+Equivalent to creating an instance with
+<a href="/docs/reference/main/sys/commit_graph/GIT_COMMIT_GRAPH_OPEN_OPTIONS_INIT.html" class="apiLink macroLink"><code><span class="codeWord">GIT_COMMIT_GRAPH_OPEN_OPTIONS_INIT</span></code></a>.</p>
+
+        </div>
+
+        <h3 class="apiSignatureHeader functionSignatureHeader">Signature</h3>
+        <div class="apiSignatureLink functionSignatureLink">
+          <a href="https://github.com/libgit2/libgit2/blob/main/include/git2/sys/commit_graph.h#L56" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <div class="apiSignature functionSignature">
+          int git_commit_graph_open_options_init(<span class="apiSignatureParameter functionSignatureParameter">git_commit_graph_open_options *opts</span>, <span class="apiSignatureParameter functionSignatureParameter">unsigned int version</span>);
+        </div>
+
+        <h3 class="apiParametersHeader functionParametersHeader">Parameters</h3>
+        <div class="apiParameters functionParameters">
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              <a href="/docs/reference/main/sys/commit_graph/git_commit_graph_open_options.html" class="apiLink structLink">git_commit_graph_open_options *</a>
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              opts
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The <a href="/docs/reference/main/sys/commit_graph/git_commit_graph_open_options.html" class="apiLink structLink"><code><span class="codeWord">git_commit_graph_open_options</span></code></a> struct to initialize.</p> 
+            </div>
+          </div>
+          <div class="apiParameter functionParameter apiParameterIn functionParameterIn">
+            <div class="apiParameterType functionParameterType">
+              unsigned int
+            </div>
+            <div class="apiParameterDirection functionParameterDirection apiParameterDirectionIn functionParameterDirectionIn">
+              In
+            </div>
+            <div class="apiParameterName functionParameterName">
+              version
+            </div>
+            <div class="apiParameterDescription functionParameterDescription">
+              <p>The struct version; pass <a href="/docs/reference/main/sys/commit_graph/GIT_COMMIT_GRAPH_OPEN_OPTIONS_VERSION.html" class="apiLink macroLink"><code><span class="codeWord">GIT_COMMIT_GRAPH_OPEN_OPTIONS_VERSION</span></code></a>.</p> 
+            </div>
+          </div>
+        </div>
+
+        <h3 class="apiReturnHeader functionReturnHeader">Returns</h3>
+        <div class="apiReturn functionReturn">
+          <div class="apiReturnType functionReturnType">
+            int
+          </div>
+          <div class="apiReturnDescription functionReturnDescription">
+            <p>Zero on success; -1 on failure.</p> 
+          </div>
+        </div>
+        <h3 class="apiVersionsHeader functionVersionsHeader">Versions</h3>
+        <div class="apiVersions functionVersions">
+          <ul>
+          <li class="apiVersionDeltaIntroduced functionVersionDeltaIntroduced">
+            <a href="/docs/reference/main/sys/commit_graph/git_commit_graph_open_options_init.html" class="apiVersionLink functionVersionLink">main</a>
+          </li>
+          </ul>
+        </div>
+      </div>
